@@ -1,6 +1,5 @@
 <script type="text/javascript" src="/docs/jquery.min.js"></script>
 <script type="text/javascript" src="/docs/qrcode.js"></script>
-
 <script type="text/javascript">
 
 var lastcmd = ""
@@ -16,7 +15,7 @@ var qrcode;
 function makeQR() {	
 	if(once == true)
 	{
-		qrcode = new QRCode(document.getElementById("qrcode").innerHTML, 
+		qrcode = new QRCode(document.getElementById("qrcode"), 
 		{
 			text : "GP",
 			width : 400,
@@ -98,6 +97,9 @@ function startTime() {
 	
 	if(changed == true)
 	{	
+		
+		if(cmd == "") cmd = "GP";
+
 		makeQR();
 		
 		even ++;
@@ -106,6 +108,8 @@ function startTime() {
 			qrcode.makeCode(cmd);
 		}
 		
+		document.getElementById('txt').innerHTML = timestr;		
+			
 		lastms = today.getTime();
 		changed = false;
 		
@@ -131,5 +135,6 @@ function myReloadFunction() {
 # QR Test
 
 <div id="qrcode" style="margin:40px;"></div>
+<b id="txt" style="margin:40px;"></b>
 
-## ver 0.1
+## ver 0.11
