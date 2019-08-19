@@ -1,5 +1,5 @@
-<script type="text/javascript" src="jquery.min.js"></script>
-<script type="text/javascript" src="qrcode.js"></script>
+<script type="text/javascript" src="/docs/jquery.min.js"></script>
+<script type="text/javascript" src="/docs/qrcode.js"></script>
 
 <script type="text/javascript">
 
