@@ -1,5 +1,5 @@
-<script type="text/javascript" src="/docs/jquery.min.js"></script>
-<script type="text/javascript" src="/docs/qrcode.js"></script>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="qrcode.js"></script>
 <script type="text/javascript">
 
 var lastcmd = ""
@@ -137,4 +137,4 @@ function myReloadFunction() {
 <div id="qrcode" style="margin:40px;"></div>
 <b id="txt" style="margin:40px;"></b>
 
-## ver 0.11
+## ver 0.12
