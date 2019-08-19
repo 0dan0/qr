@@ -16,7 +16,7 @@ var qrcode;
 function makeQR() {	
 	if(once == true)
 	{
-		qrcode = new QRCode(document.getElementById("qrcode"), 
+		qrcode = new QRCode(document.getElementById("qrcode").innerHTML, 
 		{
 			text : "GP",
 			width : 400,
