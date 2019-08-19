@@ -1,6 +1,9 @@
-<script src="jquery.min.js"></script>
-<script src="qrcode.js"></script>
-<script>
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="qrcode.js"></script>
+
+<script type="text/javascript">
 var lastcmd = ""
 var lasttimecmd = ""
 var changed = false;
@@ -120,8 +123,9 @@ function myReloadFunction() {
 }
 </script>
 
-# QR Time
-
+<body onload="startTime()" style='font-family="sans-serif"'>
+<br>
 <div id="qrcode" style="margin:40px;"></div>
-
-## ver 0.13
+<br>
+</body>
+</html>
