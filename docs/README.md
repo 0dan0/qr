@@ -131,3 +131,5 @@ function myReloadFunction() {
 # QR Test
 
 <div id="qrcode" style="margin:40px;"></div>
+
+## ver 0.1
