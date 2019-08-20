@@ -16,6 +16,7 @@
 # QR Time
 
 <div id="qrcode"></div>
+QR Command: <b id="qrtext">time</b>
 
 <script>
 var once = true;
@@ -36,13 +37,37 @@ function makeQR() {
     once = false;
   }
 }
-
+function padTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
 function timeLoop()
 {
-  count++;
-  cmd = "oT"+count;
+  var today;
+  var yy,mm,dd,h,m,s;
+  var ms;
+  
+  today = new Date();
+  yy = today.getFullYear() - 2000;
+  mm = today.getMonth() + 1;
+  dd = today.getDate();
+  h = today.getHours();
+  m = today.getMinutes();
+  s = today.getSeconds();
+  ms = today.getMilliseconds();
+  yy = padTime(yy);
+  mm = padTime(mm);
+  dd = padTime(dd);
+  h = padTime(h);
+  m = padTime(m);
+  s = padTime(s);
+  ms = Math.floor(ms / 10); // hundredths
+  ms = padTime(ms);
+
+  cmd = "oT" + yy + mm + dd + h + m + s + "." + ms;
   qrcode.clear(); 
   qrcode.makeCode(cmd);
+  document.getElementById("qrcode").innerHTML = cmd;
   var t = setTimeout(timeLoop, 33);
 }
 
@@ -55,4 +80,4 @@ timeLoop();
 
 </script>
 
-## ver 0.16
+## ver 0.17
