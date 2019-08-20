@@ -1,5 +1,4 @@
-<!--- <script src="jquery.min.js"></script> --->
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="jquery.min.js"></script>
 <script src="qrcode.js"></script>
 <script>
 var lastcmd = ""
@@ -109,4 +108,9 @@ function myReloadFunction() {
 
 <div id="qrcode" style="margin:40px;"></div>
 
-## ver 0.131
+
+<p id="demo">Test.</p>
+<button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+
+
+## ver 0.132
