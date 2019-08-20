@@ -33,7 +33,7 @@ function makeQR() {
       text : "oT0",
       width : 400,
       height : 400,
-      correctLevel : QRCode.CorrectLevel.H
+      correctLevel : QRCode.CorrectLevel.L
     });
     once = false;
   }
