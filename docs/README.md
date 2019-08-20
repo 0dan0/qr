@@ -16,6 +16,7 @@
 # QR Time
 
 <div id="qrcode"></div>
+<p>
 QR Command: <b id="qrtext">time</b>
 
 <script>
@@ -67,7 +68,7 @@ function timeLoop()
   cmd = "oT" + yy + mm + dd + h + m + s + "." + ms;
   qrcode.clear(); 
   qrcode.makeCode(cmd);
-  document.getElementById("qrcode").innerHTML = cmd;
+  document.getElementById("qrtext").innerHTML = cmd;
   var t = setTimeout(timeLoop, 33);
 }
 
@@ -80,4 +81,4 @@ timeLoop();
 
 </script>
 
-## ver 0.17
+## ver 0.171
