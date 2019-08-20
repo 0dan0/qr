@@ -33,7 +33,7 @@ function makeQR() {
       text : "oT0",
       width : 400,
       height : 400,
-      correctLevel : QRCode.CorrectLevel.L
+      correctLevel : QRCode.CorrectLevel.M
     });
     once = false;
   }
@@ -81,4 +81,4 @@ timeLoop();
 
 </script>
 
-<p>## ver 0.181
+<p>## ver 0.182
