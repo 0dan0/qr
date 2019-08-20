@@ -2,12 +2,14 @@
 <script src="qrcode.js"></script>
 <style>
         #qrcode{
-            height: 400px;
-            width: 400px;
+            height: 360px;
+            width: 360px;
+            margin: 20px;
         }
         div{
-            height: 400px;
-            width: 400px;
+            height: 360px;
+            width: 360px;
+            margin: 20px;
             display: inline-block;
         }
 </style>
@@ -19,11 +21,11 @@
 var qrcode = new QRCode(document.getElementById("qrcode"), 
     {
       text : "GP",
-      width : 400,
-      height : 400,
+      width : 360,
+      height : 360,
       correctLevel : QRCode.CorrectLevel.M
     });
 </script>
 
 
-## ver 0.14
+## ver 0.15
