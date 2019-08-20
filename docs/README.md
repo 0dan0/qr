@@ -21,6 +21,8 @@
 var once = true;
 var qrcode;
 var count = 0;
+var cmd = "";
+
 function makeQR() {	
   if(once == true)
   {
@@ -35,9 +37,18 @@ function makeQR() {
   once = false;
 }
 
+function timeLoop()
+{
+  count++;
+  cmd = "oT"+count;
+  qrcode.clear(); 
+  qrcode.makeCode(cmd);
+  var t = setTimeout(timeLoop, 100);
+}
+
 makeQR();
 
 </script>
 
 
-## ver 0.151
+## ver 0.152
