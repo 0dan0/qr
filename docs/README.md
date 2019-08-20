@@ -31,7 +31,7 @@ function makeQR() {
       text : "oT0",
       width : 400,
       height : 400,
-      correctLevel : QRCode.CorrectLevel.M
+      correctLevel : QRCode.CorrectLevel.H
     });
     once = false;
   }
@@ -43,7 +43,7 @@ function timeLoop()
   cmd = "oT"+count;
   qrcode.clear(); 
   qrcode.makeCode(cmd);
-  var t = setTimeout(timeLoop, 100);
+  var t = setTimeout(timeLoop, 33);
 }
 
 function myReloadFunction() {
