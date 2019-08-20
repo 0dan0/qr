@@ -1,4 +1,5 @@
-<script src="jquery.min.js"></script>
+<!--- <script src="jquery.min.js"></script> --->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="qrcode.js"></script>
 <script>
 var lastcmd = ""
@@ -10,7 +11,6 @@ var timechecked = false;
 var once = true;
 var even = 0;
 var qrcode;
-
 function makeQR() {	
   if(once == true)
   {
@@ -24,7 +24,6 @@ function makeQR() {
   }
   once = false;
 }
-
 function startTime() {	
   var today;
   var yy;
@@ -51,17 +50,14 @@ function startTime() {
   	var frms;
   	var secs = true;//document.getElementById("dtsec").checked;
   	var timecode = false;
-  	
   	yy = today.getFullYear() - 2000;
   	mm = today.getMonth() + 1;
   	dd = today.getDate();
   	h = today.getHours();
   	m = today.getMinutes();
   	s = today.getSeconds();
-  	ms = today.getMilliseconds();
-  	
+  	ms = today.getMilliseconds();  	
   	frms = (h * 3600 + m * 60 + s) * timecodefps + Math.floor((timecodefps * ms) / 1000);
-  	
   	yy = checkTime(yy);
   	mm = checkTime(mm);
   	dd = checkTime(dd);
@@ -69,8 +65,7 @@ function startTime() {
   	m = checkTime(m);
   	s = checkTime(s);
   	ms = Math.floor(ms / 10); // hundredths
-  	ms = checkTime(ms);
-  	
+  	ms = checkTime(ms);  	
   	cmd = cmd + "oT" + yy + mm + dd + h + m;
   	timestr = "20"+yy+"/"+mm+"/"+dd+" "+h+":"+m;
   	if(secs)
@@ -78,37 +73,27 @@ function startTime() {
   	  cmd = cmd + s;
   	  timestr = timestr + ":" + s;
   	}
-  
-  	
-  	if(cmd != lasttimecmd)
+   	if(cmd != lasttimecmd)
   	{
   	  changed = true;
   	  lasttimecmd = cmd;
-  	}
-  
+  	}  
   	timechecked = true; 
-  }
-  
-  var delay = 200;
-  
+  }  
+  var delay = 200;  
   if(changed == true)
   {	  	
-  	if(cmd == "") cmd = "GP";
-  
-  	makeQR();
-  	
+  	if(cmd == "") cmd = "GP";  
+  	makeQR();  	
   	even ++;
   	{
   	  qrcode.clear(); 
   	  qrcode.makeCode(cmd);
-  	}
-  		
+  	}  		
   	lastms = today.getTime();
-  	changed = false;
-  	
+  	changed = false;  	
   	delay = 10;
-  }
-  
+  }  
   var t = setTimeout(startTime, delay);
 }
 function checkTime(i) {
@@ -124,4 +109,4 @@ function myReloadFunction() {
 
 <div id="qrcode" style="margin:40px;"></div>
 
-## ver 0.13
+## ver 0.131
