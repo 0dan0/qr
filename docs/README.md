@@ -1,5 +1,15 @@
 <script src="jquery.min.js"></script>
 <script src="qrcode.js"></script>
+
+
+# QR Time
+
+<div id="qrcode" style="margin:40px;"></div>
+
+<p id="demo">Test.</p>
+
+<button type="button" onclick='document.getElementById("demo").innerHTML = "Hello"'>Click Me!</button>
+
 <script>
 var lastcmd = ""
 var lasttimecmd = ""
@@ -103,14 +113,4 @@ function myReloadFunction() {
   location.reload();
 }
 </script>
-
-# QR Time
-
-<div id="qrcode" style="margin:40px;"></div>
-
-
-<p id="demo">Test.</p>
-<button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
-
-
-## ver 0.132
+## ver 0.133
