@@ -46,9 +46,12 @@ function timeLoop()
   var t = setTimeout(timeLoop, 100);
 }
 
+function myReloadFunction() {
+  location.reload();
+}
+
 makeQR();
 
 </script>
 
-
-## ver 0.152
+## ver 0.153
