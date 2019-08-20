@@ -4,22 +4,16 @@
         #qrcode{
             height: 400px;
             width: 400px;
-            margin: 40px;
         }
         div{
             height: 400px;
             width: 400px;
-            margin: 40px;
             display: inline-block;
         }
 </style>
 # QR Time
 
 <div id="qrcode"></div>
-
-<p id="demo">Test.</p>
-
-<button type="button" onclick='document.getElementById("demo").innerHTML = "Hello"'>Click Me!</button>
 
 <script>
 var qrcode = new QRCode(document.getElementById("qrcode"), 
@@ -32,4 +26,4 @@ var qrcode = new QRCode(document.getElementById("qrcode"),
 </script>
 
 
-## ver 0.135
+## ver 0.14
