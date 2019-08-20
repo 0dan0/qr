@@ -1,5 +1,26 @@
 <script src="jquery.min.js"></script>
 <script src="qrcode.js"></script>
+<style>
+        #qrcode{
+            height: 400px;
+            width: 400px;
+            margin: 40px;
+        }
+        div{
+            height: 400px;
+            width: 400px;
+            margin: 40px;
+            display: inline-block;
+        }
+</style>
+# QR Time
+
+<div id="qrcode"></div>
+
+<p id="demo">Test.</p>
+
+<button type="button" onclick='document.getElementById("demo").innerHTML = "Hello"'>Click Me!</button>
+
 <script>
 var qrcode = new QRCode(document.getElementById("qrcode"), 
     {
@@ -10,13 +31,5 @@ var qrcode = new QRCode(document.getElementById("qrcode"),
     });
 </script>
 
-# QR Time
 
-<div id="qrcode" style="margin:40px;"></div>
-
-<p id="demo">Test.</p>
-
-<button type="button" onclick='document.getElementById("demo").innerHTML = "Hello"'>Click Me!</button>
-
-
-## ver 0.134
+## ver 0.135
