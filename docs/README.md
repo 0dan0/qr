@@ -28,13 +28,13 @@ function makeQR() {
   {
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
-      text : "GP",
+      text : "oT0",
       width : 400,
       height : 400,
       correctLevel : QRCode.CorrectLevel.M
     });
+    once = false;
   }
-  once = false;
 }
 
 function timeLoop()
@@ -51,7 +51,8 @@ function myReloadFunction() {
 }
 
 makeQR();
+timeLoop();
 
 </script>
 
-## ver 0.153
+## ver 0.154
