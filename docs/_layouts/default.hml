@@ -11,7 +11,7 @@
     <link rel="shortcut icon" type="image/png" href="{{ "/favicon.png" | prepend: site.baseurl }}" >
   </head>
   <body>
-    <section class="page-header">
+    <section class="page-header" size=300>
       <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
       {% if site.github.is_project_page %}
