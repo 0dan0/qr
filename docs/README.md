@@ -16,8 +16,10 @@
 # QR Time
 
 <div id="qrcode"></div>
-<p>
+<br>
 QR Command: <b id="qrtext">time</b>
+        
+## ver 0.184
 
 <script>
 var once = true;
@@ -80,6 +82,3 @@ makeQR();
 timeLoop();
 
 </script>
-
-<br>
-## ver 0.183
