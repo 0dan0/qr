@@ -13,13 +13,13 @@
             display: inline-block;
         }
 </style>
-# QR Name
+# Personalize via QR Code
 
 <div id="qrcode"></div>
 <br>
 Owner text: <input type="text" id="addname" value=""><br>
         
-## ver 0.185
+## ver 0.186
 
 <script>
 var once = true;
