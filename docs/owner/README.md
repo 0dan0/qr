@@ -2,13 +2,13 @@
 <script src="../qrcodeborder.js"></script>
 <style>
         #qrcode{
-            height: 400px;
-            width: 400px;
+            height: 380px;
+            width: 380px;
             margin: 0px;
         }
         div{
-            height: 400px;
-            width: 400px;
+            height: 380px;
+            width: 380px;
             margin: 0px;
             display: inline-block;
         }
@@ -19,7 +19,7 @@ Your name here: <input type="text" id="addname" value=""><br>
 <div id="qrcode"></div>
 
         
-## ver 0.2
+## ver 0.21
 
 <script>
 var once = true;
