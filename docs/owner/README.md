@@ -1,15 +1,15 @@
 <script src="../jquery.min.js"></script>
-<script src="../qrcode.js"></script>
+<script src="../qrcodeborder.js"></script>
 <style>
         #qrcode{
-            height: 360px;
-            width: 360px;
-            margin: 20px;
+            height: 400px;
+            width: 400px;
+            margin: 0px;
         }
         div{
-            height: 360px;
-            width: 360px;
-            margin: 20px;
+            height: 400px;
+            width: 400px;
+            margin: 0px;
             display: inline-block;
         }
 </style>
