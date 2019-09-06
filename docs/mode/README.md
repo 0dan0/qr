@@ -1,26 +1,25 @@
 <script src="../jquery.min.js"></script>
-<script src="../qrcode.js"></script>
+<script src="../qrcodeborder.js"></script>
 <style>
         #qrcode{
-            height: 360px;
-            width: 360px;
-            margin: 20px;
+            height: 380px;
+            width: 380px;
+            margin: 0px;
         }
         div{
-            height: 360px;
-            width: 360px;
-            margin: 20px;
+            height: 380px;
+            width: 380px;
+            margin: 0px;
             display: inline-block;
         }
 </style>
-# Personalize via QR Code
+# Generate Custom Mode
 
 <div id="qrcode"></div>
-<br>
 Owner text: <input type="text" id="addname" value=""><br>
 
         
-## ver 0.187
+## ver 0.22
 
 <script>
 var once = true;
