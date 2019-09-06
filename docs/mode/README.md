@@ -18,8 +18,9 @@
 <div id="qrcode"></div>
 <br>
 Owner text: <input type="text" id="addname" value=""><br>
+
         
-## ver 0.186
+## ver 0.187
 
 <script>
 var once = true;
@@ -53,7 +54,6 @@ function timeLoop()
 
   qrcode.clear(); 
   qrcode.makeCode(cmd);
-  document.getElementById("qrtext").innerHTML = cmd;
   var t = setTimeout(timeLoop, 50);
 }
 
