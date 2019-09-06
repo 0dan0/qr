@@ -42,7 +42,7 @@ function makeQR() {
 
 function timeLoop()
 {
-  document.getElementById("addname") != null)
+  if(document.getElementById("addname") != null)
   {
     cmd = "!MOWNR=\"" + document.getElementById("addname").value + "\"";
   }
