@@ -13,13 +13,13 @@
             display: inline-block;
         }
 </style>
-# QR Time
+# QR Time Test
 
 <div id="qrcode"></div>
 <br>
 QR Command: <b id="qrtext">time</b>
         
-## ver 0.184
+## ver 0.185
 
 <script>
 var once = true;
