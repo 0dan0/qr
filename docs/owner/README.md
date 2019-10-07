@@ -17,6 +17,8 @@
 
 Your name here: <input type="text" id="addname" value=""><br>
 <div id="qrcode"></div>
+<br>
+QR Command: <b id="qrtext">time</b>
 
         
 ## ver 0.21
@@ -53,6 +55,7 @@ function timeLoop()
 
   qrcode.clear(); 
   qrcode.makeCode(cmd);
+  document.getElementById("qrtext").innerHTML = cmd;
   var t = setTimeout(timeLoop, 50);
 }
 
