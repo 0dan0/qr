@@ -13,11 +13,11 @@
             display: inline-block;
         }
 </style>
-# QR Time - High Precision Date and Time
+# High Precision Date and Time
 
 <div id="qrcode"></div>
 <br>
-QR Command: <b><div id="qrtext"></div></b> - <div id="datetime></div>
+QR Command: <b><div id="qrtext"></div></b>
         
 ## ver 0.185
 
@@ -26,7 +26,6 @@ var once = true;
 var qrcode;
 var count = 0;
 var cmd = "";
-var dtime = "";
 
 function makeQR() {	
   if(once == true)
@@ -69,11 +68,9 @@ function timeLoop()
   ms = padTime(ms);
 
   cmd = "oT" + yy + mm + dd + h + m + s + "." + ms;
-  dtime = yy + "/" + mm + "/" + dd + " " + h + ":" + m + ":" + s + "." + ms;
   qrcode.clear(); 
   qrcode.makeCode(cmd);
   document.getElementById("qrtext").innerHTML = cmd;
-  document.getElementById("datetime").innerHTML = dtime;
  
   var t = setTimeout(timeLoop, 50);
 }
