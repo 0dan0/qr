@@ -17,7 +17,7 @@
 
 <div id="qrcode"></div>
 <br>
-QR Command: <b><div id="qrtext"></div></b>
+QR Command: <b id="qrtext"></b>
         
 ## ver 0.185
 
