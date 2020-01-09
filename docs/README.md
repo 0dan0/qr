@@ -17,7 +17,7 @@
 
 <div id="qrcode"></div>
 <br>
-QR Command: <b id="qrtext">time</b> - <i id="datetime>date</i>
+QR Command: <b><div id="qrtext"></div></b> - <div id="datetime></div>
         
 ## ver 0.185
 
