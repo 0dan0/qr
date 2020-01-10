@@ -2,25 +2,23 @@
 <script src="qrcode.js"></script>
 <style>
         #qrcode{
-            width: 90%;
-            margin-left: auto;
-            margin-right: auto;
+            width: 100%;
             display: block;
         }
         div{
-            width: 90%;
-            margin-left: auto;
-            margin-right: auto;
+            width: 100%;
             display: block;
         }
 </style>
 # Precision Date and Time
 
-<center><div id="qrcode"></div></center>
+<center>
+<div id="qrcode"></div>
 <br>
 QR Command: <b id="qrtext"></b>
-        
-## ver 0.199
+</center>
+
+## ver 0.200
 
 <script>
 var once = true;
