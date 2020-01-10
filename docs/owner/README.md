@@ -16,7 +16,9 @@ Your name here: <input type="text" id="addname" value=""><br>
 <div id="qrcode"></div>
 <br>
 </center>
-QR Command: <b id="qrtext">time</b>
+QR Command: <b id="qrtext">time</b><br>
+Note: Use \n for a new line. 
+e.g. Joe Bloggs\ncall (555)555-5555 
         
 ## ver 0.205
 
