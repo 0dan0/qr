@@ -21,7 +21,7 @@ QR Command: <b id="qrtext">time</b><br>
 Note: Use \n for a new line. 
 e.g. Joe Bloggs\ncall (555)555-5555 
         
-## ver 0.207
+## ver 0.208
 
 <script>
 var once = true;
