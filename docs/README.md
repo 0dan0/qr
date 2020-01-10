@@ -3,11 +3,10 @@
 <style>
         #qrcode{
             width: 100%;
-            display: block;
         }
         div{
             width: 100%;
-            display: block;
+            display: inline-block;
         }
 </style>
 # Precision Date and Time
