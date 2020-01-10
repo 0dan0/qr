@@ -2,13 +2,11 @@
 <script src="qrcode.js"></script>
 <style>
         #qrcode{
-            height: 360px;
-            width: 360px;
+            width: 70%;
             margin: 20px;
         }
         div{
-            height: 360px;
-            width: 360px;
+            width: 80%;
             margin: 20px;
             display: inline-block;
         }
