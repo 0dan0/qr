@@ -20,7 +20,7 @@
 <br>
 QR Command: <b id="qrtext"></b>
         
-## ver 0.198
+## ver 0.199
 
 <script>
 var once = true;
