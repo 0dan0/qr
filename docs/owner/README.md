@@ -2,14 +2,10 @@
 <script src="../qrcodeborder.js"></script>
 <style>
         #qrcode{
-            height: 380px;
-            width: 380px;
-            margin: 0px;
+            width: 100%;
         }
         div{
-            height: 380px;
-            width: 380px;
-            margin: 0px;
+            width: 100%;
             display: inline-block;
         }
 </style>
@@ -21,7 +17,7 @@ Your name here: <input type="text" id="addname" value=""><br>
 QR Command: <b id="qrtext">time</b>
 
         
-## ver 0.21
+## ver 0.201
 
 <script>
 var once = true;
@@ -34,8 +30,8 @@ function makeQR() {
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
       text : "!MOWNR=\"\"",
-      width : 400,
-      height : 400,
+      width : 360,
+      height : 360,
       correctLevel : QRCode.CorrectLevel.M
     });
     once = false;
