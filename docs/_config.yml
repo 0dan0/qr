@@ -1,2 +1,3 @@
-remote_theme: mmistakes/so-simple-theme
+remote_theme: osievert/jekyll-theme-otto
+#remote_theme: mmistakes/so-simple-theme
 #theme: jekyll-theme-cayman
