@@ -9,6 +9,7 @@
             display: inline-block;
         }
 </style>
+
 # Precision Date and Time
 
 <center>
@@ -16,7 +17,8 @@
 <br>
 </center>
 QR Command: <b id="qrtext"></b>
-## ver 0.203
+
+## ver 0.204
 
 <script>
 var once = true;
