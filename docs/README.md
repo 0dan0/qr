@@ -3,12 +3,11 @@
 <style>
         #qrcode{
             width: 80%;
-            margin: 20px;
-            display: inline-block;
+            margin: 10%;
         }
         div{
-            width: 360px;
-            margin: 20px;
+            width: 100%;
+            margin: 5%;
             display: inline-block;
         }
 </style>
@@ -18,7 +17,7 @@
 <br>
 QR Command: <b id="qrtext"></b>
         
-## ver 0.193
+## ver 0.194
 
 <script>
 var once = true;
