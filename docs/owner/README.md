@@ -11,15 +11,14 @@
 </style>
 # Personalize via QR Code
 
-Your name here: <input type="text" id="addname" value=""><br>
-
 <center>
+Your name here: <input type="text" id="addname" value=""><br>
 <div id="qrcode"></div>
 <br>
 QR Command: <b id="qrtext">time</b>
 </center>
         
-## ver 0.203
+## ver 0.204
 
 <script>
 var once = true;
