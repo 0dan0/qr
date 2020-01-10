@@ -3,7 +3,9 @@
 <style>
         #qrcode{
             width: 90%;
-            margin: auto;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
         }
         div{
             width: 90%;
@@ -17,7 +19,7 @@
 <br>
 QR Command: <b id="qrtext"></b>
         
-## ver 0.196
+## ver 0.197
 
 <script>
 var once = true;
