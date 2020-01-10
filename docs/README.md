@@ -18,7 +18,7 @@
 QR Command: <b id="qrtext"></b>
 </center>
 
-## ver 0.200
+## ver 0.201
 
 <script>
 var once = true;
@@ -32,6 +32,8 @@ function makeQR() {
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
       text : "oT0",
+      width : 360,
+      height : 360,
       correctLevel : QRCode.CorrectLevel.M
     });
     once = false;
