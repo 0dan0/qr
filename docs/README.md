@@ -2,7 +2,7 @@
 <script src="qrcode.js"></script>
 <style>
         #qrcode{
-            width: 5cm;
+            width: 80%;
             margin: 20px;
             display: inline-block;
         }
@@ -32,8 +32,6 @@ function makeQR() {
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
       text : "oT0",
-      width : 400,
-      height : 400,
       correctLevel : QRCode.CorrectLevel.M
     });
     once = false;
