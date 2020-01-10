@@ -9,6 +9,7 @@
             display: inline-block;
         }
 </style>
+
 # Personalize via QR Code
 
 Your name here: <input type="text" id="addname" value=""><br>
@@ -20,7 +21,7 @@ QR Command: <b id="qrtext">time</b><br>
 Note: Use \n for a new line. 
 e.g. Joe Bloggs\ncall (555)555-5555 
         
-## ver 0.205
+## ver 0.206
 
 <script>
 var once = true;
