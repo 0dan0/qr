@@ -1,5 +1,5 @@
 <script src="../jquery.min.js"></script>
-<script src="../qrcodeborder.js"></script>
+<script src="../qrcode.js"></script>
 <style>
         #qrcode{
             width: 100%;
@@ -19,7 +19,7 @@ Your name here: <input type="text" id="addname" value=""><br>
 QR Command: <b id="qrtext">time</b>
 </center>
         
-## ver 0.202
+## ver 0.203
 
 <script>
 var once = true;
