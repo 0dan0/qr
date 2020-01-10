@@ -6,7 +6,7 @@
             margin: 20px;
         }
         div{
-            width: 50%;
+            width: 360px;
             margin: 20px;
             display: inline-block;
         }
@@ -17,7 +17,7 @@
 <br>
 QR Command: <b id="qrtext"></b>
         
-## ver 0.187
+## ver 0.188
 
 <script>
 var once = true;
