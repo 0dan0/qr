@@ -17,7 +17,7 @@
 <br>
 QR Command: <b id="qrtext"></b>
         
-## ver 0.185
+## ver 0.186
 
 <script>
 var once = true;
