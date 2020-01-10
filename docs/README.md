@@ -9,8 +9,9 @@
         }
         div{
             width: 90%;
-            margin: auto;
-            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
         }
 </style>
 # Precision Date and Time
@@ -19,7 +20,7 @@
 <br>
 QR Command: <b id="qrtext"></b>
         
-## ver 0.197
+## ver 0.198
 
 <script>
 var once = true;
