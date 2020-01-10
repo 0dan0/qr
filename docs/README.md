@@ -2,8 +2,9 @@
 <script src="qrcode.js"></script>
 <style>
         #qrcode{
-            width: 30%;
+            width: 80%;
             margin: 20px;
+            display: inline-block;
         }
         div{
             width: 360px;
@@ -17,7 +18,7 @@
 <br>
 QR Command: <b id="qrtext"></b>
         
-## ver 0.188
+## ver 0.189
 
 <script>
 var once = true;
