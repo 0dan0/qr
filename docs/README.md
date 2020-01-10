@@ -1,5 +1,5 @@
 <script src="jquery.min.js"></script>
-<script src="qrcode.js"></script>
+<script src="qrcodeborder.js"></script>
 <style>
         #qrcode{
             width: 100%;
@@ -14,10 +14,9 @@
 <center>
 <div id="qrcode"></div>
 <br>
-QR Command: <b id="qrtext"></b>
 </center>
-
-## ver 0.201
+QR Command: <b id="qrtext"></b>
+## ver 0.202
 
 <script>
 var once = true;
