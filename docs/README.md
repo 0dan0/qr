@@ -11,7 +11,7 @@
             display: inline-block;
         }
 </style>
-# High Precision Date and Time
+# Precision Date and Time
 
 <div id="qrcode"></div>
 <br>
