@@ -16,7 +16,7 @@
 </style>
 # Precision Date and Time
 
-<div id="qrcode"></div>
+<center><div id="qrcode"></div></center>
 <br>
 QR Command: <b id="qrtext"></b>
         
