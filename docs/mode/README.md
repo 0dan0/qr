@@ -19,7 +19,7 @@
 Owner text: <input type="text" id="addname" value=""><br>
 
         
-## ver 0.22
+## ver 0.23
 
 <script>
 var once = true;
