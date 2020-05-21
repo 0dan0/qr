@@ -12,7 +12,7 @@
 
 # Chapters Size Control
 
-<input type="checkbox" id="lc" value=""> Enable Large Chapters 
+<input type="checkbox" id="lc" > Enable Large Chapters 
 <div id="qrcode"></div>
         
 ## ver 1.00
