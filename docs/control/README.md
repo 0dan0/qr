@@ -14,7 +14,8 @@
         }
 </style>     
 
-# QR Control settings, the commands under the hood 
+# QR Control
+## The Commands Under The Hood 
 
 On QR Control Instructions page, one of the first demo QR Code was surfing example, using 1440p and 60fps with some custom Protune settings. The QR Code used this command string: **mVr1440p60tlx.5**. While some of that seems like 1440p60, here is a full breakdown of how that command works:
 
@@ -30,9 +31,10 @@ Any of these can be used on their own, or in different order, however the order 
 
 All setting commands start with a lowercase character, followed by either uppercase or numbers for the parameters, the next lowercase character is the next setting command. Below are some additional setting commands with their range of parameters.
 
-Full list of [Settings Commands](SETTINGS.md)
 
-Full list of [Action Commands](ACTIONS.md)
+## The Full List of [Settings Commands](./settings)
+
+## The Full List of [Action Commands](./actions)
 
 
 ## Settings Commands
