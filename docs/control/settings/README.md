@@ -1,4 +1,4 @@
-<script src="../../jquery.min.js"></script>
+# QR Control - Settings
 <script src="../../qrcodeborder.js"></script>
 <style>
         #qrcode{
@@ -14,9 +14,7 @@
         }
 </style>
 
-# Full List the Settings Commands
-
-## Settings Commands
+## Full List the Settings Commands
 Mode commands: 
  * **mV** - mode Video
  * **mP** - mode Photo
@@ -167,7 +165,9 @@ function timeLoop()
   {
     cmd = document.getElementById("tryit").value;
 	if(cmd.length == 0)
+	{
 		cmd = "\"Try It\"";
+	}
   }
   else
   {

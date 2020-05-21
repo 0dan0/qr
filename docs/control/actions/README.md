@@ -1,3 +1,5 @@
+# QR Control - Actions
+
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
 <style>
@@ -14,9 +16,8 @@
         }
 </style>     
 
-# Full List the Action Commands
+## Full List the Action Commands
 
-## Useful Action commands
 * **!\<time>S** - Start at exactly <time> if in hh:mm form, or after n seconds. 
 * **!\<time>SQ** - Start Quickly at approximately <time> if in hh:mm form, or after n seconds.  
 * **!\<time>E** - End at <time> if in hh:mm form, or after n seconds.
@@ -102,7 +103,9 @@ function timeLoop()
   {
     cmd = document.getElementById("tryit").value;
 	if(cmd.length == 0)
-		cmd = "\"Try It\"";	
+	{
+		cmd = "\"Try It\"";
+	}
   }
   else
   {
