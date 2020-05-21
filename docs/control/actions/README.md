@@ -73,7 +73,7 @@ The geek factor is highest in this section.  This is not a Turing-complete langu
 Custom Mode: <input type="text" id="tryit" value=""><br>
 
 
-## ver 1.00
+## ver 1.01
 [BACK](..)
 
 
@@ -101,6 +101,8 @@ function timeLoop()
   if(document.getElementById("tryit") != null)
   {
     cmd = document.getElementById("tryit").value;
+	if(cmd.length == 0)
+		cmd = "\"Try It\"";	
   }
   else
   {
