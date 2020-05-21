@@ -1,5 +1,5 @@
-<script src="../jquery.min.js"></script>
-<script src="../qrcodeborder.js"></script>
+<script src="../../jquery.min.js"></script>
+<script src="../../qrcodeborder.js"></script>
 <style>
         #qrcode{
             height: 380px;
