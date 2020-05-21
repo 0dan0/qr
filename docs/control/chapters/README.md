@@ -12,9 +12,9 @@
 
 # Enable Larger 12GB Chapters
 
-Enable Large Chapters <input type="checkbox" id="largechapter" value="">
+<input type="checkbox" id="lc" value=""> Enable Large Chapters 
         
-## ver 1.0
+## ver 1.01
 [BACK](..)
 
 <script>
@@ -22,13 +22,8 @@ var once = true;
 var qrcode;
 var cmd = "";
 
-
-if(document.getElementById("largechapter") != null)
-{
-	if(document.getElementById("largechapter").checked = true;
-}
-
-function makeQR() {	
+function makeQR() 
+{	
   if(once == true)
   {
     qrcode = new QRCode(document.getElementById("qrcode"), 
@@ -39,26 +34,31 @@ function makeQR() {
       correctLevel : QRCode.CorrectLevel.M
     });
     once = false;
+	
+    if(document.getElementById("lc") != null)
+    {
+      if(document.getElementById("lc").checked = true;
+    }
   }
 }
 
 function timeLoop()
 {
-	if(document.getElementById("largechapter") != null)
-	{
-		if(document.getElementById("largechapter").checked == true)
-		{
-			cmd = "!M64BT=1";
-		}
-		else
-		{
-			cmd = "!M64BT=0";
-		}
-	}
-	else
-	{
-		cmd = "!M64BT=0";
-	}
+  if(document.getElementById("lc") != null)
+  {
+    if(document.getElementById("lc").checked == true)
+    {
+      cmd = "!M64BT=1";
+    }
+    else
+    {
+      cmd = "!M64BT=0";
+    }
+  }
+  else
+  {
+    cmd = "!M64BT=0";
+  }
 
   qrcode.clear(); 
   qrcode.makeCode(cmd);
