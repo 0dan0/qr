@@ -35,8 +35,8 @@
 
 ## Storing metadata (Permanent, survives power off)
 
-* **!M\<fourcc>”string”**
-* **!M\<fourcc>=Number metadata**
+* **!M\<fourcc\>”string”**
+* **!M\<fourcc\>=Number metadata**
 
 Example for display the owner’s name
 **!MOWNR=”Joe Bloggs”**
@@ -53,19 +53,19 @@ As these are a semi-permanent addition to your camera, you can erase all your pe
 
 ## Storing metadata (Temporarily, until power off)
 
-* **oM\<fourcc>”string”**  
-* **oM\<fourcc>=Number metadata**
+* **oM\<fourcc\>”string”**  
+* **oM\<fourcc\>=Number metadata**
 
 ## Scripting
 
 The geek factor is highest in this section.  This is not a Turing-complete language, but it can get many interesting capture control jobs done.  There are save and load commands, additive metadata and clock time conditionals
 
-- **!SAVEname=script**   e.g. !SAVEdaily=dP!12:00S!Ldaily - a save script called ‘daily’ that repeatedly shots one photo every day at noon.
-- **!Lname**  e.g. !LnightLapse - load add run a script called nightLapse
-- **oAxxxx=1** e.g. oAMETA=1  --  to implement a basic counter in metadata
-- **<timeCMD**  e.g. <09:00!30R!Lother - if current time is less than 9am, wait 30mins and loop, otherwise load script called ‘other’.
-- **>timeCMD** e.g. !SM9>22:00!R - do motion detection until 10PM, then stop
-- **>timeA<timeBcmdTrue~cmdFalse** e.g. mP>06:00<20:00!180SQ~!06:00S!R - If time is between 06:00 and 20:00 take a photo in 180 seconds else start a 6am, repeat.
+* **!SAVEname=script**  e.g. !SAVEdaily=dPmP!12:00S!Ldaily - a save script called ‘daily’ that repeatedly shots one photo every day at noon.
+* **!Lname**  e.g. !LnightLapse - load add run a script called nightLapse
+* **oAxxxx=1** e.g. oAMETA=1  --  to implement a basic counter in metadata
+* **\<timeCMD**  e.g. \<09:00!30R!Lother - if current time is less than 9am, wait 30mins and loop, otherwise load script called ‘other’.
+* **\>timeCMD** e.g. !SM9\>22:00!R - do motion detection until 10PM, then stop
+* **\>timeA\<timeBcmdTrue~cmdFalse** e.g. mP>06:00<20:00!180SQ~!06:00S!R - If time is between 06:00 and 20:00 take a photo in 180 seconds else start a 6am, repeat.
 
 
 
@@ -78,7 +78,7 @@ The geek factor is highest in this section.  This is not a Turing-complete langu
 Custom Mode: <input type="text" id="tryit" value=""><br>
 
 
-## ver 1.01
+## ver 1.00
 [BACK](..)
 
 
