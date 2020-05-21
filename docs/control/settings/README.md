@@ -138,7 +138,7 @@ Same further option (‘o’) commands
 Custom Mode: <input type="text" id="tryit" value=""><br>
 
 
-## ver 1.01
+## ver 1.00
 [BACK](..)
 
 
@@ -163,9 +163,9 @@ function makeQR() {
 
 function timeLoop()
 {
-  if(document.getElementById("addname") != null)
+  if(document.getElementById("tryit") != null)
   {
-    cmd = document.getElementById("addname").value;
+    cmd = document.getElementById("tryit").value;
   }
   else
   {
