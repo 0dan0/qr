@@ -431,6 +431,12 @@ Low Light      <input type="radio" id="all1" name="all" value="l0"><label for="a
 <p>Additional Commands: <input type="text" id="addcmd" value=""><br>
 <p>
 
+
+<center>
+<div id="qrcode"></div>
+<br>
+</center>
+
 <br>
 
 GoPro QR Command: <b id="txt"></b>
