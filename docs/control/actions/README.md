@@ -41,8 +41,9 @@
 Example for display the owner’s name
 **!MOWNR=”Joe Bloggs”**
 
-All tags between OWNA and OWNZ will be displayed and stored in GoPro-owner.txt
-All tags between OWNa and OWNz will be only stored in the GoPro-owner.txt
+All tags between **OWNA** and **OWNZ** will be displayed and stored in **GoPro-owner.txt**.
+
+All tags between **OWNa** and **OWNz** will be only stored in the **GoPro-owner.txt**
 
 Any four character code can be used for store other information. You can also store numeric data examples: 
 * **!MCAMR=53** - metadata CAMR will be 53 
