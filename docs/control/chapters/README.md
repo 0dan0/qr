@@ -18,9 +18,11 @@
 <div id="qrcode"></div>
 <br>
 </center>
-QR Command: <b id="qrtext">time</b><br>
+QR Command: <b id="qrtext">command</b><br>
 
-<p>Warning: Larger chapters may not work everywhere in the ecosystem, even the camera will not playback files larger than 4GB in this current firmware. Yet the file are valid, and work in FFMPEG, VLC and other industry tools. So this one of the more experiment features.  
+Warning: Larger chapters may not work everywhere in the ecosystem, even the camera will not playback files larger than 4GB in this current firmware. Yet the files are valid, and have been tested to work in many tools. So this one of the more experimental features, so please test before commiting to this new workflow.
+
+<br> 
         
 ## ver 1.00
 [BACK](..)
