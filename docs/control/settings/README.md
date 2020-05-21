@@ -1,4 +1,3 @@
-# QR Control - Settings
 <script src="../../qrcodeborder.js"></script>
 <style>
         #qrcode{

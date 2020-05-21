@@ -1,5 +1,3 @@
-# QR Control - Actions
-
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
 <style>
