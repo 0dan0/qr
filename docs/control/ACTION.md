@@ -1,0 +1,116 @@
+<script src="../jquery.min.js"></script>
+<script src="../qrcodeborder.js"></script>
+<style>
+        #qrcode{
+            height: 380px;
+            width: 380px;
+            margin: 0px;
+        }
+        div{
+            height: 380px;
+            width: 380px;
+            margin: 0px;
+            display: inline-block;
+        }
+</style>     
+
+
+Useful Action commands
+* **!\<time>S** - Start at exact <time> if in hh:mm form, or after n seconds. 
+* **!\<time>SQ** - Start Quickly at approximately <time> if in hh:mm form, or after n seconds.  
+* **!\<time>E** - End at <time> if in hh:mm form, or after n seconds.
+* **!\<time>R** - Repeat the whole command
+* **!\<time>N** - No Action, useful if you just need a pause
+* **!\<time>O** - Off - shutdown the camera.
+
+examples:
+
+- !S - start now  
+- !60E - end after 60 seconds
+- !2R - repeat after 2 seconds
+- !s-01:00S - start one hour before sunset
+- !nS - start at true noon.
+- !s1200E - end 1200 seconds after sunset
+- !r-600S - start 600 seconds before sunrise
+Storing metadata (Permanent)
+
+!M<fourcc>”string”  or !M<fourcc>=Number metadata
+Example for display the owner’s name
+!MOWNR=”Joe Bloggs”
+
+All tags between OWNA and OWNZ will be displayed and stored in GoPro-owner.txt
+All tags between OWNa and OWNz will be only stored in the GoPro-owner.txt
+
+Any four character code can be used for store other information. You can also store numeric data e.g.  !MCAMR=53 or !MABCD=45.234 or !MUNIT=-1723.
+
+As these are a semi-permanent addition to your camera, you can erase all your permanent metadata with a '!RESET’ QR command. 
+
+Storing metadata (Temporarily, until power off)
+
+oM<fourcc>”string”  or oM<fourcc>=Number metadata
+
+Scripting
+
+The geek factor is highest in this section.  This is not a Turing-complete language, but it can get many interesting capture control jobs done.  There are save and load commands, additive metadata and conditionals
+
+- !SAVEname=script   e.g. !SAVEdaily=dP!12:00S!Ldaily - a save script called ‘daily’ that repeatedly shots one photo every day at noon.
+- !Lname  e.g. !LnightLapse - load add run a script called nightLapse
+- oAxxxx=1 e.g. oAMETA=1  --  to implement a basic counter in metadata
+- <timeCMD  e.g. <09:00!30R!Lother - if current time is less than 9am, wait 30mins and loop, otherwise load script called ‘other’.
+- >timeCMD e.g. !SM9>22:00!R - do motion detection until 10PM, then stop
+- >timeA<timeBCMD~CMD e.g. mP>06:00<20:00!180SQ~!06:00S!R - If time is between 06:00 and 20:00 take a photo in 180 seconds else start a 6am, repeat.
+
+
+
+# Experiment Typing-in Your Custom Action:
+
+<div id="qrcode"></div>
+Custom Action: <input type="text" id="addname" value=""><br>
+
+
+## ver 1.00
+
+
+<script>
+var once = true;
+var qrcode;
+var cmd = "";
+
+function makeQR() {	
+  if(once == true)
+  {
+    qrcode = new QRCode(document.getElementById("qrcode"), 
+    {
+      text : "!MOWNR=\"\"",
+      width : 400,
+      height : 400,
+      correctLevel : QRCode.CorrectLevel.M
+    });
+    once = false;
+  }
+}
+
+function timeLoop()
+{
+  if(document.getElementById("addname") != null)
+  {
+    cmd = "!MOWNR=\"" + document.getElementById("addname").value + "\"";
+  }
+  else
+  {
+    cmd = "!MOWNR=\"\"";
+  }
+
+  qrcode.clear(); 
+  qrcode.makeCode(cmd);
+  var t = setTimeout(timeLoop, 50);
+}
+
+function myReloadFunction() {
+  location.reload();
+}
+
+makeQR();
+timeLoop();
+
+</script>
