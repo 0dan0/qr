@@ -15,7 +15,7 @@
 <input type="checkbox" id="lc" value=""> Enable Large Chapters 
 <div id="qrcode"></div>
         
-## ver 1.01
+## ver 1.00
 [BACK](..)
 
 <script>
