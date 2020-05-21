@@ -10,20 +10,7 @@
         }
 </style>
 
-# My QR Control v1.00
-
-<input type="checkbox" id="lchptrs" name="lchptrs" checked> 
-<label for="lchptrs">Enable Large Chapters</label><br>
-<center>
-<div id="qrcode"></div>
-<br>
-</center>
-QR Command: <b id="qrtext">command</b><br>
-
-Warning: Larger chapters may not work everywhere in the ecosystem, even the camera will not playback files larger than 4GB in this current firmware. Yet the files are valid, and have been tested to work in many tools. So this one of the more experimental features, so please test before commiting to this new workflow.
-
-<br> 
-
+# My QR Control v1.01
 
 <p><b>Camera Mode: </b><input type="radio" id="m7" name="mode" value="" checked><label for="m7">not set</label><br>
   <input type="radio" id="m1" name="mode" value="mV"><label  for="m1">Video</label>&nbsp;
@@ -33,6 +20,19 @@ Warning: Larger chapters may not work everywhere in the ecosystem, even the came
   <input type="radio" id="m5" name="mode" value="mPB"><label for="m5">Burst Photo</label>&nbsp;
   <input type="radio" id="m6" name="mode" value="mPN"><label for="m6">Night Photo</label><br>
 <table>
+
+<div id="settingsRES" style="display: none">
+<p><b>Video Resolution: </b><input type="radio" id="r7" name="res" value="" checked> <label for="r7">not set</label><br>
+16:9 - 
+  <input type="radio" id="r1" name="res" value="r1080"><label for="r1">1080p </label>&nbsp;
+  <input type="radio" id="r2" name="res" value="r27"  ><label for="r2">2.7k  </label>&nbsp;
+  <input type="radio" id="r3" name="res" value="r4"   ><label for="r3">4k </label><br>
+ 4:3 - 
+  <input type="radio" id="r4" name="res" value="r1440"><label for="r4">1440p </label>&nbsp;
+  <input type="radio" id="r5" name="res" value="r27T" ><label for="r5">2.7k 4x3 </label>&nbsp;
+  <input type="radio" id="r6" name="res" value="r4T"  ><label for="r6">4k 4x3 </label><br>
+ </div>
+ 
 
 <div id="settingsBurst" style="display: none">
 <p><b>Burst Style: </b>
@@ -103,20 +103,6 @@ Warning: Larger chapters may not work everywhere in the ecosystem, even the came
 </form>
 </div>
 
-
-<div id="settingsRES" style="display: none">
-<p><b>Video Resolution: </b><input type="radio" id="r7" name="res" value="" checked> <label for="r7">not set</label><br>
-16:9 - 
-  <input type="radio" id="r1" name="res" value="r1080"><label for="r1">1080p </label>&nbsp;
-  <input type="radio" id="r2" name="res" value="r27"  ><label for="r2">2.7k  </label>&nbsp;
-  <input type="radio" id="r3" name="res" value="r4"   ><label for="r3">4k </label><br>
- 4:3 - 
-  <input type="radio" id="r4" name="res" value="r1440"><label for="r4">1440p </label>&nbsp;
-  <input type="radio" id="r5" name="res" value="r27T" ><label for="r5">2.7k 4x3 </label>&nbsp;
-  <input type="radio" id="r6" name="res" value="r4T"  ><label for="r6">4k 4x3 </label><br>
-  
- </div>
- 
 <div id="settingsRESTLV" style="display: none">
 <p><b>TLV/Warp Resolution: </b>
   <input type="radio" id="rt1" name="restlv" value="r1080"><label for="rt1">1080p </label>&nbsp;
@@ -445,10 +431,9 @@ Low Light      <input type="radio" id="all1" name="all" value="l0"><label for="a
 <p>Additional Commands: <input type="text" id="addcmd" value=""><br>
 <p>
 
-<button onclick="myReloadFunction()">Reset page</button>
 <br>
-<div id="qrcode" style="margin-left:0px;"></div>
-<button onclick="mySaveFunction()">Save QRCode</button>&nbsp;&nbsp;&nbsp;&nbsp;GoPro QR Command: <b id="txt"></b>
+
+GoPro QR Command: <b id="txt"></b>
 
 
 
