@@ -10,9 +10,10 @@
         }
 </style>
 
-# Enable Larger 12GB Chapters
+# Chapters Size Control
 
 <input type="checkbox" id="lc" value=""> Enable Large Chapters 
+<div id="qrcode"></div>
         
 ## ver 1.01
 [BACK](..)
@@ -28,7 +29,7 @@ function makeQR()
   {
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
-      text : "!M64BT=1",
+      text : "",
       width : 360,
       height : 360,
       correctLevel : QRCode.CorrectLevel.M
