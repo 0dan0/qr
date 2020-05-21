@@ -13,14 +13,6 @@
 # Enable Larger 12GB Chapters
 
 Enable Large Chapters <input type="checkbox" id="largechapter" value="">
-Your name here: <input type="text" id="addname" value=""><br>
-<center>
-<div id="qrcode"></div>
-<br>
-</center>
-QR Command: <b id="qrtext">time</b><br>
-Note: Use \n for a new line. 
-e.g. Joe Bloggs\ncall (555)555-5555 
         
 ## ver 1.0
 [BACK](..)
@@ -29,6 +21,12 @@ e.g. Joe Bloggs\ncall (555)555-5555
 var once = true;
 var qrcode;
 var cmd = "";
+
+
+if(document.getElementById("largechapter") != null)
+{
+	if(document.getElementById("largechapter").checked = true;
+}
 
 function makeQR() {	
   if(once == true)
@@ -41,11 +39,6 @@ function makeQR() {
       correctLevel : QRCode.CorrectLevel.M
     });
     once = false;
-	
-	if(document.getElementById("largechapter") != null)
-	{
-		if(document.getElementById("largechapter").checked = true;
-	}
   }
 }
 
@@ -69,7 +62,6 @@ function timeLoop()
 
   qrcode.clear(); 
   qrcode.makeCode(cmd);
-  document.getElementById("qrtext").innerHTML = cmd;
   var t = setTimeout(timeLoop, 50);
 }
 
