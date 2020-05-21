@@ -12,13 +12,14 @@
 
 # Chapters Size Control
 
-<input type="checkbox" id="lc" value="t"> Enable Large Chapters <br>
+<input type="checkbox" id="lc" name="checkb" value="t"> Enable Large Chapters <br>
 <center>
 <div id="qrcode"></div>
 <br>
 </center>
+Warning: Larger chapters may not work everywhere in the ecosystem, even the camera will not playback files larger than 4GB in this current firmware.  So this one of the more experiment features.  
         
-## ver 1.01
+## ver 1.00
 [BACK](..)
 
 <script>
