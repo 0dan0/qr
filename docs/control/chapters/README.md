@@ -12,7 +12,8 @@
 
 # Chapters Size Control
 
-<input type="checkbox" id="lchptrs" checked> Enable Large Chapters <br>
+<input type="checkbox" id="lchptrs" name="lchptrs" checked> 
+<label for="lchptrs">Enable Large Chapters</label><br>
 <center>
 <div id="qrcode"></div>
 <br>
