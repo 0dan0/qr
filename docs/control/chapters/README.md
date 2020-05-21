@@ -18,7 +18,9 @@
 <div id="qrcode"></div>
 <br>
 </center>
-Warning: Larger chapters may not work everywhere in the ecosystem, even the camera will not playback files larger than 4GB in this current firmware. Yet the file are valid, and work in FFMPEG, VLC and other industry tools. So this one of the more experiment features.  
+QR Command: <b id="qrtext">time</b><br>
+
+<p>Warning: Larger chapters may not work everywhere in the ecosystem, even the camera will not playback files larger than 4GB in this current firmware. Yet the file are valid, and work in FFMPEG, VLC and other industry tools. So this one of the more experiment features.  
         
 ## ver 1.00
 [BACK](..)
@@ -56,6 +58,7 @@ function timeLoop()
 
   qrcode.clear(); 
   qrcode.makeCode(cmd);
+  document.getElementById("qrtext").innerHTML = cmd;
   var t = setTimeout(timeLoop, 50);
 }
 
