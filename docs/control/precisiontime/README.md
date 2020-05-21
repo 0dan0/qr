@@ -19,6 +19,7 @@
 QR Command: <b id="qrtext"></b>
 
 ## ver 1.0
+[BACK](..)
 
 <script>
 var once = true;
