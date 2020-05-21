@@ -25,41 +25,47 @@
 
 ## examples:
 
-- **!S** - start now  
-- **!60E** - end after 60 seconds (End commands are not used for photos.)
-- **!2R** - repeat after 2 seconds
-- **!s-01:00S** - start one hour before sunset
-- **!nS** - start at true noon.
-- **!s1200E** - end 1200 seconds after sunset
-- **!r-600S** - start 600 seconds before sunrise
+* **!S** - start now  
+* **!60E** - end after 60 seconds (End commands are not used for photos.)
+* **!2R** - repeat after 2 seconds
+* **!s-01:00S** - start one hour before sunset
+* **!nS** - start at true noon.
+* **!s1200E** - end 1200 seconds after sunset
+* **!r-600S** - start 600 seconds before sunrise
 
-## Storing metadata (Permanent)
+## Storing metadata (Permanent, survives power off)
 
-!M<fourcc>”string”  or !M<fourcc>=Number metadata
+* **!M\<fourcc>”string”**
+* **!M\<fourcc>=Number metadata**
+
 Example for display the owner’s name
-!MOWNR=”Joe Bloggs”
+**!MOWNR=”Joe Bloggs”**
 
 All tags between OWNA and OWNZ will be displayed and stored in GoPro-owner.txt
 All tags between OWNa and OWNz will be only stored in the GoPro-owner.txt
 
-Any four character code can be used for store other information. You can also store numeric data e.g.  !MCAMR=53 or !MABCD=45.234 or !MUNIT=-1723.
+Any four character code can be used for store other information. You can also store numeric data examples: 
+* **!MCAMR=53** - metadata CAMR will be 53 
+* **!MABCD=45.234** - metadata ABCD will be floating point 45.234
+* **!MUNIT=-1723** - metadata UNIT will be -1723 
 
-As these are a semi-permanent addition to your camera, you can erase all your permanent metadata with a '!RESET’ QR command. 
+As these are a semi-permanent addition to your camera, you can erase all your permanent metadata with a **!RESET** QR command. 
 
-Storing metadata (Temporarily, until power off)
+## Storing metadata (Temporarily, until power off)
 
-oM<fourcc>”string”  or oM<fourcc>=Number metadata
+* **oM\<fourcc>”string”**  
+* **oM\<fourcc>=Number metadata**
 
-Scripting
+## Scripting
 
-The geek factor is highest in this section.  This is not a Turing-complete language, but it can get many interesting capture control jobs done.  There are save and load commands, additive metadata and conditionals
+The geek factor is highest in this section.  This is not a Turing-complete language, but it can get many interesting capture control jobs done.  There are save and load commands, additive metadata and clock time conditionals
 
-- !SAVEname=script   e.g. !SAVEdaily=dP!12:00S!Ldaily - a save script called ‘daily’ that repeatedly shots one photo every day at noon.
-- !Lname  e.g. !LnightLapse - load add run a script called nightLapse
-- oAxxxx=1 e.g. oAMETA=1  --  to implement a basic counter in metadata
-- <timeCMD  e.g. <09:00!30R!Lother - if current time is less than 9am, wait 30mins and loop, otherwise load script called ‘other’.
-- >timeCMD e.g. !SM9>22:00!R - do motion detection until 10PM, then stop
-- >timeA<timeBCMD~CMD e.g. mP>06:00<20:00!180SQ~!06:00S!R - If time is between 06:00 and 20:00 take a photo in 180 seconds else start a 6am, repeat.
+- **!SAVEname=script**   e.g. !SAVEdaily=dP!12:00S!Ldaily - a save script called ‘daily’ that repeatedly shots one photo every day at noon.
+- **!Lname**  e.g. !LnightLapse - load add run a script called nightLapse
+- **oAxxxx=1** e.g. oAMETA=1  --  to implement a basic counter in metadata
+- **<timeCMD**  e.g. <09:00!30R!Lother - if current time is less than 9am, wait 30mins and loop, otherwise load script called ‘other’.
+- **>timeCMD** e.g. !SM9>22:00!R - do motion detection until 10PM, then stop
+- **>timeA<timeBcmdTrue~cmdFalse** e.g. mP>06:00<20:00!180SQ~!06:00S!R - If time is between 06:00 and 20:00 take a photo in 180 seconds else start a 6am, repeat.
 
 
 
