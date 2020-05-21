@@ -169,7 +169,7 @@ function timeLoop()
   }
   else
   {
-    cmd = "\"Try It\"",
+    cmd = "\"Try It\"";
   }
 
   qrcode.clear(); 
