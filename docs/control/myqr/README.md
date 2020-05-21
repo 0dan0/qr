@@ -10,20 +10,7 @@
         }
 </style>
 
-# Chapters Size Control
-
-<input type="checkbox" id="lchptrs" name="lchptrs" checked> 
-<label for="lchptrs">Enable Large Chapters</label><br>
-<center>
-<div id="qrcode"></div>
-<br>
-</center>
-QR Command: <b id="qrtext">command</b><br>
-
-Warning: Larger chapters may not work everywhere in the ecosystem, even the camera will not playback files larger than 4GB in this current firmware. Yet the files are valid, and have been tested to work in many tools. So this one of the more experimental features, so please test before commiting to this new workflow.
-
-<br> 
-
+# My QR Control
 
 <p><b>Camera Mode: </b><input type="radio" id="m7" name="mode" value="" checked><label for="m7">not set</label><br>
   <input type="radio" id="m1" name="mode" value="mV"><label  for="m1">Video</label>&nbsp;
@@ -34,6 +21,19 @@ Warning: Larger chapters may not work everywhere in the ecosystem, even the came
   <input type="radio" id="m6" name="mode" value="mPN"><label for="m6">Night Photo</label><br>
 <table>
 
+<div id="settingsRES" style="display: none">
+<p><b>Video Resolution: </b>
+  <input type="radio" id="r7" name="res" value="" checked> <label for="r7">not set</label><br>
+ 16:9 - 
+  <input type="radio" id="r1" name="res" value="r1080"><label for="r1">1080p </label>&nbsp;
+  <input type="radio" id="r2" name="res" value="r27"  ><label for="r2">2.7k  </label>&nbsp;
+  <input type="radio" id="r3" name="res" value="r4"   ><label for="r3">4k </label><br>
+ 4:3 - 
+  <input type="radio" id="r4" name="res" value="r1440"><label for="r4">1440p </label>&nbsp;
+  <input type="radio" id="r5" name="res" value="r27T" ><label for="r5">2.7k 4x3 </label>&nbsp;
+  <input type="radio" id="r6" name="res" value="r4T"  ><label for="r6">4k 4x3 </label><br>
+ </div>
+ 
 <div id="settingsBurst" style="display: none">
 <p><b>Burst Style: </b>
   <input type="radio" id="b1" name="burst" value="b3N1"><label  for="b1">3/1 </label>&nbsp;
@@ -48,28 +48,17 @@ Warning: Larger chapters may not work everywhere in the ecosystem, even the came
   <input type="radio" id="b10" name="burst" value="" checked><label for="b10">not set</label>
 </div>
 
-
-<div id="settingsLoop" style="display: none">
-<p><b>Loop Length: </b>
-  <input type="radio" id="loop1" name="loop" value="" checked><label for="loop1">5 min </label>&nbsp;
-  <input type="radio" id="loop2" name="loop" value="2"><label for="loop2">20 min </label>&nbsp;
-  <input type="radio" id="loop3" name="loop" value="6"><label for="loop3">60 min </label>&nbsp;
-  <input type="radio" id="loop4" name="loop" value="12"><label for="loop4">120 min </label>&nbsp;
-  <input type="radio" id="loop5" name="loop" value="M"><label for="loop5">MAX</label><br>
-</div>
-
-
 <div id="settingsTimelapse" style="display: none">
 <p><b>Timelapse Interval: </b>
-  <input type="radio" id="fpslapse1"   name="fpslapse" value="p15"><label for="fpslapse1">2X </label>&nbsp;
-  <input type="radio" id="fpslapse2"    name="fpslapse" value="p6"><label for="fpslapse2">5X </label>&nbsp;
-  <input type="radio" id="fpslapse3"    name="fpslapse" value="p3"><label for="fpslapse3">10X </label>&nbsp;
-  <input type="radio" id="fpslapse4"    name="fpslapse" value="p2"><label for="fpslapse4">0.5s/15X </label>&nbsp;
-  <input type="radio" id="fpslapse5"    name="fpslapse" value="p1"><label for="fpslapse5">1s/30X </label>&nbsp;
-  <input type="radio" id="fpslapse6"   name="fpslapse" value="p.2"><label for="fpslapse6">2s </label>&nbsp;
-  <input type="radio" id="fpslapse7"   name="fpslapse" value="p.5"><label for="fpslapse7">5s </label>&nbsp;
-  <input type="radio" id="fpslapse8"  name="fpslapse" value="p.10"><label for="fpslapse8">10s </label>&nbsp;
-  <input type="radio" id="fpslapse9"  name="fpslapse" value="p.30"><label for="fpslapse9">30s </label>&nbsp;
+  <input type="radio" id="fpslapse1" name="fpslapse" value="p15"><label for="fpslapse1">2X </label>&nbsp;
+  <input type="radio" id="fpslapse2" name="fpslapse" value="p6"><label for="fpslapse2">5X </label>&nbsp;
+  <input type="radio" id="fpslapse3" name="fpslapse" value="p3"><label for="fpslapse3">10X </label>&nbsp;
+  <input type="radio" id="fpslapse4" name="fpslapse" value="p2"><label for="fpslapse4">0.5s/15X </label>&nbsp;
+  <input type="radio" id="fpslapse5" name="fpslapse" value="p1"><label for="fpslapse5">1s/30X </label>&nbsp;
+  <input type="radio" id="fpslapse6" name="fpslapse" value="p.2"><label for="fpslapse6">2s </label>&nbsp;
+  <input type="radio" id="fpslapse7" name="fpslapse" value="p.5"><label for="fpslapse7">5s </label>&nbsp;
+  <input type="radio" id="fpslapse8" name="fpslapse" value="p.10"><label for="fpslapse8">10s </label>&nbsp;
+  <input type="radio" id="fpslapse9" name="fpslapse" value="p.30"><label for="fpslapse9">30s </label>&nbsp;
   <input type="radio" id="fpslapse10" name="fpslapse" value="p.60"><label for="fpslapse10">60s </label>&nbsp;
   <input type="radio" id="fpslapse11" name="fpslapse" value="" checked><label for="fpslapse11">not set</label><br>
 </div>
@@ -104,18 +93,6 @@ Warning: Larger chapters may not work everywhere in the ecosystem, even the came
 </div>
 
 
-<div id="settingsRES" style="display: none">
-<p><b>Video Resolution: </b><input type="radio" id="r7" name="res" value="" checked> <label for="r7">not set</label><br>
-16:9 - 
-  <input type="radio" id="r1" name="res" value="r1080"><label for="r1">1080p </label>&nbsp;
-  <input type="radio" id="r2" name="res" value="r27"  ><label for="r2">2.7k  </label>&nbsp;
-  <input type="radio" id="r3" name="res" value="r4"   ><label for="r3">4k </label><br>
- 4:3 - 
-  <input type="radio" id="r4" name="res" value="r1440"><label for="r4">1440p </label>&nbsp;
-  <input type="radio" id="r5" name="res" value="r27T" ><label for="r5">2.7k 4x3 </label>&nbsp;
-  <input type="radio" id="r6" name="res" value="r4T"  ><label for="r6">4k 4x3 </label><br>
-  
- </div>
  
 <div id="settingsRESTLV" style="display: none">
 <p><b>TLV/Warp Resolution: </b>
@@ -501,7 +478,6 @@ function startTime() {
 	dset("settingsPhoto", false);
 	dset("settingsPT", false);
 	dset("settingsBurst", false);
-	//dset("settingsLoop", false);
 	dset("settingsTimelapse", false);
 	dset("settingsNightlapse", false);
 	dset("settingsNightexposure", false);
@@ -563,15 +539,6 @@ function startTime() {
 		dset("settingsPT", true);
 		dset("settingsAUDT",true);
 		break;
-		
-	/*	case 2: //Loop
-		dset("settingsRES", true);
-		dset("settingsFPS", true);
-		dset("settingsFOV", true);
-		dset("settingsLoop", true);
-		if(document.getElementById("pt") != null)
-			document.getElementById("pt").checked = false;
-		break;*/
 		
 		case 2: //Timelapse Video
 		dset("settingsTimelapse", true);		
@@ -705,12 +672,6 @@ function startTime() {
 	
 	switch(checkedmode)
 	{
-		//case 2: //PIV 
-		//	cmd = dcmd(cmd,"piv");
-		//	break;
-		//case 2: //Loop 
-		//	cmd = dcmd(cmd,"loop");
-		 //	break;	
 		case 2: //TLV
 			cmd = dcmd(cmd,"fpslapse");
 			break;
