@@ -14,7 +14,6 @@
         }
 </style>
 
-[BACK](..)
 # Full List the Settings Commands
 
 ## Settings Commands
@@ -139,7 +138,7 @@ Same further option (‘o’) commands
 Custom Mode: <input type="text" id="tryit" value=""><br>
 
 
-## ver 1.00
+## ver 1.01
 [BACK](..)
 
 
@@ -153,7 +152,7 @@ function makeQR() {
   {
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
-      text : "\"Try It\"",
+      text : "Try It",
       width : 400,
       height : 400,
       correctLevel : QRCode.CorrectLevel.M
@@ -164,9 +163,9 @@ function makeQR() {
 
 function timeLoop()
 {
-  if(document.getElementById("tryit") != null)
+  if(document.getElementById("addname") != null)
   {
-    cmd = document.getElementById("tryit").value;
+    cmd = document.getElementById("addname").value;
   }
   else
   {

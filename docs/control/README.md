@@ -9,7 +9,6 @@ On QR Control Instructions page, one of the first demo QR Code was surfing examp
 -   **t** - Protune on
 -   **w55** - white balance to 5500K
 -   **x.5** - exposure compensation is set to 0.5
-
   
 Any of these can be used on their own, or in different order, however the order can have meaning.  If I enable protune with a ‘t’ command, while in the Photo mode, then switched to video, the video will be in whatever mode setting you had previously. The individual commands within a QR Code are performed in order, just like you would when using the touch LCD.
 
@@ -21,4 +20,4 @@ All setting commands start with a lowercase character, followed by either upperc
 ## The Full List of [**Action Commands**](./actions)
 
 
-### ver 1.00
+### ver 1.01

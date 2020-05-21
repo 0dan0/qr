@@ -14,7 +14,6 @@
         }
 </style>     
 
-[BACK](..)
 # Full List the Action Commands
 
 ## Useful Action commands
@@ -67,12 +66,14 @@ The geek factor is highest in this section.  This is not a Turing-complete langu
 
 # Experiment Typing-in Your Custom Action:
 
+
 <div id="qrcode"></div>
-Custom Action: <input type="text" id="addname" value=""><br>
+Custom Mode: <input type="text" id="tryit" value=""><br>
 
 
-## ver 1.00
+## ver 1.01
 [BACK](..)
+
 
 <script>
 var once = true;
@@ -84,7 +85,7 @@ function makeQR() {
   {
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
-      text : "\"Try It\"",
+      text : "Try It",
       width : 400,
       height : 400,
       correctLevel : QRCode.CorrectLevel.M
@@ -95,9 +96,9 @@ function makeQR() {
 
 function timeLoop()
 {
-  if(document.getElementById("tryit") != null)
+  if(document.getElementById("addname") != null)
   {
-    cmd = document.getElementById("tryit").value;
+    cmd = document.getElementById("addname").value;
   }
   else
   {
@@ -117,3 +118,4 @@ makeQR();
 timeLoop();
 
 </script>
+
