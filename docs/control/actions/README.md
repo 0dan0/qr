@@ -14,25 +14,28 @@
         }
 </style>     
 
+[BACK](..)
+# Full List the Action Commands
 
-Useful Action commands
-* **!\<time>S** - Start at exact <time> if in hh:mm form, or after n seconds. 
+## Useful Action commands
+* **!\<time>S** - Start at exactly <time> if in hh:mm form, or after n seconds. 
 * **!\<time>SQ** - Start Quickly at approximately <time> if in hh:mm form, or after n seconds.  
 * **!\<time>E** - End at <time> if in hh:mm form, or after n seconds.
 * **!\<time>R** - Repeat the whole command
 * **!\<time>N** - No Action, useful if you just need a pause
 * **!\<time>O** - Off - shutdown the camera.
 
-examples:
+## examples:
 
-- !S - start now  
-- !60E - end after 60 seconds
-- !2R - repeat after 2 seconds
-- !s-01:00S - start one hour before sunset
-- !nS - start at true noon.
-- !s1200E - end 1200 seconds after sunset
-- !r-600S - start 600 seconds before sunrise
-Storing metadata (Permanent)
+- **!S** - start now  
+- **!60E** - end after 60 seconds (End commands are not used for photos.)
+- **!2R** - repeat after 2 seconds
+- **!s-01:00S** - start one hour before sunset
+- **!nS** - start at true noon.
+- **!s1200E** - end 1200 seconds after sunset
+- **!r-600S** - start 600 seconds before sunrise
+
+## Storing metadata (Permanent)
 
 !M<fourcc>”string”  or !M<fourcc>=Number metadata
 Example for display the owner’s name
@@ -69,7 +72,7 @@ Custom Action: <input type="text" id="addname" value=""><br>
 
 
 ## ver 1.00
-
+[BACK](..)
 
 <script>
 var once = true;
@@ -81,7 +84,7 @@ function makeQR() {
   {
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
-      text : "!MOWNR=\"\"",
+      text : "\"Try It\"",
       width : 400,
       height : 400,
       correctLevel : QRCode.CorrectLevel.M
@@ -92,13 +95,13 @@ function makeQR() {
 
 function timeLoop()
 {
-  if(document.getElementById("addname") != null)
+  if(document.getElementById("tryit") != null)
   {
-    cmd = "!MOWNR=\"" + document.getElementById("addname").value + "\"";
+    cmd = document.getElementById("tryit").value;
   }
   else
   {
-    cmd = "!MOWNR=\"\"";
+    cmd = "";
   }
 
   qrcode.clear(); 
