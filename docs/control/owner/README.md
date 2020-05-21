@@ -29,7 +29,8 @@ var once = true;
 var qrcode;
 var cmd = "";
 
-function makeQR() {	
+function makeQR() 
+{	
   if(once == true)
   {
     qrcode = new QRCode(document.getElementById("qrcode"), 

@@ -12,12 +12,12 @@
 
 # Chapters Size Control
 
-<input type="checkbox" id="lc" name="checkb" value="t"> Enable Large Chapters <br>
+<input type="checkbox" id="lchptrs" checked> Enable Large Chapters <br>
 <center>
 <div id="qrcode"></div>
 <br>
 </center>
-Warning: Larger chapters may not work everywhere in the ecosystem, even the camera will not playback files larger than 4GB in this current firmware.  So this one of the more experiment features.  
+Warning: Larger chapters may not work everywhere in the ecosystem, even the camera will not playback files larger than 4GB in this current firmware. Yet the file are valid, and work in FFMPEG, VLC and other industry tools. So this one of the more experiment features.  
         
 ## ver 1.00
 [BACK](..)
@@ -33,36 +33,24 @@ function makeQR()
   {
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
-      text : "",
+      text : "!M64BT=1",
       width : 360,
       height : 360,
       correctLevel : QRCode.CorrectLevel.M
     });
     once = false;
-	
-    if(document.getElementById("lc") != null)
-    {
-      if(document.getElementById("lc").checked = true;
-    }
   }
 }
 
 function timeLoop()
 {
-  if(document.getElementById("lc") != null)
+  cmd = "!M64BT=0";
+  if(document.getElementById("lchptrs") != null)
   {
-    if(document.getElementById("lc").checked == true)
+    if(document.getElementById("lchptrs").checked == true)
     {
       cmd = "!M64BT=1";
     }
-    else
-    {
-      cmd = "!M64BT=0";
-    }
-  }
-  else
-  {
-    cmd = "!M64BT=0";
   }
 
   qrcode.clear(); 
