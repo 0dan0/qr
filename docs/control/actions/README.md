@@ -87,7 +87,7 @@ function makeQR() {
   {
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
-      text : "Try It",
+      text : "\"Try It\"",
       width : 400,
       height : 400,
       correctLevel : QRCode.CorrectLevel.M
@@ -104,7 +104,7 @@ function timeLoop()
   }
   else
   {
-    cmd = "";
+    cmd = "\"Try It\"",
   }
 
   qrcode.clear(); 
