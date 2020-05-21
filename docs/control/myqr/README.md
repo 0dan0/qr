@@ -10,7 +10,7 @@
         }
 </style>
 
-# My QR Control
+# My QR Control v1.00
 
 <input type="checkbox" id="lchptrs" name="lchptrs" checked> 
 <label for="lchptrs">Enable Large Chapters</label><br>
