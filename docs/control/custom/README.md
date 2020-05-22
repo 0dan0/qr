@@ -144,7 +144,7 @@ NTSC:
 <div id="ptCOLOR">
 <b>Protune Color: </b>
   <input type="radio" id="ptc1" name="ptc" value="" checked><label for="ptc1">GoPro </label>&nbsp;
-  <input type="radio" id="ptc2" name="ptc" value="cF"><label for="ptc2">Flat</label><br><br>
+  <input type="radio" id="ptc2" name="ptc" value="cF"><label for="ptc2">Flat</label><br>
 </div>
 <div id="ptWBAL"><b>White Balance: </b>
   <input type="radio" id="wb1" name="wb" value="" checked><label for="wb1">Auto </label>&nbsp;
@@ -219,7 +219,7 @@ NTSC:
   <input type="radio" id="aud1" name="aud" value="" checked><label for="aud1">Off </label>&nbsp;
   <input type="radio" id="aud2" name="aud" value="aL"><label for="aud2">Low </label>&nbsp;
   <input type="radio" id="aud3" name="aud" value="aM"><label for="aud3">Medium </label>&nbsp;
-  <input type="radio" id="aud4" name="aud" value="aH"><label for="aud4">High</label>
+  <input type="radio" id="aud4" name="aud" value="aH"><label for="aud4">High</label><br><br>
 </div>
 
 <div id="cameraOptions">
@@ -308,7 +308,7 @@ NTSC:
   <input type="radio" id="ln11" name="ln" value="L6"><label for="ln11">French </label>&nbsp;
   <input type="radio" id="ln12" name="ln" value="L8"><label for="ln12">Portuguese </label>&nbsp;
   <input type="radio" id="ln13" name="ln" value="L9"><label for="ln13">Russian </label>&nbsp;
-  <input type="radio" id="ln14" name="ln" value="" checked><label for="ln14">not set</label>
+  <input type="radio" id="ln14" name="ln" value="" checked><label for="ln14">not set</label><br><br>
 </div>
 
 
