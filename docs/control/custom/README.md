@@ -313,56 +313,51 @@ NTSC:
 </div>
 
 <div id="cameraActions">
-<input type="checkbox" id="actions" value=""><label for="actions">Delayed Actions</label><br><br>
+<input type="checkbox" id="actions" value=""><label for="actions">Delayed Actions</label><br>
 </div>
 
-<div id="aSD"><b>Shutdown and capture in:</b> 
+<div id="aSD">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Shutdown and capture in:</b> 
 <input type="text" id="starthrs" value="" style="width:45px">hours <input type="text" id="startmins" value="" style="width:45px">mins <input type="text" id="startsecs" value="" style="width:45px">secs <br>
-&nbsp;&nbsp;&nbsp;<b>or</b> at camera time: <input type="text" id="time" value="" style="width:60px"> (format 24hr HH:MM)<br>
-&nbsp;&nbsp;&nbsp;<b>or</b> minutes after <b>sunrise</b>: <input type="text" id="risemins" value="" style="width:60px"> e.g. -30 for mins before<br>
-&nbsp;&nbsp;&nbsp;<b>or</b> minutes after <b>sunset</b>: <input type="text" id="setmins" value="" style="width:60px"> e.g. -45 for mins before<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>or</b> at camera time: <input type="text" id="time" value="" style="width:60px"> (format 24hr HH:MM)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>or</b> minutes after <b>sunrise</b>: <input type="text" id="risemins" value="" style="width:60px"> e.g. -30 for mins before<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>or</b> minutes after <b>sunset</b>: <input type="text" id="setmins" value="" style="width:60px"> e.g. -45 for mins before<br>
 </div>
-<div id="aS"><b>Start Capture:</b>
+<div id="aS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start Capture:</b>
   <input type="radio" id="as1" name="as" value="!S"><label for="as1">Now </label>&nbsp;
   <input type="radio" id="as2" name="as" value="!1S"><label for="as2">in 1 sec </label>&nbsp;
   <input type="radio" id="as3" name="as" value="!3S"><label for="as3">in 3 secs </label>&nbsp;
   <input type="radio" id="as4" name="as" value="!30S"><label for="as4">in 30 secs </label>&nbsp;
   <input type="radio" id="as5" name="as" value="" checked><label for="as5">not set</label>
   </div>
-<div id="aE"><b>End Capture:</b>
+<div id="aE">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>End Capture:</b>
   <input type="radio" id="ae1" name="ae" value="!5E"><label for="ae1">End after 5 secs </label>&nbsp;
   <input type="radio" id="ae2" name="ae" value="!10E"><label for="ae2">End after 10 secs </label>&nbsp;
   <input type="radio" id="ae3" name="ae" value="!60E"><label for="ae3">End after 1 min </label>&nbsp;
   <input type="radio" id="ae4" name="ae" value="!600E"><label for="ae4">End after 10 min  </label>&nbsp;
   <input type="radio" id="ae5" name="ae" value="" checked><label for="ae5">not set</label>
 </div>
-<div id="aEND"><b>End capture after:</b> 
+<div id="aEND">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>End capture after:</b> 
 <input type="text" id="endhrs" value="" style="width:45px">hours <input type="text" id="endmins" value="" style="width:45px">mins <input type="text" id="endsecs" value="" style="width:45px">secs <br>
-&nbsp;&nbsp;&nbsp;<b>or</b> at camera time: <input type="text" id="endtime" value="" style="width:60px"> (format 24hr HH:MM)<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>or</b> at camera time: <input type="text" id="endtime" value="" style="width:60px"> (format 24hr HH:MM)<br><br>
 </div>
-<div id="aSM"><b>Start via Motion Detection:</b> 
+<div id="aSM">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start via Motion Detection:</b> 
 <input type="text" id="mstart" value="" style="width:60px">start <input type="text" id="mend" value="" style="width:60px">end sensitivity (1-9) <b><br>
-&nbsp;&nbsp;&nbsp;</b> Delay start: <input type="text" id="dhold" value="" style="width:60px"> seconds to get out of the shot.<br>
-&nbsp;&nbsp;&nbsp;</b> Mask motion: <input type="text" id="mmhold" value="" style="width:60px"> seconds to learn background motion.<br>
-&nbsp;&nbsp;&nbsp;</b> Hold time: <input type="text" id="mhold" value="" style="width:60px"> seconds to capture after motion stops.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b> Delay start: <input type="text" id="dhold" value="" style="width:60px"> seconds to get out of the shot.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b> Mask motion: <input type="text" id="mmhold" value="" style="width:60px"> seconds to learn background motion.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b> Hold time: <input type="text" id="mhold" value="" style="width:60px"> seconds to capture after motion stops.<br>
 <br>
 </div>
-<div id="aSV"><b>Start at GPS Velocity (km/h):</b> 
+<div id="aSV">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start at GPS Velocity (km/h):</b> 
 <input type="text" id="vstart" value="" style="width:60px">start speed <input type="text" id="vend" value="" style="width:60px">end speed <b><br>
-&nbsp;&nbsp;&nbsp;</b> Hold time: <input type="text" id="vhold" value="" style="width:60px"> seconds)<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b> Hold time: <input type="text" id="vhold" value="" style="width:60px"> seconds)<br><br>
 </div>
-<div id="aR"><b>Repeat command after: </b> 
+<div id="aR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Repeat command after: </b> 
 <input type="text" id="repeathrs" value="" style="width:45px">hours <input type="text" id="repeatmins" value="" style="width:45px">mins <input type="text" id="repeatsecs" value="" style="width:45px">secs <br>
-&nbsp;&nbsp;&nbsp;<b>or</b> delay for HH:MM <input type="text" id="repeattime" value="" style="width:60px"> <br>
-&nbsp;&nbsp;&nbsp;<b>or</b> minutes after <b>sunrise</b>: <input type="text" id="repeatrisemins" value="" style="width:60px"> e.g. -30 for mins before<br>
-&nbsp;&nbsp;&nbsp;<b>or</b> minutes after <b>sunset</b>: <input type="text" id="repeatsetmins" value="" style="width:60px"> e.g. -45 for mins before<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>or</b> delay for HH:MM <input type="text" id="repeattime" value="" style="width:60px"> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>or</b> minutes after <b>sunrise</b>: <input type="text" id="repeatrisemins" value="" style="width:60px"> e.g. -30 for mins before<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>or</b> minutes after <b>sunset</b>: <input type="text" id="repeatsetmins" value="" style="width:60px"> e.g. -45 for mins before<br> 
 </div>
   
-<div id="aQ"><b>Show QR Code:</b>
-  <input type="radio" id="aq1" name="aq" value="!Q"><label for="aq1">Show Current Mode </label>&nbsp;
-  <input type="radio" id="aq2" name="aq" value="" checked><label for="aq2">not set</label>
-</div>
-
 Additional Commands: <input type="text" id="addcmd" value="">
 
 <div id="qrcode"></div>
