@@ -78,17 +78,6 @@ NTSC:
   <input type="radio" id="b10" name="burst" value="" checked><label for="b10">not set</label>
 </div>
 
-
-<div id="settingsLoop">
-<p><b>Loop Length: </b>
-  <input type="radio" id="loop1" name="loop" value="" checked><label for="loop1">5 min </label>&nbsp;
-  <input type="radio" id="loop2" name="loop" value="2"><label for="loop2">20 min </label>&nbsp;
-  <input type="radio" id="loop3" name="loop" value="6"><label for="loop3">60 min </label>&nbsp;
-  <input type="radio" id="loop4" name="loop" value="12"><label for="loop4">120 min </label>&nbsp;
-  <input type="radio" id="loop5" name="loop" value="M"><label for="loop5">MAX</label><br>
-</div>
-
-
 <div id="settingsTimelapse">
 <p><b>Timelapse Interval: </b>
   <input type="radio" id="fpslapse1"   name="fpslapse" value="p15"><label for="fpslapse1">2X </label>&nbsp;
@@ -495,7 +484,6 @@ function startTime() {
 	dset("settingsPhoto", false);
 	dset("settingsPT", false);
 	dset("settingsBurst", false);
-	//dset("settingsLoop", false);
 	dset("settingsTimelapse", false);
 	dset("settingsNightlapse", false);
 	dset("settingsNightexposure", false);
@@ -558,15 +546,6 @@ function startTime() {
 		dset("settingsAUDT",true);
 		break;
 		
-	/*	case 2: //Loop
-		dset("settingsRES", true);
-		dset("settingsFPS", true);
-		dset("settingsFOV", true);
-		dset("settingsLoop", true);
-		if(document.getElementById("pt") != null)
-			document.getElementById("pt").checked = false;
-		break;*/
-		
 		case 2: //Timelapse Video
 		dset("settingsTimelapse", true);		
 		dset("settingsRESTLV", true);
@@ -585,8 +564,7 @@ function startTime() {
 			
 		if(document.getElementById("pt") != null)
 			document.getElementById("pt").checked = false;
-		break;
-		
+		break;		
 	
 		case 4: //Photo
 		dset("settingsPT", true);
@@ -605,21 +583,6 @@ function startTime() {
 		dset("settingsPT", true);
 		dset("settingsFOV", true);
 		break;
-		
-		
-		
-		//case 8: //Timelapse Photo
-		//dset("settingsTimelapse", true);
-		//dset("settingsPT", true);
-		//dset("settingsFOV", true);
-		//break;
-		//
-		//case 9: //Nightlapse
-		//dset("settingsNightexposure", true);
-		//dset("settingsNightlapse", true);
-		//dset("settingsFOV", true);
-		//dset("settingsPT", true);
-		//break;
 	}
 		
 	if(document.getElementById("pt") != null)
@@ -681,10 +644,6 @@ function startTime() {
 	{
 		if(document.getElementById("actions").checked == true)
 		{
-			//dset("actionOn", true);
-			
-			//dset("aS", true);
-			//dset("aE", true);
 			dset("aSD", true);
 			dset("aEND", true);
 			dset("aSM", true);
@@ -699,12 +658,6 @@ function startTime() {
 	
 	switch(checkedmode)
 	{
-		//case 2: //PIV 
-		//	cmd = dcmd(cmd,"piv");
-		//	break;
-		//case 2: //Loop 
-		//	cmd = dcmd(cmd,"loop");
-		 //	break;	
 		case 2: //TLV
 			cmd = dcmd(cmd,"fpslapse");
 			break;
@@ -717,13 +670,6 @@ function startTime() {
 		case 6: //Night
 			cmd = dcmd(cmd,"nightexp");
 			break;
-		//case 6: //TLP
-		//	cmd = dcmd(cmd,"fpslapse");
-		//	break;
-		//case 7: //NL
-		//	cmd = dcmd(cmd,"fpsnight");
-		//	cmd = dcmd(cmd,"nightexp");
-		//	break;
 	}
 	
 	if(checkedmode == 2 || checkedmode == 3) // TLV/TWarp Res
