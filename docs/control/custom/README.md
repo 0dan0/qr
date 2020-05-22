@@ -120,7 +120,7 @@ NTSC:
  </div>
  
 <div id="settingsVideo">
-<b>Hypersmooth: </b><input type="radio" id="eis1" name="eis" value="e0"><label for="eis1">Off</label>&nbsp;<input type="radio" id="eis2" name="eis" value="e1"><label for="eis2">On</label>&nbsp;<input type="radio" id="eis3" name="eis" value="" checked> <label for="eis3">not set</label><br><br>
+<b>Hypersmooth: </b><input type="radio" id="eis1" name="eis" value="e0"><label for="eis1">Off</label>&nbsp;&nbsp;&nbsp;<input type="radio" id="eis2" name="eis" value="e1"><label for="eis2">On</label>&nbsp;&nbsp;&nbsp;<input type="radio" id="eis3" name="eis" value="" checked> <label for="eis3">not set</label><br><br>
 </div>
 
 <div id="settingsPhoto">
