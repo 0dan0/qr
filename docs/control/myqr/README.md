@@ -10,7 +10,7 @@
         }
 </style>
 
-# My QR Control v1.00
+# My QR Control v1.01
 
 <b>Camera Mode: </b><input type="radio" id="m7" name="mode" value="" checked><label for="m7">not set</label><br>
   <input type="radio" id="m1" name="mode" value="mV"><label  for="m1">Video</label>&nbsp;
@@ -29,7 +29,6 @@
   <input type="radio" id="r5" name="res" value="r27T" ><label for="r5">2.7k 4x3 </label>&nbsp;
   <input type="radio" id="r6" name="res" value="r4T"  ><label for="r6">4k 4x3 </label><br>
 </div>
-<br>
  
 <div id="settingsFPS">
 <b>FPS Video:</b><input type="radio" id="p10" name="fps" value="" checked> <label for="p10">not set</label><br>
@@ -44,7 +43,7 @@ NTSC:
   <input type="radio" id="p7" name="fps" value="p50"><label for="p7">50 </label>&nbsp;
   <input type="radio" id="p8" name="fps" value="p100"><label for="p8">100 </label>&nbsp;
   <input type="radio" id="p9" name="fps" value="p200"><label for="p9">200 </label>&nbsp;
-</div>
+</div><br>
   
 <div id="settingsFOV">
 <b>FOV:</b>
@@ -54,7 +53,7 @@ NTSC:
   <input type="radio" id="f4" name="fov" value="fL"><label for="f4">Linear </label>&nbsp;
   <input type="radio" id="f5" name="fov" value="fS"><label for="f5">Superview </label>&nbsp;
   <input type="radio" id="f6" name="fov" value="" checked> <label for="f6">not set</label>
- </div>
+ </div><br>
 
 <div id="settingsBurst">
 <b>Burst Style:</b>
@@ -68,7 +67,7 @@ NTSC:
   <input type="radio" id="b8" name="burst" value="b30N3"><label for="b8">30/3 </label>&nbsp;
   <input type="radio" id="b9" name="burst" value="b30N6"><label for="b9">30/6 </label>&nbsp;
   <input type="radio" id="b10" name="burst" value="" checked><label for="b10">not set</label>
-</div>
+</div><br>
 
 <div id="settingsTimelapse">
 <b>Timelapse Interval: </b>
@@ -83,7 +82,7 @@ NTSC:
   <input type="radio" id="fpslapse9"  name="fpslapse" value="p.30"><label for="fpslapse9">30s </label>&nbsp;
   <input type="radio" id="fpslapse10" name="fpslapse" value="p.60"><label for="fpslapse10">60s </label>&nbsp;
   <input type="radio" id="fpslapse11" name="fpslapse" value="" checked><label for="fpslapse11">not set</label><br>
-</div>
+</div><br>
  
 <div id="settingsNightlapse">
 <b>Nightlapse Interval: </b>
@@ -97,7 +96,7 @@ NTSC:
   <input type="radio" id="fpsnight8" name="fpsnight" value="p.1800"><label for="fpsnight8">30min </label>&nbsp;
   <input type="radio" id="fpsnight9" name="fpsnight" value="p.3600"><label for="fpsnight9">60min </label>&nbsp;
   <input type="radio" id="fpsnight10" name="fpsnight" value="" checked><label for="fpsnight10">not set</label>
-</div> 
+</div><br>
 
 <div id="settingsNightexposure">
 <b>Night Exposure: </b>
@@ -109,7 +108,7 @@ NTSC:
   <input type="radio" id="nightexp6" name="nightexp" value="e20"><label for="nightexp6">20s </label>&nbsp;
   <input type="radio" id="nightexp7" name="nightexp" value="e30"><label for="nightexp7">30s </label>&nbsp;
   <input type="radio" id="nightexp8" name="nightexp" value="" checked><label for="nightexp8"> not set</label><br>
-</div>
+</div><br>
 
 <div id="settingsRESTLV">
 <b>TLV/Warp Resolution: </b>
@@ -118,7 +117,7 @@ NTSC:
   <input type="radio" id="rt3" name="restlv" value="r27T" ><label for="rt3">2.7k 4x3 </label>&nbsp;
   <input type="radio" id="rt4" name="restlv" value="r4"   ><label for="rt4">4k </label>&nbsp;
   <input type="radio" id="rt5" name="restlv" value="" checked><label for="rt5">not set</label>
- </div>
+ </div><br>
  
 <div id="settingsVideo">
 <b>Video Properties: </b><br>
