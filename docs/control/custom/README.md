@@ -309,7 +309,7 @@ NTSC:
 </div>
 
 <div id="opDTS">
-<input type="checkbox" id="dttimecode" value=""><label for="dttimecode">add 1/100th of a second</label><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="dttimecode" value=""><label for="dttimecode">add 1/100th of a second</label><br>
 </div>
 
 <div id="cameraActions">
