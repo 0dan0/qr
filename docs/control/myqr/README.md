@@ -10,12 +10,12 @@
         }
 </style>
 
-# My QR Control v1.02
+# My QR Control v1.00
 
 <b>Camera Mode: </b><input type="radio" id="m7" name="mode" value="" checked><label for="m7">not set</label><br>
   <input type="radio" id="m1" name="mode" value="mV"><label  for="m1">Video</label>&nbsp;
   <input type="radio" id="m2" name="mode" value="mT"><label  for="m2">Timelapse</label>&nbsp;
-  <input type="radio" id="m3" name="mode" value="mTW"><label for="m3">TimeWarp</label>&nbsp;<br>
+  <input type="radio" id="m3" name="mode" value="mTW"><label for="m3">TimeWarp</label>&nbsp;
   <input type="radio" id="m4" name="mode" value="mP"><label  for="m4">Photo</label>&nbsp;
   <input type="radio" id="m5" name="mode" value="mPB"><label for="m5">Burst Photo</label>&nbsp;
   <input type="radio" id="m6" name="mode" value="mPN"><label for="m6">Night Photo</label><br>
@@ -24,7 +24,7 @@
 <b>Video Resolution:</b><input type="radio" id="r7" name="res" value="" checked><label for="r7">not set</label><br>
   <input type="radio" id="r1" name="res" value="r1080"><label for="r1">1080p </label>&nbsp;
   <input type="radio" id="r2" name="res" value="r27"  ><label for="r2">2.7k  </label>&nbsp;
-  <input type="radio" id="r3" name="res" value="r4"   ><label for="r3">4k </label>&nbsp;<br>
+  <input type="radio" id="r3" name="res" value="r4"   ><label for="r3">4k </label>&nbsp;
   <input type="radio" id="r4" name="res" value="r1440"><label for="r4">1440p </label>&nbsp;
   <input type="radio" id="r5" name="res" value="r27T" ><label for="r5">2.7k 4x3 </label>&nbsp;
   <input type="radio" id="r6" name="res" value="r4T"  ><label for="r6">4k 4x3 </label><br><br>
@@ -37,7 +37,7 @@ NTSC:
   <input type="radio" id="p2" name="fps" value="p30" ><label for="p2">30 </label>&nbsp;
   <input type="radio" id="p3" name="fps" value="p60" ><label for="p3">60 </label>&nbsp;
   <input type="radio" id="p4" name="fps" value="p120"><label for="p4">120 </label>&nbsp;
-  <input type="radio" id="p5" name="fps" value="p240"><label for="p5">240 </label>&nbsp; <br>
+  <input type="radio" id="p5" name="fps" value="p240"><label for="p5">240 </label>&nbsp;
  PAL:
   <input type="radio" id="p6" name="fps" value="p25"><label for="p6">25 </label>&nbsp;
   <input type="radio" id="p7" name="fps" value="p50"><label for="p7">50 </label>&nbsp;
@@ -49,7 +49,7 @@ NTSC:
 <b>FOV:</b>
   <input type="radio" id="f1" name="fov" value="fW"><label for="f1">Wide </label>&nbsp;
   <input type="radio" id="f2" name="fov" value="fM"><label for="f2">Medium </label>&nbsp;
-  <input type="radio" id="f3" name="fov" value="fN"><label for="f3">Narrow </label>&nbsp;<br>
+  <input type="radio" id="f3" name="fov" value="fN"><label for="f3">Narrow </label>&nbsp;
   <input type="radio" id="f4" name="fov" value="fL"><label for="f4">Linear </label>&nbsp;
   <input type="radio" id="f5" name="fov" value="fS"><label for="f5">Superview </label>&nbsp;
   <input type="radio" id="f6" name="fov" value="" checked> <label for="f6">not set</label><br><br>
@@ -319,16 +319,12 @@ Low Light      <input type="radio" id="all1" name="all" value="l0"><label for="a
 </div>
 
 <div id="opDTS">
-<input type="checkbox" id="dttimecode" value=""><label for="dttimecode">add 1/100th of a second</label><br>
+<input type="checkbox" id="dttimecode" value=""><label for="dttimecode">add 1/100th of a second</label><br><br>
 </div>
-<br>
 
-
- 
 <div id="cameraActions">
-<input type="checkbox" id="actions" value=""><label for="actions">Delayed Actions</label><br>
+<input type="checkbox" id="actions" value=""><label for="actions">Delayed Actions</label><br><br>
 </div>
-
 
 <div id="aSD"><b>Shutdown and capture in:</b> 
 <input type="text" id="starthrs" value="" style="width:45px">hours <input type="text" id="startmins" value="" style="width:45px">mins <input type="text" id="startsecs" value="" style="width:45px">secs <br>
@@ -352,9 +348,8 @@ Low Light      <input type="radio" id="all1" name="all" value="l0"><label for="a
 </div>
 <div id="aEND"><b>End capture after:</b> 
 <input type="text" id="endhrs" value="" style="width:45px">hours <input type="text" id="endmins" value="" style="width:45px">mins <input type="text" id="endsecs" value="" style="width:45px">secs <br>
-&nbsp;&nbsp;&nbsp;<b>or</b> at camera time: <input type="text" id="endtime" value="" style="width:60px"> (format 24hr HH:MM)<br>
+&nbsp;&nbsp;&nbsp;<b>or</b> at camera time: <input type="text" id="endtime" value="" style="width:60px"> (format 24hr HH:MM)<br><br>
 </div>
-<br>
 <div id="aSM"><b>Start via Motion Detection:</b> 
 <input type="text" id="mstart" value="" style="width:60px">start <input type="text" id="mend" value="" style="width:60px">end sensitivity (1-9) <b><br>
 &nbsp;&nbsp;&nbsp;</b> Delay start: <input type="text" id="dhold" value="" style="width:60px"> seconds to get out of the shot.<br>
@@ -364,11 +359,10 @@ Low Light      <input type="radio" id="all1" name="all" value="l0"><label for="a
 </div>
 <div id="aSV"><b>Start at GPS Velocity (km/h):</b> 
 <input type="text" id="vstart" value="" style="width:60px">start speed <input type="text" id="vend" value="" style="width:60px">end speed <b><br>
-&nbsp;&nbsp;&nbsp;</b> Hold time: <input type="text" id="vhold" value="" style="width:60px"> seconds)<br>
-<br>
+&nbsp;&nbsp;&nbsp;</b> Hold time: <input type="text" id="vhold" value="" style="width:60px"> seconds)<br><br>
 </div>
-<div id="aR"><b>Repeat command after: 
-</b> <input type="text" id="repeathrs" value="" style="width:45px">hours <input type="text" id="repeatmins" value="" style="width:45px">mins <input type="text" id="repeatsecs" value="" style="width:45px">secs <br>
+<div id="aR"><b>Repeat command after: </b> 
+<input type="text" id="repeathrs" value="" style="width:45px">hours <input type="text" id="repeatmins" value="" style="width:45px">mins <input type="text" id="repeatsecs" value="" style="width:45px">secs <br>
 &nbsp;&nbsp;&nbsp;<b>or</b> delay for HH:MM <input type="text" id="repeattime" value="" style="width:60px"> <br>
 &nbsp;&nbsp;&nbsp;<b>or</b> minutes after <b>sunrise</b>: <input type="text" id="repeatrisemins" value="" style="width:60px"> e.g. -30 for mins before<br>
 &nbsp;&nbsp;&nbsp;<b>or</b> minutes after <b>sunset</b>: <input type="text" id="repeatsetmins" value="" style="width:60px"> e.g. -45 for mins before<br> 
@@ -379,16 +373,11 @@ Low Light      <input type="radio" id="all1" name="all" value="l0"><label for="a
   <input type="radio" id="aq2" name="aq" value="" checked><label for="aq2">not set</label>
 </div>
 
-Additional Commands: <input type="text" id="addcmd" value=""><br>
-
+Additional Commands: <input type="text" id="addcmd" value="">
 
 <div id="qrcode"></div>
-<br>
-
-<br>
 
 GoPro QR Command: <b id="txt"></b>
-
 
 
 <script>
