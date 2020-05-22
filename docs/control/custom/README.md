@@ -138,9 +138,8 @@ NTSC:
 </div> 
 
 <div id="settingsPT">
-<input type="checkbox" id="pt" value="t"><label for="pt">Protune Controls</label><br><br>
+<input type="checkbox" id="pt" value="t"><label for="pt">Protune Controls</label><br>
 </div>
-
 <div id="ptCOLOR">
 <b>Protune Color: </b>
   <input type="radio" id="ptc1" name="ptc" value="" checked><label for="ptc1">GoPro </label>&nbsp;
