@@ -21,8 +21,6 @@
   <input type="radio" id="m6" name="mode" value="mPN"><label for="m6">Night Photo</label><br>
 <table>
 
-#1 
-
 <div id="settingsRES">
 <b>Video Resolution:</b><input type="radio" id="r7" name="res" value="" checked><label for="r7">not set</label><br>
   <input type="radio" id="r1" name="res" value="r1080"><label for="r1">1080p </label>&nbsp;
@@ -32,8 +30,6 @@
   <input type="radio" id="r5" name="res" value="r27T" ><label for="r5">2.7k 4x3 </label>&nbsp;
   <input type="radio" id="r6" name="res" value="r4T"  ><label for="r6">4k 4x3 </label><br>
 </div>
- 
-#2
  
 <div id="settingsFPS">
 <b>FPS Video:</b><input type="radio" id="p10" name="fps" value="" checked> <label for="p10">not set</label><br>
@@ -49,9 +45,7 @@ NTSC:
   <input type="radio" id="p8" name="fps" value="p100"><label for="p8">100 </label>&nbsp;
   <input type="radio" id="p9" name="fps" value="p200"><label for="p9">200 </label>&nbsp;
 </div>
- 
-#3
- 
+  
 <div id="settingsFOV">
 <b>FOV:</b>
   <input type="radio" id="f1" name="fov" value="fW"><label for="f1">Wide </label>&nbsp;
@@ -61,8 +55,6 @@ NTSC:
   <input type="radio" id="f5" name="fov" value="fS"><label for="f5">Superview </label>&nbsp;
   <input type="radio" id="f6" name="fov" value="" checked> <label for="f6">not set</label>
  </div>
-
-#4
 
 <div id="settingsBurst">
 <b>Burst Style:</b>
@@ -175,14 +167,12 @@ Low Light      <input type="radio" id="all1" name="all" value="l0"><label for="a
 </div>
 
 
-
-<UL>
-<LI id="ptCOLOR">
+<div id="ptCOLOR">
 <b>Protune Color: </b>
   <input type="radio" id="ptc1" name="ptc" value="" checked><label for="ptc1">GoPro </label>&nbsp;
   <input type="radio" id="ptc2" name="ptc" value="cF"><label for="ptc2">Flat</label>
- 
-<LI id="ptWBAL"><b>White Balance: </b>
+</div>
+<div id="ptWBAL"><b>White Balance: </b>
   <input type="radio" id="wb1" name="wb" value="" checked><label for="wb1">Auto </label>&nbsp;
   <input type="radio" id="wb2" name="wb" value="w23" ><label for="wb2">2300K </label>&nbsp;
   <input type="radio" id="wb3" name="wb" value="w28" ><label for="wb3">2800K </label>&nbsp;
@@ -195,8 +185,8 @@ Low Light      <input type="radio" id="all1" name="all" value="l0"><label for="a
   <input type="radio" id="wb10" name="wb" value="w65"><label for="wb10">6500K </label>&nbsp;
   <input type="radio" id="wb11" name="wb" value="wN" ><label for="wb11">Native </label>&nbsp;
   <input type="radio" id="wb12" name="wb" value="" checked><label for="wb12">not set</label>
- 
-<LI id="ptIMIN">
+ </div>
+<div id="ptIMIN">
 <b>ISO Min: </b>
   <input type="radio" id="isomin1" name="isomin" value="M1" ><label for="isomin1">100 (def) </label>&nbsp;
   <input type="radio" id="isomin2" name="isomin" value="M2" ><label for="isomin2">200 </label>&nbsp;
@@ -206,8 +196,8 @@ Low Light      <input type="radio" id="all1" name="all" value="l0"><label for="a
   <input type="radio" id="isomin6" name="isomin" value="M32"><label for="isomin6">3200 </label>&nbsp;
   <input type="radio" id="isomin7" name="isomin" value="M64"><label for="isomin7">6400 </label>&nbsp;
   <input type="radio" id="isomin8" name="isomin" value="M1" checked><label for="isomin7">not set</label>
- 
-<LI id="ptISO">
+ </div>
+<div id="ptISO">
 <b>ISO Max: </b>
   <input type="radio" id="iso1" name="iso" value="i1" ><label for="iso1">100 </label>&nbsp;
   <input type="radio" id="iso2" name="iso" value="i2" ><label for="iso2">200 </label>&nbsp;
@@ -217,8 +207,8 @@ Low Light      <input type="radio" id="all1" name="all" value="l0"><label for="a
   <input type="radio" id="iso6" name="iso" value="i32"><label for="iso6">3200 </label>&nbsp;
   <input type="radio" id="iso7" name="iso" value="i64"><label for="iso7">6400 </label>&nbsp;
   <input type="radio" id="iso8" name="iso" value="i16" checked><label for="iso8">not set</label>
- 
-<LI id="ptSHUT">
+ </div>
+<div id="ptSHUT">
 <b>Lock Shutter: </b>
   <input type="radio" id="shut1" name="shut" value="S360"><label for="shut1">360&deg; </label>&nbsp;
   <input type="radio" id="shut2" name="shut" value="S180"><label for="shut2">180&deg; </label>&nbsp;
@@ -230,8 +220,8 @@ Low Light      <input type="radio" id="all1" name="all" value="l0"><label for="a
   <input type="radio" id="shut8" name="shut" value="S10" ><label for="shut8">10&deg; </label>&nbsp;
   <input type="radio" id="shut9" name="shut" value="S5" ><label for="shut9">5&deg; </label>&nbsp;
   <input type="radio" id="shut10" name="shut" value="S2" ><label for="shut10">2&deg; </label>&nbsp;
-
-<LI id="ptEV">
+</div>
+<div id="ptEV">
 <b>EV Compensation: </b>
   <input type="radio" id="ev1" name="ev" value="x-2"  ><label for="ev1">-2 </label>&nbsp;
   <input type="radio" id="ev2" name="ev" value="x-1.5"><label for="ev2">-1.5 </label>&nbsp;
@@ -243,22 +233,20 @@ Low Light      <input type="radio" id="all1" name="all" value="l0"><label for="a
   <input type="radio" id="ev8" name="ev" value="x1.5" ><label for="ev8">+1.5 </label>&nbsp;
   <input type="radio" id="ev9" name="ev" value="x2"   ><label for="ev9">+2</label>
   <input type="radio" id="ev10" name="ev" value="" checked><label for="ev10">not set</label>
-
-<LI id="ptSHARP">
+</div>
+<div id="ptSHARP">
 <b>Sharpness: </b>
   <input type="radio" id="sharp1" name="sharp" value="sL"><label for="sharp1">Low </label>&nbsp;
   <input type="radio" id="sharp2" name="sharp" value="sM"><label for="sharp2">Medium </label>&nbsp;
   <input type="radio" id="sharp3" name="sharp" value="" checked><label for="sharp3">High</label>
-
-<LI id="ptAUD">
+</div>
+<div id="ptAUD">
 <b>RAW Audio: </b>
   <input type="radio" id="aud1" name="aud" value="" checked><label for="aud1">Off </label>&nbsp;
   <input type="radio" id="aud2" name="aud" value="aL"><label for="aud2">Low </label>&nbsp;
   <input type="radio" id="aud3" name="aud" value="aM"><label for="aud3">Medium </label>&nbsp;
   <input type="radio" id="aud4" name="aud" value="aH"><label for="aud4">High</label>
-
-</UL>
-
+</div>
 
 <div id="cameraOptions">
 <input type="checkbox" id="options" value=""><label for="options">Camera Preferences</label><br>
