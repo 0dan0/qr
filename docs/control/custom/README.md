@@ -376,6 +376,8 @@ Additional Commands: <input type="text" id="addcmd" value="">
 
 GoPro QR Command: <b id="txt"></b>
 
+<button onclick="myReloadFunction()">Reset page</button>
+
 [Learn more](..)
 
 <script>
