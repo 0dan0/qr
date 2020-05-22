@@ -10,7 +10,7 @@
         }
 </style>
 
-# My QR Control v1.01
+# My QR Control v1.02
 
 <p><b>Camera Mode: </b><input type="radio" id="m7" name="mode" value="" checked><label for="m7">not set</label><br>
   <input type="radio" id="m1" name="mode" value="mV"><label  for="m1">Video</label>&nbsp;
@@ -20,6 +20,8 @@
   <input type="radio" id="m5" name="mode" value="mPB"><label for="m5">Burst Photo</label>&nbsp;
   <input type="radio" id="m6" name="mode" value="mPN"><label for="m6">Night Photo</label><br>
 <table>
+
+#1 
 
 <div id="settingsRES" style="display: none">
 <p><b>Video Resolution: </b><input type="radio" id="r7" name="res" value="" checked> <label for="r7">not set</label><br>
@@ -31,8 +33,41 @@
   <input type="radio" id="r4" name="res" value="r1440"><label for="r4">1440p </label>&nbsp;
   <input type="radio" id="r5" name="res" value="r27T" ><label for="r5">2.7k 4x3 </label>&nbsp;
   <input type="radio" id="r6" name="res" value="r4T"  ><label for="r6">4k 4x3 </label><br>
- </div>
+</div>
  
+#2
+ 
+<div id="settingsFPS" style="display: none">
+<p><b>FPS Video: </b><input type="radio" id="p10" name="fps" value="" checked> <label for="p10">not set</label><br>
+NTSC:
+  <input type="radio" id="p1" name="fps" value="p24" ><label for="p1">24 </label>&nbsp;
+  <input type="radio" id="p2" name="fps" value="p30" ><label for="p2">30 </label>&nbsp;
+  <!-- <input type="radio" id="p3" name="fps" value="p48" ><label for="p3">48 </label>&nbsp; -->
+  <input type="radio" id="p3" name="fps" value="p60" ><label for="p3">60 </label>&nbsp;
+  <!--  <input type="radio" id="p5" name="fps" value="p80" ><label for="p5">80 </label>&nbsp; -->
+  <!--  <input type="radio" id="p6" name="fps" value="p90" ><label for="p6">90 </label>&nbsp; -->
+  <input type="radio" id="p4" name="fps" value="p120"><label for="p4">120 </label>&nbsp;
+  <input type="radio" id="p5" name="fps" value="p240"><label for="p5">240 </label>&nbsp;<br>
+ PAL:
+  <input type="radio" id="p6" name="fps" value="p25"><label for="p6">25 </label>&nbsp;
+  <input type="radio" id="p7" name="fps" value="p50"><label for="p7">50 </label>&nbsp;
+  <input type="radio" id="p8" name="fps" value="p100"><label for="p8">100 </label>&nbsp;
+  <input type="radio" id="p9" name="fps" value="p200"><label for="p9">200 </label>&nbsp;
+</div>
+ 
+#3
+ 
+<div id="settingsFOV" style="display: none">
+<p><b>FOV: </b>
+  <input type="radio" id="f1" name="fov" value="fW"><label for="f1">Wide </label>&nbsp;
+  <input type="radio" id="f2" name="fov" value="fM"><label for="f2">Medium </label>&nbsp;
+  <input type="radio" id="f3" name="fov" value="fN"><label for="f3">Narrow </label>&nbsp;
+  <input type="radio" id="f4" name="fov" value="fL"><label for="f4">Linear </label>&nbsp;
+  <input type="radio" id="f5" name="fov" value="fS"><label for="f5">Superview </label>&nbsp;
+  <input type="radio" id="f6" name="fov" value="" checked> <label for="f6">not set</label>
+ </div>
+
+#4
 
 <div id="settingsBurst" style="display: none">
 <p><b>Burst Style: </b>
@@ -112,33 +147,6 @@
   <input type="radio" id="rt5" name="restlv" value="" checked><label for="rt5">not set</label>
  </div>
  
-<div id="settingsFPS" style="display: none">
-<p><b>FPS Video: </b><input type="radio" id="p10" name="fps" value="" checked> <label for="p10">not set</label><br>
-NTSC:
-  <input type="radio" id="p1" name="fps" value="p24" ><label for="p1">24 </label>&nbsp;
-  <input type="radio" id="p2" name="fps" value="p30" ><label for="p2">30 </label>&nbsp;
-  <!-- <input type="radio" id="p3" name="fps" value="p48" ><label for="p3">48 </label>&nbsp; -->
-  <input type="radio" id="p3" name="fps" value="p60" ><label for="p3">60 </label>&nbsp;
-  <!--  <input type="radio" id="p5" name="fps" value="p80" ><label for="p5">80 </label>&nbsp; -->
-  <!--  <input type="radio" id="p6" name="fps" value="p90" ><label for="p6">90 </label>&nbsp; -->
-  <input type="radio" id="p4" name="fps" value="p120"><label for="p4">120 </label>&nbsp;
-  <input type="radio" id="p5" name="fps" value="p240"><label for="p5">240 </label>&nbsp;<br>
- PAL:
-  <input type="radio" id="p6" name="fps" value="p25"><label for="p6">25 </label>&nbsp;
-  <input type="radio" id="p7" name="fps" value="p50"><label for="p7">50 </label>&nbsp;
-  <input type="radio" id="p8" name="fps" value="p100"><label for="p8">100 </label>&nbsp;
-  <input type="radio" id="p9" name="fps" value="p200"><label for="p9">200 </label>&nbsp;
- </div>
- 
-<div id="settingsFOV" style="display: none">
-<p><b>FOV: </b>
-  <input type="radio" id="f1" name="fov" value="fW"><label for="f1">Wide </label>&nbsp;
-  <input type="radio" id="f2" name="fov" value="fM"><label for="f2">Medium </label>&nbsp;
-  <input type="radio" id="f3" name="fov" value="fN"><label for="f3">Narrow </label>&nbsp;
-  <input type="radio" id="f4" name="fov" value="fL"><label for="f4">Linear </label>&nbsp;
-  <input type="radio" id="f5" name="fov" value="fS"><label for="f5">Superview </label>&nbsp;
-  <input type="radio" id="f6" name="fov" value="" checked> <label for="f6">not set</label>
- </div>
 
 <div id="settingsVideo" style="display: none">
 <p><b>Video Properties: </b><br>
