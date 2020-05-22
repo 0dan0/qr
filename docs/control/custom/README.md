@@ -140,12 +140,11 @@ NTSC:
 <div id="settingsPT">
 <input type="checkbox" id="pt" value="t"><label for="pt">Protune Controls</label><br>
 </div>
-<div id="ptCOLOR">
-&nbsp;&nbsp;<b>Protune Color: </b>
+<div id="ptCOLOR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Protune Color: </b>
   <input type="radio" id="ptc1" name="ptc" value="" checked><label for="ptc1">GoPro </label>&nbsp;
   <input type="radio" id="ptc2" name="ptc" value="cF"><label for="ptc2">Flat</label><br>
 </div>
-<div id="ptWBAL">&nbsp;&nbsp;<b>White Balance: </b>
+<div id="ptWBAL">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>White Balance: </b>
   <input type="radio" id="wb1" name="wb" value="" checked><label for="wb1">Auto </label>&nbsp;
   <input type="radio" id="wb2" name="wb" value="w23" ><label for="wb2">2300K </label>&nbsp;
   <input type="radio" id="wb3" name="wb" value="w28" ><label for="wb3">2800K </label>&nbsp;
@@ -159,8 +158,7 @@ NTSC:
   <input type="radio" id="wb11" name="wb" value="wN" ><label for="wb11">Native </label>&nbsp;
   <input type="radio" id="wb12" name="wb" value="" checked><label for="wb12">not set</label>
  </div>
-<div id="ptIMIN">
-&nbsp;&nbsp;<b>ISO Min: </b>
+<div id="ptIMIN">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ISO Min: </b>
   <input type="radio" id="isomin1" name="isomin" value="M1" ><label for="isomin1">100 (def) </label>&nbsp;
   <input type="radio" id="isomin2" name="isomin" value="M2" ><label for="isomin2">200 </label>&nbsp;
   <input type="radio" id="isomin3" name="isomin" value="M4" ><label for="isomin3">400 </label>&nbsp;
@@ -170,8 +168,7 @@ NTSC:
   <input type="radio" id="isomin7" name="isomin" value="M64"><label for="isomin7">6400 </label>&nbsp;
   <input type="radio" id="isomin8" name="isomin" value="M1" checked><label for="isomin7">not set</label>
  </div>
-<div id="ptISO">
-&nbsp;&nbsp;<b>ISO Max: </b>
+<div id="ptISO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ISO Max: </b>
   <input type="radio" id="iso1" name="iso" value="i1" ><label for="iso1">100 </label>&nbsp;
   <input type="radio" id="iso2" name="iso" value="i2" ><label for="iso2">200 </label>&nbsp;
   <input type="radio" id="iso3" name="iso" value="i4" ><label for="iso3">400 </label>&nbsp;
@@ -181,8 +178,7 @@ NTSC:
   <input type="radio" id="iso7" name="iso" value="i64"><label for="iso7">6400 </label>&nbsp;
   <input type="radio" id="iso8" name="iso" value="i16" checked><label for="iso8">not set</label>
  </div>
-<div id="ptSHUT">
-&nbsp;&nbsp;<b>Lock Shutter: </b>
+<div id="ptSHUT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Lock Shutter: </b>
   <input type="radio" id="shut1" name="shut" value="S360"><label for="shut1">360&deg; </label>&nbsp;
   <input type="radio" id="shut2" name="shut" value="S180"><label for="shut2">180&deg; </label>&nbsp;
   <input type="radio" id="shut3" name="shut" value="S90" ><label for="shut3">90&deg; </label>&nbsp;
@@ -194,8 +190,7 @@ NTSC:
   <input type="radio" id="shut9" name="shut" value="S5" ><label for="shut9">5&deg; </label>&nbsp;
   <input type="radio" id="shut10" name="shut" value="S2" ><label for="shut10">2&deg; </label>&nbsp;
 </div>
-<div id="ptEV">
-&nbsp;&nbsp;<b>EV Compensation: </b>
+<div id="ptEV">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>EV Compensation: </b>
   <input type="radio" id="ev1" name="ev" value="x-2"  ><label for="ev1">-2 </label>&nbsp;
   <input type="radio" id="ev2" name="ev" value="x-1.5"><label for="ev2">-1.5 </label>&nbsp;
   <input type="radio" id="ev3" name="ev" value="x-1"  ><label for="ev3">-1 </label>&nbsp;
@@ -207,14 +202,12 @@ NTSC:
   <input type="radio" id="ev9" name="ev" value="x2"   ><label for="ev9">+2</label>
   <input type="radio" id="ev10" name="ev" value="" checked><label for="ev10">not set</label>
 </div>
-<div id="ptSHARP">
-&nbsp;&nbsp;<b>Sharpness: </b>
+<div id="ptSHARP">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Sharpness: </b>
   <input type="radio" id="sharp1" name="sharp" value="sL"><label for="sharp1">Low </label>&nbsp;
   <input type="radio" id="sharp2" name="sharp" value="sM"><label for="sharp2">Medium </label>&nbsp;
   <input type="radio" id="sharp3" name="sharp" value="" checked><label for="sharp3">High</label>
 </div>
-<div id="ptAUD">
-&nbsp;&nbsp;<b>RAW Audio: </b>
+<div id="ptAUD">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RAW Audio: </b>
   <input type="radio" id="aud1" name="aud" value="" checked><label for="aud1">Off </label>&nbsp;
   <input type="radio" id="aud2" name="aud" value="aL"><label for="aud2">Low </label>&nbsp;
   <input type="radio" id="aud3" name="aud" value="aM"><label for="aud3">Medium </label>&nbsp;
@@ -225,28 +218,28 @@ NTSC:
 <input type="checkbox" id="options" value=""><label for="options">Camera Preferences</label><br>
 </div>
 
-<div id="opGPS"><b>GPS: </b>
+<div id="opGPS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GPS: </b>
   <input type="radio" id="gps1" name="gps" value="g0"><label for="gps1">off </label>&nbsp;
   <input type="radio" id="gps2" name="gps" value="g1"><label for="gps2">on </label>
   <input type="radio" id="gps3" name="gps" value="" checked><label for="gps3">not set </label>
 </div>
-<div id="opVC"><b>Voice Control:  </b> 
+<div id="opVC">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Voice Control:  </b> 
   <input type="radio" id="vc1" name="vc" value="v0"><label for="vc1">off </label>&nbsp;
   <input type="radio" id="vc2" name="vc" value="v1"><label for="vc2">on </label>
   <input type="radio" id="vc3" name="vc" value="" checked><label for="vc3">not set</label>
  </div>
-<div id="opQC"><b>Quick Capture: </b>  
+<div id="opQC">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Quick Capture: </b>  
   <input type="radio" id="qc1" name="qc" value="q0"><label for="qc1">off </label>&nbsp;
   <input type="radio" id="qc2" name="qc" value="q1"><label for="qc2">on </label>
   <input type="radio" id="qc3" name="qc" value="" checked><label for="qc3">not set </label>
   </div>
-<div id="opDM"><b>Default Mode:</b>
+<div id="opDM">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Default Mode:</b>
   <input type="radio" id="dm1" name="dm" value="dV">  <label for="dm1">Last Used Video</label>&nbsp;
   <input type="radio" id="dm2" name="dm" value="dP">  <label for="dm1">Last Used Photo</label>&nbsp;
   <input type="radio" id="dm3" name="dm" value="dT">  <label for="dm1">Last Used Timelapse</label>&nbsp;
   <input type="radio" id="dm4" name="dm" value="" checked><label for="dm4">not set</label>
 </div>
-<div id="opBV"><b>Beep Volume:  </b> 
+<div id="opBV">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Beep Volume:  </b> 
   <input type="radio" id="bv1" name="bv" value="V0"><label for="bv1">0% </label>&nbsp;
   <input type="radio" id="bv2" name="bv" value="V1"><label for="bv2">10% </label>&nbsp;
   <input type="radio" id="bv3" name="bv" value="V4"><label for="bv3">40% </label>&nbsp;
@@ -255,45 +248,45 @@ NTSC:
   <input type="radio" id="bv6" name="bv" value="" checked><label for="bv5">not set</label>
   </div>
   
-<div id="opDB"><b>Display Brightness:  </b> 
+<div id="opDB">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Display Brightness:  </b> 
   <input type="radio" id="db2" name="db" value="B1"><label for="db1">10% </label>&nbsp;
   <input type="radio" id="db3" name="db" value="B4"><label for="db2">40% </label>&nbsp;
   <input type="radio" id="db4" name="db" value="B7"><label for="db3">70% </label>&nbsp;
   <input type="radio" id="db5" name="db" value="B9"><label for="db4">100% </label>&nbsp;
   <input type="radio" id="db6" name="db" value="" checked><label for="bv5">not set</label>
   </div>
-<div id="opLO"><b>LEDs On:  </b> 
+<div id="opLO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>LEDs On:  </b> 
   <input type="radio" id="lo1" name="lo" value="D0"><label for="lo1">All Off </label>&nbsp;
   <input type="radio" id="lo2" name="lo" value="D2"><label for="lo2">Rear Only </label>&nbsp;
   <input type="radio" id="lo3" name="lo" value="D4"><label for="lo3">All On </label>&nbsp;
   <input type="radio" id="lo4" name="lo" value="" checked><label for="lo4">not set</label>
   </div>
-<div id="opOR"><b>Orientation Lock:  </b> 
+<div id="opOR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Orientation Lock:  </b> 
   <input type="radio" id="or1" name="or" value="R1"><label for="or1">Landscape Up </label>&nbsp;
   <input type="radio" id="or2" name="or" value="R2"><label for="or2">Landscape Down </label>&nbsp;
   <input type="radio" id="or3" name="or" value="R0"><label for="or3">Unlocked/Free </label>&nbsp;
   <input type="radio" id="or4" name="or" value="" checked><label for="or4">not set</label>
   </div>
-<div id="opAO"><b>Camera Auto Off: </b>  
+<div id="opAO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Camera Auto Off: </b>  
   <input type="radio" id="ao1" name="ao" value="C5"><label for="ao1">5 mins </label>&nbsp;
   <input type="radio" id="ao2" name="ao" value="C15"><label for="ao2">15 mins </label>&nbsp;
   <input type="radio" id="ao3" name="ao" value="C30"><label for="ao3">30 mins </label>&nbsp;
   <input type="radio" id="ao4" name="ao" value="C"><label for="ao4">Never </label>&nbsp;
   <input type="radio" id="ao5" name="ao" value="" checked><label for="ao5">not set</label>
   </div>
-<div id="opSO"><b>Screen Auto Off: </b>  
+<div id="opSO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Screen Auto Off: </b>  
   <input type="radio" id="so1" name="so" value="S1"><label for="so1">1 mins </label>&nbsp;
   <input type="radio" id="so2" name="so" value="S2"><label for="so2">2 mins </label>&nbsp;
   <input type="radio" id="so3" name="so" value="S3"><label for="so3">3 mins </label>&nbsp;
   <input type="radio" id="so4" name="so" value="S"><label for="so4">Never </label>&nbsp;
   <input type="radio" id="so5" name="so" value="" checked><label for="so5">not set</label>
   </div>
-<div id="opWC"><b>WiFi Connections: </b>  
+<div id="opWC">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>WiFi Connections: </b>  
   <input type="radio" id="wc1" name="wc" value="W0"><label for="wc1">Off </label>&nbsp;
   <input type="radio" id="wc2" name="wc" value="W1"><label for="wc2">On </label>&nbsp;
   <input type="radio" id="wc3" name="wc" value="" checked><label for="wc3">not set</label>
   </div>
-<div id="opLN"><b>Language:</b><br>  
+<div id="opLN">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Language:</b><br>  
   <input type="radio" id="ln1" name="ln" value="L0"> <label for="ln1">English US </label>&nbsp;
   <input type="radio" id="ln2" name="ln" value="L01"><label for="ln2">English UK </label>&nbsp;
   <input type="radio" id="ln3" name="ln" value="L02"><label for="ln3">English AUS </label>&nbsp;
