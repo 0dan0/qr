@@ -10,7 +10,7 @@
         }
 </style>
 
-# My QR Control v1.01
+# My QR Control v1.02
 
 <b>Camera Mode: </b><input type="radio" id="m7" name="mode" value="" checked><label for="m7">not set</label><br>
   <input type="radio" id="m1" name="mode" value="mV"><label  for="m1">Video</label>&nbsp;
@@ -27,7 +27,7 @@
   <input type="radio" id="r3" name="res" value="r4"   ><label for="r3">4k </label>&nbsp;<br>
   <input type="radio" id="r4" name="res" value="r1440"><label for="r4">1440p </label>&nbsp;
   <input type="radio" id="r5" name="res" value="r27T" ><label for="r5">2.7k 4x3 </label>&nbsp;
-  <input type="radio" id="r6" name="res" value="r4T"  ><label for="r6">4k 4x3 </label><br>
+  <input type="radio" id="r6" name="res" value="r4T"  ><label for="r6">4k 4x3 </label><br><br>
 </div>
 
 <div id="settingsFPS">
@@ -42,7 +42,7 @@ NTSC:
   <input type="radio" id="p6" name="fps" value="p25"><label for="p6">25 </label>&nbsp;
   <input type="radio" id="p7" name="fps" value="p50"><label for="p7">50 </label>&nbsp;
   <input type="radio" id="p8" name="fps" value="p100"><label for="p8">100 </label>&nbsp;
-  <input type="radio" id="p9" name="fps" value="p200"><label for="p9">200 </label>&nbsp;<br>
+  <input type="radio" id="p9" name="fps" value="p200"><label for="p9">200 </label>&nbsp;<br><br>
 </div>
 
 <div id="settingsFOV">
@@ -52,7 +52,7 @@ NTSC:
   <input type="radio" id="f3" name="fov" value="fN"><label for="f3">Narrow </label>&nbsp;<br>
   <input type="radio" id="f4" name="fov" value="fL"><label for="f4">Linear </label>&nbsp;
   <input type="radio" id="f5" name="fov" value="fS"><label for="f5">Superview </label>&nbsp;
-  <input type="radio" id="f6" name="fov" value="" checked> <label for="f6">not set</label><br>
+  <input type="radio" id="f6" name="fov" value="" checked> <label for="f6">not set</label><br><br>
  </div>
 
 <div id="settingsBurst">
@@ -66,7 +66,7 @@ NTSC:
   <input type="radio" id="b7" name="burst" value="b30N2"><label for="b7">30/2 </label>&nbsp;
   <input type="radio" id="b8" name="burst" value="b30N3"><label for="b8">30/3 </label>&nbsp;
   <input type="radio" id="b9" name="burst" value="b30N6"><label for="b9">30/6 </label>&nbsp;
-  <input type="radio" id="b10" name="burst" value="" checked><label for="b10">not set</label><br>
+  <input type="radio" id="b10" name="burst" value="" checked><label for="b10">not set</label><br><br>
 </div>
 
 <div id="settingsTimelapse">
@@ -81,7 +81,7 @@ NTSC:
   <input type="radio" id="fpslapse8"  name="fpslapse" value="p.10"><label for="fpslapse8">10s </label>&nbsp;
   <input type="radio" id="fpslapse9"  name="fpslapse" value="p.30"><label for="fpslapse9">30s </label>&nbsp;
   <input type="radio" id="fpslapse10" name="fpslapse" value="p.60"><label for="fpslapse10">60s </label>&nbsp;
-  <input type="radio" id="fpslapse11" name="fpslapse" value="" checked><label for="fpslapse11">not set</label><br>
+  <input type="radio" id="fpslapse11" name="fpslapse" value="" checked><label for="fpslapse11">not set</label><br><br>
 </div>
  
 <div id="settingsNightlapse">
@@ -95,7 +95,7 @@ NTSC:
   <input type="radio" id="fpsnight7" name="fpsnight" value="p.300" ><label for="fpsnight7">5min </label>&nbsp;
   <input type="radio" id="fpsnight8" name="fpsnight" value="p.1800"><label for="fpsnight8">30min </label>&nbsp;
   <input type="radio" id="fpsnight9" name="fpsnight" value="p.3600"><label for="fpsnight9">60min </label>&nbsp;
-  <input type="radio" id="fpsnight10" name="fpsnight" value="" checked><label for="fpsnight10">not set</label><br>
+  <input type="radio" id="fpsnight10" name="fpsnight" value="" checked><label for="fpsnight10">not set</label><br><br>
 </div>
 
 <div id="settingsNightexposure">
@@ -107,7 +107,7 @@ NTSC:
   <input type="radio" id="nightexp5" name="nightexp" value="e15"><label for="nightexp5">15s </label>&nbsp;
   <input type="radio" id="nightexp6" name="nightexp" value="e20"><label for="nightexp6">20s </label>&nbsp;
   <input type="radio" id="nightexp7" name="nightexp" value="e30"><label for="nightexp7">30s </label>&nbsp;
-  <input type="radio" id="nightexp8" name="nightexp" value="" checked><label for="nightexp8"> not set</label><br>
+  <input type="radio" id="nightexp8" name="nightexp" value="" checked><label for="nightexp8"> not set</label><br><br>
 </div>
 
 <div id="settingsRESTLV">
@@ -116,27 +116,27 @@ NTSC:
   <input type="radio" id="rt2" name="restlv" value="r1440"><label for="rt2">1440p </label>&nbsp;
   <input type="radio" id="rt3" name="restlv" value="r27T" ><label for="rt3">2.7k 4x3 </label>&nbsp;
   <input type="radio" id="rt4" name="restlv" value="r4"   ><label for="rt4">4k </label>&nbsp;
-  <input type="radio" id="rt5" name="restlv" value="" checked><label for="rt5">not set</label><br>
+  <input type="radio" id="rt5" name="restlv" value="" checked><label for="rt5">not set</label><br><br>
  </div>
  
 <div id="settingsVideo">
 <b>Video Properties: </b><br>
 Hypersmooth    <input type="radio" id="eis1" name="eis" value="e0"><label for="eis1">Off</label>&nbsp;<input type="radio" id="eis2" name="eis" value="e1"><label for="eis2">On</label>&nbsp;<input type="radio" id="eis3" name="eis" value="" checked> <label for="eis3">not set</label><br>
-Low Light      <input type="radio" id="all1" name="all" value="l0"><label for="al11">Off</label>&nbsp;<input type="radio" id="all2" name="all" value="l1"><label for="all2">On</label>&nbsp;<input type="radio" id="all3" name="all" value="" checked> <label for="all3">not set</label><br>
+Low Light      <input type="radio" id="all1" name="all" value="l0"><label for="al11">Off</label>&nbsp;<input type="radio" id="all2" name="all" value="l1"><label for="all2">On</label>&nbsp;<input type="radio" id="all3" name="all" value="" checked> <label for="all3">not set</label><br><br>
 </div>
 
 <div id="settingsPhoto">
 <b>Photo Properties: </b><br>
   <input type="radio" id="raw1" name="raw" value="rW"><label for="raw1">WDR </label>&nbsp;
   <input type="radio" id="raw2" name="raw" value="r"><label for="raw2">RAW </label>&nbsp;
-  <input type="radio" id="raw3" name="raw" value="" checked> <label for="raw3"> none</label><br>
+  <input type="radio" id="raw3" name="raw" value="" checked> <label for="raw3"> none</label><br><br>
 </div>
 
 <div id="settingsAUDT">
 <b>Audio Type: </b>
   <input type="radio" id="audt1" name="audt" value="" checked><label for="audt1">auto </label>&nbsp;
   <input type="radio" id="audt2" name="audt" value="aS"><label for="audt2">Stereo </label>&nbsp;
-  <input type="radio" id="audt3" name="audt" value="aW"><label for="audt3">Wind</label><br>
+  <input type="radio" id="audt3" name="audt" value="aW"><label for="audt3">Wind</label><br><br>
 </div> 
 
 <div id="settingsPT">
