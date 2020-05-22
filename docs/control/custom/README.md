@@ -211,7 +211,7 @@ NTSC:
   <input type="radio" id="aud1" name="aud" value="" checked><label for="aud1">Off </label>&nbsp;
   <input type="radio" id="aud2" name="aud" value="aL"><label for="aud2">Low </label>&nbsp;
   <input type="radio" id="aud3" name="aud" value="aM"><label for="aud3">Medium </label>&nbsp;
-  <input type="radio" id="aud4" name="aud" value="aH"><label for="aud4">High</label><br><br>
+  <input type="radio" id="aud4" name="aud" value="aH"><label for="aud4">High</label><br>
 </div>
 
 <div id="cameraOptions">
@@ -286,21 +286,21 @@ NTSC:
   <input type="radio" id="wc2" name="wc" value="W1"><label for="wc2">On </label>&nbsp;
   <input type="radio" id="wc3" name="wc" value="" checked><label for="wc3">not set</label>
   </div>
-<div id="opLN">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Language:</b><br>  
+<div id="opLN">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Language:</b>
   <input type="radio" id="ln1" name="ln" value="L0"> <label for="ln1">English US </label>&nbsp;
   <input type="radio" id="ln2" name="ln" value="L01"><label for="ln2">English UK </label>&nbsp;
   <input type="radio" id="ln3" name="ln" value="L02"><label for="ln3">English AUS </label>&nbsp;
   <input type="radio" id="ln4" name="ln" value="L4"> <label for="ln4">Spanish EU </label>&nbsp;
   <input type="radio" id="ln5" name="ln" value="L41"><label for="ln5">Spanish NA </label>&nbsp;
   <input type="radio" id="ln6" name="ln" value="L2"> <label for="ln6">German </label>&nbsp;<br>
-  <input type="radio" id="ln7" name="ln" value="L3"> <label for="ln7">Italian </label>&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="ln7" name="ln" value="L3"> <label for="ln7">Italian </label>&nbsp;
   <input type="radio" id="ln8" name="ln" value="L1"> <label for="ln8">Chinese </label>&nbsp;
   <input type="radio" id="ln9" name="ln" value="L5"> <label for="ln9">Japanese </label>&nbsp;
   <input type="radio" id="ln10" name="ln" value="L7"><label for="ln10">Korean </label>&nbsp;
   <input type="radio" id="ln11" name="ln" value="L6"><label for="ln11">French </label>&nbsp;
   <input type="radio" id="ln12" name="ln" value="L8"><label for="ln12">Portuguese </label>&nbsp;
   <input type="radio" id="ln13" name="ln" value="L9"><label for="ln13">Russian </label>&nbsp;
-  <input type="radio" id="ln14" name="ln" value="" checked><label for="ln14">not set</label><br><br>
+  <input type="radio" id="ln14" name="ln" value="" checked><label for="ln14">not set</label><br>
 </div>
 
 
