@@ -10,7 +10,7 @@
         }
 </style>
 
-# My QR Control v1.01
+# My QR Control v1.00
 
 <b>Camera Mode: </b><input type="radio" id="m7" name="mode" value="" checked><label for="m7">not set</label><br>
   <input type="radio" id="m1" name="mode" value="mV"><label  for="m1">Video</label>&nbsp;
@@ -399,9 +399,6 @@ Additional Commands: <input type="text" id="addcmd" value=""><br>
 GoPro QR Command: <b id="txt"></b>
 
 
-
-## ver 1.00
-[BACK](..)
 
 <script>
 var lastcmd = ""
