@@ -10,7 +10,7 @@
         }
 </style>
 
-# My QR Control v1.01
+# My QR Control v1.00
 
 <b>Camera Mode: </b><input type="radio" id="m7" name="mode" value="" checked><label for="m7">not set</label><br>
   <input type="radio" id="m1" name="mode" value="mV"><label  for="m1">Video</label>&nbsp;
@@ -27,8 +27,8 @@
   <input type="radio" id="r3" name="res" value="r4"   ><label for="r3">4k </label><br>
   <input type="radio" id="r4" name="res" value="r1440"><label for="r4">1440p </label>&nbsp;
   <input type="radio" id="r5" name="res" value="r27T" ><label for="r5">2.7k 4x3 </label>&nbsp;
-  <input type="radio" id="r6" name="res" value="r4T"  ><label for="r6">4k 4x3 </label><br>
-</div>
+  <input type="radio" id="r6" name="res" value="r4T"  ><label for="r6">4k 4x3 </label>
+</div><br>
  
 <div id="settingsFPS">
 <b>FPS Video:</b><input type="radio" id="p10" name="fps" value="" checked> <label for="p10">not set</label><br>
