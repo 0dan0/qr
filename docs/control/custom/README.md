@@ -149,7 +149,7 @@
   <input type="radio" id="wb3" name="wb" value="w28" ><label for="wb3">2800K </label>&nbsp;
   <input type="radio" id="wb4" name="wb" value="w32" ><label for="wb4">3200K </label>&nbsp;
   <input type="radio" id="wb5" name="wb" value="w40" ><label for="wb5">4000K </label>&nbsp;
-  <input type="radio" id="wb6" name="wb" value="w45" ><label for="wb6">4500K </label>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="wb6" name="wb" value="w45" ><label for="wb6">4500K </label>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="radio" id="wb7" name="wb" value="w50" ><label for="wb7">5000K </label>&nbsp;
   <input type="radio" id="wb8" name="wb" value="w55" ><label for="wb8">5500K </label>&nbsp;
   <input type="radio" id="wb9" name="wb" value="w60"> <label for="wb9">6000K </label>&nbsp;
@@ -219,17 +219,17 @@
 
 <div id="opGPS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GPS:</b>&nbsp;&nbsp;
   <input type="radio" id="gps1" name="gps" value="g0"><label for="gps1">off </label>&nbsp;
-  <input type="radio" id="gps2" name="gps" value="g1"><label for="gps2">on </label>
+  <input type="radio" id="gps2" name="gps" value="g1"><label for="gps2">on </label>&nbsp;
   <input type="radio" id="gps3" name="gps" value="" checked><label for="gps3">not set </label>
 </div>
 <div id="opVC">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Voice Control:</b>&nbsp;&nbsp; 
   <input type="radio" id="vc1" name="vc" value="v0"><label for="vc1">off </label>&nbsp;
-  <input type="radio" id="vc2" name="vc" value="v1"><label for="vc2">on </label>
+  <input type="radio" id="vc2" name="vc" value="v1"><label for="vc2">on </label>&nbsp;
   <input type="radio" id="vc3" name="vc" value="" checked><label for="vc3">not set</label>
  </div>
 <div id="opQC">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Quick Capture:</b>&nbsp;&nbsp;  
   <input type="radio" id="qc1" name="qc" value="q0"><label for="qc1">off </label>&nbsp;
-  <input type="radio" id="qc2" name="qc" value="q1"><label for="qc2">on </label>
+  <input type="radio" id="qc2" name="qc" value="q1"><label for="qc2">on </label>&nbsp;
   <input type="radio" id="qc3" name="qc" value="" checked><label for="qc3">not set </label>
   </div>
 <div id="opDM">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Default Mode:</b>&nbsp;&nbsp;
