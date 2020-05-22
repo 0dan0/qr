@@ -141,11 +141,11 @@ NTSC:
 <input type="checkbox" id="pt" value="t"><label for="pt">Protune Controls</label><br>
 </div>
 <div id="ptCOLOR">
-<b>Protune Color: </b>
+&nbsp;&nbsp;<b>Protune Color: </b>
   <input type="radio" id="ptc1" name="ptc" value="" checked><label for="ptc1">GoPro </label>&nbsp;
   <input type="radio" id="ptc2" name="ptc" value="cF"><label for="ptc2">Flat</label><br>
 </div>
-<div id="ptWBAL"><b>White Balance: </b>
+<div id="ptWBAL">&nbsp;&nbsp;<b>White Balance: </b>
   <input type="radio" id="wb1" name="wb" value="" checked><label for="wb1">Auto </label>&nbsp;
   <input type="radio" id="wb2" name="wb" value="w23" ><label for="wb2">2300K </label>&nbsp;
   <input type="radio" id="wb3" name="wb" value="w28" ><label for="wb3">2800K </label>&nbsp;
@@ -160,7 +160,7 @@ NTSC:
   <input type="radio" id="wb12" name="wb" value="" checked><label for="wb12">not set</label>
  </div>
 <div id="ptIMIN">
-<b>ISO Min: </b>
+&nbsp;&nbsp;<b>ISO Min: </b>
   <input type="radio" id="isomin1" name="isomin" value="M1" ><label for="isomin1">100 (def) </label>&nbsp;
   <input type="radio" id="isomin2" name="isomin" value="M2" ><label for="isomin2">200 </label>&nbsp;
   <input type="radio" id="isomin3" name="isomin" value="M4" ><label for="isomin3">400 </label>&nbsp;
@@ -171,7 +171,7 @@ NTSC:
   <input type="radio" id="isomin8" name="isomin" value="M1" checked><label for="isomin7">not set</label>
  </div>
 <div id="ptISO">
-<b>ISO Max: </b>
+&nbsp;&nbsp;<b>ISO Max: </b>
   <input type="radio" id="iso1" name="iso" value="i1" ><label for="iso1">100 </label>&nbsp;
   <input type="radio" id="iso2" name="iso" value="i2" ><label for="iso2">200 </label>&nbsp;
   <input type="radio" id="iso3" name="iso" value="i4" ><label for="iso3">400 </label>&nbsp;
@@ -182,7 +182,7 @@ NTSC:
   <input type="radio" id="iso8" name="iso" value="i16" checked><label for="iso8">not set</label>
  </div>
 <div id="ptSHUT">
-<b>Lock Shutter: </b>
+&nbsp;&nbsp;<b>Lock Shutter: </b>
   <input type="radio" id="shut1" name="shut" value="S360"><label for="shut1">360&deg; </label>&nbsp;
   <input type="radio" id="shut2" name="shut" value="S180"><label for="shut2">180&deg; </label>&nbsp;
   <input type="radio" id="shut3" name="shut" value="S90" ><label for="shut3">90&deg; </label>&nbsp;
@@ -195,7 +195,7 @@ NTSC:
   <input type="radio" id="shut10" name="shut" value="S2" ><label for="shut10">2&deg; </label>&nbsp;
 </div>
 <div id="ptEV">
-<b>EV Compensation: </b>
+&nbsp;&nbsp;<b>EV Compensation: </b>
   <input type="radio" id="ev1" name="ev" value="x-2"  ><label for="ev1">-2 </label>&nbsp;
   <input type="radio" id="ev2" name="ev" value="x-1.5"><label for="ev2">-1.5 </label>&nbsp;
   <input type="radio" id="ev3" name="ev" value="x-1"  ><label for="ev3">-1 </label>&nbsp;
@@ -208,13 +208,13 @@ NTSC:
   <input type="radio" id="ev10" name="ev" value="" checked><label for="ev10">not set</label>
 </div>
 <div id="ptSHARP">
-<b>Sharpness: </b>
+&nbsp;&nbsp;<b>Sharpness: </b>
   <input type="radio" id="sharp1" name="sharp" value="sL"><label for="sharp1">Low </label>&nbsp;
   <input type="radio" id="sharp2" name="sharp" value="sM"><label for="sharp2">Medium </label>&nbsp;
   <input type="radio" id="sharp3" name="sharp" value="" checked><label for="sharp3">High</label>
 </div>
 <div id="ptAUD">
-<b>RAW Audio: </b>
+&nbsp;&nbsp;<b>RAW Audio: </b>
   <input type="radio" id="aud1" name="aud" value="" checked><label for="aud1">Off </label>&nbsp;
   <input type="radio" id="aud2" name="aud" value="aL"><label for="aud2">Low </label>&nbsp;
   <input type="radio" id="aud3" name="aud" value="aM"><label for="aud3">Medium </label>&nbsp;
