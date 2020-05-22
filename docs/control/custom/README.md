@@ -139,18 +139,19 @@
 <input type="checkbox" id="pt" value="t"><label for="pt">Protune Controls</label><br>
 </div>
 <div id="ptCOLOR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Protune Color:</b>&nbsp;&nbsp;
-  <input type="radio" id="ptc1" name="ptc" value="" checked><label for="ptc1">GoPro </label>&nbsp;
+  <input type="radio" id="ptc1" name="ptc" value="cG"><label for="ptc1">GoPro </label>&nbsp;
   <input type="radio" id="ptc2" name="ptc" value="cF"><label for="ptc2">Flat</label><br>
+  <input type="radio" id="ptc3" name="ptc" value="" checked><label for="ptc3">not set</label>
 </div>
 <div id="ptWBAL">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>White Balance:</b>&nbsp;&nbsp;
   <input type="radio" id="wb1" name="wb" value="" checked><label for="wb1">Auto </label>&nbsp;
   <input type="radio" id="wb2" name="wb" value="w23" ><label for="wb2">2300K </label>&nbsp;
   <input type="radio" id="wb3" name="wb" value="w28" ><label for="wb3">2800K </label>&nbsp;
-  <input type="radio" id="wb4" name="wb" value="w32" ><label for="wb4">3200K </label>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="wb4" name="wb" value="w32" ><label for="wb4">3200K </label>&nbsp;
   <input type="radio" id="wb5" name="wb" value="w40" ><label for="wb5">4000K </label>&nbsp;
   <input type="radio" id="wb6" name="wb" value="w45" ><label for="wb6">4500K </label>&nbsp;
   <input type="radio" id="wb7" name="wb" value="w50" ><label for="wb7">5000K </label>&nbsp;
-  <input type="radio" id="wb8" name="wb" value="w55" ><label for="wb8">5500K </label>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="wb8" name="wb" value="w55" ><label for="wb8">5500K </label>&nbsp;
   <input type="radio" id="wb9" name="wb" value="w60"> <label for="wb9">6000K </label>&nbsp;
   <input type="radio" id="wb10" name="wb" value="w65"><label for="wb10">6500K </label>&nbsp;
   <input type="radio" id="wb11" name="wb" value="wN" ><label for="wb11">Native </label>&nbsp;
