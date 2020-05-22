@@ -10,9 +10,9 @@
         }
 </style>
 
-# My QR Control v1.00
+# My QR Control v1.01
 
-<p><b>Camera Mode: </b><input type="radio" id="m7" name="mode" value="" checked><label for="m7">not set</label><br>
+<b>Camera Mode: </b><input type="radio" id="m7" name="mode" value="" checked><label for="m7">not set</label><br>
   <input type="radio" id="m1" name="mode" value="mV"><label  for="m1">Video</label>&nbsp;
   <input type="radio" id="m2" name="mode" value="mT"><label  for="m2">Timelapse</label>&nbsp;
   <input type="radio" id="m3" name="mode" value="mTW"><label for="m3">TimeWarp</label><br>
@@ -71,7 +71,7 @@ NTSC:
 </div>
 
 <div id="settingsTimelapse">
-<p><b>Timelapse Interval: </b>
+<b>Timelapse Interval: </b>
   <input type="radio" id="fpslapse1"   name="fpslapse" value="p15"><label for="fpslapse1">2X </label>&nbsp;
   <input type="radio" id="fpslapse2"    name="fpslapse" value="p6"><label for="fpslapse2">5X </label>&nbsp;
   <input type="radio" id="fpslapse3"    name="fpslapse" value="p3"><label for="fpslapse3">10X </label>&nbsp;
@@ -86,7 +86,7 @@ NTSC:
 </div>
  
 <div id="settingsNightlapse">
-<p><b>Nightlapse Interval: </b>
+<b>Nightlapse Interval: </b>
   <input type="radio" id="fpsnight1" name="fpsnight" value="p"     ><label for="fpsnight1">cont. </label>&nbsp;
   <input type="radio" id="fpsnight2" name="fpsnight" value="p.10"  ><label for="fpsnight2">10s </label>&nbsp;
   <input type="radio" id="fpsnight3" name="fpsnight" value="p.15"  ><label for="fpsnight3">15s </label>&nbsp;
@@ -102,7 +102,7 @@ NTSC:
  
 
 <div id="settingsNightexposure">
-<p><b>Night Exposure: </b>
+<b>Night Exposure: </b>
   <input type="radio" id="nightexp1" name="nightexp" value="eA" ><label for="nightexp1">auto </label>&nbsp;
   <input type="radio" id="nightexp2" name="nightexp" value="e2" ><label for="nightexp2">2s </label>&nbsp;
   <input type="radio" id="nightexp3" name="nightexp" value="e5" ><label for="nightexp3">5s </label>&nbsp;
@@ -115,7 +115,7 @@ NTSC:
 </div>
 
 <div id="settingsRESTLV">
-<p><b>TLV/Warp Resolution: </b>
+<b>TLV/Warp Resolution: </b>
   <input type="radio" id="rt1" name="restlv" value="r1080"><label for="rt1">1080p </label>&nbsp;
   <input type="radio" id="rt2" name="restlv" value="r1440"><label for="rt2">1440p </label>&nbsp;
   <input type="radio" id="rt3" name="restlv" value="r27T" ><label for="rt3">2.7k 4x3 </label>&nbsp;
@@ -125,14 +125,14 @@ NTSC:
  
 
 <div id="settingsVideo">
-<p><b>Video Properties: </b><br>
+<b>Video Properties: </b><br>
 Hypersmooth    <input type="radio" id="eis1" name="eis" value="e0"><label for="eis1">Off</label>&nbsp;<input type="radio" id="eis2" name="eis" value="e1"><label for="eis2">On</label>&nbsp;<input type="radio" id="eis3" name="eis" value="" checked> <label for="eis3">not set</label><br>
 Low Light      <input type="radio" id="all1" name="all" value="l0"><label for="al11">Off</label>&nbsp;<input type="radio" id="all2" name="all" value="l1"><label for="all2">On</label>&nbsp;<input type="radio" id="all3" name="all" value="" checked> <label for="all3">not set</label><br>
 </div>
 
 
 <div id="settingsBurst">
-<p><b>Burst Style: </b>
+<b>Burst Style: </b>
   <input type="radio" id="b1" name="burst" value="b3N1"><label  for="b1">3/1 </label>&nbsp;
   <input type="radio" id="b2" name="burst" value="b5N1"><label  for="b2">5/1 </label>&nbsp;
   <input type="radio" id="b3" name="burst" value="b10N1"><label for="b3">10/1 </label>&nbsp;
@@ -148,14 +148,14 @@ Low Light      <input type="radio" id="all1" name="all" value="l0"><label for="a
 
 
 <div id="settingsPhoto">
-<p><b>Photo Properties: </b><br>
+<b>Photo Properties: </b><br>
   <input type="radio" id="raw1" name="raw" value="rW"><label for="raw1">WDR </label>&nbsp;
   <input type="radio" id="raw2" name="raw" value="r"><label for="raw2">RAW </label>&nbsp;
   <input type="radio" id="raw3" name="raw" value="" checked> <label for="raw3"> none</label>
 </div>
 
 <div id="settingsAUDT">
-<p><b>Audio Type: </b>
+<b>Audio Type: </b>
   <input type="radio" id="audt1" name="audt" value="" checked><label for="audt1">auto </label>&nbsp;
   <input type="radio" id="audt2" name="audt" value="aS"><label for="audt2">Stereo </label>&nbsp;
   <input type="radio" id="audt3" name="audt" value="aW"><label for="audt3">Wind</label>
@@ -252,76 +252,75 @@ Low Light      <input type="radio" id="all1" name="all" value="l0"><label for="a
 <input type="checkbox" id="options" value=""><label for="options">Camera Preferences</label><br>
 </div>
 
-<UL id="optionOn">
-<LI id="opGPS"><b>GPS: </b>
+<div id="opGPS"><b>GPS: </b>
   <input type="radio" id="gps1" name="gps" value="g0"><label for="gps1">off </label>&nbsp;
   <input type="radio" id="gps2" name="gps" value="g1"><label for="gps2">on </label>
   <input type="radio" id="gps3" name="gps" value="" checked><label for="gps3">not set </label>
-
-<LI id="opVC"><b>Voice Control:  </b> 
+</div>
+<div id="opVC"><b>Voice Control:  </b> 
   <input type="radio" id="vc1" name="vc" value="v0"><label for="vc1">off </label>&nbsp;
   <input type="radio" id="vc2" name="vc" value="v1"><label for="vc2">on </label>
   <input type="radio" id="vc3" name="vc" value="" checked><label for="vc3">not set</label>
- 
-<LI id="opQC"><b>Quick Capture: </b>  
+ </div>
+<div id="opQC"><b>Quick Capture: </b>  
   <input type="radio" id="qc1" name="qc" value="q0"><label for="qc1">off </label>&nbsp;
   <input type="radio" id="qc2" name="qc" value="q1"><label for="qc2">on </label>
   <input type="radio" id="qc3" name="qc" value="" checked><label for="qc3">not set </label>
-  
-<LI id="opDM"><b>Default Mode:</b>
+  </div>
+<div id="opDM"><b>Default Mode:</b>
   <input type="radio" id="dm1" name="dm" value="dV">  <label for="dm1">Last Used Video</label>&nbsp;
   <input type="radio" id="dm2" name="dm" value="dP">  <label for="dm1">Last Used Photo</label>&nbsp;
   <input type="radio" id="dm3" name="dm" value="dT">  <label for="dm1">Last Used Timelapse</label>&nbsp;
   <input type="radio" id="dm4" name="dm" value="" checked><label for="dm4">not set</label>
-
-<LI id="opBV"><b>Beep Volume:  </b> 
+</div>
+<div id="opBV"><b>Beep Volume:  </b> 
   <input type="radio" id="bv1" name="bv" value="V0"><label for="bv1">0% </label>&nbsp;
   <input type="radio" id="bv2" name="bv" value="V1"><label for="bv2">10% </label>&nbsp;
   <input type="radio" id="bv3" name="bv" value="V4"><label for="bv3">40% </label>&nbsp;
   <input type="radio" id="bv4" name="bv" value="V7"><label for="bv4">70% </label>&nbsp;
   <input type="radio" id="bv5" name="bv" value="V9"><label for="bv5">100% </label>&nbsp;
   <input type="radio" id="bv6" name="bv" value="" checked><label for="bv5">not set</label>
+  </div>
   
-  
-<LI id="opDB"><b>Display Brightness:  </b> 
+<div id="opDB"><b>Display Brightness:  </b> 
   <input type="radio" id="db2" name="db" value="B1"><label for="db1">10% </label>&nbsp;
   <input type="radio" id="db3" name="db" value="B4"><label for="db2">40% </label>&nbsp;
   <input type="radio" id="db4" name="db" value="B7"><label for="db3">70% </label>&nbsp;
   <input type="radio" id="db5" name="db" value="B9"><label for="db4">100% </label>&nbsp;
   <input type="radio" id="db6" name="db" value="" checked><label for="bv5">not set</label>
-  
-<LI id="opLO"><b>LEDs On:  </b> 
+  </div>
+<div id="opLO"><b>LEDs On:  </b> 
   <input type="radio" id="lo1" name="lo" value="D0"><label for="lo1">All Off </label>&nbsp;
   <input type="radio" id="lo2" name="lo" value="D2"><label for="lo2">Rear Only </label>&nbsp;
   <input type="radio" id="lo3" name="lo" value="D4"><label for="lo3">All On </label>&nbsp;
   <input type="radio" id="lo4" name="lo" value="" checked><label for="lo4">not set</label>
-  
-<LI id="opOR"><b>Orientation Lock:  </b> 
+  </div>
+<div id="opOR"><b>Orientation Lock:  </b> 
   <input type="radio" id="or1" name="or" value="R1"><label for="or1">Landscape Up </label>&nbsp;
   <input type="radio" id="or2" name="or" value="R2"><label for="or2">Landscape Down </label>&nbsp;
   <input type="radio" id="or3" name="or" value="R0"><label for="or3">Unlocked/Free </label>&nbsp;
   <input type="radio" id="or4" name="or" value="" checked><label for="or4">not set</label>
-  
-<LI id="opAO"><b>Camera Auto Off: </b>  
+  </div>
+<div id="opAO"><b>Camera Auto Off: </b>  
   <input type="radio" id="ao1" name="ao" value="C5"><label for="ao1">5 mins </label>&nbsp;
   <input type="radio" id="ao2" name="ao" value="C15"><label for="ao2">15 mins </label>&nbsp;
   <input type="radio" id="ao3" name="ao" value="C30"><label for="ao3">30 mins </label>&nbsp;
   <input type="radio" id="ao4" name="ao" value="C"><label for="ao4">Never </label>&nbsp;
   <input type="radio" id="ao5" name="ao" value="" checked><label for="ao5">not set</label>
-  
-<LI id="opSO"><b>Screen Auto Off: </b>  
+  </div>
+<div id="opSO"><b>Screen Auto Off: </b>  
   <input type="radio" id="so1" name="so" value="S1"><label for="so1">1 mins </label>&nbsp;
   <input type="radio" id="so2" name="so" value="S2"><label for="so2">2 mins </label>&nbsp;
   <input type="radio" id="so3" name="so" value="S3"><label for="so3">3 mins </label>&nbsp;
   <input type="radio" id="so4" name="so" value="S"><label for="so4">Never </label>&nbsp;
   <input type="radio" id="so5" name="so" value="" checked><label for="so5">not set</label>
-  
-<LI id="opWC"><b>WiFi Connections: </b>  
+  </div>
+<div id="opWC"><b>WiFi Connections: </b>  
   <input type="radio" id="wc1" name="wc" value="W0"><label for="wc1">Off </label>&nbsp;
   <input type="radio" id="wc2" name="wc" value="W1"><label for="wc2">On </label>&nbsp;
   <input type="radio" id="wc3" name="wc" value="" checked><label for="wc3">not set</label>
-  
-<LI id="opLN"><b>Language:</b><br>  
+  </div>
+<div id="opLN"><b>Language:</b><br>  
   <input type="radio" id="ln1" name="ln" value="L0"> <label for="ln1">English US </label>&nbsp;
   <input type="radio" id="ln2" name="ln" value="L01"><label for="ln2">English UK </label>&nbsp;
   <input type="radio" id="ln3" name="ln" value="L02"><label for="ln3">English AUS </label>&nbsp;
@@ -336,9 +335,7 @@ Low Light      <input type="radio" id="all1" name="all" value="l0"><label for="a
   <input type="radio" id="ln12" name="ln" value="L8"><label for="ln12">Portuguese </label>&nbsp;
   <input type="radio" id="ln13" name="ln" value="L9"><label for="ln13">Russian </label>&nbsp;
   <input type="radio" id="ln14" name="ln" value="" checked><label for="ln14">not set</label>
-  
-</UL>
-
+</div>
 
 
 <div id="opDT">
@@ -357,59 +354,57 @@ Low Light      <input type="radio" id="all1" name="all" value="l0"><label for="a
 </div>
 
 
-<UL id="actionOn">
-
-<LI id="aSD"><b>Shutdown and capture in:</b> 
+<div id="aSD"><b>Shutdown and capture in:</b> 
 <input type="text" id="starthrs" value="" style="width:45px">hours <input type="text" id="startmins" value="" style="width:45px">mins <input type="text" id="startsecs" value="" style="width:45px">secs <br>
 &nbsp;&nbsp;&nbsp;<b>or</b> at camera time: <input type="text" id="time" value="" style="width:60px"> (format 24hr HH:MM)<br>
 &nbsp;&nbsp;&nbsp;<b>or</b> minutes after <b>sunrise</b>: <input type="text" id="risemins" value="" style="width:60px"> e.g. -30 for mins before<br>
 &nbsp;&nbsp;&nbsp;<b>or</b> minutes after <b>sunset</b>: <input type="text" id="setmins" value="" style="width:60px"> e.g. -45 for mins before<br>
-
-<LI id="aS"><b>Start Capture:</b>
+</div>
+<div id="aS"><b>Start Capture:</b>
   <input type="radio" id="as1" name="as" value="!S"><label for="as1">Now </label>&nbsp;
   <input type="radio" id="as2" name="as" value="!1S"><label for="as2">in 1 sec </label>&nbsp;
   <input type="radio" id="as3" name="as" value="!3S"><label for="as3">in 3 secs </label>&nbsp;
   <input type="radio" id="as4" name="as" value="!30S"><label for="as4">in 30 secs </label>&nbsp;
   <input type="radio" id="as5" name="as" value="" checked><label for="as5">not set</label>
-  
-<LI id="aE"><b>End Capture:</b>
+  </div>
+<div id="aE"><b>End Capture:</b>
   <input type="radio" id="ae1" name="ae" value="!5E"><label for="ae1">End after 5 secs </label>&nbsp;
   <input type="radio" id="ae2" name="ae" value="!10E"><label for="ae2">End after 10 secs </label>&nbsp;
   <input type="radio" id="ae3" name="ae" value="!60E"><label for="ae3">End after 1 min </label>&nbsp;
   <input type="radio" id="ae4" name="ae" value="!600E"><label for="ae4">End after 10 min  </label>&nbsp;
   <input type="radio" id="ae5" name="ae" value="" checked><label for="ae5">not set</label>
-
-<LI id="aEND"><b>End capture after:</b> 
+</div>
+<div id="aEND"><b>End capture after:</b> 
 <input type="text" id="endhrs" value="" style="width:45px">hours <input type="text" id="endmins" value="" style="width:45px">mins <input type="text" id="endsecs" value="" style="width:45px">secs <br>
 &nbsp;&nbsp;&nbsp;<b>or</b> at camera time: <input type="text" id="endtime" value="" style="width:60px"> (format 24hr HH:MM)<br>
-<!--&nbsp;&nbsp;&nbsp;<b>or</b> minutes after <b>sunrise</b>: <input type="text" id="endrisemins" value="" style="width:60px"> e.g. -30 for mins before<br>
-&nbsp;&nbsp;&nbsp;<b>or</b> minutes after <b>sunset</b>: <input type="text" id="endsetmins" value="" style="width:60px"> e.g. -45 for mins before<br> -->
-
+</div>
 <br>
-<LI id="aSM"><b>Start via Motion Detection:</b> 
+<div id="aSM"><b>Start via Motion Detection:</b> 
 <input type="text" id="mstart" value="" style="width:60px">start <input type="text" id="mend" value="" style="width:60px">end sensitivity (1-9) <b><br>
 &nbsp;&nbsp;&nbsp;</b> Delay start: <input type="text" id="dhold" value="" style="width:60px"> seconds to get out of the shot.<br>
 &nbsp;&nbsp;&nbsp;</b> Mask motion: <input type="text" id="mmhold" value="" style="width:60px"> seconds to learn background motion.<br>
 &nbsp;&nbsp;&nbsp;</b> Hold time: <input type="text" id="mhold" value="" style="width:60px"> seconds to capture after motion stops.<br>
 <br>
-<LI id="aSV"><b>Start at GPS Velocity (km/h):</b> 
+</div>
+<div id="aSV"><b>Start at GPS Velocity (km/h):</b> 
 <input type="text" id="vstart" value="" style="width:60px">start speed <input type="text" id="vend" value="" style="width:60px">end speed <b><br>
 &nbsp;&nbsp;&nbsp;</b> Hold time: <input type="text" id="vhold" value="" style="width:60px"> seconds)<br>
 <br>
-<LI id="aR"><b>Repeat command after: 
+</div>
+<div id="aR"><b>Repeat command after: 
 </b> <input type="text" id="repeathrs" value="" style="width:45px">hours <input type="text" id="repeatmins" value="" style="width:45px">mins <input type="text" id="repeatsecs" value="" style="width:45px">secs <br>
 &nbsp;&nbsp;&nbsp;<b>or</b> delay for HH:MM <input type="text" id="repeattime" value="" style="width:60px"> <br>
 &nbsp;&nbsp;&nbsp;<b>or</b> minutes after <b>sunrise</b>: <input type="text" id="repeatrisemins" value="" style="width:60px"> e.g. -30 for mins before<br>
 &nbsp;&nbsp;&nbsp;<b>or</b> minutes after <b>sunset</b>: <input type="text" id="repeatsetmins" value="" style="width:60px"> e.g. -45 for mins before<br> 
-
+</div>
   
-<LI id="aQ"><b>Show QR Code:</b>
+<div id="aQ"><b>Show QR Code:</b>
   <input type="radio" id="aq1" name="aq" value="!Q"><label for="aq1">Show Current Mode </label>&nbsp;
   <input type="radio" id="aq2" name="aq" value="" checked><label for="aq2">not set</label>
-    
-</UL>
-<p>Additional Commands: <input type="text" id="addcmd" value=""><br>
-<p>
+</div>
+
+Additional Commands: <input type="text" id="addcmd" value=""><br>
+
 
 
 <center>
@@ -486,9 +481,7 @@ function startTime() {
 	dset("ptEV",false);
 	dset("ptSHARP",false);
 	dset("ptAUD",false);
-	
-	//dset("optionOn", false);
-	
+		
 	dset("opGPS", false);
 	dset("opVC", false);
 	dset("opQC", false);
@@ -501,8 +494,6 @@ function startTime() {
 	dset("opSO", false);
 	dset("opWC", false);
 	dset("opLN", false);
-			
-	//dset("actionOn", false);
 	
 	dset("aS", false);
 	dset("aE", false);
@@ -610,9 +601,7 @@ function startTime() {
 	if(document.getElementById("options") != null)
 	{
 		if(document.getElementById("options").checked == true)
-		{
-			//dset("optionOn", true);
-			
+		{			
 			dset("opGPS", true);
 			dset("opVC", true);
 			dset("opQC", true);
