@@ -10,7 +10,7 @@
         }
 </style>
 
-# My QR Control v1.02
+# My QR Control v1.03
 
 <p><b>Camera Mode: </b><input type="radio" id="m7" name="mode" value="" checked><label for="m7">not set</label><br>
   <input type="radio" id="m1" name="mode" value="mV"><label  for="m1">Video</label>&nbsp;
