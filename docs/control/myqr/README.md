@@ -23,13 +23,11 @@
 
 #1 
 
-<div id="settingsRES" style="display: none">
-<p><b>Video Resolution: </b><input type="radio" id="r7" name="res" value="" checked> <label for="r7">not set</label><br>
-16:9 - 
+<div id="settingsRES">
+**Video Resolution:**<input type="radio" id="r7" name="res" value="" checked><label for="r7">not set</label><br>
   <input type="radio" id="r1" name="res" value="r1080"><label for="r1">1080p </label>&nbsp;
   <input type="radio" id="r2" name="res" value="r27"  ><label for="r2">2.7k  </label>&nbsp;
   <input type="radio" id="r3" name="res" value="r4"   ><label for="r3">4k </label><br>
- 4:3 - 
   <input type="radio" id="r4" name="res" value="r1440"><label for="r4">1440p </label>&nbsp;
   <input type="radio" id="r5" name="res" value="r27T" ><label for="r5">2.7k 4x3 </label>&nbsp;
   <input type="radio" id="r6" name="res" value="r4T"  ><label for="r6">4k 4x3 </label><br>
@@ -37,15 +35,12 @@
  
 #2
  
-<div id="settingsFPS" style="display: none">
-<p><b>FPS Video: </b><input type="radio" id="p10" name="fps" value="" checked> <label for="p10">not set</label><br>
+<div id="settingsFPS">
+**FPS Video:**</b><input type="radio" id="p10" name="fps" value="" checked> <label for="p10">not set</label><br>
 NTSC:
   <input type="radio" id="p1" name="fps" value="p24" ><label for="p1">24 </label>&nbsp;
   <input type="radio" id="p2" name="fps" value="p30" ><label for="p2">30 </label>&nbsp;
-  <!-- <input type="radio" id="p3" name="fps" value="p48" ><label for="p3">48 </label>&nbsp; -->
   <input type="radio" id="p3" name="fps" value="p60" ><label for="p3">60 </label>&nbsp;
-  <!--  <input type="radio" id="p5" name="fps" value="p80" ><label for="p5">80 </label>&nbsp; -->
-  <!--  <input type="radio" id="p6" name="fps" value="p90" ><label for="p6">90 </label>&nbsp; -->
   <input type="radio" id="p4" name="fps" value="p120"><label for="p4">120 </label>&nbsp;
   <input type="radio" id="p5" name="fps" value="p240"><label for="p5">240 </label>&nbsp;<br>
  PAL:
@@ -57,8 +52,8 @@ NTSC:
  
 #3
  
-<div id="settingsFOV" style="display: none">
-<p><b>FOV: </b>
+<div id="settingsFOV">
+**FOV:**
   <input type="radio" id="f1" name="fov" value="fW"><label for="f1">Wide </label>&nbsp;
   <input type="radio" id="f2" name="fov" value="fM"><label for="f2">Medium </label>&nbsp;
   <input type="radio" id="f3" name="fov" value="fN"><label for="f3">Narrow </label>&nbsp;
@@ -70,7 +65,7 @@ NTSC:
 #4
 
 <div id="settingsBurst" style="display: none">
-<p><b>Burst Style: </b>
+**Burst Style:**
   <input type="radio" id="b1" name="burst" value="b3N1"><label  for="b1">3/1 </label>&nbsp;
   <input type="radio" id="b2" name="burst" value="b5N1"><label  for="b2">5/1 </label>&nbsp;
   <input type="radio" id="b3" name="burst" value="b10N1"><label for="b3">10/1 </label>&nbsp;
