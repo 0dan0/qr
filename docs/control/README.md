@@ -21,6 +21,7 @@ All setting commands start with a lowercase character, followed by either upperc
 
 ## Example Pre-built Commands
 
+* Set most camera modes with the [**Customizable QR Creator**](./custom)
 * Setup your cameras with [**Precision Date and Time**](./precisiontime)
 * Personalize your cameras with [**Owner Information**](./owner)
 * Experiment with larger chapter size (12GB, using 64-bit files) [**12 GB Chapters**](./chapters)
