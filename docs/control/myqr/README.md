@@ -123,29 +123,11 @@ NTSC:
   <input type="radio" id="rt5" name="restlv" value="" checked><label for="rt5">not set</label>
  </div>
  
-
 <div id="settingsVideo">
 <b>Video Properties: </b><br>
 Hypersmooth    <input type="radio" id="eis1" name="eis" value="e0"><label for="eis1">Off</label>&nbsp;<input type="radio" id="eis2" name="eis" value="e1"><label for="eis2">On</label>&nbsp;<input type="radio" id="eis3" name="eis" value="" checked> <label for="eis3">not set</label><br>
 Low Light      <input type="radio" id="all1" name="all" value="l0"><label for="al11">Off</label>&nbsp;<input type="radio" id="all2" name="all" value="l1"><label for="all2">On</label>&nbsp;<input type="radio" id="all3" name="all" value="" checked> <label for="all3">not set</label><br>
 </div>
-
-
-<div id="settingsBurst">
-<b>Burst Style: </b>
-  <input type="radio" id="b1" name="burst" value="b3N1"><label  for="b1">3/1 </label>&nbsp;
-  <input type="radio" id="b2" name="burst" value="b5N1"><label  for="b2">5/1 </label>&nbsp;
-  <input type="radio" id="b3" name="burst" value="b10N1"><label for="b3">10/1 </label>&nbsp;
-  <input type="radio" id="b4" name="burst" value="b10N2"><label for="b4">10/2 </label>&nbsp;
-  <input type="radio" id="b5" name="burst" value="b10N3"><label for="b5">10/3 </label>&nbsp;
-  <input type="radio" id="b6" name="burst" value="b30N1"><label for="b6">30/1 </label>&nbsp;
-  <input type="radio" id="b7" name="burst" value="b30N2"><label for="b7">30/2 </label>&nbsp;
-  <input type="radio" id="b8" name="burst" value="b30N3"><label for="b8">30/3 </label>&nbsp;
-  <input type="radio" id="b9" name="burst" value="b30N6"><label for="b9">30/6 </label>&nbsp;
-  <input type="radio" id="b10" name="burst" value="" checked><label for="b10">not set</label>
-</div>
-
-
 
 <div id="settingsPhoto">
 <b>Photo Properties: </b><br>
@@ -809,6 +791,10 @@ function startTime() {
 		if(secs || timecode)
 		{
 			cmd = cmd + s;
+			if(timecode)
+			{			
+				cmd = cmd + "." + ms;
+			}
 		}
 	
 		timechecked = true; 
