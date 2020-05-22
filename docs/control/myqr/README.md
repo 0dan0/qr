@@ -10,7 +10,7 @@
         }
 </style>
 
-# My QR Control v1.00
+# My QR Control v1.01
 
 <b>Camera Mode: </b><input type="radio" id="m7" name="mode" value="" checked><label for="m7">not set</label><br>
   <input type="radio" id="m1" name="mode" value="mV"><label  for="m1">Video</label>&nbsp;
@@ -19,7 +19,6 @@
   <input type="radio" id="m4" name="mode" value="mP"><label  for="m4">Photo</label>&nbsp;
   <input type="radio" id="m5" name="mode" value="mPB"><label for="m5">Burst Photo</label>&nbsp;
   <input type="radio" id="m6" name="mode" value="mPN"><label for="m6">Night Photo</label><br>
-<table>
 
 <div id="settingsRES">
 <b>Video Resolution:</b><input type="radio" id="r7" name="res" value="" checked><label for="r7">not set</label><br>
@@ -29,7 +28,7 @@
   <input type="radio" id="r4" name="res" value="r1440"><label for="r4">1440p </label>&nbsp;
   <input type="radio" id="r5" name="res" value="r27T" ><label for="r5">2.7k 4x3 </label>&nbsp;
   <input type="radio" id="r6" name="res" value="r4T"  ><label for="r6">4k 4x3 </label><br>
-</div>
+</div><br><br>
  
 <div id="settingsFPS">
 <b>FPS Video:</b><input type="radio" id="p10" name="fps" value="" checked> <label for="p10">not set</label><br>
@@ -44,7 +43,7 @@ NTSC:
   <input type="radio" id="p7" name="fps" value="p50"><label for="p7">50 </label>&nbsp;
   <input type="radio" id="p8" name="fps" value="p100"><label for="p8">100 </label>&nbsp;
   <input type="radio" id="p9" name="fps" value="p200"><label for="p9">200 </label>&nbsp;
-</div>
+</div><br><br>
   
 <div id="settingsFOV">
 <b>FOV:</b>
@@ -54,7 +53,7 @@ NTSC:
   <input type="radio" id="f4" name="fov" value="fL"><label for="f4">Linear </label>&nbsp;
   <input type="radio" id="f5" name="fov" value="fS"><label for="f5">Superview </label>&nbsp;
   <input type="radio" id="f6" name="fov" value="" checked> <label for="f6">not set</label>
- </div>
+ </div><br><br>
 
 <div id="settingsBurst">
 <b>Burst Style:</b>
@@ -68,7 +67,7 @@ NTSC:
   <input type="radio" id="b8" name="burst" value="b30N3"><label for="b8">30/3 </label>&nbsp;
   <input type="radio" id="b9" name="burst" value="b30N6"><label for="b9">30/6 </label>&nbsp;
   <input type="radio" id="b10" name="burst" value="" checked><label for="b10">not set</label>
-</div>
+</div><br><br>
 
 <div id="settingsTimelapse">
 <b>Timelapse Interval: </b>
@@ -83,7 +82,7 @@ NTSC:
   <input type="radio" id="fpslapse9"  name="fpslapse" value="p.30"><label for="fpslapse9">30s </label>&nbsp;
   <input type="radio" id="fpslapse10" name="fpslapse" value="p.60"><label for="fpslapse10">60s </label>&nbsp;
   <input type="radio" id="fpslapse11" name="fpslapse" value="" checked><label for="fpslapse11">not set</label><br>
-</div>
+</div><br><br>
  
 <div id="settingsNightlapse">
 <b>Nightlapse Interval: </b>
@@ -97,7 +96,7 @@ NTSC:
   <input type="radio" id="fpsnight8" name="fpsnight" value="p.1800"><label for="fpsnight8">30min </label>&nbsp;
   <input type="radio" id="fpsnight9" name="fpsnight" value="p.3600"><label for="fpsnight9">60min </label>&nbsp;
   <input type="radio" id="fpsnight10" name="fpsnight" value="" checked><label for="fpsnight10">not set</label>
-</div>
+</div><br><br>
  
  
 
@@ -111,8 +110,7 @@ NTSC:
   <input type="radio" id="nightexp6" name="nightexp" value="e20"><label for="nightexp6">20s </label>&nbsp;
   <input type="radio" id="nightexp7" name="nightexp" value="e30"><label for="nightexp7">30s </label>&nbsp;
   <input type="radio" id="nightexp8" name="nightexp" value="" checked><label for="nightexp8"> not set</label><br>
-</form>
-</div>
+</div><br><br>
 
 <div id="settingsRESTLV">
 <b>TLV/Warp Resolution: </b>
@@ -121,32 +119,32 @@ NTSC:
   <input type="radio" id="rt3" name="restlv" value="r27T" ><label for="rt3">2.7k 4x3 </label>&nbsp;
   <input type="radio" id="rt4" name="restlv" value="r4"   ><label for="rt4">4k </label>&nbsp;
   <input type="radio" id="rt5" name="restlv" value="" checked><label for="rt5">not set</label>
- </div>
+ </div><br><br>
  
 <div id="settingsVideo">
 <b>Video Properties: </b><br>
 Hypersmooth    <input type="radio" id="eis1" name="eis" value="e0"><label for="eis1">Off</label>&nbsp;<input type="radio" id="eis2" name="eis" value="e1"><label for="eis2">On</label>&nbsp;<input type="radio" id="eis3" name="eis" value="" checked> <label for="eis3">not set</label><br>
 Low Light      <input type="radio" id="all1" name="all" value="l0"><label for="al11">Off</label>&nbsp;<input type="radio" id="all2" name="all" value="l1"><label for="all2">On</label>&nbsp;<input type="radio" id="all3" name="all" value="" checked> <label for="all3">not set</label><br>
-</div>
+</div><br><br>
 
 <div id="settingsPhoto">
 <b>Photo Properties: </b><br>
   <input type="radio" id="raw1" name="raw" value="rW"><label for="raw1">WDR </label>&nbsp;
   <input type="radio" id="raw2" name="raw" value="r"><label for="raw2">RAW </label>&nbsp;
   <input type="radio" id="raw3" name="raw" value="" checked> <label for="raw3"> none</label>
-</div>
+</div><br><br>
 
 <div id="settingsAUDT">
 <b>Audio Type: </b>
   <input type="radio" id="audt1" name="audt" value="" checked><label for="audt1">auto </label>&nbsp;
   <input type="radio" id="audt2" name="audt" value="aS"><label for="audt2">Stereo </label>&nbsp;
   <input type="radio" id="audt3" name="audt" value="aW"><label for="audt3">Wind</label>
-</div>
+</div><br><br>
  
 
 <div id="settingsPT">
 <input type="checkbox" id="pt" value="t"><label for="pt">Protune Controls</label><br>
-</div>
+</div><br><br>
 
 
 <div id="ptCOLOR">
@@ -232,7 +230,7 @@ Low Light      <input type="radio" id="all1" name="all" value="l0"><label for="a
 
 <div id="cameraOptions">
 <input type="checkbox" id="options" value=""><label for="options">Camera Preferences</label><br>
-</div>
+</div><br><br>
 
 <div id="opGPS"><b>GPS: </b>
   <input type="radio" id="gps1" name="gps" value="g0"><label for="gps1">off </label>&nbsp;
@@ -322,19 +320,16 @@ Low Light      <input type="radio" id="all1" name="all" value="l0"><label for="a
 
 <div id="opDT">
 <input type="checkbox" id="dt" value="oT"><label for="dt">Set date + time automatically</label><br>
-</div>
+</div><br><br>
 
 <div id="opDTS">
 <input type="checkbox" id="dttimecode" value=""><label for="dttimecode">add 1/100th of a second</label><br>
-</div>
-<br>
-
+</div><br><br>
 
  
 <div id="cameraActions">
 <input type="checkbox" id="actions" value=""><label for="actions">Delayed Actions</label><br>
-</div>
-
+</div><br><br>
 
 <div id="aSD"><b>Shutdown and capture in:</b> 
 <input type="text" id="starthrs" value="" style="width:45px">hours <input type="text" id="startmins" value="" style="width:45px">mins <input type="text" id="startsecs" value="" style="width:45px">secs <br>
@@ -378,21 +373,12 @@ Low Light      <input type="radio" id="all1" name="all" value="l0"><label for="a
 &nbsp;&nbsp;&nbsp;<b>or</b> delay for HH:MM <input type="text" id="repeattime" value="" style="width:60px"> <br>
 &nbsp;&nbsp;&nbsp;<b>or</b> minutes after <b>sunrise</b>: <input type="text" id="repeatrisemins" value="" style="width:60px"> e.g. -30 for mins before<br>
 &nbsp;&nbsp;&nbsp;<b>or</b> minutes after <b>sunset</b>: <input type="text" id="repeatsetmins" value="" style="width:60px"> e.g. -45 for mins before<br> 
-</div>
-  
-<div id="aQ"><b>Show QR Code:</b>
-  <input type="radio" id="aq1" name="aq" value="!Q"><label for="aq1">Show Current Mode </label>&nbsp;
-  <input type="radio" id="aq2" name="aq" value="" checked><label for="aq2">not set</label>
-</div>
+</div><br><br>
 
 Additional Commands: <input type="text" id="addcmd" value=""><br>
-
-
-
-<center>
-<div id="qrcode"></div>
 <br>
-</center>
+
+<div id="qrcode"></div>
 
 <br>
 
