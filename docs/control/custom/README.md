@@ -123,8 +123,8 @@
 
 <div id="settingsPhoto">
 <b>Photo Properties:</b><br>
-  <input type="radio" id="raw1" name="raw" value="rW"><label for="raw1">WDR </label>&nbsp;
-  <input type="radio" id="raw2" name="raw" value="r"><label for="raw2">RAW </label>&nbsp;
+  <input type="radio" id="raw1" name="raw" value="rW"><label for="raw1">Raw off </label>&nbsp;
+  <input type="radio" id="raw2" name="raw" value="r"><label for="raw2">Raw on</label>&nbsp;
   <input type="radio" id="raw3" name="raw" value="" checked> <label for="raw3"> none</label><br><br>
 </div>
 
