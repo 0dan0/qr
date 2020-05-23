@@ -144,7 +144,7 @@
   <input type="radio" id="ptc3" name="ptc" value="" checked><label for="ptc3">not set</label>
 </div>
 <div id="ptWBAL">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>White Balance:</b>&nbsp;&nbsp;
-  <input type="radio" id="wb1" name="wb" value="" checked><label for="wb1">Auto </label>&nbsp;
+  <input type="radio" id="wb1" name="wb" value="wA" checked><label for="wb1">Auto </label>&nbsp;
   <input type="radio" id="wb2" name="wb" value="w23" ><label for="wb2">2300K </label>&nbsp;
   <input type="radio" id="wb3" name="wb" value="w28" ><label for="wb3">2800K </label>&nbsp;
   <input type="radio" id="wb4" name="wb" value="w32" ><label for="wb4">3200K </label>&nbsp;
