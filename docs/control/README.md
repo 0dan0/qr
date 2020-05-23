@@ -14,16 +14,15 @@ Any of these can be used on their own, or in different order, however the order 
 
 All setting commands start with a lowercase character, followed by either uppercase or numbers for the parameters, the next lowercase character is the next setting command. Below are some additional setting commands with their range of parameters.
 
+## Example Pre-built Commands
+
+* Set most camera modes with the [**Customizable QR Code Creator**](./custom)
+* Setup your cameras with [**Precision Date and Time**](./precisiontime)
+* Personalize your cameras with [**Owner Information**](./owner)
+* Experiment with larger chapter size (12GB, using 64-bit files) [**12 GB Chapters**](./chapters)
 
 ## The Full List of [**Settings Commands**](./settings)
 
 ## The Full List of [**Action Commands**](./actions)
 
-## Example Pre-built Commands
-
-* Set most camera modes with the [**Customizable QR Creator**](./custom)
-* Setup your cameras with [**Precision Date and Time**](./precisiontime)
-* Personalize your cameras with [**Owner Information**](./owner)
-* Experiment with larger chapter size (12GB, using 64-bit files) [**12 GB Chapters**](./chapters)
-
-### ver 1.01
+### ver 1.00
