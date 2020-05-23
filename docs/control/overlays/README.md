@@ -63,7 +63,7 @@ function makeQR()
   {
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
-      text : "!MOWNR=\"\"",
+      text : "!oMBURN=\"\"",
       width : 360,
       height : 360,
       correctLevel : QRCode.CorrectLevel.M
@@ -74,13 +74,13 @@ function makeQR()
 
 function timeLoop()
 {
-  if(document.getElementById("addname") != null)
+  if(document.getElementById("startmsg") != null)
   {
-    cmd = "!MOWNR=\"" + document.getElementById("addname").value + "\"";
+    cmd = "oMBURN=\"" + document.getElementById("startmsg").value + "\"";
   }
   else
   {
-    cmd = "!MOWNR=\"\"";
+    cmd = "oMBURN=\"\"";
   }
 
   qrcode.clear(); 
