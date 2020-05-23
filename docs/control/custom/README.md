@@ -12,6 +12,8 @@
 
 # QR Control Customizer
 
+## version 1.00
+
 <b>Camera Mode:</b>&nbsp;&nbsp;<input type="radio" id="m7" name="mode" value="" checked><label for="m7">not set</label><br>
   <input type="radio" id="m1" name="mode" value="mV"><label  for="m1">Video</label>&nbsp;
   <input type="radio" id="m2" name="mode" value="mT"><label  for="m2">Timelapse</label>&nbsp;
@@ -204,7 +206,8 @@
 <div id="ptSHARP">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Sharpness:</b>&nbsp;&nbsp;
   <input type="radio" id="sharp1" name="sharp" value="sL"><label for="sharp1">Low </label>&nbsp;
   <input type="radio" id="sharp2" name="sharp" value="sM"><label for="sharp2">Medium </label>&nbsp;
-  <input type="radio" id="sharp3" name="sharp" value="" checked><label for="sharp3">High</label>
+  <input type="radio" id="sharp3" name="sharp" value="sH"><label for="sharp3">High</label>&nbsp;
+  <input type="radio" id="sharp4" name="sharp" value="" checked><label for="sharp4">not set</label>
 </div>
 <div id="ptAUD">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RAW Audio:</b>&nbsp;&nbsp;
   <input type="radio" id="aud1" name="aud" value="" checked><label for="aud1">Off </label>&nbsp;
