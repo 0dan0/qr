@@ -12,8 +12,6 @@
 
 # QR Control Customizer
 
-## version 1.00
-
 <b>Camera Mode:</b>&nbsp;&nbsp;<input type="radio" id="m7" name="mode" value="" checked><label for="m7">not set</label><br>
   <input type="radio" id="m1" name="mode" value="mV"><label  for="m1">Video</label>&nbsp;
   <input type="radio" id="m2" name="mode" value="mT"><label  for="m2">Timelapse</label>&nbsp;
@@ -368,7 +366,9 @@ GoPro QR Command: <b id="txt"></b>
 
 <button onclick="myReloadFunction()">Reset page</button>
 
-[Learn more](..)
+[Learn more](..) on QR Control
+
+## version 1.00
 
 <script>
 var lastcmd = ""
