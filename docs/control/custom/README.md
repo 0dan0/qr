@@ -606,8 +606,8 @@ function startTime() {
 	cmd = dcmd(cmd,"all"); //auto low light	
 	cmd = dcmd(cmd,"audt"); //audio control
 	
-	if(checkedmode == 5) //RAW
-		cmd = dcmd(cmd,"raw"); //audio control
+	if(checkedmode == 4) //RAW
+		cmd = dcmd(cmd,"raw"); //raw photo control
 		
 	if(document.getElementById("p1") != null)
 	{
