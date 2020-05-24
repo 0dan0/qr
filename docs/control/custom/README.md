@@ -253,7 +253,7 @@
   <input type="radio" id="db2" name="db" value="B4"><label for="db2">40% </label>&nbsp;
   <input type="radio" id="db3" name="db" value="B7"><label for="db3">70% </label>&nbsp;
   <input type="radio" id="db4" name="db" value="B9"><label for="db4">100% </label>&nbsp;
-  <input type="radio" id="db5" name="db" value="" checked><label for="bv5">not set</label>
+  <input type="radio" id="db5" name="db" value="" checked><label for="db5">not set</label>
   </div>
 <div id="opLO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>LEDs On:</b>&nbsp;&nbsp;
   <input type="radio" id="lo1" name="lo" value="D0"><label for="lo1">All Off </label>&nbsp;
