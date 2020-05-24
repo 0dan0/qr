@@ -235,8 +235,8 @@
   </div>
 <div id="opDM">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Default Mode:</b>&nbsp;&nbsp;
   <input type="radio" id="dm1" name="dm" value="dV">  <label for="dm1">Last Used Video</label>&nbsp;
-  <input type="radio" id="dm2" name="dm" value="dP">  <label for="dm1">Last Used Photo</label>&nbsp;
-  <input type="radio" id="dm3" name="dm" value="dT">  <label for="dm1">Last Used Timelapse</label>&nbsp;
+  <input type="radio" id="dm2" name="dm" value="dP">  <label for="dm2">Last Used Photo</label>&nbsp;
+  <input type="radio" id="dm3" name="dm" value="dT">  <label for="dm3">Last Used Timelapse</label>&nbsp;
   <input type="radio" id="dm4" name="dm" value="" checked><label for="dm4">not set</label>
 </div>
 <div id="opBV">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Beep Volume:</b>&nbsp;&nbsp; 
