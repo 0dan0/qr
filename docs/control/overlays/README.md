@@ -22,9 +22,11 @@ Overlay horizontal size <input type="range" id="hsize" name="hsize" min="0" max=
 
 Offset from the edge <input type="range" id="offset" name="offset" min="10" max="150" value="10"><label for="offset"></label> <b id="offtext">10</b>
 
-Any start message here: <input type="text" id="startmsg" value=""><br>
+Note: All text box support **\n** for a new line.
 
-**Add Time with format**  <input type="text" id="addtime" value="HH:MM:SSaa ">
+**Any start message here:** <input type="text" id="startmsg" value=""><br>
+
+**Add Time with format**  <input type="text" id="addtime" value="HH:MM:SSaa\n">
 
  * HH - Hour
  * MM - Minute
@@ -39,7 +41,7 @@ Any start message here: <input type="text" id="startmsg" value=""><br>
  * mm - month (1-12)
  * dd - day (1-31)
   
-Any end message here: <input type="text" id="endmsg" value=""><br>
+**Any end message here:** <input type="text" id="endmsg" value=""><br>
 
 **Screen Placement** <br>
   &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="b1" name="placement" value="TL"><label for="b1">Top Left    </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
