@@ -40,6 +40,17 @@ Any start message here: <input type="text" id="startmsg" value=""><br>
  * dd - day (1-31)
   
 Any end message here: <input type="text" id="endmessage" value=""><br>
+
+**Screen Placement**
+  <input type="radio" id="b1" name="b1" value="TL"><label for="b1">Top Left    </label>&nbsp;
+  <input type="radio" id="b2" name="b2" value="TC"><label for="b2">Top Center  </label>&nbsp;
+  <input type="radio" id="b3" name="b3" value="TR"><label for="b3">Top Right   </label><br>
+  <input type="radio" id="b4" name="b4" value="ML"><label for="b4">Mid Left    </label>&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="b5" name="b5" value="MR"><label for="b5">Mid Right   </label><br>
+  <input type="radio" id="b6" name="b6" value="BL"><label for="b6">Lower Left  </label>&nbsp;
+  <input type="radio" id="b7" name="b7" value="BC"><label for="b7">Lower Center</label>&nbsp;
+  <input type="radio" id="b8" name="b8" value="BR" checked><label for="b8">Lower Right </label>&nbsp;<br>
   
 <center>
 <div id="qrcode"></div>
