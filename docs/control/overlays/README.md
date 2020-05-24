@@ -58,6 +58,10 @@ Note: All text box support **\n** for a new line.
 <div id="qrcode"></div>
 <br>
 </center>
+
+
+Make the overlay permanently active: **Are you sure?** <label for="permanent">Permanent Overlay</label><br>
+
 QR Command: <b id="qrtext">time</b><br>
         
 ## ver 1.0
@@ -87,10 +91,15 @@ function timeLoop()
 {
   if(document.getElementById("startmsg") != null)
   {
+    var mtype = "o";
 	var openb = "\[";
 	var closeb = "\]";
-    cmd = "oMBRNO=" + document.getElementById("offset").value
-	+ "oMBURN=\"(" 
+	
+    if(document.getElementById("permanent").checked == true)
+		mtype = "!";
+	
+    cmd = mtype + "MBRNO=" + document.getElementById("offset").value
+	+ mtype + "MBURN=\"(" 
 	+ document.getElementById("hsize").value + "," 
 	+ document.getElementById("vsize").value + ")" 	
 	+ document.getElementById("startmsg").value + openb
