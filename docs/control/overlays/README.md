@@ -42,13 +42,13 @@ Any start message here: <input type="text" id="startmsg" value=""><br>
 Any end message here: <input type="text" id="endmessage" value=""><br>
 
 **Screen Placement** <br>
-  <input type="radio" id="b1" name="placement" value="TL"><label for="b1">Top Left    </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="b1" name="placement" value="TL"><label for="b1">Top Left    </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="radio" id="b2" name="placement" value="TC"><label for="b2">Top Center  </label>&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="radio" id="b3" name="placement" value="TR"><label for="b3">Top Right   </label><br>
-  <input type="radio" id="b4" name="placement" value="ML"><label for="b4">Mid Left    </label>&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="b4" name="placement" value="ML"><label for="b4">Mid Left    </label>&nbsp;
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="radio" id="b5" name="placement" value="MR"><label for="b5">Mid Right   </label><br>
-  <input type="radio" id="b6" name="placement" value="BL"><label for="b6">Lower Left  </label>&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="b6" name="placement" value="BL"><label for="b6">Lower Left  </label>&nbsp;
   <input type="radio" id="b7" name="placement" value="BC"><label for="b7">Lower Center</label>&nbsp;
   <input type="radio" id="b8" name="placement" value="BR" checked><label for="b8">Lower Right </label>&nbsp;<br>
   
