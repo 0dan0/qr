@@ -43,10 +43,10 @@ Any end message here: <input type="text" id="endmessage" value=""><br>
 
 **Screen Placement** <br>
   <input type="radio" id="b1" name="placement" value="TL"><label for="b1">Top Left    </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="radio" id="b2" name="placement" value="TC"><label for="b2">Top Center  </label>&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="b2" name="placement" value="TC"><label for="b2">Top Center  </label>&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="radio" id="b3" name="placement" value="TR"><label for="b3">Top Right   </label><br>
   <input type="radio" id="b4" name="placement" value="ML"><label for="b4">Mid Left    </label>&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="radio" id="b5" name="placement" value="MR"><label for="b5">Mid Right   </label><br>
   <input type="radio" id="b6" name="placement" value="BL"><label for="b6">Lower Left  </label>&nbsp;
   <input type="radio" id="b7" name="placement" value="BC"><label for="b7">Lower Center</label>&nbsp;
@@ -85,7 +85,10 @@ function timeLoop()
 {
   if(document.getElementById("startmsg") != null)
   {
-    cmd = "oMBURN=\"(" + document.getElementById("hsize").value + "," +	document.getElementById("vsize").value + ")" + 	document.getElementById("startmsg").value + "]" + document.getElementById("addtime").value + document.getElementById("adddate").value + "]" + document.getElementById("endmsg").value +	"\"";
+    cmd = "oMBURN=\"(" 
+	+ document.getElementById("hsize").value + "," 
+	+ document.getElementById("vsize").value + ")" 
+	+ "\"";
   }
   else
   {
