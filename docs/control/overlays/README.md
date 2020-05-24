@@ -10,7 +10,7 @@
         }
 </style>
 
-# Add An Overlay to Video
+# Add an Overlay to Video
 
 This is more for security applications like a dash cam setup, rather than creative application, as it will modify the video image with text that can't be removed.
 
@@ -87,7 +87,8 @@ function timeLoop()
   {
 	var openb = "\[";
 	var closeb = "\]";
-    cmd = "oMBURN=\"(" 
+    cmd = "oMBRNO=" + document.getElementById("vsize").value 
+	+ oMBURN=\"(" 
 	+ document.getElementById("hsize").value + "," 
 	+ document.getElementById("vsize").value + ")" 	
 	+ document.getElementById("startmsg").value + openb
