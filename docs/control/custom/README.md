@@ -245,15 +245,15 @@
   <input type="radio" id="bv3" name="bv" value="V4"><label for="bv3">40% </label>&nbsp;
   <input type="radio" id="bv4" name="bv" value="V7"><label for="bv4">70% </label>&nbsp;
   <input type="radio" id="bv5" name="bv" value="V9"><label for="bv5">100% </label>&nbsp;
-  <input type="radio" id="bv6" name="bv" value="" checked><label for="bv5">not set</label>
+  <input type="radio" id="bv6" name="bv" value="" checked><label for="bv6">not set</label>
   </div>
   
 <div id="opDB">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Display Brightness:</b>&nbsp;&nbsp;
-  <input type="radio" id="db2" name="db" value="B1"><label for="db1">10% </label>&nbsp;
-  <input type="radio" id="db3" name="db" value="B4"><label for="db2">40% </label>&nbsp;
-  <input type="radio" id="db4" name="db" value="B7"><label for="db3">70% </label>&nbsp;
-  <input type="radio" id="db5" name="db" value="B9"><label for="db4">100% </label>&nbsp;
-  <input type="radio" id="db6" name="db" value="" checked><label for="bv5">not set</label>
+  <input type="radio" id="db1" name="db" value="B1"><label for="db1">10% </label>&nbsp;
+  <input type="radio" id="db2" name="db" value="B4"><label for="db2">40% </label>&nbsp;
+  <input type="radio" id="db3" name="db" value="B7"><label for="db3">70% </label>&nbsp;
+  <input type="radio" id="db4" name="db" value="B9"><label for="db4">100% </label>&nbsp;
+  <input type="radio" id="db5" name="db" value="" checked><label for="bv5">not set</label>
   </div>
 <div id="opLO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>LEDs On:</b>&nbsp;&nbsp;
   <input type="radio" id="lo1" name="lo" value="D0"><label for="lo1">All Off </label>&nbsp;
