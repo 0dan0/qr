@@ -88,7 +88,7 @@ function timeLoop()
 	var openb = "\[";
 	var closeb = "\]";
     cmd = "oMBRNO=" + document.getElementById("offset").value
-	+ oMBURN=\"(" 
+	+ "oMBURN=\"(" 
 	+ document.getElementById("hsize").value + "," 
 	+ document.getElementById("vsize").value + ")" 	
 	+ document.getElementById("startmsg").value + openb
