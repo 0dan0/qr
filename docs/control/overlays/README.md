@@ -60,7 +60,7 @@ Note: All text box support **\n** for a new line.
 </center>
 
 
-Make the overlay permanently active: **Are you sure?** <label for="permanent">Permanent Overlay</label><br>
+Make the overlay permanently active: **Are you sure?** <input type="checkbox" id="permanent" name="permanent"> <label for="permanent">Permanent Overlay</label><br>
 
 QR Command: <b id="qrtext">time</b><br>
         
