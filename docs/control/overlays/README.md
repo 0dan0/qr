@@ -103,6 +103,7 @@ function timeLoop()
 	+ document.getElementById("hsize").value + "," 
 	+ document.getElementById("vsize").value + ")" 	
 	+ document.getElementById("startmsg").value + openb
+	+ document.getElementById("placement").value
 	+ document.getElementById("addtime").value 
 	+ document.getElementById("adddate").value + closeb
 	+ document.getElementById("endmsg").value	
