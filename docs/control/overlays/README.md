@@ -85,12 +85,14 @@ function timeLoop()
 {
   if(document.getElementById("startmsg") != null)
   {
+	var openb = "\[";
+	var closeb = "\]";
     cmd = "oMBURN=\"(" 
 	+ document.getElementById("hsize").value + "," 
 	+ document.getElementById("vsize").value + ")" 	
-	+ document.getElementById("startmsg").value + "[" 
+	+ document.getElementById("startmsg").value + openb
 	+ document.getElementById("addtime").value 
-	+ document.getElementById("adddate").value + "]" 
+	+ document.getElementById("adddate").value + closeb
 	+ document.getElementById("endmsg").value	
 	+ "\"";
   }
