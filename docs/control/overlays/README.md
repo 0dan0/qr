@@ -39,7 +39,7 @@ Any start message here: <input type="text" id="startmsg" value=""><br>
  * mm - month (1-12)
  * dd - day (1-31)
   
-Any end message here: <input type="text" id="endmessage" value=""><br>
+Any end message here: <input type="text" id="endmsg" value=""><br>
 
 **Screen Placement** <br>
   &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="b1" name="placement" value="TL"><label for="b1">Top Left    </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -88,9 +88,9 @@ function timeLoop()
     cmd = "oMBURN=\"(" 
 	+ document.getElementById("hsize").value + "," 
 	+ document.getElementById("vsize").value + ")" 	
-	+ document.getElementById("startmsg").value + "\[" 
+	+ document.getElementById("startmsg").value + "[" 
 	+ document.getElementById("addtime").value 
-	+ document.getElementById("adddate").value + "\]" 
+	+ document.getElementById("adddate").value + "]" 
 	+ document.getElementById("endmsg").value	
 	+ "\"";
   }
