@@ -87,7 +87,11 @@ function timeLoop()
   {
     cmd = "oMBURN=\"(" 
 	+ document.getElementById("hsize").value + "," 
-	+ document.getElementById("vsize").value + ")" 
+	+ document.getElementById("vsize").value + ")" 	
+	+ document.getElementById("startmsg").value + "\[" 
+	+ document.getElementById("addtime").value 
+	+ document.getElementById("adddate").value + "\]" 
+	+ document.getElementById("endmsg").value	
 	+ "\"";
   }
   else
