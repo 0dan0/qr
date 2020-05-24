@@ -44,15 +44,15 @@ Note: All text box support **\n** for a new line.
 **Any end message here:** <input type="text" id="endmsg" value=""><br>
 
 **Screen Placement** <br>
-  &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="b1" name="placement" value="TL"><label for="b1">Top Left    </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="radio" id="b2" name="placement" value="TC"><label for="b2">Top Center  </label>&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="radio" id="b3" name="placement" value="TR"><label for="b3">Top Right   </label><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="b4" name="placement" value="ML"><label for="b4">Mid Left    </label>&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp1" name="placement" value="TL"><label for="sp1">Top Left    </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="sp2" name="placement" value="TC"><label for="sp2">Top Center  </label>&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="sp3" name="placement" value="TR"><label for="sp3">Top Right   </label><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp4" name="placement" value="ML"><label for="sp4">Mid Left    </label>&nbsp;
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="radio" id="b5" name="placement" value="MR"><label for="b5">Mid Right   </label><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="b6" name="placement" value="BL"><label for="b6">Lower Left  </label>&nbsp;
-  <input type="radio" id="b7" name="placement" value="BC"><label for="b7">Lower Center</label>&nbsp;
-  <input type="radio" id="b8" name="placement" value="BR" checked><label for="b8">Lower Right </label>&nbsp;<br>
+  <input type="radio" id="sp5" name="placement" value="MR"><label for="sp5">Mid Right   </label><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp6" name="placement" value="BL"><label for="sp6">Lower Left  </label>&nbsp;
+  <input type="radio" id="b7" name="placement" value="BC"><label for="sp7">Lower Center</label>&nbsp;
+  <input type="radio" id="sp8" name="placement" value="BR" checked><label for="sp8">Lower Right </label>&nbsp;<br>
   
 <center>
 <div id="qrcode"></div>
@@ -71,6 +71,28 @@ QR Command: <b id="qrtext">time</b><br>
 var once = true;
 var qrcode;
 var cmd = "";
+
+function dcmd(cmd, id) {
+	if(document.getElementById(id) != null)
+	{
+		var x = document.getElementById(id).checked;
+		if( x == true)
+			cmd = cmd + document.getElementById(id).value;
+	}
+	else
+	{
+		for (i = 1; i < 15; i++) { 
+			var newid = id+i;
+			if(document.getElementById(newid) != null)
+			{
+				var x = document.getElementById(newid).checked;
+				if( x == true)
+					cmd = cmd + document.getElementById(newid).value;
+			}
+		}
+	}
+	return cmd;
+}
 
 function makeQR() 
 {	
@@ -94,6 +116,7 @@ function timeLoop()
     var mtype = "o";
 	var openb = "\[";
 	var closeb = "\]";
+	var pos = dcmd("","sp");
 	
     if(document.getElementById("permanent").checked == true)
 		mtype = "!";
@@ -103,7 +126,7 @@ function timeLoop()
 	+ document.getElementById("hsize").value + "," 
 	+ document.getElementById("vsize").value + ")" 	
 	+ document.getElementById("startmsg").value + openb
-	+ document.getElementById("placement").value
+	+ pos
 	+ document.getElementById("addtime").value 
 	+ document.getElementById("adddate").value + closeb
 	+ document.getElementById("endmsg").value	
