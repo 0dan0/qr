@@ -16,9 +16,9 @@ This is more for security applications like a dash cam setup, rather than creati
 
 If either horizontal or vertical size is zero, the size will be computed automatically.
  
-Overlay horizontal size <input type="range" id="hsize" name="hsize" min="0" max="400" value="0"><label for="hsize"></label> <b id="hstext">0</b>
-
 Overlay vertical size <input type="range" id="vsize" name="vsize" min="0" max="400" value="60"><label for="vsize"></label> <b id="vstext">60</b>
+
+Overlay horizontal size <input type="range" id="hsize" name="hsize" min="0" max="400" value="0"><label for="hsize"></label> <b id="hstext">0</b>
 
 Offset from the edge <input type="range" id="offset" name="offset" min="10" max="150" value="10"><label for="offset"></label> <b id="offtext">10</b>
 
