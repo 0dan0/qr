@@ -14,32 +14,28 @@
 
 This is more for security applications like a dash cam setup, rather than creative application, as it will modify the video image with text that can't be removed.
  
-Overlay Horizontal Size <input type="range" id="hsize" name="hsize" min="20" max="400"><label for="hsize"></label>
+Overlay Horizontal Size <input type="range" id="hsize" name="hsize" min="0" max="400"><label for="hsize"></label><b id="hstext">0</b>
 
-Overlay Vertical Size <input type="range" id="vsize" name="vsize" min="20" max="400"><label for="vsize"></label>
+Overlay Vertical Size <input type="range" id="vsize" name="vsize" min="0" max="400"><label for="vsize"></label><b id="vstext">0</b>
 
-Offset from the edge <input type="range" id="offset" name="offset" min="10" max="150"><label for="offset"></label>
+Offset from the edge <input type="range" id="offset" name="offset" min="10" max="150"><label for="offset"></label><b id="offtext">10</b>
 
 Any start message here: <input type="text" id="startmsg" value=""><br>
 
-<b>Add Time with format</b>
+**Add Time with format**  <input type="text" id="addtime" value="HH:MM:SSaa">
 
  * HH - Hour
  * MM - Minute
  * SS - Second
  * aa - am/pm (also switches off 24 hour time)
  * AA - AM/PM (also switches off 24 hour time)
-	
-<input type="text" id="addtime" value="HH:MM:SSaa">
 
-<b>Add Date with format</b>
+**Add Date with format**  <input type="text" id="adddate" value="mm-dd-yyyy">
 
  * yy - year in two digit format
  * yyyy - year in four digit format
  * mm - month (1-12)
  * dd - day (1-31)
-	
-<input type="text" id="adddate" value="mm-dd-yyyy">
   
 Any end message here: <input type="text" id="endmessage" value=""><br>
   
@@ -83,6 +79,17 @@ function timeLoop()
     cmd = "oMBURN=\"\"";
   }
 
+  if(document.getElementById("hsize") != null)
+  {
+	var h = document.getElementById("hsize").value;
+	var v = document.getElementById("vsize").value;
+	var o = document.getElementById("offset").value;
+ 
+	document.getElementById("hstext").innerHTML = h;
+	document.getElementById("vstext").innerHTML = v;
+	document.getElementById("offtext").innerHTML = o;
+  }
+  
   qrcode.clear(); 
   qrcode.makeCode(cmd);
   document.getElementById("qrtext").innerHTML = cmd;
