@@ -20,6 +20,7 @@ All setting commands start with a lowercase character, followed by either upperc
 * Setup your cameras with [**Precision Date and Time**](./precisiontime)
 * Personalize your cameras with [**Owner Information**](./owner)
 * Experiment with larger chapter size (12GB, using 64-bit files) [**12 GB Chapters**](./chapters)
+* Create a [**video burn-in overlay**](./overlays)
 
 ## The Full List of [**Settings Commands**](./settings)
 
