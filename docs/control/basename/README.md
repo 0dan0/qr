@@ -81,8 +81,8 @@ function timeLoop()
 
   if(document.getElementById("newnameMP4") != null)
   {
-	var MP4 = document.getElementById("addname").value + "GH01" + pan(number,4) + ".MP4";
-	var JPG = document.getElementById("addname").value + "GOPR" + pan(number,4) + ".JPG";
+	var MP4 = document.getElementById("addname").value + "GH01" + pad(number,4) + ".MP4";
+	var JPG = document.getElementById("addname").value + "GOPR" + pad(number,4) + ".JPG";
  
 	number++;
 	if(number > 9999) 
