@@ -94,9 +94,6 @@ function timeLoop()
 	document.getElementById("newnameJPG").innerHTML = JPG;
   }
 
-Your filenames with be in the format: <b id="newnameMP4">nameGH013607.MP4</b> and <b id="newnameJPG">nameGOPR3607.JPEG</b><br>
-
-
   qrcode.clear(); 
   qrcode.makeCode(cmd);
   document.getElementById("qrtext").innerHTML = cmd;
