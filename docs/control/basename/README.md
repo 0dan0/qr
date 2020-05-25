@@ -97,7 +97,7 @@ function timeLoop()
   qrcode.clear(); 
   qrcode.makeCode(cmd);
   document.getElementById("qrtext").innerHTML = cmd;
-  var t = setTimeout(timeLoop, 50);
+  var t = setTimeout(timeLoop, 250);
 }
 
 function myReloadFunction() {
