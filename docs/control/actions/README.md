@@ -68,7 +68,7 @@ The geek factor is highest in this section.  This is not a Turing-complete langu
 * **\>timeCMD** e.g. !SM9\>22:00!R - do motion detection until 10PM, then stop
 * **\>timeA\<timeBcmdTrue~cmdFalse** e.g. mP>06:00<20:00!180SQ~!06:00S!R - If time is between 06:00 and 20:00 take a photo in 180 seconds else start a 6am, repeat.
 
-Known Issue: The saved and load scripts can't support conditionals, as the '<' and '>' characters, nor are '"' characters supported in scripts. This oversight will hopefully be addressed in a future Labs build.  So scripts are currently limited to a simple series of actions.
+Known Issue: The saved and load scripts can't support conditionals, as the '<' and '>' characters, nor are " characters supported in scripts. This oversight will hopefully be addressed in a future Labs build.  So scripts are currently limited to a simple series of actions.
 
 # Experiment Here
 
