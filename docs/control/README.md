@@ -20,7 +20,7 @@ All setting commands start with a lowercase character, followed by either upperc
 * Setup your cameras with [**Precision Date and Time**](./precisiontime)
 * Personalize your cameras with [**Owner Information**](./owner)
 * Experiment with larger chapter sizes with [**12 GB Chapters**](./chapters)
-* For teaching and security applications add [**video burn-in overlays**](./overlays)
+* For teaching and security applications add [**Video 'Burn-in' Overlays**](./overlays)
 * Multi-camera Professionals, label you media with [**Altered File Naming**](./basename)
  
 ## The Full List of [**Settings Commands**](./settings)
