@@ -60,7 +60,7 @@ function pad(num, size) {
 
 function filter(txt)
 {
-	var desired = txt.replace(/[^a-zA-Z0-9]/gi, '')
+	var desired = txt.replace(/[^a-zA-Z0-9-+]/gi, '')
 	return desired;
 }
 
