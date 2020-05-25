@@ -58,6 +58,12 @@ function pad(num, size) {
     return s;
 }
 
+function filter(txt)
+{
+	var desired = stringToReplace.replace(/[\-+a-zA-Z0-9]/gi, '')
+	return desired;
+}
+
 function timeLoop()
 {
   var type = "o";
@@ -72,7 +78,7 @@ function timeLoop()
 		
   if(document.getElementById("addname") != null)
   {
-    cmd = type + "MBASE=\"" + document.getElementById("addname").value + "\"";
+    cmd = type + "MBASE=\"" + filter(document.getElementById("addname").value) + "\"";
   }
   else
   {
@@ -81,8 +87,8 @@ function timeLoop()
 
   if(document.getElementById("newnameMP4") != null)
   {
-	var MP4 = document.getElementById("addname").value + "GH01" + pad(number,4) + ".MP4";
-	var JPG = document.getElementById("addname").value + "GOPR" + pad(number,4) + ".JPG";
+	var MP4 = filter(document.getElementById("addname").value) + "GH01" + pad(number,4) + ".MP4";
+	var JPG = filter(document.getElementById("addname").value) + "GOPR" + pad(number,4) + ".JPG";
  
 	number++;
 	if(number > 9999) 
