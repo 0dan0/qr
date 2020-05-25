@@ -12,7 +12,7 @@
 
 # Add an Overlay to Video
 
-This is more for security applications like a dash cam setup, rather than creative application, as it will modify the video image with text that can't be removed.
+This is more for security applications like a dash cam setup, or education environments where student projects are pre-labeled, rather than for creative applications, as it will modify the video image with text that can't be removed.
 
 If either horizontal or vertical size is zero, the size will be computed automatically.
  
