@@ -1,4 +1,14 @@
 # QR Control
+
+## Example Pre-built Commands
+
+* Set most camera modes with the [**Customizable QR Code Creator**](./custom)
+* Setup your cameras with [**Precision Date and Time**](./precisiontime)
+* Personalize your cameras with [**Owner Information**](./owner)
+* Experiment with larger chapter sizes with [**12 GB Chapters**](./chapters)
+* For teaching and security applications add [**Video 'Burn-in' Overlays**](./overlays)
+* Multi-camera Professionals, label you media with [**Altered File Naming**](./basename)
+
 ## The Commands Under The Hood 
 
 On QR Control Instructions page, one of the first demo QR Code was surfing example, using 1440p and 60fps with some custom Protune settings. The QR Code used this command string: **mVr1440p60tw55x.5**. While some of that seems like 1440p60, here is a full breakdown of how that command works:
@@ -14,15 +24,6 @@ Any of these can be used on their own, or in different order, however the order 
 
 All setting commands start with a lowercase character, followed by either uppercase or numbers for the parameters, the next lowercase character is the next setting command. Below are some additional setting commands with their range of parameters.
 
-## Example Pre-built Commands
-
-* Set most camera modes with the [**Customizable QR Code Creator**](./custom)
-* Setup your cameras with [**Precision Date and Time**](./precisiontime)
-* Personalize your cameras with [**Owner Information**](./owner)
-* Experiment with larger chapter sizes with [**12 GB Chapters**](./chapters)
-* For teaching and security applications add [**Video 'Burn-in' Overlays**](./overlays)
-* Multi-camera Professionals, label you media with [**Altered File Naming**](./basename)
- 
 ## The Full List of [**Settings Commands**](./settings)
 
 ## The Full List of [**Action Commands**](./actions)
