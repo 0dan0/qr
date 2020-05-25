@@ -22,7 +22,7 @@ All setting commands start with a lowercase character, followed by either upperc
 * Experiment with larger chapter sizes with [**12 GB Chapters**](./chapters)
 * For teaching and security applications add [**video burn-in overlays**](./overlays)
 * Multi-camera Professionals, label you media with [**Altered File Naming**](./basename)
-
+ 
 ## The Full List of [**Settings Commands**](./settings)
 
 ## The Full List of [**Action Commands**](./actions)
