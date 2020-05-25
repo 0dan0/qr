@@ -14,8 +14,11 @@
 
 You GoPro HERO8 will typically name your files something like GOPR3606.JPG and GH013607.MP4.  If you format your media, and factory reset your camera, you can change the file counter back to zero, but otherwise, you have no control over the file name, until this Labs hack. This intended for high volume multiple camera production, where simply naming the source media different will ease post productions. WARNING: The GoPro App on mobile will not support these renamed files.
 
-Your base filename here: <input type="text" id="addname" value="">  Up to eight characters. <br>
-e.g. "CAMERA06"<br> 
+Your base filename here: <input type="text" id="addname" value="">  
+Up to eight characters. e.g. "CAMERA06"<br> 
+<br>
+Your filenames with be in the format: <b id="newnameMP4">nameGH013607.MP4</b> and <b id="newnameJPG">nameGOPR3607.JPEG</b><br>
+
 <center>
 <div id="qrcode"></div>
 
@@ -32,6 +35,7 @@ QR Command: <b id="qrtext">time</b><br>
 var once = true;
 var qrcode;
 var cmd = "";
+var number = 1;
 
 function makeQR() 
 {	
@@ -48,12 +52,23 @@ function makeQR()
   }
 }
 
+function pad(num, size) {
+    var s = num+"";
+    while (s.length < size) s = "0" + s;
+    return s;
+}
+
 function timeLoop()
 {
-  var mtype = "o";
+  var type = "o";
 	
-  if(document.getElementById("permanent").checked == true)
-	type = "!";
+  if(document.getElementById("permanent") != null)
+  {
+	if(document.getElementById("permanent").checked == true)
+	{
+		type = "!";
+	}
+  }
 		
   if(document.getElementById("addname") != null)
   {
@@ -63,6 +78,24 @@ function timeLoop()
   {
     cmd = type + "MBASE=\"\"";
   }
+
+  if(document.getElementById("newnameMP4") != null)
+  {
+	var MP4 = document.getElementById("addname").value + "GH01" + pan(number,4) + ".MP4";
+	var JPG = document.getElementById("addname").value + "GOPR" + pan(number,4) + ".JPG";
+ 
+	number++;
+	if(number > 9999) 
+	{
+	  number = 1;
+	}
+	
+	document.getElementById("newnameMP4").innerHTML = MP4;
+	document.getElementById("newnameJPG").innerHTML = JPG;
+  }
+
+Your filenames with be in the format: <b id="newnameMP4">nameGH013607.MP4</b> and <b id="newnameJPG">nameGOPR3607.JPEG</b><br>
+
 
   qrcode.clear(); 
   qrcode.makeCode(cmd);
