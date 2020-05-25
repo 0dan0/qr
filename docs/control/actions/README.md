@@ -67,8 +67,9 @@ The geek factor is highest in this section.  This is not a Turing-complete langu
 * **\<timeCMD**  e.g. \<09:00!30R!Lother - if current time is less than 9am, wait 30mins and loop, otherwise load script called ‘other’.
 * **\>timeCMD** e.g. !SM9\>22:00!R - do motion detection until 10PM, then stop
 * **\>timeA\<timeBcmdTrue~cmdFalse** e.g. mP>06:00<20:00!180SQ~!06:00S!R - If time is between 06:00 and 20:00 take a photo in 180 seconds else start a 6am, repeat.
+* **"any text"** e.g. mV"Video\nMode"!S!5E!4NmP"Photo\nMode"!S!5R - this will display "Video Mode" and "Photo Mode" when switch to those modes.  
 
-Known Issue: The saved and load scripts can't support conditionals, as the '<' and '>' characters, nor are " characters supported in scripts. This oversight will hopefully be addressed in a future Labs build.  So scripts are currently limited to a simple series of actions.
+Known Issue: The saved and load scripts can't support conditionals, as the '<' and '>' characters, nor are " characters supported in scripts. This oversight will hopefully be addressed in a future Labs build. So scripts are currently limited to a simple series of actions. The conditionals are functioning correction within QR Code reading. So commands/scripts that use conditionals will be limited to around 200 characters in a single QR Code.
 
 # Experiment Here
 
