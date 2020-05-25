@@ -14,7 +14,7 @@
 
 You GoPro HERO8 will typically name your files something like GOPR3606.JPG and GH013607.MP4.  If you format your media, and factory reset your camera, you can change the file counter back to zero, but otherwise, you have no control over the file name, until this Labs hack. This intended for high volume multiple camera production, where simply naming the source media different will ease post productions. WARNING: The GoPro App on mobile will not support these renamed files.
 
-Your base filename here: <input type="text" id="addname" value=""> (use only a-z, A-Z, 0-9, '-' and '+' characters)<br> 
+Your base filename here: <input type="text" id="addname" value=""> (use only a-z, A-Z, 0-9, '-', "_" and '+' characters)<br> 
 Up to eight characters. e.g. "CAMERA06"<br> 
 <br>
 Your filenames with be in the format: <b id="newnameMP4">nameGH013607.MP4</b> and <b id="newnameJPG">nameGOPR3607.JPEG</b><br>
@@ -60,7 +60,7 @@ function pad(num, size) {
 
 function filter(txt)
 {
-	var desired = txt.replace(/[^a-zA-Z0-9-+]/gi, '')
+	var desired = txt.replace(/[^a-zA-Z0-9-_+]/gi, '')
 	return desired;
 }
 

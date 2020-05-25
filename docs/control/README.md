@@ -19,8 +19,8 @@ All setting commands start with a lowercase character, followed by either upperc
 * Set most camera modes with the [**Customizable QR Code Creator**](./custom)
 * Setup your cameras with [**Precision Date and Time**](./precisiontime)
 * Personalize your cameras with [**Owner Information**](./owner)
-* Experiment with larger chapter size (12GB, using 64-bit files) [**12 GB Chapters**](./chapters)
-* Create a custom [**video burn-in overlay**](./overlays)
+* Experiment with larger chapter sizes with [**12 GB Chapters**](./chapters)
+* For teaching and security applications add [**video burn-in overlays**](./overlays)
 * Multi-camera Professionals, label you media with [**Altered File Naming**](./basename)
 
 ## The Full List of [**Settings Commands**](./settings)
