@@ -66,7 +66,8 @@ function timeLoop()
   {
 	var tld = document.getElementById("tldays").value;
 	var tlh = document.getElementById("tlhours").value;
-	var totalh = tlh + (tld*24);
+	var totalh = tld*24;
+	totalh += tlh;
 	var totald = totalh / 24;
 	var frms = 400 - 7*totald;
 	var playsecs = 10 * frms / 30;
