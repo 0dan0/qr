@@ -91,17 +91,20 @@ function timeLoop()
 	var h = document.getElementById("hours").value;
 	
 	var f = 400 - (((d*24 + h) * 7) / 24);
-	if(f < 30) = 30;
 	var p = f / 30;
+	
+	p = p.toFixed(1);
+	f = p.toFixed(0);
  
 	document.getElementById("daystext").innerHTML = d;
 	document.getElementById("hourstext").innerHTML = h;
-	document.getElementById("framestext").innerHTML = Math.round(f);
-	document.getElementById("playtext").innerHTML = Math.round(p*10)/10;
+	document.getElementById("framestext").innerHTML = f;
+	document.getElementById("playtext").innerHTML = p;
 	
 	var i = ((d * 24 + h)*3600 / f) - 15; 
 	
 	if(i < 1) i = 1;
+	i = i.toFixed(0);	
 	
 	cmd = "!" + i + "SQ!1R"
   }
