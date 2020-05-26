@@ -12,6 +12,8 @@
 
 # QR Control Customizer
 
+Create a custom camera mode, and even start a capture all through QR Codes.
+
 <b>Camera Mode:</b>&nbsp;&nbsp;<input type="radio" id="m7" name="mode" value="" checked><label for="m7">not set</label><br>
   <input type="radio" id="m1" name="mode" value="mV"><label  for="m1">Video</label>&nbsp;
   <input type="radio" id="m2" name="mode" value="mT"><label  for="m2">Timelapse</label>&nbsp;
