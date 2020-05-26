@@ -27,7 +27,7 @@ Number of days <input type="range" id="days" name="days" min="0" max="60" value=
 
 Number of hours <input type="range" id="hours" name="hours" min="0" max="48" value="24"><label for="hours"></label> <b id="hourstext">24</b>
 
-Maximum expected frames: <b id="framestext">0</b> for  <b id="playtext">0</b> seconds of playback at 30fps.
+Maximum estimated frames: <b id="framestext">0</b> for  <b id="playtext">0</b> seconds of playback at 30fps.
 
 
 <center>
@@ -66,8 +66,9 @@ function timeLoop()
   {
 	var d = document.getElementById("days").value;
 	var h = document.getElementById("hours").value;
-	
-	var f = 400 - 7 * ( ( ( (d * 24) + h) ) / 24);
+	var th = d*24 + h;
+	var td = th / 24;
+	var f = 400 - 7*td;
 	var p = 10 * f / 30;
 	var i = ( ( (d * 24) + h) * 3600 / f) - 15; 
 	
