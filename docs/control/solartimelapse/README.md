@@ -23,20 +23,8 @@ Start <input type="range" id="tlmin" name="tlmin" min="0" max="60" value="15"><l
   
 End after <input type="range" id="tlendmin" name="tlendmin" min="10" max="120" value="30"><label for="tlendmin"></label><b id="minsendtext"></b> minutes capture.
  
-<div id="settingsNightlapse">
-<b>Nightlapse Interval:</b>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight1" name="fpsnight" value="p"     ><label for="fpsnight1">cont. </label>&nbsp;
-  <input type="radio" id="fpsnight2" name="fpsnight" value="p.10"  ><label for="fpsnight2">10s </label>&nbsp;
-  <input type="radio" id="fpsnight3" name="fpsnight" value="p.15"  ><label for="fpsnight3">15s </label>&nbsp;
-  <input type="radio" id="fpsnight4" name="fpsnight" value="p.30"  ><label for="fpsnight4">30s </label>&nbsp;
-  <input type="radio" id="fpsnight5" name="fpsnight" value="p.60"  ><label for="fpsnight5">60s </label>&nbsp;
-  <input type="radio" id="fpsnight6" name="fpsnight" value="p.120" ><label for="fpsnight6">2min </label>&nbsp;
-  <input type="radio" id="fpsnight7" name="fpsnight" value="p.300" ><label for="fpsnight7">5min </label>&nbsp;
-  <input type="radio" id="fpsnight8" name="fpsnight" value="p.1800"><label for="fpsnight8">30min </label>&nbsp;
-  <input type="radio" id="fpsnight9" name="fpsnight" value="p.3600"><label for="fpsnight9">60min </label>&nbsp;
-  <input type="radio" id="fpsnight10" name="fpsnight" value="" checked><label for="fpsnight10">not set</label><br><br>
-</div>
-
+Note: you will have to manually set the interval and resolution for the night lapse mode, unfortunately not everything got hooked up with a QR Code. 
+ 
 <center>
 <div id="qrcode"></div>
 <br>
