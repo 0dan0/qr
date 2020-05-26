@@ -65,8 +65,8 @@ function timeLoop()
   if(document.getElementById("tldays") !== null)
   {
 	var tld = document.getElementById("tldays").value;
-	var tlh = document.getElementById("tlhours").value;
 	var totalh = tld*24;
+	var tlh = document.getElementById("tlhours").value;
 	totalh += tlh;
 	var frms = 400 - (7/24)*totalh;
 	var playsecs = 10 * frms / 30;
@@ -82,7 +82,7 @@ function timeLoop()
 	document.getElementById("hourstext").innerHTML = tlh;
 	document.getElementById("framestext").innerHTML = frms;
 	document.getElementById("playtext").innerHTML = playsecs;	
-	document.getElementById("captext").innerHTML = Math.round(((interval+15)*frms/360))/10;	
+	document.getElementById("captext").innerHTML = totalh; //Math.round(((interval+15)*frms/360))/10;	
 	
 	cmd = "!" + interval + "SQ!1R";
   }
