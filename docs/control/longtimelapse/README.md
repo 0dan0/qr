@@ -90,7 +90,7 @@ function timeLoop()
 	var d = document.getElementById("days").value;
 	var h = document.getElementById("hours").value;
 	
-	var f = 400 - (((d*24 + h) * 7) / 24);
+	var f = 400 - ((d*24 + h) * 7) / 24);
 	var p = f / 30;
 	
 	document.getElementById("daystext").innerHTML = d;
