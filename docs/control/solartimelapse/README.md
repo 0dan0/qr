@@ -16,12 +16,12 @@ The Labs's firmware can use the GPS to get a world position, then calculate the 
 
 ## Time-lapse Calculator
 
-Start <input type="range" id="tlmin" name="tlmin" min="0" max="60" value="15"><label for="tlmin"></label><b id="minstext"></b> minutes before.
+Start <input type="range" id="tlmin" name="tlmin" min="0" max="60" value="15"><label for="tlmin"></label>&nbsp;&nbsp;<b id="minstext"></b> minutes before.
 
 <input type="radio" id="sr1" name="solar" value="TL"><label for="sr1">Sunrise</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="radio" id="sr2" name="solar" value="TC"><label for="sr2">Sunset</label><br>
   
-End after <input type="range" id="tlendmin" name="tlendmin" min="10" max="120" value="30"><label for="tlendmin"></label><b id="minsendtext"></b> minutes capture.
+End after <input type="range" id="tlendmin" name="tlendmin" min="10" max="120" value="30"><label for="tlendmin"></label>&nbsp;&nbsp;<b id="minsendtext"></b> minutes capture.
  
 Note: you will have to manually set the interval and resolution for the night lapse mode, unfortunately not everything got hooked up with a QR Code. 
  
