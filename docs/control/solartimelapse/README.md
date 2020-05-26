@@ -18,6 +18,9 @@ The Labs's firmware can use the GPS to get a world position, then calculate the 
 
 Start <input type="range" id="tlmin" name="tlmin" min="1" max="60" value="15"><label for="tlmin"></label>&nbsp;&nbsp;<b id="minstext"></b> minutes before <input type="radio" id="sr1" name="solar" value="r"><label for="sr1">sunrise</label> or <input type="radio" id="sr2" name="solar" value="s" checked><label for="sr2">sunset</label><br> and end after <input type="range" id="tlendmin" name="tlendmin" min="10" max="120" value="30"><label for="tlendmin"></label>&nbsp;&nbsp;<b id="minsendtext"></b> minutes of capture.
  
+<input type="checkbox" id="repeat" name="repeat" checked> 
+<label for="repeat">Repeat for tomorrow's sunrise/sunset</label><br>
+
 Note: you will have to manually set the interval and resolution for the night lapse mode, unfortunately not everything got hooked up with a QR Code. 
  
 <center>
@@ -90,7 +93,16 @@ function timeLoop()
 	
 	endmins *= 60;
 	
-	cmd = cmd + "!" + dcmd("", "sr") + "-" + mins + "S!" + endmins + "E" + "!1R";
+	cmd = cmd + "!" + dcmd("", "sr") + "-" + mins + "S!" + endmins + "E";
+	
+	
+    if(document.getElementById("repeat") != null)
+    {
+      if(document.getElementById("repeat").checked == true)
+      {
+        cmd = cmd + "!R";
+      }
+    }
   }
   
   qrcode.clear(); 
