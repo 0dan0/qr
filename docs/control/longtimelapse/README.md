@@ -15,9 +15,9 @@
 The Labs' firmware allows for much longer time-lapses, on the internal battery alone, by powering off the camera between photos (sorry no video mode time-lapse.) It also supports intervals beyond 60 seconds. A fully charged HERO8 can take around 400 photos, which you can spread over several hours or several days for long form time-lapse.
 
 Example Time-lapses tested:
-* 400 photos over a 24 hour time-lapse. 
-* 330 photos over a 10-day time-lapse. 
-* 120 photos over a 40-day time-lapse.
+* 400+ photos over a 24 hour time-lapse. 
+* 340+ photos over a 10-day time-lapse. 
+* 150+ photos over a 40-day time-lapse.
 
 As the camera is off between frames, it is also possible to periodically change the battery for extremely long time-laspes without interrupting the time-lapse in progress. Simply replace the battery, power on the camera, the time-lapse will automatically continue.
 
@@ -27,7 +27,7 @@ Number of days <input type="range" id="tldays" name="tldays" min="0" max="50" va
 
 Number of hours <input type="range" id="tlhours" name="tlhours" min="0" max="48" value="24"><label for="tlhours" width="200"></label> <b id="hourstext"></b>
 
-Maximum estimated frames: <b id="framestext">0</b> for  <b id="playtext">0</b> seconds of playback at 30fps. Capture time estimate <b id="captext">0</b> hours with an interval of <b id="intervaltext">0</b> seconds.
+Maximum estimated frames: <b id="framestext">0</b> for  <b id="playtext">0</b> seconds of playback at 30fps. Capture time estimate <b id="captext">0</b> hours with an interval of <b id="intervaltext">0</b> minutes.
 
 
 <center>
@@ -83,7 +83,7 @@ function timeLoop()
 	document.getElementById("framestext").innerHTML = frms;
 	document.getElementById("playtext").innerHTML = playsecs;	
 	document.getElementById("captext").innerHTML = Math.round(((interval+15)*frms/360))/10;	
-	document.getElementById("intervaltext").innerHTML = Math.round(interval+15);	
+	document.getElementById("intervaltext").innerHTML = (Math.round(interval+15)/60);	
 	
 	cmd = "!" + interval + "SQ!1R";
   }
