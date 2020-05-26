@@ -12,7 +12,7 @@
 
 # Simplified Sunset and Sunrise Time-lapses
 
-The Labs's firmware can use the GPS to get a world position, then calculate the time for pretty solar events.  To ensure the accurate of your location, it make take a couple of minutes to get a high precision GPS look (you will need to be outdoors.)
+The Labs's firmware can use the GPS to get a world position, then calculate the time for pretty solar events.  To ensure the accuracy of your location, it may make take a couple of minutes to get a high-precision GPS lock (you will need to be outdoors.)
 
 ## Sunrise/Sunset Time-lapse Calculator
 
