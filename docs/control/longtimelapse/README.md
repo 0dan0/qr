@@ -90,7 +90,7 @@ function timeLoop()
 	var d = document.getElementById("days").value;
 	var h = document.getElementById("hours").value;
 	
-	var f = 400 - ((d*24 + h) * 7) / 24);
+	var f = 400 - ( ( ( (d * 24) + h) * 7) / 24);
 	var p = f / 30;
 	
 	p = p.toFixed(1);
@@ -101,7 +101,7 @@ function timeLoop()
 	document.getElementById("framestext").innerHTML = f;
 	document.getElementById("playtext").innerHTML = p;
 	
-	var i = ((d * 24 + h)*3600 / f) - 15; 
+	var i = ( ( (d * 24) + h) * 3600 / f) - 15; 
 	
 	i = i.toFixed(0);
 	
