@@ -12,7 +12,7 @@
 
 # Very Long Time-lapses with Larger Intervals
 
-The current time-lapse abilities in the camera are limited to a maximum interval of 60 seconds. While this is a good interval for long day into night transitions or a good long night-lapse, the camera has a limited time-lapse length due to the battery. Maximum run times of three hours with a 60 second interval, is only 180 frames, or a slightly too short, six seconds of playback. Providing external USB power is a great solution, but now the camera isn’t waterproof, limiting the environments where you can run a long time-lapse. The Labs' firmware solution allows for longer time-lapses, on the internal battery alone, by powering off the camera between photos (sorry no video mode time-lapse.)
+The Labs' firmware solution allows for longer time-lapses, on the internal battery alone, by powering off the camera between photos (sorry no video mode time-lapse.)
 
 Example Time-lapses tested:
 * 400 photos over a 24 hour time-lapse. 
