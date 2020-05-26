@@ -37,7 +37,7 @@ Maximum expected frames: <b id="framestext">0</b> for  <b id="playtext">0</b> se
 
 QR Command: <b id="qrtext">time</b><br>
         
-## ver 1.0
+## ver 1.01
 [BACK](..)
 
 <script>
@@ -93,12 +93,17 @@ function timeLoop()
 	var f = 400 - ((d*24 + h) * 7) / 24);
 	var p = f / 30;
 	
+	p = p.toFixed(1);
+	f = p.toFixed(0);
+	
 	document.getElementById("daystext").innerHTML = d;
 	document.getElementById("hourstext").innerHTML = h;
 	document.getElementById("framestext").innerHTML = f;
 	document.getElementById("playtext").innerHTML = p;
 	
 	var i = ((d * 24 + h)*3600 / f) - 15; 
+	
+	i = i.toFixed(0);
 	
 	if(i < 1) i = 1;
 	
