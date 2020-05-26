@@ -12,7 +12,9 @@
 
 # Personalize via QR Code
 
-Your name here: <input type="text" id="addname" value=""><br>
+You can choose to have your camera display your name, phone number or email, upon camera start-up. This could be helpful in the event the camera is lost. Or simply name your cameras.
+ 
+Your personalization info here: <input type="text" id="addname" value=""><br>
 <center>
 <div id="qrcode"></div>
 <br>
