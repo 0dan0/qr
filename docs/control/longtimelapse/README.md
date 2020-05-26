@@ -43,29 +43,7 @@ QR Command: <b id="qrtext">time</b><br>
 <script>
 var once = true;
 var qrcode;
-var cmd = "";
-
-function dcmd(cmd, id) {
-	if(document.getElementById(id) != null)
-	{
-		var x = document.getElementById(id).checked;
-		if( x == true)
-			cmd = cmd + document.getElementById(id).value;
-	}
-	else
-	{
-		for (i = 1; i < 15; i++) { 
-			var newid = id+i;
-			if(document.getElementById(newid) != null)
-			{
-				var x = document.getElementById(newid).checked;
-				if( x == true)
-					cmd = cmd + document.getElementById(newid).value;
-			}
-		}
-	}
-	return cmd;
-}
+var cmd = "!60SQ!1R"
 
 function makeQR() 
 {	
@@ -84,7 +62,6 @@ function makeQR()
 
 function timeLoop()
 {
-  var cmd = "!60SQ!1R"
   if(document.getElementById("days") != null)
   {
 	var d = document.getElementById("days").value;
