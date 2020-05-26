@@ -64,9 +64,9 @@ function timeLoop()
 {
   if(document.getElementById("tldays") !== null)
   {
-	var tld = document.getElementById("tldays").value;
+	var tld = parseInt(document.getElementById("tldays").value);
 	var totalh = tld*24;
-	var tlh = document.getElementById("tlhours").value;
+	var tlh = parseInt(document.getElementById("tlhours").value);
 	totalh += tlh;
 	var frms = 400 - (7/24)*totalh;
 	var playsecs = 10 * frms / 30;
