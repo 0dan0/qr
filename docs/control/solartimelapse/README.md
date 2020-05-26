@@ -53,20 +53,22 @@ var qrcode;
 var cmd = "oC30mNLeA";
 
 function dcmd(cmd, id) {
-	if(document.getElementById(id) != null)
+    var x;
+	if(document.getElementById(id) !== null)
 	{
-		var x = document.getElementById(id).checked;
-		if( x == true)
+		x = document.getElementById(id).checked;
+		if( x === true)
 			cmd = cmd + document.getElementById(id).value;
 	}
 	else
 	{
+	    var i;
 		for (i = 1; i < 15; i++) { 
 			var newid = id+i;
-			if(document.getElementById(newid) != null)
+			if(document.getElementById(newid) !== null)
 			{
-				var x = document.getElementById(newid).checked;
-				if( x == true)
+				x = document.getElementById(newid).checked;
+				if( x === true)
 					cmd = cmd + document.getElementById(newid).value;
 			}
 		}
@@ -121,5 +123,6 @@ function myReloadFunction() {
 
 makeQR();
 timeLoop();
+
 
 </script>
