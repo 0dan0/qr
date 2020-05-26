@@ -23,9 +23,9 @@ As the camera is off between frames, it is also possible to periodically change 
 
 ## Time-lapse Calculator
 
-Number of days <input type="range" id="days" name="days" min="0" max="60" value="0"><label for="days"></label> <b id="daystext">0</b>
+Number of days <input type="range" id="tldays" name="tldays" min="0" max="60" value="0"><label for="tldays"></label> <b id="daystext">0</b>
 
-Number of hours <input type="range" id="hours" name="hours" min="0" max="48" value="24"><label for="hours"></label> <b id="hourstext">24</b>
+Number of hours <input type="range" id="tlhours" name="tlhours" min="0" max="48" value="24"><label for="tlhours"></label> <b id="hourstext">24</b>
 
 Maximum estimated frames: <b id="framestext">0</b> for  <b id="playtext">0</b> seconds of playback at 30fps.
 
@@ -64,24 +64,26 @@ function timeLoop()
 {
   if(document.getElementById("days") !== null)
   {
-	var d = document.getElementById("days").value;
-	var h = document.getElementById("hours").value;
-	var th = h + (d*24);
-	var td = th / 24;
-	var f = 400 - 7*td;
-	var p = 10 * f / 30;
-	var i = ( ( (d * 24) + h) * 3600 / f) - 15; 
+	var tld = document.getElementById("tldays").value;
+	var tlh = document.getElementById("tlhours").value;
+	var totalh = tlh + (tld*24);
+	var totald = totalh / 24;
+	var frms = 400 - 7*totald;
+	var playsecs = 10 * f / 30;
+	var interval = ( ( (tld * 24) + tlh) * 3600 / frms) - 15; 
 	
-	p = Math.round(p); p = p / 10;
-	f = Math.round(f);
-	i = Math.round(i);
+	playsecs = Math.round(playsecs); playsecs = playsecs / 10;
+	frms = Math.round(frms);
 	
-	document.getElementById("daystext").innerHTML = th;
-	document.getElementById("hourstext").innerHTML = td;
-	document.getElementById("framestext").innerHTML = f;
-	document.getElementById("playtext").innerHTML = p;	
+	if(interval < 1) interval = 1;
+	interval = Math.round(interval);
 	
-	cmd = "!" + i + "SQ!1R";
+	document.getElementById("daystext").innerHTML = tld;
+	document.getElementById("hourstext").innerHTML = tlh;
+	document.getElementById("framestext").innerHTML = frms;
+	document.getElementById("playtext").innerHTML = playsecs;	
+	
+	cmd = "!" + interval + "SQ!1R";
   }
   
   qrcode.clear(); 
