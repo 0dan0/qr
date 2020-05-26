@@ -16,7 +16,7 @@ The Labs's firmware can use the GPS to get a world position, then calculate the 
 
 ## Time-lapse Calculator
 
-Start <input type="range" id="tlmin" name="tlmin" min="0" max="60" value="15"><label for="tlmin"></label>&nbsp;&nbsp;<b id="minstext"></b> minutes before <input type="radio" id="sr1" name="solar" value="r"><label for="sr1">sunrise</label> or <input type="radio" id="sr2" name="solar" value="s" checked><label for="sr2">Sunset</label><br> and end after <input type="range" id="tlendmin" name="tlendmin" min="10" max="120" value="30"><label for="tlendmin"></label>&nbsp;&nbsp;<b id="minsendtext"></b> minutes of capture.
+Start <input type="range" id="tlmin" name="tlmin" min="0" max="60" value="15"><label for="tlmin"></label>&nbsp;&nbsp;<b id="minstext"></b> minutes before <input type="radio" id="sr1" name="solar" value="r"><label for="sr1">sunrise</label> or <input type="radio" id="sr2" name="solar" value="s" checked><label for="sr2">sunset</label><br> and end after <input type="range" id="tlendmin" name="tlendmin" min="10" max="120" value="30"><label for="tlendmin"></label>&nbsp;&nbsp;<b id="minsendtext"></b> minutes of capture.
  
 Note: you will have to manually set the interval and resolution for the night lapse mode, unfortunately not everything got hooked up with a QR Code. 
  
@@ -90,7 +90,7 @@ function timeLoop()
 	
 	endmins *= 60;
 	
-	cmd = cmd + "!" + dcmd(cmd, "solar") + "-" + mins + "S!" + endmins + "E" + "!1R";
+	cmd = cmd + "!" + dcmd("", "ar") + "-" + mins + "S!" + endmins + "E" + "!1R";
   }
   
   qrcode.clear(); 
