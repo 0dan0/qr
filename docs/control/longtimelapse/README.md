@@ -66,7 +66,7 @@ function timeLoop()
   {
 	var d = document.getElementById("days").value;
 	var h = document.getElementById("hours").value;
-	var th = d*24 + h;
+	var th = h + (d*24);
 	var td = th / 24;
 	var f = 400 - 7*td;
 	var p = 10 * f / 30;
@@ -76,8 +76,8 @@ function timeLoop()
 	f = Math.round(f);
 	i = Math.round(i);
 	
-	document.getElementById("daystext").innerHTML = d;
-	document.getElementById("hourstext").innerHTML = h;
+	document.getElementById("daystext").innerHTML = th;
+	document.getElementById("hourstext").innerHTML = td;
 	document.getElementById("framestext").innerHTML = f;
 	document.getElementById("playtext").innerHTML = p;	
 	
