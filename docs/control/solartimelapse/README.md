@@ -16,7 +16,7 @@ The Labs's firmware can use the GPS to get a world position, then calculate the 
 
 ## Sunrise/Sunset Time-lapse Calculator
 
-Start <input type="range" id="tlmin" name="tlmin" min="1" max="60" value="15"><label for="tlmin"></label>&nbsp;&nbsp;<b id="minstext"></b> minutes before <input type="radio" id="sr1" name="solar" value="r"><label for="sr1">sunrise</label> or <input type="radio" id="sr2" name="solar" value="s" checked><label for="sr2">sunset</label><br> and end after <input type="range" id="tlendmin" name="tlendmin" min="10" max="120" value="30"><label for="tlendmin"></label>&nbsp;&nbsp;<b id="minsendtext"></b> minutes of capture.
+Start <input type="range" id="tlmin" name="tlmin" min="1" max="60" value="15"><label for="tlmin"></label>&nbsp;&nbsp;<b id="minstext"></b> minutes before <input type="radio" id="sr1" name="solar" value="r"><label for="sr1">sunrise</label> or <input type="radio" id="sr2" name="solar" value="s" checked><label for="sr2">sunset</label><br> and end after <input type="range" id="tlendmin" name="tlendmin" min="10" max="120" value="60"><label for="tlendmin"></label>&nbsp;&nbsp;<b id="minsendtext"></b> minutes of capture.
  
 <input type="checkbox" id="repeat" name="repeat" checked> 
 <label for="repeat">Repeat for tomorrow's sunrise/sunset</label><br>
