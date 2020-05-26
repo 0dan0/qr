@@ -73,7 +73,7 @@ function timeLoop()
 	
 	//p = p.toFixed(1);
 	//f = p.toFixed(0);
-	//i = i.toFixed(0);
+	i = i.toFixed(0);
 	
 	document.getElementById("daystext").innerHTML = d;
 	document.getElementById("hourstext").innerHTML = h;
