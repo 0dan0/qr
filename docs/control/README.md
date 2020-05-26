@@ -4,7 +4,7 @@
 
 * Set most camera modes with the [**Customizable QR Code Creator**](./custom)
 * Setup your cameras with [**Precision Date and Time**](./precisiontime)
-* Start a 24-hour long time-lapse or greater with [**Extra Long Time-lapses**](./precisiontime)
+* Start a 24-hour long time-lapse or greater with [**Extra Long Time-lapses**](./longtimelapse)
 * Personalize your cameras with [**Owner Information**](./owner)
 * Experiment with larger chapter sizes with [**12 GB Chapters**](./chapters)
 * For teaching and security applications add [**Video 'Burn-in' Overlays**](./overlays)
