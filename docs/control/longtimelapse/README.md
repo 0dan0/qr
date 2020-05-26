@@ -43,11 +43,11 @@ QR Command: <b id="qrtext">time</b><br>
 <script>
 var once = true;
 var qrcode;
-var cmd = "!60SQ!1R"
+var cmd = "!60SQ!1R";
 
 function makeQR() 
 {	
-  if(once == true)
+  if(once === true)
   {
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
@@ -62,7 +62,7 @@ function makeQR()
 
 function timeLoop()
 {
-  if(document.getElementById("days") != null)
+  if(document.getElementById("days") !== null)
   {
 	var d = document.getElementById("days").value;
 	var h = document.getElementById("hours").value;
@@ -84,7 +84,7 @@ function timeLoop()
 	
 	if(i < 1) i = 1;
 	
-	cmd = "!" + i + "SQ!1R"
+	cmd = "!" + i + "SQ!1R";
   }
   
   qrcode.clear(); 
