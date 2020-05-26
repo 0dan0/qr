@@ -27,7 +27,7 @@ Number of days <input type="range" id="days" name="days" min="0" max="60" value=
 
 Number of hours <input type="range" id="hours" name="hours" min="0" max="48" value="24"><label for="hours"></label> <b id="hourstext">24</b>
 
-Maximum expected frames: <b id="framestext">0</b> for  <b id="playtext">0</b> of playback at 30fps.
+Maximum expected frames: <b id="framestext">0</b> for  <b id="playtext">0</b> seconds of playback at 30fps.
 
 
 <center>
