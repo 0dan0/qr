@@ -27,7 +27,7 @@ Number of days <input type="range" id="tldays" name="tldays" min="0" max="60" va
 
 Number of hours <input type="range" id="tlhours" name="tlhours" min="0" max="48" value="24"><label for="tlhours"></label> <b id="hourstext">24</b>
 
-Maximum estimated frames: <b id="framestext">0</b> for  <b id="playtext">0</b> seconds of playback at 30fps.
+Maximum estimated frames: <b id="framestext">0</b> for  <b id="playtext">0</b> seconds of playback at 30fps. Capture time estimate <b id="captext">0</b> hours.
 
 
 <center>
@@ -68,8 +68,7 @@ function timeLoop()
 	var tlh = document.getElementById("tlhours").value;
 	var totalh = tld*24;
 	totalh += tlh;
-	var totald = totalh / 24;
-	var frms = 400 - 7*totald;
+	var frms = 400 - (7/24)*totalh;
 	var playsecs = 10 * frms / 30;
 	var interval = ( ( (tld * 24) + tlh) * 3600 / frms) - 15; 
 	
@@ -83,6 +82,7 @@ function timeLoop()
 	document.getElementById("hourstext").innerHTML = tlh;
 	document.getElementById("framestext").innerHTML = frms;
 	document.getElementById("playtext").innerHTML = playsecs;	
+	document.getElementById("captext").innerHTML = Math.round(((i+15)*frms/360))/10;	
 	
 	cmd = "!" + interval + "SQ!1R";
   }
