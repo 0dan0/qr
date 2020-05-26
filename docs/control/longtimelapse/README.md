@@ -84,7 +84,7 @@ function makeQR()
 
 function timeLoop()
 {
-  var cmd = ""
+  var cmd = "!60SQ!1R"
   if(document.getElementById("days") != null)
   {
 	var d = document.getElementById("days").value;
@@ -93,9 +93,6 @@ function timeLoop()
 	var f = 400 - (((d*24 + h) * 7) / 24);
 	var p = f / 30;
 	
-	p = p.toFixed(1);
-	f = p.toFixed(0);
- 
 	document.getElementById("daystext").innerHTML = d;
 	document.getElementById("hourstext").innerHTML = h;
 	document.getElementById("framestext").innerHTML = f;
@@ -104,7 +101,6 @@ function timeLoop()
 	var i = ((d * 24 + h)*3600 / f) - 15; 
 	
 	if(i < 1) i = 1;
-	i = i.toFixed(0);	
 	
 	cmd = "!" + i + "SQ!1R"
   }
