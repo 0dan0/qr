@@ -12,7 +12,7 @@
 
 # Personalize via QR Code
 
-You can choose to have your camera display your name, phone number or email, upon camera start-up. This could be helpful in the event the camera is lost. Or simply name your cameras.
+You can choose to have your camera display your name, phone number or email, upon camera start-up. This could be helpful in the event the camera is lost. Or simply name your cameras. In addition to being displayed, it is written within a new file, “GoPro-owner.txt”, to the root of the SD card. This information is stored in the camera, not just the SD Card, so even if the camera is stolen, and the SD card replaced, the name will be displayed, and GoPro-owner.txt file is regenerated on each new SD card.
  
 Your personalization info here: <input type="text" id="addname" value=""><br>
 <center>
