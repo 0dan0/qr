@@ -62,7 +62,7 @@ function makeQR()
 
 function timeLoop()
 {
-  if(document.getElementById("days") !== null)
+  if(document.getElementById("tldays") !== null)
   {
 	var tld = document.getElementById("tldays").value;
 	var tlh = document.getElementById("tlhours").value;
