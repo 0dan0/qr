@@ -39,7 +39,7 @@ var number = 1;
 
 function makeQR() 
 {	
-  if(once == true)
+  if(once === true)
   {
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
@@ -60,7 +60,7 @@ function pad(num, size) {
 
 function filter(txt)
 {
-	var desired = txt.replace(/[^a-zA-Z0-9-_+]/gi, '')
+	var desired = txt.replace(/[^a-zA-Z0-9-_+]/gi, '');
 	return desired;
 }
 
@@ -68,15 +68,15 @@ function timeLoop()
 {
   var type = "o";
 	
-  if(document.getElementById("permanent") != null)
+  if(document.getElementById("permanent") !== null)
   {
-	if(document.getElementById("permanent").checked == true)
+	if(document.getElementById("permanent").checked === true)
 	{
 		type = "!";
 	}
   }
 		
-  if(document.getElementById("addname") != null)
+  if(document.getElementById("addname") !== null)
   {
     cmd = type + "MBASE=\"" + filter(document.getElementById("addname").value) + "\"";
   }
@@ -85,7 +85,7 @@ function timeLoop()
     cmd = type + "MBASE=\"\"";
   }
 
-  if(document.getElementById("newnameMP4") != null)
+  if(document.getElementById("newnameMP4") !== null)
   {
 	var MP4 = filter(document.getElementById("addname").value) + "GH01" + pad(number,4) + ".MP4";
 	var JPG = filter(document.getElementById("addname").value) + "GOPR" + pad(number,4) + ".JPG";

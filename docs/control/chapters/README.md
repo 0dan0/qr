@@ -36,7 +36,7 @@ var cmd = "";
 
 function makeQR() 
 {	
-  if(once == true)
+  if(once === true)
   {
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
@@ -52,9 +52,9 @@ function makeQR()
 function timeLoop()
 {
   cmd = "!M64BT=0";
-  if(document.getElementById("lchptrs") != null)
+  if(document.getElementById("lchptrs") !== null)
   {
-    if(document.getElementById("lchptrs").checked == true)
+    if(document.getElementById("lchptrs").checked === true)
     {
       cmd = "!M64BT=1";
     }

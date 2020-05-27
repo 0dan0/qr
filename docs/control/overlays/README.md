@@ -73,20 +73,22 @@ var qrcode;
 var cmd = "";
 
 function dcmd(cmd, id) {
-	if(document.getElementById(id) != null)
+    var x;
+    var i;
+	if(document.getElementById(id) !== null)
 	{
-		var x = document.getElementById(id).checked;
-		if( x == true)
+		x = document.getElementById(id).checked;
+		if( x === true)
 			cmd = cmd + document.getElementById(id).value;
 	}
 	else
 	{
 		for (i = 1; i < 15; i++) { 
 			var newid = id+i;
-			if(document.getElementById(newid) != null)
+			if(document.getElementById(newid) !== null)
 			{
-				var x = document.getElementById(newid).checked;
-				if( x == true)
+				x = document.getElementById(newid).checked;
+				if( x === true)
 					cmd = cmd + document.getElementById(newid).value;
 			}
 		}
@@ -96,7 +98,7 @@ function dcmd(cmd, id) {
 
 function makeQR() 
 {	
-  if(once == true)
+  if(once === true)
   {
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
@@ -111,33 +113,24 @@ function makeQR()
 
 function timeLoop()
 {
-  if(document.getElementById("startmsg") != null)
+  if(document.getElementById("startmsg") !== null)
   {
     var mtype = "o";
 	var openb = "\[";
 	var closeb = "\]";
 	var pos = dcmd("","sp");
 	
-    if(document.getElementById("permanent").checked == true)
+    if(document.getElementById("permanent").checked === true)
 		mtype = "!";
 	
-    cmd = mtype + "MBRNO=" + document.getElementById("offset").value
-	+ mtype + "MBURN=\"(" 
-	+ document.getElementById("hsize").value + "," 
-	+ document.getElementById("vsize").value + ")" 	
-	+ document.getElementById("startmsg").value + openb
-	+ pos
-	+ document.getElementById("addtime").value 
-	+ document.getElementById("adddate").value + closeb
-	+ document.getElementById("endmsg").value	
-	+ "\"";
+    cmd = mtype + "MBRNO=" + document.getElementById("offset").value + mtype + "MBURN=\"(" + document.getElementById("hsize").value + "," + document.getElementById("vsize").value + ")" + document.getElementById("startmsg").value + openb + pos + document.getElementById("addtime").value + document.getElementById("adddate").value + closeb + document.getElementById("endmsg").value + "\"";
   }
   else
   {
     cmd = "oMBURN=\"\"";
   }
 
-  if(document.getElementById("hsize") != null)
+  if(document.getElementById("hsize") !== null)
   {
 	var h = document.getElementById("hsize").value;
 	var v = document.getElementById("vsize").value;
@@ -160,5 +153,4 @@ function myReloadFunction() {
 
 makeQR();
 timeLoop();
-
 </script>

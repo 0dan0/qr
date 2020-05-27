@@ -33,7 +33,7 @@ var cmd = "";
 
 function makeQR() 
 {	
-  if(once == true)
+  if(once === true)
   {
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
@@ -48,7 +48,7 @@ function makeQR()
 
 function timeLoop()
 {
-  if(document.getElementById("addname") != null)
+  if(document.getElementById("addname") !== null)
   {
     cmd = "!MOWNR=\"" + document.getElementById("addname").value + "\"";
   }

@@ -373,8 +373,8 @@ GoPro QR Command: <b id="txt"></b>
 ## version 1.00
 
 <script>
-var lastcmd = ""
-var lasttimecmd = "xxxxxxxxx"
+var lastcmd = "";
+var lasttimecmd = "xxxxxxxxx";
 var changed = false;
 var ms = 0;
 var lastms = 0;
@@ -382,9 +382,10 @@ var timechecked = false;
 var once = true;
 var even = 0;
 var qrcode;
+var i;
 
 function makeQR() {	
-	if(once == true)
+	if(once === true)
 	{
 		qrcode = new QRCode(document.getElementById("qrcode"), 
 		{
@@ -406,10 +407,9 @@ function startTime() {
     var m;
     var s;
 	var timecodefps = 30;
-    var ms;
-    var f;
-	var cmd = ""
-			
+	var cmd = "";
+	var timenotchecked;
+		
 	dset("settingsRES", false);
 	dset("settingsFPS", false);
 	dset("settingsFOV", false);
@@ -455,11 +455,12 @@ function startTime() {
 	dset("aR", false);
 	
 	var checkedmode = 0;
+	var x;
 	
 	for (i = 1; i < 7; i++) { 
 		var mode = "m"+i;
-		var x = document.getElementById(mode).checked;
-		if( x == true)
+		x = document.getElementById(mode).checked;
+		if( x === true)
 			checkedmode = i;
 	}
 	
@@ -478,20 +479,20 @@ function startTime() {
 		case 2: //Timelapse Video
 		dset("settingsTimelapse", true);		
 		dset("settingsRESTLV", true);
-		if(document.getElementById("rt1").checked == true) // 1080
+		if(document.getElementById("rt1").checked === true) // 1080
 			dset("settingsFOV", true);
 			
-		if(document.getElementById("pt") != null)
+		if(document.getElementById("pt") !== null)
 			document.getElementById("pt").checked = false;
 		break;
 		
 		case 3: //TimeWarp Video
 		dset("settingsTimelapse", true);		
 		dset("settingsRESTLV", true);
-		if(document.getElementById("rt1").checked == true) // 1080
+		if(document.getElementById("rt1").checked === true) // 1080
 			dset("settingsFOV", true);
 			
-		if(document.getElementById("pt") != null)
+		if(document.getElementById("pt") !== null)
 			document.getElementById("pt").checked = false;
 		break;		
 	
@@ -514,16 +515,16 @@ function startTime() {
 		break;
 	}
 		
-	if(document.getElementById("pt") != null)
+	if(document.getElementById("pt") !== null)
 	{
-		if(document.getElementById("pt").checked == true)
+		if(document.getElementById("pt").checked === true)
 		{
 			dset("ptCOLOR", true);
 			dset("ptWBAL", true);
 			dset("ptISO",true);
 			dset("ptIMIN",true);
 
-			if(document.getElementById('iso8').checked == true)
+			if(document.getElementById('iso8').checked === true)
 			{
 				dset("ptSHUT",false);
 				dset("ptEV",true);
@@ -532,7 +533,7 @@ function startTime() {
 			{
 				dset("ptSHUT",true);
 
-				if(document.getElementById('shut7').checked == true || document.getElementById('shut6').checked == true) 
+				if(document.getElementById('shut7').checked === true || document.getElementById('shut6').checked === true) 
 				{  // not shutter lock
 					dset("ptEV",true);
 				}
@@ -548,9 +549,9 @@ function startTime() {
 		}
 	}
 	
-	if(document.getElementById("options") != null)
+	if(document.getElementById("options") !== null)
 	{
-		if(document.getElementById("options").checked == true)
+		if(document.getElementById("options").checked === true)
 		{			
 			dset("opGPS", true);
 			dset("opVC", true);
@@ -567,9 +568,9 @@ function startTime() {
 		}
 	}
 	
-	if(document.getElementById("actions") != null)
+	if(document.getElementById("actions") !== null)
 	{
-		if(document.getElementById("actions").checked == true)
+		if(document.getElementById("actions").checked === true)
 		{
 			dset("aSD", true);
 			dset("aEND", true);
@@ -614,49 +615,49 @@ function startTime() {
 	if(checkedmode == 4) //RAW
 		cmd = dcmd(cmd,"raw"); //raw photo control
 		
-	if(document.getElementById("p1") != null)
+	if(document.getElementById("p1") !== null)
 	{
-		var x = document.getElementById("p1").checked;
-		if( x == true)
+		x = document.getElementById("p1").checked;
+		if( x === true)
 			timecodefps = 24;
 	}
-	if(document.getElementById("p2") != null)
+	if(document.getElementById("p2") !== null)
 	{
-		var x = document.getElementById("p2").checked;
-		if( x == true)
+		x = document.getElementById("p2").checked;
+		if( x === true)
 			timecodefps = 30;
 	}
-	if(document.getElementById("p3") != null)
+	if(document.getElementById("p3") !== null)
 	{
-		var x = document.getElementById("p3").checked;
-		if( x == true)
+		x = document.getElementById("p3").checked;
+		if( x === true)
 			timecodefps = 60;
 	}
-	if(document.getElementById("p6") != null)
+	if(document.getElementById("p6") !== null)
 	{
-		var x = document.getElementById("p6").checked;
-		if( x == true)
+		x = document.getElementById("p6").checked;
+		if( x === true)
 			timecodefps = 25;
 	}
-	if(document.getElementById("p7") != null)
+	if(document.getElementById("p7") !== null)
 	{
-		var x = document.getElementById("p7").checked;
-		if( x == true)
+		x = document.getElementById("p7").checked;
+		if( x === true)
 			timecodefps = 50;
 	}
 		
-	if(document.getElementById("pt") != null)
+	if(document.getElementById("pt") !== null)
 	{
-		if(document.getElementById("pt").checked == true)
+		if(document.getElementById("pt").checked === true)
 		{
 			cmd = dcmd(cmd,"ptc"); //color
 			cmd = dcmd(cmd,"wb"); //wb
 
-			if(document.getElementById('iso8').checked == false || document.getElementById('isomin8').checked == false)
+			if(document.getElementById('iso8').checked === false || document.getElementById('isomin8').checked === false)
 			{
 				cmd = dcmd(cmd,"iso"); //iso
 				
-				if(document.getElementById('shut7').checked == false)
+				if(document.getElementById('shut7').checked === false)
 					cmd = dcmd(cmd,"shut"); //shutter angle
 				else
 					cmd = dcmd(cmd,"isomin");//
@@ -670,9 +671,9 @@ function startTime() {
 	}
 	
 	
-	if(document.getElementById("options") != null)
+	if(document.getElementById("options") !== null)
 	{
-		if(document.getElementById("options").checked == true)
+		if(document.getElementById("options").checked === true)
 		{
 			var opt = ""; 
 			var addO = "o";
@@ -693,9 +694,9 @@ function startTime() {
 	}
 	
 	
-	if(document.getElementById("actions") != null)
+	if(document.getElementById("actions") !== null)
 	{
-		if(document.getElementById("actions").checked == true)
+		if(document.getElementById("actions").checked === true)
 		{			
 			
 		}
@@ -716,7 +717,7 @@ function startTime() {
 		lastcmd = cmd;
 	}
 	
-	if(dt == true)
+	if(dt === true)
 	{
 		dset("opDTS", true);
 	
@@ -761,7 +762,7 @@ function startTime() {
 	else
 	{
 		dset("opDTS", false);
-		if(timechecked == true)
+		if(timechecked === true)
 		{
 			ms = today.getTime();
 			changed = true;
@@ -771,23 +772,23 @@ function startTime() {
 	
 	
 	var actions = document.getElementById("actions").checked;
- 	if(actions == true)
+ 	if(actions === true)
 	{
 		var S_added = 0;
 		var SM_added = 0;
 		var SK_added = 0;
-		if(document.getElementById("starthrs") != null && document.getElementById("startmins") != null && document.getElementById("time") != null)
+		if(document.getElementById("starthrs") !== null && document.getElementById("startmins") !== null && document.getElementById("time") !== null)
 		{
 			var secs = 0;
 			var starttime = document.getElementById("time").value;
 			secs = Number(3600 * document.getElementById("starthrs").value) + Number(60 * document.getElementById("startmins").value) + Number(document.getElementById("startsecs").value);
 			var risemins = 60 * document.getElementById("risemins").value;
 			var setmins = 60 * document.getElementById("setmins").value;
-			if(setmins != 0)
+			if(setmins !== 0)
 			{
 				cmd = cmd + "!s" + setmins + "S";
 			}
-			else if(risemins != 0)
+			else if(risemins !== 0)
 			{
 				cmd = cmd + "!r" + risemins + "S";
 			}
@@ -803,7 +804,7 @@ function startTime() {
 			}
 		}
 		
-		if(document.getElementById("mstart") != null)
+		if(document.getElementById("mstart") !== null)
 		{
 			var mstart = document.getElementById("mstart").value;
 			if(mstart > 0)
@@ -820,7 +821,7 @@ function startTime() {
 				}			
 			}
 			
-			if(document.getElementById("mend") != null)
+			if(document.getElementById("mend") !== null)
 			{
 				var mend = document.getElementById("mend").value;
 				if(mend > 0 && SM_added)
@@ -829,7 +830,7 @@ function startTime() {
 				}
 			}
 			
-			if(document.getElementById("dhold") != null)
+			if(document.getElementById("dhold") !== null)
 			{
 				var dhold = document.getElementById("dhold").value;
 				if(dhold > 0 && SM_added)
@@ -837,7 +838,7 @@ function startTime() {
 					cmd = cmd + "D" + dhold;
 				}
 			}
-			if(document.getElementById("mmhold") != null)
+			if(document.getElementById("mmhold") !== null)
 			{
 				var mmhold = document.getElementById("mmhold").value;
 				if(mmhold > 0 && SM_added)
@@ -845,7 +846,7 @@ function startTime() {
 					cmd = cmd + "M" + mmhold;
 				}
 			}
-			if(document.getElementById("mhold") != null)
+			if(document.getElementById("mhold") !== null)
 			{
 				var mhold = document.getElementById("mhold").value;
 				if(mhold > 0 && SM_added)
@@ -856,7 +857,7 @@ function startTime() {
 		}
 		
 		
-		if(document.getElementById("vstart") != null)
+		if(document.getElementById("vstart") !== null)
 		{
 			var vstart = document.getElementById("vstart").value;
 			if(vstart > 0)
@@ -873,7 +874,7 @@ function startTime() {
 				}			
 			}
 			
-			if(document.getElementById("vend") != null)
+			if(document.getElementById("vend") !== null)
 			{
 				var vend = document.getElementById("vend").value;
 				if(vend > 0 && SK_added)
@@ -881,7 +882,7 @@ function startTime() {
 					cmd = cmd + "-" + vend;
 				}
 			}
-			if(document.getElementById("vhold") != null)
+			if(document.getElementById("vhold") !== null)
 			{
 				var vhold = document.getElementById("vhold").value;
 				if(vhold > 0 && SK_added)
@@ -893,7 +894,7 @@ function startTime() {
 		
 		
 		
-		if(document.getElementById("endhrs") != null && document.getElementById("endmins") != null && document.getElementById("endsecs") != null && document.getElementById("time") != null)
+		if(document.getElementById("endhrs") !== null && document.getElementById("endmins") !== null && document.getElementById("endsecs") !== null && document.getElementById("time") !== null)
 		{
 			var secs = 0;
 			var endtime = document.getElementById("endtime").value;
@@ -920,18 +921,18 @@ function startTime() {
 		}
 		
 		
-		if(document.getElementById("repeathrs") != null && document.getElementById("repeatmins") != null && document.getElementById("repeatsecs") != null && document.getElementById("time") != null)
+		if(document.getElementById("repeathrs") !== null && document.getElementById("repeatmins") !== null && document.getElementById("repeatsecs") !== null && document.getElementById("time") !== null)
 		{
 			var secs = 0;
 			var repeattime = document.getElementById("repeattime").value;
 			var repeatrisemins = 60 * document.getElementById("repeatrisemins").value;
 			var repeatsetmins = 60 * document.getElementById("repeatsetmins").value;
 			secs = Number(60 * 60 * document.getElementById("repeathrs").value) + Number(60 * document.getElementById("repeatmins").value) + Number(document.getElementById("repeatsecs").value);
-			if(repeatsetmins != 0)
+			if(repeatsetmins !== 0)
 			{
 				cmd = cmd + "!s" + repeatsetmins + "R";
 			}
-			else if(repeatrisemins != 0)
+			else if(repeatrisemins !== 0)
 			{
 				cmd = cmd + "!r" + repeatrisemins + "R";
 			}
@@ -946,7 +947,7 @@ function startTime() {
 		}
 	}
 	
-	if(document.getElementById("addcmd") != null)
+	if(document.getElementById("addcmd") !== null)
 	{
 		cmd = cmd + document.getElementById("addcmd").value;
 	}
@@ -962,10 +963,10 @@ function startTime() {
 	
 	var delay = 200;
 	
-	if(changed == true)
+	if(changed === true)
 	{	
 		
-		if(cmd == "") cmd = "\"QR Control\nReady\"";
+		if(cmd === "") cmd = "\"QR Control\nReady\"";
 
 		makeQR();
 		
@@ -987,13 +988,13 @@ function startTime() {
 	var t = setTimeout(startTime, delay);
 }
 function checkTime(i) {
-    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    if (i < 10) {i = "0" + i;}  // add zero in front of numbers < 10
     return i;
 }
 
 function dset(label, on) {
 		var settings = document.getElementById(label);
-		if(on == true)
+		if(on === true)
 		{
 			if (settings.style.display === 'none') 
 				settings.style.display = 'block';
@@ -1006,21 +1007,21 @@ function dset(label, on) {
 
 
 function dcmd(cmd, id) {
-
-	if(document.getElementById(id) != null)
+    var x;
+	if(document.getElementById(id) !== null)
 	{
-		var x = document.getElementById(id).checked;
-		if( x == true)
+		x = document.getElementById(id).checked;
+		if( x === true)
 			cmd = cmd + document.getElementById(id).value;
 	}
 	else
 	{
 		for (i = 1; i < 15; i++) { 
 			var newid = id+i;
-			if(document.getElementById(newid) != null)
+			if(document.getElementById(newid) !== null)
 			{
-				var x = document.getElementById(newid).checked;
-				if( x == true)
+				x = document.getElementById(newid).checked;
+				if( x === true)
 					cmd = cmd + document.getElementById(newid).value;
 			}
 		}

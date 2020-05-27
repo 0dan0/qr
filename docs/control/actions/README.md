@@ -90,7 +90,7 @@ var qrcode;
 var cmd = "";
 
 function makeQR() {	
-  if(once == true)
+  if(once === true)
   {
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
@@ -105,10 +105,10 @@ function makeQR() {
 
 function timeLoop()
 {
-  if(document.getElementById("tryit") != null)
+  if(document.getElementById("tryit") !== null)
   {
     cmd = document.getElementById("tryit").value;
-	if(cmd.length == 0)
+	if(cmd.length === 0)
 	{
 		cmd = "\"Try It\"";
 	}

@@ -26,11 +26,10 @@ QR Command: <b id="qrtext"></b>
 <script>
 var once = true;
 var qrcode;
-var count = 0;
 var cmd = "";
 
 function makeQR() {	
-  if(once == true)
+  if(once === true)
   {
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
@@ -43,7 +42,7 @@ function makeQR() {
   }
 }
 function padTime(i) {
-  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  if (i < 10) {i = "0" + i;}  // add zero in front of numbers < 10
   return i;
 }
 function timeLoop()
