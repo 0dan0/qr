@@ -21,6 +21,7 @@ Mode commands:
  * **mTW** - mode TimeWarp
  * **mPB** - mode Burst Photo 
  * **mPN** - mode Photo Night
+ * **mNL** - mode Night-Lapse
  
 Defaults modes (on power up): 
  * **dV** - last used Video mode
