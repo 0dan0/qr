@@ -96,8 +96,7 @@ function timeLoop()
 	var hold = parseInt(document.getElementById("hold").value);	
 	document.getElementById("holdtext").innerHTML = hold;	
 		
-	cmd = "oC" + "!SM";
-	
+	cmd = "oC" + "!SM" + snstvty;	
 	if(delay > 0) cmd = cmd + 'D' + delay;
 	if(mask > 0) cmd = cmd + 'M' + mask;
 	if(hold > 0) cmd = cmd + 'H' + hold;	
