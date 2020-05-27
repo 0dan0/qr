@@ -12,13 +12,13 @@
 
 # Video Motion Detection to Start and Stop Captures
 
-While your GoPro camera is not equipped with ultra sonic or another motion sensor, it does have a very high resolution image sensor that is active even when the camera is not recording. So simply using the main imaging engine, the experimental motion detection feature uses the differences between video frames to detect when to start and stop recording. This means you camera should be mounted so that it is not moving, so that only subject moves will trigger the capture. This can be use to capture video of a shy animal in the wild or simply reduce any video captures to only the moments with activity.
+While your GoPro camera is not equipped with ultra sonic or another motion sensor, it does have a very high resolution image sensor that is active even when the camera is not recording. So simply using the main imaging engine, the experimental motion detection feature uses the differences between video frames to detect when to start and stop recording. This means your camera should be mounted so that it is not moving, so that only subject moves will trigger the capture. Motion detection can be use to capture video of a shy animal in the wild or simply reduce any video captures to only the moments with activity.
 
-## Sunrise/Sunset Time-lapse Calculator
+## Custom Motion Capture
 
-Sensitivity <input type="range" id="snstvty" name="snstvty" min="1" max="9" value="3"><label for="snstvty"></label>&nbsp;&nbsp;<b id="snstvtytext"></b> (1 - low to 9 - very high)<br>
-Delay <input type="range" id="delay" name="delay" min="0" max="60" value="4"><label for="delay"></label>&nbsp;&nbsp;<b id="delaytext"></b> seconds to get yourself out of the way.<br>
-Calculate a motion mask for <input type="range" id="mask" name="mask" min="0" max="20" value="0"><label for="mask"></label>&nbsp;&nbsp;<b id="masktext"></b> seconds, to not falsely detect constantly moving objects like a ceiling fan, or winds blowing leaves.<br> 
+Sensitivity <input type="range" id="snstvty" name="snstvty" min="1" max="9" value="3"><label for="snstvty"></label>&nbsp;&nbsp;<b id="snstvtytext"></b> (1-low to 9-very high)<br>
+Start Delay <input type="range" id="delay" name="delay" min="0" max="60" value="4"><label for="delay"></label>&nbsp;&nbsp;<b id="delaytext"></b> seconds to get yourself out of the way.<br>
+Motion mask for <input type="range" id="mask" name="mask" min="0" max="20" value="0"><label for="mask"></label>&nbsp;&nbsp;<b id="masktext"></b> seconds, to avoid falsely detecting constantly moving objects like a ceiling fan, or winds blowing leaves.<br> 
 Hold time for <input type="range" id="hold" name="hold" min="0" max="60" value="5"><label for="hold"></label>&nbsp;&nbsp;<b id="holdtext"></b> seconds, to continue recording after motion has stopped.<br> 
 
 <input type="checkbox" id="repeat" name="repeat" checked> 
@@ -39,7 +39,7 @@ QR Command: <b id="qrtext">time</b><br>
 <script>
 var once = true;
 var qrcode;
-var cmd = "oC30mNLeA";
+var cmd = "oC";
 
 function dcmd(cmd, id) {
     var x;
@@ -82,7 +82,7 @@ function makeQR()
 
 function timeLoop()
 {
-  if(document.getElementById("tlmin") !== null)
+  if(document.getElementById("snstvty") !== null)
   {
 	var snstvty = parseInt(document.getElementById("snstvty").value);	
 	document.getElementById("snstvtytext").innerHTML = snstvty;	
