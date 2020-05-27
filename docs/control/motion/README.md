@@ -37,8 +37,8 @@ QR Command: <b id="qrtext">time</b><br>
 
 After a couple of hours of repeat motion capture, you are still likely to have many false positives, resulting in more MP4 files than you need. We a solution to help you narrow down to the best shots. For each capture start, the camera will create a JPEG showing where the motion was detected. So if you looking for a ground animal and a bird flies by, the detection would show a patch in the sky.  The JPEG is stored in teh MISC, folder, with a matching file number to MP4 you need.
 
- 
-![Found Dog](GL013585.jpg)
+![GL013585.jpg](GL013585.jpg)
+MISC\GL013585.jpg matches capture GH013585.MP4
 
         
 ## ver 1.0
