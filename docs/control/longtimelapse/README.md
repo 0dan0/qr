@@ -83,7 +83,7 @@ function timeLoop()
 	document.getElementById("framestext").innerHTML = frms;
 	document.getElementById("playtext").innerHTML = playsecs;	
 	document.getElementById("captext").innerHTML = Math.round(((interval+15)*frms/360))/10;	
-	document.getElementById("intervaltext").innerHTML = (Math.round(interval+15)/60);	
+	document.getElementById("intervaltext").innerHTML = Math.round((interval+15)/6)/10;	
 	
 	cmd = "!" + interval + "SQ!1R";
   }
