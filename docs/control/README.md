@@ -6,6 +6,7 @@
 * Setup your cameras with [**Precision Date and Time**](./precisiontime)
 * Start a 24-hour long time-lapse or greater with [**Extra Long Time-lapses**](./longtimelapse)
 * Schedule your camera to automatically [**Time-lapse Sunsets and Sunrises**](./solartimelapse)
+* Capture only the interesting moments with [**Motion Detection**](./motion)
 * Personalize your cameras with [**Owner Information**](./owner)
 * Experiment with larger chapter sizes with [**12 GB Chapters**](./chapters)
 * For teaching and security applications add [**Video 'Burn-in' Overlays**](./overlays)

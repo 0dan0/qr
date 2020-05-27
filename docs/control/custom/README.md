@@ -12,7 +12,7 @@
 
 # QR Control Customizer
 
-Create a custom camera mode, and even start a capture all through QR Codes.
+Create a custom camera mode, and even start a capture all through QR Codes. This is the fastest way to access many of the new GoPro Labs' firmware features.
 
 <b>Camera Mode:</b>&nbsp;&nbsp;<input type="radio" id="m7" name="mode" value="" checked><label for="m7">not set</label><br>
   <input type="radio" id="m1" name="mode" value="mV"><label  for="m1">Video</label>&nbsp;
