@@ -18,7 +18,7 @@ An extension of [Extra Long Time-lapses](../longtimelapse) feature, so during a 
 
 Start Time <input type="range" id="tlstrt" name="tlstrt" min="12" max="276" value="96"><label for="tlstrt"></label> <b id="starttext"></b>
 
-End Time <input type="range" id="tlend" name="tlend" min="12" max="108" value="144"><label for="tlend"></label> <b id="endtext"></b>
+End Time <input type="range" id="tlend" name="tlend" min="12" max="192" value="108"><label for="tlend"></label> <b id="endtext"></b>
 
 Number of photos per day <input type="range" id="tlday" name="tlday" min="10" max="300" value="24"><label for="tlday"></label> <b id="perdaytext"></b>
 
@@ -73,26 +73,31 @@ function timeLoop()
 	var perday = parseInt(document.getElementById("tlday").value);
 	
 	var starthours = Math.trunc(startmins / 60);
-	startmins -= starthours * 60;
+	var startminstime = startmins - starthours * 60;
 	
 	var endhours = Math.trunc(endmins / 60);
-	endmins -= endhours * 60;
+	var endminstime = endmins - endhours * 60;
 	
 	
 	document.getElementById("perdaytext").innerHTML = perday;	
 	
-	document.getElementById("starttext").innerHTML = pad(starthours, 2) + ":" + pad(startmins, 2);
+	var stxt = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
+	var etxt = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 	
-	document.getElementById("endtext").innerHTML = pad(endhours, 2) + ":" + pad(endmins, 2);
+	document.getElementById("starttext").innerHTML = stxt;
+	document.getElementById("endtext").innerHTML = etxt;
 	
 	//var frms = 406 - (6/24)*totalh;
 	//var playsecs = 10 * frms / 30;
-	//var interval = ( ( (tld * 24) + tlh) * 3600 / frms) - 15; 
+	//var interval = ( ( (tld * 24) + tlh) * 3600 / perday) - 15; 
+	
+	var interval = Math.trunc(((endmins - startmins)*60 / perday) - 15);
+	if(interval < 30) interval = 30;
 	
 	//playsecs = Math.round(playsecs); playsecs = playsecs / 10;
 	//frms = Math.round(frms);
 	
-	cmd = "mPdP!" + "SQ!1R";
+	cmd = "mPdP>" + stxt "<" + etxt + "!" interval + "SQ" + "!" + "S" + stxt + "!1R";
   }
   
   qrcode.clear(); 
