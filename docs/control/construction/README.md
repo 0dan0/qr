@@ -10,7 +10,7 @@
         }
 </style>
 
-# Construction Time-lapses - Photos Only During the Day
+# Construction Time-lapses - Daytime Only Photos
 
 An extension of [Extra Long Time-lapses](../longtimelapse) feature, so during a time-lapse during construction hours alone, to extend your battery life and reduce the number of images you will assemble into a time-lapse.
 
@@ -69,7 +69,7 @@ function timeLoop()
 	var start = parseInt(document.getElementById("tlstrt").value);
 	var startmins = start*5;
 	var end = parseInt(document.getElementById("tlend").value);
-	var endmins = sthttps://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Math/truncartmins + end*5;
+	var endmins = startmins + end*5;
 	var perday = parseInt(document.getElementById("tlday").value);
 	
 	var starthours = Math.trunc(startmins / 60);
