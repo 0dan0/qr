@@ -14,7 +14,7 @@
 
 An extension of [Extra Long Time-lapses](../longtimelapse) feature, just performed during construction hours alone, to extend your battery life and reduce the number of images you will assemble into a time-lapse.  Remember to set your camera's [../precisiontime](clock) before uses this QR Code.
 
-## Time-lapse Calculator
+## Daytime Time-lapse Calculator
 
 Start Time <input type="range" style="width: 300px;" id="tlstrt" name="tlstrt" min="6" max="138" value="48"><label for="tlstrt"></label> <b id="starttext"></b>
 
