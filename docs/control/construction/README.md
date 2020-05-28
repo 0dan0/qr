@@ -91,7 +91,7 @@ function timeLoop()
 	var dd = (406 - d * 6) / perday;
 		
 	dd *= 10;
-	dd = Math.truct(dd);
+	dd = Math.trunc(dd) / 10;
 	
 	document.getElementById("daystext").innerHTML = dd;
 		
