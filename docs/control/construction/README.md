@@ -72,10 +72,10 @@ function timeLoop()
 	var endmins = startmins + end*5;
 	var perday = parseInt(document.getElementById("tlday").value);
 	
-	var starthours = Math.trunc(startmins / 60);
+	var starthourstime = Math.trunc(startmins / 60);
 	var startminstime = startmins - starthours * 60;
 	
-	var endhours = Math.trunc(endmins / 60);
+	var endhourstime = Math.trunc(endmins / 60);
 	var endminstime = endmins - endhours * 60;
 	
 	
