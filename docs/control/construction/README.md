@@ -16,11 +16,11 @@ An extension of [Extra Long Time-lapses](../longtimelapse) feature, so during a 
 
 ## Time-lapse Calculator
 
-Start Time <input type="range" id="tlstrt" name="tlstrt" min="12" max="276" value="96"><label for="tlstrt"></label> <b id="starttext"></b>
+Start Time <input type="range" style="width: 300px;" id="tlstrt" name="tlstrt" min="12" max="276" value="96"><label for="tlstrt"></label> <b id="starttext"></b>
 
-End Time <input type="range" id="tlend" name="tlend" min="12" max="192" value="108"><label for="tlend"></label> <b id="endtext"></b>
+End Time <input type="range" style="width: 300px;" id="tlend" name="tlend" min="12" max="192" value="108"><label for="tlend"></label> <b id="endtext"></b>
 
-Number of photos per day <input type="range" id="tlday" name="tlday" min="10" max="300" value="24"><label for="tlday"></label> <b id="perdaytext"></b>
+Number of photos per day <input type="range" style="width: 300px;" id="tlday" name="tlday" min="10" max="300" value="60"><label for="tlday"></label> <b id="perdaytext"></b>
 
 Estimated runtime per battery: <b id="daystext">0</b> days
 
