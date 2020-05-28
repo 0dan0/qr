@@ -92,7 +92,7 @@ function timeLoop()
 	//playsecs = Math.round(playsecs); playsecs = playsecs / 10;
 	//frms = Math.round(frms);
 	
-	cmd = "mPNdP!" + interval + "SQ!1R";
+	cmd = "mPdP!" + "SQ!1R";
   }
   
   qrcode.clear(); 
