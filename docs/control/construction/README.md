@@ -12,7 +12,7 @@
 
 # Construction Time-lapses
 
-An extension of [Extra Long Time-lapses](../longtimelapse) feature, so during a time-lapse during construction hours alone, to extend your battery life and reduce the number of images you will assemble into a time-lapse.
+An extension of [Extra Long Time-lapses](../longtimelapse) feature, just performed during construction hours alone, to extend your battery life and reduce the number of images you will assemble into a time-lapse.
 
 ## Time-lapse Calculator
 
