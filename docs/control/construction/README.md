@@ -10,7 +10,7 @@
         }
 </style>
 
-# Construction Time-lapses - Daytime Only Photos
+# Construction Time-lapses
 
 An extension of [Extra Long Time-lapses](../longtimelapse) feature, so during a time-lapse during construction hours alone, to extend your battery life and reduce the number of images you will assemble into a time-lapse.
 
