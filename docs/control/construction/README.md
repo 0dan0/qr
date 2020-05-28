@@ -87,10 +87,14 @@ function timeLoop()
 	document.getElementById("starttext").innerHTML = stxt;
 	document.getElementById("endtext").innerHTML = etxt;
 	
-	//var frms = 406 - (6/24)*totalh;
-	//var playsecs = 10 * frms / 30;
-	//var interval = ( ( (tld * 24) + tlh) * 3600 / perday) - 15; 
+	var d = 406 / perday;
+	var dd = (406 - d * 6) / perday;
+		
+	dd *= 10;
+	dd = Math.truct(dd);
 	
+	document.getElementById("daystext").innerHTML = dd;
+		
 	var interval = Math.trunc(((endmins - startmins)*60 / perday) - 15);
 	if(interval < 30) interval = 30;
 	
