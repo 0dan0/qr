@@ -16,9 +16,9 @@ An extension of [Extra Long Time-lapses](../longtimelapse) feature, just perform
 
 ## Time-lapse Calculator
 
-Start Time <input type="range" style="width: 300px;" id="tlstrt" name="tlstrt" min="12" max="276" value="96"><label for="tlstrt"></label> <b id="starttext"></b>
+Start Time <input type="range" style="width: 300px;" id="tlstrt" name="tlstrt" min="6" max="138" value="48"><label for="tlstrt"></label> <b id="starttext"></b>
 
-End Time <input type="range" style="width: 300px;" id="tlend" name="tlend" min="12" max="192" value="108"><label for="tlend"></label> <b id="endtext"></b>
+End Time <input type="range" style="width: 300px;" id="tlend" name="tlend" min="6" max="96" value="54"><label for="tlend"></label> <b id="endtext"></b>
 
 Number of photos per day <input type="range" style="width: 300px;" id="tlday" name="tlday" min="10" max="300" value="60"><label for="tlday"></label> <b id="perdaytext"></b>
 
@@ -67,9 +67,9 @@ function timeLoop()
   if(document.getElementById("tlstrt") !== null)
   {
 	var start = parseInt(document.getElementById("tlstrt").value);
-	var startmins = start*5;
+	var startmins = start*10;
 	var end = parseInt(document.getElementById("tlend").value);
-	var endmins = startmins + end*5;
+	var endmins = startmins + end*10;
 	var perday = parseInt(document.getElementById("tlday").value);
 	
 	var starthourstime = Math.trunc(startmins / 60);
