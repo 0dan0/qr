@@ -98,7 +98,7 @@ function timeLoop()
 	var interval = Math.trunc(((endmins - startmins)*60 / perday) - 15);
 	if(interval < 30) interval = 30;
 	
-	cmd = "mPdP>" + stxt + "<" + etxt + "!" + interval + "SQ" + "!" + "S" + stxt + "!1R";
+	cmd = "mPdP>" + stxt + "<" + etxt + "!" + interval + "SQ" + "!" + stxt + "S!1R";
   }
   
   qrcode.clear(); 
