@@ -22,7 +22,7 @@ End Time <input type="range" style="width: 300px;" id="tlend" name="tlend" min="
 
 Number of photos per day <input type="range" style="width: 300px;" id="tlday" name="tlday" min="10" max="300" value="60"><label for="tlday"></label> <b id="perdaytext"></b>
 
-Estimated runtime per battery: <b id="daystext">0</b> days
+Estimated runtime per charged battery: <b id="daystext">0</b> days
 
 <center>
 <div id="qrcode"></div>
@@ -31,6 +31,11 @@ Estimated runtime per battery: <b id="daystext">0</b> days
 
 QR Command: <b id="qrtext">time</b><br>
         
+## Extening Time-lapse Duration
+
+Simply replacing the battery is the easiest solution for long captures. After the battery is replaced, power on the camera so that the time-lapse can continue. You might want to set and forget for a multi-week or multi-month time-lapse, for this A/C powering the camera via USB is the best. With continuous wall power the battery is optional and the camera should run for a very long time (only SD card storage limitations.) You might be tempted to use a Lithon Ion USB powerbank, however they typically do not work well. They are designed to quickly recharge a smartphone, and when they think power is no longer needed, they shut-off. For this reason they get you far shorter captures than you would expect. If you want to try a USB powerbank, remove the GoPro battery for better results.  For long captures away from the power grid, the best solution is a small 12V sealed lead acid battery 18-20Ahour and attached a non-smart (doesn't shut off) USB regulator.  With the right photo interval, this configuration could last a year.      
+		
+		
 ## ver 1.0
 [BACK](..)
 
