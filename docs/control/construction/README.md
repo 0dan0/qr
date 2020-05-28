@@ -98,9 +98,6 @@ function timeLoop()
 	var interval = Math.trunc(((endmins - startmins)*60 / perday) - 15);
 	if(interval < 30) interval = 30;
 	
-	//playsecs = Math.round(playsecs); playsecs = playsecs / 10;
-	//frms = Math.round(frms);
-	
 	cmd = "mPdP>" + stxt + "<" + etxt + "!" + interval + "SQ" + "!" + "S" + stxt + "!1R";
   }
   
