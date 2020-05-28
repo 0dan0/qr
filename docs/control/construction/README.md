@@ -73,10 +73,10 @@ function timeLoop()
 	var perday = parseInt(document.getElementById("tlday").value);
 	
 	var starthourstime = Math.trunc(startmins / 60);
-	var startminstime = startmins - starthours * 60;
+	var startminstime = startmins - starthourstime * 60;
 	
 	var endhourstime = Math.trunc(endmins / 60);
-	var endminstime = endmins - endhours * 60;
+	var endminstime = endmins - endhourstime * 60;
 	
 	
 	document.getElementById("perdaytext").innerHTML = perday;	
@@ -101,7 +101,7 @@ function timeLoop()
 	//playsecs = Math.round(playsecs); playsecs = playsecs / 10;
 	//frms = Math.round(frms);
 	
-	cmd = "mPdP>" + stxt "<" + etxt + "!" interval + "SQ" + "!" + "S" + stxt + "!1R";
+	cmd = "mPdP>" + stxt + "<" + etxt + "!" + interval + "SQ" + "!" + "S" + stxt + "!1R";
   }
   
   qrcode.clear(); 
