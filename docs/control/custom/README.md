@@ -388,7 +388,7 @@ GoPro QR Command: <b id="txt"></b>
 
 [Learn more](..) on QR Control
 
-## version 1.00
+## version 1.01
 
 <script>
 var lastcmd = "";
@@ -603,10 +603,11 @@ function startTime() {
 	switch(checkedmode)
 	{
 		case 2: //TLV
+		case 7: //TLP
 			cmd = dcmd(cmd,"fpslapse");
 			break;
 		case 3: //TWarp
-			cmd = dcmd(cmd,"fpslapse");
+			cmd = dcmd(cmd,"fpswarp");
 			break;
 		case 5: //Burst 
 			cmd = dcmd(cmd,"b");
@@ -616,13 +617,17 @@ function startTime() {
 			break;
 	}
 	
-	if(checkedmode == 2 || checkedmode == 3) // TLV/TWarp Res
+	if(checkedmode == 2 || checkedmode == 3 || checkedmode == 7) // TLV/TWarp/TLP Res
 		cmd = dcmd(cmd, "rt");
 	else
 		cmd = dcmd(cmd,"r"); //RES
 		
 	cmd = dcmd(cmd,"p"); //fps
-	cmd = dcmd(cmd,"f"); //fov
+	
+	if(checkedmode > 1) // not video		
+		cmd = dcmd(cmd,"tlvf"); //fov
+	else
+		cmd = dcmd(cmd,"f"); //fov
 	
 	cmd = dcmd(cmd,"pt"); //protune
 	cmd = dcmd(cmd,"eis"); //eis
