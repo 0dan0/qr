@@ -388,7 +388,7 @@ GoPro QR Command: <b id="txt"></b>
 
 [Learn more](..) on QR Control
 
-## version 1.01
+## version 1.02
 
 <script>
 var lastcmd = "";
@@ -477,7 +477,7 @@ function startTime() {
 	var checkedmode = 0;
 	var x;
 	
-	for (i = 1; i < 7; i++) { 
+	for (i = 1; i < 8; i++) { 
 		var mode = "m"+i;
 		x = document.getElementById(mode).checked;
 		if( x === true)
