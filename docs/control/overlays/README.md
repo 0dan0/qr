@@ -26,7 +26,7 @@ Note: All text box support **\n** for a new line.
 
 **Any start message here:** <input type="text" id="startmsg" value=""><br>
 
-**Add Time with format**  <input type="text" id="addtime" value="HH:MM:SSaa\n">
+**Add Time with format**  <input type="text" id="addtime" value="HH:MM:SSaa\n"> Remove by emptying this field.
 
  * HH - Hour
  * MM - Minute
@@ -34,14 +34,21 @@ Note: All text box support **\n** for a new line.
  * aa - am/pm (also switches off 24 hour time)
  * AA - AM/PM (also switches off 24 hour time)
 
-**Add Date with format**  <input type="text" id="adddate" value="mm-dd-yyyy">
+**Add Date with format**  <input type="text" id="adddate" value="mm-dd-yyyy"> Remove by emptying this field.
 
  * yy - year in two digit format
  * yyyy - year in four digit format
  * mm - month (1-12)
  * dd - day (1-31)
-  
-**Any end message here:** <input type="text" id="endmsg" value=""><br>
+ 
+**Display Metadata (experimental)**  <input type="text" id="addmeta" value="">
+
+Examples:
+ * GPS Location - add **GPS: 'GPS50%1.6f', 'GPS51%1.6f'**
+ * Sensor ISO - add **ISO: 'ISOE%d'**
+ * Ground Speed - add **speed: 'GPS53%1.2f'm/s**
+ 
+**Any end message here:**  <input type="text" id="endmsg" value=""><br>
 
 **Screen Placement** <br>
   &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp1" name="placement" value="TL"><label for="sp1">Top Left    </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -63,8 +70,18 @@ Note: All text box support **\n** for a new line.
 Make the overlay permanently active: **Are you sure?** <input type="checkbox" id="permanent" name="permanent"> <label for="permanent">Permanent Overlay</label><br>
 
 QR Command: <b id="qrtext">time</b><br>
-        
-## ver 1.0
+
+Cool Tips:
+- Metadata overlays work great with live-streaming.  This was its original intended function. 
+- Overlays can be changed mid capture, it is one of the few modes that QR Code reading is active while recording. Example use: When live streaming an endurance auto-race, you can change the driver name on the overlay during driver change pit-stops. 
+- A range (not all) of GoPro metadata can be displayed in their stored units, so speed is in meters/sec, not MPH. For more technical information on [GoPro's GPMF Metadata](https://gopro.github.io/gpmf-parser/) and other metadata you can display.
+
+Known Issues:
+- not working correctly in 4K50 and 4K60 video modes and Timelapse 4K.
+- does not update the time and metadata when used with motion detection triggered captures.
+- Metadata can take a second before it updates after capture start.
+		
+## ver 1.01
 [BACK](..)
 
 <script>
@@ -123,7 +140,7 @@ function timeLoop()
     if(document.getElementById("permanent").checked === true)
 		mtype = "!";
 	
-    cmd = mtype + "MBRNO=" + document.getElementById("offset").value + mtype + "MBURN=\"(" + document.getElementById("hsize").value + "," + document.getElementById("vsize").value + ")" + document.getElementById("startmsg").value + openb + pos + document.getElementById("addtime").value + document.getElementById("adddate").value + closeb + document.getElementById("endmsg").value + "\"";
+    cmd = mtype + "MBRNO=" + document.getElementById("offset").value + mtype + "MBURN=\"(" + document.getElementById("hsize").value + "," + document.getElementById("vsize").value + ")" + document.getElementById("startmsg").value + openb + pos + document.getElementById("addtime").value + document.getElementById("adddate").value + document.getElementById("addmeta").value + closeb + document.getElementById("endmsg").value + "\"";
   }
   else
   {
