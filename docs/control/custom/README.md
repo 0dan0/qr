@@ -20,7 +20,8 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="m3" name="mode" value="mTW"><label for="m3">TimeWarp</label>&nbsp;
   <input type="radio" id="m4" name="mode" value="mP"><label  for="m4">Photo</label>&nbsp;
   <input type="radio" id="m5" name="mode" value="mPB"><label for="m5">Burst Photo</label>&nbsp;
-  <input type="radio" id="m6" name="mode" value="mPN"><label for="m6">Night Photo</label><br>
+  <input type="radio" id="m6" name="mode" value="mPN"><label for="m6">Night Photo</label>&nbsp;
+  <input type="radio" id="m7" name="mode" value="mTP"><label for="m7">Timelapse Photo</label><br>
 
 <div id="settingsRES">
 <b>Video Resolution:</b>&nbsp;&nbsp;<input type="radio" id="r7" name="res" value="" checked><label for="r7">not set</label><br>
@@ -69,20 +70,29 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="b10" name="burst" value="" checked><label for="b10">not set</label><br><br>
 </div>
 
+<div id="settingsTimewarp">
+<b>TimeWarp Speed:</b>&nbsp;&nbsp;
+  <input type="radio" id="fpswarp1"    name="fpswarp" value="p15"><label for="fpslapse1">2X </label>&nbsp;
+  <input type="radio" id="fpswarp2"    name="fpswarp" value="p6"><label for="fpslapse2">5X </label>&nbsp;
+  <input type="radio" id="fpswarp3"    name="fpswarp" value="p3"><label for="fpslapse3">10X </label>&nbsp;
+  <input type="radio" id="fpswarp4"    name="fpswarp" value="p2"><label for="fpslapse4">15X </label>&nbsp;
+  <input type="radio" id="fpswarp5"    name="fpswarp" value="p1"><label for="fpslapse5">30X </label>&nbsp;
+  <input type="radio" id="fpswarp6"    name="fpswarp" value="" checked><label for="fpslapse6">not set</label><br><br>
+</div>
+ 
+ 
 <div id="settingsTimelapse">
 <b>Timelapse Interval:</b>&nbsp;&nbsp;
-  <input type="radio" id="fpslapse1"   name="fpslapse" value="p15"><label for="fpslapse1">2X </label>&nbsp;
-  <input type="radio" id="fpslapse2"    name="fpslapse" value="p6"><label for="fpslapse2">5X </label>&nbsp;
-  <input type="radio" id="fpslapse3"    name="fpslapse" value="p3"><label for="fpslapse3">10X </label>&nbsp;
-  <input type="radio" id="fpslapse4"    name="fpslapse" value="p2"><label for="fpslapse4">0.5s/15X </label>&nbsp;
-  <input type="radio" id="fpslapse5"    name="fpslapse" value="p1"><label for="fpslapse5">1s/30X </label>&nbsp;
-  <input type="radio" id="fpslapse6"   name="fpslapse" value="p.2"><label for="fpslapse6">2s </label>&nbsp;
-  <input type="radio" id="fpslapse7"   name="fpslapse" value="p.5"><label for="fpslapse7">5s </label>&nbsp;
-  <input type="radio" id="fpslapse8"  name="fpslapse" value="p.10"><label for="fpslapse8">10s </label>&nbsp;
-  <input type="radio" id="fpslapse9"  name="fpslapse" value="p.30"><label for="fpslapse9">30s </label>&nbsp;
-  <input type="radio" id="fpslapse10" name="fpslapse" value="p.60"><label for="fpslapse10">60s </label>&nbsp;
-  <input type="radio" id="fpslapse11" name="fpslapse" value="" checked><label for="fpslapse11">not set</label><br><br>
+  <input type="radio" id="fpslapse1"    name="fpslapse" value="p2"><label for="fpslapse1">0.5s </label>&nbsp;
+  <input type="radio" id="fpslapse2"    name="fpslapse" value="p1"><label for="fpslapse2">1s </label>&nbsp;
+  <input type="radio" id="fpslapse3"   name="fpslapse" value="p.2"><label for="fpslapse3">2s </label>&nbsp;
+  <input type="radio" id="fpslapse4"   name="fpslapse" value="p.5"><label for="fpslapse4">5s </label>&nbsp;
+  <input type="radio" id="fpslapse5"  name="fpslapse" value="p.10"><label for="fpslapse5">10s </label>&nbsp;
+  <input type="radio" id="fpslapse6"  name="fpslapse" value="p.30"><label for="fpslapse6">30s </label>&nbsp;
+  <input type="radio" id="fpslapse7" name="fpslapse" value="p.60"><label for="fpslapse7">60s </label>&nbsp;
+  <input type="radio" id="fpslapse8" name="fpslapse" value="" checked><label for="fpslapse8">not set</label><br><br>
 </div>
+ 
  
 <div id="settingsNightlapse">
 <b>Nightlapse Interval:</b>&nbsp;&nbsp;
@@ -418,6 +428,7 @@ function startTime() {
 	dset("settingsPhoto", false);
 	dset("settingsPT", false);
 	dset("settingsBurst", false);
+	dset("settingsTimewarp", false);
 	dset("settingsTimelapse", false);
 	dset("settingsNightlapse", false);
 	dset("settingsNightexposure", false);
@@ -487,7 +498,7 @@ function startTime() {
 		break;
 		
 		case 3: //TimeWarp Video
-		dset("settingsTimelapse", true);		
+		dset("settingsTimewarp", true);		
 		dset("settingsRESTLV", true);
 		if(document.getElementById("rt1").checked === true) // 1080
 			dset("settingsFOV", true);
