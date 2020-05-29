@@ -14,7 +14,7 @@
 
 Create a custom camera mode, and even start a capture all through QR Codes. This is the fastest way to access many of the new GoPro Labs' firmware features.
 
-<b>Camera Mode:</b>&nbsp;&nbsp;<input type="radio" id="m7" name="mode" value="" checked><label for="m7">not set</label><br>
+<b>Camera Mode:</b>&nbsp;&nbsp;<input type="radio" id="m8" name="mode" value="" checked><label for="m8">not set</label><br>
   <input type="radio" id="m1" name="mode" value="mV"><label  for="m1">Video</label>&nbsp;
   <input type="radio" id="m2" name="mode" value="mT"><label  for="m2">Timelapse</label>&nbsp;
   <input type="radio" id="m3" name="mode" value="mTW"><label for="m3">TimeWarp</label>&nbsp;
@@ -141,7 +141,7 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
 <b>Hypersmooth:</b>&nbsp;&nbsp;<input type="radio" id="eis1" name="eis" value="e0"><label for="eis1">Off</label>&nbsp;&nbsp;&nbsp;<input type="radio" id="eis2" name="eis" value="e1"><label for="eis2">On</label>&nbsp;&nbsp;&nbsp;<input type="radio" id="eis3" name="eis" value="" checked> <label for="eis3">not set</label><br><br>
 </div>
 
-<div id="settingsPhoto">
+<div id="settingsPhotoRAW">
 <b>Photo Properties:</b><br>
   <input type="radio" id="raw1" name="raw" value="rW"><label for="raw1">Raw off </label>&nbsp;
   <input type="radio" id="raw2" name="raw" value="r"><label for="raw2">Raw on</label>&nbsp;
@@ -434,7 +434,7 @@ function startTime() {
 	dset("settingsTLVFOV", false);
 	dset("settingsRESTLV", false);
 	dset("settingsVideo", false);
-	dset("settingsPhoto", false);
+	dset("settingsPhotoRAW", false);
 	dset("settingsPT", false);
 	dset("settingsBurst", false);
 	dset("settingsTimewarp", false);
@@ -510,25 +510,29 @@ function startTime() {
 	
 		case 4: //Photo
 		dset("settingsPT", true);
-		dset("settingsFOV", true);
-		dset("settingsTLVPhoto", true);
+		dset("settingsTLVFOV", true);
+		dset("settingsPhotoRAW", true);
 		break;
 		
 		case 5: //Burst
 		dset("settingsBurst", true);
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
+		dset("settingsPhotoRAW", true);
 		break;
 		
 		case 6: //Night
 		dset("settingsNightexposure", true);
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
+		dset("settingsPhotoRAW", true);
 		break;
 		
 		case 7: //TLP
 		dset("settingsTimelapse", true);	
+		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
+		dset("settingsPhotoRAW", true);
 		break;
 	}
 		
@@ -617,7 +621,7 @@ function startTime() {
 			break;
 	}
 	
-	if(checkedmode == 2 || checkedmode == 3 || checkedmode == 7) // TLV/TWarp/TLP Res
+	if(checkedmode == 2 || checkedmode == 3) // TLV/TWarp Res
 		cmd = dcmd(cmd, "rt");
 	else
 		cmd = dcmd(cmd,"r"); //RES
