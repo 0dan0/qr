@@ -55,6 +55,14 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="f5" name="fov" value="fS"><label for="f5">Superview </label>&nbsp;
   <input type="radio" id="f6" name="fov" value="" checked> <label for="f6">not set</label><br><br>
  </div>
+ 
+ 
+<div id="settingsTLVFOV">
+<b>FOV:</b>
+  <input type="radio" id="tlvf1" name="tlvfov" value="fW"><label for="tlvf1">Wide </label>&nbsp;
+  <input type="radio" id="tlvf2" name="tlvfov" value="fL"><label for="tlvf2">Linear </label>&nbsp;
+  <input type="radio" id="tlvf3" name="tlvfov" value="" checked> <label for="tlvf3">not set</label><br><br>
+ </div>
 
 <div id="settingsBurst">
 <b>Burst Style:</b>&nbsp;&nbsp;
@@ -72,12 +80,12 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
 
 <div id="settingsTimewarp">
 <b>TimeWarp Speed:</b>&nbsp;&nbsp;
-  <input type="radio" id="fpswarp1"    name="fpswarp" value="p15"><label for="fpslapse1">2X </label>&nbsp;
-  <input type="radio" id="fpswarp2"    name="fpswarp" value="p6"><label for="fpslapse2">5X </label>&nbsp;
-  <input type="radio" id="fpswarp3"    name="fpswarp" value="p3"><label for="fpslapse3">10X </label>&nbsp;
-  <input type="radio" id="fpswarp4"    name="fpswarp" value="p2"><label for="fpslapse4">15X </label>&nbsp;
-  <input type="radio" id="fpswarp5"    name="fpswarp" value="p1"><label for="fpslapse5">30X </label>&nbsp;
-  <input type="radio" id="fpswarp6"    name="fpswarp" value="" checked><label for="fpslapse6">not set</label><br><br>
+  <input type="radio" id="fpswarp1"    name="fpswarp" value="p15"><label for="fpswarp1">2X </label>&nbsp;
+  <input type="radio" id="fpswarp2"    name="fpswarp" value="p6"><label for="fpswarp2">5X </label>&nbsp;
+  <input type="radio" id="fpswarp3"    name="fpswarp" value="p3"><label for="fpswarp3">10X </label>&nbsp;
+  <input type="radio" id="fpswarp4"    name="fpswarp" value="p2"><label for="fpswarp4">15X </label>&nbsp;
+  <input type="radio" id="fpswarp5"    name="fpswarp" value="p1"><label for="fpswarp5">30X </label>&nbsp;
+  <input type="radio" id="fpswarp6"    name="fpswarp" value="" checked><label for="fpswarp6">not set</label><br><br>
 </div>
  
  
@@ -423,6 +431,7 @@ function startTime() {
 	dset("settingsRES", false);
 	dset("settingsFPS", false);
 	dset("settingsFOV", false);
+	dset("settingsTLVFOV", false);
 	dset("settingsRESTLV", false);
 	dset("settingsVideo", false);
 	dset("settingsPhoto", false);
@@ -490,39 +499,36 @@ function startTime() {
 		case 2: //Timelapse Video
 		dset("settingsTimelapse", true);		
 		dset("settingsRESTLV", true);
-		if(document.getElementById("rt1").checked === true) // 1080
-			dset("settingsFOV", true);
-			
-		if(document.getElementById("pt") !== null)
-			document.getElementById("pt").checked = false;
+		dset("settingsTLVFOV", true);
 		break;
 		
 		case 3: //TimeWarp Video
 		dset("settingsTimewarp", true);		
 		dset("settingsRESTLV", true);
-		if(document.getElementById("rt1").checked === true) // 1080
-			dset("settingsFOV", true);
-			
-		if(document.getElementById("pt") !== null)
-			document.getElementById("pt").checked = false;
+		dset("settingsTLVFOV", true);
 		break;		
 	
 		case 4: //Photo
 		dset("settingsPT", true);
 		dset("settingsFOV", true);
-		dset("settingsPhoto", true);
+		dset("settingsTLVPhoto", true);
 		break;
 		
 		case 5: //Burst
 		dset("settingsBurst", true);
 		dset("settingsPT", true);
-		dset("settingsFOV", true);
+		dset("settingsTLVFOV", true);
 		break;
 		
 		case 6: //Night
 		dset("settingsNightexposure", true);
 		dset("settingsPT", true);
-		dset("settingsFOV", true);
+		dset("settingsTLVFOV", true);
+		break;
+		
+		case 7: //TLP
+		dset("settingsTimelapse", true);	
+		dset("settingsTLVFOV", true);
 		break;
 	}
 		
