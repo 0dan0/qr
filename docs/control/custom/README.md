@@ -805,6 +805,7 @@ function startTime() {
 		var SK_added = 0;
 		if(document.getElementById("starthrs") !== null && document.getElementById("startmins") !== null && document.getElementById("time") !== null)
 		{
+			var newcmd = "";
 			var secs = 0;
 			var starttime = document.getElementById("time").value;
 			secs = Number(3600 * document.getElementById("starthrs").value) + Number(60 * document.getElementById("startmins").value) + Number(document.getElementById("startsecs").value);
@@ -812,30 +813,35 @@ function startTime() {
 			var setmins = 60 * document.getElementById("setmins").value;
 			if(setmins !== 0)
 			{
-				cmd = "!s" + setmins + "N" + cmd + "!S";
+				newcmd = "!s" + setmins + "N" + cmd + "!S";
+				cmd = newcmd;
 				S_added = 1;
 			}
 			else if(risemins !== 0)
 			{
-				cmd = "!r" + risemins + "N" + cmd + "!S";
+				newcmd = "!r" + risemins + "N" + cmd + "!S";
+				cmd = newcmd;
 				S_added = 1;
 			}
 			else if(secs > 0)
 			{
 				if(sec < 20)
 				{
-					cmd = cmd + "!" + secs + "S";
+					newcmd = cmd + "!" + secs + "S";
+					cmd = newcmd;
 					S_added = 1;
 				}
 				else
 				{
-					cmd = "!" + secs + "N" + cmd + "!S";
+					newcmd = "!" + secs + "N" + cmd + "!S";
+					cmd = newcmd;
 					S_added = 1;
 				}
 			}
 			else if(starttime.length == 5)
 			{
-				cmd = "!" + starttime + "N" + cmd + "!S";
+				newcmd = "!" + starttime + "N" + cmd + "!S";
+				cmd = newcmd;
 				S_added = 1;
 			}
 		}
