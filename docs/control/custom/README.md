@@ -388,7 +388,7 @@ GoPro QR Command: <b id="txt"></b>
 
 [Learn more](..) on QR Control
 
-## version 1.02
+## version 1.03
 
 <script>
 var lastcmd = "";
@@ -812,20 +812,30 @@ function startTime() {
 			var setmins = 60 * document.getElementById("setmins").value;
 			if(setmins !== 0)
 			{
-				cmd = cmd + "!s" + setmins + "S";
+				cmd = "!s" + setmins + "N" + cmd + "!S";
+				S_added = 1;
 			}
 			else if(risemins !== 0)
 			{
-				cmd = cmd + "!r" + risemins + "S";
+				cmd = "!r" + risemins + "N" + cmd + "!S";
+				S_added = 1;
 			}
 			else if(secs > 0)
 			{
-				cmd = cmd + "!" + secs + "S";
-				S_added = 1;
+				if(sec < 20)
+				{
+					cmd = cmd + "!" + secs + "S";
+					S_added = 1;
+				}
+				else
+				{
+					cmd = "!" + secs + "N" + cmd + "!S";
+					S_added = 1;
+				}
 			}
 			else if(starttime.length == 5)
 			{
-				cmd = cmd + "!" + starttime + "S";
+				cmd = "!" + starttime + "N" + cmd + "!S";
 				S_added = 1;
 			}
 		}
