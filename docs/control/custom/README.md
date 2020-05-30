@@ -825,7 +825,7 @@ function startTime() {
 			}
 			else if(secs > 0)
 			{
-				if(sec < 20)
+				if(secs < 20)
 				{
 					newcmd = cmd + "!" + secs + "S";
 					cmd = newcmd;
