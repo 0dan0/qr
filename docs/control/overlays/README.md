@@ -44,9 +44,9 @@ Note: All text box support **\n** for a new line.
 **Display Metadata (experimental)**  <input type="text" id="addmeta" value="">
 
 Examples:
- * GPS Location - add **GPS: &prime;GPS50%1.6f&prime;, &prime;GPS51%1.6f&prime;**
- * Sensor ISO - add **ISO: &prime;ISOE%d&prime;**
- * Ground Speed - add **speed: &prime;GPS53%1.2f&prime;m/s**
+ * GPS Location - add GPS: 'GPS50%1.6f', 'GPS51%1.6f'
+ * Sensor ISO - add ISO: 'ISOE%d'
+ * Ground Speed - add speed: 'GPS53%1.2f'm/s
  
 **Any end message here:**  <input type="text" id="endmsg" value=""><br>
 
