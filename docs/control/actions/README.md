@@ -84,7 +84,7 @@ Known Issue: The saved and load scripts can't support conditionals, as the '<' a
 Custom Mode: <input type="text" id="tryit" value=""><br>
 
 
-## ver 1.00
+## ver 1.01
 [BACK](..)
 
 
