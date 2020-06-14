@@ -16,6 +16,7 @@ Unfortunately you will have to manually pair you GoPro with the network (once), 
 ## On Camera:
 * enable WiFi.  **Preferences** -> **Connections** -> **Wireless Connections On**
 * enable pairing.  **Preferences** -> **Connections** -> **Connect Device** -> **GoPro App**
+
 ## Within the GoPro App
 * pair and connect, etc. then select **Control Your GoPro**
 * Scroll the lower controls to Live / **Set Up Live** (the control is on the far right)
