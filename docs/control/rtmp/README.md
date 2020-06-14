@@ -12,7 +12,8 @@
 
 # RTMP Live Stream Setup (requires Labs v1.70.76)
 
-Unfortunately you will have to manually pair you GoPro with the network (once), so that you can live stream via QR Code. To manually configure your network, follow these steps.<br>
+To live stream via QR Code, you will have to manually pair the GoPro with the network (once), via the GoPro App. Follow these steps.
+
 ## On Camera:
 * enable WiFi.  **Preferences** -> **Connections** -> **Wireless Connections On**
 * enable pairing.  **Preferences** -> **Connections** -> **Connect Device** -> **GoPro App**
@@ -26,9 +27,9 @@ Unfortunately you will have to manually pair you GoPro with the network (once), 
 * Entry a fake RTMP URL as rtmp://  (we don't need the full address yet)
 * Press **Set Up Live Stream**, which will make the camera remember the WiFi access point. You can do this more than once if there are multiple access points.
 
-# Store your RTMP address for Live 
+# Pre-store Your RTMP Address for Live 
 
-Enter you real RTMP address here: <input type="text" id="rtmptxt" value=""><br>(e.g. rtmp://live.twitch.tv/app/live_5554355...)<br>
+Enter the full RTMP address here: <input type="text" id="rtmptxt" value=""><br>(e.g. rtmp://live.twitch.tv/app/live_5554355...)<br>
 
 <center>
 <div id="qrcode"></div>
@@ -38,7 +39,7 @@ Enter you real RTMP address here: <input type="text" id="rtmptxt" value=""><br>(
 <b>Scan the code above once for the camera to always know the target RTMP address.</b>
 
 
-# This QR Code is to Launch Your Live Stream 
+# Launch Your Live Stream 
 
 Select your Resolution:
   <input type="radio" id="rs1" name="rs" value="S"><label for="480p">480p </label>&nbsp;
@@ -54,7 +55,7 @@ Store a high quality copy on camera:
 </center>
 QR Command: <b id="qrtext">time</b><br>
 
-<b>Scan the code above to go live in about 15 seconds</b>
+<b>Scan the code above to go live in 15-20 seconds</b>
 
         
 ## ver 1.00
@@ -127,11 +128,8 @@ function timeLoop()
   qrcode.clear(); 
   qrcode.makeCode(cmd);
   
-  cmd2 = "mVr1080p60!G";
+  cmd2 = "oW1mVr1080p60!G";
   cmd2 = dcmd(cmd2, "rs");
-  qrcode2.clear(); 
-  qrcode2.makeCode(cmd2);
-
   if(document.getElementById("cp") != null)
   {
     if(document.getElementById("cp").checked == true)
@@ -139,6 +137,9 @@ function timeLoop()
       cmd2 = cmd2 + "C";
     }
   }
+  
+  qrcode2.clear(); 
+  qrcode2.makeCode(cmd2);
 		
   document.getElementById("qrtext").innerHTML = cmd2;
   var t = setTimeout(timeLoop, 50);
