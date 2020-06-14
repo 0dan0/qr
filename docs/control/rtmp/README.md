@@ -27,13 +27,14 @@ Within the GoPro App
 
 # Store your RTMP address for Live 
 
-Enter you real RTMP address here: <input type="text" id="rtmptxt" value=""> (e.g. rtmp://live.twitch.tv/app/live_5554355...)<br>
+Enter you real RTMP address here: <input type="text" id="rtmptxt" value=""><br>(e.g. rtmp://live.twitch.tv/app/live_5554355...)<br>
 
 <center>
 <div id="qrcode"></div>
 <br>
 </center>
-** Scan the code above once for the camera to always know the target RTMP address. **
+
+<b>Scan the code above once for the camera to always know the target RTMP address.</b>
 
 
 # This QR Code is to Launch Your Live Stream 
@@ -52,7 +53,7 @@ Store a high quality copy on camera:
 </center>
 QR Command: <b id="qrtext">time</b><br>
 
-** Scan the code above to go live in about 15 seconds 
+<b>Scan the code above to go live in about 15 seconds</b>
 
         
 ## ver 1.00
