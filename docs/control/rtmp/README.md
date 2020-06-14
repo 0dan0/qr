@@ -14,16 +14,16 @@
 
 Unfortunately you will have to manually pair you GoPro with the network (once), so that you can live stream via QR Code. To manually configure your network, follow these steps.<br>
 # On Camera:
-* enable WiFi.  Preferences -> Connections -> Wireless Connections On
-* enable pairing.  Preferences -> Connections -> Connect Device -> GoPro App
+* enable WiFi.  **Preferences** -> **Connections** -> **Wireless Connections On**
+* enable pairing.  **Preferences** -> **Connections** -> **Connect Device** -> **GoPro App**
 # Within the GoPro App
-* pair and connect, etc. then select "Control Your GoPro
-* Scroll the controls to Live / "Set Up Live" (the control is on the far right)
-* Select "Live Stream or Other" for RTMP
-* Select "Set Up Live"
+* pair and connect, etc. then select **Control Your GoPro**
+* Scroll the lower controls to Live / **Set Up Live** (the control is on the far right)
+* Select **Live Stream or Other** for RTMP
+* Select **Set Up Live**
 * Connect to a network, select your select your WiFi hot spot or access point (this will be remembered by the camera)
 * Entry a fake RTMP URL as rtmp://  (we don't need the full address yet)
-* Press "Set Up Live Stream", which will make the camera remember the WiFi access point.  You can do this more than once if there are multiple access points.
+* Press **Set Up Live Stream**, which will make the camera remember the WiFi access point. You can do this more than once if there are multiple access points.
 
 # Store your RTMP address for Live 
 
