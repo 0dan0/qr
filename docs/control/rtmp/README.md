@@ -10,28 +10,30 @@
         }
 </style>
 
-# RTMP Live Stream Setup (requires Labs v1.70.76)
+## RTMP Live Stream Setup (requires Labs v1.70.76)
 
 Unfortunately you will have to manually pair you GoPro with the network (once), so that you can live stream via QR Code. To manually configure your network, follow these steps:
 On Camera:
-1) enable WiFi.  Preferences -> Connections -> Wireless Connections On
-2) enable pairing.  Preferences -> Connections -> Connect Device -> GoPro App
+* enable WiFi.  Preferences -> Connections -> Wireless Connections On
+* enable pairing.  Preferences -> Connections -> Connect Device -> GoPro App
 Within the GoPro App
-3) pair and connect, etc. then select "Control Your GoPro"
-4) Scroll the controls to Live / "Set Up Live" (the control is on the far right)
-5) Select "Live Stream or Other" for RTMP
-6) Select "Set Up Live"
-7) Connect to a network, select your select your WiFi hot spot or access point (this will be remembered by the camera)
-8) Entry a fake RTMP URL as rtmp://  (we don't need the full address yet)
-9) Press "Set Up Live Stream", which will make the camera remember the WiFi access point.  You can do this more than once if there are multiple access points.
+* pair and connect, etc. then select "Control Your GoPro
+* Scroll the controls to Live / "Set Up Live" (the control is on the far right)
+* Select "Live Stream or Other" for RTMP
+* Select "Set Up Live"
+* Connect to a network, select your select your WiFi hot spot or access point (this will be remembered by the camera)
+* Entry a fake RTMP URL as rtmp://  (we don't need the full address yet)
+* Press "Set Up Live Stream", which will make the camera remember the WiFi access point.  You can do this more than once if there are multiple access points.
 
 # Store your RTMP address for Live 
 
-Enter you real RTMP address here: <input type="text" id="rtmptxt" value=""><br>
+Enter you real RTMP address here: <input type="text" id="rtmptxt" value=""> (e.g. rtmp://live.twitch.tv/app/live_5554355...)<br>
 
+<center>
 <div id="qrcode"></div>
-
-Scan this code once for the camera to always know the target RTMP address.
+<br>
+</center>
+** Scan the code above once for the camera to always know the target RTMP address. **
 
 
 # This QR Code is to Launch Your Live Stream 
@@ -49,6 +51,9 @@ Store a high quality copy on camera:
 <br>
 </center>
 QR Command: <b id="qrtext">time</b><br>
+
+** Scan the code above to go live in about 15 seconds 
+
         
 ## ver 1.00
 [BACK](..)
@@ -67,8 +72,8 @@ function makeQR()
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
       text : "\"Add your RTMP URL\"",
-      width : 360,
-      height : 360,
+      width : 500,
+      height : 500,
       correctLevel : QRCode.CorrectLevel.M
     });
 	
