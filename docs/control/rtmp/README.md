@@ -10,13 +10,13 @@
         }
 </style>
 
-## RTMP Live Stream Setup (requires Labs v1.70.76)
+# RTMP Live Stream Setup (requires Labs v1.70.76)
 
 Unfortunately you will have to manually pair you GoPro with the network (once), so that you can live stream via QR Code. To manually configure your network, follow these steps.<br>
-# On Camera:
+## On Camera:
 * enable WiFi.  **Preferences** -> **Connections** -> **Wireless Connections On**
 * enable pairing.  **Preferences** -> **Connections** -> **Connect Device** -> **GoPro App**
-# Within the GoPro App
+## Within the GoPro App
 * pair and connect, etc. then select **Control Your GoPro**
 * Scroll the lower controls to Live / **Set Up Live** (the control is on the far right)
 * Select **Live Stream or Other** for RTMP
