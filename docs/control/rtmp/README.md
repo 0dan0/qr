@@ -75,8 +75,8 @@ function makeQR()
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
       text : "\"Add your RTMP URL\"",
-      width : 500,
-      height : 500,
+      width : 360,
+      height : 360,
       correctLevel : QRCode.CorrectLevel.M
     });
 	
