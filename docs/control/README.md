@@ -15,8 +15,8 @@
 
 ## Mobile App QR Generation
 
-[![google play](<img src="google-play-823-2x.png" width="175"/>)](https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
-[![apple app store](<img src="apple-store-823-2x.png" width="175"/>)](https://apps.apple.com/us/app/gopro-app/id1518134202)
+<img src="google-play-823-2x.png" width="175">(https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
+<img src="apple-store-823-2x.png" width="175">(https://apps.apple.com/us/app/gopro-app/id1518134202)
 
 ## The Commands Under The Hood 
 
