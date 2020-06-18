@@ -64,8 +64,7 @@ Examples:
   
 **GPS On or Off** <br>
  
-<input type="checkbox" id="gps" name="gps" checked> 
-<label for="gps">Using GPS</label><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="gps" name="gps"><label for="gps">Using GPS</label><br>
 
 <center>
 <div id="qrcode"></div>
