@@ -61,6 +61,12 @@ Examples:
   <input type="radio" id="b7" name="placement" value="BC"><label for="sp7">Lower Center</label>&nbsp;
   <input type="radio" id="sp8" name="placement" value="BR" checked><label for="sp8">Lower Right </label>&nbsp;<br>
   
+  
+**GPS On or Off** <br>
+ 
+<input type="checkbox" id="gps" name="gps" checked> 
+<label for="gps">Using GPS</label><br>
+
 <center>
 <div id="qrcode"></div>
 <br>
@@ -139,8 +145,26 @@ function timeLoop()
 	
     if(document.getElementById("permanent").checked === true)
 		mtype = "!";
+
+	cmd = "";
 	
-    cmd = mtype + "MBRNO=" + document.getElementById("offset").value + mtype + "MBURN=\"(" + document.getElementById("hsize").value + "," + document.getElementById("vsize").value + ")" + document.getElementById("startmsg").value + openb + pos + document.getElementById("addtime").value + document.getElementById("adddate").value + document.getElementById("addmeta").value + closeb + document.getElementById("endmsg").value + "\"";
+    if(document.getElementById("gps").checked === true)
+    {
+		if(document.getElementById("permanent").checked === true)
+		{
+			cmd = "g1!MLFIN=\"0\"";
+		}
+		else
+		{
+			cmd = "g1oMLFIN=0";
+		}		
+	}
+	else
+	{
+		cmd = "g0";
+	}
+	
+    cmd = cmd + mtype + "MBRNO=" + document.getElementById("offset").value + mtype + "MBURN=\"(" + document.getElementById("hsize").value + "," + document.getElementById("vsize").value + ")" + document.getElementById("startmsg").value + openb + pos + document.getElementById("addtime").value + document.getElementById("adddate").value + document.getElementById("addmeta").value + closeb + document.getElementById("endmsg").value + "\"";
   }
   else
   {
