@@ -86,7 +86,7 @@ Known Issues:
 - does not update the time and metadata when used with motion detection triggered captures.
 - Metadata can take a second before it updates after capture start.
 		
-## ver 1.02
+## ver 1.03
 [BACK](..)
 
 <script>
