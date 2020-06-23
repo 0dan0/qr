@@ -641,7 +641,7 @@ function startTime() {
 			break;
 	}
 	
-	if(checkedmode == 2 || checkedmode == 3) // TLV/TWarp Res
+	if(checkedmode == 2 || checkedmode == 3 || checkedmode == 8) // TLV/TWarp Res/NLV
 		cmd = dcmd(cmd, "rt");
 	else
 		cmd = dcmd(cmd,"r"); //RES
@@ -658,7 +658,7 @@ function startTime() {
 	cmd = dcmd(cmd,"all"); //auto low light	
 	cmd = dcmd(cmd,"audt"); //audio control
 	
-	if(checkedmode >= 4) //RAW
+	if(checkedmode >= 4 && checkedmode != 8) //RAW
 		cmd = dcmd(cmd,"raw"); //raw photo control
 		
 	if(document.getElementById("p1") !== null)
