@@ -14,7 +14,7 @@
 
 Create a custom camera mode, and even start a capture all through QR Codes. This is the fastest way to access many of the new GoPro Labs' firmware features.
 
-<b>Camera Mode:</b>&nbsp;&nbsp;<input type="radio" id="m9" name="mode" value="" checked><label for="m9">not set</label><br>
+<b>Camera Mode:</b>&nbsp;&nbsp;<input type="radio" id="m8" name="mode" value="" checked><label for="m8">not set</label><br>
   <input type="radio" id="m1" name="mode" value="mV"><label  for="m1">Video</label>&nbsp;
   <input type="radio" id="m2" name="mode" value="mT"><label  for="m2">Timelapse</label>&nbsp;
   <input type="radio" id="m3" name="mode" value="mTW"><label for="m3">TimeWarp</label>&nbsp;
@@ -22,7 +22,6 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="m5" name="mode" value="mPB"><label for="m5">Burst Photo</label>&nbsp;
   <input type="radio" id="m6" name="mode" value="mPN"><label for="m6">Night Photo</label>&nbsp;
   <input type="radio" id="m7" name="mode" value="mTP"><label for="m7">Timelapse Photo</label><br>
-  <input type="radio" id="m8" name="mode" value="mNL"><label for="m8">Nightlapse Video</label><br>
 
 <div id="settingsRES">
 <b>Video Resolution:</b>&nbsp;&nbsp;<input type="radio" id="r7" name="res" value="" checked><label for="r7">not set</label><br>
@@ -125,8 +124,7 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="nightexp4" name="nightexp" value="e10"><label for="nightexp4">10s </label>&nbsp;
   <input type="radio" id="nightexp5" name="nightexp" value="e15"><label for="nightexp5">15s </label>&nbsp;
   <input type="radio" id="nightexp6" name="nightexp" value="e20"><label for="nightexp6">20s </label>&nbsp;
-  <input type="radio" id="nightexp7" name="nightexp" value="e30"><label for="nightexp7">30s (Photo only) </label>&nbsp;
-  <input type="radio" id="nightexp8" name="nightexp" value="" checked><label for="nightexp8"> not set</label><br><br>
+  <input type="radio" id="nightexp7" name="nightexp" value="" checked><label for="nightexp7"> not set</label><br><br>
 </div>
 
 <div id="settingsRESTLV">
@@ -157,7 +155,7 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
 </div> 
 
 <div id="settingsPT">
-<input type="checkbox" id="pt" value="t"><label for="pt">Protune Controls</label><br>
+<input type="checkbox" id="pt" value="t"> <label for="pt">Protune Controls</label><br>
 </div>
 <div id="ptCOLOR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Protune Color:</b>&nbsp;&nbsp;
   <input type="radio" id="ptc1" name="ptc" value="cG"><label for="ptc1">GoPro</label>&nbsp;
@@ -236,7 +234,7 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
 </div>
 
 <div id="cameraOptions">
-<input type="checkbox" id="options" value=""><label for="options">Camera Preferences</label><br>
+<input type="checkbox" id="options" value=""> <label for="options">Camera Preferences</label><br>
 </div>
 
 <div id="opGPS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GPS:</b>&nbsp;&nbsp;
@@ -326,15 +324,15 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
 
 
 <div id="opDT">
-<input type="checkbox" id="dt" value="oT"><label for="dt">Set date + time automatically</label><br>
+<input type="checkbox" id="dt" value="oT"> <label for="dt">Set date + time automatically</label><br>
 </div>
 
 <div id="opDTS">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="dttimecode" value=""><label for="dttimecode">add 1/100th of a second</label><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="dttimecode" value=""> <label for="dttimecode">add 1/100th of a second</label><br>
 </div>
 
 <div id="cameraActions">
-<input type="checkbox" id="actions" value=""><label for="actions">Delayed Actions</label><br>
+<input type="checkbox" id="actions" value=""> <label for="actions">Delayed Actions</label><br>
 </div>
 
 <div id="aSD">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Shutdown and capture in:</b>
@@ -483,7 +481,7 @@ function startTime() {
 	var checkedmode = 0;
 	var x;
 	
-	for (i = 1; i < 9; i++) { 
+	for (i = 1; i < 8; i++) { 
 		var mode = "m"+i;
 		x = document.getElementById(mode).checked;
 		if( x === true)
