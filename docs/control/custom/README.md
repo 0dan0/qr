@@ -22,6 +22,7 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="m5" name="mode" value="mPB"><label for="m5">Burst Photo</label>&nbsp;
   <input type="radio" id="m6" name="mode" value="mPN"><label for="m6">Night Photo</label>&nbsp;
   <input type="radio" id="m7" name="mode" value="mTP"><label for="m7">Timelapse Photo</label><br>
+  <input type="radio" id="m8" name="mode" value="mNL"><label for="m8">Nightlapse Video</label><br>
 
 <div id="settingsRES">
 <b>Video Resolution:</b>&nbsp;&nbsp;<input type="radio" id="r7" name="res" value="" checked><label for="r7">not set</label><br>
@@ -540,6 +541,12 @@ function startTime() {
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
 		dset("settingsPhotoRAW", true);
+		break;
+		
+		case 8: //NL Video
+		dset("settingsNightlapse", true);	
+		dset("settingsPT", true);
+		dset("settingsTLVFOV", true);
 		break;
 	}
 		
