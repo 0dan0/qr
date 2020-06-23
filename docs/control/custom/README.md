@@ -125,7 +125,7 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="nightexp4" name="nightexp" value="e10"><label for="nightexp4">10s </label>&nbsp;
   <input type="radio" id="nightexp5" name="nightexp" value="e15"><label for="nightexp5">15s </label>&nbsp;
   <input type="radio" id="nightexp6" name="nightexp" value="e20"><label for="nightexp6">20s </label>&nbsp;
-  <input type="radio" id="nightexp7" name="nightexp" value="e30"><label for="nightexp7">30s </label>&nbsp;
+  <input type="radio" id="nightexp7" name="nightexp" value="e30"><label for="nightexp7">30s (Photo only) </label>&nbsp;
   <input type="radio" id="nightexp8" name="nightexp" value="" checked><label for="nightexp8"> not set</label><br><br>
 </div>
 
@@ -394,7 +394,7 @@ GoPro QR Command: <b id="txt"></b>
 [![google play](../google-play-823.png)](https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
 [![apple app store](../apple-store-823.png)](https://apps.apple.com/us/app/gopro-app/id1518134202)
 
-## version 1.05
+## version 1.06
 
 <script>
 var lastcmd = "";
@@ -545,6 +545,8 @@ function startTime() {
 		
 		case 8: //NL Video
 		dset("settingsNightlapse", true);	
+		dset("settingsNightexposure", true);	
+		dset("settingsRESTLV", true);
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
 		break;
@@ -631,6 +633,10 @@ function startTime() {
 			cmd = dcmd(cmd,"b");
 			break;	
 		case 6: //Night
+			cmd = dcmd(cmd,"nightexp");
+			break;
+		case 8: //NLV	
+			cmd = dcmd(cmd,"fpsnight");
 			cmd = dcmd(cmd,"nightexp");
 			break;
 	}
