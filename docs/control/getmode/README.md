@@ -19,6 +19,7 @@
       
 <div id="qrcode"></div>
 	  
+QR Command: <b id="qrtext"></b><br>
 	  
 ## version 0.90
 
@@ -34,7 +35,7 @@ function makeQR()
   {
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
-      text : "!oMBURN=\"\"",
+      text : "\"Load MP4 or JPG\"",
       width : 360,
       height : 360,
       correctLevel : QRCode.CorrectLevel.M
@@ -80,7 +81,9 @@ function makeQR()
 				
 				
 				if(parsertype == 1) // GMPF is KLV, not LKV
-				{
+				{			
+					makeQR();
+							
 					fourcc =  view[i]<<24; i++;
 					fourcc += view[i]<<16; i++;
 					fourcc += view[i]<<8; i++;
@@ -96,8 +99,11 @@ function makeQR()
 					{
 						if (fourcc === 0x464D5752) //FMWR
 						{
-							document.getElementById('output').textContent="FMWR";				
-							makeQR();
+							document.getElementById('output').textContent="FMWR";	
+							
+							  qrcode.clear(); 
+							  qrcode.makeCode(cmd);
+							  document.getElementById("qrtext").innerHTML = cmd;
 							fds;
 						}
 					}						
