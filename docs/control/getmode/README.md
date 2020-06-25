@@ -19,7 +19,8 @@
       
 <div id="qrcode"></div>
 	  
-## version 1.00
+	  
+## version 0.90
 
 <script>
        
