@@ -42,10 +42,9 @@ Simply replacing the battery is the easiest solution for long captures. After th
 		
 ## Solutions for Using External Lithium Ion USB Batteries
 
-As stated above, most Lithium Ion USB powerbanks will shut-off early, even when the camera still needs the power. A select few USB battery sources include an "always on feature" designed for time-lapse projects.  Example: https://voltaicsystems.com/v50/  This one can even solar recharge the battery at the same time.
+As stated above, most Lithium Ion USB power-banks will shut-off early, even when the camera still needs the power. A select few USB battery sources include an "always on feature" designed for time-lapse projects.  Example:[voltaicsystems.com/v50](https://voltaicsystems.com/v50/) This one can even solar recharge the battery at the same time.
 
-The second option is a USB keep alive device that prevents your USB power bank from shutting down.  Examples: 
-https://www.sotabeams.co.uk/usb-battery-pack-keep-alive-load/ and https://www.tindie.com/products/overz/smart-power-bank-keep-alive/
+The second option is a USB keep alive device that prevents your USB power bank from shutting down.  Examples: [from sotabeams.co.uk](https://www.sotabeams.co.uk/usb-battery-pack-keep-alive-load/) and [from tindie.com](https://www.tindie.com/products/overz/smart-power-bank-keep-alive/)
 
         
 ## ver 1.02
