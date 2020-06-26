@@ -29,6 +29,17 @@ Number of hours <input type="range" id="tlhours" name="tlhours" min="0" max="48"
 
 Maximum estimated frames: <b id="framestext">0</b> for  <b id="playtext">0</b> seconds of playback at 30fps. Capture time estimate <b id="captext">0</b> hours with an interval of <b id="intervaltext">0</b> minutes.
 
+## Extending Time-lapse Duration
+
+Simply replacing the battery is the easiest solution for long captures. After the battery is replaced, power on the camera so that the time-lapse can continue. You might want to set and forget for a multi-week or multi-month time-lapse, for this A/C powering the camera via USB is the best. With continuous wall power the battery is optional and the camera should run for a very long time (only SD card storage limitations.) You might be tempted to use a Lithium Ion USB powerbank, however they typically do not work well (see below for solutions.) They are designed to quickly recharge a smartphone, and when they think power is no longer needed, they shut-off. For this reason they get you far shorter captures than you would expect. If you want to try a USB powerbank, remove the GoPro battery for better results. For long captures away from the power grid, the best solution is a small 12V 18+Ah sealed lead acid battery and attached a non-smart (doesn't shut off) USB regulator. With the right photo interval, this configuration could last a year on a single charge.      
+		
+## Solutions for Using External Lithium Ion USB Batteries
+
+As stated above, most Lithium Ion USB powerbanks will shut-off early, even when the camera still needs the power. A select few USB battery sources include an "always on feature" designed for time-lapse projects.  Example: https://voltaicsystems.com/v50/  This one can even solar recharge the battery at the same time.
+
+The second option is a USB keep alive device that prevents your USB power bank from shutting down.  Examples: 
+https://www.sotabeams.co.uk/usb-battery-pack-keep-alive-load/ and https://www.tindie.com/products/overz/smart-power-bank-keep-alive/
+
 
 <center>
 <div id="qrcode"></div>
@@ -37,7 +48,7 @@ Maximum estimated frames: <b id="framestext">0</b> for  <b id="playtext">0</b> s
 
 QR Command: <b id="qrtext">time</b><br>
         
-## ver 1.01
+## ver 1.02
 [BACK](..)
 
 <script>
