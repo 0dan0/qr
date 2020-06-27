@@ -16,17 +16,17 @@ This is more for security applications like a dash cam setup, or education envir
 
 If either horizontal or vertical size is zero, the size will be computed automatically.
  
-Overlay vertical size <input type="range" id="vsize" name="vsize" min="0" max="400" value="40"><label for="vsize"></label> <b id="vstext">40</b>
+Overlay vertical size <input type="range" style="width: 300px;" id="vsize" name="vsize" min="0" max="400" value="20"><label for="vsize"></label> <b id="vstext">40</b>
 
-Overlay horizontal size <input type="range" id="hsize" name="hsize" min="0" max="400" value="0"><label for="hsize"></label> <b id="hstext">0</b>
+Overlay horizontal size <input type="range" style="width: 300px;" id="hsize" name="hsize" min="0" max="400" value="0"><label for="hsize"></label> <b id="hstext">0</b>
 
-Offset from the edge <input type="range" id="offset" name="offset" min="10" max="150" value="10"><label for="offset"></label> <b id="offtext">10</b>
+Offset from the edge <input type="range" style="width: 300px;" id="offset" name="offset" min="10" max="150" value="10"><label for="offset"></label> <b id="offtext">10</b>
 
 Note: All text box support **\n** for a new line.
 
 **Any start message here:** <input type="text" id="startmsg" value=""><br>
 
-**Add Time with format**  <input type="text" id="addtime" value="HH:MM:SSaa\n"> Remove by emptying this field.
+**Add Time with format**  <input type="text" id="addtime" value="HH:MM:SSaa "> Remove by emptying this field.
 
  * HH - Hour
  * MM - Minute
@@ -34,7 +34,7 @@ Note: All text box support **\n** for a new line.
  * aa - am/pm (also switches off 24 hour time)
  * AA - AM/PM (also switches off 24 hour time)
 
-**Add Date with format**  <input type="text" id="adddate" value="mm-dd-yyyy"> Remove by emptying this field.
+**Add Date with format**  <input type="text" id="adddate" value="mm-dd-yyyy "> Remove by emptying this field.
 
  * yy - year in two digit format
  * yyyy - year in four digit format
