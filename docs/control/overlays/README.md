@@ -43,10 +43,10 @@ Note: All text box support **\n** for a new line.
  
 **Display Metadata (experimental)** 
 
-  <input type="radio" id="am1" name="addmeta" value="'GPS53%1.2f'm/s"><label for="am1">Add speed in m/s (requires GPS)</label><br>
-  <input type="radio" id="am2" name="addmeta" value="'GPS50%1.6f', 'GPS51%1.6f'"><label for="am2">Add GPS Location</label><br>
-  <input type="radio" id="am3" name="addmeta" value="ISO: 'ISOE%d'"><label for="am3">Sensor ISO</label><br>
-  <input type="radio" id="am4" name="addmeta" value="" checked><label for="am4">none</label><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="am1" name="addmeta" value="'GPS53%1.2f'm/s"><label for="am1">Add speed in m/s (requires GPS)</label><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="am2" name="addmeta" value="'GPS50%1.6f', 'GPS51%1.6f'"><label for="am2">Add GPS Location</label><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="am3" name="addmeta" value="ISO: 'ISOE%d'"><label for="am3">Sensor ISO</label><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="am4" name="addmeta" value="" checked><label for="am4">none</label><br>
  
 **Any end message here:**  <input type="text" id="endmsg" value=""><br>
 
