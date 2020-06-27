@@ -41,12 +41,12 @@ Note: All text box support **\n** for a new line.
  * mm - month (1-12)
  * dd - day (1-31)
  
-**Display Metadata (experimental)**  <input type="text" id="addmeta" value="">
+**Display Metadata (experimental)** 
 
-Examples:
- * GPS Location - add GPS: <b>&prime;GPS50%1.6f&prime;, &prime;GPS51%1.6f&prime;</b>
- * Sensor ISO - add ISO: <b>&prime;ISOE%d&prime;</b>
- * Ground Speed - add speed: <b>&prime;GPS53%1.2f&prime;m/s</b>
+  <input type="radio" id="am1" name="addmeta" value="'GPS53%1.2f'm/s"><label for="am1">Add speed in m/s (requires GPS)</label><br>
+  <input type="radio" id="am2" name="addmeta" value="'GPS50%1.6f', 'GPS51%1.6f'"><label for="am2">Add GPS Location</label><br>
+  <input type="radio" id="am3" name="addmeta" value="ISO: 'ISOE%d'"><label for="am3">Sensor ISO</label><br>
+  <input type="radio" id="am4" name="addmeta" value="" checked><label for="am4">none</label><br>
  
 **Any end message here:**  <input type="text" id="endmsg" value=""><br>
 
@@ -86,7 +86,7 @@ Known Issues:
 - does not update the time and metadata when used with motion detection triggered captures.
 - Metadata can take a second before it updates after capture start.
 		
-## ver 1.03
+## ver 1.04
 [BACK](..)
 
 <script>
@@ -163,7 +163,9 @@ function timeLoop()
 		cmd = "g0";
 	}
 	
-    cmd = cmd + mtype + "MBRNO=" + document.getElementById("offset").value + mtype + "MBURN=\"(" + document.getElementById("hsize").value + "," + document.getElementById("vsize").value + ")" + document.getElementById("startmsg").value + openb + pos + document.getElementById("addtime").value + document.getElementById("adddate").value + document.getElementById("addmeta").value + closeb + document.getElementById("endmsg").value + "\"";
+    cmd = cmd + mtype + "MBRNO=" + document.getElementById("offset").value + mtype + "MBURN=\"(" + document.getElementById("hsize").value + "," + document.getElementById("vsize").value + ")" + document.getElementById("startmsg").value + openb + pos + document.getElementById("addtime").value + document.getElementById("adddate").value;
+	cmd = dcmd(cmd, "am");
+	cmd = cmd + closeb + document.getElementById("endmsg").value + "\"";
   }
   else
   {
