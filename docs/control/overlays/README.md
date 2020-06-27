@@ -56,15 +56,15 @@ Note: All text box support **\n** for a new line.
   <input type="radio" id="sp3" name="placement" value="TR"><label for="sp3">Top Right   </label><br>
   &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp4" name="placement" value="ML"><label for="sp4">Mid Left    </label>&nbsp;
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="radio" id="sp5" name="placement" value="MR"><label for="sp5">Mid Right   </label><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp6" name="placement" value="BL"><label for="sp6">Lower Left  </label>&nbsp;
-  <input type="radio" id="b7" name="placement" value="BC"><label for="sp7">Lower Center</label>&nbsp;
-  <input type="radio" id="sp8" name="placement" value="BR" checked><label for="sp8">Lower Right </label>&nbsp;<br>
+  <input type="radio" id="sp5" name="placement" value="MR"> <label for="sp5">Mid Right   </label><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp6" name="placement" value="BL"> <label for="sp6">Lower Left  </label>&nbsp;
+  <input type="radio" id="b7" name="placement" value="BC"> <label for="sp7">Lower Center</label>&nbsp;
+  <input type="radio" id="sp8" name="placement" value="BR" checked> <label for="sp8">Lower Right </label>&nbsp;<br>
   
   
 **GPS On or Off** <br>
  
-  &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="gps" name="gps"><label for="gps">Using GPS</label><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="gps" name="gps"> <label for="gps">Using GPS</label><br>
 
 <center>
 <div id="qrcode"></div>
