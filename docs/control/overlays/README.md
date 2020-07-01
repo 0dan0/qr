@@ -144,7 +144,7 @@ function timeLoop()
 	var pos = dcmd("","sp");
 	
     if(document.getElementById("permanent").checked === true)
-		mtype = "!";
+		mtype = "!RESET!";
 
 	cmd = "";
 	
@@ -152,11 +152,11 @@ function timeLoop()
     {
 		if(document.getElementById("permanent").checked === true)
 		{
-			cmd = "!RESETg1!MLFIN=\"0\"";
+			cmd = "g1!MLFIN=\"0\"";
 		}
 		else
 		{
-			cmd = "!RESETg1oMLFIN=0";
+			cmd = "g1oMLFIN=0";
 		}		
 	}
 	else
