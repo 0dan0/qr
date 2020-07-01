@@ -156,7 +156,7 @@ function timeLoop()
 		}
 		else
 		{
-			cmd = "g1oMLFIN=0";
+			cmd = "!RESETg1oMLFIN=0";
 		}		
 	}
 	else
