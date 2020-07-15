@@ -149,20 +149,20 @@ function timeLoop()
 
 	cmd = "";
 	
-	 if(document.getElementById("permanent").checked === true)
-	 {
-		cmd = "!RESET!30NQ";
-		mtype = "!";
-     }
+	//if(document.getElementById("permanent").checked === true)
+	//{
+	//	cmd = "!RESET!30NQ";
+	//	mtype = "!";
+    //}
 
 	
     if(document.getElementById("gps").checked === true)
     {
-		if(document.getElementById("permanent").checked === true)
-		{
-			cmd = cmd + "g1!MLFIN=\"0\"";
-		}
-		else
+		//if(document.getElementById("permanent").checked === true)
+		//{
+		//	cmd = cmd + "g1!MLFIN=\"0\"";
+		//}
+		//else
 		{
 			cmd = cmd + "g1oMLFIN=0";
 		}		
