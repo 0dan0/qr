@@ -88,7 +88,8 @@ Known Issues:
 <!-- - Permanent overlays require the clearing of older settings. If your using either Owner or Large Chapters modifications, they will need to be added after the overlay.   -->
 
 		
-## ver 1.09
+## ver 1.10
+
 [BACK](..)
 
 <script>
