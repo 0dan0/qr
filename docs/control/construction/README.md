@@ -22,9 +22,6 @@ End Time <input type="range" style="width: 300px;" id="tlend" name="tlend" min="
 
 Number of photos per day <input type="range" style="width: 300px;" id="tlday" name="tlday" min="10" max="300" value="60"><label for="tlday"></label> <b id="perdaytext"></b>
 
-<input type="checkbox" id="setdatetime" name="setdatetime" checked> 
-<label for="setdatetime">Automatically update the camera date and time</label><br>
-
 Estimated runtime per charged battery: <b id="daystext">0</b> days
 
 <center>
@@ -71,10 +68,6 @@ function makeQR()
   }
 }
 
-function checkTime(i) {
-    if (i < 10) {i = "0" + i;}  // add zero in front of numbers < 10
-    return i;
-}
 
 function pad(num, size) {
     var s = num+"";
@@ -120,38 +113,6 @@ function timeLoop()
 	if(interval < 30) interval = 30;
 	
 	cmd = "mPdP>" + stxt + "<" + etxt + "!" + interval + "SQ~" + "!" + stxt + "S!1R";
-	
-	
-	if(document.getElementById("setdatetime") !== null)
-    {
-		if(document.getElementById("setdatetime").checked === true)
-		{
-			var today;
-			var yy;
-			var mm;
-			var dd;
-			var h;
-			var m;
-			var s; 
-			today = new Date();
-					
-			yy = today.getFullYear() - 2000;
-			mm = today.getMonth() + 1;
-			dd = today.getDate();
-			h = today.getHours();
-			m = today.getMinutes();
-			s = today.getSeconds();
-				
-			yy = checkTime(yy);
-			mm = checkTime(mm);
-			dd = checkTime(dd);
-			h = checkTime(h);
-			m = checkTime(m);
-			s = checkTime(s);
-			
-			cmd = "oT" + yy + mm + dd + h + m + s + cmd;
-		}
-	}
   }
   
   qrcode.clear(); 
