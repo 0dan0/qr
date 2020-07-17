@@ -41,6 +41,7 @@ var once = true;
 var qrcode;
 var cmd = "oC15mNLeA";
 var lasttimecmd = "";
+var changed = true;
 var today;
 var yy;
 var mm;
@@ -160,7 +161,7 @@ function timeLoop()
 	changed = false;
   }
 	
-  var t = setTimeout(timeLoop, 500);
+  var t = setTimeout(timeLoop, 50);
 }
 
 function myReloadFunction() {
