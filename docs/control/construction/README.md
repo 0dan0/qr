@@ -58,7 +58,7 @@ var changed = false;
 var today;
 var yy;
 var mm;
-var dd;
+var ddd;
 var h;
 var m;
 var s;
@@ -129,27 +129,27 @@ function timeLoop()
 	cmd = "mPdP>" + stxt + "<" + etxt + "!" + interval + "SQ~" + "!" + stxt + "S!1R";
 	
 	
-	if(document.getElementById("setdatetime") != null)
+	if(document.getElementById("setdatetime") !== null)
     {
-		if(document.getElementById("setdatetime").checked == true)
+		if(document.getElementById("setdatetime").checked === true)
 		{
 			today = new Date();
 					
 			yy = today.getFullYear() - 2000;
 			mm = today.getMonth() + 1;
-			dd = today.getDate();
+			ddd = today.getDate();
 			h = today.getHours();
 			m = today.getMinutes();
 			s = today.getSeconds();
 				
 			yy = checkTime(yy);
 			mm = checkTime(mm);
-			dd = checkTime(dd);
+			ddd = checkTime(ddd);
 			h = checkTime(h);
 			m = checkTime(m);
 			s = checkTime(s);
 			
-			cmd = "oT" + yy + mm + dd + h + m + s + cmd;
+			cmd = "oT" + yy + mm + ddd + h + m + s + cmd;
 		}
 	}
   }
