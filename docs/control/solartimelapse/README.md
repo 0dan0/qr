@@ -155,7 +155,10 @@ function timeLoop()
   }
 	
   if(changed === true)
+  {
 	document.getElementById("qrtext").innerHTML = cmd;
+	changed = false;
+  }
 	
   var t = setTimeout(timeLoop, 500);
 }
