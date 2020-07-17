@@ -28,13 +28,15 @@ QR Command: <b id="qrtext">command</b><br>
 
 <br> 
         
-## ver 1.03
+## ver 1.02
 [BACK](..)
 
 <script>
 var once = true;
 var qrcode;
 var cmd = "";
+var lasttimecmd = "";
+var changed = true;
 
 function makeQR() 
 {	
@@ -64,7 +66,20 @@ function timeLoop()
 
   qrcode.clear(); 
   qrcode.makeCode(cmd);
-  document.getElementById("qrtext").innerHTML = cmd;
+  
+  
+  if(cmd != lasttimecmd)
+  {
+	changed = true;
+	lasttimecmd = cmd;
+  }
+	
+  if(changed === true)
+  {
+	document.getElementById("qrtext").innerHTML = cmd;
+	changed = false;
+  }
+  
   var t = setTimeout(timeLoop, 50);
 }
 
