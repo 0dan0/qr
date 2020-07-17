@@ -42,7 +42,7 @@ As stated above, most Lithium Ion USB power-banks will shut-off early, even when
 The second option is a USB keep alive device that prevents your USB power bank from shutting down.  Examples: from [sotabeams.co.uk](https://www.sotabeams.co.uk/usb-battery-pack-keep-alive-load/) and from [tindie.com](https://www.tindie.com/products/overz/smart-power-bank-keep-alive/)
 
 	
-## ver 1.02 
+## ver 1.01
 
 [BACK](..)
 
@@ -50,8 +50,6 @@ The second option is a USB keep alive device that prevents your USB power bank f
 var once = true;
 var qrcode;
 var cmd = "mPdP!60SQ!1R";
-var lasttimecmd = "";
-var changed = false;
 
 function makeQR() 
 {	
@@ -117,20 +115,7 @@ function timeLoop()
   
   qrcode.clear(); 
   qrcode.makeCode(cmd);
-  
-  
-  if(cmd != lasttimecmd)
-  {
-	changed = true;
-	lasttimecmd = cmd;
-  }
-	
-  if(changed === true)
-  {
-	document.getElementById("qrtext").innerHTML = cmd;
-	changed = false;
-  }
-  
+  document.getElementById("qrtext").innerHTML = cmd;
   var t = setTimeout(timeLoop, 100);
 }
 
