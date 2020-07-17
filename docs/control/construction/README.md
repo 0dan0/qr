@@ -50,6 +50,8 @@ The second option is a USB keep alive device that prevents your USB power bank f
 var once = true;
 var qrcode;
 var cmd = "mPdP!60SQ!1R";
+var lasttimecmd = "";
+var changed = false;
 
 function makeQR() 
 {	
