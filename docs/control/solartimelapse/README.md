@@ -33,7 +33,7 @@ Note: you will have to manually set the interval and resolution for the night la
 
 QR Command: <b id="qrtext">time</b><br>
         
-## ver 1.0
+## ver 1.01
 [BACK](..)
 
 <script>
