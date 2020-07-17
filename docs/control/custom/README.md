@@ -401,7 +401,7 @@ GoPro QR Command: <b id="txt"></b>
 [![google play](../google-play-823.png)](https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
 [![apple app store](../apple-store-823.png)](https://apps.apple.com/us/app/gopro-app/id1518134202)
 
-## version 1.11
+## version 1.10
 
 <script>
 var lastcmd = "";
@@ -780,7 +780,7 @@ function startTime() {
 		var frms;
 		var secs = true;//document.getElementById("dtsec").checked;
 		var timecode = document.getElementById("dttimecode").checked;
-		 
+		
 		yy = today.getFullYear() - 2000;
 		mm = today.getMonth() + 1;
 		dd = today.getDate();
