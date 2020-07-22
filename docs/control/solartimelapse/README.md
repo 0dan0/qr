@@ -136,7 +136,7 @@ function timeLoop()
 	
 	endmins *= 60;
 	
-	cmd = cmd + "!" + dcmd("", "sr") + "-" + mins + "NmNLeA!1N!S" + endmins + "E";
+	cmd = cmd + "!" + dcmd("", "sr") + "-" + mins + "NmNLeA!1S" + endmins + "E";
 	
 	
     if(document.getElementById("repeat") != null)
