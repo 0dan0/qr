@@ -39,7 +39,7 @@ QR Command: <b id="qrtext">time</b><br>
 <script>
 var once = true;
 var qrcode;
-var cmd = "oC15mNLeA";
+var cmd = "oC15dTmNLeA";
 var lasttimecmd = "";
 var changed = true;
 var today;
@@ -98,7 +98,7 @@ function timeLoop()
 {
   if(document.getElementById("tlmin") !== null)
   {
-	cmd = "oC15mNLeA";
+	cmd = "oC15dT";
 	
 	/*
 	if(document.getElementById("setdatetime") != null)
@@ -136,7 +136,7 @@ function timeLoop()
 	
 	endmins *= 60;
 	
-	cmd = cmd + "!" + dcmd("", "sr") + "-" + mins + "S!" + endmins + "E";
+	cmd = cmd + "!" + dcmd("", "sr") + "-" + mins + "NmNLeA!1N!S" + endmins + "E";
 	
 	
     if(document.getElementById("repeat") != null)
