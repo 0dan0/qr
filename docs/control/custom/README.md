@@ -1029,6 +1029,12 @@ function startTime() {
 		cmd = cmd + document.getElementById("addcmd").value;
 	}
 	
+	
+	if(cmd != lasttimecmd)
+	{
+		changed = true;
+	}	
+	
 	var delay = 200;
 	
 	if(changed === true)
