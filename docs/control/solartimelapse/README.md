@@ -21,9 +21,9 @@ Start <input type="range" id="tlmin" name="tlmin" min="1" max="60" value="15"><l
 <input type="checkbox" id="repeat" name="repeat" checked> 
 <label for="repeat">Repeat for tomorrow's sunrise/sunset</label><br>
 
-<input type="checkbox" id="setdatetime" name="setdatetime" checked> 
-<label for="setdatetime">Automatically update the camera date and time</label><br>
-
+<!-- <input type="checkbox" id="setdatetime" name="setdatetime" checked> 
+<label for="setdatetime">Automatically update the camera date and time</label><br> 
+-->
 Note: you will have to manually set the interval and resolution for the night lapse mode, unfortunately not everything got hooked up with a QR Code. 
  
 <center>
@@ -33,7 +33,7 @@ Note: you will have to manually set the interval and resolution for the night la
 
 QR Command: <b id="qrtext">time</b><br>
         
-## ver 1.02
+## ver 1.03
 [BACK](..)
 
 <script>
@@ -100,6 +100,7 @@ function timeLoop()
   {
 	cmd = "oC15mNLeA";
 	
+	/*
 	if(document.getElementById("setdatetime") != null)
     {
 		if(document.getElementById("setdatetime").checked == true)
@@ -123,6 +124,7 @@ function timeLoop()
 			cmd = "oT" + yy + mm + dd + h + m + s + cmd;
 		}
 	}
+	*/
 			
 	var mins = parseInt(document.getElementById("tlmin").value);	
 	document.getElementById("minstext").innerHTML = mins;	
