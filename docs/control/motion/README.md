@@ -50,17 +50,17 @@ The file **MISC\GL013585.jpg** matches capture in **DCIM\100GOPRO\GH013585.MP4**
 Instead of using **Motion Mask** feature, you can create an image mask to determine which part of the scene are used for detection.  
 There are many steps. Below is one approach using Windows 10 and a free image tool [IrFanView](https://www.irfanview.com/)
  
-1) Mount the camera so it will not move.
-2) Shoot a short video in the exact mode you will used for motion capture (e.g. 1080p60 Wide.)
-3) Remove the SD Card, without moving the camera.
-4) Load the video and screen grab a frame (this frame will be used to determine the mask.)
-5) Load this image in IrFanView (or similar)
-6) Trim off any chrome (window borders) so you have only the 16:9 video image (or 4:3 if that is your video mode.)
-7) Optionally resize to something smaller, 960x540 or 480x270 -- this is so you have less to paint when creating the mask.
-8) Use a paint tool (or IrFanView's in-build paint tool), crudely paint over the image in white for image areas you want to detect, and black for everything else.  Only motion detected in the white regions will trigger a capture.  
-9) Resize the now black and white image/mask to 36x20  <- yes the mask is tiny, this is why painting can be crude.
-10) Save the image to the SD Card within **MISC**, called **mask.pgm** .  PGM is supported image type within IrFanView, it is a Portable GrayMap.
-11) Re-insert the SD Card to the camera, again without moving it.
+1. Mount the camera so it will not move.
+2. Shoot a short video in the exact mode you will used for motion capture (e.g. 1080p60 Wide.)
+3. Remove the SD Card, without moving the camera.
+4. Load the video and screen grab a frame (this frame will be used to determine the mask.)
+5. Load this image in IrFanView (or similar)
+6. Trim off any chrome (window borders) so you have only the 16:9 video image (or 4:3 if that is your video mode.)
+7. Optionally resize to something smaller, 960x540 or 480x270 -- this is so you have less to paint when creating the mask.
+8. Use a paint tool (or IrFanView's in-build paint tool), crudely paint over the image in white for image areas you want to detect, and black for everything else.  Only motion detected in the white regions will trigger a capture.  
+9. Resize the now black and white image/mask to 36x20  <- yes the mask is tiny, this is why painting can be crude.
+10. Save the image to the SD Card within **MISC**, called **mask.pgm** .  PGM is supported image type within IrFanView, it is a Portable GrayMap.
+11. Re-insert the SD Card to the camera, again without moving it.
 
 Now your camera is ready.
 
