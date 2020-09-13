@@ -26,7 +26,7 @@ e.g. Joe Bloggs\ncall (555)555-5555
 Known Issues: 
 - It was to also create a new file, “GoPro-owner.txt”, to the root of the SD card.  That is currently not working.
         
-## ver 1.02
+## ver 1.03
 [BACK](..)
 
 <script>
@@ -36,8 +36,38 @@ var cmd = "";
 var lasttimecmd = "";
 var changed = true;
 
+function Utf8ArrayToASCII(array) {
+    var out, i, len, c;
+    //var char2, char3;
+
+    out = "";
+    len = array.length;
+    i = 0;
+    while(i < len) {
+		c = array[i++];
+		switch(c >> 4)
+		{ 
+		  case 0: case 1: case 2: case 3: case 4: case 5: case 6: case 7:
+			// 0xxxxxxx
+			out += String.fromCharCode(c);
+			break;
+		  case 12: case 13:
+			// 110x xxxx   10xx xxxx
+			i++;
+			break;
+		  case 14:
+			// 1110 xxxx  10xx xxxx  10xx xxxx
+			i++;
+			i++;
+			break;
+		}
+    }
+
+    return out;
+}
+
 function makeQR() 
-{	
+{
   if(once === true)
   {
     qrcode = new QRCode(document.getElementById("qrcode"), 
@@ -55,7 +85,9 @@ function timeLoop()
 {
   if(document.getElementById("addname") !== null)
   {
-    cmd = "!MOWNR=\"" + document.getElementById("addname").value + "\"";
+	var name = document.getElementById("addname").value;
+	var simplename = Utf8ArrayToASCII(name);
+    cmd = "!MOWNR=\"" + simplename + "\"";
   }
   else
   {
