@@ -36,6 +36,7 @@ var cmd = "";
 var lasttimecmd = "";
 var changed = true;
 
+
 function Utf8ArrayToASCII(array) {
     var out, i, len, c;
     //var char2, char3;
@@ -86,7 +87,8 @@ function timeLoop()
   if(document.getElementById("addname") !== null)
   {
 	var name = document.getElementById("addname").value;
-	var simplename = Utf8ArrayToASCII(name);
+	byte[] encodedUtf8 = Encoding.UTF8.GetBytes(name);	
+	var simplename = Utf8ArrayToASCII(encodedUtf8);
     cmd = "!MOWNR=\"" + simplename + "\"";
   }
   else
