@@ -42,13 +42,18 @@ function UTF16ToASCII()
     var out, i;
 	
 	var text = document.getElementById("addname").value;
-    out = "test";
+    out = "";
 	
 	for (i=0;i<text.length;i++)
 	{
-		if(text.charCodeAt(i)<128)
+		var code = text.charCodeAt(i);
+		if(code<128)
 		{
 			out += text.charAt(i);
+		}
+		else if(code == 0x2019 || code == 0x2018)
+		{
+			out += "'";
 		}
 	}
 	return out;
