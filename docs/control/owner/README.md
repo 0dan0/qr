@@ -26,7 +26,7 @@ e.g. Joe Bloggs\ncall (555)555-5555
 Known Issues: 
 - It was to also create a new file, “GoPro-owner.txt”, to the root of the SD card.  That is currently not working.
         
-## ver 1.04
+## ver 1.03
 [BACK](..)
 
 <script>
@@ -37,38 +37,28 @@ var lasttimecmd = "";
 var changed = true;
 
 
-function Utf8ArrayToASCII(array) {
-    var out, i, len, c;
-    //var char2, char3;
-
+function UTF16ToASCII(text)
+{
+    var out, i;
+	
     out = "";
-    len = array.length;
-    i = 0;
-    while(i < len) {
-		c = array[i++];
-		switch(c >> 4)
-		{ 
-		  case 0: case 1: case 2: case 3: case 4: case 5: case 6: case 7:
-			// 0xxxxxxx
-			out += String.fromCharCode(c);
-			break;
-		  case 12: case 13:
-			// 110x xxxx   10xx xxxx
-			i++;
-			break;
-		  case 14:
-			// 1110 xxxx  10xx xxxx  10xx xxxx
-			i++;
-			i++;
-			break;
-		}
-    }
+	
+    if(text != null && text.length>0 && text !='' )
+    {
+        for (i=0;i<text.length;++i)  /*this is not necessary, but I did*/
+        {
+            if(text.charCodeAt(i)>=128)
+            {
+				out += String.fromCharCode(text.charCodeAt(i));
+            }
+        }
 
-    return out;
-}
+    }
+	return out;
+}	
 
 function makeQR() 
-{
+{	
   if(once === true)
   {
     qrcode = new QRCode(document.getElementById("qrcode"), 
@@ -86,9 +76,8 @@ function timeLoop()
 {
   if(document.getElementById("addname") !== null)
   {
-	var name = document.getElementById("addname").value;
-	byte[] encodedUtf8 = Encoding.UTF8.GetBytes(name);	
-	var simplename = Utf8ArrayToASCII(encodedUtf8);
+	var name = document.getElementById("addname");
+	var simplename = UTF16ToASCII(name);
     cmd = "!MOWNR=\"" + simplename + "\"";
   }
   else
