@@ -45,8 +45,17 @@ function UTF16ToASCII()
     var out, i;
 	
 	var text = document.getElementById("addnam1").value;
-	text += document.getElementById("addnam2").value;
-	text += document.getElementById("addnam3").value;
+	
+	if(document.getElementById("addnam2").value.length > 0)
+	{
+		text += "\\n";
+		text += document.getElementById("addnam2").value;
+	}
+	if(document.getElementById("addnam3").value.length > 0)
+	{
+		text += "\\n";
+		text += document.getElementById("addnam3").value;
+	}
     out = "";
 	
 	for (i=0;i<text.length;i++)
