@@ -26,7 +26,7 @@ e.g. Joe Bloggs\ncall (555)555-5555
 Known Issues: 
 - It was to also create a new file, “GoPro-owner.txt”, to the root of the SD card.  That is currently not working.
         
-## ver 1.03
+## ver 1.04
 [BACK](..)
 
 <script>
@@ -76,7 +76,7 @@ function timeLoop()
 {
   if(document.getElementById("addname") !== null)
   {
-	var name = document.getElementById("addname");
+	var name = document.getElementById("addname").value;
 	var simplename = UTF16ToASCII(name);
     cmd = "!MOWNR=\"" + simplename + "\"";
   }
