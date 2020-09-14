@@ -46,7 +46,7 @@ function UTF16ToASCII()
 	
 	for (i=0;i<text.length;i++)
 	{
-		if(text.charCodeAt(i)>=128)
+		if(text.charCodeAt(i)<128)
 		{
 			out += text.charCodeAt(i);
 		}
