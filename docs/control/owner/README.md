@@ -23,7 +23,7 @@ Your personalization info here: <br>
 <br>
 </center>
 QR Command: <b id="qrtext">time</b><br>
-Note: Additional lines use \n for a new line. 
+Note: For additional lines use \n within your text. 
 e.g. Joe Bloggs\ncall (555)555-5555 
 
 Known Issues: 
