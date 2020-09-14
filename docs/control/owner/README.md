@@ -51,7 +51,7 @@ function UTF16ToASCII()
 		{
 			out += text.charAt(i);
 		}
-		else if(code == 0x2019 || code == 0x2018)
+		else if(code == 0x2019 || code == 0x2018 || code 0x22 ) // all quotes to single quote
 		{
 			out += "'";
 		}
