@@ -15,7 +15,7 @@
 You can choose to have your camera display your name, phone number or email, upon camera start-up. This could be helpful in the event the camera is lost. Or simply name your cameras. In addition to being displayed, it is written within each MP4 or JPG created. This information is stored in the camera, not the SD Card, so even if the camera is stolen, and the SD card replaced, the name will be displayed, and within each new media file regenerated.
  
 Your personalization info here: <br>
-  Line 1: <input type="text" id="addname" value=""><br>
+  Line 1: <input type="text" id="addnam1" value=""><br>
   Line 2: <input type="text" id="addnam2" value=""> (optional)<br>
   Line 3: <input type="text" id="addnam3" value=""> (optional)<br>
 <center>
@@ -44,7 +44,7 @@ function UTF16ToASCII()
 {
     var out, i;
 	
-	var text = document.getElementById("addname").value;
+	var text = document.getElementById("addnam1").value;
 	text += document.getElementById("addnam2").value;
 	text += document.getElementById("addnam3").value;
     out = "";
@@ -56,7 +56,7 @@ function UTF16ToASCII()
 		{
 			out += text.charAt(i);
 		}
-		else if(code == 0x2019 || code == 0x2018 || code 0x22 ) // all quotes to single quote
+		else if(code == 0x2019 || code == 0x2018 || code == 0x22 ) // all quotes to single quote
 		{
 			out += "'";
 		}
@@ -81,7 +81,7 @@ function makeQR()
 
 function timeLoop()
 {
-  if(document.getElementById("addname") !== null && document.getElementById("addnam2") !== null && document.getElementById("addnam3") !== null)
+  if(document.getElementById("addnam1") !== null && document.getElementById("addnam2") !== null && document.getElementById("addnam3") !== null)
   {
 	var simplename = UTF16ToASCII();
     cmd = "!MOWNR=\"" + simplename + "\"";
