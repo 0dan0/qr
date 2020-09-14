@@ -26,7 +26,7 @@ e.g. Joe Bloggs\ncall (555)555-5555
 Known Issues: 
 - It was to also create a new file, “GoPro-owner.txt”, to the root of the SD card.  That is currently not working.
         
-## ver 1.03
+## ver 1.04
 [BACK](..)
 
 <script>
@@ -46,11 +46,11 @@ function UTF16ToASCII()
 	
     if(text != null && text.length>0 && text !='' )
     {
-        for (i=0;i<text.length;++i)  /*this is not necessary, but I did*/
+        for (i=0;i<text.length;i++)
         {
             if(text.charCodeAt(i)>=128)
             {
-				out += String.fromCharCode(text.charCodeAt(i));
+				out += text.charCodeAt(i);
             }
         }
 
