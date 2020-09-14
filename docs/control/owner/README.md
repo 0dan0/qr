@@ -14,13 +14,16 @@
 
 You can choose to have your camera display your name, phone number or email, upon camera start-up. This could be helpful in the event the camera is lost. Or simply name your cameras. In addition to being displayed, it is written within each MP4 or JPG created. This information is stored in the camera, not the SD Card, so even if the camera is stolen, and the SD card replaced, the name will be displayed, and within each new media file regenerated.
  
-Your personalization info here: <input type="text" id="addname" value=""><br>
+Your personalization info here: <br>
+  Line 1: <input type="text" id="addname" value=""><br>
+  Line 2: <input type="text" id="addname2" value=""> (optional)<br>
+  Line 3: <input type="text" id="addname3" value=""> (optional)<br>
 <center>
 <div id="qrcode"></div>
 <br>
 </center>
 QR Command: <b id="qrtext">time</b><br>
-Note: Use \n for a new line. 
+Note: Additional lines use \n for a new line. 
 e.g. Joe Bloggs\ncall (555)555-5555 
 
 Known Issues: 
@@ -41,7 +44,7 @@ function UTF16ToASCII()
 {
     var out, i;
 	
-	var text = document.getElementById("addname").value;
+	var text = document.getElementById("addname").value + document.getElementById("addname2").value + document.getElementById("addname3").value;
     out = "";
 	
 	for (i=0;i<text.length;i++)
