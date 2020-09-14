@@ -16,8 +16,8 @@ You can choose to have your camera display your name, phone number or email, upo
  
 Your personalization info here: <br>
   Line 1: <input type="text" id="addname" value=""><br>
-  Line 2: <input type="text" id="addname2" value=""> (optional)<br>
-  Line 3: <input type="text" id="addname3" value=""> (optional)<br>
+  Line 2: <input type="text" id="addnam2" value=""> (optional)<br>
+  Line 3: <input type="text" id="addnam3" value=""> (optional)<br>
 <center>
 <div id="qrcode"></div>
 <br>
@@ -44,7 +44,9 @@ function UTF16ToASCII()
 {
     var out, i;
 	
-	var text = document.getElementById("addname").value + document.getElementById("addname2").value + document.getElementById("addname3").value;
+	var text = document.getElementById("addname").value;
+	text += document.getElementById("addnam2").value;
+	text += document.getElementById("addnam3").value;
     out = "";
 	
 	for (i=0;i<text.length;i++)
@@ -79,7 +81,7 @@ function makeQR()
 
 function timeLoop()
 {
-  if(document.getElementById("addname") !== null)
+  if(document.getElementById("addname") !== null && document.getElementById("addnam2") !== null && document.getElementById("addnam3") !== null)
   {
 	var simplename = UTF16ToASCII();
     cmd = "!MOWNR=\"" + simplename + "\"";
