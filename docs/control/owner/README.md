@@ -48,7 +48,7 @@ function UTF16ToASCII()
 	{
 		if(text.charCodeAt(i)<128)
 		{
-			out += text.charCodeAt(i);
+			out += text.charAt(i);
 		}
 	}
 	return out;
