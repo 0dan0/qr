@@ -16,7 +16,7 @@
 ## New Features for HERO9 only
 
 * Setup your [**Live-streaming via QR Code**](./rtmp)
-* Use the [**USB Power**]/(./usb) to start and stop the camera
+* Use the [**USB Power**](./usb) to start and stop the camera
 * Set the [**Minimum Shutter Speed**](./minshut) for the video mode of the camera
 * Start capture using [**IMU Motion Triggers**](./imutrigger) for detecting camera movement
 * Sync multiple camera's timecode via [**GPS Time Synchronization**](/.gpssync)

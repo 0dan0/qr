@@ -37,8 +37,8 @@ Your Network Password: <input type="text" id="networkpass" value=""> (e.g. Pass1
 Enter the full RTMP address here: <input type="text" id="rtmptxt" value=""><br>(e.g. rtmp://live.twitch.tv/app/live_5554355...)<br>
 
 For Twitch users:
-1. Select your base URL From this **[list of servers](https://stream.twitch.tv/ingests/)**.
-2. Login to you Twitch account, and get your **[stream key](https://link.twitch.tv/myChannelSettings)** from your channel settings.![Twitch Channel Settings](streamkey.png)
+1. Select your base URL From this [**list of servers**](https://stream.twitch.tv/ingests/).
+2. Login to you Twitch account, and get your [**stream key**](https://link.twitch.tv/myChannelSettings) from your channel settings.![Twitch Channel Settings](streamkey.png)
 3. Combine the server address, replacing {stream_key} with the primary stream key from channel, copy the combined URL into the above RTMP address.
 
 <center>
