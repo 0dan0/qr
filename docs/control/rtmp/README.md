@@ -136,7 +136,7 @@ function dcmd(cmd, id) {
 
 function timeLoop()
 {
-  if(document.getElementById("networkname") !== null && document.getElementById("networkname").innerHTML.length > 0)
+  if(document.getElementById("networkname") !== null && document.getElementById("networkname").value.length > 0)
   {
     cmd1 = "!MJOIN=\"" + document.getElementById("networkname").value + ":" + document.getElementById("networkpass").value + "\"";
   }
@@ -150,7 +150,7 @@ function timeLoop()
 
 
 
-  if(document.getElementById("rtmptxt") !== null && document.getElementById("rtmptxt").innerHTML.length > 0)
+  if(document.getElementById("rtmptxt") !== null && document.getElementById("rtmptxt").value.length > 0)
   {
     cmd2 = "!MRTMP=\"" + document.getElementById("rtmptxt").value + "\"";
   }
