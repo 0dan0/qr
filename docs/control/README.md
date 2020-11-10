@@ -13,6 +13,10 @@
 * For teaching and security applications add [**Video 'Burn-in' Overlays**](./overlays)
 * Multi-camera Professionals, label you media with [**Altered File Naming**](./basename)
 
+## New Features for HERO9
+
+* Setup your [**Live-streaming via QR Code**](./rtmp)
+
 ## Mobile App QR Generation
 
 [![google play](google-play-823.png)](https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
@@ -40,4 +44,4 @@ All setting commands start with a lowercase character, followed by either upperc
 ## Join The [**GoPro Labs Community**](https://community.gopro.com/t5/GoPro-Labs/bd-p/GoProLabs)
 
 
-### ver 1.02
+### ver 1.03
