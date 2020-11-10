@@ -20,8 +20,8 @@ When both of these are stored within your camera's non-volatile memory, you can 
 
 ## Pre-store Your WiFi Credentials 
 
-Your Network Name (SSID): <input type="text" id="networkname" value=""><br>(e.g. HomeWiFi<br>
-Your Network Password: <input type="text" id="networkpass" value=""><br>(e.g. Pass1234<br>
+Your Network Name (SSID): <input type="text" id="networkname" value=""> (e.g. HomeWiFi)<br>
+Your Network Password: <input type="text" id="networkpass" value=""> (e.g. Pass1234)<br>
 
 <center>
 <div id="qrcode1"></div>
@@ -35,10 +35,7 @@ Enter the full RTMP address here: <input type="text" id="rtmptxt" value=""><br>(
 
 For Twitch users:
 1. Select your base URL From this [list of servers](https://stream.twitch.tv/ingests/).
-2. Login to you Twitch account, and get your [stream key](https://link.twitch.tv/myChannelSettings) from your channel settings.
-	
-![Twitch Channel Settings](streamkey.png)
-
+2. Login to you Twitch account, and get your [stream key](https://link.twitch.tv/myChannelSettings) from your channel settings.![Twitch Channel Settings](streamkey.png)
 3. Combine the server address, replacing {stream_key} with the primary stream key from channel, copy the combined URL into the above RTMP address.
 
 <center>
