@@ -1,6 +1,6 @@
 # QR Control
 
-## Example Pre-built Commands
+## Example Pre-built Commands for HERO8 and HERO9
 
 * Set most camera modes with the [**Customizable QR Code Creator**](./custom)
 * Setup your cameras with [**Precision Date and Time**](./precisiontime)
@@ -13,7 +13,7 @@
 * For teaching and security applications add [**Video 'Burn-in' Overlays**](./overlays)
 * Multi-camera Professionals, label you media with [**Altered File Naming**](./basename)
 
-## New Features for HERO9
+## New Features for HERO9 only
 
 * Setup your [**Live-streaming via QR Code**](./rtmp)
 

@@ -10,7 +10,7 @@
         }
 </style>
 
-# RTMP Live-Stream Setup (requires Labs on HERO9)
+# Live-Stream Setup (requires Labs on HERO9)
 
 ## Prerequisites for Live-streaming
 1. You have stored the WiFi credentials on the camera for the network you intend to stream over (your home WiFi or mobile access point.) 
@@ -63,7 +63,7 @@ Store a high quality copy on camera:
 </center>
 QR Command: <b id="qrtext">time</b><br>
 
-<b>Scan the code above to go live in 15-20 seconds</b>
+<b>Print or save this code to live-stream at any time.</b>
 
         
 ## ver 1.00
