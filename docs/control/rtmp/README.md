@@ -13,10 +13,11 @@
 # Live-Stream Setup (requires Labs on HERO9)
 
 ## Prerequisites for Live-streaming
-1. You have stored the WiFi credentials on the camera for the network you intend to stream over (your home WiFi or mobile access point.) 
-2. You have stored the RMTP URL address that you intend to stream to.
+1. Storing WiFi credentials on the camera, for the network you intend to stream over (e.g. your home WiFi or mobile access point.) 
+2. Storing the RMTP URL address that you intend to stream to (e.g using a service like Twitch.)
 
-When both of these are stored within your camera's non-volatile memory, you can Live-stream with a single QR Code at any time (while you are still in WiFi range on the saved network.)
+When both of these are stored within your camera's non-volatile memory, you can start a Live-stream with a single QR Code at any time.<br>
+<br>
 
 ## Pre-store Your WiFi Credentials 
 
@@ -28,7 +29,8 @@ Your Network Password: <input type="text" id="networkpass" value=""> (e.g. Pass1
 <br>
 </center>
 
-<b>Scan the code above once for the camera to always know your network login information.</b>
+<b>Scan the code above once for the camera to always know your network login information.</b><br>
+<br>
 
 ## Pre-store Your RTMP Address for Live 
 
@@ -44,8 +46,8 @@ For Twitch users:
 <br>
 </center>
 
-<b>Scan the code above once for the camera to always know the target RTMP address.</b>
-
+<b>Scan the code above once for the camera to always know the target RTMP address.</b><br>
+<br>
 
 ## Launch Your Live Stream 
 
