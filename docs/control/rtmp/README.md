@@ -12,13 +12,23 @@
 
 # RTMP Live-Stream Setup (requires Labs on HERO9)
 
-Prerequisites for Live-streaming
-1. You need to have stored the WiFi credentials on the camera. 
-2. Know the RMTP URL address that you intend to stream to.
+## Prerequisites for Live-streaming
+1. You have stored the WiFi credentials on the camera for the network you intend to stream over (your home WiFi or mobile access point.) 
+2. You have stored the RMTP URL address that you intend to stream to.
 
-When both of these a stored within the camera's non-volatile memory, you can Live-stream with a single QR Code at any time (while you are still in WiFi range.)
-		
-		
+When both of these are stored within your camera's non-volatile memory, you can Live-stream with a single QR Code at any time (while you are still in WiFi range on the saved network.)
+
+## Pre-store Your WiFi Credentials 
+
+Your Network Name (SSID): <input type="text" id="networkname" value=""><br>(e.g. HomeWiFi<br>
+Your Network Password: <input type="text" id="networkpass" value=""><br>(e.g. Pass1234<br>
+
+<center>
+<div id="qrcode1"></div>
+<br>
+</center>
+
+
 ## Pre-store Your RTMP Address for Live 
 
 Enter the full RTMP address here: <input type="text" id="rtmptxt" value=""><br>(e.g. rtmp://live.twitch.tv/app/live_5554355...)<br>
@@ -29,9 +39,10 @@ For Twitch users:
 	
 ![Twitch Channel Settings](streamkey.png)
 
+3. Combine the server address, replacing {stream_key} with the primary stream key from channel, copy the combined URL into the above RTMP address.
 
 <center>
-<div id="qrcode"></div>
+<div id="qrcode2"></div>
 <br>
 </center>
 
@@ -52,7 +63,7 @@ Store a high quality copy on camera:
  <input type="checkbox" id="cp" value="t" checked><label for="cp">1080p60 Copy</label><br>
 
 <center>
-<div id="qrcode2"></div>
+<div id="qrcode3"></div>
 <br>
 </center>
 QR Command: <b id="qrtext">time</b><br>
@@ -65,16 +76,26 @@ QR Command: <b id="qrtext">time</b><br>
 
 <script>
 var once = true;
-var qrcode;
+var qrcode1;
 var qrcode2;
-var cmd = "";
+var qrcode3;
+var cmd1 = "";
 var cmd2 = "";
+var cmd3 = "";
 
 function makeQR() 
 {	
   if(once === true)
   {
-    qrcode = new QRCode(document.getElementById("qrcode"), 
+    qrcode1 = new QRCode(document.getElementById("qrcode1"), 
+    {
+      text : "\"Add your Network Info\"",
+      width : 360,
+      height : 360,
+      correctLevel : QRCode.CorrectLevel.M
+    });
+	
+	qrcode2 = new QRCode(document.getElementById("qrcode2"), 
     {
       text : "\"Add your RTMP URL\"",
       width : 360,
@@ -82,7 +103,7 @@ function makeQR()
       correctLevel : QRCode.CorrectLevel.M
     });
 	
-    qrcode2 = new QRCode(document.getElementById("qrcode2"), 
+    qrcode3 = new QRCode(document.getElementById("qrcode3"), 
     {
       text : "\"Launch your LS\"",
       width : 360,
@@ -118,32 +139,48 @@ function dcmd(cmd, id) {
 
 function timeLoop()
 {
-  if(document.getElementById("rtmptxt") !== null)
+  if(document.getElementById("networkname") !== null)
   {
-    cmd = "!MRTMP=\"" + document.getElementById("rtmptxt").value + "\"";
+    cmd1 = "!MJOIN=\"" + document.getElementById("networkname").value + ":" + document.getElementById("networkpass").value + "\"";
   }
   else
   {
-    cmd = "\"Add your RTMP URL\"";
+    cmd1 = "\"Add your Network Info\"";
   }
 
-  qrcode.clear(); 
-  qrcode.makeCode(cmd);
+  qrcode1.clear(); 
+  qrcode1.makeCode(cmd1);
+
+
+
+  if(document.getElementById("rtmptxt") !== null)
+  {
+    cmd2 = "!MRTMP=\"" + document.getElementById("rtmptxt").value + "\"";
+  }
+  else
+  {
+    cmd2 = "\"Add your RTMP URL\"";
+  }
+
+  qrcode2.clear(); 
+  qrcode2.makeCode(cmd2);
   
-  cmd2 = "oW1mVr1080p60!G";
-  cmd2 = dcmd(cmd2, "rs");
+  
+  
+  cmd3 = "oW1mVr1080p60!W!G";
+  cmd3 = dcmd(cmd3, "rs");
   if(document.getElementById("cp") != null)
   {
     if(document.getElementById("cp").checked == true)
     {
-      cmd2 = cmd2 + "C";
+      cmd3 = cmd3 + "C";
     }
   }
   
-  qrcode2.clear(); 
-  qrcode2.makeCode(cmd2);
+  qrcode3.clear(); 
+  qrcode3.makeCode(cmd3);
 		
-  document.getElementById("qrtext").innerHTML = cmd2;
+  document.getElementById("qrtext").innerHTML = cmd3;
   var t = setTimeout(timeLoop, 50);
 }
 
