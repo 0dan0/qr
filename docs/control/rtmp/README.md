@@ -28,6 +28,7 @@ Your Network Password: <input type="text" id="networkpass" value=""> (e.g. Pass1
 <br>
 </center>
 
+<b>Scan the code above once for the camera to always know your network login information.</b>
 
 ## Pre-store Your RTMP Address for Live 
 
@@ -44,9 +45,6 @@ For Twitch users:
 </center>
 
 <b>Scan the code above once for the camera to always know the target RTMP address.</b>
-
-		
-To live stream via QR Code, you will have to manually pair the GoPro with the network (once), via the GoPro App. Follow these steps.
 
 
 ## Launch Your Live Stream 
