@@ -13,12 +13,10 @@
 # RTMP Live-Stream Setup (requires Labs on HERO9)
 
 Prerequisites for Live-streaming
-        Preparation (well before you need to Live-stream): 
-        1. You need to have stored the WiFi credentials on the camera. 
-		2. Know the RMTP URL address that you intend to stream to.
+1. You need to have stored the WiFi credentials on the camera. 
+2. Know the RMTP URL address that you intend to stream to.
 
-		When both of these a stored within the camera's non-volatile memory, you can Live-stream with a single QR Code at any time (while you are still in WiFi range.)
-		
+When both of these a stored within the camera's non-volatile memory, you can Live-stream with a single QR Code at any time (while you are still in WiFi range.)
 		
 		
 ## Pre-store Your RTMP Address for Live 
@@ -26,10 +24,10 @@ Prerequisites for Live-streaming
 Enter the full RTMP address here: <input type="text" id="rtmptxt" value=""><br>(e.g. rtmp://live.twitch.tv/app/live_5554355...)<br>
 
 For Twitch users:
-	1. Select your base URL From this [list of servers](https://stream.twitch.tv/ingests/).
-	2. Login to you Twitch account, and get your [stream key](https://link.twitch.tv/myChannelSettings) from your channel settings.
+1. Select your base URL From this [list of servers](https://stream.twitch.tv/ingests/).
+2. Login to you Twitch account, and get your [stream key](https://link.twitch.tv/myChannelSettings) from your channel settings.
 	
-	![Twitch Channel Settings](streamkey.png)
+![Twitch Channel Settings](streamkey.png)
 
 
 <center>
@@ -40,37 +38,7 @@ For Twitch users:
 <b>Scan the code above once for the camera to always know the target RTMP address.</b>
 
 		
-
-		!MRTMP=”rtmp://your.twitch.address.com/credentials" The live-stream can be to any working RTMP address.  Again this typically secure information that should not be printed. 
-        The camera will save this non-volatile memory, and when not store in any accessible metadata. 
-        
-    When you need to Live-stream, you need to be connected to the WiFi network, such as your home WiFi, work network or mobile access point.
-        1. To join the WiFi network use the command !W
-        2. To start the Live-stream use the command !Gxy where x is the option resolution (S = Small 480p, M - Medium 720p or L - Large 1080p) and y is the optional capture to SD Card (C = Capture.)  e.g. !GLC
-    Both on these can be in joined into one QR Code to get on the network and start a Live-stream — the whole process can take a little as 12 seconds.
-
-
-
-
-
-Prerequisites for Live-streaming
-        Preparation: 
-        1. You need to have stored the WiFi credentials on the camera. using the new Metadata JOIN, in the format !MJOIN="YourSSID:YourPassword"  e.g. !MJOIN=”HomeNetwork:Pass1234”  As this QR Code is not secure, your code should not be printed, and this is done in advance.
-        2. Store the RMTP URL address in the format  !MRTMP=”rtmp://your.twitch.address.com/credentials" The live-stream can be to any working RTMP address.  Again this typically secure information that should not be printed. 
-        The camera will save this non-volatile memory, and when not store in any accessible metadata. 
-        
-    When you need to Live-stream, you need to be connected to the WiFi network, such as your home WiFi, work network or mobile access point.
-        1. To join the WiFi network use the command !W
-        2. To start the Live-stream use the command !Gxy where x is the option resolution (S = Small 480p, M - Medium 720p or L - Large 1080p) and y is the optional capture to SD Card (C = Capture.)  e.g. !GLC
-    Both on these can be in joined into one QR Code to get on the network and start a Live-stream — the whole process can take a little as 12 seconds.
-
-
-
-
 To live stream via QR Code, you will have to manually pair the GoPro with the network (once), via the GoPro App. Follow these steps.
-
-
-<b>Scan the code above once for the camera to always know the target RTMP address.</b>
 
 
 ## Launch Your Live Stream 
