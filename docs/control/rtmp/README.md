@@ -49,7 +49,7 @@ For Twitch users:
 <b>Scan the code above once for the camera to always know the target RTMP address.</b><br>
 <br>
 
-## Launch Your Live Stream 
+## Launch Your Live-Stream 
 
 Select your Resolution:
   <input type="radio" id="rs1" name="rs" value="S"><label for="480p">480p </label>&nbsp;
