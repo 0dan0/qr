@@ -15,14 +15,14 @@
 
 ## New Features for HERO9 only
 
-* Setup your [**Live-streaming via QR Code**](./rtmp)
-* Use the [**USB Power**](./usb) to start and stop the camera
-* Set the [**Minimum Shutter Speed**](./minshut) for the video mode of the camera
+* Configure your camera for [**Live-streaming**] via QR Code(./rtmp)
+* Use the [**USB Power**](./usb) to start and stop the camera (dash-cam mode)
+* Set the [**Maximum Shutter Angle**](./maxshut) for greater control over stabilization in low light
 * Start capture using [**IMU Motion Triggers**](./imutrigger) for detecting camera movement
-* Sync multiple camera's timecode via [**GPS Time Synchronization**](/.gpssync)
+* Sync multiple cameras' timecode via [**GPS Time Synchronization**](/.gpssync)
 * Enable [**Archive Mode**](./archive), a video only capture mode for loaned cameras
 * Set the [**Exposure Lock**](./explock) via QR Code
-* Many more [**Fun extensions**](/.funextensions) via QR Code
+* Many more [**extensions**](/.extensions) via QR Code
 
 
 ## Mobile App QR Generation
