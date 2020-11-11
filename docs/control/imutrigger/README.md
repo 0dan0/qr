@@ -23,14 +23,27 @@ While the motion detection feature looks for changes in the image, this is only 
   <input type="radio" id="imu3" name="imu" value="I" checked> <label for="BOTH">BOTH (default)</label>
 </div>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Sensitivity** <input type="range" id="snstvty" name="snstvty" min="1" max="9" value="3"><label for="snstvty"></label>&nbsp;&nbsp;<b id="snstvtytext"></b> (1-small movements trigger, to 9-large movements trigger)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Sensitivity** <input type="range" id="snstvty" name="snstvty" min="1" max="9" value="6"><label for="snstvty"></label>&nbsp;&nbsp;<b id="snstvtytext"></b> (1-small movements trigger, to 9-large movements trigger)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Start Delay** <input type="range" id="delay" name="delay" min="0" max="60" value="4"><label for="delay"></label>&nbsp;&nbsp;<b id="delaytext"></b> seconds before reading sensors.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Hold Time** <input type="range" id="hold" name="hold" min="0" max="60" value="5"><label for="hold"></label>&nbsp;&nbsp;<b id="holdtext"></b> seconds, to continue recording after motion has stopped.<br> 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="repeat" name="repeat" checked> 
 <label for="repeat">Repeat IMU triggered capture.</label><br>
 
-## Rough Idea of the Sensitivity
+Note: you will have to manually set the mode in which you capture.  The detector can be combined with the Hindsight feature on HERO9. 
+ 
+<center>
+<div id="qrcode"></div>
+<br>
+</center>
+
+QR Command: <b id="qrtext">time</b><br>
+
+## Feedback
+
+![Feedback](feedback.jpg)
+
+## Sensitivity
 
 | Sensitivity | GYRO degrees  per second | ACCL units gravity | Activity           |
 |-------------|--------------------------|--------------------|--------------------|
@@ -43,15 +56,6 @@ While the motion detection feature looks for changes in the image, this is only 
 | 7           | 90                       | 0.25g              | most hand movement |
 | 8           | 180                      | 0.5g               | Jumps              |
 | 9           | 360                      | 1.0g               | Throwing           |
-
-Note: you will have to manually set the mode in which you capture.  The detector can be combined with the Hindsight feature on HERO9. 
- 
-<center>
-<div id="qrcode"></div>
-<br>
-</center>
-
-QR Command: <b id="qrtext">time</b><br>
 
 ## ver 1.00
 [BACK](..)
