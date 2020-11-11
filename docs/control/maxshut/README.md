@@ -127,9 +127,8 @@ function timeLoop()
 	}
   }
   
-  cmd = "mVt";
-  cmd = dcmd(cmd,"iso"); //iso
-  cmd = cmd + type + dcmd(cmd,"shut"); //shutter angle
+  cmd = dcmd("mVt","iso"); //iso
+  cmd = cmd + type + dcmd("","shut"); //shutter angle
   
   qrcode.clear(); 
   qrcode.makeCode(cmd);
