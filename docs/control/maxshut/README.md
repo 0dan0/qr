@@ -125,12 +125,9 @@ function timeLoop()
 	}
   }
   
-  if(document.getElementById("tlsec") !== null)
-  {
-	cmd = "mVt";
-	cmd = dcmd(cmd,"iso"); //iso
-	cmd = cmd + type + dcmd(cmd,"shut"); //shutter angle
-  }
+  cmd = "mVt";
+  cmd = dcmd(cmd,"iso"); //iso
+  cmd = cmd + type + dcmd(cmd,"shut"); //shutter angle
   
   qrcode.clear(); 
   qrcode.makeCode(cmd);
