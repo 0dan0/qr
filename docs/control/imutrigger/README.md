@@ -30,6 +30,20 @@ While the motion detection feature looks for changes in the image, this is only 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="repeat" name="repeat" checked> 
 <label for="repeat">Repeat IMU triggered capture.</label><br>
 
+## Rough Idea of the Sensitivity
+
+| Sensitivity | GYRO degrees  per second | ACCL units gravity | Activity           |
+|-------------|--------------------------|--------------------|--------------------|
+| 1           | 2                        | 0.004g             | small tremor       |
+| 2           | 4                        | 0.008g             | tiny movement      |
+| 3           | 8                        | 0.016g             | ..                 |
+| 4           | 15                       | 0.032g             | ..                 |
+| 5           | 24                       | 0.064g             | any hand movement  |
+| 6           | 45                       | 0.125g             | ..                 |
+| 7           | 90                       | 0.25g              | most hand movement |
+| 8           | 180                      | 0.5g               | Jumps              |
+| 9           | 360                      | 1.0g               | Throwing           |
+
 Note: you will have to manually set the mode in which you capture.  The detector can be combined with the Hindsight feature on HERO9. 
  
 <center>
