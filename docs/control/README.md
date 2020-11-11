@@ -15,8 +15,8 @@
 
 ## New Features for HERO9 only
 
-* Configure your camera for [**Live-streaming**] via QR Code(./rtmp)
-* Use the [**USB Power**](./usb) to start and stop the camera (dash-cam mode)
+* Configure your camera for [**Live-streaming**](./rtmp) via QR Code
+* Use the [**USB Power Trigger**](./usb) to start and stop the camera (dash-cam mode)
 * Set the [**Maximum Shutter Angle**](./maxshut) for greater control over stabilization in low light
 * Start capture using [**IMU Motion Triggers**](./imutrigger) for detecting camera movement
 * Sync multiple cameras' timecode via [**GPS Time Synchronization**](/.gpssync)
