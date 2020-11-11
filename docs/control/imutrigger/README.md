@@ -12,16 +12,16 @@
 
 # IMU (Camera Motion) Detection to Start and Stop Captures
 
-While the motion detection feature look for changes in the image, the is only looking for motion in the camera itself. The Inertial measurement unit (IMU), has a gyroscopic and accelerometer for measuring rotation and linear acceleration, this can now be used to start and stop captures.  Example: Drone use, only capture while in flight, automatically stop recording with motion stops.
+While the motion detection feature looks for changes in the image, this is only looking for motion of the camera itself. The Inertial measurement unit (IMU), has a gyroscope and accelerometer for measuring rotation and linear acceleration, this can now be used to start and stop captures.  Example: Drone use, only capture while in flight, automatically stop recording when motion stops.
 
 ## Customize IMU Detected Capture
 
 
-<b>Sensor selection:</b> <div id="dtIMU">
-  <input type="radio" id="imu1" name="imu" value="!SG" > <label for="GYRO">GYRO </label>&nbsp;&nbsp;
-  <input type="radio" id="imu2" name="imu" value="!SA" > <label for="ACCL">ACCL </label>&nbsp;&nbsp;
-  <input type="radio" id="imu3" name="imu" value="!SI" checked> <label for="BOTH">BOTH (default)</label>
- </div>
+<div id="dtIMU">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Sensor selection:</b>&nbsp;&nbsp;
+  <input type="radio" id="imu1" name="imu" value="G" > <label for="GYRO">GYRO </label>&nbsp;&nbsp;
+  <input type="radio" id="imu2" name="imu" value="A" > <label for="ACCL">ACCL </label>&nbsp;&nbsp;
+  <input type="radio" id="imu3" name="imu" value="I" checked> <label for="BOTH">BOTH (default)</label>
+</div>
 
 **Sensitivity** <input type="range" id="snstvty" name="snstvty" min="1" max="9" value="3"><label for="snstvty"></label>&nbsp;&nbsp;<b id="snstvtytext"></b> (1-small movements trigger, to 9-large movements trigger)<br>
 **Start Delay** <input type="range" id="delay" name="delay" min="0" max="60" value="4"><label for="delay"></label>&nbsp;&nbsp;<b id="delaytext"></b> seconds to get yourself out of the way.<br>
@@ -30,7 +30,7 @@ While the motion detection feature look for changes in the image, the is only lo
 <input type="checkbox" id="repeat" name="repeat" checked> 
 <label for="repeat">Repeat IMU triggered capture.</label><br>
 
-Note: you will have to manually set the mode in which you capture.  The detector works is in video, TimeWarp and Timelapse Video modes, and can be combined with the Hindsight feature on HERO9. 
+Note: you will have to manually set the mode in which you capture.  The detector works in video, TimeWarp and Timelapse Video modes, and can be combined with the Hindsight feature on HERO9. 
  
 <center>
 <div id="qrcode"></div>
@@ -101,7 +101,7 @@ function timeLoop()
 	var hold = parseInt(document.getElementById("hold").value);	
 	document.getElementById("holdtext").innerHTML = hold;	
 		
-	cmd = dcmd("","imu"); //shutter angle
+	cmd = dcmd("!S","imu"); //shutter angle
 	if(delay > 0) cmd = cmd + 'D' + delay;
 	if(hold > 0) cmd = cmd + 'H' + hold;	
 	
