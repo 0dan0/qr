@@ -12,6 +12,8 @@
 
 # Maximum Shutter Angle
 
+More control over low-light stabilization.
+
 <div id="ptSHUT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Maximum Shutter Angle:</b>&nbsp;&nbsp;
   <input type="radio" id="shut1" name="shut" value="MEXPT=0"> <label for="shut1">360&deg;(default) </label>&nbsp;&nbsp;
   <input type="radio" id="shut2" name="shut" value="MEXPT=1" > <label for="shut2">180&deg; </label>&nbsp;&nbsp;
