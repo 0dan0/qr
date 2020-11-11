@@ -96,9 +96,8 @@ function timeLoop()
 	document.getElementById("secstext").innerHTML = secs;	
 		
 	var endsecs = parseInt(document.getElementById("tlendsec").value);	
-	document.getElementById("secsendtext").innerHTML = endsecs;	
-	
 	endsecs *= 5;
+	document.getElementById("secsendtext").innerHTML = endsecs;	
 	
 	cmd = cmd + "!u" + secs + "N";
 	
