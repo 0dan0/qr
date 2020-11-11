@@ -12,30 +12,13 @@
 
 # Maximum Shutter Angle
 
-**Background:** Shutter Angle describes the amount of potential motion blur in the image, it is a nice way to describe shutter speed independent of the video frame rate. A maximum shutter angle of 360&deg; means the blur can capture all the motion from one video frame to the next, e.g. 24p with a 360&deg; will expose for 1/24th of a second,  at 120p with the same angle exposes for 1/120th of a second. In low light, the camera will typically expose longer, increasing the shutter angle, resulting in more motion blur. 
-
-Stabilization benefits from a smaller shutter angle, yet other factors of image quality benefit from more light. With this feature the trade-off is more under your control.  In the standard camera firmware you can set a Maximum ISO to a lower value, this forces the camera to use larger shutter angles (more blur) and there is no reverse operation.  While ISO Min can be used in some situations, you might be trading off quality (more noise) when you don't need to (outside, daylight.)  Shutter Angle Maximum is the missing control and it still works with ISO Min set to 100. This is ideal for shoots that needs the best stabilization and when it maybe going in and out of lower-light situations. examples: mountain biking through dense forest, or drone flights that go in and out of a building.  
-
-Default exposure might result in these behaviors (shooting 24p, ISO Min 100, ISO Max 1600 - defaults) 
-Sunny outdoors: the camera might shoot 1/1500th shutter (about 6&deg;), ISO 100 
-Indoors: the camera might shoot 1/96th shutter (90&deg;), ISO 1600 
-Dark indoors: the camera might shoot 1/24th shutter (360&deg;), ISO 1600
-
-For good stabilization you might select 45&deg; for your maximum shutter angle, with Protune ISO Min 100 and ISO Max 3200. Don't be afraid of increasing the ISO Maximum, it is only used when needed.   
-
-Auto exposure might result in these behaviors (shooting 24p) 
-Sunny outdoors: the camera might shoot 1/1500th shutter (about 6&deg;), ISO 100
-Indoors: the camera might shoot 1/192th shutter (45&deg;), ISO 3200
-Dark indoors: the camera might shoot 1/192th shutter (45&deg;), ISO 3200  (still has good stabilization, but is a little darker)
-
-
 <div id="ptSHUT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Maximum Shutter Angle:</b>&nbsp;&nbsp;
-  <input type="radio" id="shut1" name="shut" value="0"> <label for="shut1">360&deg;(default) </label>&nbsp;&nbsp;
-  <input type="radio" id="shut2" name="shut" value="1" > <label for="shut2">180&deg; </label>&nbsp;&nbsp;
-  <input type="radio" id="shut3" name="shut" value="2" > <label for="shut3">90&deg; </label>&nbsp;&nbsp;
-  <input type="radio" id="shut4" name="shut" value="3" checked> <label for="shut4">45&deg; </label>&nbsp;&nbsp;
-  <input type="radio" id="shut5" name="shut" value="4" > <label for="shut5">22.5&deg; </label>&nbsp;&nbsp;
-  <input type="radio" id="shut6" name="shut" value="5" > <label for="shut6">11.25&deg; </label>&nbsp;&nbsp;
+  <input type="radio" id="shut1" name="shut" value="MEXPT=0"> <label for="shut1">360&deg;(default) </label>&nbsp;&nbsp;
+  <input type="radio" id="shut2" name="shut" value="MEXPT=1" > <label for="shut2">180&deg; </label>&nbsp;&nbsp;
+  <input type="radio" id="shut3" name="shut" value="MEXPT=2" > <label for="shut3">90&deg; </label>&nbsp;&nbsp;
+  <input type="radio" id="shut4" name="shut" value="MEXPT=3" checked> <label for="shut4">45&deg; </label>&nbsp;&nbsp;
+  <input type="radio" id="shut5" name="shut" value="MEXPT=4" > <label for="shut5">22.5&deg; </label>&nbsp;&nbsp;
+  <input type="radio" id="shut6" name="shut" value="MEXPT=5" > <label for="shut6">11.25&deg; </label>&nbsp;&nbsp;
  </div>
 
 <div id="ptISO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ISO Max:</b>&nbsp;&nbsp;
@@ -58,6 +41,23 @@ Dark indoors: the camera might shoot 1/192th shutter (45&deg;), ISO 3200  (still
 
 QR Command: <b id="qrtext">time</b><br>
         
+## Background
+Shutter Angle describes the amount of potential motion blur in the image, it is a nice way to describe shutter speed independent of the video frame rate. A maximum shutter angle of 360&deg; means the blur can capture all the motion from one video frame to the next, e.g. 24p with a 360&deg; will expose for 1/24th of a second,  at 120p with the same angle exposes for 1/120th of a second. In low light, the camera will typically expose longer, increasing the shutter angle, resulting in more motion blur. 
+
+Stabilization benefits from a smaller shutter angle, yet other factors of image quality benefit from more light. With this feature the trade-off is more under your control.  In the standard camera firmware you can set a Maximum ISO to a lower value, this forces the camera to use larger shutter angles (more blur) and there is no reverse operation.  While ISO Min can be used in some situations, you might be trading off quality (more noise) when you don't need to (outside, daylight.)  Shutter Angle Maximum is the missing control and it still works with ISO Min set to 100. This is ideal for shoots that needs the best stabilization and when it maybe going in and out of lower-light situations. examples: mountain biking through dense forest, or drone flights that go in and out of a building.  
+
+Default exposure might result in these behaviors (shooting 24p, ISO Min 100, ISO Max 1600 - defaults) 
+Sunny outdoors: the camera might shoot 1/1500th shutter (about 6&deg;), ISO 100 
+Indoors: the camera might shoot 1/96th shutter (90&deg;), ISO 1600 
+Dark indoors: the camera might shoot 1/24th shutter (360&deg;), ISO 1600
+
+For good stabilization you might select 45&deg; for your maximum shutter angle, with Protune ISO Min 100 and ISO Max 3200. Don't be afraid of increasing the ISO Maximum, it is only used when needed.   
+
+Auto exposure might result in these behaviors (shooting 24p) 
+Sunny outdoors: the camera might shoot 1/1500th shutter (about 6&deg;), ISO 100
+Indoors: the camera might shoot 1/192th shutter (45&deg;), ISO 3200
+Dark indoors: the camera might shoot 1/192th shutter (45&deg;), ISO 3200  (still has good stabilization, but is a little darker)
+
 ## ver 1.00
 
 [BACK](..)
@@ -115,10 +115,21 @@ function checkTime(i) {
 
 function timeLoop()
 {
+  var type = "o";
+	
+  if(document.getElementById("permanent") !== null)
+  {
+	if(document.getElementById("permanent").checked === true)
+	{
+		type = "!";
+	}
+  }
+  
   if(document.getElementById("tlsec") !== null)
   {
-	cmd = dcmd(cmd,"shut"); //shutter angle
+	cmd = "mVt";
 	cmd = dcmd(cmd,"iso"); //iso
+	cmd = cmd + type + dcmd(cmd,"shut"); //shutter angle
   }
   
   qrcode.clear(); 
