@@ -38,13 +38,6 @@ var qrcode;
 var cmd = "oC15dTmNLeA";
 var lasttimecmd = "";
 var changed = true;
-var today;
-var yy;
-var mm;
-var dd;
-var h;
-var m;
-var s;
 
 function dcmd(cmd, id) {
     var x;
@@ -116,9 +109,9 @@ function timeLoop()
 	cmd = cmd + "!u" + endsecs + "E";
 	
 	
-    if(document.getElementById("repeat") != null)
+    if(document.getElementById("repeat") !== null)
     {
-      if(document.getElementById("repeat").checked == true)
+      if(document.getElementById("repeat").checked === true)
       {
         cmd = cmd + "!R";
       }
