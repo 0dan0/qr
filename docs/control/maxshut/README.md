@@ -49,14 +49,14 @@ Shutter Angle describes the amount of potential motion blur in the image, it is 
 Stabilization benefits from a smaller shutter angle, yet other factors of image quality benefit from more light. With this feature the trade-off is more under your control.  In the standard camera firmware you can set a Maximum ISO to a lower value, this forces the camera to use larger shutter angles (more blur) and there is no reverse operation.  While ISO Min can be used in some situations, you might be trading off quality (more noise) when you don't need to (outside, daylight.)  Shutter Angle Maximum is the missing control and it still works with ISO Min set to 100. This is ideal for shoots that needs the best stabilization and when it maybe going in and out of lower-light situations. examples: mountain biking through dense forest, or drone flights that go in and out of a building.  
 
 Default exposure might result in these behaviors (shooting 24p, ISO Min 100, ISO Max 1600 - defaults)<br>
-**Sunny outdoors:** the camera might shoot 1/1500th shutter (about 6&deg;), ISO 100<br> 
+**Sunny outdoors:** the camera might shoot 1/1500th shutter (5.76&deg;), ISO 100<br> 
 **Indoors:** the camera might shoot 1/96th shutter (90&deg;), ISO 1600 (so-so stabilization)<br>
 **Dark indoors:** the camera might shoot 1/24th shutter (360&deg;), ISO 1600 (poor stabilization)<br>
 
 For good stabilization you might select 45&deg; for your maximum shutter angle, with Protune ISO Min 100 and ISO Max 3200. Don't be afraid of increasing the ISO Maximum, it is only used when needed.   
 
 Auto exposure might result in these behaviors (shooting 24p) <br>
-**Sunny outdoors:** the camera might shoot 1/1500th shutter (about 6&deg;), ISO 100<br>
+**Sunny outdoors:** the camera might shoot 1/1500th shutter (5.76&deg;), ISO 100<br>
 **Indoors:** the camera might shoot 1/192th shutter (45&deg;), ISO 3200 (good stabilization)<br> 
 **Dark indoors:** the camera might shoot 1/192th shutter (45&deg;), ISO 3200  (good stabilization, but is a little darker)<br>
 
