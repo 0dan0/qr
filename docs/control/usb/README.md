@@ -21,7 +21,7 @@ Start <input type="range" id="tlsec" name="tlsec" min="1" max="60" value="0"><la
 and end after <input type="range" id="tlendsec" name="tlendsec" min="1" max="300" value="10"><label for="tlendsec"></label>&nbsp;&nbsp;<b id="secsendtext"></b> second after USB power is off.
  
 <input type="checkbox" id="repeat" name="repeat" checked> 
-<label for="repeat">Repeat for the new USB power</label><br>
+<label for="repeat">Repeat for the next USB power on event</label><br>
 
 <center>
 <div id="qrcode"></div>
