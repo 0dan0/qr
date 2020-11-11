@@ -14,7 +14,8 @@
 
 The camera can use the switching on of USB power to boot the camera, and perform an action of your choice.
 
-The command to perform: <input type="text" id="addcmd" value="!S">.  e.g. **!S** Will start capture in the camera's default mode.
+The command to perform: <input type="text" id="addcmd" value="!S">  e.g. **!S** Will start capture in the camera's default mode.  
+You can make you own command using many of the features within the [**QR Control Customizer**](./custom).
 
 Start <input type="range" id="tlsec" name="tlsec" min="1" max="60" value="0"><label for="tlsec"></label>&nbsp;&nbsp;<b id="secstext"></b> seconds after USB power,<br> 
 and end after <input type="range" id="tlendsec" name="tlendsec" min="1" max="300" value="10"><label for="tlendsec"></label>&nbsp;&nbsp;<b id="secsendtext"></b> second after USB power is off.
@@ -91,13 +92,9 @@ function timeLoop()
 				
 	var secs = parseInt(document.getElementById("tlsec").value);	
 	document.getElementById("secstext").innerHTML = secs;	
-	
-	secs *= 60;
-	
+		
 	var endsecs = parseInt(document.getElementById("tlendsec").value);	
 	document.getElementById("secsendtext").innerHTML = endsecs;	
-	
-	endsecs *= 60;
 	
 	cmd = cmd + "!u" + secs + "N";
 	
@@ -106,8 +103,7 @@ function timeLoop()
 		cmd = cmd + document.getElementById("addcmd").value;
 	}
 	
-	cmd = cmd + "!u" + endsecs + "E";
-	
+	cmd = cmd + "!u" + endsecs + "E";	
 	
     if(document.getElementById("repeat") !== null)
     {
