@@ -32,6 +32,7 @@ and end after <input type="range" style="width: 300px;" id="tlendsec" name="tlen
 QR Command: <b id="qrtext">time</b><br>
         
 ## ver 1.00
+
 [BACK](..)
 
 <script>
