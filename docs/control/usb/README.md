@@ -16,8 +16,8 @@ The camera can use the switching on of USB power to boot the camera, and perform
 
 The command to perform: <input type="text" id="addcmd" value="!S">  e.g. **!S** Will start capture in the camera's default mode. You can make you own command using many of the features within the [**QR Control Customizer**](../custom).
 
-Start command <input type="range" style="width: 200px;" id="tlsec" name="tlsec" min="1" max="60" value="0"><label for="tlsec"></label>&nbsp;&nbsp;<b id="secstext"></b> seconds after USB power,<br> 
-and end after <input type="range" style="width: 200px;" id="tlendsec" name="tlendsec" min="1" max="60" value="10"><label for="tlendsec"></label>&nbsp;&nbsp;<b id="secsendtext"></b> seconds after USB power is off.
+Start command <input type="range" style="width: 200px;" id="tlsec" name="tlsec" min="0" max="60" value="0"><label for="tlsec"></label>&nbsp;&nbsp;<b id="secstext"></b> seconds after USB power,<br> 
+and end after <input type="range" style="width: 200px;" id="tlendsec" name="tlendsec" min="0" max="60" value="2"><label for="tlendsec"></label>&nbsp;&nbsp;<b id="secsendtext"></b> seconds after USB power is off.
 
 **Note:** A battery is required, as the camera needs close captured video when power is removed. Unfortunately this means your battery will eventually discharge, so it is best to have a spare battery if you intended to used this feature as a dedicated dash-cam.  
 
@@ -99,14 +99,20 @@ function timeLoop()
 	endsecs *= 5;
 	document.getElementById("secsendtext").innerHTML = endsecs;	
 	
-	cmd = cmd + "!u" + secs + "N";
-	
+	if(secs > 0)
+		cmd = cmd + "!u" + secs + "N";
+	else
+		cmd = cmd + "!uN";
+		
 	if(document.getElementById("addcmd") !== null)
 	{
 		cmd = cmd + document.getElementById("addcmd").value;
 	}
 	
-	cmd = cmd + "!u" + endsecs + "E";	
+	if(endsecs > 0)
+		cmd = cmd + "!u" + endsecs + "E";	
+	else
+		cmd = cmd + "!uE";
 	
     if(document.getElementById("repeat") !== null)
     {
