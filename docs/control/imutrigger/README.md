@@ -27,7 +27,7 @@ While the motion detection feature looks for changes in the image, this is only 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Start Delay** <input type="range" id="delay" name="delay" min="0" max="60" value="4"><label for="delay"></label>&nbsp;&nbsp;<b id="delaytext"></b> seconds before reading sensors.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Hold Time** <input type="range" id="hold" name="hold" min="0" max="60" value="5"><label for="hold"></label>&nbsp;&nbsp;<b id="holdtext"></b> seconds, to continue recording after motion has stopped.<br> 
 
-<input type="checkbox" id="repeat" name="repeat" checked> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="repeat" name="repeat" checked> 
 <label for="repeat">Repeat IMU triggered capture.</label><br>
 
 Note: you will have to manually set the mode in which you capture.  The detector works in video, TimeWarp and Timelapse Video modes, and can be combined with the Hindsight feature on HERO9. 
