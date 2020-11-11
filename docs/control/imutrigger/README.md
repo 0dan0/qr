@@ -20,7 +20,7 @@ While the motion detection feature look for changes in the image, the is only lo
 <b>Sensor selection:</b> <div id="dtIMU">
   <input type="radio" id="imu1" name="imu" value="!SG" > <label for="GYRO">GYRO </label>&nbsp;&nbsp;
   <input type="radio" id="imu2" name="imu" value="!SA" > <label for="ACCL">ACCL </label>&nbsp;&nbsp;
-  <input type="radio" id="imu3" name="imu" value="!SI" checked> <label for="BOTH">BOTH (default)</label>&nbsp;&nbsp;
+  <input type="radio" id="imu3" name="imu" value="!SI" checked> <label for="BOTH">BOTH (default)</label>
  </div>
 
 **Sensitivity** <input type="range" id="snstvty" name="snstvty" min="1" max="9" value="3"><label for="snstvty"></label>&nbsp;&nbsp;<b id="snstvtytext"></b> (1-small movements trigger, to 9-large movements trigger)<br>
@@ -101,14 +101,13 @@ function timeLoop()
 	var hold = parseInt(document.getElementById("hold").value);	
 	document.getElementById("holdtext").innerHTML = hold;	
 		
-	cmd = "oC" + "!SM" + snstvty;	
+	cmd = dcmd("","imu"); //shutter angle
 	if(delay > 0) cmd = cmd + 'D' + delay;
-	if(mask > 0) cmd = cmd + 'M' + mask;
 	if(hold > 0) cmd = cmd + 'H' + hold;	
 	
-    if(document.getElementById("repeat") != null)
+    if(document.getElementById("repeat") !== null)
     {
-      if(document.getElementById("repeat").checked == true)
+      if(document.getElementById("repeat").checked === true)
       {
         cmd = cmd + "!R";
       }
