@@ -30,7 +30,7 @@ While the motion detection feature looks for changes in the image, this is only 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="repeat" name="repeat" checked> 
 <label for="repeat">Repeat IMU triggered capture.</label><br>
 
-Note: you will have to manually set the mode in which you capture.  The detector works in video, TimeWarp and Timelapse Video modes, and can be combined with the Hindsight feature on HERO9. 
+Note: you will have to manually set the mode in which you capture.  The detector can be combined with the Hindsight feature on HERO9. 
  
 <center>
 <div id="qrcode"></div>
