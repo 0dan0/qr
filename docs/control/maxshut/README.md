@@ -24,13 +24,13 @@
  </div>
 
 <div id="ptISO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ISO Max:</b>&nbsp;&nbsp;
-  <input type="radio" id="iso1" name="iso" value="i1" > <label for="iso1">100 </label>&nbsp;&nbsp;
-  <input type="radio" id="iso2" name="iso" value="i2" > <label for="iso2">200 </label>&nbsp;&nbsp;
-  <input type="radio" id="iso3" name="iso" value="i4" > <label for="iso3">400 </label>&nbsp;&nbsp;
-  <input type="radio" id="iso4" name="iso" value="i8" > <label for="iso4">800 </label>&nbsp;&nbsp;
-  <input type="radio" id="iso5" name="iso" value="i16" checked> <label for="iso5">1600 (default) </label>&nbsp;&nbsp;
-  <input type="radio" id="iso6" name="iso" value="i32"> <label for="iso6">3200 </label>&nbsp;&nbsp;
-  <input type="radio" id="iso7" name="iso" value="i64"> <label for="iso7">6400 </label>&nbsp;&nbsp;
+  <input type="radio" id="iso1" name="iso" value="i1M1" > <label for="iso1">100 </label>&nbsp;&nbsp;
+  <input type="radio" id="iso2" name="iso" value="i2M1" > <label for="iso2">200 </label>&nbsp;&nbsp;
+  <input type="radio" id="iso3" name="iso" value="i4M1" > <label for="iso3">400 </label>&nbsp;&nbsp;
+  <input type="radio" id="iso4" name="iso" value="i8M1" > <label for="iso4">800 </label>&nbsp;&nbsp;
+  <input type="radio" id="iso5" name="iso" value="i16M1" checked> <label for="iso5">1600 (default) </label>&nbsp;&nbsp;
+  <input type="radio" id="iso6" name="iso" value="i32M1"> <label for="iso6">3200 </label>&nbsp;&nbsp;
+  <input type="radio" id="iso7" name="iso" value="i64M1"> <label for="iso7">6400 </label>&nbsp;&nbsp;
  </div>
  
 <input type="checkbox" id="permanent" name="permanent" checked> 
