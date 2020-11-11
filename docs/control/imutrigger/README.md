@@ -102,6 +102,7 @@ function timeLoop()
 	document.getElementById("holdtext").innerHTML = hold;	
 		
 	cmd = dcmd("!S","imu"); //shutter angle
+	cmd = cmd + snstvty;
 	if(delay > 0) cmd = cmd + 'D' + delay;
 	if(hold > 0) cmd = cmd + 'H' + hold;	
 	
