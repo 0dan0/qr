@@ -40,10 +40,6 @@ Note: you will have to manually set the mode in which you capture.  The detector
 
 QR Command: <b id="qrtext">time</b><br>
 
-## Feedback
-
-![Feedback](feedback.jpg)
-
 ## Sensitivity
 
 | Sensitivity | GYRO degrees per second  | ACCL units gravity | Activity               |
@@ -57,6 +53,12 @@ QR Command: <b id="qrtext">time</b><br>
 | 7           | 8dps                     | 0.016g             | ..                     |
 | 8           | 4dps                     | 0.008g             | tiny movement          |
 | 9           | 2dps                     | 0.004g             | small tremor           |
+
+## On Screen Feedback
+
+<center>
+![Feedback](feedback.jpg)
+</center>
 
 ## ver 1.00
 [BACK](..)
