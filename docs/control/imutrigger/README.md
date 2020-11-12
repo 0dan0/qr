@@ -56,11 +56,7 @@ QR Command: <b id="qrtext">time</b><br>
 
 ## On Screen Feedback
 
-<div align="center">
-
 ![Feedback](feedback.jpg)
-
-</div>
 
 ## ver 1.00
 [BACK](..)
