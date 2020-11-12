@@ -46,17 +46,17 @@ QR Command: <b id="qrtext">time</b><br>
 
 ## Sensitivity
 
-| Sensitivity | GYRO degrees  per second | ACCL units gravity | Activity           |
-|-------------|--------------------------|--------------------|--------------------|
-| 1           | 2                        | 0.004g             | small tremor       |
-| 2           | 4                        | 0.008g             | tiny movement      |
-| 3           | 8                        | 0.016g             | ..                 |
-| 4           | 15                       | 0.032g             | ..                 |
-| 5           | 24                       | 0.064g             | any hand movement  |
-| 6           | 45                       | 0.125g             | ..                 |
-| 7           | 90                       | 0.25g              | most hand movement |
-| 8           | 180                      | 0.5g               | Jumps              |
-| 9           | 360                      | 1.0g               | Throwing           |
+| Sensitivity | GYRO degrees per second  | ACCL units gravity | Activity               |
+|-------------|--------------------------|--------------------|------------------------|
+| 1           | 360dps                   | 1.0g               | Throwing the camera    |
+| 2           | 180dps                   | 0.5g               | Jumps                  |
+| 3           | 90dps                    | 0.25g              | most handheld movement |
+| 4           | 45dps                    | 0.125g             | ..                     |
+| 5           | 24dps                    | 0.064g             | any hand movement      |
+| 6           | 15dps                    | 0.032g             | ..                     |
+| 7           | 8dps                     | 0.016g             | ..                     |
+| 8           | 4dps                     | 0.008g             | tiny movement          |
+| 9           | 2dps                     | 0.004g             | small tremor           |
 
 ## ver 1.00
 [BACK](..)
