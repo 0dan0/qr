@@ -23,7 +23,8 @@ While the motion detection feature looks for changes in the image, this is only 
   <input type="radio" id="imu3" name="imu" value="I" checked> <label for="BOTH">BOTH (default)</label>
 </div>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Sensitivity** <input type="range" id="snstvty" name="snstvty" min="1" max="9" value="6"><label for="snstvty"></label>&nbsp;&nbsp;<b id="snstvtytext"></b> (1-small movements trigger, to 9-large movements trigger)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Start Sensitivity** <input type="range" id="snstvty" name="snstvty" min="1" max="9" value="6"><label for="snstvty"></label>&nbsp;&nbsp;<b id="snstvtytext"></b> (1-small movements trigger, to 9-large movements trigger)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**End Sensitivity (optional)** <input type="range" id="esnstvty" name="esnstvty" min="0" max="9" value="0"><label for="snstvty"></label>&nbsp;&nbsp;<b id="esnstvtytext"></b> (0 - off, 1-small movements trigger, to 9-large movements trigger)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Start Delay** <input type="range" id="delay" name="delay" min="0" max="60" value="4"><label for="delay"></label>&nbsp;&nbsp;<b id="delaytext"></b> seconds before reading sensors.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Hold Time** <input type="range" id="hold" name="hold" min="0" max="60" value="5"><label for="hold"></label>&nbsp;&nbsp;<b id="holdtext"></b> seconds, to continue recording after motion has stopped.<br> 
 
@@ -111,7 +112,10 @@ function timeLoop()
   if(document.getElementById("snstvty") !== null)
   {
 	var snstvty = parseInt(document.getElementById("snstvty").value);	
-	document.getElementById("snstvtytext").innerHTML = snstvty;	
+	document.getElementById("snstvtytext").innerHTML = snstvty;
+	
+	var esnstvty = parseInt(document.getElementById("esnstvty").value);	
+	document.getElementById("esnstvtytext").innerHTML = esnstvty;	
 		
 	var delay = parseInt(document.getElementById("delay").value);	
 	document.getElementById("delaytext").innerHTML = delay;	
@@ -121,6 +125,8 @@ function timeLoop()
 		
 	cmd = dcmd("!S","imu"); //shutter angle
 	cmd = cmd + snstvty;
+	
+	if(esnstvty > 0) cmd = cmd + "-" + esnstvty;
 	if(delay > 0) cmd = cmd + 'D' + delay;
 	if(hold > 0) cmd = cmd + 'H' + hold;	
 	
