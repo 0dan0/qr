@@ -60,7 +60,7 @@ function makeQR()
 function timeLoop()
 {
 	cmd1 = "!E";
-	cmd2 = "!MARCH=0\"Disabled\\nRestarting\"!O";
+	cmd2 = "!MARCH=0\"Archive Mode\\nDisabled\\nShutting-down\"!O";
 	if(document.getElementById("arch") !== null)
 	{
 		if(document.getElementById("arch").checked === true)
@@ -69,7 +69,7 @@ function timeLoop()
 			{
 				cmd1 = cmd1 + "mVdVq1" + document.getElementById("addcmd").value;
 			}
-			cmd2 = "!MARCH=1\"Enabled\\nRestarting\"!O";
+			cmd2 = "!MARCH=1\"Archive Mode\\nEnabled\\nShutting-down\"!O";
 		}
 	}
 	
