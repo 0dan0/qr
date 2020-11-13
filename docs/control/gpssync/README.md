@@ -47,7 +47,7 @@ function makeQR()
   {
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
-      text : "!M64BT=1",
+      text : "!MSYNC=1",
       width : 360,
       height : 360,
       correctLevel : QRCode.CorrectLevel.M
@@ -58,12 +58,12 @@ function makeQR()
 
 function timeLoop()
 {
-  cmd = "!M64BT=0";
+  cmd = "!MSYNC=0";
   if(document.getElementById("gsync") !== null)
   {
     if(document.getElementById("gsync").checked === true)
     {
-      cmd = "!M64BT=1";
+      cmd = "!MSYNC=1";
     }
   }
 
