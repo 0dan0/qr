@@ -90,12 +90,12 @@ function timeLoop()
 		cmd = "Metadata requires\\nvalid data";
 	if(document.getElementById("addcmd").value.length === 4 && document.getElementById("addvalue").value.length > 0)
 	{
-		cmd = "o";
+		cmd = "oM";
 		if(document.getElementById("perm") !== null)
 		{
 			if(document.getElementById("perm").checked === true)
 			{
-				cmd = "!"
+				cmd = "!M"
 			}
 		}
 		cmd = cmd + document.getElementById("addcmd").value + "=" + document.getElementById("addvalue").value;
