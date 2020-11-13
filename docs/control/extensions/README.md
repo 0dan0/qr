@@ -36,9 +36,9 @@ All metadata is written in the form oM**wxzy**=value(s) or !M**wxzy**=value(s) -
 	- **LRUN=”Runner Name”** - displays "Runner", with the name you provide
         
 
-<input type="checkbox" id="perm" name="perm" checked> 
+<input type="checkbox" id="perm" name="perm"> 
 <label for="perm">Make metadata Premanent (are you sure?)</label><br>
-Metadata Four CC: <input type="text" id="addcmd" value="">  e.g. BIAS, HIST etc.
+Metadata Four CC: <input type="text" id="addcmd" value="">  e.g. BIAS, HIST etc.<br>
 Metadata Value(s): <input type="text" id="addvalue" value="">  e.g. 2.0 or "Joe Blogg", strings in quotes, numbers comma separated.
 
 <center>
