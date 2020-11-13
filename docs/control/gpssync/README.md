@@ -26,7 +26,7 @@ This improves the timecode track precision. While this works best outdoors with 
 </center>
 QR Command: <b id="qrtext">command</b><br>
 
-<iframe src="https://www.shadertoy.com/embed/Wddfz7" style="height: 375px; width: 500px;"></iframe>
+<iframe src="https://www.shadertoy.com/embed/Wddfz7" style="height: 250px; width: 500px;"></iframe>
 
 
 <br> 
