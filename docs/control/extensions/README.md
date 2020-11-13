@@ -28,18 +28,13 @@ All metadata is written in the form oM**wxzy**=value(s) or !M**wxzy**=value(s) -
 - **DSPC=contrast**, this is the contrast for which messages are displayed.  Contrast is from 0 - transparent text background, to 6 - opaque black background
 - **HIST=x** - Displays a histogram with contrast from 1 to 11. e.g. try oMHIST=5
 - **LAPS=1** turn on the burn-in laptime, a hackathon that combined with live-stream auto races
-	- **BRNP=”xx”**  this the burnin position TL, TR, BL, BR (default) - T-Top L-Left B-Bottom R-Right
-	- **LFIN=latt,long** GPS location for the Lap Line (finish line), using to compute the lap times.
+	- **BRNP=”xx”**  this the burnin position TL, TR, BL, BR (default) - T-Top L-Left B-Bottom R-Right, e.g. oMBRNP="TR"
+	- **LFIN=latt,long** GPS location for the Lap Line (finish line), using to compute the lap times. e.g. !MLFIN=36.586221,-121.756818 The finish line at Laguna Seca. You need a high degree of GPS precision for this to work correctly.
 	- **LSRT=”hh:mm”** - Lap times starting at time HH:MM, so you can put it the race start time.
 	- **LDVR=”Driver Name”** - displays "Driver", with the name you provide
 	- **LRDR=”Rider Name”** - displays "Rider", with the name you provide
 	- **LRUN=”Runner Name”** - displays "Runner", with the name you provide
         
-- Exposure adjustments.  While you can just see an EV value you can now use x++ to increase from the current EV and x-- to decrease.
-
-
-- White Balance adjustments, w++ and w-- will increase or decrease white balance.
-
 
 customization here: <input type="text" id="addcmd" value="">  e.g. **r4p24** Will set 4K at 24p as you default. You can make you own defaults video mode using the [**QR Control Customizer**](../custom), including Protune settings.
 
@@ -51,12 +46,15 @@ customization here: <input type="text" id="addcmd" value="">  e.g. **r4p24** Wil
 </center>
 QR Command: <b id="qrtext">command</b><br>
 
-<br> 
-        
-## Disabling Archive Mode
 
-Uncheck the above Archive mode checkbox, and scan the new code while the camera is recording.
-		
+## Alternative Exposure Controls. 
+
+- EV adjustments. While you can just see an EV value you can now use x++ to increase from the current EV and x-- to decrease. This might be useful for dive application, as you can't change EV while under water 
+
+- White Balance adjustments, with w++ and w-- will increase or decrease white balance.
+ Again for dive users.
+
+<br> 
 		
 ## ver 1.00
 [BACK](..)
