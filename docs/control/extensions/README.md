@@ -21,21 +21,19 @@ All metadata is written in the form oMwxzy=value(s) or !Mwxzy=value(s) -- where 
     - **LLTZ=latt,long,timezone** for those want to use Sunset/Sunrise timelapse without waiting for GPS lock, or for when you are shooting a sunset timelapse from indoors.  The metadata is used to store you GPS Location and timezone e.g. !MLLTZ=33.126,-117.327,-8.0  I this case you must used the !M command as solar event timers will shutdown the camera.
     - **QRDR=1** - detect QR Code even while recording.  Normally is disabled to ensure the lowest computing load impact, so not enabling this is the safest. However, it is needed for some cool ideas, like changing a video burnin message in the middle of a live-stream, or changing it exposure with BIAS (see below.) This also allows you to end a capture via a QR Code (!E).
     - **BIAS=ev_value** - This is crude EV compensation for modes that don’t have Protune settings, like Live-stream. e.g. oMBIAS=2.0 
-    - **BOOT=”command”** - Is allows you to set a QR command that is launched on boot, so this is potentially dangerous (Labs, use are  your own risk). I drone user might have a boot command that sets IMU Trigger based captures.
-    - HNDL=x, where x is 1 to 31, setting the camera ID for a camera.  This is for rare scenarios where multiple cameras see the same QR Code, and you only want particular cameras to respond.  This combined with hZ command where Z is the mask for which camera to follow the command.
+    - **HNDL=x**, where x is 1 to 31, setting the camera ID for a camera. This is for rare scenarios where multiple cameras see the same QR Code, and you only want particular cameras to respond. This combined with **hZ** command where Z is the bit mask for which cameras will follow the command.
         - e.g.   h6mP!S  ← this command will only run of cameras with IDs 2 and 3.
         - e.g.   h1mVh2mPB ← set camera 1 to mode Video and camera 2 to Photo Burst.
-    - DSPL=time, this will control the amount of time messages are displayed.  The default is 1 second.  DISP=1 thru 9 is in seconds.  DISP = 10 thru 9999 is in milliseconds.  So for faster messages use !MDISP=100
-    - DSPC=contrast, this is the contrast for which messages are displays.  Contrast is from 0 - transparent text background, to 6 - opaque black background
-    - GPSR=1  - GPS Reset using for lock testing
-    - HIST=x - Displays a histogram with contrast from 1 to 11. e.g. try oMHIST=5
-    - LAPS=1 turn on the burn laptime, a hackathon to combine with live-stream auto races
-        - BRNP=”xx”  this the burnin position TL, TR, BL, BR (default) - T-Top L-Left B-Bottom R-Right
-        - LFIN=latt,long GPS location for the Lap Line (finish line), using to compute the lap times.
-        - LSRT=”hh:mm” - Lap times starting at time HH:MM, so you can put it the race start time.
-        - LDVR=”Driver Name” used with LAPS=1
-        - LRDR=”Rider Name” used with LAPS=1
-        - LRUN=”Runner Name” used with LAPS=1
+    - **DSPL=time**, this will control the amount of time messages are displayed. For users who want there own information display longer. The default is 1 second.  DISP=1 thru 9 is in seconds.  DISP = 10 thru 9999 is in milliseconds.  So for faster messages use !MDISP=100. Set this before setting the owner information, as metadata commands are processed in the order they are stored. 
+    - **DSPC=contrast**, this is the contrast for which messages are displayed.  Contrast is from 0 - transparent text background, to 6 - opaque black background
+	- **HIST=x** - Displays a histogram with contrast from 1 to 11. e.g. try oMHIST=5
+    - **LAPS=1** turn on the burn-in laptime, a hackathon that combined with live-stream auto races
+        - **BRNP=”xx”**  this the burnin position TL, TR, BL, BR (default) - T-Top L-Left B-Bottom R-Right
+        - **LFIN=latt,long** GPS location for the Lap Line (finish line), using to compute the lap times.
+        - **LSRT=”hh:mm”** - Lap times starting at time HH:MM, so you can put it the race start time.
+        - **LDVR=”Driver Name”** - displays "Driver", with the name you provide
+        - **LRDR=”Rider Name”** - displays "Rider", with the name you provide
+        - **LRUN=”Runner Name”** - displays "Runner", with the name you provide
         
 - Exposure adjustments.  While you can just see an EV value you can now use x++ to increase from the current EV and x-- to decrease.
 
