@@ -30,6 +30,7 @@ QR Command: <b id="qrtext">command</b><br>
 
 <iframe src="https://www.shadertoy.com/embed/ts3BW7?gui=false&paused=false" frameborder="0" style="height: 400px; width: 700px; "></iframe>
 
+Note: it is correct for 23.976 and 29.97 Non-drop timecode to it be 0.1% behind 25.0 timecode.
 
 <br> 
         
