@@ -10,11 +10,40 @@
         }
 </style>
 
-# Archive Mode
+# Extensions and Other Smaller Additions
 
-An ultra simplified camera mode for notices documenting critical events, from weddings to protest marches, where you don't want the camera mode modified. Ever loan a camera to a friend to shoot video, and they bumped the mode button or LCD so that it was only shooting photos? Archive mode is intended to stop that, but making the camera video QuikCapture only, with either button starting or stopping the default video mode capture. The camera will inform the operator that the mode is limited, nothing can disable this mode other than the reversing QR Code. It will turn your GoPro into one button operation, press to start, press to stop. The operator can play or delete captures, or connect the GoPro to a smartphone, all media operations require the removal of the SD Card.
+After the release of the the first Labs firmware for HERO8, heard the feedback and added features wherever possible. Some of the more major features got there own page, the rest are documented in this collection.
 
-Set your video mode customization here: <input type="text" id="addcmd" value="">  e.g. **r4p24** Will set 4K at 24p as you default. You can make you own defaults video mode using the [**QR Control Customizer**](../custom), including Protune settings.
+## Miscellaneous Metadata controls. 
+
+All metadata is written in the form oMwxzy=value(s) or !Mwxzy=value(s) -- where the four character code (4CC) "wxzy" is under your control. !M version will permanently store, oM will store for only this power on time.  Metadata is available to flag your files for special uses, or just label the [camera owner](./owner).  Some particular 4CCs will also change camera behavior and/or enable features. Here is a list of additional metadata driven controls: 
+
+    - **LLTZ=latt,long,timezone** for those want to use Sunset/Sunrise timelapse without waiting for GPS lock, or for when you are shooting a sunset timelapse from indoors.  The metadata is used to store you GPS Location and timezone e.g. !MLLTZ=33.126,-117.327,-8.0  I this case you must used the !M command as solar event timers will shutdown the camera.
+    - **QRDR=1** - detect QR Code even while recording.  Normally is disabled to ensure the lowest computing load impact, so not enabling this is the safest. However, it is needed for some cool ideas, like changing a video burnin message in the middle of a live-stream, or changing it exposure with BIAS (see below.) This also allows you to end a capture via a QR Code (!E).
+    - **BIAS=ev_value** - This is crude EV compensation for modes that don’t have Protune settings, like Live-stream. e.g. oMBIAS=2.0 
+    - **BOOT=”command”** - Is allows you to set a QR command that is launched on boot, so this is potentially dangerous (Labs, use are  your own risk). I drone user might have a boot command that sets IMU Trigger based captures.
+    - HNDL=x, where x is 1 to 31, setting the camera ID for a camera.  This is for rare scenarios where multiple cameras see the same QR Code, and you only want particular cameras to respond.  This combined with hZ command where Z is the mask for which camera to follow the command.
+        - e.g.   h6mP!S  ← this command will only run of cameras with IDs 2 and 3.
+        - e.g.   h1mVh2mPB ← set camera 1 to mode Video and camera 2 to Photo Burst.
+    - DSPL=time, this will control the amount of time messages are displayed.  The default is 1 second.  DISP=1 thru 9 is in seconds.  DISP = 10 thru 9999 is in milliseconds.  So for faster messages use !MDISP=100
+    - DSPC=contrast, this is the contrast for which messages are displays.  Contrast is from 0 - transparent text background, to 6 - opaque black background
+    - GPSR=1  - GPS Reset using for lock testing
+    - HIST=x - Displays a histogram with contrast from 1 to 11. e.g. try oMHIST=5
+    - LAPS=1 turn on the burn laptime, a hackathon to combine with live-stream auto races
+        - BRNP=”xx”  this the burnin position TL, TR, BL, BR (default) - T-Top L-Left B-Bottom R-Right
+        - LFIN=latt,long GPS location for the Lap Line (finish line), using to compute the lap times.
+        - LSRT=”hh:mm” - Lap times starting at time HH:MM, so you can put it the race start time.
+        - LDVR=”Driver Name” used with LAPS=1
+        - LRDR=”Rider Name” used with LAPS=1
+        - LRUN=”Runner Name” used with LAPS=1
+        
+- Exposure adjustments.  While you can just see an EV value you can now use x++ to increase from the current EV and x-- to decrease.
+
+
+- White Balance adjustments, w++ and w-- will increase or decrease white balance.
+
+
+customization here: <input type="text" id="addcmd" value="">  e.g. **r4p24** Will set 4K at 24p as you default. You can make you own defaults video mode using the [**QR Control Customizer**](../custom), including Protune settings.
 
 <input type="checkbox" id="arch" name="arch" checked> 
 <label for="arch">Enable Archive Mode</label><br>
