@@ -26,6 +26,8 @@ This improves the timecode track precision. While this works best outdoors with 
 </center>
 QR Command: <b id="qrtext">command</b><br>
 
+## Time-of-day Timecode for 24, 25 and 30p Modes
+
 <iframe src="https://www.shadertoy.com/embed/ts3BW7?gui=false&paused=false" frameborder="0" style="height: 400px; width: 700px; "></iframe>
 
 
