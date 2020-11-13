@@ -22,7 +22,7 @@
 * Sync multiple cameras' timecode via [**GPS Time Synchronization**](./gpssync)
 * Enable [**Archive Mode**](./archive), a video only capture mode for loaned cameras
 * Set the [**Exposure Lock**](./explock) via QR Code
-* Many more [**extensions**](/.extensions) via QR Code
+* Many more [**extensions**](./extensions) via QR Code
 
 
 ## Mobile App QR Generation
