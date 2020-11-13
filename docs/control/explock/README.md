@@ -19,7 +19,7 @@ or
 <input type="checkbox" id="remove" name="remove"> 
 <label for="remove">Remove the exposure lock</label><br>
 
-**Note:** This command wouldn't normally used on it own, more likely combined with scripting, w.g. locking exposure on a drone in mid-flight.
+**Note:** This command wouldn't normally used on it own, more likely combined with scripting, e.g. locking exposure on a drone in mid-flight.
 
 <center>
 <div id="qrcode"></div>
