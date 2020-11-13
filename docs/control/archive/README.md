@@ -55,7 +55,7 @@ function makeQR()
 function timeLoop()
 {
 	cmd1 = "!EmVdVq1";
-	cmd2 = "!MARCH=0";
+	cmd2 = "!MARCH=0!2N!O";
 	if(document.getElementById("arch") !== null)
 	{
 		if(document.getElementById("arch").checked === true)
@@ -64,7 +64,7 @@ function timeLoop()
 			{
 				cmd1 = cmd1 + document.getElementById("addcmd").value;
 			}
-			cmd2 = "!MARCH=1";
+			cmd2 = "!MARCH=1!2N!O";
 		}
 	}
 	
