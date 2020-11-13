@@ -86,7 +86,7 @@ function timeLoop()
 {
 	if(document.getElementById("addcmd").value.length !== 4)
 		cmd = "Metadata 4CCs must be\\nfour characters long";
-	if(document.getElementById("addvalue").value.length)
+	else if(document.getElementById("addvalue").value.length === 0)
 		cmd = "Metadata requires\\nvalid data";
 	if(document.getElementById("addcmd").value.length === 4 && document.getElementById("addvalue").value.length > 0)
 	{
