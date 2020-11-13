@@ -16,7 +16,7 @@ If you are shooting with multiple GoPro cameras, enable this feature.
 
 ## How it works
 
-This improves the timecode track precision. While this works best outdoors with a clear GPS signal, it is harmless to have active in all shooting locations and modes. If there is a good GPS signal, the camera’s internal clock will be precisely updated, but only minute and second fields. It will not update the hour or day, as it preserves your current timezone offset, so this doesn’t remove the need for initial setup for time and date. This feature updates the MP4s timecode track at the end of capture, so it a good GPS time occurs after the capture begins, the timecode will be accurate. In tools like Adobe Premiere Pro, multiple camera angles can be synchronized using timecode. In limited testing sync is typically within a frame or two.
+This improves the timecode track precision. While this works best outdoors with a clear GPS signal, it is harmless to have active in all shooting locations and modes. If there is a good GPS signal, the camera’s internal clock will be precisely updated, but only minute and second fields. It will not update the hour or day, as it preserves your current timezone offset, so this doesn’t remove the need for initial setup for time and date. This feature updates the MP4s timecode track at the end of capture, so it a good GPS time occurs after the capture begins, the timecode will be accurate. In tools like Adobe Premiere Pro, multiple camera angles can be synchronized using timecode. In limited testing, sync is typically within a frame or two, but your precision my vary.
 
 <input type="checkbox" id="gsync" name="gsync" checked> 
 <label for="gsync">Enable GPS Time Sync</label><br>
