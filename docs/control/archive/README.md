@@ -26,6 +26,11 @@ QR Command: <b id="qrtext">command</b><br>
 
 <br> 
         
+## Disabling Archive Mode
+
+Uncheck the above Archive mode checkbox, and scan the new code while the camera is recording.
+		
+		
 ## ver 1.00
 [BACK](..)
 
