@@ -10,7 +10,7 @@
         }
 </style>
 
-# USB Power Triggers
+# USB Power Trigger
 
 The camera can use the switching on of USB power to boot the camera, and perform an action of your choice.
 
