@@ -37,7 +37,7 @@ Uncheck the above Archive mode checkbox, and scan the new code while the camera 
 <script>
 var once = true;
 var qrcode;
-var cmd1 = "";
+var cmd1 = "!E";
 var cmd2 = "";
 var lasttimecmd = "";
 var changed = true;
@@ -59,7 +59,6 @@ function makeQR()
 
 function timeLoop()
 {
-	cmd1 = "!EmVdVq1";
 	cmd2 = "!MARCH=0\"Disabled\nRestarting\"!O";
 	if(document.getElementById("arch") !== null)
 	{
@@ -67,7 +66,7 @@ function timeLoop()
 		{
 			if(document.getElementById("addcmd") !== null)
 			{
-				cmd1 = cmd1 + document.getElementById("addcmd").value;
+				cmd1 = cmd1 + "mVdVq1" + document.getElementById("addcmd").value;
 			}
 			cmd2 = "!MARCH=1\"Enabled\nRestarting\"!O";
 		}
