@@ -12,7 +12,7 @@
 
 # Extensions and Other Smaller Additions
 
-After the release of the the first Labs firmware for HERO8, heard the feedback and added features wherever possible. Some of the more major features got there own page, the rest are documented in this collection.
+After the release of the the first Labs firmware for HERO8, we heard the feedback and added features wherever possible. Some of the more major features got their own page, the rest are documented in this collection.
 
 ## Miscellaneous Metadata controls. 
 
