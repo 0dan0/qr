@@ -19,7 +19,7 @@ or
 <input type="checkbox" id="remove" name="remove"> 
 <label for="remove">Remove the exposure lock</label><br>
 
-**Note:** This command wouldn't normally used on it own, more likely combined with scripting, e.g. locking exposure on a drone in mid-flight.
+**Note:** This command wouldn't normally used on it own, more likely combined with more complex commands. The delay is mainly so you don't expose for the QR Code being read. An example command might be **mVr4p24x-1eL3!S**  - set res to 4Kp24, EV -1.0, exposure lock in 3 seconds, then start recording.  
 
 <center>
 <div id="qrcode"></div>
