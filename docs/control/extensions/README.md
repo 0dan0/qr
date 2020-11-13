@@ -36,10 +36,11 @@ All metadata is written in the form oM**wxzy**=value(s) or !M**wxzy**=value(s) -
 	- **LRUN=”Runner Name”** - displays "Runner", with the name you provide
         
 
-customization here: <input type="text" id="addcmd" value="">  e.g. **r4p24** Will set 4K at 24p as you default. You can make you own defaults video mode using the [**QR Control Customizer**](../custom), including Protune settings.
+<input type="checkbox" id="perm" name="perm" checked> 
+<label for="perm">Make metadata Premanent (are you sure?)</label><br>
+Metadata Four CC: <input type="text" id="addcmd" value="">  e.g. BIAS, HIST etc.
+Metadata Value(s): <input type="text" id="addvalue" value="">  e.g. 2.0 or "Joe Blogg", strings in quotes, numbers comma separated.
 
-<input type="checkbox" id="arch" name="arch" checked> 
-<label for="arch">Enable Archive Mode</label><br>
 <center>
 <div id="qrcode"></div>
 <br>
@@ -62,8 +63,7 @@ QR Command: <b id="qrtext">command</b><br>
 <script>
 var once = true;
 var qrcode;
-var cmd1 = "";
-var cmd2 = "";
+var cmd = "";
 var lasttimecmd = "";
 var changed = true;
 
@@ -84,34 +84,36 @@ function makeQR()
 
 function timeLoop()
 {
-	cmd1 = "!E";
-	cmd2 = "!MARCH=0\"Archive Mode\\nDisabled\\nShutting-down\"!O";
-	if(document.getElementById("arch") !== null)
+	if(document.getElementById("addcmd").value.length !== 4)
+		cmd = "Metadata 4CCs must be\\nfour characters long";
+	if(document.getElementById("addvalue").value.length)
+		cmd = "Metadata requires\\nvalid data";
+	if(document.getElementById("addcmd").value.length === 4 && document.getElementById("addvalue").value.length > 0)
 	{
-		if(document.getElementById("arch").checked === true)
+		cmd = "o";
+		if(document.getElementById("perm") !== null)
 		{
-			if(document.getElementById("addcmd") !== null)
+			if(document.getElementById("perm").checked === true)
 			{
-				cmd1 = cmd1 + "mVdVq1" + document.getElementById("addcmd").value;
+				cmd = "!"
 			}
-			cmd2 = "!MARCH=1\"Archive Mode\\nEnabled\\nShutting-down\"!O";
 		}
+		cmd = cmd + document.getElementById("addcmd").value + "=" + document.getElementById("addvalue").value;
 	}
 	
-	cmd1 = cmd1 + cmd2;
 	
 	qrcode.clear(); 
-	qrcode.makeCode(cmd1);
+	qrcode.makeCode(cmd);
 
-	if(cmd1 != lasttimecmd)
+	if(cmd != lasttimecmd)
 	{
 		changed = true;
-		lasttimecmd = cmd1;
+		lasttimecmd = cmd;
 	}
 
 	if(changed === true)
 	{
-		document.getElementById("qrtext").innerHTML = cmd1;
+		document.getElementById("qrtext").innerHTML = cmd;
 		changed = false;
 	}
 
