@@ -52,4 +52,4 @@ All setting commands start with a lowercase character, followed by either upperc
 ## Join The [**GoPro Labs Community**](https://community.gopro.com/t5/GoPro-Labs/bd-p/GoProLabs)
 
 
-### ver 1.03
+### ver 1.10
