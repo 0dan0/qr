@@ -10,10 +10,10 @@
         }
 </style>
 
-# Live-Stream Setup (requires Labs on HERO9)
+# Live-Stream Setup (requires Labs 2021 on HERO8 or HERO9)
 
 ## Prerequisites for Live-streaming
-1. **Pair with the GoPro mobile app once**, Live-streaming will not work with an out of box or factory-reset camera.
+1. **Pair with the GoPro mobile app once.** Live-streaming won't work with an out-of-box or factory-reset camera, without connecting with the App first.
 2. Storing WiFi credentials on the camera, for the network you intend to stream over (e.g. your home WiFi or mobile access point.) 
 3. Storing the RMTP URL address that you intend to stream to (e.g using a service like Twitch.)
 
