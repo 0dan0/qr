@@ -15,11 +15,11 @@
 
 ## New Features for Labs 2021 Releases Only
 
-* Configure your camera for [**Live-streaming**](./rtmp) via QR Code (HERO8 & 9 only)
+* Configure your camera for [**Live-streaming**](./rtmp) via QR Code (**HERO8 & 9 only**)
 * Use the [**USB Power Trigger**](./usb) to start and stop the camera (dash-cam mode)
 * Set the [**Maximum Shutter Angle**](./maxshut) for greater control over stabilization in low light
 * Start capture using [**IMU Motion Triggers**](./imutrigger) for detecting camera movement
-* Sync multiple cameras' timecode via [**GPS Time Synchronization**](./gpssync) (HERO9 only)
+* Sync multiple cameras' timecode via [**GPS Time Synchronization**](./gpssync) (**HERO9 only**)
 * Enable [**Archive Mode**](./archive), a video only capture mode for loaned cameras
 * Set the [**Exposure Lock**](./explock) via QR Code
 * Many more [**extensions**](./extensions) via QR Code
