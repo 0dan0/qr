@@ -13,8 +13,9 @@
 # Live-Stream Setup (requires Labs on HERO9)
 
 ## Prerequisites for Live-streaming
-1. Storing WiFi credentials on the camera, for the network you intend to stream over (e.g. your home WiFi or mobile access point.) 
-2. Storing the RMTP URL address that you intend to stream to (e.g using a service like Twitch.)
+1. **Pair with the GoPro mobile app once**, Live-streaming will not work with an out of box or factory-reset camera.
+2. Storing WiFi credentials on the camera, for the network you intend to stream over (e.g. your home WiFi or mobile access point.) 
+3. Storing the RMTP URL address that you intend to stream to (e.g using a service like Twitch.)
 
 When both of these are stored within your camera's non-volatile memory, you can start a Live-stream with a single QR Code at any time.<br>
 <br>
