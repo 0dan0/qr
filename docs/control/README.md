@@ -1,6 +1,6 @@
 # QR Control
 
-## Example Pre-built Commands for HERO8 and HERO9
+## Example Pre-built Commands for All Labs Releases
 
 * Set most camera modes with the [**Customizable QR Code Creator**](./custom)
 * Setup your cameras with [**Precision Date and Time**](./precisiontime)
@@ -13,13 +13,13 @@
 * For teaching and security applications add [**Video 'Burn-in' Overlays**](./overlays)
 * Multi-camera Professionals, label you media with [**Altered File Naming**](./basename)
 
-## New Features for HERO9 only
+## New Features for Labs 2021 Releases Only
 
-* Configure your camera for [**Live-streaming**](./rtmp) via QR Code
+* Configure your camera for [**Live-streaming**](./rtmp) via QR Code (HERO8 & 9 only)
 * Use the [**USB Power Trigger**](./usb) to start and stop the camera (dash-cam mode)
 * Set the [**Maximum Shutter Angle**](./maxshut) for greater control over stabilization in low light
 * Start capture using [**IMU Motion Triggers**](./imutrigger) for detecting camera movement
-* Sync multiple cameras' timecode via [**GPS Time Synchronization**](./gpssync)
+* Sync multiple cameras' timecode via [**GPS Time Synchronization**](./gpssync) (HERO9 only)
 * Enable [**Archive Mode**](./archive), a video only capture mode for loaned cameras
 * Set the [**Exposure Lock**](./explock) via QR Code
 * Many more [**extensions**](./extensions) via QR Code
