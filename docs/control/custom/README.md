@@ -30,21 +30,21 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="r3" name="res" value="r27"  > <label for="r3">2.7k  </label>&nbsp;&nbsp;
   <input type="radio" id="r4" name="res" value="r27T" > <label for="r4">2.7k 4x3 </label>&nbsp;&nbsp;
   <input type="radio" id="r5" name="res" value="r4"   > <label for="r5">4k </label>&nbsp;&nbsp;
-  <input type="radio" id="r6" name="res" value="r4T"  > <label for="r6">4k 4x3 </label><br><br>
-  <input type="radio" id="r7" name="res" value="r5"   > <label for="r7">5k </label>&nbsp;&nbsp;
+  <input type="radio" id="r6" name="res" value="r4T"  > <label for="r6">4k 4x3 </label>&nbsp;&nbsp;
+  <input type="radio" id="r7" name="res" value="r5"   > <label for="r7">5k </label><br><br>
 </div>
 
 <div id="settingsFPS">
 <b>FPS Video:</b>&nbsp;&nbsp;<input type="radio" id="p10" name="fps" value="" checked> <label for="p10">not set</label><br>
-  <input type="radio" id="p1" name="fps" value="p24" > <label for="p1">24 </label>&nbsp;<b>NTSC:</b>&nbsp;&nbsp;
-  <input type="radio" id="p2" name="fps" value="p30" > <label for="p2">30 </label>&nbsp;&nbsp;
-  <input type="radio" id="p3" name="fps" value="p60" > <label for="p3">60 </label>&nbsp;&nbsp;
-  <input type="radio" id="p4" name="fps" value="p120"> <label for="p4">120 </label>&nbsp;&nbsp;
-  <input type="radio" id="p5" name="fps" value="p240"> <label for="p5">240 </label>&nbsp;<b>PAL:</b>&nbsp;&nbsp;
-  <input type="radio" id="p6" name="fps" value="p25"> <label for="p6">25 </label>&nbsp;&nbsp;
-  <input type="radio" id="p7" name="fps" value="p50"> <label for="p7">50 </label>&nbsp;&nbsp;
-  <input type="radio" id="p8" name="fps" value="p100"> <label for="p8">100 </label>&nbsp;&nbsp;
-  <input type="radio" id="p9" name="fps" value="p200"> <label for="p9">200 </label><br><br>
+  <input type="radio" id="p1" name="fps" value="p24">  <label for="p1">24 </label>&nbsp;&nbsp;
+  <input type="radio" id="p2" name="fps" value="p25">  <label for="p2">25 </label>&nbsp;&nbsp;
+  <input type="radio" id="p3" name="fps" value="p30">  <label for="p3">30 </label>&nbsp;&nbsp;
+  <input type="radio" id="p4" name="fps" value="p50">  <label for="p4">50 </label>&nbsp;&nbsp;
+  <input type="radio" id="p5" name="fps" value="p60">  <label for="p5">60 </label>&nbsp;&nbsp;
+  <input type="radio" id="p6" name="fps" value="p100"> <label for="p6">100 </label>&nbsp;&nbsp;
+  <input type="radio" id="p7" name="fps" value="p120"> <label for="p7">120 </label>&nbsp;&nbsp;
+  <input type="radio" id="p8" name="fps" value="p200"> <label for="p8">200 </label>&nbsp;&nbsp;
+  <input type="radio" id="p9" name="fps" value="p240"> <label for="p9">240 </label><br><br>
 </div>
 
 <div id="settingsFOV">
