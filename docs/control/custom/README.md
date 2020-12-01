@@ -24,22 +24,23 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="m7" name="mode" value="mTP"> <label for="m7">Timelapse Photo</label><br>
 
 <div id="settingsRES">
-<b>Video Resolution:</b>&nbsp;&nbsp;<input type="radio" id="r7" name="res" value="" checked> <label for="r7">not set</label><br>
+<b>Video Resolution:</b>&nbsp;&nbsp;<input type="radio" id="r8" name="res" value="" checked> <label for="r8">not set</label><br>
   <input type="radio" id="r1" name="res" value="r1080"> <label for="r1">1080p </label>&nbsp;&nbsp;
-  <input type="radio" id="r2" name="res" value="r27"  > <label for="r2">2.7k  </label>&nbsp;&nbsp;
-  <input type="radio" id="r3" name="res" value="r4"   > <label for="r3">4k </label>&nbsp;&nbsp;
-  <input type="radio" id="r4" name="res" value="r1440"> <label for="r4">1440p </label>&nbsp;&nbsp;
-  <input type="radio" id="r5" name="res" value="r27T" > <label for="r5">2.7k 4x3 </label>&nbsp;&nbsp;
+  <input type="radio" id="r2" name="res" value="r1440"> <label for="r2">1440p </label>&nbsp;&nbsp;
+  <input type="radio" id="r3" name="res" value="r27"  > <label for="r3">2.7k  </label>&nbsp;&nbsp;
+  <input type="radio" id="r4" name="res" value="r27T" > <label for="r4">2.7k 4x3 </label>&nbsp;&nbsp;
+  <input type="radio" id="r5" name="res" value="r4"   > <label for="r5">4k </label>&nbsp;&nbsp;
   <input type="radio" id="r6" name="res" value="r4T"  > <label for="r6">4k 4x3 </label><br><br>
+  <input type="radio" id="r7" name="res" value="r5"   > <label for="r7">5k </label>&nbsp;&nbsp;
 </div>
 
 <div id="settingsFPS">
 <b>FPS Video:</b>&nbsp;&nbsp;<input type="radio" id="p10" name="fps" value="" checked> <label for="p10">not set</label><br>
-  <input type="radio" id="p1" name="fps" value="p24" > <label for="p1">24 </label>&nbsp;NTSC:&nbsp;&nbsp;
+  <input type="radio" id="p1" name="fps" value="p24" > <label for="p1">24 </label>&nbsp;<b>NTSC:</b>&nbsp;&nbsp;
   <input type="radio" id="p2" name="fps" value="p30" > <label for="p2">30 </label>&nbsp;&nbsp;
   <input type="radio" id="p3" name="fps" value="p60" > <label for="p3">60 </label>&nbsp;&nbsp;
   <input type="radio" id="p4" name="fps" value="p120"> <label for="p4">120 </label>&nbsp;&nbsp;
-  <input type="radio" id="p5" name="fps" value="p240"> <label for="p5">240 </label>&nbsp;PAL:&nbsp;&nbsp;
+  <input type="radio" id="p5" name="fps" value="p240"> <label for="p5">240 </label>&nbsp;<b>PAL:</b>&nbsp;&nbsp;
   <input type="radio" id="p6" name="fps" value="p25"> <label for="p6">25 </label>&nbsp;&nbsp;
   <input type="radio" id="p7" name="fps" value="p50"> <label for="p7">50 </label>&nbsp;&nbsp;
   <input type="radio" id="p8" name="fps" value="p100"> <label for="p8">100 </label>&nbsp;&nbsp;
@@ -401,7 +402,7 @@ GoPro QR Command: <b id="txt"></b>
 [![google play](../google-play-823.png)](https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
 [![apple app store](../apple-store-823.png)](https://apps.apple.com/us/app/gopro-app/id1518134202)
 
-## version 1.11
+## version 1.12
 
 <script>
 var lastcmd = "";
