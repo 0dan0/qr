@@ -10,7 +10,8 @@
         }
 </style>
 
-# Live-Stream Setup (requires Labs 2021 on HERO8 or HERO9)
+# Live-Stream Setup 
+## Requires Labs 2021 on HERO8 or HERO9
 
 ## Prerequisites for Live-streaming
 1. **Pair with the GoPro mobile app once.** Live-streaming won't work with an out-of-box or factory-reset camera, without connecting with the App first.
