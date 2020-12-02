@@ -35,25 +35,25 @@ QR Command: <b id="qrtext">time</b><br>
  
 So you have a corrupted/unclosed GoPro file. You crashed your drone, and the battery was disconnected before the file was closed, or you ran your car wheel over a recording GoPro, crushing it. If your SD Card survived, the file is likely recoverable using another GoPro. 
 
-1. You need any working GoPro camera, although the same model and firmware version is advised. If your are using Labs Firmware, set the base filename set to the default (qr command: !MBASE="") 
+1. You need any working GoPro camera, although the same model and firmware version is advised. If you're using Labs Firmware and are using Altered file naming (this page's Labs feature), reset the filenaming to the default. 
 
-2. Copy the file you want to repair to your PC.
+2. Copy the file you want to repair to your PC
 
-3. With a working GoPro, record for 10+ seconds then pull the power or battery, while still recording. You want an intentionally unclosed file. The camera will be remember it needs to repair only this file.
+3. With a working GoPro, record for 10+ seconds then pull the power or battery, while still recording. You want an intentionally unclosed file. The camera will remember it needs to repair only this file
 
-4. Add that SD Card to your PC (or Mac) directly (not via camera USB).
+4. Add that SD Card to your PC directly (not via camera USB)
 
 5. Copy the filename of the last MP4 captured. e.g. "GX010358.MP4"
 
-6. Delete this dummy file from the SD Card.
+6. Delete this dummy file from the SD Card
 
-7. Add your previous corrupted (unclosed) file to the SD card, and rename it to the copied name. e.g. If your filename was "Drone03_GX010201.MP4", or just "GH010330.MP4", rename it to "GX010358.MP4" 
+7. Add your previous corrupted (unclosed) file to the SD card, and rename it to the copied name. e.g. If your filename was "Drone03_GX010201.MP4", or just "GH010330.MP4", rename it to "GX010358.MP4" (your last MP4 filename)
 
-8. Insert the SD Card with your corrupted file back into the working GoPro camera.
+8. Insert the SD Card with your corrupted file back into the working GoPro camera
 
-9. Power on the camera, and the "last" file will be repaired.
+9. Power on the camera, and the "last" file will be repaired
 
-10. Once the camera completes the file repair process, you can eject the SD Card and backup the now repaired file.
+10. Once the camera completes the file repair process, you can eject the SD Card and backup and play the now repaired file
 
 
  
