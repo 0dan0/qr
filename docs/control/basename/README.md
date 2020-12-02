@@ -37,19 +37,23 @@ So you have a corrupted/unclosed GoPro file. You crashed your drone, and the bat
 
 1. You need any working GoPro camera, although the same model and firmware version is advised. If your are using Labs Firmware, set the base filename set to the default (qr command: !MBASE="") 
 
-2. Record for 10+ seconds on your working GoPro, then pull the power or battery, while still recording. You want an intentionally unclosed file. The camera will be remember it needs to repair only this file.
+2. Copy the file you want to repair to your PC.
+
+3. With a working GoPro, record for 10+ seconds then pull the power or battery, while still recording. You want an intentionally unclosed file. The camera will be remember it needs to repair only this file.
 
 3. Add that SD Card to your PC (or Mac) directly (not via camera USB).
 
-4. Copy the filename of the last MP4 captured. (e.g. GX010358.MP4)
+4. Copy the filename of the last MP4 captured. (e.g. "GX010358.MP4")
 
-5. Delete this file.
+5. Delete this dummy file.
 
 6. Add your previous corrupted (unclosed) file to the SD card, and rename it to the copied name. (e.g. If your filename was "Drone03_GX010201.MP4", or just "GH010330.MP4", rename it to "GX010358.MP4" )
 
-7. Insert the SD Card back into the camera.
+7. Insert the SD Card with your corrupted file back into the working GoPro camera.
 
-8. Power on the camera, and the "last" captured file will be repaired.
+8. Power on the camera, and the "last" file will be repaired.
+
+9. Once the camera completes the file repair process, you can eject the SD Card and backup the now repair file.
 
 
  
