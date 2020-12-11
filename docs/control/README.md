@@ -9,7 +9,7 @@
 * Schedule your camera to automatically [**Time-lapse Sunsets and Sunrises**](./solartimelapse)
 * Capture only the interesting moments with [**Motion Detection**](./motion)
 * Personalize your cameras with [**Owner Information**](./owner)
-* Experiment with larger chapter sizes with [**12 GB Chapters**](./chapters)
+* Experiment with larger chapter sizes with [**12 GB Chapters**](./chapters)(**HERO8-9 & MAX only**)
 * For teaching and security applications add [**Video 'Burn-in' Overlays**](./overlays)
 * Multi-camera Professionals, label you media with [**Altered File Naming**](./basename)
 
@@ -52,4 +52,4 @@ All setting commands start with a lowercase character, followed by either upperc
 ## Join The [**GoPro Labs Community**](https://community.gopro.com/t5/GoPro-Labs/bd-p/GoProLabs)
 
 
-### ver 1.12
+### ver 1.13
