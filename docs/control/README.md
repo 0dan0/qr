@@ -1,6 +1,6 @@
 # QR Control
 
-## Classic QR Commands for All Labs Cameras
+## Classic QR Commands for Labs Enabled Cameras
 
 ### All Labs Cameras
 * Set most camera modes with the [**Customizable QR Code Creator**](./custom)
