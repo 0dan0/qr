@@ -1,34 +1,31 @@
 # QR Control
 
-## Example Pre-built Commands for All Labs Cameras
-
+## Classic QR Commands for All Labs Cameras
+### All Labs Cameras
 * Set most camera modes with the [**Customizable QR Code Creator**](./custom)
 * Setup your cameras with [**Precision Date and Time**](./precisiontime)
+* Personalize your cameras with [**Owner Information**](./owner)
+* Capture only the interesting moments with [**Motion Detection**](./motion)
 * Start a 24-hour long time-lapse or greater with [**Extra Long Time-lapses**](./longtimelapse)
 * Use your GoPro to time-lapse [**Construction Projects**](./construction)
 * Schedule your camera to automatically [**Time-lapse Sunsets and Sunrises**](./solartimelapse)
-* Capture only the interesting moments with [**Motion Detection**](./motion)
-* Personalize your cameras with [**Owner Information**](./owner)
-
-## Commands for HERO8, HERO9 and MAX
+### HERO8, HERO9 and MAX only
 * Experiment with larger chapter sizes with [**12 GB Chapters**](./chapters)
 * For teaching and security applications add [**Video 'Burn-in' Overlays**](./overlays)
 * Multi-camera Professionals, label you media with [**Altered File Naming**](./basename)
 
-## New Features for Labs 2021 Releases (All Labs Cameras)
-
+## New 2021 QR Commands 
+### All Labs Cameras
+* Start capture using [**IMU Motion Triggers**](./imutrigger) for detecting camera movement
 * Use the [**USB Power Trigger**](./usb) to start and stop the camera (dash-cam mode)
 * Set the [**Maximum Shutter Angle**](./maxshut) for greater control over stabilization in low light
-* Start capture using [**IMU Motion Triggers**](./imutrigger) for detecting camera movement
-* Enable [**Archive Mode**](./archive), a video only capture mode for loaned cameras
 * Set the [**Exposure Lock**](./explock) via QR Code
+* Enable [**Archive Mode**](./archive), a video only capture mode for loaned cameras
 * Many more [**extensions**](./extensions) via QR Code
-
-## New 2021 Commands for HERO8 and HERO9
+### HERO8 and HERO9 only
 * Configure your camera for [**Live-streaming**](./rtmp) via QR Code
-
-## New 2021 Commands for HERO9 only
-* Sync multiple cameras' timecode via [**GPS Time Synchronization**](./gpssync) 
+### HERO9 only
+* Sync multiple cameras' timecode via [**GPS Time Synchronization**](./gpssync)
 
 
 ## Mobile App QR Generation
