@@ -1,8 +1,6 @@
 # QR Control
 
 ## Classic QR Commands for Labs Enabled Cameras
-
-### All Labs Cameras
 * Set most camera modes with the [**Customizable QR Code Creator**](./custom)
 * Setup your cameras with [**Precision Date and Time**](./precisiontime)
 * Personalize your cameras with [**Owner Information**](./owner)
@@ -16,9 +14,7 @@
 * For teaching and security applications add [**Video 'Burn-in' Overlays**](./overlays)
 * Multi-camera Professionals, label you media with [**Altered File Naming**](./basename)
 
-## New 2021 QR Commands 
-
-### All Labs Cameras
+## New Labs QR Commands for 2021 
 * Start capture using [**IMU Motion Triggers**](./imutrigger) for detecting camera movement
 * Use the [**USB Power Trigger**](./usb) to start and stop the camera (dash-cam mode)
 * Set the [**Maximum Shutter Angle**](./maxshut) for greater control over stabilization in low light
