@@ -32,7 +32,7 @@
 
 ## Forum Discussions 
 
-Please join The [**GoPro Labs Community**](https://community.gopro.com/t5/GoPro-Labs/bd-p/GoProLabs)
+Please join the [**GoPro Labs Community**](https://community.gopro.com/t5/GoPro-Labs/bd-p/GoProLabs)
 
 ## The Commands Under The Hood 
 
