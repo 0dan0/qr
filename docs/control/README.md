@@ -13,7 +13,7 @@
   * For teaching and security applications add [**Video 'Burn-in' Overlays**](./overlays)
   * Multi-camera Professionals, label you media with [**Altered File Naming**](./basename)
 
-## New Labs QR Commands for 2021 
+## Latest Labs QR Commands (requires 2021 firmware) 
 * Start capture using [**IMU Motion Triggers**](./imutrigger) for detecting camera movement
 * Use the [**USB Power Trigger**](./usb) to start and stop the camera (dash-cam mode)
 * Set the [**Maximum Shutter Angle**](./maxshut) for greater control over stabilization in low light
