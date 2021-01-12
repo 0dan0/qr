@@ -87,7 +87,8 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="fpswarp3"    name="fpswarp" value="p3"> <label for="fpswarp3">10X </label>&nbsp;&nbsp;
   <input type="radio" id="fpswarp4"    name="fpswarp" value="p2"> <label for="fpswarp4">15X </label>&nbsp;&nbsp;
   <input type="radio" id="fpswarp5"    name="fpswarp" value="p1"> <label for="fpswarp5">30X </label>&nbsp;&nbsp;
-  <input type="radio" id="fpswarp6"    name="fpswarp" value="" checked> <label for="fpswarp6">not set</label><br><br>
+  <input type="radio" id="fpswarp6"    name="fpswarp" value="pA"> <label for="fpswarp6">Auto </label>&nbsp;&nbsp;
+  <input type="radio" id="fpswarp7"    name="fpswarp" value="" checked> <label for="fpswarp7">not set</label><br><br>
 </div>
  
  
