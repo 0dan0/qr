@@ -8,10 +8,9 @@
 * Start a 24-hour long time-lapse or greater with [**Extra Long Time-lapses**](./longtimelapse)
 * Use your GoPro to time-lapse [**Construction Projects**](./construction)
 * Schedule your camera to automatically [**Time-lapse Sunsets and Sunrises**](./solartimelapse)
-<br>**HERO8, HERO9 and MAX Only Features**
-  * Experiment with larger chapter sizes with [**12 GB Chapters**](./chapters)
-  * For teaching and security applications add [**Video 'Burn-in' Overlays**](./overlays)
-  * Multi-camera Professionals, label you media with [**Altered File Naming**](./basename)
+* **HERO8/9 and MAX Only** Experiment with larger chapter sizes with [**12 GB Chapters**](./chapters)
+* **HERO8/9 and MAX Only** For teaching and security applications add [**Video 'Burn-in' Overlays**](./overlays)
+* **HERO8/9 and MAX Only** Multi-camera users, label you media with [**Altered File Naming**](./basename)
 
 ## Latest Labs QR Commands (requires 2021 firmware) 
 * Start capture using [**IMU Motion Triggers**](./imutrigger) for detecting camera movement
