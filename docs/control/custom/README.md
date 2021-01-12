@@ -154,6 +154,21 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
 	<input type="radio" id="hind3" name="hind" value="hS2"> <label for="hind3">30s</label>&nbsp;&nbsp;&nbsp;
 	<input type="radio" id="hind4" name="hind" value="" checked> <label for="hind4">not set</label><br><br>
 </div>
+					
+<div id="settingsDuration">
+<b>Duration Limit (HERO9):</b>&nbsp;&nbsp;
+	<input type="radio" id="dur1" name="dur" value="dR0"> <label for="dur1">Off</label>&nbsp;&nbsp;
+	<input type="radio" id="dur2" name="dur" value="dR15"> <label for="dur2">15s</label>&nbsp;&nbsp;
+	<input type="radio" id="dur3" name="dur" value="dR30"> <label for="dur3">30s</label>&nbsp;&nbsp;
+	<input type="radio" id="dur4" name="dur" value="dR60"> <label for="dur4">1min</label>&nbsp;&nbsp;
+	<input type="radio" id="dur5" name="dur" value="dR300"> <label for="dur5">5min</label>&nbsp;&nbsp;
+	<input type="radio" id="dur6" name="dur" value="dR900"> <label for="dur6">15min</label>&nbsp;&nbsp;
+	<input type="radio" id="dur7" name="dur" value="dR1800"> <label for="dur7">30min</label>&nbsp;&nbsp;
+	<input type="radio" id="dur8" name="dur" value="dR3600"> <label for="dur8">1hour</label>&nbsp;&nbsp;
+	<input type="radio" id="dur9" name="dur" value="dR7200"> <label for="dur9">2hour</label>&nbsp;&nbsp;
+	<input type="radio" id="dur10" name="dur" value="dR9999"> <label for="dur10">3hour</label>&nbsp;&nbsp;
+	<input type="radio" id="dur11" name="dur" value="" checked> <label for="dur11">not set</label><br><br>
+</div>
 
 <div id="settingsPhotoRAW">
 <b>Photo Properties:</b><br>
@@ -463,6 +478,7 @@ function startTime() {
 	dset("settingsRESTLV", false);
 	dset("settingsVideo", false);
 	dset("settingsHindsight", false);
+	dset("settingsDuration", false);
 	dset("settingsPhotoRAW", false);
 	dset("settingsPT", false);
 	dset("settingsBurst", false);
@@ -523,12 +539,14 @@ function startTime() {
 		dset("settingsFOV", true);
 		dset("settingsVideo", true);
 		dset("settingsHindsight", true);
+		dset("settingsDuration", true);
 		dset("settingsPT", true);
 		dset("settingsAUDT",true);
 		break;
 		
 		case 2: //Timelapse Video
-		dset("settingsTimelapse", true);		
+		dset("settingsTimelapse", true);	
+		dset("settingsDuration", true);	
 		dset("settingsRESTLV", true);
 		dset("settingsTLVFOV", true);
 		dset("settingsPT", true);
@@ -536,6 +554,7 @@ function startTime() {
 		
 		case 3: //TimeWarp Video
 		dset("settingsTimewarp", true);		
+		dset("settingsDuration", true);
 		dset("settingsRESTLV", true);
 		dset("settingsTLVFOV", true);
 		dset("settingsPT", true);
