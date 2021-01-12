@@ -22,7 +22,7 @@
 * Many more [**extensions**](./extensions) via QR Code
 <br>   **HERO8 and HERO9 only**
   * Configure your camera for [**Live-streaming**](./rtmp) via QR Code
-<br>   **HERO9 only**
+<br>**HERO9 only**
   * Sync multiple cameras' timecode via [**GPS Time Synchronization**](./gpssync)
 
 ## Mobile App for QR Generation
