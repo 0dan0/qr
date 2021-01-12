@@ -34,6 +34,10 @@
 [![google play](google-play-823.png)](https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
 [![apple app store](apple-store-823.png)](https://apps.apple.com/us/app/gopro-app/id1518134202)
 
+## Forum Discussions 
+
+Please join The [**GoPro Labs Community**](https://community.gopro.com/t5/GoPro-Labs/bd-p/GoProLabs)
+
 ## The Commands Under The Hood 
 
 On QR Control Instructions page, one of the first demo QR Code was surfing example, using 1440p and 60fps with some custom Protune settings. The QR Code used this command string: **mVr1440p60tw55x.5**. While some of that seems like 1440p60, here is a full breakdown of how that command works:
@@ -52,8 +56,6 @@ All setting commands start with a lowercase character, followed by either upperc
 ## The Full List of [**Settings Commands**](./settings)
 
 ## The Full List of [**Action Commands**](./actions)
-
-## Join The [**GoPro Labs Community**](https://community.gopro.com/t5/GoPro-Labs/bd-p/GoProLabs)
 
 
 ### ver 1.13
