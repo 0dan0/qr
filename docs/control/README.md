@@ -8,7 +8,7 @@
 * Start a 24-hour long time-lapse or greater with [**Extra Long Time-lapses**](./longtimelapse)
 * Use your GoPro to time-lapse [**Construction Projects**](./construction)
 * Schedule your camera to automatically [**Time-lapse Sunsets and Sunrises**](./solartimelapse)
-<br>   **HERO8, HERO9 and MAX Only Features**
+<br>**HERO8, HERO9 and MAX Only Features**
   * Experiment with larger chapter sizes with [**12 GB Chapters**](./chapters)
   * For teaching and security applications add [**Video 'Burn-in' Overlays**](./overlays)
   * Multi-camera Professionals, label you media with [**Altered File Naming**](./basename)
@@ -20,9 +20,8 @@
 * Set the [**Exposure Lock**](./explock) via QR Code
 * Enable [**Archive Mode**](./archive), a video only capture mode for loaned cameras
 * Many more [**extensions**](./extensions) via QR Code
-<br>   **HERO8 and HERO9 Only**
-  * Configure your camera for [**Live-streaming**](./rtmp) via QR Code
-  * **HERO9 only** - Sync multiple cameras' timecode via [**GPS Time Synchronization**](./gpssync)
+* **HERO8 and HERO9 Only** Configure your camera for [**Live-streaming**](./rtmp) via QR Code
+* **HERO9 Only** - Sync multiple cameras' timecode via [**GPS Time Synchronization**](./gpssync)
 
 ## Mobile App for QR Generation
 
