@@ -25,7 +25,6 @@
 * **HERO9 only**
 - Sync multiple cameras' timecode via [**GPS Time Synchronization**](./gpssync)
 
-
 ## Mobile App QR Generation
 
 [![google play](google-play-823.png)](https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
