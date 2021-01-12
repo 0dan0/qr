@@ -681,6 +681,7 @@ function startTime() {
 	
 	cmd = dcmd(cmd,"pt"); //protune
 	cmd = dcmd(cmd,"eis"); //eis
+	cmd = dcmd(cmd,"hind"); //hindsight
 	cmd = dcmd(cmd,"all"); //auto low light	
 	cmd = dcmd(cmd,"audt"); //audio control
 	
