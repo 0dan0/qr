@@ -147,6 +147,14 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
 	<input type="radio" id="eis5" name="eis" value="" checked> <label for="eis5">not set</label><br><br>
 </div>
 
+<div id="settingsHindsight">
+<b>Hindsight (HERO9):</b>&nbsp;&nbsp;
+	<input type="radio" id="hind1" name="hind" value="hS0"> <label for="hind1">Off</label>&nbsp;&nbsp;&nbsp;
+	<input type="radio" id="hind2" name="hind" value="hS1"> <label for="hind2">15s</label>&nbsp;&nbsp;&nbsp;
+	<input type="radio" id="hind3" name="hind" value="hS2"> <label for="hind3">30s</label>&nbsp;&nbsp;&nbsp;
+	<input type="radio" id="hind4" name="hind" value="" checked> <label for="hind4">not set</label><br><br>
+</div>
+
 <div id="settingsPhotoRAW">
 <b>Photo Properties:</b><br>
   <input type="radio" id="raw1" name="raw" value="rW"> <label for="raw1">Raw off </label>&nbsp;&nbsp;
@@ -454,6 +462,7 @@ function startTime() {
 	dset("settingsTLVFOV", false);
 	dset("settingsRESTLV", false);
 	dset("settingsVideo", false);
+	dset("settingsHindsight", false);
 	dset("settingsPhotoRAW", false);
 	dset("settingsPT", false);
 	dset("settingsBurst", false);
@@ -513,6 +522,7 @@ function startTime() {
 		dset("settingsFPS", true);
 		dset("settingsFOV", true);
 		dset("settingsVideo", true);
+		dset("settingsHindsight", true);
 		dset("settingsPT", true);
 		dset("settingsAUDT",true);
 		break;
