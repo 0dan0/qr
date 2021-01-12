@@ -20,7 +20,7 @@
 * Set the [**Exposure Lock**](./explock) via QR Code
 * Enable [**Archive Mode**](./archive), a video only capture mode for loaned cameras
 * Many more [**extensions**](./extensions) via QR Code
-* **HERO8 and HERO9 Only** Configure your camera for [**Live-streaming**](./rtmp) via QR Code
+* **HERO8 and HERO9 Only** - Configure your camera for [**Live-streaming**](./rtmp) via QR Code
 * **HERO9 Only** - Sync multiple cameras' timecode via [**GPS Time Synchronization**](./gpssync)
 
 ## Mobile App for QR Generation
