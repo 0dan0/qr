@@ -16,7 +16,7 @@
 	  
 QR Command: <b id="qrtext"></b><br>
 	  
-## version 0.90
+## version 0.91
 
 <script>
        
