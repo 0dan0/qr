@@ -18,7 +18,7 @@ QR Command: <b id="qrtext"></b><br>
 
 Manual Command: <input type="text" id="addcmd" value="">
 
-Share QR Code urls in the format: https://gopro.github.io/labs/control/set/**?cmd=YourQRCodeText**
+Share this QR Code as: <b id="urltext"></b> 
 
 ## version 1.00
 
@@ -72,6 +72,8 @@ function timeLoop()
   if(changed === true)
   {
 	document.getElementById("qrtext").innerHTML = cmd;
+	document.getElementById("urltext").innerHTML = window.location.href  + "?cmd=" + cmd;
+
 	changed = false;
   }
 	
