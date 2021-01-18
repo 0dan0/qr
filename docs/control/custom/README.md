@@ -423,7 +423,7 @@ Additional Commands: <input type="text" id="addcmd" value="">
 
 GoPro QR Command: <b id="txt"></b>
 
-Share this QR Code as: <b id="urltext"></b> 
+Share this QR Code as a URL: <b id="urltext"></b> 
 
 <button onclick="myReloadFunction()">Reset page</button>
 
