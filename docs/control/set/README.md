@@ -80,7 +80,5 @@ function myReloadFunction() {
 makeQR();
 timeLoop();
 
-makeQR();
-
 </script>
 
