@@ -28,7 +28,9 @@ var cmd = "";
 var lasttimecmd = ""; 
 let urlParams = new URLSearchParams(document.location.search);
 cmd = urlParams.get('cmd')
-
+if(cmd.length === 0)
+	cmd = "\"Hello World\"";
+	
 document.getElementById("qrtext").innerHTML = cmd;
 
 function makeQR() 
