@@ -26,13 +26,15 @@ var cmd = "\Hello \World";
 let urlParams = new URLSearchParams(document.location.search);
 cmd = urlParams.get('cmd')
 
+document.getElementById("qrtext").innerHTML = cmd;
+
 function makeQR() 
 {	
   if(once === true)
   {
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
-      text : "\"Load MP4 or JPG\"",
+      text : cmd,
       width : 360,
       height : 360,
       correctLevel : QRCode.CorrectLevel.M
@@ -41,32 +43,11 @@ function makeQR()
   }
 }
 
-function timeLoop()
-{  
-  qrcode.clear(); 
-  qrcode.makeCode(cmd);
-  
-  if(cmd != lasttimecmd)
-  {
-	changed = true;
-	lasttimecmd = cmd;
-  }
-	
-  if(changed === true)
-  {
-	document.getElementById("qrtext").innerHTML = cmd;
-	changed = false;
-  }
-	
-  var t = setTimeout(timeLoop, 100);
-}
-
 function myReloadFunction() {
   location.reload();
 }
 
 makeQR();
-timeLoop();
 
 </script>
 
