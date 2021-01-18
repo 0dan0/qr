@@ -20,7 +20,7 @@ Manual Command: <input type="text" id="addcmd" value="">
 
 Share this QR Code as: <b id="urltext"></b> 
 
-[more GoPro Labs QR Controls](..)
+More [GoPro Labs QR Controls](..)
 
 
 ## version 1.01
