@@ -17,7 +17,9 @@
 QR Command: <b id="qrtext"></b><br>
 
 Manual Command: <input type="text" id="addcmd" value="">
-	  
+
+Share QR Code urls in the format: https://gopro.github.io/labs/control/set/**?cmd=YourQRCodeText**
+
 ## version 1.02
 
 <script>
