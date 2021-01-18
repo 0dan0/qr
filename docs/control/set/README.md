@@ -24,12 +24,13 @@ Manual Command: <input type="text" id="addcmd" value="">
        
 var once = true;
 var qrcode;
-var cmd = ""; 
+var cmd = "\"Hello World\"";
+var cmdurl;
 var lasttimecmd = ""; 
 let urlParams = new URLSearchParams(document.location.search);
-cmd = urlParams.get('cmd')
-if(cmd.length === 0)
-	cmd = "\"Hello World\"";
+cmdurl = urlParams.get('cmd')
+if(cmdurl !== null)
+	cmd = cmdurl;
 	
 document.getElementById("qrtext").innerHTML = cmd;
 
