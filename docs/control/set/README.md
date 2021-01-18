@@ -30,6 +30,7 @@ let urlParams = new URLSearchParams(document.location.search);
 cmd = urlParams.get('cmd')
 
 document.getElementById("qrtext").innerHTML = cmd;
+document.getElementById("addcmd").innerHTML = cmd;
 
 function makeQR() 
 {	
