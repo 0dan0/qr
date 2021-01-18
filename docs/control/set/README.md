@@ -18,7 +18,7 @@ QR Command: <b id="qrtext"></b><br>
 
 Manual Command: <input type="text" id="addcmd" value="">
 	  
-## version 1.01
+## version 1.00
 
 <script>
        
@@ -30,7 +30,6 @@ let urlParams = new URLSearchParams(document.location.search);
 cmd = urlParams.get('cmd')
 
 document.getElementById("qrtext").innerHTML = cmd;
-document.getElementById("addcmd").innerHTML = cmd;
 
 function makeQR() 
 {	
