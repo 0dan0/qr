@@ -20,7 +20,7 @@ Manual Command: <input type="text" id="addcmd" value="">
 
 Share this QR Code as: <b id="urltext"></b> 
 
-## version 1.00
+## version 1.01
 
 <script>
        
@@ -72,7 +72,7 @@ function timeLoop()
   if(changed === true)
   {
 	document.getElementById("qrtext").innerHTML = cmd;
-	document.getElementById("urltext").innerHTML = window.location.href  + "?cmd=" + cmd;
+	document.getElementById("urltext").innerHTML = location.protocol + '//' + location.host + location.pathname + "?cmd=" + cmd;
 
 	changed = false;
   }
