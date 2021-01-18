@@ -20,7 +20,7 @@ Manual Command: <input type="text" id="addcmd" value="">
 
 Share QR Code urls in the format: https://gopro.github.io/labs/control/set/**?cmd=YourQRCodeText**
 
-## version 1.02
+## version 1.00
 
 <script>
        
