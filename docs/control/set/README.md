@@ -10,7 +10,7 @@
         }
 </style>
 
-# Fast QR Control
+# QR Control Quick Command
       
 <div id="qrcode"></div>
 	  
@@ -22,7 +22,7 @@ QR Command: <b id="qrtext"></b><br>
        
 var once = true;
 var qrcode;
-var cmd = urlParams.get('cmd')
+var cmd = "mv"; //urlParams.get('cmd')
 
 function makeQR() 
 {	
