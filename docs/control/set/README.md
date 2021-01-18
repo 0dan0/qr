@@ -18,7 +18,7 @@ QR Command: <b id="qrtext"></b><br>
 
 Manual Command: <input type="text" id="addcmd" value="">
 	  
-## version 1.01
+## version 1.02
 
 <script>
        
