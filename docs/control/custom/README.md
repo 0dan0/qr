@@ -1094,7 +1094,7 @@ function startTime() {
 		if(cmd != lasttimecmd)
 		{
 			document.getElementById('txt').innerHTML = cmd;	
-			document.getElementById("urltext").innerHTML = window.location.href.split('?')[0] + "?cmd=" + cmd;			
+			document.getElementById("urltext").innerHTML = "https://gopro.github.io/labs/control/set/?cmd=" + cmd;			
 			lasttimecmd = cmd;
 		}		
 		
