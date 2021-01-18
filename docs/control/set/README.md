@@ -23,8 +23,8 @@ QR Command: <b id="qrtext"></b><br>
 var once = true;
 var qrcode;
 var cmd = "\Hello \World"; 
-let urlParams = new URLSearchParams(document.location.search.substring(1));
-urlParams.get('cmd')
+let urlParams = new URLSearchParams(document.location.search);
+cmd = urlParams.get('cmd')
 
 function makeQR() 
 {	
