@@ -423,6 +423,8 @@ Additional Commands: <input type="text" id="addcmd" value="">
 
 GoPro QR Command: <b id="txt"></b>
 
+Share this QR Code as: <b id="urltext"></b> 
+
 <button onclick="myReloadFunction()">Reset page</button>
 
 [Learn more](..) on QR Control
@@ -1091,7 +1093,8 @@ function startTime() {
 		
 		if(cmd != lasttimecmd)
 		{
-			document.getElementById('txt').innerHTML = cmd;		
+			document.getElementById('txt').innerHTML = cmd;	
+			document.getElementById("urltext").innerHTML = window.location.href.split('?')[0] + "?cmd=" + cmd;			
 			lasttimecmd = cmd;
 		}		
 		
