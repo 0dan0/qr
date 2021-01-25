@@ -107,11 +107,11 @@ function timeLoop()
 	
 	document.getElementById("perdaytext").innerHTML = perday;	
 	
-	var rtxt = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
+	var rtxt = pad(restarthourstime, 2) + ":" + pad(restartminstime, 2);
 	var stxt = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
 	var etxt = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 	
-	document.getElementById("starttext").innerHTML = stxt;
+	document.getElementById("starttext").innerHTML = rtxt;
 	document.getElementById("endtext").innerHTML = etxt;
 	
 	var d = 406 / perday;
