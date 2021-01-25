@@ -95,7 +95,7 @@ function timeLoop()
 	var perday = parseInt(document.getElementById("tlday").value);
 	
 	var restarthourstime = Math.trunc(startmins / 60);
-	var restartminstime = startmins - starthourstime * 60;
+	var restartminstime = startmins - restarthourstime * 60;
 	
 	startmins = startmins - 1;
 	var starthourstime = Math.trunc(startmins / 60);
@@ -122,7 +122,7 @@ function timeLoop()
 	
 	document.getElementById("daystext").innerHTML = dd;
 		
-	var interval = Math.trunc(((endmins - startmins)*60 / perday) - 15);
+	var interval = Math.trunc(((endmins - restartmins)*60 / perday) - 15);
 	if(interval < 30) interval = 30;
 	
 	cmd = "mPdP>" + stxt + "<" + etxt + "!" + interval + "SQ~" + "!" + rtxt + "S!1R";
