@@ -97,13 +97,11 @@ function timeLoop()
 	var restarthourstime = Math.trunc(startmins / 60);
 	var restartminstime = startmins - restarthourstime * 60;
 	
-	startmins = startmins - 1;
-	var starthourstime = Math.trunc(startmins / 60);
-	var startminstime = startmins - starthourstime * 60;	
+	var starthourstime = Math.trunc((startmins-1) / 60);
+	var startminstime = (startmins-1) - starthourstime * 60;	
 	
 	var endhourstime = Math.trunc(endmins / 60);
 	var endminstime = endmins - endhourstime * 60;
-	
 	
 	document.getElementById("perdaytext").innerHTML = perday;	
 	
@@ -122,42 +120,10 @@ function timeLoop()
 	
 	document.getElementById("daystext").innerHTML = dd;
 		
-	var interval = Math.trunc(((endmins - restartmins)*60 / perday) - 15);
+	var interval = Math.trunc(((endmins - startmins)*60 / perday) - 15);
 	if(interval < 30) interval = 30;
 	
 	cmd = "mPdP>" + stxt + "<" + etxt + "!" + interval + "SQ~" + "!" + rtxt + "S!1R";
-	
-	/*
-	if(document.getElementById("setdatetime") !== null)
-    {
-		if(document.getElementById("setdatetime").checked === true)
-		{
-			var today;
-			var yy;
-			var mm;
-			var dd;
-			var h;
-			var m;
-			var s; 
-			today = new Date();
-					
-			yy = today.getFullYear() - 2000;
-			mm = today.getMonth() + 1;
-			dd = today.getDate();
-			h = today.getHours();
-			m = today.getMinutes();
-			s = today.getSeconds();
-				
-			yy = checkTime(yy);
-			mm = checkTime(mm);
-			dd = checkTime(dd);
-			h = checkTime(h);
-			m = checkTime(m);
-			s = checkTime(s);
-			
-			cmd = "oT" + yy + mm + dd + h + m + s + cmd;
-		}
-	}*/
   }
   
   qrcode.clear(); 
