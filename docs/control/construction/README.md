@@ -46,7 +46,7 @@ As stated above, most Lithium Ion USB power-banks will shut-off early, even when
 The second option is a USB keep alive device that prevents your USB power bank from shutting down.  Examples: from [sotabeams.co.uk](https://www.sotabeams.co.uk/usb-battery-pack-keep-alive-load/) and from [tindie.com](https://www.tindie.com/products/overz/smart-power-bank-keep-alive/)
 
 	
-## ver 1.03
+## ver 1.04
 
 [BACK](..)
 
@@ -94,8 +94,12 @@ function timeLoop()
 	var endmins = startmins + end*10;
 	var perday = parseInt(document.getElementById("tlday").value);
 	
+	var restarthourstime = Math.trunc(startmins / 60);
+	var restartminstime = startmins - starthourstime * 60;
+	
+	startmins = startmins - 1;
 	var starthourstime = Math.trunc(startmins / 60);
-	var startminstime = startmins - starthourstime * 60;
+	var startminstime = startmins - starthourstime * 60;	
 	
 	var endhourstime = Math.trunc(endmins / 60);
 	var endminstime = endmins - endhourstime * 60;
@@ -103,6 +107,7 @@ function timeLoop()
 	
 	document.getElementById("perdaytext").innerHTML = perday;	
 	
+	var rtxt = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
 	var stxt = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
 	var etxt = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 	
@@ -120,7 +125,7 @@ function timeLoop()
 	var interval = Math.trunc(((endmins - startmins)*60 / perday) - 15);
 	if(interval < 30) interval = 30;
 	
-	cmd = "mPdP>" + stxt + "<" + etxt + "!" + interval + "SQ~" + "!" + stxt + "S!1R";
+	cmd = "mPdP>" + stxt + "<" + etxt + "!" + interval + "SQ~" + "!" + rtxt + "S!1R";
 	
 	/*
 	if(document.getElementById("setdatetime") !== null)
