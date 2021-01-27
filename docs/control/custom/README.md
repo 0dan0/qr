@@ -182,7 +182,8 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
 <b>Audio Type:</b>&nbsp;&nbsp;
   <input type="radio" id="audt1" name="audt" value="" checked> <label for="audt1">auto </label>&nbsp;&nbsp;
   <input type="radio" id="audt2" name="audt" value="aS"> <label for="audt2">Stereo </label>&nbsp;&nbsp;
-  <input type="radio" id="audt3" name="audt" value="aW"> <label for="audt3">Wind</label><br><br>
+  <input type="radio" id="audt3" name="audt" value="aW"> <label for="audt3">Wind</label>&nbsp;&nbsp;
+  <input type="radio" id="audt4" name="audt" value="a"> <label for="audt4">Off</label><br><br>
 </div> 
 
 <div id="settingsPT">
@@ -434,7 +435,7 @@ Share this QR Code as a URL: <b id="urltext"></b>
 [![google play](../google-play-823.png)](https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
 [![apple app store](../apple-store-823.png)](https://apps.apple.com/us/app/gopro-app/id1518134202)
 
-## version 1.21
+## version 1.22
 
 <script>
 var lastcmd = "";
