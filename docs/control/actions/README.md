@@ -71,9 +71,11 @@ The geek factor is highest in this section.  This is not a Turing-complete langu
 * **!SAVEname=script**  e.g. !SAVEdaily=dPmP!12:00S!Ldaily - a save script called ‘daily’ that repeatedly shots one photo every day at noon. 
 * **!Lname**  e.g. !LnightLapse - load add run a script called nightLapse
 * **oAxxxx=1** e.g. oAMETA=1  --  to implement a basic counter in metadata
-* **\<timeCMD**  e.g. \<09:00!30R!Lother - if current time is less than 9am, wait 30mins and loop, otherwise load script called ‘other’.
-* **\>timeCMD** e.g. !SM9\>22:00!R - do motion detection until 10PM, then stop
-* **\>timeA\<timeBcmdTrue~cmdFalse** e.g. mP>06:00<20:00!180SQ~!06:00S!R - If time is between 06:00 and 20:00 take a photo in 180 seconds else start a 6am, repeat.
+* **\<**time**CMD**  e.g. \<09:00!30R!Lother - if current time is less than 9am, wait 30mins and loop, otherwise load script called ‘other’.
+* **\>**time**CMD** e.g. !SM9\>22:00!R - do motion detection until 10PM, then stop
+* **\>**timeA**\<**timeB**cmdTrue~cmdFalse** e.g. mP>06:00<20:00!180SQ~!06:00S!R - If time is between 06:00 and 20:00 take a photo in 180 seconds else start a 6am, repeat.
+* **\>**timeA**\<**timeB**cmdTrue~cmdFalse** e.g. mP>06:00<20:00!180SQ~!06:00S!R - If time is between 06:00 and 20:00 take a photo in 180 seconds else start a 6am, repeat.
+* **\>**timeA**\<**timeB**cmdTrue+cmdTrue~cmdFalse+cmdFalse** e.g. mP>06:00<20:00"wait 3m"+!180SQ~"wait tomorrow"+!06:00S!R - The '+' characters allow you to extend the conditional command, like changing mode before the action.
 * **"any text"** e.g. mV"Video\nMode"!S!5E!4NmP"Photo\nMode"!S!5R - this will display "Video Mode" and "Photo Mode" when switch to those modes.  
 
 Known Issue: The saved and load scripts can't support conditionals, as the '<' and '>' characters, nor are " characters supported in scripts. This oversight will hopefully be addressed in a future Labs build. So scripts are currently limited to a simple series of actions. The conditionals are functioning correction within QR Code reading. So commands/scripts that use conditionals will be limited to around 200 characters in a single QR Code.
