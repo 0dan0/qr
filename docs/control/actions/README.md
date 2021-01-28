@@ -16,17 +16,17 @@
 
 ## Full List the Action Commands
 
-* **!\*time*S** - Start at exactly **time** if in hh:mm form, or after n seconds. 
-* **!\*time*SQ** - Start Quickly at approximately **time** if in hh:mm form, or after n seconds.  
-* **!\*time*E** - End at **time** if in hh:mm form, or after n seconds.
-* **!\*time*R** - Repeat the whole command.
-* **!\*time*N** - No Action until exact **time**, useful if you just need a pause.
-* **!\*time*NQ** - No Action until at approximately **time**.
-* **!\*time*O** - Off - shutdown the camera.
-* **!\*time*SMs-t** - Start Motion detection with start sensitivity 's' and stop sensitivity 't' -- 't' field is optional.
-* **!\*time*SMsDdMmHh** - Start Motion detection with sensitivity 's', Delay of 'd', Mask of 'm' and Hold for 'h' seconds (D,M and H fields are all optional.)
-* **!\*time*SKs-t** - Start Speed capture at threshold 's' km/h and stop at 't' km/h -- 't' field is optional.
-* **!\*time*SKsHh** - Start Speed capture at threshold 's' km/h and Hold for 'h' seconds (H fields are all optional.)
+* **!*time*S** - Start at exactly **time** if in hh:mm form, or after n seconds. 
+* **!*time*SQ** - Start Quickly at approximately **time** if in hh:mm form, or after n seconds.  
+* **!*time*E** - End at **time** if in hh:mm form, or after n seconds.
+* **!*time*R** - Repeat the whole command.
+* **!*time*N** - No Action until exact **time**, useful if you just need a pause.
+* **!*time*NQ** - No Action until at approximately **time**.
+* **!*time*O** - Off - shutdown the camera.
+* **!*time*SMs-t** - Start Motion detection with start sensitivity 's' and stop sensitivity 't' -- 't' field is optional.
+* **!*time*SMsDdMmHh** - Start Motion detection with sensitivity 's', Delay of 'd', Mask of 'm' and Hold for 'h' seconds (D,M and H fields are all optional.)
+* **!*time*SKs-t** - Start Speed capture at threshold 's' km/h and stop at 't' km/h -- 't' field is optional.
+* **!*time*SKsHh** - Start Speed capture at threshold 's' km/h and Hold for 'h' seconds (H fields are all optional.)
 
 ## examples:
 
@@ -40,8 +40,8 @@
 
 ## Storing metadata (Permanent, survives power off)
 
-* **!M\<fourcc\>”string”**
-* **!M\<fourcc\>=Number metadata**
+* **!M*fourcc*”string”**
+* **!M*fourcc*=Number metadata**
 
 Example for display the owner’s name
 **!MOWNR=”Joe Bloggs”**
@@ -59,8 +59,8 @@ As these are a semi-permanent addition to your camera, you can erase all your pe
 
 ## Storing metadata (Temporarily, until power off)
 
-* **oM\<fourcc\>”string”**  
-* **oM\<fourcc\>=Number metadata**
+* **oM*fourcc*”string”**  
+* **oM*fourcc*=Number metadata**
 
 ## Scripting
 
