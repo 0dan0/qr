@@ -97,7 +97,7 @@ EV Compensation:
  * **x-1.5** - EV -1.5
  * **x1.5** - EV +1.5
  * **x-2** - EV -2.0 
- * **x2** - EV +2.0
+ * **x2** - EV +2.0<br>
  on some cameras models you can extend this to larger amounts (beyond the UIs support).
  * **x-5** - EV -5.0
  * **x3** - EV +3.0
