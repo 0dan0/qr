@@ -16,7 +16,7 @@
 	  
 QR Command: <b id="qrtext"></b><br>
 
-Manual Command: <input type="text" style="width: 300px;" id="addcmd" value="">
+Manual Command: <input type="text" style="width: 500px;" id="addcmd" value="">
 
 Share this QR Code as: <b id="urltext"></b> 
 
