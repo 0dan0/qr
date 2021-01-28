@@ -31,6 +31,8 @@
 ## examples:
 
 * **!S** - start now  
+* **!07:00S** - start at precisely 7am  
+* **!300SQ** - start in approximately 300 seconds.  
 * **!60E** - end after 60 seconds (End commands are not used for photos.)
 * **!2R** - repeat after 2 seconds
 * **!s-01:00S** - start one hour before sunset
@@ -59,7 +61,7 @@ As these are a semi-permanent addition to your camera, you can erase all your pe
 
 ## Storing metadata (Temporarily, until power off)
 
-* **oM**fourcc**”string”**  
+* **oM**fourcc**=”string”**  
 * **oM**fourcc**=Number metadata**
 
 ## Scripting
