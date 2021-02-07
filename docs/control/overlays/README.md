@@ -78,11 +78,11 @@ QR Command: <b id="qrtext">time</b><br>
 
 Cool Tips:
 - Metadata overlays work great with live-streaming.  This was its original intended function. 
-- Overlays can be changed mid capture, it is one of the few modes that QR Code reading is active while recording. Example use: When live streaming an endurance auto-race, you can change the driver name on the overlay during driver change pit-stops. 
+- Overlays can be changed mid capture, it is one of the few modes that QR Code reading is defaulted to active while recording. Example use: When live streaming an endurance auto-race, you can change the driver name on the overlay during driver change pit-stops. 
 - A range (not all) of GoPro metadata can be displayed in their stored units, so speed is in meters/sec, not MPH. For more technical information on [GoPro's GPMF Metadata](https://gopro.github.io/gpmf-parser/) and other metadata you can display.
 
 Known Issues:
-- The Permanent mode was not safe on HERO8 Labs v1.70.75, fixed in the 2021 release. Update to 2021 Labs firmware before using this feature.
+- The Permanent mode was **not safe on HERO8 Labs v1.70.75**, fixed in the 2021 release. Update to 2021 Labs firmware before using this feature.
 - Metadata can take a second before it updates after capture start.
 <!-- - Permanent overlays require the clearing of older settings. If your using either Owner or Large Chapters modifications, they will need to be added after the overlay.   -->
 
@@ -149,11 +149,11 @@ function timeLoop()
    
 	cmd = "";
 	
-	if(document.getElementById("permanent").checked === true)
-	{
-		cmd = "!RESET!30NQ";
-		mtype = "!";
-    }
+	//if(document.getElementById("permanent").checked === true)
+	//{
+	//	cmd = "!RESET!30NQ";
+	//	mtype = "!";
+    //}
 	
     if(document.getElementById("gps").checked === true)
     {
