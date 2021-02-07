@@ -149,11 +149,11 @@ function timeLoop()
    
 	cmd = "";
 	
-	//if(document.getElementById("permanent").checked === true)
-	//{
+	if(document.getElementById("permanent").checked === true)
+	{
 	//	cmd = "!RESET!30NQ";
-	//	mtype = "!";
-    //}
+		mtype = "!";
+    }
 	
     if(document.getElementById("gps").checked === true)
     {
