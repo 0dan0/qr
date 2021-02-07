@@ -72,7 +72,7 @@ Note: All text box support **\n** for a new line.
 </center>
 
 
-Make the overlay permanently active: **Are you sure? (Risky)**  <input type="checkbox" id="permanent" name="permanent"> <label for="permanent">Permanent Overlay</label><br>
+Make the overlay permanently active: **Are you sure? (Risky)**  <input type="checkbox" id="permanent" name="permanent"> <label for="permanent">Permanent Overlay</label> <input type="checkbox" id="erase" name="erase"> <label for="erase">Erase</label><br>
 
 QR Command: <b id="qrtext">time</b><br>
 
@@ -167,6 +167,11 @@ function timeLoop()
     cmd = cmd + mtype + "MBRNO=" + document.getElementById("offset").value + mtype + "MBURN=\"(" + document.getElementById("hsize").value + "," + document.getElementById("vsize").value + ")" + document.getElementById("startmsg").value + openb + pos + document.getElementById("addtime").value + document.getElementById("adddate").value;
 	cmd = dcmd(cmd, "am");
 	cmd = cmd + closeb + document.getElementById("endmsg").value + "\"";
+	
+	if(document.getElementById("erase").checked === true)
+	{
+		cmd = mtype + "MBURN=\"\"";
+	}
   }
   else
   {
