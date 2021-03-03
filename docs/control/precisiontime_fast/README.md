@@ -60,8 +60,9 @@ function timeLoop()
   s = today.getSeconds();
   ms = today.getMilliseconds();
   
-  f = ms/1000 + s + m*60 + h*3600;
-  f = f * 1.001;
+  f = (ms/1000) + s + m*60 + h*3600;
+  f = f * 1001;
+  f = f / 1000;
 
   h = Math.floor(f / 3600);
   f -= h * 3600;
