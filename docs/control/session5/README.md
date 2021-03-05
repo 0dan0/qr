@@ -61,20 +61,6 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="tlvf2" name="tlvfov" value="fL"> <label for="tlvf2">Linear </label>&nbsp;&nbsp;
   <input type="radio" id="tlvf3" name="tlvfov" value="" checked> <label for="tlvf3">not set</label><br><br>
  </div>
-
-<div id="settingsBurst">
-<b>Burst Style:</b>&nbsp;&nbsp;
-  <input type="radio" id="b1" name="burst" value="b3N1"> <label  for="b1">3/1 </label>&nbsp;&nbsp;
-  <input type="radio" id="b2" name="burst" value="b5N1"> <label  for="b2">5/1 </label>&nbsp;&nbsp;
-  <input type="radio" id="b3" name="burst" value="b10N1"> <label for="b3">10/1 </label>&nbsp;&nbsp;
-  <input type="radio" id="b4" name="burst" value="b10N2"> <label for="b4">10/2 </label>&nbsp;&nbsp;
-  <input type="radio" id="b5" name="burst" value="b10N3"> <label for="b5">10/3 </label>&nbsp;&nbsp;
-  <input type="radio" id="b6" name="burst" value="b30N1"> <label for="b6">30/1 </label>&nbsp;&nbsp;
-  <input type="radio" id="b7" name="burst" value="b30N2"> <label for="b7">30/2 </label>&nbsp;&nbsp;
-  <input type="radio" id="b8" name="burst" value="b30N3"> <label for="b8">30/3 </label>&nbsp;&nbsp;
-  <input type="radio" id="b9" name="burst" value="b30N6"> <label for="b9">30/6 </label>&nbsp;&nbsp;
-  <input type="radio" id="b10" name="burst" value="" checked> <label for="b10">not set</label><br><br>
-</div>
  
 <div id="settingsTimelapse">
 <b>Timelapse Interval:</b>&nbsp;&nbsp;
@@ -86,32 +72,6 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="fpslapse6"  name="fpslapse" value="p.30"> <label for="fpslapse6">30s </label>&nbsp;&nbsp;
   <input type="radio" id="fpslapse7" name="fpslapse" value="p.60"> <label for="fpslapse7">60s </label>&nbsp;&nbsp;
   <input type="radio" id="fpslapse8" name="fpslapse" value="" checked> <label for="fpslapse8">not set</label><br><br>
-</div>
- 
- 
-<div id="settingsNightlapse">
-<b>Nightlapse Interval:</b>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight1" name="fpsnight" value="p"     > <label for="fpsnight1">cont. </label>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight2" name="fpsnight" value="p.10"  > <label for="fpsnight2">10s </label>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight3" name="fpsnight" value="p.15"  > <label for="fpsnight3">15s </label>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight4" name="fpsnight" value="p.30"  > <label for="fpsnight4">30s </label>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight5" name="fpsnight" value="p.60"  > <label for="fpsnight5">60s </label>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight6" name="fpsnight" value="p.120" > <label for="fpsnight6">2min </label>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight7" name="fpsnight" value="p.300" > <label for="fpsnight7">5min </label>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight8" name="fpsnight" value="p.1800"> <label for="fpsnight8">30min </label>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight9" name="fpsnight" value="p.3600"> <label for="fpsnight9">60min </label>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight10" name="fpsnight" value="" checked> <label for="fpsnight10">not set</label><br><br>
-</div>
-
-<div id="settingsNightexposure">
-<b>Night Exposure:</b>&nbsp;&nbsp;
-  <input type="radio" id="nightexp1" name="nightexp" value="eA" > <label for="nightexp1">auto </label>&nbsp;&nbsp;
-  <input type="radio" id="nightexp2" name="nightexp" value="e2" > <label for="nightexp2">2s </label>&nbsp;&nbsp;
-  <input type="radio" id="nightexp3" name="nightexp" value="e5" > <label for="nightexp3">5s </label>&nbsp;&nbsp;
-  <input type="radio" id="nightexp4" name="nightexp" value="e10"> <label for="nightexp4">10s </label>&nbsp;&nbsp;
-  <input type="radio" id="nightexp5" name="nightexp" value="e15"> <label for="nightexp5">15s </label>&nbsp;&nbsp;
-  <input type="radio" id="nightexp6" name="nightexp" value="e20"> <label for="nightexp6">20s </label>&nbsp;&nbsp;
-  <input type="radio" id="nightexp7" name="nightexp" value="" checked> <label for="nightexp7"> not set</label><br><br>
 </div>
 
 <div id="settingsRESTLV">
