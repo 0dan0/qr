@@ -90,13 +90,6 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
 	<input type="radio" id="eis5" name="eis" value="" checked> <label for="eis5">not set</label><br><br>
 </div>
 
-<div id="settingsPhotoRAW">
-<b>Photo Properties:</b><br>
-  <input type="radio" id="raw1" name="raw" value="rW"> <label for="raw1">Raw off </label>&nbsp;&nbsp;
-  <input type="radio" id="raw2" name="raw" value="r"> <label for="raw2">Raw on</label>&nbsp;&nbsp;
-  <input type="radio" id="raw3" name="raw" value="" checked> <label for="raw3"> none</label><br><br>
-</div>
-
 <div id="settingsAUDT">
 <b>Audio Type:</b>&nbsp;&nbsp;
   <input type="radio" id="audt1" name="audt" value="" checked> <label for="audt1">auto </label>&nbsp;&nbsp;
@@ -390,10 +383,7 @@ function startTime() {
 	dset("settingsTLVFOV", false);
 	dset("settingsRESTLV", false);
 	dset("settingsVideo", false);
-	dset("settingsDuration", false);
-	dset("settingsPhotoRAW", false);
 	dset("settingsPT", false);
-	dset("settingsBurst", false);
 	dset("settingsTimelapse", false);
 	dset("settingsAUDT",false);
 	
@@ -446,14 +436,12 @@ function startTime() {
 		dset("settingsFPS", true);
 		dset("settingsFOV", true);
 		dset("settingsVideo", true);
-		dset("settingsDuration", true);
 		dset("settingsPT", true);
 		dset("settingsAUDT",true);
 		break;
 		
 		case 2: //Timelapse Video
 		dset("settingsTimelapse", true);	
-		dset("settingsDuration", true);	
 		dset("settingsRESTLV", true);
 		dset("settingsTLVFOV", true);
 		dset("settingsPT", true);
@@ -462,14 +450,12 @@ function startTime() {
 		case 3: //Photo
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
-		dset("settingsPhotoRAW", true);
 		break;
 				
 		case 4: //TLP
 		dset("settingsTimelapse", true);	
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
-		dset("settingsPhotoRAW", true);
 		break;
 	}
 		
@@ -566,9 +552,6 @@ function startTime() {
 	cmd = dcmd(cmd,"all"); //auto low light	
 	cmd = dcmd(cmd,"audt"); //audio control
 	
-	if(checkedmode >= 4 && checkedmode != 8) //RAW
-		cmd = dcmd(cmd,"raw"); //raw photo control
-		
 	if(document.getElementById("p1") !== null)
 	{
 		x = document.getElementById("p1").checked;
