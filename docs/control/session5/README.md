@@ -298,17 +298,6 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
 <input type="text" id="endhrs" value="" style="width:45px">hours <input type="text" id="endmins" value="" style="width:45px">mins <input type="text" id="endsecs" value="" style="width:45px">secs <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>or</b> at camera time: <input type="text" id="endtime" value="" style="width:60px"> (format 24hr HH:MM)<br><br>
 </div>
-<div id="aSM">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start via Motion Detection:</b> 
-<input type="text" id="mstart" value="" style="width:60px">start <input type="text" id="mend" value="" style="width:60px">end sensitivity (1-9)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="dhold" value="" style="width:60px"> seconds to get out of the shot.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mask motion: <input type="text" id="mmhold" value="" style="width:60px"> seconds to learn background motion.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="mhold" value="" style="width:60px"> seconds to capture after motion stops.<br>
-<br>
-</div>
-<div id="aSV">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start at GPS Velocity (km/h):</b> 
-<input type="text" id="vstart" value="" style="width:60px">start speed <input type="text" id="vend" value="" style="width:60px">end speed <b><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b> Hold time: <input type="text" id="vhold" value="" style="width:60px"> seconds)<br><br>
-</div>
 
 <div id="aR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="repeat" value=""> <b><label for="actions">Repeat Command</label></b><br></div>
 <!--
@@ -757,95 +746,6 @@ function startTime() {
 				S_added = 1;
 			}
 		}
-		
-		if(document.getElementById("mstart") !== null)
-		{
-			var mstart = document.getElementById("mstart").value;
-			if(mstart > 0)
-			{
-				if(S_added)	
-				{
-					cmd = cmd + "M" + mstart;
-					SM_added = 1;
-				}
-				else
-				{
-					cmd = cmd + "!SM" + mstart;
-					SM_added = 1;
-				}			
-			}
-			
-			if(document.getElementById("mend") !== null)
-			{
-				var mend = document.getElementById("mend").value;
-				if(mend > 0 && SM_added)
-				{
-					cmd = cmd + "-" + mend;
-				}
-			}
-			
-			if(document.getElementById("dhold") !== null)
-			{
-				var dhold = document.getElementById("dhold").value;
-				if(dhold > 0 && SM_added)
-				{
-					cmd = cmd + "D" + dhold;
-				}
-			}
-			if(document.getElementById("mmhold") !== null)
-			{
-				var mmhold = document.getElementById("mmhold").value;
-				if(mmhold > 0 && SM_added)
-				{
-					cmd = cmd + "M" + mmhold;
-				}
-			}
-			if(document.getElementById("mhold") !== null)
-			{
-				var mhold = document.getElementById("mhold").value;
-				if(mhold > 0 && SM_added)
-				{
-					cmd = cmd + "H" + mhold;
-				}
-			}
-		}
-		
-		
-		if(document.getElementById("vstart") !== null)
-		{
-			var vstart = document.getElementById("vstart").value;
-			if(vstart > 0)
-			{
-				if(S_added)	
-				{
-					cmd = cmd + "K" + vstart;
-					SK_added = 1;
-				}
-				else
-				{
-					cmd = cmd + "!SK" + vstart;
-					SK_added = 1;
-				}			
-			}
-			
-			if(document.getElementById("vend") !== null)
-			{
-				var vend = document.getElementById("vend").value;
-				if(vend > 0 && SK_added)
-				{
-					cmd = cmd + "-" + vend;
-				}
-			}
-			if(document.getElementById("vhold") !== null)
-			{
-				var vhold = document.getElementById("vhold").value;
-				if(vhold > 0 && SK_added)
-				{
-					cmd = cmd + "H" + vhold;
-				}
-			}
-		}
-		
 		
 		
 		if(document.getElementById("endhrs") !== null && document.getElementById("endmins") !== null && document.getElementById("endsecs") !== null && document.getElementById("time") !== null)
