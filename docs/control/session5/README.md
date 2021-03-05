@@ -28,7 +28,7 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="r4" name="res" value="r1440"> <label for="r4">1440p </label>&nbsp;&nbsp;
   <input type="radio" id="r5" name="res" value="r27"  > <label for="r5">2.7k  </label>&nbsp;&nbsp;
   <input type="radio" id="r6" name="res" value="r27T" > <label for="r6">2.7k 4x3 </label>&nbsp;&nbsp;
-  <input type="radio" id="r7" name="res" value="r4"   > <label for="r7">4k </label>&nbsp;&nbsp;
+  <input type="radio" id="r7" name="res" value="r4"   > <label for="r7">4k </label><br><br>
 </div>
 
 <div id="settingsFPS">
