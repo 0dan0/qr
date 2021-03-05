@@ -277,8 +277,6 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
 <div id="aSD">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Shutdown and capture in:</b>
 <input type="text" id="starthrs" value="" style="width:45px">hours <input type="text" id="startmins" value="" style="width:45px">mins <input type="text" id="startsecs" value="" style="width:45px">secs <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>or</b> at camera time: <input type="text" id="time" value="" style="width:60px"> (format 24hr HH:MM)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>or</b> minutes after <b>sunrise</b>: <input type="text" id="risemins" value="" style="width:60px"> e.g. -30 for mins before<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>or</b> minutes after <b>sunset</b>: <input type="text" id="setmins" value="" style="width:60px"> e.g. -45 for mins before<br>
 </div>
 <div id="aS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start Capture:</b>
   <input type="radio" id="as1" name="as" value="!S"> <label for="as1">Now </label>&nbsp;&nbsp;
@@ -299,14 +297,6 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>or</b> at camera time: <input type="text" id="endtime" value="" style="width:60px"> (format 24hr HH:MM)<br><br>
 </div>
 <div id="aR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="repeat" value=""> <b><label for="actions">Repeat Command</label></b><br></div>
-<!--
-<div id="aR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Repeat command after: </b> 
-<input type="text" id="repeathrs" value="" style="width:45px">hours <input type="text" id="repeatmins" value="" style="width:45px">mins <input type="text" id="repeatsecs" value="" style="width:45px">secs <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>or</b> delay for HH:MM <input type="text" id="repeattime" value="" style="width:60px"> <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>or</b> minutes after <b>sunrise</b>: <input type="text" id="repeatrisemins" value="" style="width:60px"> e.g. -30 for mins before<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>or</b> minutes after <b>sunset</b>: <input type="text" id="repeatsetmins" value="" style="width:60px"> e.g. -45 for mins before<br> 
-</div>-->
-
 
 Additional Commands: <input type="text" id="addcmd" value="">
 
@@ -705,21 +695,7 @@ function startTime() {
 			var secs = 0;
 			var starttime = document.getElementById("time").value;
 			secs = Number(3600 * document.getElementById("starthrs").value) + Number(60 * document.getElementById("startmins").value) + Number(document.getElementById("startsecs").value);
-			var risemins = 60 * document.getElementById("risemins").value;
-			var setmins = 60 * document.getElementById("setmins").value;
-			if(setmins !== 0)
-			{
-				newcmd = "!s" + setmins + "N" + cmd + "!S";
-				cmd = newcmd;
-				S_added = 1;
-			}
-			else if(risemins !== 0)
-			{
-				newcmd = "!r" + risemins + "N" + cmd + "!S";
-				cmd = newcmd;
-				S_added = 1;
-			}
-			else if(secs > 0)
+			if(secs > 0)
 			{
 				if(secs < 20)
 				{
@@ -747,18 +723,7 @@ function startTime() {
 		{
 			var secs = 0;
 			var endtime = document.getElementById("endtime").value;
-			//var endrisemins = 60 * document.getElementById("endrisemins").value;
-			//var endsetmins = 60 * document.getElementById("endsetmins").value;
 			secs = Number(60 * 60 * document.getElementById("endhrs").value) + Number(60 * document.getElementById("endmins").value) + Number(document.getElementById("endsecs").value);
-			/*if(endsetmins != 0)
-			{
-				cmd = cmd + "!s" + endsetmins + "E";
-			}
-			else if(endrisemins != 0)
-			{
-				cmd = cmd + "!r" + endrisemins + "E";
-			}
-			else*/ 
 			if(secs > 0)
 			{
 				cmd = cmd + "!" + secs + "E";
@@ -773,32 +738,6 @@ function startTime() {
 		{
 			cmd = cmd + "!" + "R";
 		}
-		
-		/*
-		if(document.getElementById("repeathrs") !== null && document.getElementById("repeatmins") !== null && document.getElementById("repeatsecs") !== null && document.getElementById("time") !== null)
-		{
-			var secs = 0;
-			var repeattime = document.getElementById("repeattime").value;
-			var repeatrisemins = 60 * document.getElementById("repeatrisemins").value;
-			var repeatsetmins = 60 * document.getElementById("repeatsetmins").value;
-			secs = Number(60 * 60 * document.getElementById("repeathrs").value) + Number(60 * document.getElementById("repeatmins").value) + Number(document.getElementById("repeatsecs").value);
-			if(repeatsetmins !== 0)
-			{
-				cmd = cmd + "!s" + repeatsetmins + "R";
-			}
-			else if(repeatrisemins !== 0)
-			{
-				cmd = cmd + "!r" + repeatrisemins + "R";
-			}
-			else if(secs > 0)
-			{
-				cmd = cmd + "!" + secs + "R";
-			}
-			else if(repeattime.length == 5)
-			{
-				cmd = cmd + "!" + repeattime + "R";
-			}
-		}*/
 	}
 	
 	if(document.getElementById("addcmd") !== null)
