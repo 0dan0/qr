@@ -16,8 +16,8 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
 
 <b>Camera Mode:</b>&nbsp;&nbsp;<input type="radio" id="m5" name="mode" value="" checked> <label for="m5">not set</label><br>
   <input type="radio" id="m1" name="mode" value="mV"> <label  for="m1">Video</label>&nbsp;&nbsp;
-  <input type="radio" id="m2" name="mode" value="mT"> <label  for="m2">Timelapse</label>&nbsp;&nbsp;
-  <input type="radio" id="m3" name="mode" value="mP"> <label  for="m3">Photo</label>&nbsp;&nbsp;
+  <input type="radio" id="m2" name="mode" value="mP"> <label  for="m2">Photo</label>&nbsp;&nbsp;
+  <input type="radio" id="m3" name="mode" value="mT"> <label  for="m3">Timelapse Video</label>&nbsp;&nbsp;
   <input type="radio" id="m4" name="mode" value="mTP"> <label for="m4">Timelapse Photo</label><br>
 
 <div id="settingsRES">
@@ -421,7 +421,7 @@ function startTime() {
 	var checkedmode = 0;
 	var x;
 	
-	for (i = 1; i < 8; i++) { 
+	for (i = 1; i < 5; i++) { 
 		var mode = "m"+i;
 		x = document.getElementById(mode).checked;
 		if( x === true)
@@ -439,17 +439,17 @@ function startTime() {
 		dset("settingsPT", true);
 		dset("settingsAUDT",true);
 		break;
+			
+		case 2: //Photo
+		dset("settingsPT", true);
+		dset("settingsTLVFOV", true);
+		break;
 		
-		case 2: //Timelapse Video
+		case 3: //Timelapse Video
 		dset("settingsTimelapse", true);	
 		dset("settingsRESTLV", true);
 		dset("settingsTLVFOV", true);
 		dset("settingsPT", true);
-		break;
-			
-		case 3: //Photo
-		dset("settingsPT", true);
-		dset("settingsTLVFOV", true);
 		break;
 				
 		case 4: //TLP
@@ -529,13 +529,13 @@ function startTime() {
 	
 	switch(checkedmode)
 	{
-		case 2: //TLV
+		case 3: //TLV
 		case 4: //TLP
 			cmd = dcmd(cmd,"fpslapse");
 			break;
 	}
 	
-	if(checkedmode == 2) // TLV
+	if(checkedmode == 3) // TLV
 		cmd = dcmd(cmd, "rt");
 	else
 		cmd = dcmd(cmd,"r"); //RES
