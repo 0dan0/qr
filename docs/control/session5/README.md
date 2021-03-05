@@ -298,7 +298,6 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
 <input type="text" id="endhrs" value="" style="width:45px">hours <input type="text" id="endmins" value="" style="width:45px">mins <input type="text" id="endsecs" value="" style="width:45px">secs <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>or</b> at camera time: <input type="text" id="endtime" value="" style="width:60px"> (format 24hr HH:MM)<br><br>
 </div>
-
 <div id="aR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="repeat" value=""> <b><label for="actions">Repeat Command</label></b><br></div>
 <!--
 <div id="aR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Repeat command after: </b> 
@@ -403,8 +402,6 @@ function startTime() {
 	dset("aE", false);
 	dset("aSD", false);
 	dset("aEND", false);
-	dset("aSM", false);
-	dset("aSV", false);
 	dset("aR", false);
 	
 	var checkedmode = 0;
@@ -507,8 +504,6 @@ function startTime() {
 		{
 			dset("aSD", true);
 			dset("aEND", true);
-			dset("aSM", true);
-			dset("aSV", true);
 			dset("aR", true);
 		}
 	}
