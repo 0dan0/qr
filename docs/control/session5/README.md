@@ -75,18 +75,6 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="b9" name="burst" value="b30N6"> <label for="b9">30/6 </label>&nbsp;&nbsp;
   <input type="radio" id="b10" name="burst" value="" checked> <label for="b10">not set</label><br><br>
 </div>
-
-<div id="settingsTimewarp">
-<b>TimeWarp Speed:</b>&nbsp;&nbsp;
-  <input type="radio" id="fpswarp1"    name="fpswarp" value="p15"> <label for="fpswarp1">2X </label>&nbsp;&nbsp;
-  <input type="radio" id="fpswarp2"    name="fpswarp" value="p6"> <label for="fpswarp2">5X </label>&nbsp;&nbsp;
-  <input type="radio" id="fpswarp3"    name="fpswarp" value="p3"> <label for="fpswarp3">10X </label>&nbsp;&nbsp;
-  <input type="radio" id="fpswarp4"    name="fpswarp" value="p2"> <label for="fpswarp4">15X </label>&nbsp;&nbsp;
-  <input type="radio" id="fpswarp5"    name="fpswarp" value="p1"> <label for="fpswarp5">30X </label>&nbsp;&nbsp;
-  <input type="radio" id="fpswarp6"    name="fpswarp" value="pA"> <label for="fpswarp6">Auto </label>&nbsp;&nbsp;
-  <input type="radio" id="fpswarp7"    name="fpswarp" value="" checked> <label for="fpswarp7">not set</label><br><br>
-</div>
- 
  
 <div id="settingsTimelapse">
 <b>Timelapse Interval:</b>&nbsp;&nbsp;
@@ -446,10 +434,7 @@ function startTime() {
 	dset("settingsPhotoRAW", false);
 	dset("settingsPT", false);
 	dset("settingsBurst", false);
-	dset("settingsTimewarp", false);
 	dset("settingsTimelapse", false);
-	dset("settingsNightlapse", false);
-	dset("settingsNightexposure", false);
 	dset("settingsAUDT",false);
 	
 	dset("ptCOLOR", false);
@@ -513,48 +498,18 @@ function startTime() {
 		dset("settingsTLVFOV", true);
 		dset("settingsPT", true);
 		break;
-		
-		case 3: //TimeWarp Video
-		dset("settingsTimewarp", true);		
-		dset("settingsDuration", true);
-		dset("settingsRESTLV", true);
-		dset("settingsTLVFOV", true);
-		dset("settingsPT", true);
-		break;		
-	
-		case 4: //Photo
+			
+		case 3: //Photo
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
 		dset("settingsPhotoRAW", true);
 		break;
-		
-		case 5: //Burst
-		dset("settingsBurst", true);
-		dset("settingsPT", true);
-		dset("settingsTLVFOV", true);
-		dset("settingsPhotoRAW", true);
-		break;
-		
-		case 6: //Night
-		dset("settingsNightexposure", true);
-		dset("settingsPT", true);
-		dset("settingsTLVFOV", true);
-		dset("settingsPhotoRAW", true);
-		break;
-		
-		case 7: //TLP
+				
+		case 4: //TLP
 		dset("settingsTimelapse", true);	
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
 		dset("settingsPhotoRAW", true);
-		break;
-		
-		case 8: //NL Video
-		dset("settingsNightlapse", true);	
-		dset("settingsNightexposure", true);	
-		dset("settingsRESTLV", true);
-		dset("settingsPT", true);
-		dset("settingsTLVFOV", true);
 		break;
 	}
 		
@@ -629,25 +584,12 @@ function startTime() {
 	switch(checkedmode)
 	{
 		case 2: //TLV
-		case 7: //TLP
+		case 4: //TLP
 			cmd = dcmd(cmd,"fpslapse");
-			break;
-		case 3: //TWarp
-			cmd = dcmd(cmd,"fpswarp");
-			break;
-		case 5: //Burst 
-			cmd = dcmd(cmd,"b");
-			break;	
-		case 6: //Night
-			cmd = dcmd(cmd,"nightexp");
-			break;
-		case 8: //NLV	
-			cmd = dcmd(cmd,"fpsnight");
-			cmd = dcmd(cmd,"nightexp");
 			break;
 	}
 	
-	if(checkedmode == 2 || checkedmode == 3 || checkedmode == 8) // TLV/TWarp Res/NLV
+	if(checkedmode == 2) // TLV
 		cmd = dcmd(cmd, "rt");
 	else
 		cmd = dcmd(cmd,"r"); //RES
@@ -661,8 +603,6 @@ function startTime() {
 	
 	cmd = dcmd(cmd,"pt"); //protune
 	cmd = dcmd(cmd,"eis"); //eis
-	cmd = dcmd(cmd,"hind"); //hindsight
-	cmd = dcmd(cmd,"dur"); //duration
 	cmd = dcmd(cmd,"all"); //auto low light	
 	cmd = dcmd(cmd,"audt"); //audio control
 	
