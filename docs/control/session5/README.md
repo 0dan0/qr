@@ -98,11 +98,6 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="ptc2" name="ptc" value="cF"> <label for="ptc2">Flat</label>&nbsp;&nbsp;
   <input type="radio" id="ptc3" name="ptc" value="" checked> <label for="ptc3">not set</label>
 </div>
-<div id="ptBITRATE">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Bit rate:</b>&nbsp;&nbsp;
-  <input type="radio" id="br1" name="br" value="b0"> <label for="br1">Standard</label>&nbsp;&nbsp;
-  <input type="radio" id="br2" name="br" value="b1"> <label for="br2">High</label>&nbsp;&nbsp;
-  <input type="radio" id="br3" name="br" value="" checked> <label for="br3">not set</label>
-</div>
 <div id="ptWBAL">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>White Balance:</b>&nbsp;&nbsp;
   <input type="radio" id="wb1" name="wb" value="wA" checked> <label for="wb1">Auto </label>&nbsp;&nbsp;
   <input type="radio" id="wb2" name="wb" value="w30" > <label for="wb2">3000K </label>&nbsp;&nbsp;
@@ -161,13 +156,6 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="sharp2" name="sharp" value="sM"> <label for="sharp2">Medium </label>&nbsp;&nbsp;
   <input type="radio" id="sharp3" name="sharp" value="sH"> <label for="sharp3">High</label>&nbsp;&nbsp;
   <input type="radio" id="sharp4" name="sharp" value="" checked> <label for="sharp4">not set</label>
-</div>
-<div id="ptAUD">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RAW Audio:</b>&nbsp;&nbsp;
-  <input type="radio" id="aud1" name="aud" value="a"> <label for="aud1">Off </label>&nbsp;&nbsp;
-  <input type="radio" id="aud2" name="aud" value="aL"> <label for="aud2">Low </label>&nbsp;&nbsp;
-  <input type="radio" id="aud3" name="aud" value="aM"> <label for="aud3">Medium </label>&nbsp;&nbsp;
-  <input type="radio" id="aud4" name="aud" value="aH"> <label for="aud4">High</label>&nbsp;&nbsp;
-  <input type="radio" id="aud5" name="aud" value="" checked> <label for="aud5">not set</label><br>
 </div>
 
 <div id="cameraOptions">
@@ -358,7 +346,6 @@ function startTime() {
 	dset("settingsTimelapse", false);
 	
 	dset("ptCOLOR", false);
-	dset("ptBITRATE", false);
 	dset("ptWBAL", false);
 	dset("ptISO",false);
 	dset("ptIMIN",false);
@@ -366,7 +353,6 @@ function startTime() {
 	dset("ptIMIN",false);
 	dset("ptEV",false);
 	dset("ptSHARP",false);
-	dset("ptAUD",false);
 		
 	dset("opVC", false);
 	dset("opQC", false);
@@ -431,7 +417,6 @@ function startTime() {
 		if(document.getElementById("pt").checked === true)
 		{
 			dset("ptCOLOR", true);
-			dset("ptBITRATE", true);
 			dset("ptWBAL", true);
 			dset("ptISO",true);
 			dset("ptIMIN",true);
@@ -450,14 +435,8 @@ function startTime() {
 					dset("ptEV",true);
 				}
 			}
-			
-			if(checkedmode == 1) //Video
-			{
-				dset("ptAUD",true);
-			}
 				
 			dset("ptSHARP",true);
-			dset("ptAUD",true);
 		}
 	}
 	
@@ -551,7 +530,6 @@ function startTime() {
 		if(document.getElementById("pt").checked === true)
 		{
 			cmd = dcmd(cmd,"ptc"); //color
-			cmd = dcmd(cmd,"br"); //bitrate
 			cmd = dcmd(cmd,"wb"); //wb
 
 			if(document.getElementById('iso8').checked === false || document.getElementById('isomin8').checked === false)
@@ -566,8 +544,6 @@ function startTime() {
 				
 			cmd = dcmd(cmd,"ev"); //ev
 			cmd = dcmd(cmd,"sharp"); //sharp
-			cmd = dcmd(cmd,"aud"); //audio control
-			cmd = dcmd(cmd,"bit"); //bitrate control
 		}
 	}
 	
