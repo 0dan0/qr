@@ -167,17 +167,6 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="vc2" name="vc" value="v1"> <label for="vc2">on </label>&nbsp;&nbsp;
   <input type="radio" id="vc3" name="vc" value="" checked> <label for="vc3">not set</label>
  </div>
-<div id="opQC">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Quick Capture:</b>&nbsp;&nbsp;  
-  <input type="radio" id="qc1" name="qc" value="q0"> <label for="qc1">off </label>&nbsp;&nbsp;
-  <input type="radio" id="qc2" name="qc" value="q1"> <label for="qc2">on </label>&nbsp;&nbsp;
-  <input type="radio" id="qc3" name="qc" value="" checked> <label for="qc3">not set </label>
-  </div>
-<div id="opDM">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Default Mode:</b>&nbsp;&nbsp;
-  <input type="radio" id="dm1" name="dm" value="dV">  <label for="dm1">Last Used Video</label>&nbsp;&nbsp;
-  <input type="radio" id="dm2" name="dm" value="dP">  <label for="dm2">Last Used Photo</label>&nbsp;&nbsp;
-  <input type="radio" id="dm3" name="dm" value="dT">  <label for="dm3">Last Used Timelapse</label>&nbsp;&nbsp;
-  <input type="radio" id="dm4" name="dm" value="" checked> <label for="dm4">not set</label>
-</div>
 <div id="opBV">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Beep Volume:</b>&nbsp;&nbsp; 
   <input type="radio" id="bv1" name="bv" value="V0"> <label for="bv1">0% </label>&nbsp;&nbsp;
   <input type="radio" id="bv2" name="bv" value="V1"> <label for="bv2">10% </label>&nbsp;&nbsp;
@@ -187,44 +176,18 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="bv6" name="bv" value="" checked> <label for="bv6">not set</label>
   </div>
   
-<div id="opDB">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Display Brightness:</b>&nbsp;&nbsp;
-  <input type="radio" id="db1" name="db" value="B1"> <label for="db1">10% </label>&nbsp;&nbsp;
-  <input type="radio" id="db2" name="db" value="B4"> <label for="db2">40% </label>&nbsp;&nbsp;
-  <input type="radio" id="db3" name="db" value="B7"> <label for="db3">70% </label>&nbsp;&nbsp;
-  <input type="radio" id="db4" name="db" value="B9"> <label for="db4">100% </label>&nbsp;&nbsp;
-  <input type="radio" id="db5" name="db" value="" checked> <label for="db5">not set</label>
-  </div>
 <div id="opLO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>LEDs On:</b>&nbsp;&nbsp;
   <input type="radio" id="lo1" name="lo" value="D0"> <label for="lo1">All Off </label>&nbsp;&nbsp;
   <input type="radio" id="lo2" name="lo" value="D2"> <label for="lo2">Rear Only </label>&nbsp;&nbsp;
   <input type="radio" id="lo3" name="lo" value="D4"> <label for="lo3">All On </label>&nbsp;&nbsp;
   <input type="radio" id="lo4" name="lo" value="" checked> <label for="lo4">not set</label>
   </div>
-<div id="opOR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Orientation Lock:</b>&nbsp;&nbsp; 
-  <input type="radio" id="or1" name="or" value="R1"> <label for="or1">Landscape Up </label>&nbsp;&nbsp;
-  <input type="radio" id="or2" name="or" value="R2"> <label for="or2">Landscape Down </label>&nbsp;&nbsp;
-  <input type="radio" id="or3" name="or" value="R0"> <label for="or3">Unlocked/Free </label>&nbsp;&nbsp;
-  <input type="radio" id="or4" name="or" value="" checked> <label for="or4">not set</label>
-  </div>
-<div id="opAO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Camera Auto Off:</b>&nbsp;&nbsp; 
-  <input type="radio" id="ao1" name="ao" value="C5"> <label for="ao1">5 mins </label>&nbsp;&nbsp;
-  <input type="radio" id="ao2" name="ao" value="C15"> <label for="ao2">15 mins </label>&nbsp;&nbsp;
-  <input type="radio" id="ao3" name="ao" value="C30"> <label for="ao3">30 mins </label>&nbsp;&nbsp;
-  <input type="radio" id="ao4" name="ao" value="C"> <label for="ao4">Never </label>&nbsp;&nbsp;
-  <input type="radio" id="ao5" name="ao" value="" checked> <label for="ao5">not set</label>
-  </div>
-<div id="opSO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Screen Auto Off:</b>&nbsp;&nbsp;
-  <input type="radio" id="so1" name="so" value="S1"> <label for="so1">1 mins </label>&nbsp;&nbsp;
-  <input type="radio" id="so2" name="so" value="S2"> <label for="so2">2 mins </label>&nbsp;&nbsp;
-  <input type="radio" id="so3" name="so" value="S3"> <label for="so3">3 mins </label>&nbsp;&nbsp;
-  <input type="radio" id="so4" name="so" value="S"> <label for="so4">Never </label>&nbsp;&nbsp;
-  <input type="radio" id="so5" name="so" value="" checked> <label for="so5">not set</label>
-  </div>
 <div id="opWC">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>WiFi Connections:</b>&nbsp;&nbsp; 
   <input type="radio" id="wc1" name="wc" value="W0"> <label for="wc1">Off </label>&nbsp;&nbsp;
   <input type="radio" id="wc2" name="wc" value="W1"> <label for="wc2">On </label>&nbsp;&nbsp;
   <input type="radio" id="wc3" name="wc" value="" checked> <label for="wc3">not set</label>
   </div>
+<!--
 <div id="opLN">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Language:</b>&nbsp;&nbsp;
   <input type="radio" id="ln1" name="ln" value="L0"> <label for="ln1">English US </label>&nbsp;&nbsp;
   <input type="radio" id="ln2" name="ln" value="L01"> <label for="ln2">English UK </label>&nbsp;&nbsp;
@@ -241,6 +204,7 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="ln13" name="ln" value="L9"> <label for="ln13">Russian </label>&nbsp;&nbsp;
   <input type="radio" id="ln14" name="ln" value="" checked> <label for="ln14">not set</label><br>
 </div>
+-->
 
 
 <div id="opDT">
@@ -355,16 +319,10 @@ function startTime() {
 	dset("ptSHARP",false);
 		
 	dset("opVC", false);
-	dset("opQC", false);
-	dset("opDM", false);
 	dset("opBV", false);
-	dset("opDB", false);
 	dset("opLO", false);
-	dset("opOR", false);
-	dset("opAO", false);
-	dset("opSO", false);
 	dset("opWC", false);
-	dset("opLN", false);
+	//dset("opLN", false);
 	
 	dset("aS", false);
 	dset("aE", false);
@@ -445,16 +403,10 @@ function startTime() {
 		if(document.getElementById("options").checked === true)
 		{			
 			dset("opVC", true);
-			dset("opQC", true);
-			dset("opDM", true);
 			dset("opBV", true);
-			dset("opDB", true);
 			dset("opLO", true);
-			dset("opOR", true);
-			dset("opAO", true);
-			dset("opSO", true);
 			dset("opWC", true);
-			dset("opLN", true);
+			//dset("opLN", true);
 		}
 	}
 	
@@ -556,17 +508,11 @@ function startTime() {
 			var addO = "o";
 			cmd = dcmd(cmd,"gps");
 			cmd = dcmd(cmd,"vc");
-			cmd = dcmd(cmd,"qc");
-			cmd = dcmd(cmd,"dm");
 			
 			opt = dcmd(addO, "bv"); if(opt != "o") { cmd = cmd + opt; addO = ""; }
-			opt = dcmd(addO, "db"); if(opt != "o") { cmd = cmd + opt; addO = ""; }
 			opt = dcmd(addO, "lo"); if(opt != "o") { cmd = cmd + opt; addO = ""; }
-			opt = dcmd(addO, "or"); if(opt != "o") { cmd = cmd + opt; addO = ""; }
-			opt = dcmd(addO, "ao"); if(opt != "o") { cmd = cmd + opt; addO = ""; }
-			opt = dcmd(addO, "so"); if(opt != "o") { cmd = cmd + opt; addO = ""; }
 			opt = dcmd(addO, "wc"); if(opt != "o") { cmd = cmd + opt; addO = ""; }
-			opt = dcmd(addO, "ln"); if(opt != "o") { cmd = cmd + opt; addO = ""; }
+			//opt = dcmd(addO, "ln"); if(opt != "o") { cmd = cmd + opt; addO = ""; }
 		}
 	}
 	
