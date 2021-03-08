@@ -84,18 +84,11 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
  </div>
  
 <div id="settingsVideo">
-<b>Hypersmooth:</b>&nbsp;&nbsp;
+<b>Stabilization:</b>&nbsp;&nbsp;
 	<input type="radio" id="eis1" name="eis" value="e0"> <label for="eis1">Off</label>&nbsp;&nbsp;&nbsp;
 	<input type="radio" id="eis2" name="eis" value="e1"> <label for="eis2">On</label>&nbsp;&nbsp;&nbsp;
-	<input type="radio" id="eis5" name="eis" value="" checked> <label for="eis5">not set</label><br><br>
+	<input type="radio" id="eis3" name="eis" value="" checked> <label for="eis3">not set</label><br><br>
 </div>
-
-<div id="settingsAUDT">
-<b>Audio Type:</b>&nbsp;&nbsp;
-  <input type="radio" id="audt1" name="audt" value="" checked> <label for="audt1">auto </label>&nbsp;&nbsp;
-  <input type="radio" id="audt2" name="audt" value="aS"> <label for="audt2">Stereo </label>&nbsp;&nbsp;
-  <input type="radio" id="audt3" name="audt" value="aW"> <label for="audt3">Wind</label><br><br>
-</div> 
 
 <div id="settingsPT">
 <input type="checkbox" id="pt" value="t"> <label for="pt">Protune Controls</label><br>
@@ -363,7 +356,6 @@ function startTime() {
 	dset("settingsVideo", false);
 	dset("settingsPT", false);
 	dset("settingsTimelapse", false);
-	dset("settingsAUDT",false);
 	
 	dset("ptCOLOR", false);
 	dset("ptBITRATE", false);
@@ -413,7 +405,6 @@ function startTime() {
 		dset("settingsFOV", true);
 		dset("settingsVideo", true);
 		dset("settingsPT", true);
-		dset("settingsAUDT",true);
 		break;
 			
 		case 2: //Photo
@@ -523,8 +514,6 @@ function startTime() {
 	
 	cmd = dcmd(cmd,"pt"); //protune
 	cmd = dcmd(cmd,"eis"); //eis
-	cmd = dcmd(cmd,"all"); //auto low light	
-	cmd = dcmd(cmd,"audt"); //audio control
 	
 	if(document.getElementById("p1") !== null)
 	{
