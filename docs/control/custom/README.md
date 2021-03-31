@@ -102,7 +102,7 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="fpslapse6"  name="fpslapse" value="p.30"> <label for="fpslapse6">30s </label>&nbsp;&nbsp;
   <input type="radio" id="fpslapse7" name="fpslapse" value="p.60"> <label for="fpslapse7">60s </label>&nbsp;&nbsp;<br>
   
-  HERO 8/9 <input type="radio" id="fpslapse8"  name="fpslapse" value="p.120" > <label for="fpsnight8">2min </label>&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;HERO 8/9&nbsp;&nbsp; <input type="radio" id="fpslapse8"  name="fpslapse" value="p.120" > <label for="fpsnight8">2min </label>&nbsp;&nbsp;
   <input type="radio" id="fpslapse9"  name="fpslapse" value="p.300" > <label for="fpsnight9">5min </label>&nbsp;&nbsp;
   <input type="radio" id="fpslapse10" name="fpslapse" value="p.1800"> <label for="fpsnight10">30min </label>&nbsp;&nbsp;
   <input type="radio" id="fpslapse11" name="fpslapse" value="p.3600"> <label for="fpsnight11">60min </label>&nbsp;&nbsp;
