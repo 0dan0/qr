@@ -16,10 +16,10 @@ This trigger uses the level of the audio detected start and stop captures.  Exam
 
 ## Customize SPL Detected Capture
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Start Sensitivity** <input type="range" id="snstvty" name="snstvty" min="30" max="120" value="80"><label for="snstvty"></label>&nbsp;&nbsp;<b id="snstvtytext"></b> (30dB - calm room, 120dB - horn at 1m/3ft<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**End Sensitivity** <input type="range" id="esnstvty" name="esnstvty" min="30" max="120" value="60"><label for="snstvty"></label>&nbsp;&nbsp;<b id="esnstvtytext"></b> (30dB - calm room, 120 - horn at 1m/3ft)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Start Delay** <input type="range" id="delay" name="delay" min="0" max="60" value="0"><label for="delay"></label>&nbsp;&nbsp;<b id="delaytext"></b> seconds before reading audio level.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Hold Time** <input type="range" id="hold" name="hold" min="0" max="60" value="5"><label for="hold"></label>&nbsp;&nbsp;<b id="holdtext"></b> seconds, to continue recording after audio level has dropped.<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Start Sensitivity** <input type="range" style="width: 300px;" id="snstvty" name="snstvty" min="30" max="120" value="80"><label for="snstvty"></label>&nbsp;&nbsp;<b id="snstvtytext"></b> (30dB - calm room, 120dB - horn at 1m/3ft<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**End Sensitivity** <input type="range" style="width: 300px;" id="esnstvty" name="esnstvty" min="30" max="120" value="60"><label for="snstvty"></label>&nbsp;&nbsp;<b id="esnstvtytext"></b> (30dB - calm room, 120 - horn at 1m/3ft)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Start Delay** <input type="range" style="width: 300px;" id="delay" name="delay" min="0" max="60" value="0"><label for="delay"></label>&nbsp;&nbsp;<b id="delaytext"></b> seconds before reading audio level.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Hold Time** <input type="range" style="width: 300px;" id="hold" name="hold" min="0" max="60" value="5"><label for="hold"></label>&nbsp;&nbsp;<b id="holdtext"></b> seconds, to continue recording after audio level has dropped.<br> 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="repeat" name="repeat" checked> 
 <label for="repeat">Repeat IMU triggered capture.</label><br>
@@ -116,7 +116,7 @@ function timeLoop()
 		
 	cmd = "!SD" + snstvty;
 	
-	if(esnstvty > 0) cmd = cmd + "-" + esnstvty;
+	if(esnstvty != snstvty) cmd = cmd + "-" + esnstvty;
 	if(delay > 0) cmd = cmd + 'D' + delay;
 	if(hold > 0) cmd = cmd + 'H' + hold;	
 	
