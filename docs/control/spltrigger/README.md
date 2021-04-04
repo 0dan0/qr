@@ -10,7 +10,7 @@
         }
 </style>
 
-# Sound Pressure Level Trigger to Start/Stop Captures
+# Sound Pressure Level Capture Trigger
 
 This trigger uses the SPL of the audio detected start and stop captures.  Example: Rocket launches with an uncertain launch time, set the SPL to automatically start a capture when the engines fire.
 
