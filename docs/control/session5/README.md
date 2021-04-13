@@ -506,7 +506,6 @@ function startTime() {
 		{
 			var opt = ""; 
 			var addO = "o";
-			cmd = dcmd(cmd,"gps");
 			cmd = dcmd(cmd,"vc");
 			
 			opt = dcmd(addO, "bv"); if(opt != "o") { cmd = cmd + opt; addO = ""; }
