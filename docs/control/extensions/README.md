@@ -34,7 +34,13 @@ All metadata QR commands are written in the form oM**wxzy**=value(s) or !M**wxzy
 	- **LDVR=”Driver Name”** - displays "Driver", with the name you provide
 	- **LRDR=”Rider Name”** - displays "Rider", with the name you provide
 	- **LRUN=”Runner Name”** - displays "Runner", with the name you provide
-        
+	
+## New Extensions to HERO9 v1.6 Labs
+
+- **WAKE=1** - This will make the camera wake on any power addition, but only if there is a delay action pending (determined by a delay.bin file in the MISC folder, created automatically with wake timer events.) Inserting a battery or the connection of USB power, will boot up the camera to continue a script after a power failure. With some experimentation, this may be used to improve very long time-lapse reliability, by cycling USB power every 24 hours -- reseting the camera to restart scripts.
+- **MUTE=mask** - Mute one or more channels of audio (microphones). For HERO9 cameras, there are four channels, although three microphones. The mask is binary mask for channels 4321. e.g. oMMUTE=15 mute all channels (15 = 1111B), oMMUTE=8 mute the fourth channel (8 = 1000B), oMMUTE=7 mutes the first 3 channels (7 = 0111B).
+- **SOLO=channel** - Use only one channel of audio. e.g. oMSOLO=1 use only channel 1, oMMUTE=4 mute the fourth channel.
+- **GAIN=dB** - Digitally gain up the audio. e.g. oMGAIN=12, increase audio by 12dB.  Will likely reduce the dynamic range.
 
 <input type="checkbox" id="perm" name="perm"> 
 <label for="perm">Make metadata Premanent (are you sure?)</label><br>
@@ -57,7 +63,7 @@ QR Command: <b id="qrtext">command</b><br>
 
 <br> 
 		
-## ver 1.01
+## ver 1.02
 [BACK](..)
 
 <script>

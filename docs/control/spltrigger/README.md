@@ -22,7 +22,7 @@ This trigger uses the SPL of the audio detected start and stop captures.  Exampl
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Hold Time** <input type="range" style="width: 300px;" id="hold" name="hold" min="0" max="120" value="5"><label for="hold"></label>&nbsp;&nbsp;<b id="holdtext"></b> seconds, to continue recording after audio level has dropped.<br> 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="repeat" name="repeat" checked> 
-<label for="repeat">Repeat IMU triggered capture.</label><br>
+<label for="repeat">Repeat SPL triggered capture.</label><br>
 
 Note: you will have to manually set the mode in which you capture.  The detector can be combined with the Hindsight feature on HERO9. 
  
