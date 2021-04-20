@@ -123,6 +123,22 @@ GoPro MAX Shooting Modes
  * **mF** - mode monitor Front lens
  * **mR** - mode monitor Rear lens
 
+GoPro HERO9 Front Screen controls
+ * **oF0 or oFO** - turn the front LCD off
+ * **oFU** - UI interface mode info only
+ * **oFF** - Full image (image is letterboxed)
+ * **oFC** - Cropped image (filling the front LCD)
+ * **oFN** - Never turn off
+ * **oFM** - Match rear screen on/off behavior
+ * **oF1** - turn off after 1 minute
+ * **oF2** - turn off after 2 minutes
+ * **oF3** - turn off after 3 minutes
+ * **oF5** - turn off after 5 minutes
+					
+GoPro HERO9 Max Lens Mod Controls
+ * **oX0** - Lens Mod is not attached
+ * **oX1** - Lens Mod is attached
+
 Feature with off and on commands:
 
 - EIS (Hypersmooth stabilization): **e0** - off, **e** or **e1** - on, **e2** - High, **e3** Boost
@@ -148,7 +164,7 @@ Same further option (‘o’) commands
 Custom Mode: <input type="text" id="tryit" value=""><br>
 
 
-## ver 1.04 - 2021 Jan 28 
+## ver 1.10 - 2021 Third Labs release
 [BACK](..)
 
 
