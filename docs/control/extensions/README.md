@@ -35,15 +35,25 @@ All metadata QR commands are written in the form oM**wxzy**=value(s) or !M**wxzy
 	- **LRDR=”Rider Name”** - displays "Rider", with the name you provide
 	- **LRUN=”Runner Name”** - displays "Runner", with the name you provide
 	
-## New Extensions to HERO9 v1.6 Labs
+## New Extensions in May 2021 Labs
 
 - **WAKE=1** - This will make the camera wake on any power addition, but only if there is a delay action pending (determined by a delay.bin file in the MISC folder, created automatically with wake timer events.) Inserting a battery or the connection of USB power, will boot up the camera to continue a script after a power failure. With some experimentation, this may be used to improve very long time-lapse reliability, by cycling USB power every 24 hours -- reseting the camera to restart scripts.
 - **MUTE=mask** - Mute one or more channels of audio (microphones). For HERO9 cameras, there are four channels, although three microphones. The mask is binary mask for channels 4321. e.g. oMMUTE=15 mute all channels (15 = 1111B), oMMUTE=8 mute the fourth channel (8 = 1000B), oMMUTE=7 mutes the first 3 channels (7 = 0111B).
 - **SOLO=channel** - Use only one channel of audio. e.g. oMSOLO=1 use only channel 1, oMMUTE=4 mute the fourth channel.
 - **GAIN=dB** - Digitally gain up the audio. e.g. oMGAIN=12, increase audio by 12dB.  Will likely reduce the dynamic range.
-- **HDMI=<value>** - Media Mod users can change the output default from Gallery (0) to clean monitoring with no overlays (1), or monitoring live video with overlays (2).
+- **HDMI=0,1 or 2** - Media Mod users can change the output default from Gallery (0) to clean monitoring with no overlays (1), or monitoring live video with overlays (2).
 - **ENCR="password 4-16 characters"** - Enabled media encryption during capture.  So new media will be encrypted, with no camera or desktop playback without decryption via your password first.  This is not intended to have the highest level of security, but it is a good level of privacy when using a sufficiently long/complex password.  If the password is forgotten, there is no recovery of the data. If the wrong password is used to decrypt, the data is doubly encrypted, there is no recovery of the data.  Encrypted media has the first character of the GoPro style filename changed from 'G' to 'S'.  e.g. A 4K60 MP4 will encrypted with a name like SX014423.MP4.  The .THM, .LRV and .JPG files are also encrypted.
 - **DECR="password"** - Decrypt existing encrypted files. If the passwords do not match, the data is doubly encrypted, there is no recovery of the data. Be careful. With the correct password, all files are decrypted on camera. The onto camera process is slow, and the entire encrypted file must be read and rewritten, expect a similar processing time to the capture length. If low battery is an issue, press the mode button to cancel, and provide the camera external power before continuing.
+
+### Overlay extensions May 2021 Labs
+
+- **CBAR=1** - enable a small 75% saturated color bars for video tools evaluation
+- **LBAR=1** - enable a small luma sweep for video tools evaluation (can be combined with CBAR=1)
+- **LOGO="filename.png"** - overlay a small logo or icon on the encoded video. The logo must be stored on the SD card is the MISC folder. The alpha channel is supported. The PNG files must be less than 50kBytes with fewer than 50,000 pixels. The smaller the better for demanding video modes like 4K60 and 1080p240.
+- **BRNT=0.5** - The overlays or burn-in display time is seconds. e.g. BRNT=0.016 will display the logo or text overlays only on the first frame (1/60th of a second.)   
+- **BURNP="TL"** - 
+- **BRNX=x,y** - This is an upgrade to BRNO (Burn-ins Offset), allowing you to offset the burn-ins with X,Y pixel coordinates. e.g. BRNX=120,40
+
 
 <input type="checkbox" id="perm" name="perm"> 
 <label for="perm">Make metadata Premanent (are you sure?)</label><br>
