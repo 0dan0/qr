@@ -52,11 +52,11 @@ All metadata QR commands are written in the form oM**wxzy**=value(s) or !M**wxzy
 
 ![EnableCBARLBAR.png](EnableCBARLBAR.png)
 
-- **LOGO="filename.png"** - overlay a small logo or icon on the encoded video. The logo must be stored on the SD card is the MISC folder. The alpha channel is supported. The PNG files must be less than 50kBytes with fewer than 50,000 pixels. The smaller the better for demanding video modes like 4K60 and 1080p240.
+- **LOGO="filename.png"** - overlay a small logo or icon on the encoded video. The logo must be stored on the SD card is the MISC folder. The alpha channel is supported. The PNG files must be less than 64kBytes with fewer than 64k pixels, e.g. Logo overlay of 400x100 works, but 400x200 will not. The smaller the better for demanding video modes like 4K60 and 1080p240.  
 
 ![EnableCBARLBAR.png](EnableLOGO.png)
 
-- **BRNT=0.5** - The overlays or burn-in display time is seconds. e.g. BRNT=0.016 will display the logo or text overlays only on the first frame (1/60th of a second.)   
+- **BRNT=0.5** - The overlays or burn-in display time in seconds. e.g. BRNT=0.016 will display the logo or text overlays only on the first frame (1/60th of a second.) 
 - **BRNX=x,y** - This is an upgrade to BRNO (Burn-ins Offset), allowing you to offset the burn-ins with X,Y pixel coordinates. e.g. BRNX=120,40
 
 
