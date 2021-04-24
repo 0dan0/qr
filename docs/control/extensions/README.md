@@ -44,6 +44,8 @@ All metadata QR commands are written in the form oM**wxzy**=value(s) or !M**wxzy
 - **HDMI=0,1 or 2** - Media Mod users can change the output default from Gallery (0) to clean monitoring with no overlays (1), or monitoring live video with overlays (2).
 - **ENCR="password 4-16 characters"** - Enabled media encryption during capture.  So new media will be encrypted, with no camera or desktop playback without decryption via your password first.  This is not intended to have the highest level of security, but it is a good level of privacy when using a sufficiently long/complex password.  If the password is forgotten, there is no recovery of the data. If the wrong password is used to decrypt, the data is doubly encrypted, there is no recovery of the data.  Encrypted media has the first character of the GoPro style filename changed from 'G' to 'S'.  e.g. A 4K60 MP4 will encrypted with a name like SX014423.MP4.  The .THM, .LRV and .JPG files are also encrypted.
 - **DECR="password"** - Decrypt existing encrypted files. If the passwords do not match, the data is doubly encrypted, there is no recovery of the data. Be careful. With the correct password, all files are decrypted on camera. The onto camera process is slow, and the entire encrypted file must be read and rewritten, expect a similar processing time to the capture length. If low battery is an issue, press the mode button to cancel, and provide the camera external power before continuing.
+- **SPED=x** - SD Card Speed Test. 'x' is the number of runs, each run is around 10 seconds.  Data rates should have minimums above 120Mb/s is you want to reliably capture the bitrate modes. 
+![SPED.jpg](SPED.jpg)
 
 ### Overlay extensions May 2021 Labs
 
