@@ -43,7 +43,7 @@ Remember to set your camera's [clock](../precisiontime) before using this QR Cod
 
 Start Time <input type="range" style="width: 300px;" id="tlstrt" name="tlstrt" min="1" max="143" value="48"><label for="tlstrt"></label> <b id="starttext"></b>
 
-End Time <input type="range" style="width: 300px;" id="tlend" name="tlend" min="1" max="143" value="54"><label for="tlend"></label> <b id="endtext"></b>
+Capture Length <input type="range" style="width: 300px;" id="tlend" name="tlend" min="1" max="143" value="6"><label for="tlend"></label> <b id="endtext"></b>
 
 <input type="checkbox" id="upld" name="upld" checked> 
 <label for="upld">Upload at the end of each capture</label><br>
@@ -149,9 +149,11 @@ function timeLoop()
   {
 	var start = parseInt(document.getElementById("tlstrt").value);
 	var startmins = start*10;
-	var end = parseInt(document.getElementById("tlend").value);
+	var caplen = parseInt(document.getElementById("tlend").value);
+	caplen *= 10;
 	var endmins = startmins + end*10;
-	if(endmins>1430) endmins = 1430;
+	if(endmins >= 1440)
+		endmins -= 1440;
 		
 	var starthourstime = Math.trunc(startmins / 60);
 	var startminstime = startmins - starthourstime * 60;	
@@ -167,7 +169,7 @@ function timeLoop()
 	
 	var spftxt = dval("fpslapse");
 	var spf = spftxt.slice(2);
-	var fsecs = (((endmins - startmins)*60) / parseInt(spf)) / 30;	
+	var fsecs = ((caplen*60) / parseInt(spf)) / 30;	
 	var secs10 =  fsecs * 10;
 	var secs = Math.trunc(secs10) / 10;
 
