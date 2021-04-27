@@ -29,6 +29,13 @@ Defaults modes (on power up):
  * **dP** - last used Photo mode
  * **dT** - last used Timelapse mode
   
+Lens - FOV: 
+ * **fN** - Narrow
+ * **fM** - Medium
+ * **fW** - Wide
+ * **fX** - SuperMax Wide (H9 with Max Lens Mode)
+ * **fH** - Horizonal Level + Linear (H9)
+  
 Resolutions: 
  * **r1080** - 1920x1080
  * **r1440** - 1920x1440
