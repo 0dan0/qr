@@ -167,7 +167,7 @@ function timeLoop()
 	document.getElementById("starttext").innerHTML = stxt;
 	document.getElementById("endtext").innerHTML = etxt;
 	
-	val spftxt= dval("tlvf");
+	var spftxt= dval("tlvf");
 	var spf = spftxt.split(".", 1);
 	
 	secs = ((endminstime - endhourstime)*60 / parseInt(spf)) / 30;
