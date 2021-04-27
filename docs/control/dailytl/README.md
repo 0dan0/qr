@@ -15,13 +15,13 @@
 If you camera is configured (via the Quik App) to update to the GoPro cloud, you can use this daily timelapse to automatically sync each day.  Ideal for daily documentation for a construction or sunsize/sunsets
 Remember to set your camera's [clock](../precisiontime) before using this QR Code.
 
-<b>Type:</b>
+<b>Type:</b>&nbsp;&nbsp;
   <input type="radio" id="nltlv1" name="nltlv" value="mT" checked> <label for="nltlv1">TimeLapse Video</label>&nbsp;&nbsp;
   <input type="radio" id="nltlv2" name="nltlv" value="mNL"> <label for="nltlv2">NightLapse</label><br><br>
   <input type="radio" id="nltlv3" name="nltlv" value=""> <label for="nltlv3">not set</label><br><br>
  </div>
  
-<b>Lens:</b>
+<b>Lens:</b>&nbsp;&nbsp;
   <input type="radio" id="tlvf1" name="tlvfov" value="fW"> <label for="tlvf1">Wide </label>&nbsp;&nbsp;
   <input type="radio" id="tlvf2" name="tlvfov" value="fL"> <label for="tlvf2">Linear </label>&nbsp;&nbsp;
   <input type="radio" id="tlvf3" name="tlvfov" value="" checked> <label for="tlvf3">not set</label><br><br>
