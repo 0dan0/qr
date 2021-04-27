@@ -15,9 +15,10 @@
 If you camera is configured (via the Quik App) to update to the GoPro cloud, you can use this daily timelapse to automatically sync each day.  Ideal for daily documentation for a construction or sunsize/sunsets
 Remember to set your camera's [clock](../precisiontime) before using this QR Code.
 
-<b>NightLapse or TimeLapse Video:</b>
-  <input type="radio" id="nltlv1" name="nltlv" value="mT" checked> <label for="nltlv1">Wide </label>&nbsp;&nbsp;
-  <input type="radio" id="nltlv2" name="nltlv" value="mNL"> <label for="nltlv2">Linear </label><br><br>
+<b>Type:</b>
+  <input type="radio" id="nltlv1" name="nltlv" value="mT" checked> <label for="nltlv1">TimeLapse Video</label>&nbsp;&nbsp;
+  <input type="radio" id="nltlv2" name="nltlv" value="mNL"> <label for="nltlv2">NightLapse</label><br><br>
+  <input type="radio" id="nltlv3" name="nltlv" value=""> <label for="nltlv3">not set</label><br><br>
  </div>
  
 <b>Lens:</b>
@@ -26,7 +27,7 @@ Remember to set your camera's [clock](../precisiontime) before using this QR Cod
   <input type="radio" id="tlvf3" name="tlvfov" value="" checked> <label for="tlvf3">not set</label><br><br>
  </div>
  
-<b>Timelapse Interval:</b>&nbsp;&nbsp;
+<b>Interval:</b>&nbsp;&nbsp;
   <input type="radio" id="fpslapse1" name="fpslapse" value="p.2">  <label for="fpslapse1">2s  </label>&nbsp;&nbsp;
   <input type="radio" id="fpslapse2" name="fpslapse" value="p.5">  <label for="fpslapse2">5s  </label>&nbsp;&nbsp;
   <input type="radio" id="fpslapse3" name="fpslapse" value="p.10"> <label for="fpslapse3">10s </label>&nbsp;&nbsp;
