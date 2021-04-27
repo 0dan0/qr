@@ -43,7 +43,7 @@ Remember to set your camera's [clock](../precisiontime) before using this QR Cod
 
 Start Time: <input type="range" style="width: 300px;" id="tlstrt" name="tlstrt" min="1" max="143" value="48"><label for="tlstrt"></label> <b id="starttext"></b>
 
-Capture Length: <input type="range" style="width: 200px;" id="tlend" name="tlend" min="1" max="960" value="240"><label for="tlend"></label> <b id="lentext"></b> minutes &nbsp;&nbsp; End Time: <b id="endtext"></b>
+Capture Length: <input type="range" style="width: 300px;" id="tlend" name="tlend" min="1" max="960" value="240"><label for="tlend"></label> <b id="lentext"></b> minutes &nbsp;&nbsp; End Time: <b id="endtext"></b>
 
 <input type="checkbox" id="upld" name="upld" checked> 
 <label for="upld">Upload at the end of each capture</label><br>
