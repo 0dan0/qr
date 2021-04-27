@@ -56,12 +56,9 @@ Daily playback length (at 30fps): <b id="length"> seconds</b>
 
 QR Command: <b id="qrtext">time</b><br>
       
-## Solutions for Using External Lithium Ion USB Batteries
+## Solutions for extra long captures
 
-As stated above, most Lithium Ion USB power-banks will shut-off early, even when the camera still needs the power. A select few USB battery sources include an "always on feature" designed for time-lapse projects.  Example:[voltaicsystems.com/v50](https://voltaicsystems.com/v50/) This one can even solar recharge the battery at the same time.
-
-The second option is a USB keep alive device that prevents your USB power bank from shutting down.  Examples: from [sotabeams.co.uk](https://www.sotabeams.co.uk/usb-battery-pack-keep-alive-load/) and from [tindie.com](https://www.tindie.com/products/overz/smart-power-bank-keep-alive/)
-
+A/C powering the camera via USB is the best. With continuous power supplied, remove internal the battery (charging can reset the wake timer), and the camera should run for a very long time (only SD card storage limitations.) You might be tempted to use a Lithium Ion USB powerbank, however they typically do not work well. They are designed to quickly recharge a smartphone, and when they think power is no longer needed, they shut-off. A select few USB battery sources include an "always on feature" designed for time-lapse projects. Example:[voltaicsystems.com/v50](https://voltaicsystems.com/v50/) This one can even solar recharge the battery at the same time. The second option is add a USB keep alive device that prevents your USB power bank from shutting down. Examples: from [sotabeams.co.uk](https://www.sotabeams.co.uk/usb-battery-pack-keep-alive-load/) and from [tindie.com](https://www.tindie.com/products/overz/smart-power-bank-keep-alive/)
 	
 ## ver 1.00
 
@@ -167,15 +164,15 @@ function timeLoop()
 	document.getElementById("starttext").innerHTML = stxt;
 	document.getElementById("endtext").innerHTML = etxt;
 	
-	var spftxt= dval("tlvf");
-	var spf = spftxt.split(".", 1);
+	var spftxt = dval("tlvf");
+	var spf = spftxt.split(".", 4);
 	
 	secs = ((endminstime - endhourstime)*60 / parseInt(spf)) / 30;
 			
 	secs *= 10;
 	secs = Math.trunc(secs) / 10;
 	
-	document.getElementById("length").innerHTML = secs;
+	document.getElementById("length").innerHTML = spf;
 		
 	
 
