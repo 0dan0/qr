@@ -47,6 +47,10 @@ End Time <input type="range" style="width: 300px;" id="tlend" name="tlend" min="
 <input type="checkbox" id="upld" name="upld" checked> 
 <label for="upld">Upload at the end of each capture</label><br>
 
+Daily playback length (at 30fps): <b id="length1"> seconds</b><br>
+Daily playback length (at 30fps): <b id="length2"> seconds</b><br>
+Daily playback length (at 30fps): <b id="length3"> seconds</b><br>
+Daily playback length (at 30fps): <b id="length4"> seconds</b><br>
 Daily playback length (at 30fps): <b id="length"> seconds</b>
  
 <center>
@@ -169,9 +173,16 @@ function timeLoop()
 	
 	secs = ((endminstime - endhourstime)*60 / parseInt(spf)) / 30;
 			
+	document.getElementById("length3").innerHTML = secs;
+	
 	secs *= 10;
 	secs = Math.trunc(secs) / 10;
 	
+	document.getElementById("length4").innerHTML = secs;
+	
+	document.getElementById("length1").innerHTML = spftxt;
+	document.getElementById("length2").innerHTML = spf;
+	document.getElementById("length4").innerHTML = secs;
 	document.getElementById("length").innerHTML = secs;
 		
 	
