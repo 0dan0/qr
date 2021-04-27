@@ -149,6 +149,8 @@ function timeLoop()
 	document.getElementById("endtext").innerHTML = etxt;
 
 	cmd = "";
+	cmd = dcmd(cmd,"nltlv");
+	cmd = dcmd(cmd,"nltf");
 	cmd = dcmd(cmd,"fpslapse");
 	
 	cmd = cmd + "!" + stxt + "S" + "!" + etxt + "E";
