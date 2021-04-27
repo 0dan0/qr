@@ -19,13 +19,11 @@ Remember to set your camera's [clock](../precisiontime) before using this QR Cod
   <input type="radio" id="nltlv1" name="nltlv" value="mT" checked> <label for="nltlv1">TimeLapse Video</label>&nbsp;&nbsp;
   <input type="radio" id="nltlv2" name="nltlv" value="mNL"> <label for="nltlv2">NightLapse</label><br><br>
   <input type="radio" id="nltlv3" name="nltlv" value=""> <label for="nltlv3">not set</label><br><br>
- </div>
  
 <b>Lens:</b>&nbsp;&nbsp;
   <input type="radio" id="tlvf1" name="tlvfov" value="fW"> <label for="tlvf1">Wide </label>&nbsp;&nbsp;
   <input type="radio" id="tlvf2" name="tlvfov" value="fL"> <label for="tlvf2">Linear </label>&nbsp;&nbsp;
   <input type="radio" id="tlvf3" name="tlvfov" value="" checked> <label for="tlvf3">not set</label><br><br>
- </div>
  
 <b>Interval:</b>&nbsp;&nbsp;
   <input type="radio" id="fpslapse1" name="fpslapse" value="p.2">  <label for="fpslapse1">2s  </label>&nbsp;&nbsp;
@@ -39,10 +37,9 @@ Remember to set your camera's [clock](../precisiontime) before using this QR Cod
   <input type="radio" id="fpslapse8" name="fpslapse" value="p.1800"> <label for="fpslapse8">30min </label>&nbsp;&nbsp;
   <input type="radio" id="fpslapse9" name="fpslapse" value="p.3600"> <label for="fpslapse9">60min </label>&nbsp;&nbsp;
   <input type="radio" id="fpslapse10" name="fpslapse" value="" checked> <label for="fpslapse10">not set</label><br><br>
-</div>
  
  
-## Daytime Time-lapse Calculator
+## Time-lapse Capture Time
 
 Start Time <input type="range" style="width: 300px;" id="tlstrt" name="tlstrt" min="1" max="143" value="48"><label for="tlstrt"></label> <b id="starttext"></b>
 
