@@ -169,20 +169,18 @@ function timeLoop()
 	document.getElementById("endtext").innerHTML = etxt;
 	
 	var spftxt = dval("fpslapse");
-	var spf = spftxt.slice(2);
-	
-	secs = ((endminstime - endhourstime)*60 / parseInt(spf)) / 30;
-			
-	document.getElementById("length3").innerHTML = secs;
-	
-	secs *= 10;
-	secs = Math.trunc(secs) / 10;
-	
-	document.getElementById("length4").innerHTML = secs;
-	
 	document.getElementById("length1").innerHTML = spftxt;
+	var spf = spftxt.slice(2);	
 	document.getElementById("length2").innerHTML = spf;
+	
+	var fsecs = ((endminstime - endhourstime)*60 / parseInt(spf)) / 30;
+	document.getElementById("length3").innerHTML = fsecs;
+	
+	var secs10 =  fsecs * 10;
+	document.getElementById("length4").innerHTML = secs10;
+	var secs = Math.trunc(secs10) / 10;
 	document.getElementById("length4").innerHTML = secs;
+
 	document.getElementById("length").innerHTML = secs;
 		
 	
