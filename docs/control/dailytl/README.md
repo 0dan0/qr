@@ -15,9 +15,11 @@
 If you camera is configured (via the Quik App) to update to the GoPro cloud, you can use this daily timelapse to automatically sync each day.  Ideal for daily documentation for a construction or sunsize/sunsets
 Remember to set your camera's [clock](../precisiontime) before using this QR Code.
 
+## Time-lapse Settings
+
 <b>Type:</b>&nbsp;&nbsp;
   <input type="radio" id="nltlv1" name="nltlv" value="mT" checked> <label for="nltlv1">TimeLapse Video</label>&nbsp;&nbsp;
-  <input type="radio" id="nltlv2" name="nltlv" value="mNL"> <label for="nltlv2">NightLapse</label><br><br>
+  <input type="radio" id="nltlv2" name="nltlv" value="mNL"> <label for="nltlv2">NightLapse</label>&nbsp;&nbsp;
   <input type="radio" id="nltlv3" name="nltlv" value=""> <label for="nltlv3">not set</label><br><br>
  
 <b>Lens:</b>&nbsp;&nbsp;
@@ -30,8 +32,7 @@ Remember to set your camera's [clock](../precisiontime) before using this QR Cod
   <input type="radio" id="fpslapse2" name="fpslapse" value="p.5">  <label for="fpslapse2">5s  </label>&nbsp;&nbsp;
   <input type="radio" id="fpslapse3" name="fpslapse" value="p.10"> <label for="fpslapse3">10s </label>&nbsp;&nbsp;
   <input type="radio" id="fpslapse4" name="fpslapse" value="p.30"> <label for="fpslapse4">30s </label>&nbsp;&nbsp;
-  <input type="radio" id="fpslapse5" name="fpslapse" value="p.60"> <label for="fpslapse5">60s </label>&nbsp;&nbsp;<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;HERO 8/9&nbsp;&nbsp; 
+  <input type="radio" id="fpslapse5" name="fpslapse" value="p.60"> <label for="fpslapse5">60s </label>&nbsp;&nbsp;
   <input type="radio" id="fpslapse6" name="fpslapse" value="p.120" > <label for="fpslapse6">2min </label>&nbsp;&nbsp;
   <input type="radio" id="fpslapse7" name="fpslapse" value="p.300" > <label for="fpslapse7">5min </label>&nbsp;&nbsp;
   <input type="radio" id="fpslapse8" name="fpslapse" value="p.1800"> <label for="fpslapse8">30min </label>&nbsp;&nbsp;
