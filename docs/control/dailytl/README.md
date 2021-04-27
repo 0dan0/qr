@@ -45,17 +45,16 @@ Start Time <input type="range" style="width: 300px;" id="tlstrt" name="tlstrt" m
 
 End Time <input type="range" style="width: 300px;" id="tlend" name="tlend" min="1" max="143" value="54"><label for="tlend"></label> <b id="endtext"></b>
 
+<input type="checkbox" id="upld" name="upld"> 
+<label for="upld">Upload at the end of each capture</label><br>
+
 <center>
 <div id="qrcode"></div>
 <br>
 </center>
 
 QR Command: <b id="qrtext">time</b><br>
-        
-## Extending Time-lapse Duration
-
-Simply replacing the battery is the easiest solution for long captures. After the battery is replaced, power on the camera so that the time-lapse can continue. You might want to set and forget for a multi-week or multi-month time-lapse, for this A/C powering the camera via USB is the best. With continuous power supplied, the battery should be removed, and the camera should run for a very long time (only SD card storage limitations.) You might be tempted to use a Lithium Ion USB powerbank, however they typically do not work well (see below for solutions.) They are designed to quickly recharge a smartphone, and when they think power is no longer needed, they shut-off. For this reason they get you far shorter captures than you would expect. If you want to try a USB powerbank, you must remove the GoPro battery for good results. For long captures away from the power grid, the best solution is a small 12V 18+Ah sealed lead acid battery and attached a non-smart (doesn't shut off) USB regulator. With the right photo interval, this configuration could last a year on a single charge.   
-		
+      
 ## Solutions for Using External Lithium Ion USB Batteries
 
 As stated above, most Lithium Ion USB power-banks will shut-off early, even when the camera still needs the power. A select few USB battery sources include an "always on feature" designed for time-lapse projects.  Example:[voltaicsystems.com/v50](https://voltaicsystems.com/v50/) This one can even solar recharge the battery at the same time.
@@ -110,38 +109,29 @@ function timeLoop()
 	var end = parseInt(document.getElementById("tlend").value);
 	var endmins = startmins + end*10;
 	if(endmins>1430) endmins = 1430;
-	var perday = parseInt(document.getElementById("tlday").value);
-	
-	var restarthourstime = Math.trunc(startmins / 60);
-	var restartminstime = startmins - restarthourstime * 60;
-	
+		
 	var starthourstime = Math.trunc((startmins-1) / 60);
 	var startminstime = (startmins-1) - starthourstime * 60;	
 	
 	var endhourstime = Math.trunc(endmins / 60);
 	var endminstime = endmins - endhourstime * 60;
-	
-	document.getElementById("perdaytext").innerHTML = perday;	
-	
-	var rtxt = pad(restarthourstime, 2) + ":" + pad(restartminstime, 2);
+		
 	var stxt = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
 	var etxt = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 	
 	document.getElementById("starttext").innerHTML = rtxt;
 	document.getElementById("endtext").innerHTML = etxt;
-	
-	var d = 406 / perday;
-	var dd = (406 - d * 6) / perday;
-		
-	dd *= 10;
-	dd = Math.trunc(dd) / 10;
-	
-	document.getElementById("daystext").innerHTML = dd;
-		
-	var interval = Math.trunc(((endmins - startmins)*60 / perday) - 15);
-	if(interval < 30) interval = 30;
-	
-	cmd = "mPdP>" + stxt + "<" + etxt + "!" + interval + "SQ~" + "!" + rtxt + "S!1R";
+
+			
+	cmd = "!" + stxt + "S" + "!" + etxt + "E";
+	if(document.getElementById("upld") !== null)
+	{
+		if(document.getElementById("upld").checked === true)
+		{
+			cmd = "!U"
+		}
+	}
+	cmd = cmd + "!1R";
   }
   
   qrcode.clear(); 
