@@ -173,7 +173,7 @@ function timeLoop()
 	var spf = spftxt.slice(2);	
 	document.getElementById("length2").innerHTML = spf;
 	
-	var fsecs = ((endminstime - endhourstime)*60 / parseInt(spf)) / 30;
+	var fsecs = (((endminstime - startminstime)*60) / parseInt(spf)) / 30;
 	document.getElementById("length3").innerHTML = fsecs;
 	
 	var secs10 =  fsecs * 10;
