@@ -10,7 +10,7 @@
         }
 </style>
 
-# Daily Time-lapse and Upload
+# Daily Time-lapse Video and Upload
 
 If you camera is configured (via the Quik App) to update to the GoPro cloud, you can use this daily timelapse to automatically sync each day.  Ideal for daily documentation for a construction or sunsize/sunsets
 Remember to set your camera's [clock](../precisiontime) before using this QR Code.
@@ -19,13 +19,13 @@ Remember to set your camera's [clock](../precisiontime) before using this QR Cod
 
 <b>Type:</b>&nbsp;&nbsp;
   <input type="radio" id="nltlv1" name="nltlv" value="mT" checked> <label for="nltlv1">TimeLapse Video</label>&nbsp;&nbsp;
-  <input type="radio" id="nltlv2" name="nltlv" value="mNL"> <label for="nltlv2">NightLapse</label>&nbsp;&nbsp;
+  <input type="radio" id="nltlv2" name="nltlv" value="mNL"> <label for="nltlv2">NightLapse Video</label>&nbsp;&nbsp;
   <input type="radio" id="nltlv3" name="nltlv" value=""> <label for="nltlv3">not set</label>
  
 <b>Lens:</b>&nbsp;&nbsp;
-  <input type="radio" id="tlvf1" name="tlvfov" value="fW"> <label for="tlvf1">Wide </label>&nbsp;&nbsp;
-  <input type="radio" id="tlvf2" name="tlvfov" value="fL"> <label for="tlvf2">Linear </label>&nbsp;&nbsp;
-  <input type="radio" id="tlvf3" name="tlvfov" value="" checked> <label for="tlvf3">not set</label>
+  <input type="radio" id="tlvf1" name="tlvf" value="fW"> <label for="tlvf1">Wide </label>&nbsp;&nbsp;
+  <input type="radio" id="tlvf2" name="tlvf" value="fL"> <label for="tlvf2">Linear </label>&nbsp;&nbsp;
+  <input type="radio" id="tlvf3" name="tlvf" value="" checked> <label for="tlvf3">not set</label>
  
 <b>Interval:</b>&nbsp;&nbsp;
   <input type="radio" id="fpslapse1" name="fpslapse" value="p.2">  <label for="fpslapse1">2s  </label>&nbsp;&nbsp;
@@ -100,6 +100,32 @@ function pad(num, size) {
 }
 
 
+function dcmd(cmd, id) {
+    var x;
+	if(document.getElementById(id) !== null)
+	{
+		x = document.getElementById(id).checked;
+		if( x === true)
+			cmd = cmd + document.getElementById(id).value;
+	}
+	else
+	{
+		for (i = 1; i < 15; i++) { 
+			var newid = id+i;
+			if(document.getElementById(newid) !== null)
+			{
+				x = document.getElementById(newid).checked;
+				if( x === true)
+					cmd = cmd + document.getElementById(newid).value;
+			}
+		}
+	}
+	return cmd;
+}
+
+
+
+
 function timeLoop()
 {
   if(document.getElementById("tlstrt") !== null)
@@ -122,8 +148,11 @@ function timeLoop()
 	document.getElementById("starttext").innerHTML = stxt;
 	document.getElementById("endtext").innerHTML = etxt;
 
-			
-	cmd = "!" + stxt + "S" + "!" + etxt + "E";
+	cmd = "";
+	cmd = dcmd(cmd,"fpslapse");
+	
+	cmd = cmd + "!" + stxt + "S" + "!" + etxt + "E";
+	
 	if(document.getElementById("upld") !== null)
 	{
 		if(document.getElementById("upld").checked === true)
