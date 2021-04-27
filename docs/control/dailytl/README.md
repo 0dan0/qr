@@ -119,7 +119,7 @@ function timeLoop()
 	var stxt = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
 	var etxt = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 	
-	document.getElementById("starttext").innerHTML = rtxt;
+	document.getElementById("starttext").innerHTML = stxt;
 	document.getElementById("endtext").innerHTML = etxt;
 
 			
@@ -128,7 +128,7 @@ function timeLoop()
 	{
 		if(document.getElementById("upld").checked === true)
 		{
-			cmd = "!U"
+			cmd = "!U";
 		}
 	}
 	cmd = cmd + "!1R";
