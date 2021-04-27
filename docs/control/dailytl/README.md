@@ -36,8 +36,7 @@ Remember to set your camera's [clock](../precisiontime) before using this QR Cod
   <input type="radio" id="fpslapse6" name="fpslapse" value="p.120" > <label for="fpslapse6">2min </label>&nbsp;&nbsp;
   <input type="radio" id="fpslapse7" name="fpslapse" value="p.300" > <label for="fpslapse7">5min </label>&nbsp;&nbsp;
   <input type="radio" id="fpslapse8" name="fpslapse" value="p.1800"> <label for="fpslapse8">30min </label>&nbsp;&nbsp;
-  <input type="radio" id="fpslapse9" name="fpslapse" value="p.3600"> <label for="fpslapse9">60min </label>&nbsp;&nbsp;
-  <input type="radio" id="fpslapse10" name="fpslapse" value=""> <label for="fpslapse10">not set</label>
+  <input type="radio" id="fpslapse9" name="fpslapse" value="p.3600"> <label for="fpslapse9">60min </label>
  
 ## Time-lapse Capture Time
 
@@ -48,6 +47,8 @@ End Time <input type="range" style="width: 300px;" id="tlend" name="tlend" min="
 <input type="checkbox" id="upld" name="upld" checked> 
 <label for="upld">Upload at the end of each capture</label><br>
 
+Daily playback length (at 30fps): <b id="length"> seconds</b>
+ 
 <center>
 <div id="qrcode"></div>
 <br>
@@ -124,6 +125,24 @@ function dcmd(cmd, id) {
 }
 
 
+function dval(id) {
+    var x;
+	var val = "";
+	{
+		for (i = 1; i < 15; i++) { 
+			var newid = id+i;
+			if(document.getElementById(newid) !== null)
+			{
+				x = document.getElementById(newid).checked;
+				if( x === true)
+					val = document.getElementById(newid).value;
+			}
+		}
+	}
+	return val;
+}
+
+
 
 
 function timeLoop()
@@ -147,6 +166,18 @@ function timeLoop()
 	
 	document.getElementById("starttext").innerHTML = stxt;
 	document.getElementById("endtext").innerHTML = etxt;
+	
+	val spftxt= dval("tlvf");
+	var spf = spftxt.split(".", 1);
+	
+	secs = ((endminstime - endhourstime)*60 / parseInt(spf)) / 30;
+			
+	secs *= 10;
+	secs = Math.trunc(secs) / 10;
+	
+	document.getElementById("length").innerHTML = secs;
+		
+	
 
 	cmd = "";
 	cmd = dcmd(cmd,"nltlv");
