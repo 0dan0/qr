@@ -185,7 +185,7 @@ function timeLoop()
 	cmd = dcmd(cmd,"tlvf");
 	cmd = dcmd(cmd,"fpslapse");
 	
-	cmd = cmd + "!" + stxt + "S" + "!" + etxt + "E";
+	cmd = cmd + "!" + stxt + "S" + "!" + caplen*60 + "E";
 	
 	if(document.getElementById("upld") !== null)
 	{
