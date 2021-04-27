@@ -47,7 +47,7 @@ End Time <input type="range" style="width: 300px;" id="tlend" name="tlend" min="
 <input type="checkbox" id="upld" name="upld" checked> 
 <label for="upld">Upload at the end of each capture</label><br>
 
-Daily playback length (at 30fps): <b id="length"> seconds</b>
+Daily playback length (at 30fps): <b id="length"></b> seconds
  
 <center>
 <div id="qrcode"></div>
