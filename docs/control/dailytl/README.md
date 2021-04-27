@@ -41,9 +41,9 @@ Remember to set your camera's [clock](../precisiontime) before using this QR Cod
  
 ## Time-lapse Capture Time
 
-Start Time <input type="range" style="width: 300px;" id="tlstrt" name="tlstrt" min="1" max="143" value="48"><label for="tlstrt"></label> <b id="starttext"></b>
+Start Time: <input type="range" style="width: 300px;" id="tlstrt" name="tlstrt" min="1" max="143" value="48"><label for="tlstrt"></label> <b id="starttext"></b>
 
-Capture Length <input type="range" style="width: 300px;" id="tlend" name="tlend" min="1" max="143" value="6"><label for="tlend"></label> <b id="endtext"></b>
+Capture Length: <input type="range" style="width: 200px;" id="tlend" name="tlend" min="1" max="96" value="6"><label for="tlend"></label> <b id="lentext"></b> minutes &nbsp;&nbsp; End Time <b id="endtext"></b>
 
 <input type="checkbox" id="upld" name="upld" checked> 
 <label for="upld">Upload at the end of each capture</label><br>
@@ -166,6 +166,7 @@ function timeLoop()
 	
 	document.getElementById("starttext").innerHTML = stxt;
 	document.getElementById("endtext").innerHTML = etxt;
+	document.getElementById("lentext").innerHTML = caplen;
 	
 	var spftxt = dval("fpslapse");
 	var spf = spftxt.slice(2);
