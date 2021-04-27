@@ -45,7 +45,7 @@ Start Time <input type="range" style="width: 300px;" id="tlstrt" name="tlstrt" m
 
 End Time <input type="range" style="width: 300px;" id="tlend" name="tlend" min="1" max="143" value="54"><label for="tlend"></label> <b id="endtext"></b>
 
-<input type="checkbox" id="upld" name="upld"> 
+<input type="checkbox" id="upld" name="upld" checked> 
 <label for="upld">Upload at the end of each capture</label><br>
 
 <center>
