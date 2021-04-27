@@ -110,8 +110,8 @@ function timeLoop()
 	var endmins = startmins + end*10;
 	if(endmins>1430) endmins = 1430;
 		
-	var starthourstime = Math.trunc((startmins-1) / 60);
-	var startminstime = (startmins-1) - starthourstime * 60;	
+	var starthourstime = Math.trunc(startmins / 60);
+	var startminstime = startmins - starthourstime * 60;	
 	
 	var endhourstime = Math.trunc(endmins / 60);
 	var endminstime = endmins - endhourstime * 60;
@@ -128,7 +128,7 @@ function timeLoop()
 	{
 		if(document.getElementById("upld").checked === true)
 		{
-			cmd = "!U";
+			cmd = cmd + "!U";
 		}
 	}
 	cmd = cmd + "!1R";
