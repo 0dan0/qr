@@ -18,8 +18,8 @@ Remember to set your camera's [clock](../precisiontime) before using this QR Cod
 ## Time-lapse Settings
 
 <b>Type:</b>&nbsp;&nbsp;
-  <input type="radio" id="nltlv1" name="nltlv" value="mTdT" checked> <label for="nltlv1">TimeLapse Video</label>&nbsp;&nbsp;
-  <input type="radio" id="nltlv2" name="nltlv" value="mNLdT"> <label for="nltlv2">NightLapse Video</label>&nbsp;&nbsp;
+  <input type="radio" id="nltlv1" name="nltlv" value="dTmT" checked> <label for="nltlv1">TimeLapse Video</label>&nbsp;&nbsp;
+  <input type="radio" id="nltlv2" name="nltlv" value="dTmNL"> <label for="nltlv2">NightLapse Video</label>&nbsp;&nbsp;
   <input type="radio" id="nltlv3" name="nltlv" value=""> <label for="nltlv3">not set</label>
  
 <b>Lens:</b>&nbsp;&nbsp;
