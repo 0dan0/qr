@@ -169,7 +169,7 @@ function timeLoop()
 	document.getElementById("endtext").innerHTML = etxt;
 	
 	var spftxt = dval("fpslapse");
-	var spf = spftxt.split(".", 4);
+	var spf = spftxt.slice(2);
 	
 	secs = ((endminstime - endhourstime)*60 / parseInt(spf)) / 30;
 			
