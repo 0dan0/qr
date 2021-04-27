@@ -36,7 +36,8 @@ Remember to set your camera's [clock](../precisiontime) before using this QR Cod
   <input type="radio" id="fpslapse6" name="fpslapse" value="p.120" > <label for="fpslapse6">2min </label>&nbsp;&nbsp;
   <input type="radio" id="fpslapse7" name="fpslapse" value="p.300" > <label for="fpslapse7">5min </label>&nbsp;&nbsp;
   <input type="radio" id="fpslapse8" name="fpslapse" value="p.1800"> <label for="fpslapse8">30min </label>&nbsp;&nbsp;
-  <input type="radio" id="fpslapse9" name="fpslapse" value="p.3600"> <label for="fpslapse9">60min </label>
+  <input type="radio" id="fpslapse9" name="fpslapse" value="p.3600"> <label for="fpslapse9">60min </label>&nbsp;&nbsp;
+  <input type="radio" id="fpslapse9" name="fpslapse" value=""> <label for="fpslapse10">not set </label>
  
 ## Time-lapse Capture Time
 
@@ -170,7 +171,10 @@ function timeLoop()
 	var secs10 =  fsecs * 10;
 	var secs = Math.trunc(secs10) / 10;
 
-	document.getElementById("length").innerHTML = secs;
+	if(spf == "")
+		document.getElementById("length").innerHTML = "unknown";
+	else
+		document.getElementById("length").innerHTML = secs;
 		
 	
 
