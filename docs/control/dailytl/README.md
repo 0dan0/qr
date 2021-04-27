@@ -47,10 +47,6 @@ End Time <input type="range" style="width: 300px;" id="tlend" name="tlend" min="
 <input type="checkbox" id="upld" name="upld" checked> 
 <label for="upld">Upload at the end of each capture</label><br>
 
-Daily playback length (at 30fps): <b id="length1"> seconds</b><br>
-Daily playback length (at 30fps): <b id="length2"> seconds</b><br>
-Daily playback length (at 30fps): <b id="length3"> seconds</b><br>
-Daily playback length (at 30fps): <b id="length4"> seconds</b><br>
 Daily playback length (at 30fps): <b id="length"> seconds</b>
  
 <center>
