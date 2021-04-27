@@ -150,7 +150,7 @@ function timeLoop()
 
 	cmd = "";
 	cmd = dcmd(cmd,"nltlv");
-	cmd = dcmd(cmd,"nltf");
+	cmd = dcmd(cmd,"tlvf");
 	cmd = dcmd(cmd,"fpslapse");
 	
 	cmd = cmd + "!" + stxt + "S" + "!" + etxt + "E";
