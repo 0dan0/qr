@@ -22,7 +22,9 @@
 * **!**time**R** - Repeat the whole command.
 * **!**time**N** - No Action until exact **time**, useful if you just need a pause.
 * **!**time**NQ** - No Action until at approximately **time**.
-* **!**time**O** - Off - shutdown the camera.
+* **!**time**O** - Off, shutdown the camera.
+* **!**time**OR** - shutdown and restart the camera.
+* **!**time**U** - Attempt and network contention and Upload **HERO9 only**
 * **!**time**SMs-t** - Start Motion detection with start sensitivity 's' and stop sensitivity 't' -- 't' field is optional.
 * **!**time**SMsDdMmHh** - Start Motion detection with sensitivity 's', Delay of 'd', Mask of 'm' and Hold for 'h' seconds (D,M and H fields are all optional.)
 * **!**time**SKs-t** - Start Speed capture at threshold 's' km/h and stop at 't' km/h -- 't' field is optional.
@@ -78,8 +80,6 @@ The geek factor is highest in this section.  This is not a Turing-complete langu
 * **\>**timeA**\<**timeB**cmdTrue+cmdTrue~cmdFalse+cmdFalse** e.g. mP>06:00<20:00"wait 3m"+!180SQ~"wait tomorrow"+!06:00S!R - The '+' characters allow you to extend the conditional command, like changing mode before the action.
 * **"any text"** e.g. mV"Video\nMode"!S!5E!4NmP"Photo\nMode"!S!5R - this will display "Video Mode" and "Photo Mode" when switch to those modes.  
 
-Known Issue: The saved and load scripts can't support conditionals, as the '<' and '>' characters, nor are " characters supported in scripts. This oversight will hopefully be addressed in a future Labs build. So scripts are currently limited to a simple series of actions. The conditionals are functioning correction within QR Code reading. So commands/scripts that use conditionals will be limited to around 200 characters in a single QR Code.
-
 # Experiment Here
 
 ## Typing-in Your Custom Action:
@@ -89,7 +89,7 @@ Known Issue: The saved and load scripts can't support conditionals, as the '<' a
 Custom Mode: <input type="text" id="tryit" value=""><br>
 
 
-## ver 1.03 - 2021 Jan 28 
+## ver 1.04 - 2021 May  
 [BACK](..)
 
 
