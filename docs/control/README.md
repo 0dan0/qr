@@ -7,7 +7,7 @@ and as a mobile app:<br>
 [![apple app store](apple-store-823.png)](https://apps.apple.com/us/app/gopro-app/id1518134202)
 * Precisely setup your cameras with [**Local Date and Time**](./precisiontime) or [**UTC Time**](./precisiontime_utc)
 * Personalize your cameras with [**Owner Information**](./owner)
-* <span style="color:steelblue">**NEW**</span> Subset of commands for the [**HERO 5 Session**](./session5) commands
+* <span style="color:steelblue">**NEW**</span> - Subset of commands for the [**HERO 5 Session**](./session5) commands
 
 ### Capture Triggers 
 * Capture only the interesting moments with [**Motion Detection**](./motion)
@@ -25,7 +25,7 @@ and as a mobile app:<br>
 * **HERO8/9 and MAX only** - Add text like Date and Time with [**Video 'Burn-in' Overlays**](./overlays)
 * Set the [**Maximum Shutter Angle**](./maxshut) for greater control over stabilization in low light
 * Set the [**Exposure Lock**](./explock) via QR Code
-* <span style="color:steelblue">**NEW**</span> **HERO9 only** Add a logo to small graphics to your video with [**Logo Overlays**](./logo)
+* <span style="color:steelblue">**NEW**</span> **HERO9 only** - Add a logo to small graphics to your video with [**Logo Overlays**](./logo)
 
 ### Miscellaneous Features
 * Enable [**Archive Mode**](./archive), a video only capture mode for loaned cameras 
