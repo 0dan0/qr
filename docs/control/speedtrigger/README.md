@@ -77,7 +77,7 @@ function timeLoop()
 		
 	cmd = "!SK" + snstvty;
 	
-	if(esnstvty > 0) cmd = cmd + "-" + esnstvty;
+	if(esnstvty > 0 && esnstvty != snstvty) cmd = cmd + "-" + esnstvty;
 	//if(delay > 0) cmd = cmd + 'D' + delay;
 	if(hold > 0) cmd = cmd + 'H' + hold;	
 	
