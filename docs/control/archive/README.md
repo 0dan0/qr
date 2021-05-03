@@ -30,9 +30,10 @@ QR Command: <b id="qrtext">command</b><br>
 
 Uncheck the above Archive mode checkbox, and scan the new code while the camera is recording.
 		
-		
-## ver 1.00
-[BACK](..)
+Compatibility: Labs enabled HERO7, HERO8, HERO9 and MAX 
+        
+## ver 1.01
+[Learn more](..) on QR Control
 
 <script>
 var once = true;

@@ -171,8 +171,9 @@ Same further option (‘o’) commands
 Custom Mode: <input type="text" id="tryit" value=""><br>
 
 
-## ver 1.10 - 2021 Third Labs release
-[BACK](..)
+## ver 1.10 - 2021 May, Third Labs release
+
+[Learn more](..) on QR Control
 
 
 <script>

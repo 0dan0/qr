@@ -90,9 +90,10 @@ Known Issues:
 <!-- - Permanent overlays require the clearing of older settings. If your using either Owner or Large Chapters modifications, they will need to be added after the overlay.   -->
 
 		
-## ver 1.22
-
-[BACK](..)
+Compatibility: Labs enabled HERO8, HERO9 and MAX 
+        
+## ver 1.23
+[Learn more](..) on QR Control
 
 <script>
 var once = true;

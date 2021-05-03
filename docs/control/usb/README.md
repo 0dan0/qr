@@ -31,9 +31,11 @@ and end after <input type="range" style="width: 200px;" id="tlendsec" name="tlen
 
 QR Command: <b id="qrtext">time</b><br>
         
-## ver 1.00
+Compatibility: Labs enabled HERO7 (limited), HERO8, HERO9 and MAX 
+        
+## ver 1.01
 
-[BACK](..)
+[Learn more](..) on QR Control
 
 <script>
 var once = true;

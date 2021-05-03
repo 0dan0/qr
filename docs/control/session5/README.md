@@ -260,7 +260,10 @@ Share this QR Code as a URL: <b id="urltext"></b>
 [![google play](../google-play-823.png)](https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
 [![apple app store](../apple-store-823.png)](https://apps.apple.com/us/app/gopro-app/id1518134202)
 
-## version 1.22
+Compatibility: Labs enabled HERO5 Session
+        
+## ver 1.23
+[Learn more](..) on QR Control
 
 <script>
 var lastcmd = "";

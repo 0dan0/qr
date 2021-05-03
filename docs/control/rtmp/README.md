@@ -69,9 +69,10 @@ QR Command: <b id="qrtext">time</b><br>
 
 <b>Print or save this code to live-stream at any time.</b>
 
+Compatibility: Labs enabled HHERO8 and HERO9
         
-## ver 1.00
-[BACK](..)
+## ver 1.01
+[Learn more](..) on QR Control
 
 <script>
 var once = true;

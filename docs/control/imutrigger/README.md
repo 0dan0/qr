@@ -58,8 +58,10 @@ QR Command: <b id="qrtext">time</b><br>
 
 ![Feedback](feedback.jpg)
 
-## ver 1.00
-[BACK](..)
+Compatibility: Labs enabled HERO7, HERO8, HERO9 and MAX 
+        
+## ver 1.01
+[Learn more](..) on QR Control
 
 <script>
 var once = true;
