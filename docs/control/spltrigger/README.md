@@ -17,7 +17,7 @@ This trigger uses the SPL of the audio detected start and stop captures.  Exampl
 ## Customize SPL Detected Capture
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Start Sensitivity** <input type="range" style="width: 300px;" id="snstvty" name="snstvty" min="30" max="120" value="80"><label for="snstvty"></label>&nbsp;&nbsp;<b id="snstvtytext"></b> dB or above, start capture<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**End Sensitivity** <input type="range" style="width: 300px;" id="esnstvty" name="esnstvty" min="30" max="120" value="80"><label for="snstvty"></label>&nbsp;&nbsp;<b id="esnstvtytext"></b> dB or below, stop capture<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**End Sensitivity** <input type="range" style="width: 300px;" id="esnstvty" name="esnstvty" min="30" max="120" value="80"><label for="esnstvty"></label>&nbsp;&nbsp;<b id="esnstvtytext"></b> dB or below, stop capture<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Start Delay** <input type="range" style="width: 300px;" id="delay" name="delay" min="0" max="60" value="1"><label for="delay"></label>&nbsp;&nbsp;<b id="delaytext"></b> seconds before reading audio level.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Hold Time** <input type="range" style="width: 300px;" id="hold" name="hold" min="0" max="120" value="5"><label for="hold"></label>&nbsp;&nbsp;<b id="holdtext"></b> seconds, to continue recording after audio level has dropped.<br> 
 
