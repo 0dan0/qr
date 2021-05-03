@@ -10,8 +10,9 @@ and as a mobile app:<br>
 * <span style="color:steelblue">**NEW**</span> - Subset of commands for the [**HERO 5 Session**](./session5). Hero 5 Session doesn't use the GP1 processor, so it can't do the most of extra features below. It can use QR codes for settings, date & time, scheduled captures, including some of the extended time-lapse feature and ownership information.
 
 ### Capture Triggers 
-* Capture only the interesting moments with [**Motion Detection**](./motion)
-* Start capture using [**IMU Motion Triggers**](./imutrigger) for detecting camera movement
+* Use the image sensor for [**Motion Detection**](./motion), capturing only scenes with motion
+* Capture using [**IMU Motion Triggers**](./imutrigger) for detecting camera movement
+* Start capture only when traveling fast with [**GPS Speed Triggers**](./speedtrigger) 
 * Use the [**USB Power Trigger**](./usb) to start and stop the camera (pseudo dash-cam mode)
 * <span style="color:steelblue">**NEW**</span> **HERO9 only** - Start capture using [**Sound Pressure Level Trigger**](./spltrigger)
 
