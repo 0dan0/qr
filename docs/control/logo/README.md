@@ -14,9 +14,8 @@
 
 Generally, altering your video images with logos is best done as part of editing, preserving the best image quality and the greatest flexibility. However, when live-streaming or using the webcam features, the aren't editing steps. The enhancement is for when you video production doesn't have or has limited time for the editing step.     
  
- 
-Logo offset horizontally <input type="range" style="width: 300px;" id="hsize" name="hsize" min="0" max="200" value="0"><label for="hsize"></label> <b id="hstext">0</b>
-Logo offset vertically <input type="range" style="width: 300px;" id="vsize" name="vsize" min="0" max="200" value="20"><label for="vsize"></label> <b id="vstext">40</b>
+Logo offset horizontally <input type="range" style="width: 200px;" id="hsize" name="hsize" min="0" max="600" value="20"><label for="hsize"></label> <b id="hstext">0</b><br>
+Logo offset vertically <input type="range" style="width: 200px;" id="vsize" name="vsize" min="0" max="400" value="20"><label for="vsize"></label> <b id="vstext">40</b>
 
 **Screen Placement** <br>
   &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp1" name="placement" value="TL"> <label for="sp1">Top Left    </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -28,35 +27,22 @@ Logo offset vertically <input type="range" style="width: 300px;" id="vsize" name
   <input type="radio" id="sp7" name="placement" value="BC"> <label for="sp7">Lower Center</label>&nbsp;
   <input type="radio" id="sp8" name="placement" value="BR" checked> <label for="sp8">Lower Right </label>&nbsp;<br>
   
-  
-**GPS On or Off** <br>
- 
-  &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="gps" name="gps"> <label for="gps">Using GPS</label><br>
+**Your logo's <filename.png>:**  <input type="text" id="pngname" value=""><br>
+Notes: Logo must be in PNG format, and stored within the MISC folder of the camera's SD card. The logo or graphic can use transparency with the alpha channel. The PNG files must be less than 64kBytes with fewer than 64k pixels, e.g. Logo overlay of 400x100 works, but 400x200 will not. The smaller the better for demanding video modes like 4K60, 2.7Kp120 and 1080p240.
 
 <center>
 <div id="qrcode"></div>
 <br>
 </center>
 
-
 Make the overlay permanently active: **Are you sure? (Risky)**  <input type="checkbox" id="permanent" name="permanent"> <label for="permanent">Permanent Overlay</label> <input type="checkbox" id="erase" name="erase"> <label for="erase">Erase</label><br>
 
 QR Command: <b id="qrtext">time</b><br>
 
-Cool Tips:
-- Metadata overlays work great with live-streaming.  This was its original intended function. 
-- Overlays can be changed mid capture, it is one of the few modes that QR Code reading is defaulted to active while recording. Example use: When live streaming an endurance auto-race, you can change the driver name on the overlay during driver change pit-stops. 
-- A range (not all) of GoPro metadata can be displayed in their stored units, so speed is in meters/sec, not MPH. For more technical information on [GoPro's GPMF Metadata](https://gopro.github.io/gpmf-parser/) and other metadata you can display.
-
-Known Issues:
-- The Permanent mode was **not safe on HERO8 Labs v1.70.75**, fixed in the 2021 release. Update to 2021 Labs firmware before using this feature.
-- Metadata can take a second before it updates after capture start.
-<!-- - Permanent overlays require the clearing of older settings. If your using either Owner or Large Chapters modifications, they will need to be added after the overlay.   -->
-
 		
-Compatibility: Labs enabled HERO8, HERO9 and MAX 
+Compatibility: Labs enabled HERO9 only
         
-## ver 1.23
+## ver 1.00
 [Learn more](..) on QR Control
 
 <script>
