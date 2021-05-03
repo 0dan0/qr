@@ -16,8 +16,8 @@ The GPS feature in your GoPro provides speed information in addition to location
 
 ## Customize Speed Triggered Capture
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Start Speed** <input type="range" style="width: 300px;" id="snstvty" name="snstvty" min="1" max="165" value="6"><label for="snstvty"></label>&nbsp;&nbsp;<b id="snstvtytext"></b> km/h (<b id="snstvtymph"></b> mph)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**End Speed** <input type="range" style="width: 300px;" id="esnstvty" name="esnstvty" min="0" max="165" value="0"><label for="esnstvty"></label>&nbsp;&nbsp;<b id="esnstvtytext"></b> km/h (<b id="esnstvtymph"></b> mph) (0 = off or speed threshold)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Start Speed** <input type="range" style="width: 300px;" id="snstvty" name="snstvty" min="1" max="162" value="6"><label for="snstvty"></label>&nbsp;&nbsp;<b id="snstvtytext"></b> km/h (<b id="snstvtymph"></b> mph)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**End Speed** <input type="range" style="width: 300px;" id="esnstvty" name="esnstvty" min="0" max="162" value="0"><label for="esnstvty"></label>&nbsp;&nbsp;<b id="esnstvtytext"></b> km/h (<b id="esnstvtymph"></b> mph) (0 = off or speed threshold)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Hold Time** <input type="range" style="width: 300px;" id="hold" name="hold" min="0" max="120" value="5"><label for="hold"></label>&nbsp;&nbsp;<b id="holdtext"></b> seconds, to continue recording after speed is below the threshold.<br> 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="repeat" name="repeat" checked> 
