@@ -20,8 +20,10 @@ Simply point your Labs enabled camera at this animated QR Code, to set your date
 </center>
 QR Command: <b id="qrtext"></b>
 
-## ver 1.0
-[BACK](..)
+Compatibility: Labs enabled HERO5 Session, HERO7, HERO8, HERO9 and MAX 
+        
+## ver 1.01
+[Learn more](..) on QR Control
 
 <script>
 var once = true;
