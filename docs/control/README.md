@@ -26,7 +26,7 @@ and as a mobile app:<br>
 * **HERO8/9 and MAX only** - Add text like Date and Time with [**Video 'Burn-in' Overlays**](./overlays)
 * Set the [**Maximum Shutter Angle**](./maxshut) for greater control over stabilization in low light
 * Set the [**Exposure Lock**](./explock) via QR Code
-* <span style="color:steelblue">**NEW**</span> **HERO9 only** - Add a logo to small graphics to your video with [**Logo Overlays**](./logo)
+* <span style="color:steelblue">**NEW**</span> **HERO9 only** - Add a logo or any small image to your video with [**Logo Overlays**](./logo)
 
 ### Miscellaneous Features
 * Enable [**Archive Mode**](./archive), a video only capture mode for loaned cameras 
