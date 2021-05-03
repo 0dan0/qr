@@ -7,7 +7,7 @@ and as a mobile app:<br>
 [![apple app store](apple-store-823.png)](https://apps.apple.com/us/app/gopro-app/id1518134202)
 * Precisely setup your cameras with [**Local Date and Time**](./precisiontime) or [**UTC Time**](./precisiontime_utc)
 * Personalize your cameras with [**Owner Information**](./owner)
-* <span style="color:steelblue">**NEW**</span> - Subset of commands for the [**HERO 5 Session**](./session5). Hero 5 Session doesn't use the GP1 processor, so it can't do the most of extra feature below. It can use QR codes for settings, scheduled captures, including some of the extended time-lapse feature and ownership information.
+* <span style="color:steelblue">**NEW**</span> - Subset of commands for the [**HERO 5 Session**](./session5). Hero 5 Session doesn't use the GP1 processor, so it can't do the most of extra features below. It can use QR codes for settings, date & time, scheduled captures, including some of the extended time-lapse feature and ownership information.
 
 ### Capture Triggers 
 * Capture only the interesting moments with [**Motion Detection**](./motion)
