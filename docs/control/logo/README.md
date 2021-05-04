@@ -29,7 +29,10 @@ Logo display time <input type="range" style="width: 200px;" id="brnt" name="brnt
   <input type="radio" id="sp8" name="placement" value="BR" checked> <label for="sp8">Lower Right </label>&nbsp;<br>
   
 **Your logo's filename.png:**  <input type="text" id="pngname" value=""><br>
-Note: Logo must be in PNG format, and stored within the MISC folder of the camera's SD card. The logo or graphic can use transparency with the alpha channel. The PNG files must be less than 64kBytes with fewer than 64k pixels, e.g. Logo overlay of 400x100 works, but 400x200 will not. The smaller the better for demanding video modes like 4K60, 2.7K120 and 1080p240. The logo may preview on the LCD significantly larger than your final video output when not recording, size will be pixel for pixel in the final video.
+Notes: 
+- Logo must be in PNG format, and stored within the MISC folder of the camera's SD card. The logo or graphic can use transparency with the alpha channel. The PNG files must be less than 64kBytes with fewer than 64k pixels, e.g. Logo overlay of 400x100 works, but 400x200 will not. The smaller the better for demanding video modes like 4K60, 2.7K120 and 1080p240. 
+- The logo may preview on the LCD significantly larger than your final video output when not recording, size will be pixel for pixel in the final video.
+- TimeWarp and TimeLapse video modes also work. If you limit the "Logo display time", this will be time of capture, not playback. So you will need to set a larger value.   
 
 Right click on this transparent logo to download and try it out:<br>
 ![GoPro-LogoTiny.png](GoPro-LogoTiny.png)<br>Save to your SD card within the MISC folder.
