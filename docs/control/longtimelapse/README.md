@@ -1,3 +1,5 @@
+# Very Long Time-lapses with Larger Intervals
+
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
 <style>
@@ -9,8 +11,6 @@
             display: inline-block;
         }
 </style>
-
-# Very Long Time-lapses with Larger Intervals
 
 The Labs' firmware allows for much longer time-lapses, on the internal battery alone, by powering off the camera between photos (sorry no video mode time-lapse.) It also supports intervals beyond 60 seconds. A fully charged HERO8 can take around 400 photos, which you can spread over several hours or several days for long form time-lapse.
 

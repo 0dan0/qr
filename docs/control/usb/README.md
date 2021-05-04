@@ -1,3 +1,5 @@
+# USB Power Trigger
+
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
 <style>
@@ -9,8 +11,6 @@
             display: inline-block;
         }
 </style>
-
-# USB Power Trigger
 
 The camera can use the switching on of USB power to boot the camera, and perform an action of your choice.
 

@@ -1,3 +1,5 @@
+# Add an Overlay to Video
+
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
 <style>
@@ -9,8 +11,6 @@
             display: inline-block;
         }
 </style>
-
-# Add an Overlay to Video
 
 This is more for security applications like a dash cam setup, or education environments where student projects are pre-labeled, rather than for creative applications, as it will modify the video image with text that can't be removed.
 

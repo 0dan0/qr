@@ -1,3 +1,5 @@
+# Daily Time-lapse Video and Upload
+
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
 <style>
@@ -9,8 +11,6 @@
             display: inline-block;
         }
 </style>
-
-# Daily Time-lapse Video and Upload
 
 If your camera is already configured (via the Quik App) to enable auto upload to the GoPro cloud, you can use this daily timelapse to automatically sync each day. Requires a GoPro Subscription. Ideal for daily documentation for a construction or sunsize/sunsets.
 

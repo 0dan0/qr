@@ -1,3 +1,5 @@
+# Video Motion Detection to Start and Stop Captures
+
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
 <style>
@@ -9,8 +11,6 @@
             display: inline-block;
         }
 </style>
-
-# Video Motion Detection to Start and Stop Captures
 
 While your GoPro camera is not equipped with ultra sonic or another motion sensor, it does have a very high resolution image sensor that is active even when the camera is not recording. So simply using the main imaging engine, the experimental motion detection feature uses the differences between video frames to detect when to start and stop recording. This means your camera should be mounted so that it is not moving, so that only subject moves will trigger the capture. Motion detection can be use to capture video of a shy animal in the wild or simply reduce any video captures to only the moments with activity.
 

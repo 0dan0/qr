@@ -1,3 +1,5 @@
+# GPS Time Synchronization
+
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
 <style>
@@ -9,8 +11,6 @@
             display: inline-block;
         }
 </style>
-
-# GPS Time Synchronization
 
 If you are shooting with multiple GoPro **HERO9** cameras, enable this feature. 
 

@@ -1,3 +1,5 @@
+# Sound Pressure Level Capture Trigger
+
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
 <style>
@@ -9,8 +11,6 @@
             display: inline-block;
         }
 </style>
-
-# Sound Pressure Level Capture Trigger
 
 This trigger uses the SPL of the audio detected start and stop captures.  Example: Rocket launches with an uncertain launch time, set the SPL to automatically start a capture when the engines fire.
 

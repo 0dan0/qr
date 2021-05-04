@@ -1,3 +1,5 @@
+# Larger Chapter Support
+
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
 <style>
@@ -9,8 +11,6 @@
             display: inline-block;
         }
 </style>
-
-# Chapters Size Control
 
 GoPro cameras normally split long recordings into 4GB segments, we call these chapters. These 4GB (32-bit) MP4 files are the most compatible, yet larger 64-bit MP4 files are becoming more common. If you have an SD Card that is at least 64GBytes, you can increase your chapter size to 12GB with this control below. 
 

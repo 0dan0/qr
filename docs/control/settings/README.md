@@ -1,3 +1,5 @@
+## Full List the Settings Commands
+
 <script src="../../qrcodeborder.js"></script>
 <style>
         #qrcode{
@@ -13,7 +15,6 @@
         }
 </style>
 
-## Full List the Settings Commands
 Mode commands: 
  * **mV** - mode Video
  * **mP** - mode Photo

@@ -1,3 +1,5 @@
+# IMU (Camera Motion) Detection to Start and Stop Captures
+
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
 <style>
@@ -9,8 +11,6 @@
             display: inline-block;
         }
 </style>
-
-# IMU (Camera Motion) Detection to Start and Stop Captures
 
 While the motion detection feature looks for changes in the image, this is only looking for motion of the camera itself. The Inertial measurement unit (IMU), has a gyroscope and accelerometer for measuring rotation and linear acceleration, this can now be used to start and stop captures.  Example: Drone use, only capture while in flight, automatically stop recording when motion stops.
 

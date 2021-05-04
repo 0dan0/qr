@@ -1,3 +1,5 @@
+# Add a Logo to Your Videos
+
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
 <style>
@@ -9,8 +11,6 @@
             display: inline-block;
         }
 </style>
-
-# Add a Logo to Your Videos
 
 Altering your video images with logos is best done as part of editing, preserving the best image quality and the greatest flexibility. However, when live-streaming or using the webcam features, there aren’t any editing steps. This Labs enhancement is for when your video production doesn’t have the editing step, or has limited time for editing, and you still want the added production value of a channel logo.
  

@@ -1,3 +1,5 @@
+# GPS Speed Triggered Start and Stop Captures
+
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
 <style>
@@ -9,8 +11,6 @@
             display: inline-block;
         }
 </style>
-
-# GPS Speed Triggered Start and Stop Captures
 
 The GPS feature in your GoPro provides speed information in addition to location, this speed can be used as a threshold to start and stop a capture.  Example: A track day, you only want to capture once you are driving at speed.
 

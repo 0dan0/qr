@@ -1,3 +1,5 @@
+# Maximum Shutter Angle
+
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
 <style>
@@ -9,8 +11,6 @@
             display: inline-block;
         }
 </style>
-
-# Maximum Shutter Angle
 
 ## More control over low-light stabilization.
 

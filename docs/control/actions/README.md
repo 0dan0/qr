@@ -1,3 +1,5 @@
+## Full List the Action Commands
+
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
 <style>
@@ -13,8 +15,6 @@
             display: inline-block;
         }
 </style>     
-
-## Full List the Action Commands
 
 * **!**time**S** - Start at exactly **time** if in hh:mm form, or after n seconds. 
 * **!**time**SQ** - Start Quickly at approximately **time** if in hh:mm form, or after n seconds.  
