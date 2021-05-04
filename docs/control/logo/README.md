@@ -15,7 +15,7 @@
 Generally, altering your video images with logos is best done as part of editing, preserving the best image quality and the greatest flexibility. However, when live-streaming or using the webcam features, the aren't editing steps. This Labs enhancement is for when you video production doesn't have, or has limited time for, the editing step.     
  
 Logo offset horizontally <input type="range" style="width: 200px;" id="xpos" name="xpos" min="0" max="600" value="20"><label for="xpos"></label> <b id="xpostxt">20</b><br>
-Logo offset vertically <input type="range" style="width: 200px;" id="ypos" name="ypos" min="0" max="400" value="20"><label for="ypos"></label> <b id="ypostxt">20</b>
+Logo offset vertically <input type="range" style="width: 200px;" id="ypos" name="ypos" min="0" max="400" value="20"><label for="ypos"></label> <b id="ypostxt">20</b><br>
 Logo display time <input type="range" style="width: 200px;" id="brnt" name="brnt" min="0" max="130" value="0"><label for="brnt"></label> <b id="brnttxt">unlimited</b>
 
 **Screen Placement** <br>
@@ -107,7 +107,7 @@ function timeLoop()
 		mtype = "!";
     }
 
-    var cmd = mtype + "MBRNX=" + document.getElementById("xpos").value + "," + document.getElementById("ypos").value;
+    cmd = mtype + "MBRNX=" + document.getElementById("xpos").value + "," + document.getElementById("ypos").value;
 	
 	var defpos = "BR";
 	if(pos.compareTo(defpos) != 0)
@@ -118,18 +118,18 @@ function timeLoop()
 	{
 		var x = document.getElementById("xpos").value;
 		var y = document.getElementById("ypos").value; 
-		var t = document.getElementById("brnt").value; 
+		var tm = document.getElementById("brnt").value; 
 		document.getElementById("xpostxt").innerHTML = x;
 		document.getElementById("ypostxt").innerHTML = y;
 		
-		if(t == 0) 
+		if(tm == 0) 
 			document.getElementById("brnttxt").innerHTML = "unlimited";
-		else (t < 30)
-			document.getElementById("brnttxt").innerHTML = t/30 + " secs";
-		else (t < 90)
-			document.getElementById("brnttxt").innerHTML = (t-29) + " secs";
+		else if (tm < 30)
+			document.getElementById("brnttxt").innerHTML = tm/30 + " secs";
+		else if (tm < 90)
+			document.getElementById("brnttxt").innerHTML = (tm-29) + " secs";
 		else
-			document.getElementById("brnttxt").innerHTML = (t-89) + " mins";
+			document.getElementById("brnttxt").innerHTML = (tm-89) + " mins";
 			
 		
 	}
