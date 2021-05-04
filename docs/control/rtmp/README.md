@@ -1,3 +1,5 @@
+# Live-Stream Setup 
+
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
 <style>
@@ -9,8 +11,6 @@
             display: inline-block;
         }
 </style>
-
-# Live-Stream Setup 
 
 ## Prerequisites for Live-streaming (HERO8 & HERO9 only)
 

@@ -34,7 +34,7 @@ and as a mobile app:<br>
 * **HERO9 only** - Sync multiple cameras' timecode via [**GPS Time Synchronization**](./gpssync)
 * **HERO8/9 and MAX only** - Experiment with larger chapter sizes with [**12 GB Chapters**](./chapters)
 * **HERO8/9 and MAX only** - Multi-camera users, label you media with [**Altered File Naming**](./basename)
-* <span style="color:steelblue">**NEW**</span> **HERO9 only** - Timecode Support via [**LTC**](./LTC) over audio line-in using Media Mod 
+* <span style="color:steelblue">**NEW**</span> **HERO9 only** - Timecode Support via [**LTC**](./ltc) over audio line-in using Media Mod 
 * <span style="color:steelblue">**NEW**</span> **HERO9 only** - Enable media [**encryption**](./encrypt) for increased security
 * <span style="color:steelblue">**NEW**</span> Many more [**extensions**](./extensions) via QR Code
 
