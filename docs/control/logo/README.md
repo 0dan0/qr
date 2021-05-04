@@ -16,7 +16,7 @@ Generally, altering your video images with logos is best done as part of editing
  
 Logo offset horizontally <input type="range" style="width: 200px;" id="xpos" name="xpos" min="0" max="600" value="20"><label for="xpos"></label> <b id="xpostxt">20</b><br>
 Logo offset vertically <input type="range" style="width: 200px;" id="ypos" name="ypos" min="0" max="400" value="20"><label for="ypos"></label> <b id="ypostxt">20</b><br>
-Logo display time <input type="range" style="width: 200px;" id="brnt" name="brnt" min="0" max="130" value="0"><label for="brnt"></label> <b id="brnttxt">unlimited</b>
+Logo display time <input type="range" style="width: 200px;" id="brnt" name="brnt" min="0" max="149" value="0"><label for="brnt"></label> <b id="brnttxt">unlimited</b>
 
 **Screen Placement** <br>
   &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp1" name="placement" value="TL"> <label for="sp1">Top Left    </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -109,10 +109,10 @@ function timeLoop()
 
     cmd = mtype + "MBRNX=" + document.getElementById("xpos").value + "," + document.getElementById("ypos").value;
 	cmd = cmd + mtype + "MBRNP=\"" + pos + "\"";
-	cmd = cmd + mtype + "MLOGO=\"" + document.getElementById("pngname").value + "\"";
 	
 	if(document.getElementById("xpostxt") !== null)
 	{
+		var s = 0;
 		var x = document.getElementById("xpos").value;
 		var y = document.getElementById("ypos").value; 
 		var tm = document.getElementById("brnt").value; 
@@ -120,15 +120,30 @@ function timeLoop()
 		document.getElementById("ypostxt").innerHTML = y;
 		
 		if(tm == 0) 
+		{
+			s = 0;
 			document.getElementById("brnttxt").innerHTML = "unlimited";
+		}
 		else if (tm < 30)
-			document.getElementById("brnttxt").innerHTML = (tm/30) + " secs";
+		{
+			s = Math.trunc(100*tm/30)/100;
+			document.getElementById("brnttxt").innerHTML = s + " secs";
+		}
 		else if (tm < 90)
-			document.getElementById("brnttxt").innerHTML = (tm-29) + " secs";
+		{
+			s = tm-29;
+			document.getElementById("brnttxt").innerHTML = s + " secs";
+		}
 		else
-			document.getElementById("brnttxt").innerHTML = (tm-89) + " mins";	
+		{
+			s = (tm-90)*60;
+			document.getElementById("brnttxt").innerHTML = (tm-90) + " mins";
+		}
+		
+		cmd = cmd + mtype + "MBRNT=" + s;
 	}
-  
+	cmd = cmd + mtype + "MLOGO=\"" + document.getElementById("pngname").value + "\"";
+	
 	if(document.getElementById("erase").checked === true)
 	{
 		cmd = mtype + "MLOGO=\"\"";
