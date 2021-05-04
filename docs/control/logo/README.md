@@ -108,25 +108,25 @@ function timeLoop()
     }
 
     cmd = mtype + "MBRNX=" + document.getElementById("xpos").value + "," + document.getElementById("ypos").value;
-	cmd = cmd + mtype + "MBRNP=\"" + pos + "\"";
-	cmd = cmd + mtype + "MLOGO=\"" + document.getElementById("pngname").value + "\"";
+	//cmd = cmd + mtype + "MBRNP=\"" + pos + "\"";
+	//cmd = cmd + mtype + "MLOGO=\"" + document.getElementById("pngname").value + "\"";
 	
 	if(document.getElementById("xpostxt") !== null)
 	{
 		var x = document.getElementById("xpos").value;
 		var y = document.getElementById("ypos").value; 
-		var tm = document.getElementById("brnt").value; 
+		//var tm = document.getElementById("brnt").value; 
 		document.getElementById("xpostxt").innerHTML = x;
 		document.getElementById("ypostxt").innerHTML = y;
 		
-		if(tm == 0) 
-			document.getElementById("brnttxt").innerHTML = "unlimited";
-		else if (tm < 30)
-			document.getElementById("brnttxt").innerHTML = (tm/30) + " secs";
-		else if (tm < 90)
-			document.getElementById("brnttxt").innerHTML = (tm-29) + " secs";
-		else
-			document.getElementById("brnttxt").innerHTML = (tm-89) + " mins";	
+		//if(tm == 0) 
+		//	document.getElementById("brnttxt").innerHTML = "unlimited";
+		//else if (tm < 30)
+		//	document.getElementById("brnttxt").innerHTML = (tm/30) + " secs";
+		//else if (tm < 90)
+		//	document.getElementById("brnttxt").innerHTML = (tm-29) + " secs";
+		//else
+		//	document.getElementById("brnttxt").innerHTML = (tm-89) + " mins";	
 	}
   
 	if(document.getElementById("erase").checked === true)
