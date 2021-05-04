@@ -12,8 +12,9 @@
 
 # Daily Time-lapse Video and Upload
 
-If you camera is already configured (via the Quik App) to enable auto upload to the GoPro cloud, you can use this daily timelapse to automatically sync each day. Requires a GoPro Subscription. Ideal for daily documentation for a construction or sunsize/sunsets
-Remember to set your camera's [clock](../precisiontime) before using this QR Code.
+If your camera is already configured (via the Quik App) to enable auto upload to the GoPro cloud, you can use this daily timelapse to automatically sync each day. Requires a GoPro Subscription. Ideal for daily documentation for a construction or sunsize/sunsets.
+
+Note: it is best to set your camera’s date and time before using this QR Code for improved precision.
 
 ## Time-lapse Settings
 
@@ -59,7 +60,7 @@ QR Command: <b id="qrtext">time</b><br>
       
 ## Solutions for extra long captures
 
-A/C powering the camera via USB is the best. With continuous power supplied, remove internal the battery (charging can reset the wake timer), and the camera should run for a very long time (only SD card storage limitations.) You might be tempted to use a Lithium Ion USB powerbank, however they typically do not work well. They are designed to quickly recharge a smartphone, and when they think power is no longer needed, they shut-off. A select few USB battery sources include an "always on feature" designed for time-lapse projects. Example:[voltaicsystems.com/v50](https://voltaicsystems.com/v50/) This one can even solar recharge the battery at the same time. The second option is add a USB keep alive device that prevents your USB power bank from shutting down. Examples: from [sotabeams.co.uk](https://www.sotabeams.co.uk/usb-battery-pack-keep-alive-load/) and from [tindie.com](https://www.tindie.com/products/overz/smart-power-bank-keep-alive/)
+A/C powering the camera via USB is the best. With continuous power supplied, remove the internal battery (charging can reset the wake timer), and the camera should run for a very long time (only SD card storage limitations.) You might be tempted to use a Lithium Ion USB powerbank, however they typically do not work well. They are designed to quickly recharge a smartphone, and when they think power is no longer needed, they shut-off. A select few USB battery sources include an "always on feature" designed for time-lapse projects. Example:[voltaicsystems.com/v50](https://voltaicsystems.com/v50/) This one can even solar recharge the battery at the same time. The second option is add a USB keep alive device that prevents your USB power bank from shutting down. Examples: from [sotabeams.co.uk](https://www.sotabeams.co.uk/usb-battery-pack-keep-alive-load/) and from [tindie.com](https://www.tindie.com/products/overz/smart-power-bank-keep-alive/)
 	
 Compatibility: Labs enabled HERO9 only
         
