@@ -85,7 +85,7 @@ function makeQR()
   {
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
-      text : "!oMBURN=\"\"",
+      text : "oMLOGO=\"\"",
       width : 360,
       height : 360,
       correctLevel : QRCode.CorrectLevel.M
@@ -96,22 +96,17 @@ function makeQR()
 
 function timeLoop()
 {
-  if(document.getElementById("startmsg") !== null)
+  if(document.getElementById("pngname") !== null)
   {
     var mtype = "o";
-	var openb = "\[";
-	var closeb = "\]";
-	var pos = dcmd("","sp");
-	
+	var pos = dcmd("","sp");	
    
-	cmd = "";
-	
 	if(document.getElementById("permanent").checked === true)
 	{
 		mtype = "!";
     }
 
-    cmd = mtype + "MBRNX=" + document.getElementById("xpos").value   + mtype + "MBRNY=" + document.getElementById("xpos").value   + mtype + "MBRNP=\"" + pos + "\""   + mtype + "MLOGO=\"" + document.getElementById("pngname").value + "\"";
+    var cmd = mtype + "MBRNX=" + document.getElementById("xpos").value   + mtype + "MBRNY=" + document.getElementById("xpos").value   + mtype + "MBRNP=\"" + pos + "\""   + mtype + "MLOGO=\"" + document.getElementById("pngname").value + "\"";
 	
 	if(document.getElementById("erase").checked === true)
 	{
@@ -120,18 +115,9 @@ function timeLoop()
   }
   else
   {
-    cmd = "oMBURN=\"\"";
+    cmd = "oMLOGO=\"\"";
   }
 
-  if(document.getElementById("hsize") !== null)
-  {
-	var h = document.getElementById("hsize").value;
-	var v = document.getElementById("vsize").value;
- 
-	document.getElementById("hstext").innerHTML = h;
-	document.getElementById("vstext").innerHTML = v;
-  }
-  
   qrcode.clear(); 
   qrcode.makeCode(cmd);
   

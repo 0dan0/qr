@@ -130,7 +130,7 @@ function makeQR()
   {
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
-      text : "!oMBURN=\"\"",
+      text : "oMBURN=\"\"",
       width : 360,
       height : 360,
       correctLevel : QRCode.CorrectLevel.M
