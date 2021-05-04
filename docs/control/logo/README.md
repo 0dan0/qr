@@ -136,8 +136,8 @@ function timeLoop()
 		}
 		else
 		{
-			s = (tm-90)*60;
-			document.getElementById("brnttxt").innerHTML = (tm-90) + " mins";
+			s = (tm-89)*60;
+			document.getElementById("brnttxt").innerHTML = (tm-89) + " mins";
 		}
 		
 		cmd = cmd + mtype + "MBRNT=" + s;
