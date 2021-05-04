@@ -114,7 +114,7 @@ function timeLoop()
     cmd = mtype + "MBRNX=" + document.getElementById("xpos").value 
 		+ mtype + "MBRNY=" + document.getElementById("xpos").value 
 		+ mtype + "MBRNP=\"" + pos + "\"" 
-		+ mtype + "MLOGO=\"" + document.getElementById("endmsg").value + "\"";;
+		+ mtype + "MLOGO=\"" + document.getElementById("pngname").value + "\"";;
 	
 	if(document.getElementById("erase").checked === true)
 	{
