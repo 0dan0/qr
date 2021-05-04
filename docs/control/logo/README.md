@@ -106,8 +106,13 @@ function timeLoop()
 		mtype = "!";
     }
 
-    var cmd = mtype + "MBRNX=" + document.getElementById("xpos").value   + mtype + "MBRNY=" + document.getElementById("xpos").value   + mtype + "MBRNP=\"" + pos + "\""   + mtype + "MLOGO=\"" + document.getElementById("pngname").value + "\"";
+    var cmd = mtype + "MBRNX=" + document.getElementById("xpos").value   + mtype + "MBRNY=" + document.getElementById("ypos").value   + mtype + "MBRNP=\"" + pos + "\""   + mtype + "MLOGO=\"" + document.getElementById("pngname").value + "\"";
 	
+	var x = document.getElementById("xpos").value;
+	var y = document.getElementById("ypos").value; 
+	document.getElementById("xpostext").innerHTML = x;
+	document.getElementById("ypostext").innerHTML = y;
+  
 	if(document.getElementById("erase").checked === true)
 	{
 		cmd = mtype + "MLOGO=\"\"";
