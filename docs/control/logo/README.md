@@ -35,7 +35,7 @@ Notes:
 - TimeWarp and TimeLapse video modes also work. If you limit the "Logo display time", this will be time of capture, not playback. So you will need to set a larger value.   
 
 Right click on this transparent logo to download and try it out:<br>
-![GoPro-LogoTiny.png](GoPro-LogoTiny.png)<br>Save to your SD card within the MISC folder.
+![GoProLogo.png](GoProLogo.png)<br>Save to your SD card within the MISC folder.
 
 <center>
 <div id="qrcode"></div>
