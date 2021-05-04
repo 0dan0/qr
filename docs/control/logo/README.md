@@ -108,10 +108,7 @@ function timeLoop()
     }
 
     cmd = mtype + "MBRNX=" + document.getElementById("xpos").value + "," + document.getElementById("ypos").value;
-	
-	var defpos = "BR";
-	if(pos.compareTo(defpos) != 0)
-		cmd = cmd + mtype + "MBRNP=\"" + pos + "\"";
+	cmd = cmd + mtype + "MBRNP=\"" + pos + "\"";
 	cmd = cmd + mtype + "MLOGO=\"" + document.getElementById("pngname").value + "\"";
 	
 	if(document.getElementById("xpostxt") !== null)
@@ -125,13 +122,11 @@ function timeLoop()
 		if(tm == 0) 
 			document.getElementById("brnttxt").innerHTML = "unlimited";
 		else if (tm < 30)
-			document.getElementById("brnttxt").innerHTML = tm/30 + " secs";
+			document.getElementById("brnttxt").innerHTML = (tm/30) + " secs";
 		else if (tm < 90)
 			document.getElementById("brnttxt").innerHTML = (tm-29) + " secs";
 		else
-			document.getElementById("brnttxt").innerHTML = (tm-89) + " mins";
-			
-		
+			document.getElementById("brnttxt").innerHTML = (tm-89) + " mins";	
 	}
   
 	if(document.getElementById("erase").checked === true)
