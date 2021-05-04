@@ -16,6 +16,7 @@ Generally, altering your video images with logos is best done as part of editing
  
 Logo offset horizontally <input type="range" style="width: 200px;" id="xpos" name="xpos" min="0" max="600" value="20"><label for="xpos"></label> <b id="xpostxt">20</b><br>
 Logo offset vertically <input type="range" style="width: 200px;" id="ypos" name="ypos" min="0" max="400" value="20"><label for="ypos"></label> <b id="ypostxt">20</b>
+Logo display time <input type="range" style="width: 200px;" id="brnt" name="brnt" min="0" max="130" value="0"><label for="brnt"></label> <b id="brnttxt">unlimited</b>
 
 **Screen Placement** <br>
   &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp1" name="placement" value="TL"> <label for="sp1">Top Left    </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -106,14 +107,31 @@ function timeLoop()
 		mtype = "!";
     }
 
-    var cmd = mtype + "MBRNX=" + document.getElementById("xpos").value   + mtype + "MBRNY=" + document.getElementById("ypos").value   + mtype + "MBRNP=\"" + pos + "\""   + mtype + "MLOGO=\"" + document.getElementById("pngname").value + "\"";
+    var cmd = mtype + "MBRNX=" + document.getElementById("xpos").value + "," + document.getElementById("ypos").value;
+	
+	var defpos = "BR";
+	if(pos.compareTo(defpos) != 0)
+		cmd = cmd + mtype + "MBRNP=\"" + pos + "\"";
+	cmd = cmd + mtype + "MLOGO=\"" + document.getElementById("pngname").value + "\"";
 	
 	if(document.getElementById("xpostxt") !== null)
 	{
 		var x = document.getElementById("xpos").value;
 		var y = document.getElementById("ypos").value; 
+		var t = document.getElementById("brnt").value; 
 		document.getElementById("xpostxt").innerHTML = x;
 		document.getElementById("ypostxt").innerHTML = y;
+		
+		if(t == 0) 
+			document.getElementById("brnttxt").innerHTML = "unlimited";
+		else (t < 30)
+			document.getElementById("brnttxt").innerHTML = t/30 + " secs";
+		else (t < 90)
+			document.getElementById("brnttxt").innerHTML = (t-29) + " secs";
+		else
+			document.getElementById("brnttxt").innerHTML = (t-89) + " mins";
+			
+		
 	}
   
 	if(document.getElementById("erase").checked === true)
