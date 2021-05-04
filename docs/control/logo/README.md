@@ -12,7 +12,7 @@
 
 # Add a Logo to Your Videos
 
-Generally, altering your video images with logos is best done as part of editing, preserving the best image quality and the greatest flexibility. However, when live-streaming or using the webcam features, the aren't editing steps. This Labs enhancement is for when you video production doesn't have, or has limited time for, the editing step, and still want the added production value of a channel logo.
+Generally, altering your video images with logos is best done as part of editing, preserving the best image quality and the greatest flexibility. However, when live-streaming or using the webcam features, the aren't editing steps. This Labs enhancement is for when your video production doesn't have the editing step, or has limited time for editing, and you still want the added production value of a channel logo.
  
 Logo offset horizontally <input type="range" style="width: 200px;" id="xpos" name="xpos" min="0" max="600" value="20"><label for="xpos"></label> <b id="xpostxt">20</b><br>
 Logo offset vertically <input type="range" style="width: 200px;" id="ypos" name="ypos" min="0" max="400" value="20"><label for="ypos"></label> <b id="ypostxt">20</b><br>
