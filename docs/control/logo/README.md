@@ -10,9 +10,9 @@
         }
 </style>
 
-# Add a Logo to your Videos
+# Add a Logo to Your Videos
 
-Generally, altering your video images with logos is best done as part of editing, preserving the best image quality and the greatest flexibility. However, when live-streaming or using the webcam features, the aren't editing steps. The enhancement is for when you video production doesn't have or has limited time for the editing step.     
+Generally, altering your video images with logos is best done as part of editing, preserving the best image quality and the greatest flexibility. However, when live-streaming or using the webcam features, the aren't editing steps. This Labs enhancement is for when you video production doesn't have, or has limited time for, the editing step.     
  
 Logo offset horizontally <input type="range" style="width: 200px;" id="hsize" name="hsize" min="0" max="600" value="20"><label for="hsize"></label> <b id="hstext">0</b><br>
 Logo offset vertically <input type="range" style="width: 200px;" id="vsize" name="vsize" min="0" max="400" value="20"><label for="vsize"></label> <b id="vstext">40</b>
@@ -27,15 +27,18 @@ Logo offset vertically <input type="range" style="width: 200px;" id="vsize" name
   <input type="radio" id="sp7" name="placement" value="BC"> <label for="sp7">Lower Center</label>&nbsp;
   <input type="radio" id="sp8" name="placement" value="BR" checked> <label for="sp8">Lower Right </label>&nbsp;<br>
   
-**Your logo's <filename.png>:**  <input type="text" id="pngname" value=""><br>
-Notes: Logo must be in PNG format, and stored within the MISC folder of the camera's SD card. The logo or graphic can use transparency with the alpha channel. The PNG files must be less than 64kBytes with fewer than 64k pixels, e.g. Logo overlay of 400x100 works, but 400x200 will not. The smaller the better for demanding video modes like 4K60, 2.7Kp120 and 1080p240.
+**Your logo's filename.png:**  <input type="text" id="pngname" value=""><br>
+Note: Logo must be in PNG format, and stored within the MISC folder of the camera's SD card. The logo or graphic can use transparency with the alpha channel. The PNG files must be less than 64kBytes with fewer than 64k pixels, e.g. Logo overlay of 400x100 works, but 400x200 will not. The smaller the better for demanding video modes like 4K60, 2.7K120 and 1080p240.
+
+Right click on this logo to download (and save to your SD) and try it out: 
+![GoPro-LogoTiny.png](GoPro-LogoTiny.png)
 
 <center>
 <div id="qrcode"></div>
 <br>
 </center>
 
-Make the overlay permanently active: **Are you sure? (Risky)**  <input type="checkbox" id="permanent" name="permanent"> <label for="permanent">Permanent Overlay</label> <input type="checkbox" id="erase" name="erase"> <label for="erase">Erase</label><br>
+Make the logo permanently active: **Are you sure? (Risky)**  <input type="checkbox" id="permanent" name="permanent"> <label for="permanent">Permanent Overlay</label> <input type="checkbox" id="erase" name="erase"> <label for="erase">Erase</label><br>
 
 QR Command: <b id="qrtext">time</b><br>
 
