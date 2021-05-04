@@ -17,10 +17,9 @@ This is more for security applications like a dash cam setup, or education envir
 If either horizontal or vertical size is zero, the size will be computed automatically.
  
 Overlay vertical size <input type="range" style="width: 300px;" id="vsize" name="vsize" min="0" max="200" value="20"><label for="vsize"></label> <b id="vstext">40</b>
-
 Overlay horizontal size <input type="range" style="width: 300px;" id="hsize" name="hsize" min="0" max="200" value="0"><label for="hsize"></label> <b id="hstext">0</b>
-
 Offset from the edge <input type="range" style="width: 300px;" id="offset" name="offset" min="10" max="150" value="10"><label for="offset"></label> <b id="offtext">10</b>
+Overlay display time (HERO9 only) <input type="range" style="width: 200px;" id="brnt" name="brnt" min="0" max="149" value="0"><label for="brnt"></label> <b id="brnttxt">unlimited</b>
 
 Note: All text box support **\n** for a new line.
 
@@ -90,7 +89,7 @@ Known Issues:
 		
 Compatibility: Labs enabled HERO8, HERO9 and MAX 
         
-## ver 1.23
+## ver 1.30
 [Learn more](..) on QR Control
 
 <script>
@@ -164,6 +163,34 @@ function timeLoop()
 	else
 	{
 		cmd = cmd + "g0";
+	}
+	
+	{
+		var tm = document.getElementById("brnt").value; 
+		
+		if(tm == 0) 
+		{
+			s = 0;
+			document.getElementById("brnttxt").innerHTML = "unlimited";
+		}
+		else if (tm < 30)
+		{
+			s = Math.trunc(100*tm/30)/100;
+			document.getElementById("brnttxt").innerHTML = s + " secs";
+		}
+		else if (tm < 90)
+		{
+			s = tm-29;
+			document.getElementById("brnttxt").innerHTML = s + " secs";
+		}
+		else
+		{
+			s = (tm-89)*60;
+			document.getElementById("brnttxt").innerHTML = (tm-89) + " mins";
+		}
+		
+		if(s != 0)
+			cmd = cmd + mtype + "MBRNT=" + s;
 	}
 	
     cmd = cmd + mtype + "MBRNO=" + document.getElementById("offset").value + mtype + "MBURN=\"(" + document.getElementById("hsize").value + "," + document.getElementById("vsize").value + ")" + document.getElementById("startmsg").value + openb + pos + document.getElementById("addtime").value + document.getElementById("adddate").value;
