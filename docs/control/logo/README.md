@@ -14,8 +14,8 @@
 
 Generally, altering your video images with logos is best done as part of editing, preserving the best image quality and the greatest flexibility. However, when live-streaming or using the webcam features, the aren't editing steps. This Labs enhancement is for when you video production doesn't have, or has limited time for, the editing step.     
  
-Logo offset horizontally <input type="range" style="width: 200px;" id="hsize" name="hsize" min="0" max="600" value="20"><label for="hsize"></label> <b id="hstext">0</b><br>
-Logo offset vertically <input type="range" style="width: 200px;" id="vsize" name="vsize" min="0" max="400" value="20"><label for="vsize"></label> <b id="vstext">40</b>
+Logo offset horizontally <input type="range" style="width: 200px;" id="xpos" name="xpos" min="0" max="600" value="20"><label for="xpos"></label> <b id="xpostxt">20</b><br>
+Logo offset vertically <input type="range" style="width: 200px;" id="ypos" name="ypos" min="0" max="400" value="20"><label for="ypos"></label> <b id="ypostxt">20</b>
 
 **Screen Placement** <br>
   &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp1" name="placement" value="TL"> <label for="sp1">Top Left    </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -30,7 +30,7 @@ Logo offset vertically <input type="range" style="width: 200px;" id="vsize" name
 **Your logo's filename.png:**  <input type="text" id="pngname" value=""><br>
 Note: Logo must be in PNG format, and stored within the MISC folder of the camera's SD card. The logo or graphic can use transparency with the alpha channel. The PNG files must be less than 64kBytes with fewer than 64k pixels, e.g. Logo overlay of 400x100 works, but 400x200 will not. The smaller the better for demanding video modes like 4K60, 2.7K120 and 1080p240.
 
-Right click on this logo to download (and save to your SD) and try it out: 
+Right click on this transparent logo to download (and save to your SD in the MISC folder) and try it out: 
 ![GoPro-LogoTiny.png](GoPro-LogoTiny.png)
 
 <center>
@@ -108,26 +108,17 @@ function timeLoop()
 	
 	if(document.getElementById("permanent").checked === true)
 	{
-	//	cmd = "!RESET!30NQ";
 		mtype = "!";
     }
-	
-    if(document.getElementById("gps").checked === true)
-    {
-		cmd = cmd + "g1" + mtype + "MLFIN=0";	
-	}
-	else
-	{
-		cmd = cmd + "g0";
-	}
-	
-    cmd = cmd + mtype + "MBRNO=" + document.getElementById("offset").value + mtype + "MBURN=\"(" + document.getElementById("hsize").value + "," + document.getElementById("vsize").value + ")" + document.getElementById("startmsg").value + openb + pos + document.getElementById("addtime").value + document.getElementById("adddate").value;
-	cmd = dcmd(cmd, "am");
-	cmd = cmd + closeb + document.getElementById("endmsg").value + "\"";
+
+    cmd = mtype + "MBRNX=" + document.getElementById("xpos").value 
+		+ mtype + "MBRNY=" + document.getElementById("xpos").value 
+		+ mtype + "MBRNP=\"" + pos + "\"" 
+		+ mtype + "MLOGO=\"" + document.getElementById("endmsg").value + "\"";;
 	
 	if(document.getElementById("erase").checked === true)
 	{
-		cmd = mtype + "MBURN=\"\"";
+		cmd = mtype + "MLOGO=\"\"";
 	}
   }
   else
