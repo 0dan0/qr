@@ -22,6 +22,8 @@ Encrypted media has the first character of the GoPro style filename changed from
 
 Set the password to nothing to disable the encryption.
 
+Your password: <input type="text" id="addpass" value=""> 4-16 characters to activate, empty to deactivate<br> 
+
 ## Decrypting Your Media
 
 Capturing encrypted content is straight forward, show the QR Code with password, acknowledge on camera, then shoot as normal. Decrypting is less so.  During capture of say 30 minutes, the camera takes 30 minutes to encode, encrypt and store the data, i.e. real-time. For decryption, all 30 minutes of data has to be read back into memory, decrypted and written back to the SD card, double the amount of work on the SD Card. This is very dependent on the SD card speed, decryption can take 100 - 150% of the capture time when performed on camera.  It is best to be USB powered when doing a large amount of decryption.
@@ -30,9 +32,7 @@ Capturing encrypted content is straight forward, show the QR Code with password,
 
 The MP4 file structure itself is not encrypted, it remains an indexable, trimmable file. So you can learn about the shooting length, frame rate, and resolution, etc. The metadata is not encrypted, so GPS and IMU data is still exactable. WAV files are not encrypted, so Protune audio is disabled when using the encryption feature. And not every byte is encypted within the H264/HEVC/AAC data, in some streams only about 3% of the data is encypted. This is the trick that makes it all work, i.e. real-time on camera, the data is only obfuscated enough to break decoding. So there is challenge for security experts here, can you make a decodable image, without cracking the password?  
 
-## Try Encryption Here
-
-Your password: <input type="text" id="addpass" value=""><br> 
+## QR Code
 
 <br>
 <center>
