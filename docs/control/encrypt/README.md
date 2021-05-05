@@ -33,13 +33,10 @@ Capturing encrypted content is straight forward, show the QR Code with password,
 The MP4 file structure itself is not encrypted, it remains an indexable, trimmable file. So you can learn about the shooting length, frame rate, and resolution, etc. The metadata is not encrypted, so GPS and IMU data is still exactable. WAV files are not encrypted, so Protune audio is disabled when using the encryption feature. And not every byte is encypted within the H264/HEVC/AAC data, in some streams only about 3% of the data is encypted. This is the trick that makes it all work, i.e. real-time on camera, the data is only obfuscated enough to break decoding. So there is challenge for security experts here, can you make a decodable image, without cracking the password?  
 
 ## QR Code
-
-<br>
 <center>
 <div id="qrcode"></div>
 
 <input type="checkbox" id="permanent" name="permanent"> <label for="permanent">Make this name change permanent (Risky!)</label><br>
-
 <input type="checkbox" id="encrypt" name="encrypt" checked> <label for="encrypt">Encryption</label> (disable for decryption)<br>
 
 </center>
