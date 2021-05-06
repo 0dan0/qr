@@ -31,6 +31,8 @@ Capturing encrypted content is straight forward, show the QR Code with password,
 For a desktop shell tool, precompiled for [Windows](https://github.com/gopro/labs/tree/master/docs/control/encrypt/win/gpsecure.zip), [OS X](https://github.com/gopro/labs/tree/master/docs/control/encrypt/osx/gpsecure.zip) and [Linux x86](https://github.com/gopro/labs/tree/master/docs/control/encrypt/linux/gpsecure.zip).
 Source [code](https://github.com/gopro/labs/tree/master/docs/control/encrypt/src) uses MIT Licensing, and the embedded [AES Code](https://github.com/kokke/tiny-AES-c) uses The Unlicense.
 
+![Shell Tool](shelltool.png)
+
 ## What is not encrypted.  
 
 The MP4 file structure itself is not encrypted, it remains an indexable, trimmable file. So you can learn about the shooting length, frame rate, and resolution, etc. The metadata is not encrypted, so GPS and IMU data is still exactable. WAV files are not encrypted, so Protune audio is disabled when using the encryption feature. And not every byte is encypted within the H264/HEVC/AAC data, in some streams only about 3% of the data is encrypted. This is the trick that makes it all work, i.e. real-time on camera, the data is only obfuscated enough to break decoding. So there is challenge for security experts here, can you make a decodable image, without cracking the password?  
