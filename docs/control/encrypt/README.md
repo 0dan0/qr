@@ -50,7 +50,7 @@ QR Command: <b id="qrtext">time</b><br>
 
 Compatibility: Labs enabled HERO9 only
         
-## ver 1.00
+## ver 1.0
 [Learn more](..) on QR Control
 
 <script>
