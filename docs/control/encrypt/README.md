@@ -28,9 +28,12 @@ Your password: <input type="text" id="addpass" value=""> 4-16 characters to acti
 
 Capturing encrypted content is straight forward, show the QR Code with password, acknowledge on camera, then shoot as normal. Decrypting is less so.  During capture of say 30 minutes, the camera takes 30 minutes to encode, encrypt and store the data, i.e. real-time. For decryption, all 30 minutes of data has to be read back into memory, decrypted and written back to the SD card, double the amount of work on the SD Card. This is very dependent on the SD card speed, decryption can take 100 - 150% of the capture time when performed on camera.  It is best to be USB powered when doing a large amount of decryption. **Warning: If the passwords do not match, the data is doubly encrypted, there is no recovery of the data. Be careful.**
 
+For a Desktop Shell tool, precompiled for [**Windows**](win/gpsecure.exe), [**OS X**](osx/gpsecure) and [**Linux x86**](linux/gpsecure)
+[**Source code**](src) uses MIT Licensing, embedded [**AES Code**](https://github.com/kokke/tiny-AES-c) uses The Unlicense.
+
 ## What is not encrypted.  
 
-The MP4 file structure itself is not encrypted, it remains an indexable, trimmable file. So you can learn about the shooting length, frame rate, and resolution, etc. The metadata is not encrypted, so GPS and IMU data is still exactable. WAV files are not encrypted, so Protune audio is disabled when using the encryption feature. And not every byte is encypted within the H264/HEVC/AAC data, in some streams only about 3% of the data is encypted. This is the trick that makes it all work, i.e. real-time on camera, the data is only obfuscated enough to break decoding. So there is challenge for security experts here, can you make a decodable image, without cracking the password?  
+The MP4 file structure itself is not encrypted, it remains an indexable, trimmable file. So you can learn about the shooting length, frame rate, and resolution, etc. The metadata is not encrypted, so GPS and IMU data is still exactable. WAV files are not encrypted, so Protune audio is disabled when using the encryption feature. And not every byte is encypted within the H264/HEVC/AAC data, in some streams only about 3% of the data is encrypted. This is the trick that makes it all work, i.e. real-time on camera, the data is only obfuscated enough to break decoding. So there is challenge for security experts here, can you make a decodable image, without cracking the password?  
 
 ## QR Code
 <center>
