@@ -28,7 +28,7 @@ Your password: <input type="text" id="addpass" value=""> 4-16 characters to acti
 
 Capturing encrypted content is straight forward, show the QR Code with password, acknowledge on camera, then shoot as normal. Decrypting is less so.  During capture of say 30 minutes, the camera takes 30 minutes to encode, encrypt and store the data, i.e. real-time. For decryption, all 30 minutes of data has to be read back into memory, decrypted and written back to the SD card, double the amount of work on the SD Card. This is very dependent on the SD card speed, decryption can take 100 - 150% of the capture time when performed on camera.  It is best to be USB powered when doing a large amount of decryption. **Warning: If the passwords do not match, the data is doubly encrypted, there is no recovery of the data. Be careful.**
 
-For a desktop shell tool, precompiled for [Windows](win/gpsecure.zip), [OS X](osx/gpsecure.zip) and [Linux x86](linux/gpsecure.zip).
+For a desktop shell tool, precompiled for [Windows](https://github.com/gopro/labs/tree/master/docs/control/encrypt/win/gpsecure.zip), [OS X](https://github.com/gopro/labs/tree/master/docs/control/encrypt/osx/gpsecure.zip) and [Linux x86](https://github.com/gopro/labs/tree/master/docs/control/encrypt/linux/gpsecure.zip).
 Source [code](https://github.com/gopro/labs/tree/master/docs/control/encrypt/src) uses MIT Licensing, and the embedded [AES Code](https://github.com/kokke/tiny-AES-c) uses The Unlicense.
 
 ## What is not encrypted.  
