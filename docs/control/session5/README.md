@@ -107,6 +107,16 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="wb6" name="wb" value="wN" > <label for="wb6">Native </label>&nbsp;&nbsp;
   <input type="radio" id="wb7" name="wb" value="" checked> <label for="wb7">not set</label>
  </div>
+<div id="ptIMIN">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ISO Min:</b>&nbsp;&nbsp;
+  <input type="radio" id="isomin1" name="isomin" value="M1" > <label for="isomin1">100 (def) </label>&nbsp;&nbsp;
+  <input type="radio" id="isomin2" name="isomin" value="M2" > <label for="isomin2">200 </label>&nbsp;&nbsp;
+  <input type="radio" id="isomin3" name="isomin" value="M4" > <label for="isomin3">400 </label>&nbsp;&nbsp;
+  <input type="radio" id="isomin4" name="isomin" value="M8" > <label for="isomin4">800 </label>&nbsp;&nbsp;
+  <input type="radio" id="isomin5" name="isomin" value="M16"> <label for="isomin5">1600 </label>&nbsp;&nbsp;
+  <input type="radio" id="isomin6" name="isomin" value="M32"> <label for="isomin6">3200 </label>&nbsp;&nbsp;
+  <input type="radio" id="isomin7" name="isomin" value="M64"> <label for="isomin7">6400 </label>&nbsp;&nbsp;
+  <input type="radio" id="isomin8" name="isomin" value="M1" checked> <label for="isomin7">not set</label>
+ </div>
 <div id="ptISO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ISO Max:</b>&nbsp;&nbsp;
   <input type="radio" id="iso1" name="iso" value="i1" > <label for="iso1">100 </label>&nbsp;&nbsp;
   <input type="radio" id="iso2" name="iso" value="i2" > <label for="iso2">200 </label>&nbsp;&nbsp;
@@ -252,7 +262,7 @@ Share this QR Code as a URL: <b id="urltext"></b>
 
 Compatibility: Labs enabled HERO5 Session
         
-## ver 1.25
+## ver 1.26
 [Learn more](..) on QR Control
 
 <script>
@@ -304,7 +314,8 @@ function startTime() {
 	
 	dset("ptCOLOR", false);
 	dset("ptWBAL", false);
-	dset("ptISO",false
+	dset("ptISO",false);
+	dset("ptIMIN",false);
 	dset("ptSHUT",false);
 	dset("ptEV",false);
 	dset("ptSHARP",false);
@@ -481,7 +492,7 @@ function startTime() {
 				if(document.getElementById('shut7').checked === false)
 					cmd = dcmd(cmd,"shut"); //shutter angle
 				else
-					cmd = cmd + "M1";
+					cmd = cmd + "M1");
 			}
 				
 			cmd = dcmd(cmd,"ev"); //ev
