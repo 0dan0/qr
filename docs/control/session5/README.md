@@ -474,14 +474,14 @@ function startTime() {
 			cmd = dcmd(cmd,"ptc"); //color
 			cmd = dcmd(cmd,"wb"); //wb
 
-			if(document.getElementById('iso8').checked === false || document.getElementById('isomin8').checked === false)
+			if(document.getElementById('iso8').checked === false)
 			{
 				cmd = dcmd(cmd,"iso"); //iso
 				
 				if(document.getElementById('shut7').checked === false)
 					cmd = dcmd(cmd,"shut"); //shutter angle
 				else
-					cmd = dcmd(cmd,"isomin");//
+					cmd = cmd + "M1";
 			}
 				
 			cmd = dcmd(cmd,"ev"); //ev
