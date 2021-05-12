@@ -262,7 +262,7 @@ Share this QR Code as a URL: <b id="urltext"></b>
 
 Compatibility: Labs enabled HERO5 Session
         
-## ver 1.28
+## ver 1.27
 [Learn more](..) on QR Control
 
 <script>
@@ -494,7 +494,7 @@ function startTime() {
 				if(document.getElementById('shut7').checked === false)
 					cmd = dcmd(cmd,"shut"); //shutter angle
 				else
-					cmd = cmd + "M1");
+					cmd = cmd + "M1";//
 			}
 				
 			cmd = dcmd(cmd,"ev"); //ev
