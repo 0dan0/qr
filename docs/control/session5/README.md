@@ -12,7 +12,7 @@
         }
 </style>
 
-Create a custom camera mode, and even start a capture all through QR Codes. This is the fastest way to access many of the new GoPro Labs' firmware features.
+Create a custom camera mode, and even start a capture all through QR Codes. This is the fastest way to access many of the new GoPro Labs' firmware features.  As the HERO5 Session can't scan while capturing, and the camera defaults to a QuickCapture, you have to manually place the command into a scanning mode. Boot the camera with the menu button, then press the menu button again when the screen turns on. It will have entered the menu, which functions as normal, likely displaying "ENTER PHOTO MODE", but within a moment or two it will display "QR Ready". The camera will remain on for 30 seconds, plenty of time to scan you settings QR Code. Once scanned successfully it will double-beep and display "Good Scan". It will now be in the mode you have selected, and have exited the menu, ready for shooting. To power off, press the menu button (it will then shutdown in 30 seconds) or select "EXIT MENU" for an immediate shutdown.
 
 <b>Camera Mode:</b>&nbsp;&nbsp;<input type="radio" id="m5" name="mode" value="" checked> <label for="m5">not set</label><br>
   <input type="radio" id="m1" name="mode" value="mV"> <label  for="m1">Video</label>&nbsp;&nbsp;
@@ -159,11 +159,10 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
  </div>
 <div id="opBV">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Beep Volume:</b>&nbsp;&nbsp; 
   <input type="radio" id="bv1" name="bv" value="V0"> <label for="bv1">0% </label>&nbsp;&nbsp;
-  <input type="radio" id="bv2" name="bv" value="V1"> <label for="bv2">10% </label>&nbsp;&nbsp;
-  <input type="radio" id="bv3" name="bv" value="V4"> <label for="bv3">40% </label>&nbsp;&nbsp;
-  <input type="radio" id="bv4" name="bv" value="V7"> <label for="bv4">70% </label>&nbsp;&nbsp;
-  <input type="radio" id="bv5" name="bv" value="V9"> <label for="bv5">100% </label>&nbsp;&nbsp;
-  <input type="radio" id="bv6" name="bv" value="" checked> <label for="bv6">not set</label>
+  <input type="radio" id="bv2" name="bv" value="V4"> <label for="bv2">40% </label>&nbsp;&nbsp;
+  <input type="radio" id="bv3" name="bv" value="V7"> <label for="bv3">70% </label>&nbsp;&nbsp;
+  <input type="radio" id="bv4" name="bv" value="V9"> <label for="bv4">100% </label>&nbsp;&nbsp;
+  <input type="radio" id="bv5" name="bv" value="" checked> <label for="bv5">not set</label>
   </div>
   
 <div id="opLO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>LEDs On:</b>&nbsp;&nbsp;
@@ -207,6 +206,11 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
 
 <div id="cameraActions">
 <input type="checkbox" id="actions" value=""> <label for="actions">Delayed Actions</label><br>
+</div>
+
+
+<div id="shutdown">
+<input type="checkbox" id="autooff" value=""> <label for="autooff">Shutdown after scanning this QR Code</label><br>
 </div>
 
 <div id="aSD">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Shutdown and capture in:</b>
@@ -645,6 +649,13 @@ function startTime() {
 		cmd = cmd + document.getElementById("addcmd").value;
 	}
 	
+	if(document.getElementById("autooff") !== null)
+	{
+		if(document.getElementById("autooff").checked === true)
+		{
+			cmd = cmd + "!1O";
+		}
+	}
 	
 	if(cmd != lasttimecmd)
 	{
