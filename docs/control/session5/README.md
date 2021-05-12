@@ -12,7 +12,13 @@
         }
 </style>
 
-Create a custom camera mode, and even start a capture all through QR Codes. This is the fastest way to access many of the new GoPro Labs' firmware features.  As the HERO5 Session can't scan while capturing, and the camera defaults to a QuickCapture, you have to manually place the command into a scanning mode. Boot the camera with the menu button, then press the menu button again when the screen turns on. It will have entered the menu, which functions as normal, likely displaying "ENTER PHOTO MODE", but within a moment or two it will display "QR Ready". The camera will remain on for 30 seconds, plenty of time to scan you settings QR Code. Once scanned successfully it will double-beep and display "Good Scan". It will now be in the mode you have selected, and have exited the menu, ready for shooting. To power off, press the menu button (it will then shutdown in 30 seconds) or select "EXIT MENU" for an immediate shutdown.
+As the HERO5 Session can’t scan while capturing, and the camera defaults to a QuickCapture, you have to enable the menu for scanning to occur. Boot the camera with the menu button, then press the menu button again when the screen turns on. The menu will function normally, but within a moment or two it will display “QR Ready”. The camera will remain on for 30 seconds, plenty of time to scan your QR Code. 
+
+## Scanning Distance
+
+Whether you scan a QR Code from a laptop screen or a mobile phone, the code should be a minimum 1.5"/40cm in size with the camera about 6"/15cm away. The larger the QR Code, the easier it is to scan. Point the camera at the center of the code, hold it still for about a second. Once scanned successfully it will display “Good Scan” and then double-beep. It will now be in the mode you have selected, and have exited the menu, ready for shooting. To power off, press the menu button (it will then shutdown in 30 seconds) or select “EXIT MENU” for an immediate shutdown.
+
+## Customize Your QR Code
 
 <b>Camera Mode:</b>&nbsp;&nbsp;<input type="radio" id="m5" name="mode" value="" checked> <label for="m5">not set</label><br>
   <input type="radio" id="m1" name="mode" value="mV"> <label  for="m1">Video</label>&nbsp;&nbsp;
