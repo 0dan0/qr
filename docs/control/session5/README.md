@@ -252,7 +252,7 @@ Share this QR Code as a URL: <b id="urltext"></b>
 
 Compatibility: Labs enabled HERO5 Session
         
-## ver 1.24
+## ver 1.25
 [Learn more](..) on QR Control
 
 <script>
