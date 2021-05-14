@@ -1984,7 +1984,7 @@ int decryptFile(char* path, char* name)
 					uint8_t* src = (uint8_t*)payload;
 					int size = payloadsize;
 					// skip NALU header
-					while (src[0] == 0 && src[1] == 0)
+					while (src[0] == 0 && src[1] == 0 && src[2] == 0)
 					{
 						src += 2;
 						size -= 2;
