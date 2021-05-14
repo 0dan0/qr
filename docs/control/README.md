@@ -20,7 +20,7 @@ and as a mobile app:<br>
 * Start a 24-hour long time-lapse or greater with [**Extra Long Time-lapses**](./longtimelapse)
 * Use your GoPro to time-lapse [**Construction Projects**](./construction)
 * Schedule your camera to automatically [**Time-lapse Sunsets and Sunrises**](./solartimelapse)
-* <span style="color:steelblue">**NEW**</span> **HERO9 only** - Daily Time-lapse with [**auto upload**](./dailytl) (GoPro Scribtion required)
+* <span style="color:steelblue">**NEW**</span> **HERO9 only** - Daily Time-lapse with [**auto upload**](./dailytl) (GoPro Subscription required)
 
 ### Video Alteration Features
 * **HERO8/9 and MAX only** - Add text like Date and Time with [**Video 'Burn-in' Overlays**](./overlays)
