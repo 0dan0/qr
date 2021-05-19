@@ -914,6 +914,7 @@ static size_t OpenMP4Source(char *filename, uint32_t traktype, uint32_t traksubt
 		int32_t nest = 0;
 		uint64_t nestsize[MAX_NEST_LEVEL] = { 0 };
 		uint64_t qtsize;
+		int moovfound = 0;
 		int chn = 0;
 
 		do
@@ -932,6 +933,9 @@ static size_t OpenMP4Source(char *filename, uint32_t traktype, uint32_t traksubt
 				
 				if (!VALID_FOURCC(qttag) && (qttag & 0xff) != 0xa9) // ©xyz and ©swr are allowed
 				{
+					if (moovfound == 1 && nest == 0) //read beyond the moov atom
+						break;
+
 					CloseSource((size_t)mp4);
 					mp4 = NULL;
 					break;
@@ -988,7 +992,12 @@ static size_t OpenMP4Source(char *filename, uint32_t traktype, uint32_t traksubt
 				}
 				else
 				{
-					if (qttag == MAKEID('m', 'v', 'h', 'd')) //mvhd  movie header
+					if (qttag == MAKEID('m', 'o', 'o', 'v')) //trak header
+					{
+						moovfound = 1;
+						NESTSIZE(8);
+					}
+					else if (qttag == MAKEID('m', 'v', 'h', 'd')) //mvhd  movie header
 					{
 						len = FREAD(&skip, 1, 4, mp4->mediafp);
 						len += FREAD(&skip, 1, 4, mp4->mediafp);

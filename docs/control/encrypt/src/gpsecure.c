@@ -24,6 +24,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdint.h>
+#define VER "1.01"
 
 #ifdef _WINDOWS
 
@@ -45,10 +46,12 @@ int main(int argc, char *argv[])
 	// get file return data
 	if (argc < 3)
 	{
-		printf("usage: %s <GoPro MP4s> -pPassword\n", argv[0]);
-		printf("     e.g.: %s GL010018.LRV -pTest\n", argv[0]);
-		printf("     e.g.: %s GL010019.MP4 GH010019.LRV -pMatlock\n", argv[0]);
-		printf("     e.g.: %s G*0019.* -p123456\n", argv[0]);
+		printf("usage: gpsecure <GoPro MP4s or JPGs> -pPassword\n");
+		printf("examples: gpsecure SOPR0018.JPG -pTest\n");
+		printf("          gpsecure SX010019.MP4 SL010019.LRV -pUnlock\n");
+		printf("          gpsecure S*0019.* -p123456\n");
+		printf("          gpsecure S*.* -pSecret\n");
+		printf("version: %s\n", VER);
 		return -1;
 	}
 

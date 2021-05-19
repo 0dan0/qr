@@ -116,42 +116,43 @@ function timeLoop()
 	var filename = document.getElementById("pngname").value;
 	
 	
-	if(filename.length > 4)
+	if(document.getElementById("xpostxt") !== null)
 	{
-		if(document.getElementById("xpostxt") !== null)
+		var s = 0;
+		var x = document.getElementById("xpos").value;
+		var y = document.getElementById("ypos").value; 
+		var tm = document.getElementById("brnt").value; 
+		document.getElementById("xpostxt").innerHTML = x;
+		document.getElementById("ypostxt").innerHTML = y;
+		
+		if(tm == 0) 
 		{
-			var s = 0;
-			var x = document.getElementById("xpos").value;
-			var y = document.getElementById("ypos").value; 
-			var tm = document.getElementById("brnt").value; 
-			document.getElementById("xpostxt").innerHTML = x;
-			document.getElementById("ypostxt").innerHTML = y;
-			
-			if(tm == 0) 
-			{
-				s = 0;
-				document.getElementById("brnttxt").innerHTML = "unlimited";
-			}
-			else if (tm < 30)
-			{
-				s = Math.trunc(100*tm/30)/100;
-				document.getElementById("brnttxt").innerHTML = s + " secs";
-			}
-			else if (tm < 90)
-			{
-				s = tm-29;
-				document.getElementById("brnttxt").innerHTML = s + " secs";
-			}
-			else
-			{
-				s = (tm-89)*60;
-				document.getElementById("brnttxt").innerHTML = (tm-89) + " mins";
-			}
-			
-			cmd = cmd + mtype + "MBRNT=" + s;
+			s = 0;
+			document.getElementById("brnttxt").innerHTML = "unlimited";
 		}
+		else if (tm < 30)
+		{
+			s = Math.trunc(100*tm/30)/100;
+			document.getElementById("brnttxt").innerHTML = s + " secs";
+		}
+		else if (tm < 90)
+		{
+			s = tm-29;
+			document.getElementById("brnttxt").innerHTML = s + " secs";
+		}
+		else
+		{
+			s = (tm-89)*60;
+			document.getElementById("brnttxt").innerHTML = (tm-89) + " mins";
+		}
+		
+		cmd = cmd + mtype + "MBRNT=" + s;
 		cmd = cmd + mtype + "MLOGO=\"" + document.getElementById("pngname").value + "\"";
-	}
+		
+		if(filename.length > 4)
+		{
+			cmd = "\"You need to add\na logo using the\nPNG file format\"";
+		}
 	else
 	{
 		cmd = "\"You need to add\na logo using the\nPNG file format\"";
