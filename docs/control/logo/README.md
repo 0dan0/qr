@@ -153,6 +153,7 @@ function timeLoop()
 		{
 			cmd = "\"You need to add\na logo using the\nPNG file format\"";
 		}
+	}
 	else
 	{
 		cmd = "\"You need to add\na logo using the\nPNG file format\"";
