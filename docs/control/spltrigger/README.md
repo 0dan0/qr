@@ -49,7 +49,7 @@ QR Command: <b id="qrtext">time</b><br>
 
 ![Feedback](feedback.jpg)
 
-Compatibility: Labs enabled HERO9 only
+**Compatibility:** Labs enabled HERO9 only
         
 ## ver 1.00
 

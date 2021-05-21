@@ -34,7 +34,7 @@ Note: it is correct for 23.976 and 29.97 Non-drop timecode to it be 0.1% behind 
 
 <br> 
 
-Compatibility: Labs enabled HERO9 only 
+**Compatibility:** Labs enabled HERO9 only 
         
 ## ver 1.01
 [Learn more](..) on QR Control

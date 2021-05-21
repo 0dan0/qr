@@ -60,7 +60,7 @@ Auto exposure might result in these behaviors (shooting 24p) <br>
 **Indoors:** the camera might shoot 1/192th shutter (45&deg;), ISO 3200 (good stabilization)<br> 
 **Dark indoors:** the camera might shoot 1/192th shutter (45&deg;), ISO 3200  (good stabilization, but is a little darker)<br>
 
-Compatibility: Labs enabled HERO7, HERO8, HERO9 and MAX 
+**Compatibility:** Labs enabled HERO7, HERO8, HERO9 and MAX 
         
 ## ver 1.01
 [Learn more](..) on QR Control

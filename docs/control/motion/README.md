@@ -66,7 +66,7 @@ Now your camera is ready.
 
 The motion detection will now always use the mask.pgm, so using motion mask option doesn't do anything. To restore to normal motion detection you need to delete the mask.pgm file.
 	
-Compatibility: Labs enabled HERO7, HERO8, HERO9 and MAX.  Masking fixed on HERO9.
+**Compatibility:** Labs enabled HERO7, HERO8, HERO9 and MAX.  Masking fixed on HERO9.
         
 ## ver 1.05
 [Learn more](..) on QR Control

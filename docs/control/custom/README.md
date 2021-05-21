@@ -435,7 +435,7 @@ Share this QR Code as a URL: <b id="urltext"></b>
 
 <button onclick="myReloadFunction()">Reset page</button>
 
-Compatibility: Labs enabled [HERO5 Session](../session5), HERO7, HERO8, HERO9 and MAX 
+**Compatibility:** Labs enabled [HERO5 Session](../session5), HERO7, HERO8, HERO9 and MAX 
         
 [Learn more](..) on QR Control
 

@@ -86,8 +86,7 @@ Known Issues:
 - Metadata can take a second before it updates after capture start.
 <!-- - Permanent overlays require the clearing of older settings. If your using either Owner or Large Chapters modifications, they will need to be added after the overlay.   -->
 
-		
-Compatibility: Labs enabled HERO8, HERO9 and MAX 
+**Compatibility:** Labs enabled HERO8, HERO9 and MAX 
         
 ## ver 1.30
 [Learn more](..) on QR Control
