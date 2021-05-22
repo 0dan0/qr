@@ -25,8 +25,8 @@
 * **!**time**O** - Off, shutdown the camera.
 * **!**time**OR** - shutdown and restart the camera.
 * **!**time**U** - Attempt and network contention and Upload **HERO9 only**.
-* **!**time**W** - Connect to a network, requires JOIN metadata to have been previous stored **HERO8 & HERO9 only**
-* **!**time**G<S|M|L>C** - Start Live-streaming, S - 480p, M - 720p, L - 1080p, option C for capture a local fine, requires a previously successful !W command **HERO8 & HERO9 only**
+* **!**time**W** - Connect to a network, requires JOIN metadata to have been previous stored **HERO8 & HERO9 only**.
+* **!**time**G<S or M or L>C** - Start Live-streaming, S - 480p, M - 720p, L - 1080p, option C for capture a local fine, requires a previously successful !W command **HERO8 & HERO9 only**
 
 ## Capture Triggers
 
