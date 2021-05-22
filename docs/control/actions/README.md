@@ -1,4 +1,4 @@
-## Full List the Action Commands
+# Full List the Action Commands
 
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
@@ -24,11 +24,20 @@
 * **!**time**NQ** - No Action until at approximately **time**.
 * **!**time**O** - Off, shutdown the camera.
 * **!**time**OR** - shutdown and restart the camera.
-* **!**time**U** - Attempt and network contention and Upload **HERO9 only**
+* **!**time**U** - Attempt and network contention and Upload **HERO9 only**.
+* **!**time**W** - Connect to a network, requires JOIN metadata to have been previous stored **HERO8 & HERO9 only**
+* **!**time**G<S|M|L>C** - Start Live-streaming, S - 480p, M - 720p, L - 1080p, option C for capture a local fine, requires a previously successful !W command **HERO8 & HERO9 only**
+
+## Capture Triggers
+
 * **!**time**SMs-t** - Start Motion detection with start sensitivity 's' and stop sensitivity 't' -- 't' field is optional.
 * **!**time**SMsDdMmHh** - Start Motion detection with sensitivity 's', Delay of 'd', Mask of 'm' and Hold for 'h' seconds (D,M and H fields are all optional.)
 * **!**time**SKs-t** - Start Speed capture at threshold 's' km/h and stop at 't' km/h -- 't' field is optional.
 * **!**time**SKsHh** - Start Speed capture at threshold 's' km/h and Hold for 'h' seconds (H fields are all optional.)
+* **!**time**SAs-tDdHh - Accelerometer Trigger
+* **!**time**SGs-tDdHh - Gyro Trigger
+* **!**time**SIs-tDdHh - IMU Trigger (both Accerometer and Gyro)
+* **!**time**SDs-tDdHh - Speed Pressure Level Trigger, 's' and 't' values are in dB.
 
 ## examples:
 
@@ -41,6 +50,7 @@
 * **!nS** - start at true noon.
 * **!s1200E** - end 1200 seconds after sunset
 * **!r-600S** - start 600 seconds before sunrise
+* **!17:00W!GLC** - start Live-streaming 1080p at 5pm, saving a local copy
 
 ## Storing metadata (Permanent, survives power off)
 
@@ -89,7 +99,7 @@ The geek factor is highest in this section.  This is not a Turing-complete langu
 Custom Mode: <input type="text" id="tryit" value=""><br>
 
 
-## ver 1.04 - 2021 May  
+## ver 1.05 - 2021 May  
 [BACK](..)
 
 
