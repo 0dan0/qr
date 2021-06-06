@@ -27,8 +27,8 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 <b>Camera Mode:</b>&nbsp;&nbsp;<input type="radio" id="m5" name="mode" value="" checked> <label for="m5">not set</label><br>
   <input type="radio" id="m1" name="mode" value="mV"> <label  for="m1">Video</label>&nbsp;&nbsp;
   <input type="radio" id="m2" name="mode" value="mP"> <label  for="m2">Photo</label>&nbsp;&nbsp;
-  <input type="radio" id="m3" name="mode" value="mT"> <label  for="m3">Timelapse Video</label>&nbsp;&nbsp;
-  <input type="radio" id="m4" name="mode" value="mTP"> <label for="m4">Timelapse Photo</label><br>
+  <input type="radio" id="m3" name="mode" value="mT"> <label  for="m3">Timelapse Video</label><br>
+  <!-- <input type="radio" id="m4" name="mode" value="mTP"> <label for="m4">Timelapse Photo</label><br> -->
 
 <div id="settingsRES">
 <b>Video Resolution:</b>&nbsp;&nbsp;<input type="radio" id="r8" name="res" value="" checked> <label for="r8">not set</label><br>
@@ -266,7 +266,7 @@ Share this QR Code as a URL: <b id="urltext"></b>
 
 **Compatibility:** Labs enabled HERO5 Session
         
-## ver 1.31
+## ver 1.32
 [Learn more](..) on QR Control
 
 <script>
