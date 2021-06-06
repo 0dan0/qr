@@ -338,7 +338,7 @@ function startTime() {
 	var checkedmode = 0;
 	var x;
 	
-	for (i = 1; i < 5; i++) { 
+	for (i = 1; i < 4; i++) { 
 		var mode = "m"+i;
 		x = document.getElementById(mode).checked;
 		if( x === true)
@@ -368,11 +368,11 @@ function startTime() {
 		dset("settingsPT", true);
 		break;
 				
-		case 4: //TLP
-		dset("settingsTimelapse", true);	
-		dset("settingsPT", true);
-		dset("settingsTLVFOV", true);
-		break;
+		//case 4: //TLP
+		//dset("settingsTimelapse", true);	
+		//dset("settingsPT", true);
+		//dset("settingsTLVFOV", true);
+		//break;
 	}
 		
 	if(document.getElementById("pt") !== null)
@@ -430,7 +430,7 @@ function startTime() {
 	switch(checkedmode)
 	{
 		case 3: //TLV
-		case 4: //TLP
+		//case 4: //TLP
 			cmd = dcmd(cmd,"fpslapse");
 			break;
 	}
