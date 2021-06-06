@@ -24,7 +24,7 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 
 ## Customize Your QR Code
 
-<b>Camera Mode:</b>&nbsp;&nbsp;<input type="radio" id="m5" name="mode" value="" checked> <label for="m5">not set</label><br>
+<b>Camera Mode:</b>&nbsp;&nbsp;<input type="radio" id="m4" name="mode" value="" checked> <label for="m4">not set</label><br>
   <input type="radio" id="m1" name="mode" value="mV"> <label  for="m1">Video</label>&nbsp;&nbsp;
   <input type="radio" id="m2" name="mode" value="mP"> <label  for="m2">Photo</label>&nbsp;&nbsp;
   <input type="radio" id="m3" name="mode" value="mT"> <label  for="m3">Timelapse Video</label><br>
