@@ -1759,7 +1759,7 @@ int crypt_video_key(uint8_t* src, int size, uint8_t key[16], int flags)
 	if (src && size)
 	{
 		uint8_t iv[16];
-		int skipblks = 32;
+		int skipblks = 64;
 		uint32_t* b32 = (uint32_t*)src;
 
 		int32_t len128 = size & 0xfffffff0;

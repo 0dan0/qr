@@ -7,7 +7,7 @@ and as a mobile app:<br>
 [![apple app store](apple-store-823.png)](https://apps.apple.com/us/app/gopro-app/id1518134202)
 * Precisely setup your cameras with [**Local Date and Time**](./precisiontime) or [**UTC Time**](./precisiontime_utc)
 * Personalize your cameras with [**Owner Information**](./owner)
-* <span style="color:steelblue">**NEW**</span> - Subset of commands for the [**HERO 5 Session**](./session5). Hero 5 Session supports: QR codes for camera settings, setting date & time, scheduled captures, including some of the extended time-lapse feature and ownership information.
+* Subset of commands for the [**HERO 5 Session**](./session5). Limit to camera settings, date & time, scheduled captures and ownership information.
 
 ### Capture Triggers 
 * Use the image sensor for [**Motion Detection**](./motion), capturing only scenes with motion
@@ -38,7 +38,7 @@ and as a mobile app:<br>
 * <span style="color:steelblue">**NEW**</span> **HERO9 only** - Enable media [**encryption**](./encrypt) for increased security
 * <span style="color:steelblue">**NEW**</span> Many more [**extensions**](./extensions) via QR Code
 
-Note: <span style="color:steelblue">**NEW**</span> - Requires Labs Firmware released in May 2021.
+Note: <span style="color:steelblue">**NEW**</span> - Requires Labs Firmware released in June 2021.
 
 ## Forum Discussions 
 
