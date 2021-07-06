@@ -34,16 +34,13 @@ Whether you are using the larger chapter feature or not, you may still end up wi
 
 Steps involved:
 - install ffmpeg: https://www.ffmpeg.org/ 
-- download [udtacopy](https://github.com/gopro/labs/tree/master/docs/control/chapters/bin/udtacopy.zip) (source [code](https://github.com/gopro/labs/tree/master/docs/control/chapters/src)
-- Unzip and grab the version best for your computer (Mac, Win or Linux) and copy it a folder somewhere (with you executables path).
-- Create a text file with a list of Gopro files that need to be concatenated. E.g. [filelist.txt](https://github.com/gopro/labs/tree/master/docs/control/chapters/bin/filelist.txt) with:
-
-file 'GX013992.MP4'
-file 'GX023992.MP4'
-
+- download [udtacopy.zip](https://github.com/gopro/labs/tree/master/docs/control/chapters/bin/udtacopy.zip) (source [code](https://github.com/gopro/labs/tree/master/docs/control/chapters/src))
+- Unzip and grab the version best for your computer (Mac, Win or Linux) and copy it a folder somewhere (within your executable path).
+- Create a text file with a list of GoPro files that need to be concatenated. E.g. [filelist.txt](https://github.com/gopro/labs/tree/master/docs/control/chapters/bin/filelist.txt)
 - Start a terminal and run the following commands:
-ffmpeg -y -f concat -i **your_path_to/filelist.txt** -c copy -map 0:0 -map 0:1 -map 0:3 **your_output_path/final.mp4**
-udtacopy **your_path_to/the_first_GoPro_file.MP4** **your_output_path/final.mp4**
+
+> ffmpeg -y -f concat -i **your_path_to/filelist.txt** -c copy -map 0:0 -map 0:1 -map 0:3 **your_output_path/final.mp4**
+> udtacopy **your_path_to/the_first_GoPro_file.MP4** **your_output_path/final.mp4**
 
 The resulting final.mp4 will be a complete GoPro file will all required metadata.
 
