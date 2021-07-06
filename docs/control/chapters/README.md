@@ -28,7 +28,7 @@ QR Command: <b id="qrtext">command</b><br>
 
 **Compatibility:** Labs enabled HERO8, HERO9 and MAX 
 
-# Joining Chapters After Capture
+## Optional: Joining Chapters After Capture
  
 Whether you are using the larger chapter feature or not, you may still end up with more than one file for very long video captures. Tools like ReelSteady Go can only operate one file at a time, so here is a solution for merging chapters so that they operate as a valid GoPro MP4 of any length, with all the needed metadata.
 
@@ -36,7 +36,7 @@ Steps involved:
 - install ffmpeg: https://www.ffmpeg.org/ 
 - download [udtacopy.zip](https://github.com/gopro/labs/tree/master/docs/control/chapters/bin/udtacopy.zip) (source [code](https://github.com/gopro/labs/tree/master/docs/control/chapters/src))
 - Unzip and grab the version best for your computer (Mac, Win or Linux) and copy it a folder somewhere (within your executable path).
-- Create a text file with a list of GoPro files that need to be concatenated. E.g. [filelist.txt](https://github.com/gopro/labs/tree/master/docs/control/chapters/bin/filelist.txt)
+- Create a text file with a list of GoPro files that need to be concatenated. E.g. [filelist.txt](https://github.com/gopro/labs/tree/master/docs/control/chapters/src/filelist.txt)
 - Start a terminal and run the following commands:
 
 >ffmpeg -y -f concat -i **your_path_to/filelist.txt** -c copy -map 0:0 -map 0:1 -map 0:3 **your_output_path/final.mp4**
