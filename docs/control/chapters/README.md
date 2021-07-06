@@ -30,7 +30,7 @@ QR Command: <b id="qrtext">command</b><br>
 
 # Joining Chapters After Capture
  
-Whether you are using the larger chapter feature or not, you may still end up with more than one file for your long video capture. Tools like ReelSteady Go can only operate one file at a time, so here is a solution for merging chapters so that they operate as a valid GoPro MP4, with all the needed metadata.
+Whether you are using the larger chapter feature or not, you may still end up with more than one file for very long video captures. Tools like ReelSteady Go can only operate one file at a time, so here is a solution for merging chapters so that they operate as a valid GoPro MP4 of any length, with all the needed metadata.
 
 Steps involved:
 - install ffmpeg: https://www.ffmpeg.org/ 
