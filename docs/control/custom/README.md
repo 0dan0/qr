@@ -582,7 +582,8 @@ function startTime() {
 		
 		case 4: //NL Video
 		dset("settingsNightlapse", true);	
-		dset("settingsNightexposure", true);	
+		dset("settingsNightexposure", true);
+		dset("settingsDuration", true);		
 		dset("settingsRESTLV", true);
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
