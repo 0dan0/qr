@@ -18,12 +18,15 @@
 Mode commands: 
  * **mV** - mode Video
  * **mP** - mode Photo
- * **mT** - mode Timelapse video
- * **mTP** - mode Timelapse Photo
+ * **mT** - mode Timelapse video (* requires an existing TL preset set to Video mode)
+ * **mTP** - mode Timelapse Photo (* requires an existing TL preset set to Photo mode)
  * **mTW** - mode TimeWarp
  * **mPB** - mode Photo Burst 
  * **mPN** - mode Photo Night
- * **mNL** - mode Night-Lapse
+ * **mNL** - mode Night-Lapse Video (* requires an existing NL preset set to Video mode)
+ * **mNP** - mode Night-Lapse Photo (* requires an existing NL preset set to Photo mode)
+ 
+ Note *: The camera defaults to having presets for only one time-lapse mode and one night-lapse mode, yet both modes have two configurations (video or photo.) For all QR Code mode commands to work on the newer cameras that have presets, a preset is needed for every mode you wish to use. e.g. If you only have a preset for Night Lapse Video, the command mNL will work, but mNP will not. To solve this, create a new preset for Night Lapse Photo, and both mNL and mNP commands will work. 
  
 Defaults modes (on power up): 
  * **dV** - last used Video mode
