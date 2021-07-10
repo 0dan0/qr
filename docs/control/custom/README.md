@@ -115,7 +115,15 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   
   <input type="radio" id="fpslapse12" name="fpslapse" value="" checked> <label for="fpslapse12">not set</label><br><br>
 </div>
- 
+
+<div id="settingsRESTLV">
+<b>Video Resolution:</b>&nbsp;&nbsp;
+  <input type="radio" id="rt1" name="restlv" value="r1080"> <label for="rt1">1080p </label>&nbsp;&nbsp;
+  <input type="radio" id="rt2" name="restlv" value="r1440"> <label for="rt2">1440p </label>&nbsp;&nbsp;
+  <input type="radio" id="rt3" name="restlv" value="r27T" > <label for="rt3">2.7k 4x3 </label>&nbsp;&nbsp;
+  <input type="radio" id="rt4" name="restlv" value="r4"   > <label for="rt4">4k </label>&nbsp;&nbsp;
+  <input type="radio" id="rt5" name="restlv" value="" checked> <label for="rt5">not set</label><br><br>
+ </div>
  
 <div id="settingsNightlapse">
 <b>Nightlapse Interval:</b>&nbsp;&nbsp;
@@ -143,15 +151,6 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="nightexp8" name="nightexp" value="" checked> <label for="nightexp8"> not set</label><br><br>
 </div>
 
-<div id="settingsRESTLV">
-<b>TLV/Warp Resolution:</b>&nbsp;&nbsp;
-  <input type="radio" id="rt1" name="restlv" value="r1080"> <label for="rt1">1080p </label>&nbsp;&nbsp;
-  <input type="radio" id="rt2" name="restlv" value="r1440"> <label for="rt2">1440p </label>&nbsp;&nbsp;
-  <input type="radio" id="rt3" name="restlv" value="r27T" > <label for="rt3">2.7k 4x3 </label>&nbsp;&nbsp;
-  <input type="radio" id="rt4" name="restlv" value="r4"   > <label for="rt4">4k </label>&nbsp;&nbsp;
-  <input type="radio" id="rt5" name="restlv" value="" checked> <label for="rt5">not set</label><br><br>
- </div>
- 
 <div id="settingsVideo">
 <b>Hypersmooth:</b>&nbsp;&nbsp;
 	<input type="radio" id="eis1" name="eis" value="e0"> <label for="eis1">Off</label>&nbsp;&nbsp;&nbsp;
