@@ -17,16 +17,16 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
 <b>Camera Mode:</b>&nbsp;&nbsp;<input type="radio" id="m10" name="mode" value="" checked> <label for="m10">not set</label><br>
   <input type="radio" id="m1" name="mode" value="mV"> <label  for="m1">Video</label>&nbsp;&nbsp;
   <input type="radio" id="m2" name="mode" value="mTW"> <label for="m2">TimeWarp</label>&nbsp;&nbsp;
-  <input type="radio" id="m3" name="mode" value="mT"> <label  for="m3">Timelapse Video *</label>&nbsp;&nbsp;
-  <input type="radio" id="m4" name="mode" value="mNP"> <label for="m4">Nightlapse Video *</label><br>
+  <input type="radio" id="m3" name="mode" value="mT"> <label  for="m3">Timelapse Video</label>&nbsp;&nbsp;
+  <input type="radio" id="m4" name="mode" value="mNP"> <label for="m4">Nightlapse Video</label><br>
   <input type="radio" id="m5" name="mode" value="mP"> <label  for="m5">Photo</label>&nbsp;&nbsp;
   <input type="radio" id="m6" name="mode" value="mPB"> <label for="m6">Burst Photo</label>&nbsp;&nbsp;
   <input type="radio" id="m7" name="mode" value="mPN"> <label for="m7">Night Photo</label>&nbsp;&nbsp;
-  <input type="radio" id="m8" name="mode" value="mTP"> <label for="m8">Timelapse Photo *</label>&nbsp;&nbsp;
-  <input type="radio" id="m9" name="mode" value="mNP"> <label for="m9">Nightlapse Photo *</label><br><br>
+  <input type="radio" id="m8" name="mode" value="mTP"> <label for="m8">Timelapse Photo</label>&nbsp;&nbsp;
+  <input type="radio" id="m9" name="mode" value="mNP"> <label for="m9">Nightlapse Photo</label><br>
 
 <div id="noteMODE">
-Note *: The camera defaults to having presets for only one time-lapse mode and one night-lapse mode, yet both modes have two configurations (video or photo.) For all QR Code mode commands to work on the newer cameras that have presets, a preset is needed for every mode you wish to use. e.g. If you only have a preset for Night Lapse Video, the command mNL will work, but mNP will not. To solve this, create a new preset for Night Lapse Photo, and both mNL and mNP commands will work. Same is true for TL-Video and TL-Photo. 
+Note for Time/Night-Lapse modes: The camera defaults to having presets for only one time-lapse mode and one night-lapse mode, yet both modes have two configurations (video or photo.) For all QR Code mode commands to work a preset is needed for every mode you wish to use. e.g. If you only have a preset for Night Lapse Video, the command mNL will work, but mNP will not. To solve this, create a new preset for Night Lapse Photo, and both mNL and mNP commands will work.<br>
 </div>
 
 <div id="settingsRES">
