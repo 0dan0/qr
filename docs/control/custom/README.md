@@ -25,8 +25,8 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="m8" name="mode" value="mTP"> <label for="m8">Timelapse Photo</label>&nbsp;&nbsp;
   <input type="radio" id="m9" name="mode" value="mNP"> <label for="m9">Nightlapse Photo</label><br>
 
-<div id="noteMODE" style="font-size:12px;">
-<b>Time/Night-Lapse modes:</b> The camera defaults to having presets for only one time-lapse mode and one night-lapse mode, yet both modes have two configurations (video or photo.) For all QR Code mode commands to work a preset is needed for every mode you wish to use. e.g. If you only have a preset for night-lapse video (NLV), the QR command for NLV will work, but will not for night-lapse photo (NLP). To solve this, create a new preset for NLP, and both video and photo night-lapse commands will work.<br><br>
+<div id="noteMODE" style="font-size:13px;">
+<b>Time/Night-Lapse modes:</b> The camera defaults to having presets for only one time-lapse mode and one night-lapse mode, yet both modes have two configurations (video or photo.) For all QR Code mode commands to work, a preset is needed for every mode you wish to use. e.g. If you only have a preset for night-lapse video (NLV), the QR command for NLV will work, but will not for night-lapse photo (NLP). To solve this, create a new preset for NLP, and both video and photo night-lapse commands will work.<br><br>
 </div>
 
 <div id="settingsRES">
@@ -620,6 +620,7 @@ function startTime() {
 		
 		case 9: //NLP
 		dset("settingsNightlapse", true);	
+		dset("settingsNightexposure", true);	
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
 		dset("settingsPhotoRAW", true);
