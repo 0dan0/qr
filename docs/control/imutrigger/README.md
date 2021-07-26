@@ -39,7 +39,7 @@ Note: you will have to manually set the mode in which you capture.  The detector
 <br>
 </center>
 
-QR Command: <b id="qrtext">time</b><br>
+QR Command: <b id="qrtext1">time</b><br>
 
 ## Sensitivity
 
