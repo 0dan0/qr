@@ -155,7 +155,8 @@ function timeLoop()
 	cmd1 = dcmd("!S","imu"); 
 	cmd1 = cmd1 + snstvty;
 	
-	cmd2 = "!MQRDR=1!MBOOT=\"!Ldrone\"!SAVEdrone=\"" + dcmd("!S","imu"); 
+	cmd2 = "!MQRDR=1!MBOOT=\"!Ldrone\"!SAVEdrone=\"";
+	cmd2 = cmd2 + dcmd("!S","imu"); 
 	cmd2 = cmd2 + snstvty;
 	
 	if(esnstvty > 0) cmd1 = cmd1 + "-" + esnstvty;
@@ -171,9 +172,11 @@ function timeLoop()
       if(document.getElementById("repeat").checked === true)
       {
         cmd1 = cmd1 + "!R";
-        cmd2 = cmd2 + "!R\"";
+        cmd2 = cmd2 + "!R";
       }
     }
+	
+	cmd2 = cmd2 + "\"";
   }
   
   qrcode1.clear(); 
@@ -182,10 +185,14 @@ function timeLoop()
   qrcode2.clear(); 
   qrcode2.makeCode(cmd2);
   
-  if(cmd1 != lasttimecmd1 || cmd2 != lasttimecmd2)
+  if(cmd1 != lasttimecmd1)
   {
 	changed = true;
 	lasttimecmd1 = cmd1;
+  }
+  if(cmd2 != lasttimecmd2)
+  {
+	changed = true;
 	lasttimecmd2 = cmd2;
   }
 	
