@@ -35,7 +35,7 @@ Note: you will have to manually set the mode in which you capture.  The detector
  
 <center>
 <t
-<div id="qrcode"></div>
+<div id="qrcode1"></div>
 <br>
 </center>
 
@@ -79,11 +79,12 @@ Boot QR Command: <b id="qrtext2">command</b><br>
 
 <script>
 var once = true;
-var qrcode;
+var qrcode1;
 var qrcode2;
-var cmd = "oC";
-var cmd2 = "oC";
-var lasttimecmd = "";
+var cmd1 = "";
+var cmd2 = "";
+var lasttimecmd1 = "";
+var lasttimecmd2 = "";
 var changed = true;
 
 function dcmd(cmd, id) {
@@ -114,7 +115,7 @@ function makeQR()
 {	
   if(once === true)
   {
-    qrcode = new QRCode(document.getElementById("qrcode"), 
+    qrcode1 = new QRCode(document.getElementById("qrcode1"), 
     {
       text : "\"Hello\"",
       width : 360,
@@ -151,16 +152,15 @@ function timeLoop()
 	var hold = parseInt(document.getElementById("hold").value);	
 	document.getElementById("holdtext").innerHTML = hold;	
 		
-	cmd = dcmd("!S","imu"); //shutter angle
-	cmd = cmd + snstvty;
+	cmd1 = dcmd("!S","imu"); 
+	cmd1 = cmd1 + snstvty;
 	
-	
-	cmd2 = "!MQRDR=1!MBOOT=\"!Ldrone\"!SAVEdrone=\"" + dcmd("!S","imu"); //shutter angle
+	cmd2 = "!MQRDR=1!MBOOT=\"!Ldrone\"!SAVEdrone=\"" + dcmd("!S","imu"); 
 	cmd2 = cmd2 + snstvty;
 	
-	if(esnstvty > 0) cmd = cmd + "-" + esnstvty;
-	if(delay > 0) cmd = cmd + 'D' + delay;
-	if(hold > 0) cmd = cmd + 'H' + hold;	
+	if(esnstvty > 0) cmd1 = cmd1 + "-" + esnstvty;
+	if(delay > 0) cmd1 = cmd1 + 'D' + delay;
+	if(hold > 0) cmd1 = cmd1 + 'H' + hold;	
 	
 	if(esnstvty > 0) cmd2 = cmd2 + "-" + esnstvty;
 	if(delay > 0) cmd2 = cmd2 + 'D' + delay;
@@ -170,28 +170,28 @@ function timeLoop()
     {
       if(document.getElementById("repeat").checked === true)
       {
-        cmd = cmd + "!R";
+        cmd1 = cmd1 + "!R";
         cmd2 = cmd2 + "!R\"";
       }
     }
   }
   
-  qrcode.clear(); 
-  qrcode.makeCode(cmd);
+  qrcode1.clear(); 
+  qrcode1.makeCode(cmd1);
   
   qrcode2.clear(); 
   qrcode2.makeCode(cmd2);
   
-  if(cmd != lasttimecmd || cmd2 != lasttimecmd2)
+  if(cmd1 != lasttimecmd1 || cmd2 != lasttimecmd2)
   {
 	changed = true;
-	lasttimecmd = cmd;
+	lasttimecmd1 = cmd1;
 	lasttimecmd2 = cmd2;
   }
 	
   if(changed === true)
   {
-	document.getElementById("qrtext").innerHTML = cmd;
+	document.getElementById("qrtext1").innerHTML = cmd1;
 	document.getElementById("qrtext2").innerHTML = cmd2;
 	changed = false;
   }
