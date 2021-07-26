@@ -74,7 +74,7 @@ Now that starting and stopping your GoPro's capture is solved, you also don't wa
 Boot QR Command: <b id="qrtext2">command</b><br>
 
 
-## ver 1.01
+## ver 1.02
 [Learn more](..) on QR Control
 
 <script>
