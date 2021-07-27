@@ -34,9 +34,10 @@ While the motion detection feature looks for changes in the image, this is only 
 Note: you will have to manually set the mode in which you capture.  The detector can be combined with the Hindsight feature on HERO9. 
  
 <center>
-<div id="qrcode1"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div id="qrcode2"><br></div>
-Just IMU Trigger&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drone Optimized as a Boot Command
-<br>
+<div id="qrcode1"></div><br>
+IMU Trigger<br>
+<div id="qrcode2"><br></div><br>
+Drone Optimized as a Boot Command<br>
 </center>
 
 QR Command: <b id="qrtext1">time</b><br>
