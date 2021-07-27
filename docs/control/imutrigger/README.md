@@ -18,15 +18,15 @@ While the motion detection feature looks for changes in the image, this is only 
 
 
 <div id="dtIMU">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Sensor selection:</b>&nbsp;&nbsp;
-  <input type="radio" id="imu1" name="imu" value="G" > <label for="GYRO">GYRO </label></input>&nbsp;&nbsp;
-  <input type="radio" id="imu2" name="imu" value="A" > <label for="ACCL">ACCL </label></input>&nbsp;&nbsp;
-  <input type="radio" id="imu3" name="imu" value="I" checked> <label for="BOTH">BOTH</label></input>
+  <input type="radio" id="imu1" name="imu" value="G" > <label for="GYRO">GYRO </label>&nbsp;&nbsp;
+  <input type="radio" id="imu2" name="imu" value="A" > <label for="ACCL">ACCL </label>&nbsp;&nbsp;
+  <input type="radio" id="imu3" name="imu" value="I" checked> <label for="BOTH">BOTH</label>
 </div>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Start Sensitivity** <input type="range" id="snstvty" name="snstvty" min="1" max="9" value="6"><label for="snstvty"></label>&nbsp;&nbsp;<b id="snstvtytext"></b> 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**End Sensitivity** <input type="range" id="esnstvty" name="esnstvty" min="0" max="9" value="0"><label for="snstvty"></label>&nbsp;&nbsp;<b id="esnstvtytext"></b> (0 - off, 1-low to 9-high)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Start Delay** <input type="range" id="delay" name="delay" min="0" max="60" value="1"><label for="delay"></label>&nbsp;&nbsp;<b id="delaytext"></b> seconds before reading sensors.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Hold Time** <input type="range" id="hold" name="hold" min="0" max="60" value="5"><label for="hold"></label>&nbsp;&nbsp;<b id="holdtext"></b> seconds, to continue recording after motion has stopped.<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Start Sensitivity** <input type="range" id="snstvty" name="snstvty" min="1" max="9" value="6"><label for="snstvty"></label>&nbsp;&nbsp;<b id="snstvtytext"></b>><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**End Sensitivity** <input type="range" id="esnstvty" name="esnstvty" min="0" max="9" value="0"><label for="snstvty"></label>&nbsp;&nbsp;<b id="esnstvtytext"></b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Start Delay** <input type="range" id="delay" name="delay" min="0" max="60" value="1"><label for="delay"></label>&nbsp;&nbsp;<b id="delaytext"></b> seconds<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Hold Time** <input type="range" id="hold" name="hold" min="0" max="60" value="5"><label for="hold"></label>&nbsp;&nbsp;<b id="holdtext"></b> seconds<br> 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="repeat" name="repeat" checked> 
 <label for="repeat">Repeat IMU triggered capture.</label><br>
