@@ -35,12 +35,10 @@ Note: you will have to manually set the mode in which you capture.  The detector
  
 <center>
 <div id="qrcode1"></div><br>
-IMU Trigger<br>
+IMU Trigger QR Command: <b id="qrtext1">time</b><br>
 <div id="qrcode2"><br></div><br>
-Drone Optimized as a Boot Command<br>
+Drone Optimized as a Boot Command: <b id="qrtext2">time</b><br>
 </center>
-
-QR Command: <b id="qrtext1">time</b><br>
 
 ## Sensitivity
 
@@ -66,12 +64,6 @@ QR Command: <b id="qrtext1">time</b><br>
 ## Drone Application Bonus
 
 Now that starting and stopping your GoPro's capture is solved, you also don't want to have to remember to run the script each flight. For a camera dedicated for drone usage (or similar) you can set QR commands that run automatically on boot. This command uses your IMU trigger settings from above, makes them a boot command (saved to the current SD card,) and enables QR detection while the IMU Trigger is running. Now power-up the drone and power on your GoPro (in some setups this is automatic,) the camera will be ready in seconds.  If the drone is stationary, you can use QR Codes to change shooting modes before the flight, or set date and time for cameras that have been without a battery. Once the drone is moving, start and stop capture is automatic. 
-
-<center>
-<br>
-</center>
-
-Boot QR Command: <b id="qrtext2">command</b><br>
 
 
 ## ver 1.10
