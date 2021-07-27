@@ -36,7 +36,7 @@ and as a mobile app:<br>
 * **HERO8/9 and MAX only** - Multi-camera users, label you media with [**Altered File Naming**](./basename)
 * <span style="color:steelblue">**NEW**</span> **HERO9 only** - Timecode Support via [**LTC**](./ltc) over audio line-in using Media Mod 
 * <span style="color:steelblue">**NEW**</span> **HERO9 only** - Enable media [**encryption**](./encrypt) for increased security
-* <span style="color:steelblue">**NEW**</span> Many more [**extensions**](./extensions) via QR Code
+* <span style="color:steelblue">**UPDATED**</span> Many more [**extensions**](./extensions) via QR Code
 
 Note: <span style="color:steelblue">**NEW**</span> - Requires Labs Firmware released in June 2021.
 
