@@ -34,8 +34,8 @@ While the motion detection feature looks for changes in the image, this is only 
 Note: you will have to manually set the mode in which you capture.  The detector can be combined with the Hindsight feature on HERO9. 
  
 <center>
-<t
-<div id="qrcode1"></div>
+<div id="qrcode1"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div id="qrcode2"><br></div>
+Just IMU Trigger&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Drone Optimized as a Boot Command
 <br>
 </center>
 
@@ -67,7 +67,6 @@ QR Command: <b id="qrtext1">time</b><br>
 Now that starting and stopping your GoPro's capture is solved, you also don't want to have to remember to run the script each flight. For a camera dedicated for drone usage (or similar) you can set QR commands that run automatically on boot. This command uses your IMU trigger settings from above, makes them a boot command (saved to the current SD card,) and enables QR detection while the IMU Trigger is running. Now power-up the drone and power on your GoPro (in some setups this is automatic,) the camera will be ready in seconds.  If the drone is stationary, you can use QR Codes to change shooting modes before the flight, or set date and time for cameras that have been without a battery. Once the drone is moving, start and stop capture is automatic. 
 
 <center>
-<div id="qrcode2"></div>
 <br>
 </center>
 
