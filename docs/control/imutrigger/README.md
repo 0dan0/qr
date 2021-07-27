@@ -37,7 +37,7 @@ Note: you will have to manually set the mode in which you capture.  The detector
 <div id="qrcode1"></div><br>
 IMU Trigger QR Command: <b id="qrtext1">time</b><br>
 <div id="qrcode2"><br></div><br>
-Drone Optimized as a Boot Command: <b id="qrtext2">time</b><br>
+Drone Boot Command: <b id="qrtext2">time</b><br>
 </center>
 
 ## Sensitivity
@@ -61,9 +61,9 @@ Drone Optimized as a Boot Command: <b id="qrtext2">time</b><br>
 **Compatibility:** Labs enabled HERO7, HERO8, HERO9 and MAX 
 
 
-## Drone Application Bonus
+## Using As A Boot Command - Drone Applications 
 
-Now that starting and stopping your GoPro's capture is solved, you also don't want to have to remember to run the script each flight. For a camera dedicated for drone usage (or similar) you can set QR commands that run automatically on boot. This command uses your IMU trigger settings from above, makes them a boot command (saved to the current SD card,) and enables QR detection while the IMU Trigger is running. Now power-up the drone and power on your GoPro (in some setups this is automatic,) the camera will be ready in seconds.  If the drone is stationary, you can use QR Codes to change shooting modes before the flight, or set date and time for cameras that have been without a battery. Once the drone is moving, start and stop capture is automatic. 
+Now that starting and stopping your GoPro's capture is solved, you also don't want to have to remember to run the script each flight. For a camera dedicated for drone usage (or similar) you can set QR commands that run automatically on boot. This command uses the IMU trigger settings, makes them a boot command (saved to the current SD card,) and enables QR detection while the IMU Trigger is running. Now power-up the drone and power on your GoPro (in some setups this is automatic,) the camera will be ready in seconds. If the drone is stationary, you can use QR Codes to change shooting modes before the flight, or set date and time for cameras that have been without a battery. Once the drone is moving, start and stop capture is automatic. For drone use try a start sensitivity of 4, and end sensitivity of 8, so that an average launch starts the capture, and only rotors off will stop the capture.  
 
 
 ## ver 1.10
