@@ -1,4 +1,4 @@
-# IMU (Camera Motion) Detection to Start and Stop Captures
+# IMU Detection to Start and Stop Captures
 
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
