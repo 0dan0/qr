@@ -11,7 +11,7 @@ and as a mobile app:<br>
 
 ### Capture Triggers 
 * Use the image sensor for [**Motion Detection**](./motion), capturing only scenes with motion
-* Capture using [**IMU Motion Triggers**](./imutrigger) for detecting camera movement
+* <span style="color:steelblue">**UPDATED**</span> Capture using [**IMU Motion Triggers**](./imutrigger) for detecting camera movement
 * Start capture only when traveling fast with [**GPS Speed Triggers**](./speedtrigger) 
 * Use the [**USB Power Trigger**](./usb) to start and stop the camera (pseudo dash-cam mode)
 * <span style="color:steelblue">**NEW**</span> **HERO9 only** - Start capture using [**Sound Pressure Level Trigger**](./spltrigger)
