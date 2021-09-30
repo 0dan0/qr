@@ -440,7 +440,7 @@ Share this QR Code as a URL: <b id="urltext"></b>
 
 <button onclick="myReloadFunction()">Reset page</button>
 
-**Compatibility:** Labs enabled [HERO5 Session](../session5), HERO7, HERO8, HERO9 and MAX 
+**Compatibility:** Labs enabled [HERO5 Session](../session5), HERO7, HERO8, HERO9, HERO10 and MAX 
         
 [Learn more](..) on QR Control
 
@@ -449,7 +449,7 @@ Share this QR Code as a URL: <b id="urltext"></b>
 [![google play](../google-play-823.png)](https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
 [![apple app store](../apple-store-823.png)](https://apps.apple.com/us/app/gopro-app/id1518134202)
 
-## version 1.27
+## version 1.28
 
 <script>
 var lastcmd = "";
