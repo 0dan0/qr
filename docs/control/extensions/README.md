@@ -37,7 +37,7 @@ All metadata QR commands are written in the form oM**wxzy**=value(s) or !M**wxzy
 	- **LRUN=”Runner Name”** - displays "Runner", with the name you provide
 - **BOOT=!Lscript** - A command to run automatically at boot. For safety, this should only be a load script command, so that the command is dependent on the SD card presence. e.g. !MBOOT="!Lboot"  Then you can place whatever command you need in the boot script with !SAVEboot="your command here". See an example in [IMU Triggers for Drones](../imutrigger)
 	
-### <span style="color:steelblue">**NEW**</span> - **HERO9 only** - Extensions in June 2021 Labs (v1.60.70)
+### **HERO9/10 only** - Extensions latest Labs firmware
 
 - **WAKE=1** - This will make the camera wake on any power addition, but only if there is a delay action pending (determined by a delay.bin file in the MISC folder, created automatically with wake timer events.) Inserting a battery or the connection of USB power, will boot up the camera to continue a script after a power failure. With some experimentation, this may be used to improve very long time-lapse reliability, by cycling USB power every 24 hours -- reseting the camera to restart scripts.
 - **MUTE=mask** - Mute one or more channels of audio (microphones). For HERO9 cameras, there are four channels, although three microphones. The mask is binary mask for channels 4321. e.g. oMMUTE=15 mute all channels (15 = 1111B), oMMUTE=8 mute the fourth channel (8 = 1000B), oMMUTE=7 mutes the first 3 channels (7 = 0111B).
