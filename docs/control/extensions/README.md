@@ -64,7 +64,7 @@ All metadata QR commands are written in the form oM**wxzy**=value(s) or !M**wxzy
 
 ### <span style="color:steelblue">**NEW**</span> - **HERO10 only** - Frame rate extension - October 2021 Labs
 
-- **24HZ=1** - enable film standard 24.0 frame, rather than the default broadcast standard 23.976.
+- **24HZ=1** - enable film standard 24.0 frame, rather than the default broadcast standard 23.976.  The existing 24p mode(s) will have the new frame rate when this is enabled, all other video modes are unaffected. 
 
 <input type="checkbox" id="perm" name="perm"> 
 <label for="perm">Make metadata Premanent (are you sure?)</label><br>
