@@ -23,17 +23,17 @@ and as a mobile app:<br>
 * **HERO9/10 only** - Daily Time-lapse with [**auto upload**](./dailytl) (GoPro Subscription required)
 
 ### Video Alteration Features
-* **HERO8/9 and MAX only** - Add text like Date and Time with [**Video 'Burn-in' Overlays**](./overlays)
-* **not HERO10 yet** - Set the [**Maximum Shutter Angle**](./maxshut) for greater control over stabilization in low light
-* **not HERO10 yet** Set the [**Exposure Lock**](./explock) via QR Code
+* **HERO8/9/MAX only** - Add text like Date and Time with [**Video 'Burn-in' Overlays**](./overlays)
+* **HERO8/9/MAX only** - Set the [**Maximum Shutter Angle**](./maxshut) for greater control over stabilization in low light
+* **HERO8/9 only** Set the [**Exposure Lock**](./explock) via QR Code
 * **HERO9 only** - Add a logo or any small image to your video with [**Logo Overlays**](./logo)
 
 ### Miscellaneous Features
 * Enable [**Archive Mode**](./archive), a video only capture mode for loaned cameras 
 * **HERO8/9/10 only** - Configure your camera for [**Live-streaming**](./rtmp) via QR Code
 * **HERO9/10 only** - Sync multiple cameras' timecode via [**GPS Time Synchronization**](./gpssync)
-* **HERO8/9/10 and MAX only** - Experiment with larger chapter sizes with [**12 GB Chapters**](./chapters)
-* **HERO8/9/10 and MAX only** - Multi-camera users, label you media with [**Altered File Naming**](./basename)
+* **HERO8/9/10/MAX only** - Experiment with larger chapter sizes with [**12 GB Chapters**](./chapters)
+* **HERO8/9/10/MAX only** - Multi-camera users, label you media with [**Altered File Naming**](./basename)
 * **HERO9/10 only** - Timecode Support via [**LTC**](./ltc) over audio line-in using Media Mod 
 * **HERO9/10 only** - Enable media [**encryption**](./encrypt) for increased security
 * <span style="color:steelblue">**UPDATED**</span> Many more [**extensions**](./extensions) via QR Code
