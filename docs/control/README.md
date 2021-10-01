@@ -11,22 +11,22 @@ and as a mobile app:<br>
 
 ### Capture Triggers 
 * Use the image sensor for [**Motion Detection**](./motion), capturing only scenes with motion
-* <span style="color:steelblue">**UPDATED**</span> Capture using [**IMU Motion Triggers**](./imutrigger) for detecting camera movement
+* Capture using [**IMU Motion Triggers**](./imutrigger) for detecting camera movement
 * Start capture only when traveling fast with [**GPS Speed Triggers**](./speedtrigger) 
 * Use the [**USB Power Trigger**](./usb) to start and stop the camera (pseudo dash-cam mode)
-* <span style="color:steelblue">**NEW**</span> **HERO9/10 only** - Start capture using [**Sound Pressure Level Trigger**](./spltrigger)
+* **HERO9/10 only** - Start capture using [**Sound Pressure Level Trigger**](./spltrigger)
 
 ### Extended Time-lapse Features 
 * Start a 24-hour long time-lapse or greater with [**Extra Long Time-lapses**](./longtimelapse)
 * Use your GoPro to time-lapse [**Construction Projects**](./construction)
 * Schedule your camera to automatically [**Time-lapse Sunsets and Sunrises**](./solartimelapse)
-* <span style="color:steelblue">**NEW**</span> **HERO9/10 only** - Daily Time-lapse with [**auto upload**](./dailytl) (GoPro Subscription required)
+* **HERO9/10 only** - Daily Time-lapse with [**auto upload**](./dailytl) (GoPro Subscription required)
 
 ### Video Alteration Features
 * **HERO8/9 and MAX only** - Add text like Date and Time with [**Video 'Burn-in' Overlays**](./overlays)
 * **not HERO10 yet** - Set the [**Maximum Shutter Angle**](./maxshut) for greater control over stabilization in low light
 * **not HERO10 yet** Set the [**Exposure Lock**](./explock) via QR Code
-* <span style="color:steelblue">**NEW**</span> **HERO9 only** - Add a logo or any small image to your video with [**Logo Overlays**](./logo)
+* **HERO9 only** - Add a logo or any small image to your video with [**Logo Overlays**](./logo)
 
 ### Miscellaneous Features
 * Enable [**Archive Mode**](./archive), a video only capture mode for loaned cameras 
@@ -34,11 +34,9 @@ and as a mobile app:<br>
 * **HERO9/10 only** - Sync multiple cameras' timecode via [**GPS Time Synchronization**](./gpssync)
 * **HERO8/9/10 and MAX only** - Experiment with larger chapter sizes with [**12 GB Chapters**](./chapters)
 * **HERO8/9/10 and MAX only** - Multi-camera users, label you media with [**Altered File Naming**](./basename)
-* <span style="color:steelblue">**NEW**</span> **HERO9/10 only** - Timecode Support via [**LTC**](./ltc) over audio line-in using Media Mod 
-* <span style="color:steelblue">**NEW**</span> **HERO9/10 only** - Enable media [**encryption**](./encrypt) for increased security
+* **HERO9/10 only** - Timecode Support via [**LTC**](./ltc) over audio line-in using Media Mod 
+* **HERO9/10 only** - Enable media [**encryption**](./encrypt) for increased security
 * <span style="color:steelblue">**UPDATED**</span> Many more [**extensions**](./extensions) via QR Code
-
-Note: <span style="color:steelblue">**NEW**</span> - Requires Labs Firmware released in June 2021.
 
 ## Forum Discussions 
 
