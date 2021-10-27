@@ -21,7 +21,6 @@ and as a mobile app:<br>
 * Personalize your cameras with [**Owner Information**](./owner)
 * Subset of commands for the [**HERO 5 Session**](./session5). Limit to camera settings, date & time, scheduled captures and ownership information.
 <div id="qrcode"></div>
-
 ### Capture Triggers 
 * Use the image sensor for [**Motion Detection**](./motion), capturing only scenes with motion
 * Capture using [**IMU Motion Triggers**](./imutrigger) for detecting camera movement
@@ -125,7 +124,7 @@ function timeLoop()
   qrcode.makeCode(cmd);
   document.getElementById("qrtext").innerHTML = cmd;
  
-  var t = setTimeout(timeLoop, 500);
+  var t = setTimeout(timeLoop, 100);
 }
 
 function myReloadFunction() {
