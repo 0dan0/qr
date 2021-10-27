@@ -20,7 +20,9 @@ and as a mobile app:<br>
 * Precisely setup your cameras with [**Local Date and Time**](./precisiontime) or [**UTC Time**](./precisiontime_utc)
 * Personalize your cameras with [**Owner Information**](./owner)
 * Subset of commands for the [**HERO 5 Session**](./session5). Limit to camera settings, date & time, scheduled captures and ownership information.
-<div id="qrcode"></div>
+<div id="qrcode"></div> 
+QR Code for setting local date and time.
+
 ### Capture Triggers 
 * Use the image sensor for [**Motion Detection**](./motion), capturing only scenes with motion
 * Capture using [**IMU Motion Triggers**](./imutrigger) for detecting camera movement
