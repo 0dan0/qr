@@ -21,7 +21,7 @@ and as a mobile app:<br>
 * Personalize your cameras with [**Owner Information**](./owner)
 * Subset of commands for the [**HERO 5 Session**](./session5). Limit to camera settings, date & time, scheduled captures and ownership information.
 <div id="qrcode"></div> 
-QR Code for setting local date and time.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QR Code for setting local date and time.
 
 ### Capture Triggers 
 * Use the image sensor for [**Motion Detection**](./motion), capturing only scenes with motion
