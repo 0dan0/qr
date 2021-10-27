@@ -122,9 +122,8 @@ function timeLoop()
   cmd = "oT" + yy + mm + dd + h + m + s;
   qrcode.clear(); 
   qrcode.makeCode(cmd);
-  document.getElementById("qrtext").innerHTML = cmd;
  
-  var t = setTimeout(timeLoop, 100);
+  var t = setTimeout(timeLoop, 500);
 }
 
 function myReloadFunction() {
