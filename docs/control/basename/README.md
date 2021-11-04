@@ -94,12 +94,12 @@ function filter(txt)
 {
 	var desired;
 	desired = txt.replace('(', '');
-	desired = txt.replace(')', '');
-	desired = txt.replace('\[', '(');
-	desired = txt.replace(']', ')');
-	desired = txt.replace(/[^a-zA-Z0-9-_+()]/gi, '');
-	desired = txt.replace('(', '\[');
-	desired = txt.replace(')', ']');
+	desired = desired.replace(')', '');
+	desired = desired.replace('\[', '(');
+	desired = desired.replace(']', ')');
+	desired = desired.replace(/[^a-zA-Z0-9-_+()]/gi, '');
+	desired = desired.replace('(', '\[');
+	desired = desired.replace(')', ']');
 	return desired;
 }
 
