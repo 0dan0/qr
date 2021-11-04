@@ -92,7 +92,14 @@ function pad(num, size) {
 
 function filter(txt)
 {
-	var desired = txt.replace(/[^a-zA-Z0-9-[_+/]]/gi, '');
+	var desired;
+	desired = txt.replace('(', '');
+	desired = txt.replace(')', '');
+	desired = txt.replace('\[', '(');
+	desired = txt.replace(']', ')');
+	desired = txt.replace(/[^a-zA-Z0-9-_+()]/gi, '');
+	desired = txt.replace('(', '\[');
+	desired = txt.replace(')', ']');
 	return desired;
 }
 
