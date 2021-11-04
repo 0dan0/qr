@@ -93,7 +93,8 @@ function pad(num, size) {
 function filter(txt)
 {
 	var desired;
-	desired = txt.replace('[{}]', '');
+	desired = txt.replace('{', '');
+	desired = desired.replace('}', '');
 	desired = desired.replace('\[', '{');
 	desired = desired.replace(']', '}');
 	desired = desired.replace(/[^a-zA-Z0-9-_+(){}<>,.]/gi, '');
