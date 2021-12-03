@@ -17,7 +17,7 @@ GoPro edits are great, edits from multiple GoPros, from multiple angles, even mo
 Create an unique Event. Your Event's name and the GPS proximity of your cameras, makes sure only Event participants can auto share footage. Create an Event below, and print or screen grab the code, and sure is will all your Event friend. Scanning the Event, and users accepting the Event on camera, is all that is required from GoPro Subscribers.
 
 
-**Your Events Name (minimum 8 characters):**  <input type="text" id="eventname" value=""><br>
+**Your Event's Name (minimum 8 characters):**  <input type="text" id="eventname" value=""><br>
 
 Event Duration: <input type="range" style="width: 300px;" id="tlend" name="tlend" min="1" max="300" value="6"><label for="tlend"></label> <b id="endtext"></b><br>
 
@@ -78,11 +78,36 @@ function makeQR()
   {
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
-      text : "\"You need to add\na logo using the\nPNG file format\"",
+      text : "\"Need an Event name\"",
       width : 360,
       height : 360,
       correctLevel : QRCode.CorrectLevel.M
     });
+	
+	var today;
+	var yy,mm,dd,h,m,s;
+	today = new Date();
+	yy = today.getFullYear() - 2000;
+	mm = today.getMonth() + 1;
+	dd = today.getDate();
+	h = today.getHours();
+	m = today.getMinutes();
+	s = today.getSeconds();
+	//yy = padTime(yy);
+	//mm = padTime(mm);
+	//dd = padTime(dd);
+	hh = padTime(h);
+	mn = padTime(m);
+	ss = padTime(s);
+	
+	document.getElementById("startyr").innerHTML = "20" + yy;
+	document.getElementById("startmn").innerHTML = mm;
+	document.getElementById("startdy").innerHTML = dd;
+	
+	document.getElementById("yrstrt").value = yy;
+	document.getElementById("msstrt").value = mm;
+	document.getElementById("dystrt").value = dd;	
+	
     once = false;
   }
 }
@@ -95,24 +120,7 @@ function padTime(i) {
 
 function timeLoop()
 {
-	var cmd = ""
-	var today;
-	var yy,mm,dd,h,m,s;
-	var ms;
-
-	today = new Date();
-	yy = today.getFullYear() - 2000;
-	mm = today.getMonth() + 1;
-	dd = today.getDate();
-	h = today.getHours();
-	m = today.getMinutes();
-	s = today.getSeconds();
-	yy = padTime(yy);
-	mm = padTime(mm);
-	dd = padTime(dd);
-	hh = padTime(h);
-	mn = padTime(m);
-	ss = padTime(s);
+	var cmd = "";
   
 	if(document.getElementById("eventname") !== null)
 	{	
