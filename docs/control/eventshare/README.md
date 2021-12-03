@@ -39,7 +39,7 @@ QR Command: <b id="qrtext">time</b><br>
 		
 **Compatibility:** Now You See Me enabled HERO10 cameras only
         
-## ver 0.60
+## ver 0.65
 
 <script>
 var once = true;
@@ -130,39 +130,39 @@ function timeLoop()
 	if(document.getElementById("eventname") !== null)
 	{	
 		var filename = document.getElementById("eventname").value;
-		
-		if(filename.length >= 8)
+
+		if(document.getElementById("tlstrt") !== null)
 		{
-			cmd = "!MEVNT=\"" + filename;
-			var fhours = 0.5;
-
-			if(document.getElementById("tlstrt") !== null)
-			{
-				var start = parseInt(document.getElementById("tlstrt").value);
-				var startmins = start*10;
-				
-				var dur = parseInt(document.getElementById("tlend").value);
-				var durmins = dur*15;
-
-				var starthourstime = Math.trunc(startmins / 60);
-				var startminstime = startmins - (starthourstime * 60);	
-
-				var endhourstime = Math.trunc(durmins / 60);
-				var endminstime = durmins - endhourstime * 60;
-
-				var stxt = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
-				var etxt = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
-
-				document.getElementById("starttm").innerHTML = stxt;
-				document.getElementById("endtext").innerHTML = etxt;
-
-				var y = document.getElementById("yrstrt").value;
-				var mo = document.getElementById("mnstrt").value; 
-				var d = document.getElementById("dystrt").value; 
+			var start = parseInt(document.getElementById("tlstrt").value);
+			var startmins = start*10;
 			
-				document.getElementById("startyr").innerHTML = "20" + pad(y,2);
-				document.getElementById("startmn").innerHTML = mo;
-				document.getElementById("startdy").innerHTML = d;
+			var dur = parseInt(document.getElementById("tlend").value);
+			var durmins = dur*15;
+
+			var starthourstime = Math.trunc(startmins / 60);
+			var startminstime = startmins - (starthourstime * 60);	
+
+			var endhourstime = Math.trunc(durmins / 60);
+			var endminstime = durmins - endhourstime * 60;
+
+			var stxt = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
+			var etxt = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
+
+			document.getElementById("starttm").innerHTML = stxt;
+			document.getElementById("endtext").innerHTML = etxt;
+
+			var y = document.getElementById("yrstrt").value;
+			var mo = document.getElementById("mnstrt").value; 
+			var d = document.getElementById("dystrt").value; 
+		
+			document.getElementById("startyr").innerHTML = "20" + pad(y,2);
+			document.getElementById("startmn").innerHTML = mo;
+			document.getElementById("startdy").innerHTML = d;
+			
+			if(filename.length >= 8)
+			{
+				cmd = "!MEVNT=\"" + filename;
+				var fhours = 0.5;
 		
 				if(document.getElementById("startnow").checked === true)
 				{
