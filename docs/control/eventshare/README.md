@@ -22,10 +22,10 @@ Create an unique Event. Your Event's name and the GPS proximity of your cameras,
 Event Duration: <input type="range" style="width: 300px;" id="tlend" name="tlend" min="1" max="300" value="6"><label for="tlend"></label> <b id="endtext"></b><br>
 
 <input type="checkbox" id="startnow" name="startnow"> <label for="startnow">Create an Event stating now</label><br>
- or<br> 
-Event Start Year: <input type="range" style="width: 150px;" id="yrstrt" name="yrstrt" min="21" max="99" value="21"><label for="yrstrt"></label> <b id="startyr"></b><br>
-Event Start Month: <input type="range" style="width: 150px;" id="mnstrt" name="mnstrt" min="1" max="12" value="1"><label for="mnstrt"></label> <b id="startmn"></b><br>
-Event Start Day: <input type="range" style="width: 150px;" id="dystrt" name="dystrt" min="1" max="31" value="1"><label for="dystrt"></label> <b id="startdy"></b><br>
+&nbsp;&nbsp;&nbsp; or<br> 
+Event Start Year: <input type="range" style="width: 150px;" id="yrstrt" name="yrstrt" min="21" max="99" value="inityr"><label for="yrstrt"></label> <b id="startyr"></b><br>
+Event Start Month: <input type="range" style="width: 150px;" id="mnstrt" name="mnstrt" min="1" max="12" value="initmn"><label for="mnstrt"></label> <b id="startmn"></b><br>
+Event Start Day: <input type="range" style="width: 150px;" id="dystrt" name="dystrt" min="1" max="31" value="initdy"><label for="dystrt"></label> <b id="startdy"></b><br>
 Event Start Time: <input type="range" style="width: 300px;" id="tlstrt" name="tlstrt" min="1" max="143" value="48"><label for="tlstrt"></label> <b id="starttm"></b><br>
 
 
@@ -104,9 +104,9 @@ function makeQR()
 	document.getElementById("startmn").innerHTML = mm;
 	document.getElementById("startdy").innerHTML = dd;
 	
-	document.getElementById("yrstrt").value = yy;
-	document.getElementById("msstrt").value = mm;
-	document.getElementById("dystrt").value = dd;	
+	document.getElementById("inityr").innerHTML = yy;
+	document.getElementById("initmn").innerHTML = mm;
+	document.getElementById("initdy").innerHTML = dd;	
 	
     once = false;
   }
