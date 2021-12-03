@@ -36,7 +36,7 @@ Event Start Time: <input type="range" style="width: 300px;" id="tlstrt" name="tl
 
 QR Command: <b id="qrtext">time</b><br>
 
-Share this QR Code as a URL: <b id="urltext"></b> 
+Share this Event as a URL: <b id="urltext"></b> 
 		
 **Compatibility:** Now You See Me enabled HERO10 cameras only
         
