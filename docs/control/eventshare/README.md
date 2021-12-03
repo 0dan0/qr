@@ -39,7 +39,7 @@ QR Command: <b id="qrtext">time</b><br>
 		
 **Compatibility:** Now You See Me enabled HERO10 cameras only
         
-## ver 1.00
+## ver 0.50
 
 <script>
 var once = true;
