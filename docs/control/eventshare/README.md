@@ -26,7 +26,7 @@ Event Duration: <input type="range" style="width: 300px;" id="tlend" name="tlend
 Event Start Year: <input type="range" style="width: 150px;" id="yrstrt" name="yrstrt" min="21" max="30" value="21"><label for="yrstrt"></label> <b id="startyr"></b><br>
 Event Start Month: <input type="range" style="width: 150px;" id="mnstrt" name="mnstrt" min="1" max="12" value="1"><label for="mnstrt"></label> <b id="startmn"></b><br>
 Event Start Day: <input type="range" style="width: 150px;" id="dystrt" name="dystrt" min="1" max="31" value="1"><label for="dystrt"></label> <b id="startdy"></b><br>
-Event Start Time: <input type="range" style="width: 300px;" id="tlstrt" name="tlstrt" min="1" max="143" value="48"><label for="tlstrt"></label> <b id="starttm"></b><br>
+Event Start Time: <input type="range" style="width: 300px;" id="tlstrt" name="tlstrt" min="0" max="144" value="48"><label for="tlstrt"></label> <b id="starttm"></b><br>
 
 
 <center>
@@ -39,7 +39,7 @@ QR Command: <b id="qrtext">time</b><br>
 		
 **Compatibility:** Now You See Me enabled HERO10 cameras only
         
-## ver 0.55
+## ver 0.60
 
 <script>
 var once = true;
@@ -117,7 +117,7 @@ function makeQR()
 	document.getElementById("mnstrt").value = mm;
 	document.getElementById("dystrt").value = dd;	
 	
-	document.getElementById("tlstrt").value = (Math.trunc( (h*60 + m) / 10) ) * 10;	
+	document.getElementById("tlstrt").value = (Math.trunc( (h*60 + m) / 10));	
 	
     once = false;
   }
