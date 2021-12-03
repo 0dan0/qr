@@ -36,10 +36,11 @@ Event Start Time: <input type="range" style="width: 300px;" id="tlstrt" name="tl
 
 QR Command: <b id="qrtext">time</b><br>
 
+Share this QR Code as a URL: <b id="urltext"></b> 
 		
 **Compatibility:** Now You See Me enabled HERO10 cameras only
         
-## ver 0.65
+## ver 0.75
 
 <script>
 var once = true;
@@ -190,6 +191,7 @@ function timeLoop()
 	if(changed === true)
 	{
 		document.getElementById("qrtext").innerHTML = cmd;
+		document.getElementById("urltext").innerHTML = "https://gopro.github.io/labs/control/set/?cmd=" + cmd;		
 		changed = false;
 	}
 
