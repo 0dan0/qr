@@ -98,27 +98,28 @@ function makeQR()
     });
 	
 	var today;
-	var yy,mm,dd,h,m,s;
+	var yy,mm,dd;//h,m,s;
 	today = new Date();
 	yy = today.getFullYear() - 2000;
 	mm = today.getMonth() + 1;
 	dd = today.getDate();
-	h = today.getHours();
-	m = today.getMinutes();
-	s = today.getSeconds();
+	//h = today.getHours();
+	//m = today.getMinutes();
+	//s = today.getSeconds();
 	//yy = padTime(yy);
 	//mm = padTime(mm);
 	//dd = padTime(dd);
-	hh = padTime(h);
-	mn = padTime(m);
-	ss = padTime(s);
+	//hh = padTime(h);
+	//mn = padTime(m);
+	//ss = padTime(s);
+	
 	
 	document.getElementById("startyr").innerHTML = "20" + yy;
 	document.getElementById("startmn").innerHTML = mm;
 	document.getElementById("startdy").innerHTML = dd;
 	
 	document.getElementById("yrstrt").value = yy;
-	document.getElementById("msstrt").value = mm;
+	document.getElementById("mnstrt").value = mm;
 	document.getElementById("dystrt").value = dd;	
 	
     once = false;
