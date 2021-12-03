@@ -117,7 +117,7 @@ function makeQR()
 	document.getElementById("mnstrt").value = mm;
 	document.getElementById("dystrt").value = dd;	
 	
-	document.getElementById("tlstrt").value = Math.trunc((h*60 + m)/10*10));	
+	document.getElementById("tlstrt").value = (Math.trunc( (h*60 + m) / 10) ) * 10;	
 	
     once = false;
   }
