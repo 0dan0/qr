@@ -72,6 +72,19 @@ function dcmd(cmd, id) {
 	return cmd;
 }
 
+
+function pad(num, size) {
+    var s = num+"";
+    while (s.length < size) s = "0" + s;
+    return s;
+}
+
+function padTime(i) {
+  if (i < 10) {i = "0" + i;}  // add zero in front of numbers < 10
+  return i;
+}
+
+
 function makeQR() 
 {	
   if(once === true)
@@ -112,16 +125,9 @@ function makeQR()
   }
 }
 
-function padTime(i) {
-  if (i < 10) {i = "0" + i;}  // add zero in front of numbers < 10
-  return i;
-}
-
 
 function timeLoop()
 {
-	var cmd = "";
-  
 	if(document.getElementById("eventname") !== null)
 	{	
 		var filename = document.getElementById("eventname").value;
