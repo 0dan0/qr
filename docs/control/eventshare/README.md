@@ -36,11 +36,12 @@ Event Start Time: <input type="range" style="width: 300px;" id="tlstrt" name="tl
 
 QR Command: <b id="qrtext">time</b><br>
 
-Share this Event as a URL: <b id="urltext"></b> 
+Share this Event as a URL:<br>
+<b id="urltext"></b> 
 		
 **Compatibility:** Now You See Me enabled HERO10 cameras only
         
-## ver 0.75
+## ver 0.77
 
 <script>
 var once = true;
@@ -127,6 +128,7 @@ function makeQR()
 
 function timeLoop()
 {
+	var len = 0;
 	cmd = "\"Need an Event name of at least 8 characters\"";
 	if(document.getElementById("eventname") !== null)
 	{	
@@ -160,6 +162,7 @@ function timeLoop()
 			document.getElementById("startmn").innerHTML = mo;
 			document.getElementById("startdy").innerHTML = d;
 			
+			len = filename.length;
 			if(filename.length >= 8)
 			{
 				cmd = "!MEVNT=\"" + filename;
@@ -191,7 +194,10 @@ function timeLoop()
 	if(changed === true)
 	{
 		document.getElementById("qrtext").innerHTML = cmd;
-		document.getElementById("urltext").innerHTML = "https://gopro.github.io/labs/control/set/?cmd=" + cmd;		
+		if(len < 8)
+			document.getElementById("urltext").innerHTML = "Need Event Name";	
+		else
+			document.getElementById("urltext").innerHTML = "https://gopro.github.io/labs/control/set/?cmd=" + cmd;		
 		changed = false;
 	}
 
