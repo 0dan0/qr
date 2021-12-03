@@ -23,7 +23,7 @@ Event Duration: <input type="range" style="width: 300px;" id="tlend" name="tlend
 
 <input type="checkbox" id="startnow" name="startnow"> <label for="startnow">Create an Event stating now</label><br>
 &nbsp;&nbsp;&nbsp; or<br> 
-Event Start Year: <input type="range" style="width: 150px;" id="yrstrt" name="yrstrt" min="21" max="99" value="inityr"><label for="yrstrt"></label> <b id="startyr"></b><br>
+Event Start Year: <input type="range" style="width: 150px;" id="yrstrt" name="yrstrt" min="21" max="99" value="21"><label for="yrstrt"></label> <b id="startyr"></b><br>
 Event Start Month: <input type="range" style="width: 150px;" id="mnstrt" name="mnstrt" min="1" max="12" value="initmn"><label for="mnstrt"></label> <b id="startmn"></b><br>
 Event Start Day: <input type="range" style="width: 150px;" id="dystrt" name="dystrt" min="1" max="31" value="initdy"><label for="dystrt"></label> <b id="startdy"></b><br>
 Event Start Time: <input type="range" style="width: 300px;" id="tlstrt" name="tlstrt" min="1" max="143" value="48"><label for="tlstrt"></label> <b id="starttm"></b><br>
@@ -104,9 +104,9 @@ function makeQR()
 	document.getElementById("startmn").innerHTML = mm;
 	document.getElementById("startdy").innerHTML = dd;
 	
-	document.getElementById("inityr").innerHTML = yy;
-	document.getElementById("initmn").innerHTML = mm;
-	document.getElementById("initdy").innerHTML = dd;	
+	document.getElementById("yrstrt").value = yy;
+	document.getElementById("msstrt").value = mm;
+	document.getElementById("dystrt").value = dd;	
 	
     once = false;
   }
@@ -146,9 +146,17 @@ function timeLoop()
 			var stxt = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
 			var etxt = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 
-			document.getElementById("starttext").innerHTML = stxt;
+			document.getElementById("starttm").innerHTML = stxt;
 			document.getElementById("endtext").innerHTML = etxt;
 
+			var y = document.getElementById("yrstrt").value;
+			var mo = document.getElementById("mnstrt").value; 
+			var d = document.getElementById("dystrt").value; 
+		
+			document.getElementById("startyr").innerHTML = "20" + pad(y,2);
+			document.getElementById("startmn").innerHTML = mo;
+			document.getElementById("startdy").innerHTML = d;
+	
 			if(document.getElementById("startnow").checked === true)
 			{
 				cmd = cmd + "+" + endhourstime + "." + pad(Math.trunc(endminstime*100/60), 2) + "\"";
@@ -156,10 +164,6 @@ function timeLoop()
 			else
 			{
 			
-				var y = document.getElementById("yrstrt").value;
-				var mo = document.getElementById("mnstrt").value; 
-				var d = document.getElementById("dystrt").value; 
-		
 				cmd = cmd + pad(y, 2)+ pad(mo, 2) + pad(d, 2) + pad(startminstime, 2) + "+" + endhourstime + "." + pad(Math.trunc(endminstime*100/60), 2) + "\"";
 			}
 		}
