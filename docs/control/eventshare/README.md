@@ -19,15 +19,14 @@ Create an unique Event. Your Event's name and the GPS proximity of your cameras,
 
 **Your Events Name (minimum 8 characters):**  <input type="text" id="eventname" value=""><br>
 
-**Event Duration:** <input type="range" style="width: 300px;" id="tlend" name="tlend" min="1" max="300" value="6"><label for="tlend"></label> <b id="endtext"></b>
+Event Duration: <input type="range" style="width: 300px;" id="tlend" name="tlend" min="1" max="300" value="6"><label for="tlend"></label> <b id="endtext"></b><br>
 
-<input type="checkbox" id="startnow" name="startnow"> <label for="startnow">Create an Event stating now</label>
- or
- 
-**Event Start Year:** <input type="range" style="width: 300px;" id="yrstrt" name="yrstrt" min="21" max="99" value="21"><label for="yrstrt"></label> <b id="startyr"></b>
-**Event Start Month:** <input type="range" style="width: 300px;" id="mnstrt" name="mnstrt" min="1" max="12" value="1"><label for="mnstrt"></label> <b id="startmn"></b>
-**Event Start Day:** <input type="range" style="width: 300px;" id="dystrt" name="dystrt" min="1" max="31" value="1"><label for="dystrt"></label> <b id="startdy"></b>
-**Event Start Time:** <input type="range" style="width: 300px;" id="tlstrt" name="tlstrt" min="1" max="143" value="48"><label for="tlstrt"></label> <b id="starttm"></b>
+<input type="checkbox" id="startnow" name="startnow"> <label for="startnow">Create an Event stating now</label><br>
+ or<br> 
+Event Start Year: <input type="range" style="width: 150px;" id="yrstrt" name="yrstrt" min="21" max="99" value="21"><label for="yrstrt"></label> <b id="startyr"></b><br>
+Event Start Month: <input type="range" style="width: 150px;" id="mnstrt" name="mnstrt" min="1" max="12" value="1"><label for="mnstrt"></label> <b id="startmn"></b><br>
+Event Start Day: <input type="range" style="width: 150px;" id="dystrt" name="dystrt" min="1" max="31" value="1"><label for="dystrt"></label> <b id="startdy"></b><br>
+Event Start Time: <input type="range" style="width: 300px;" id="tlstrt" name="tlstrt" min="1" max="143" value="48"><label for="tlstrt"></label> <b id="starttm"></b><br>
 
 
 <center>
@@ -96,6 +95,7 @@ function padTime(i) {
 
 function timeLoop()
 {
+	var cmd = ""
 	var today;
 	var yy,mm,dd,h,m,s;
 	var ms;
@@ -107,21 +107,18 @@ function timeLoop()
 	h = today.getHours();
 	m = today.getMinutes();
 	s = today.getSeconds();
-	ms = today.getMilliseconds();
 	yy = padTime(yy);
 	mm = padTime(mm);
 	dd = padTime(dd);
-	h = padTime(h);
-	m = padTime(m);
-	s = padTime(s);
-	ms = Math.floor(ms / 10); // hundredths
-	ms = padTime(ms);
+	hh = padTime(h);
+	mn = padTime(m);
+	ss = padTime(s);
   
 	if(document.getElementById("eventname") !== null)
 	{	
 		var filename = document.getElementById("eventname").value;
 
-		var cmd = "!MEVNT=\"" + filename;
+		cmd = "!MEVNT=\"" + filename;
 		var fhours = 0.5;
 
 		if(document.getElementById("tlstrt") !== null)
@@ -146,16 +143,16 @@ function timeLoop()
 
 			if(document.getElementById("startnow").checked === true)
 			{
-				cmd = cmd + "+" + endhourstime + "." + pad(Math.trunc(endminstime*100/60), 2) "\"";
+				cmd = cmd + "+" + endhourstime + "." + pad(Math.trunc(endminstime*100/60), 2) + "\"";
 			}
 			else
 			{
 			
 				var y = document.getElementById("yrstrt").value;
-				var m = document.getElementById("mnstrt").value; 
+				var mo = document.getElementById("mnstrt").value; 
 				var d = document.getElementById("dystrt").value; 
 		
-				cmd = cmd + pad(y, 2)+ pad(m, 2) + pad(d, 2) + pad(startminstime, 2) + "+" + endhourstime + "." + pad(Math.trunc(endminstime*100/60), 2) "\"";
+				cmd = cmd + pad(y, 2)+ pad(mo, 2) + pad(d, 2) + pad(startminstime, 2) + "+" + endhourstime + "." + pad(Math.trunc(endminstime*100/60), 2) + "\"";
 			}
 		}
 		
