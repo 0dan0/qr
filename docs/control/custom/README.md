@@ -38,7 +38,8 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="r5" name="res" value="r3"   > <label for="r5">3k 360°</label>&nbsp;&nbsp;
   <input type="radio" id="r6" name="res" value="r4"   > <label for="r6">4k </label>&nbsp;&nbsp;
   <input type="radio" id="r7" name="res" value="r4T"  > <label for="r7">4k 4x3 </label>&nbsp;&nbsp;
-  <input type="radio" id="r8" name="res" value="r5"   > <label for="r8">5k </label><br><br>
+  <input type="radio" id="r8" name="res" value="r5"   > <label for="r8">5k </label>&nbsp;&nbsp;
+  <input type="radio" id="r9" name="res" value="r5T"  > <label for="r9">5k 4x3* </label><br><br>
 </div>
 
 <div id="settingsFPS">
@@ -202,8 +203,9 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
 </div>
 <div id="ptCOLOR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Protune Color:</b>&nbsp;&nbsp;
   <input type="radio" id="ptc1" name="ptc" value="cG"> <label for="ptc1">GoPro</label>&nbsp;&nbsp;
-  <input type="radio" id="ptc2" name="ptc" value="cF"> <label for="ptc2">Flat</label>&nbsp;&nbsp;
-  <input type="radio" id="ptc3" name="ptc" value="" checked> <label for="ptc3">not set</label>
+  <input type="radio" id="ptc2" name="ptc" value="cN"> <label for="ptc2">Natural*</label>&nbsp;&nbsp;
+  <input type="radio" id="ptc3" name="ptc" value="cF"> <label for="ptc3">Flat</label>&nbsp;&nbsp;
+  <input type="radio" id="ptc4" name="ptc" value="" checked> <label for="ptc4">not set</label>
 </div>
 <div id="ptBITRATE">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Bit rate:</b>&nbsp;&nbsp;
   <input type="radio" id="br1" name="br" value="b0"> <label for="br1">Standard</label>&nbsp;&nbsp;
@@ -443,6 +445,7 @@ Share this QR Code as a URL: <b id="urltext"></b>
 **Compatibility:** Labs enabled [HERO5 Session](../session5), HERO7, HERO8, HERO9, HERO10 and MAX 
 
 **HERO10 Note:** LCD most be on for the QR Code scanning to be active.
+* - Requires HERO10 Labs 1.20 or better. 
         
 [Learn more](..) on QR Control
 
@@ -451,7 +454,7 @@ Share this QR Code as a URL: <b id="urltext"></b>
 [![google play](../google-play-823.png)](https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
 [![apple app store](../apple-store-823.png)](https://apps.apple.com/us/app/gopro-app/id1518134202)
 
-## version 1.30
+## version 1.31
 
 <script>
 var lastcmd = "";
