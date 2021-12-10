@@ -803,8 +803,11 @@ function startTime() {
 	
 	if(document.getElementById("sm") !== null)
 	{
-		var pos = dcmd("","sp");	
-		cmd = dcmd(cmd,"sm") + pos; //spotMeter
+		if(document.getElementById("sm").checked === true)
+		{
+			var pos = dcmd("","sp");	
+			cmd = dcmd(cmd,"sm") + pos; //spotMeter
+		}
 	}
 	
 	cmd = dcmd(cmd,"pt"); //protune
