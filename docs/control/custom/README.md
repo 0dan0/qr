@@ -556,17 +556,43 @@ function startTime() {
 	var checkedmode = 0;
 	var x;
 	
-	for (i = 1; i < 10; i++) { 
+	for (i = 1; i < 18; i++) { 
 		var mode = "m"+i;
 		x = document.getElementById(mode).checked;
 		if( x === true)
 			checkedmode = i;
 	}
 	
+	//m1 mV 
+	//m2 mVP
+	//m3 mVE
+	//m4 mVS
+	//m5 mV0
+	//m6 mV1
+	//m7 mV2
+	//m8 mV3
+	//m9 mV4
+	//m10 mTW
+	//m11 mT 
+	//m12 mNL
+	//m13 mP 
+	//m14 mPB
+	//m15 mPN
+	//m16 mTP
+	//m17 mNP
+	
 	switch(checkedmode)
 	{
 		default:
 		case 1: //Video		
+		case 2: //mVP
+		case 3: //mVE
+		case 4: //mVS
+		case 5: //mV0
+		case 6: //mV1
+		case 7: //mV2
+		case 8: //mV3
+		case 9: //mV4
 		dset("settingsRES", true);
 		dset("settingsFPS", true);
 		dset("settingsFOV", true);
@@ -577,7 +603,7 @@ function startTime() {
 		dset("settingsAUDT",true);
 		break;
 		
-		case 2: //TimeWarp Video
+		case 10: //TimeWarp Video
 		dset("settingsTimewarp", true);		
 		dset("settingsDuration", true);
 		dset("settingsRESTLV", true);
@@ -585,7 +611,7 @@ function startTime() {
 		dset("settingsPT", true);
 		break;		
 		
-		case 3: //Timelapse Video
+		case 11: //Timelapse Video
 		dset("settingsTimelapse", true);	
 		dset("settingsDuration", true);	
 		dset("settingsRESTLV", true);
@@ -594,7 +620,7 @@ function startTime() {
 		dset("noteMODE", true);
 		break;		
 		
-		case 4: //NL Video
+		case 12: //NL Video
 		dset("settingsNightlapse", true);	
 		dset("settingsNightexposure", true);
 		dset("settingsDuration", true);		
@@ -604,27 +630,27 @@ function startTime() {
 		dset("noteMODE", true);
 		break;
 	
-		case 5: //Photo
+		case 13: //Photo
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
 		dset("settingsPhotoRAW", true);
 		break;
 		
-		case 6: //Burst
+		case 14: //Burst
 		dset("settingsBurst", true);
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
 		dset("settingsPhotoRAW", true);
 		break;
 		
-		case 7: //Night
+		case 15: //Night
 		dset("settingsNightexposure", true);
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
 		dset("settingsPhotoRAW", true);
 		break;
 		
-		case 8: //TLP
+		case 16: //TLP
 		dset("settingsTimelapse", true);	
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
@@ -632,7 +658,7 @@ function startTime() {
 		dset("noteMODE", true);
 		break;
 		
-		case 9: //NLP
+		case 17: //NLP
 		dset("settingsNightlapse", true);	
 		dset("settingsNightexposure", true);	
 		dset("settingsPT", true);
@@ -668,7 +694,7 @@ function startTime() {
 				}
 			}
 			
-			if(checkedmode == 1) //Video
+			if(checkedmode >= 1 && checkedmode <= 10) //Video
 			{
 				dset("ptAUD",true);
 			}
@@ -715,39 +741,39 @@ function startTime() {
 		
 	switch(checkedmode)
 	{
-		case 2: //TWarp
+		case 10: //TWarp
 			cmd = dcmd(cmd,"fpswarp");
 			break;
-		case 3: //TLV
+		case 11: //TLV
 			cmd = dcmd(cmd,"fpslapse");
 			break;
-		case 4: //NLV	
+		case 12: //NLV	
 			cmd = dcmd(cmd,"fpsnight");
 			cmd = dcmd(cmd,"nightexp");
 			break;
-		case 6: //Burst 
+		case 14: //Burst 
 			cmd = dcmd(cmd,"b");
 			break;	
-		case 7: //Night
+		case 15: //Night
 			cmd = dcmd(cmd,"nightexp");
 			break;
-		case 8: //TLP
+		case 16: //TLP
 			cmd = dcmd(cmd,"fpslapse");
 			break;
-		case 9: //NLP	
+		case 17: //NLP	
 			cmd = dcmd(cmd,"fpsnight");
 			cmd = dcmd(cmd,"nightexp");
 			break;
 	}
 	
-	if(checkedmode == 2 || checkedmode == 3 || checkedmode == 4) // TLV/TWarp Res/NLV
+	if(checkedmode == 10 || checkedmode == 11 || checkedmode == 12) // TLV/TWarp Res/NLV
 		cmd = dcmd(cmd, "rt");
 	else
 		cmd = dcmd(cmd,"r"); //RES
 		
 	cmd = dcmd(cmd,"p"); //fps
 	
-	if(checkedmode > 1) // not video		
+	if(checkedmode > 9) // not video		
 		cmd = dcmd(cmd,"tlvf"); //fov
 	else
 		cmd = dcmd(cmd,"f"); //fov
@@ -760,7 +786,7 @@ function startTime() {
 	cmd = dcmd(cmd,"audt"); //audio control
 	
 	
-	if(checkedmode >= 5 && checkedmode <= 9) //RAW
+	if(checkedmode >= 13 && checkedmode <= 17) //RAW
 		cmd = dcmd(cmd,"raw"); //raw photo control
 		
 	if(document.getElementById("p1") !== null)
