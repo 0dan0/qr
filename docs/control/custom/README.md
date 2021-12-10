@@ -23,8 +23,8 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="m5" name="mode" value="mV0"> <label for="m5">Standard</label>&nbsp;&nbsp;
   <input type="radio" id="m6" name="mode" value="mV1"> <label for="m6">Activity</label>&nbsp;&nbsp;
   <input type="radio" id="m7" name="mode" value="mV2"> <label for="m7">Cinematic</label>&nbsp;&nbsp;
-  <input type="radio" id="m8" name="mode" value="mV3"> <label for="m8">Slo-Mo</label>&nbsp;&nbsp;
-  <input type="radio" id="m9" name="mode" value="mV4"> <label for="m9">Basic</label><br>
+  <input type="radio" id="m8" name="mode" value="mV4"> <label for="m8">Slo-Mo</label>&nbsp;&nbsp;
+  <input type="radio" id="m9" name="mode" value="mV5"> <label for="m9">Basic</label><br>
   <input type="radio" id="m10" name="mode" value="mTW"> <label for="m10">TimeWarp</label>&nbsp;&nbsp;
   <input type="radio" id="m11" name="mode" value="mT"> <label  for="m11">Timelapse Video</label>&nbsp;&nbsp;
   <input type="radio" id="m12" name="mode" value="mNL"> <label for="m12">Nightlapse Video</label><br>
@@ -132,7 +132,8 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="rt2" name="restlv" value="r1440"> <label for="rt2">1440p </label>&nbsp;&nbsp;
   <input type="radio" id="rt3" name="restlv" value="r27T" > <label for="rt3">2.7k 4x3 </label>&nbsp;&nbsp;
   <input type="radio" id="rt4" name="restlv" value="r4"   > <label for="rt4">4k </label>&nbsp;&nbsp;
-  <input type="radio" id="rt5" name="restlv" value="" checked> <label for="rt5">not set</label><br><br>
+  <input type="radio" id="rt5" name="restlv" value="r4T"  > <label for="rt5">4k 4x3† </label>&nbsp;&nbsp;
+  <input type="radio" id="rt6" name="restlv" value="" checked> <label for="rt6">not set</label><br><br>
  </div>
  
 <div id="settingsNightlapse">
