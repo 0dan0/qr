@@ -12,7 +12,8 @@
         }
 </style>
 
-Create a custom camera mode, and even start a capture all through QR Codes. This is the fastest way to access many of the new GoPro Labs' firmware features.
+Create a custom camera mode, and even start a capture all through QR Codes. This is the fastest way to access many of the new GoPro Labs' firmware features. 
+**†** indicates the control requires HERO10 Labs 1.20 or better. 
 
 <b>Camera Mode:</b>&nbsp;&nbsp;<input type="radio" id="m18" name="mode" value="" checked> <label for="m18">not set</label><br>
   <input type="radio" id="m1" name="mode" value="mV"> <label  for="m1">Video </label>&nbsp;&nbsp;
@@ -209,18 +210,17 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="audt2" name="audt" value="aS"> <label for="audt2">Stereo </label>&nbsp;&nbsp;
   <input type="radio" id="audt3" name="audt" value="aW"> <label for="audt3">Wind</label><br><br>
 </div>
-<input type="checkbox" id="sm" value="oSM"> <label for="sm">Spot Metering †</label>
-<div id="spotMeter">
+<input type="checkbox" id="sm" value="oSM"> <label for="sm">Spot Metering †</label><div id="spotMeter">
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="radio" id="sp1" name="placement" value="25,25"> <label for="sp1">Top Left    </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="sp1" name="placement" value="25,25"> <label for="sp1">Top Left    </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="radio" id="sp2" name="placement" value="50,25"> <label for="sp2">Top Center  </label>&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="radio" id="sp3" name="placement" value="75,25"> <label for="sp3">Top Right   </label><br>&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="radio" id="sp4" name="placement" value="25,50"> <label for="sp4">Mid Left    </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="radio" id="sp5" name="placement" value="50,50" checked> <label for="sp5">Center    </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="sp4" name="placement" value="25,50"> <label for="sp4">Mid Left    </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="sp5" name="placement" value="50,50" checked> <label for="sp5">Center    </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="radio" id="sp6" name="placement" value="75,50"> <label for="sp6">Mid Right   </label><br>&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="radio" id="sp7" name="placement" value="25,75"> <label for="sp7">Lower Left  </label>&nbsp;
+  <input type="radio" id="sp7" name="placement" value="25,75"> <label for="sp7">Lower Left  </label>&nbsp;&nbsp;
   <input type="radio" id="sp8" name="placement" value="50,75"> <label for="sp8">Lower Center</label>&nbsp;
-  <input type="radio" id="sp9" name="placement" value="75,75"> <label for="sp9">Lower Right </label>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="sp9" name="placement" value="75,75"> <label for="sp9">Lower Right </label>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="radio" id="sp10" name="placement" value="0"> <label for="sp10">Disable </label>
 </div>
 <div id="settingsPT">
@@ -470,7 +470,6 @@ Share this QR Code as a URL: <b id="urltext"></b>
 **Compatibility:** Labs enabled [HERO5 Session](../session5), HERO7, HERO8, HERO9, HERO10 and MAX 
 
 **HERO10 Note:** LCD most be on for the QR Code scanning to be active.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;† - Requires HERO10 Labs 1.20 or better. 
         
 [Learn more](..) on QR Control
 
