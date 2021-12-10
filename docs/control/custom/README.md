@@ -18,17 +18,17 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="m1" name="mode" value="mV"> <label  for="m1">Video </label>&nbsp;&nbsp;
   <input type="radio" id="m2" name="mode" value="mVP"> <label for="m2">Performance†</label>&nbsp;&nbsp;
   <input type="radio" id="m3" name="mode" value="mVE"> <label for="m3">Endurance†</label>&nbsp;&nbsp;
-  <input type="radio" id="m4" name="mode" value="mVS"> <label for="m4">Stationary†</label>&nbsp;&nbsp;
+  <input type="radio" id="m4" name="mode" value="mVS"> <label for="m4">Stationary†</label><br>
   **Presets †:** 
   <input type="radio" id="m5" name="mode" value="mV0"> <label for="m5">Standard</label>&nbsp;&nbsp;
   <input type="radio" id="m6" name="mode" value="mV1"> <label for="m6">Activity</label>&nbsp;&nbsp;
   <input type="radio" id="m7" name="mode" value="mV2"> <label for="m7">Cinematic</label>&nbsp;&nbsp;
   <input type="radio" id="m8" name="mode" value="mV4"> <label for="m8">SloMo</label>&nbsp;&nbsp;
-  <input type="radio" id="m9" name="mode" value="mV5"> <label for="m9">Basic</label>&nbsp;&nbsp;
+  <input type="radio" id="m9" name="mode" value="mV5"> <label for="m9">Basic</label><br>
   **VideoTL-Modes:** 
   <input type="radio" id="m10" name="mode" value="mTW"> <label for="m10">TimeWarp</label>&nbsp;&nbsp;
   <input type="radio" id="m11" name="mode" value="mT"> <label  for="m11">Timelapse</label>&nbsp;&nbsp;
-  <input type="radio" id="m12" name="mode" value="mNL"> <label for="m12">Nightlapse</label>&nbsp;&nbsp;
+  <input type="radio" id="m12" name="mode" value="mNL"> <label for="m12">Nightlapse</label><br>
   **Photo-Modes:** 
   <input type="radio" id="m13" name="mode" value="mP"> <label  for="m13">Photo</label>&nbsp;&nbsp;
   <input type="radio" id="m14" name="mode" value="mPB"> <label for="m14">Burst</label>&nbsp;&nbsp;
