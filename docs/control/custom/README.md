@@ -30,7 +30,7 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
 </div>
 
 <div id="settingsRES">
-<b>Video Resolution:</b>&nbsp;&nbsp;<input type="radio" id="r9" name="res" value="" checked> <label for="r9">not set</label><br>
+<b>Video Resolution:</b>&nbsp;&nbsp;<input type="radio" id="r10" name="res" value="" checked> <label for="r10">not set</label><br>
   <input type="radio" id="r1" name="res" value="r1080"> <label for="r1">1080p </label>&nbsp;&nbsp;
   <input type="radio" id="r2" name="res" value="r1440"> <label for="r2">1440p </label>&nbsp;&nbsp;
   <input type="radio" id="r3" name="res" value="r27"  > <label for="r3">2.7k  </label>&nbsp;&nbsp;
