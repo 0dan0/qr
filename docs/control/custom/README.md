@@ -208,8 +208,7 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="audt1" name="audt" value="" checked> <label for="audt1">auto </label>&nbsp;&nbsp;
   <input type="radio" id="audt2" name="audt" value="aS"> <label for="audt2">Stereo </label>&nbsp;&nbsp;
   <input type="radio" id="audt3" name="audt" value="aW"> <label for="audt3">Wind</label><br><br>
-</div> 
-
+</div>
 <input type="checkbox" id="sm" value="oSM"> <label for="sm">Spot Metering †</label>
 <div id="spotMeter">
   &nbsp;&nbsp;&nbsp;&nbsp;
@@ -222,7 +221,7 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="sp7" name="placement" value="25,75"> <label for="sp7">Lower Left  </label>
   <input type="radio" id="sp8" name="placement" value="50,75"> <label for="sp8">Lower Center</label>&nbsp;
   <input type="radio" id="sp9" name="placement" value="75,75"> <label for="sp9">Lower Right </label>&nbsp;<br>
-  <input type="radio" id="sp10" name="placement" value="0"> <label for="sp10">Disable </label>&nbsp;<br>
+  <input type="radio" id="sp10" name="placement" value="0"> <label for="sp10">Disable </label>
 </div>
 <div id="settingsPT">
 <input type="checkbox" id="pt" value="t"> <label for="pt">Protune Controls</label><br>
