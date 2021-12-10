@@ -210,17 +210,15 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="audt3" name="audt" value="aW"> <label for="audt3">Wind</label><br><br>
 </div> 
 
-<input type="checkbox" id="sm" value="oSM"> <label for="sm">Spot Metering †</label><br>
+<input type="checkbox" id="sm" value="oSM"> <label for="sm">Spot Metering †</label>
 <div id="spotMeter">
   &nbsp;&nbsp;&nbsp;&nbsp;
   <input type="radio" id="sp1" name="placement" value="25,25"> <label for="sp1">Top Left    </label>&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="radio" id="sp2" name="placement" value="50,25"> <label for="sp2">Top Center  </label>&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="radio" id="sp3" name="placement" value="75,25"> <label for="sp3">Top Right   </label><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="radio" id="sp4" name="placement" value="25,50"> <label for="sp4">Mid Left    </label>
-  <input type="radio" id="sp5" name="placement" value="50,50" checked> <label for="sp5">Center    </label>
-  <input type="radio" id="sp6" name="placement" value="75,50"> <label for="sp6">Mid Right   </label><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="sp3" name="placement" value="75,25"> <label for="sp3">Top Right   </label><br>&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="sp4" name="placement" value="25,50"> <label for="sp4">Mid Left    </label>&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="sp5" name="placement" value="50,50" checked> <label for="sp5">Center    </label>&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="sp6" name="placement" value="75,50"> <label for="sp6">Mid Right   </label><br>&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="radio" id="sp7" name="placement" value="25,75"> <label for="sp7">Lower Left  </label>&nbsp;
   <input type="radio" id="sp8" name="placement" value="50,75"> <label for="sp8">Lower Center</label>&nbsp;
   <input type="radio" id="sp9" name="placement" value="75,75"> <label for="sp9">Lower Right </label>&nbsp;<br>
@@ -804,8 +802,8 @@ function startTime() {
 	
 	if(document.getElementById("sm") !== null)
 	{
-		cmd = dcmd(cmd,"sm"); //spotMeter
-		cmd = dcmd(cmd,"placement");
+		var pos = dcmd("","sp");	
+		cmd = dcmd(cmd,"sm") + pos; //spotMeter
 	}
 	
 	cmd = dcmd(cmd,"pt"); //protune
