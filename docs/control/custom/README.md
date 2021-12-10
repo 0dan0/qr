@@ -210,7 +210,7 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="audt3" name="audt" value="aW"> <label for="audt3">Wind</label><br><br>
 </div> 
 
-<input type="checkbox" id="sm" value="oSM"> <label for="pt">Spot Metering †</label><br>
+<input type="checkbox" id="sm" value="oSM"> <label for="sm">Spot Metering (HERO10 1.20 †)</label><br>
 <div id="spotMeter">
   &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp1" name="placement" value="TL"> <label for="sp1">Top Left    </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="radio" id="sp2" name="placement" value="TC"> <label for="sp2">Top Center  </label>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -220,8 +220,7 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp6" name="placement" value="BL"> <label for="sp6">Lower Left  </label>&nbsp;
   <input type="radio" id="sp7" name="placement" value="BC"> <label for="sp7">Lower Center</label>&nbsp;
   <input type="radio" id="sp8" name="placement" value="BR" checked> <label for="sp8">Lower Right </label>&nbsp;<br>
-  </div> 
-
+</div>
 <div id="settingsPT">
 <input type="checkbox" id="pt" value="t"> <label for="pt">Protune Controls</label><br>
 </div>
@@ -683,6 +682,11 @@ function startTime() {
 		dset("noteMODE", true);
 		break;
 		
+	}
+	
+	if(document.getElementById("sm") !== null)
+	{
+		dset("stopMeter", document.getElementById("sm").checked);	
 	}
 		
 	if(document.getElementById("pt") !== null)
