@@ -24,7 +24,7 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="m6" name="mode" value="mV1"> <label for="m6">Activity</label>&nbsp;&nbsp;
   <input type="radio" id="m7" name="mode" value="mV2"> <label for="m7">Cinematic</label>&nbsp;&nbsp;
   <input type="radio" id="m8" name="mode" value="mV3"> <label for="m8">Slo-Mo</label>&nbsp;&nbsp;
-  <input type="radio" id="m9" name="mode" value="mV4"> <label for="m9">Basic</label><br>  
+  <input type="radio" id="m9" name="mode" value="mV4"> <label for="m9">Basic</label><br>
   <input type="radio" id="m10" name="mode" value="mTW"> <label for="m10">TimeWarp</label>&nbsp;&nbsp;
   <input type="radio" id="m11" name="mode" value="mT"> <label  for="m11">Timelapse Video</label>&nbsp;&nbsp;
   <input type="radio" id="m12" name="mode" value="mNL"> <label for="m12">Nightlapse Video</label><br>
