@@ -19,7 +19,7 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="m2" name="mode" value="mVP"> <label for="m2">Video Performance†</label>&nbsp;&nbsp;
   <input type="radio" id="m3" name="mode" value="mVE"> <label for="m3">Video Endurance†</label>&nbsp;&nbsp;
   <input type="radio" id="m4" name="mode" value="mVS"> <label for="m4">Video Stationary†</label><br>
-  **Presets †:** 
+  **Presets †(H10 1.20 only):** 
   <input type="radio" id="m5" name="mode" value="mV0"> <label for="m5">Standard</label>&nbsp;&nbsp;
   <input type="radio" id="m6" name="mode" value="mV1"> <label for="m6">Activity</label>&nbsp;&nbsp;
   <input type="radio" id="m7" name="mode" value="mV2"> <label for="m7">Cinematic</label>&nbsp;&nbsp;
