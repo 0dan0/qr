@@ -686,7 +686,7 @@ function startTime() {
 	
 	if(document.getElementById("sm") !== null)
 	{
-		dset("stopMeter", document.getElementById("sm").checked);	
+		dset("spotMeter", document.getElementById("sm").checked);	
 	}
 		
 	if(document.getElementById("pt") !== null)
