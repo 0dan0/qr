@@ -14,16 +14,25 @@
 
 Create a custom camera mode, and even start a capture all through QR Codes. This is the fastest way to access many of the new GoPro Labs' firmware features.
 
-<b>Camera Mode:</b>&nbsp;&nbsp;<input type="radio" id="m10" name="mode" value="" checked> <label for="m10">not set</label><br>
-  <input type="radio" id="m1" name="mode" value="mV"> <label  for="m1">Video</label>&nbsp;&nbsp;
-  <input type="radio" id="m2" name="mode" value="mTW"> <label for="m2">TimeWarp</label>&nbsp;&nbsp;
-  <input type="radio" id="m3" name="mode" value="mT"> <label  for="m3">Timelapse Video</label>&nbsp;&nbsp;
-  <input type="radio" id="m4" name="mode" value="mNL"> <label for="m4">Nightlapse Video</label><br>
-  <input type="radio" id="m5" name="mode" value="mP"> <label  for="m5">Photo</label>&nbsp;&nbsp;
-  <input type="radio" id="m6" name="mode" value="mPB"> <label for="m6">Burst Photo</label>&nbsp;&nbsp;
-  <input type="radio" id="m7" name="mode" value="mPN"> <label for="m7">Night Photo</label>&nbsp;&nbsp;
-  <input type="radio" id="m8" name="mode" value="mTP"> <label for="m8">Timelapse Photo</label>&nbsp;&nbsp;
-  <input type="radio" id="m9" name="mode" value="mNP"> <label for="m9">Nightlapse Photo</label><br>
+<b>Camera Mode:</b>&nbsp;&nbsp;<input type="radio" id="m18" name="mode" value="" checked> <label for="m18">not set</label><br>
+  <input type="radio" id="m1" name="mode" value="mV"> <label  for="m1">Video </label>&nbsp;&nbsp;
+  <input type="radio" id="m2" name="mode" value="mVP"> <label for="m2">Video Performance†</label>&nbsp;&nbsp;
+  <input type="radio" id="m3" name="mode" value="mVE"> <label for="m3">Video Endurance†</label>&nbsp;&nbsp;
+  <input type="radio" id="m4" name="mode" value="mVS"> <label for="m4">Video Stationary†</label><br>
+  Presets †: 
+  <input type="radio" id="m5" name="mode" value="mV0"> <label for="m5">Standard</label>&nbsp;&nbsp;
+  <input type="radio" id="m6" name="mode" value="mV1"> <label for="m6">Activity</label>&nbsp;&nbsp;
+  <input type="radio" id="m7" name="mode" value="mV2"> <label for="m7">CinematicVideo</label><br>
+  <input type="radio" id="m8" name="mode" value="mV3"> <label for="m8">Slo-Mo</label>&nbsp;&nbsp;
+  <input type="radio" id="m9" name="mode" value="mV4"> <label for="m9">Basic</label><br>  
+  <input type="radio" id="m10" name="mode" value="mTW"> <label for="m10">TimeWarp</label>&nbsp;&nbsp;
+  <input type="radio" id="m11" name="mode" value="mT"> <label  for="m11">Timelapse Video</label>&nbsp;&nbsp;
+  <input type="radio" id="m12" name="mode" value="mNL"> <label for="m12">Nightlapse Video</label><br>
+  <input type="radio" id="m13" name="mode" value="mP"> <label  for="m13">Photo</label>&nbsp;&nbsp;
+  <input type="radio" id="m14" name="mode" value="mPB"> <label for="m14">Burst Photo</label>&nbsp;&nbsp;
+  <input type="radio" id="m15" name="mode" value="mPN"> <label for="m15">Night Photo</label>&nbsp;&nbsp;
+  <input type="radio" id="m16" name="mode" value="mTP"> <label for="m16">Timelapse Photo</label>&nbsp;&nbsp;
+  <input type="radio" id="m17" name="mode" value="mNP"> <label for="m17">Nightlapse Photo</label><br>
 
 <div id="noteMODE" style="font-size:13px;">
 <b>Time/Night-Lapse modes:</b> The camera defaults to having presets for only one time-lapse mode and one night-lapse mode, yet both modes have two configurations (video or photo.) For all QR Code mode commands to work, a preset is needed for every mode you wish to use. e.g. If you only have a preset for night-lapse video (NLV), the QR command for NLV will work, but will not for night-lapse photo (NLP). To solve this, create a new preset for NLP, and both video and photo night-lapse commands will work.<br><br>
@@ -444,7 +453,7 @@ Share this QR Code as a URL: <b id="urltext"></b>
 
 **Compatibility:** Labs enabled [HERO5 Session](../session5), HERO7, HERO8, HERO9, HERO10 and MAX 
 
-**HERO10 Note:** LCD most be on for the QR Code scanning to be active.
+**HERO10 Note:** LCD most be on for the QR Code scanning to be active.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;† - Requires HERO10 Labs 1.20 or better. 
         
 [Learn more](..) on QR Control
