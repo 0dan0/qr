@@ -19,14 +19,14 @@ Your GoPro will typically name your files something like GOPR3606.JPG and GH0136
 Your base filename here: <input type="text" id="addname" value=""> (only a-z, A-Z, 0-9, and +-_(),.)<br> 
 Up to eight characters. e.g. "CAMERA06"<br> 
 
-**HERO10 1.20- Only:** You can added Date and time to the filename (make sure your clock is set correctly).  The date and time shortcuts must be within the [ ] characters, these are the wildcards:
- - yyyy - Year in format: 2021
- - yy - Year in to digit format: 21
- - mm - Month
- - dd - Day of Month
- - HH - Hour
- - MM - Minute
- - SS - Second
+**HERO10 1.20- Only:** You can added date and time to the filename (Note: make sure your clock is set correctly).  The date and time shortcuts must be within the **[ ]** characters, these are the wildcards:
+ - **yyyy** - Year in format: 2021
+ - **yy** - Year in to digit format: 21
+ - **mm** - Month
+ - **dd** - Day of Month
+ - **HH** - Hour
+ - **MM** - Minute
+ - **SS** - Second
  
 Formatting examples: 
  - "CamA-[yyyymmddHHMMSS]-" 
