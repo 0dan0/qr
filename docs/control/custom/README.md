@@ -73,8 +73,10 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="f2" name="fov" value="fM"> <label for="f2">Medium </label>&nbsp;&nbsp;
   <input type="radio" id="f3" name="fov" value="fN"> <label for="f3">Narrow </label>&nbsp;&nbsp;
   <input type="radio" id="f4" name="fov" value="fL"> <label for="f4">Linear </label>&nbsp;&nbsp;
-  <input type="radio" id="f5" name="fov" value="fS"> <label for="f5">Superview </label>&nbsp;&nbsp;
-  <input type="radio" id="f6" name="fov" value="" checked> <label for="f6">not set</label><br><br>
+  <input type="radio" id="f5" name="fov" value="fS"> <label for="f5">Superview </label><br>
+  <input type="radio" id="f6" name="fov" value="fH"> <label for="f6">Linear+HL </label>&nbsp;&nbsp;
+  <input type="radio" id="f7" name="fov" value="fX"> <label for="f7">Max Superview </label>&nbsp;&nbsp;
+  <input type="radio" id="f8" name="fov" value="" checked> <label for="f8">not set</label><br><br>
  </div>
  
  
