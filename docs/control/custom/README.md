@@ -92,7 +92,6 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
 <div id="settingsZoom">
  <b>Zoom:</b> <input type="range" id="zoom" name="zoom" min="0" max="9" value="0"><label for="zoom"></label>&nbsp;&nbsp;<b id="zoomtext"></b><br>
 </div>
-<br>
 
 <div id="settingsBurst">
 <b>Burst Style:</b>&nbsp;&nbsp;
@@ -818,7 +817,10 @@ function startTime() {
 			(document.getElementById("f4").checked === true) || //Linear
 			(document.getElementById("f6").checked === true) ) //Linear+HL
 		{
-			dset("settingsZoom", true);
+			dset("settingsZoom", true);			
+			
+			var zoom = parseInt(document.getElementById("zoom").value);	
+			document.getElementById("zoomtext").innerHTML = zoom;	
 		}
 		else
 		{
