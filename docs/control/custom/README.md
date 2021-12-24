@@ -81,13 +81,21 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="f10" name="fov" value="" checked> <label for="f10">not set</label><br><br>
  </div>
  
- 
 <div id="settingsTLVFOV">
 <b>Lens:</b>
   <input type="radio" id="tlvf1" name="tlvfov" value="fW"> <label for="tlvf1">Wide </label>&nbsp;&nbsp;
   <input type="radio" id="tlvf2" name="tlvfov" value="fL"> <label for="tlvf2">Linear </label>&nbsp;&nbsp;
   <input type="radio" id="tlvf3" name="tlvfov" value="" checked> <label for="tlvf3">not set</label><br><br>
  </div>
+  
+<div id="settingsTWFOV">
+<b>Lens:</b>
+  <input type="radio" id="twf1" name="twfov" value="fW"> <label for="twf1">Wide </label>&nbsp;&nbsp;
+  <input type="radio" id="twf2" name="twfov" value="fL"> <label for="twf2">Linear </label>&nbsp;&nbsp;
+  <input type="radio" id="twf3" name="twfov" value="fH"> <label for="twf3">Linear+HL </label>&nbsp;&nbsp;
+  <input type="radio" id="twf4" name="twfov" value="" checked> <label for="twf4">not set</label><br><br>
+ </div>
+ 
  
 <div id="settingsZoom">
  <b>Zoom:</b> <input type="range" id="zoom" name="zoom" min="0" max="10" value="0"><label for="zoom"></label>&nbsp;&nbsp;<b id="zoomtext"></b><br><br>
@@ -533,6 +541,7 @@ function startTime() {
 	dset("settingsFPS", false);
 	dset("settingsFOV", false);
 	dset("settingsTLVFOV", false);
+	dset("settingsTWFOV", false);
 	dset("settingsZoom", false);
 	dset("settingsRESTLV", false);
 	dset("settingsVideo", false);
@@ -634,7 +643,7 @@ function startTime() {
 		dset("settingsTimewarp", true);		
 		dset("settingsDuration", true);
 		dset("settingsRESTLV", true);
-		dset("settingsTLVFOV", true);
+		dset("settingsTWFOV", true);
 		dset("settingsPT", true);
 		break;		
 		
@@ -807,20 +816,40 @@ function startTime() {
 	
 	if(checkedmode > 9) // not video	
 	{
-		cmd = dcmd(cmd,"tlvf"); //fov
-		
-		
-		if(	(document.getElementById("tlvf1").checked === true) || //Wide
-			(document.getElementById("tlvf2").checked === true) ) //Linear
+		if(checkedmode == 10) //TWarp
 		{
-			dset("settingsZoom", true);			
+			cmd = dcmd(cmd,"tw"); //fov		
+		
+			if(	(document.getElementById("twf1").checked === true) || //Wide
+				(document.getElementById("twf2").checked === true) || //Linear
+				(document.getElementById("twf3").checked === true) ) //Linear+HL
+			{
+				dset("settingsZoom", true);			
+					
+				var zoom = parseInt(document.getElementById("zoom").value);
+				zoom *= 10;
+				document.getElementById("zoomtext").innerHTML = zoom+"%";	
+				if(zoom == 100) zoom = 99;	
 				
-			var zoom = parseInt(document.getElementById("zoom").value);
-			zoom *= 10;
-			document.getElementById("zoomtext").innerHTML = zoom+"%";	
-			if(zoom == 100) zoom = 99;	
-			
-			cmd = cmd + zoom; //fov
+				cmd = cmd + zoom; //fov
+			}
+		}
+		else //Everything else
+		{
+			cmd = dcmd(cmd,"tlvf"); //fov		
+		
+			if(	(document.getElementById("tlvf1").checked === true) || //Wide
+				(document.getElementById("tlvf2").checked === true) ) //Linear
+			{
+				dset("settingsZoom", true);			
+					
+				var zoom = parseInt(document.getElementById("zoom").value);
+				zoom *= 10;
+				document.getElementById("zoomtext").innerHTML = zoom+"%";	
+				if(zoom == 100) zoom = 99;	
+				
+				cmd = cmd + zoom; //fov
+			}
 		}
 	}
 	else
