@@ -483,8 +483,8 @@ Share this QR Code as a URL: <b id="urltext"></b>
 [![google play](../google-play-823.png)](https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
 [![apple app store](../apple-store-823.png)](https://apps.apple.com/us/app/gopro-app/id1518134202)
 
-## version 1.33
-updated: Dec 22, 2021
+## version 1.34
+updated: Dec 24, 2021
 
 <script>
 var lastcmd = "";
