@@ -806,7 +806,7 @@ function startTime() {
 	cmd = dcmd(cmd,"p"); //fps
 	
 	if(checkedmode > 9) // not video	
-	{	
+	{
 		cmd = dcmd(cmd,"tlvf"); //fov
 	}
 	else
@@ -823,9 +823,6 @@ function startTime() {
 		{
 			dset("settingsZoom", false);
 		}
-	}
-	
-	
 	}
 	
 	if(document.getElementById("sm") !== null)
