@@ -818,7 +818,7 @@ function startTime() {
 	{
 		if(checkedmode == 10) //TWarp
 		{
-			cmd = dcmd(cmd,"tw"); //fov		
+			cmd = dcmd(cmd,"twf"); //fov		
 		
 			if(	(document.getElementById("twf1").checked === true) || //Wide
 				(document.getElementById("twf2").checked === true) || //Linear
