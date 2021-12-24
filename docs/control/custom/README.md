@@ -805,13 +805,14 @@ function startTime() {
 		
 	cmd = dcmd(cmd,"p"); //fps
 	
-	if(checkedmode > 9) // not video		
+	if(checkedmode > 9) // not video	
+	{	
 		cmd = dcmd(cmd,"tlvf"); //fov
+	}
 	else
 	{
 		cmd = dcmd(cmd,"f"); //fov
 		
-		document.getElementById(mode).checked;
 		if(	(document.getElementById("f1").checked === true) || //Wide
 			(document.getElementById("f4").checked === true) || //Linear
 			(document.getElementById("f6").checked === true) ) //Linear+HL
