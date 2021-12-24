@@ -810,7 +810,14 @@ function startTime() {
 		if(document.getElementById("sm").checked === true)
 		{
 			var pos = dcmd("","sp");	
-			cmd = dcmd(cmd,"sm") + pos; //spotMeter
+			if(document.getElementById("sl").checked === true)
+			{
+				cmd = dcmd(cmd,"sl") + pos; //spot Lock
+			}
+			else
+			{
+				cmd = dcmd(cmd,"sm") + pos; //spotMeter
+			}
 		}
 	}
 	
