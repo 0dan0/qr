@@ -88,6 +88,10 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="tlvf2" name="tlvfov" value="fL"> <label for="tlvf2">Linear </label>&nbsp;&nbsp;
   <input type="radio" id="tlvf3" name="tlvfov" value="" checked> <label for="tlvf3">not set</label><br><br>
  </div>
+ 
+<div id="settingsZoom">
+ <b>Zoom:</b> <input type="range" id="zoom" name="zoom" min="0" max="9" value="0"><label for="zoom"></label>&nbsp;&nbsp;<b id="zoomtext"></b>
+</div>
 
 <div id="settingsBurst">
 <b>Burst Style:</b>&nbsp;&nbsp;
@@ -226,7 +230,7 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
 <input type="radio" id="sp8" name="placement" value="50,75"> <label for="sp8">Lower Center</label>&nbsp;
 <input type="radio" id="sp9" name="placement" value="75,75"> <label for="sp9">Lower Right </label>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="radio" id="sp10" name="placement" value="0"> <label for="sp10">Disable </label><br>&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="checkbox" id="sl" value="!2NoSL"> <label for="sm">Exposure Look 3s after scan</label><br>
+<input type="checkbox" id="sl" value="!2NoSL"> <label for="sm">Exposure Lock 3s after scan (to avoid locking on the QR Code)</label><br>
 </div>
 <div id="settingsPT">
 <input type="checkbox" id="pt" value="t"> <label for="pt">Protune Controls</label><br>
@@ -529,6 +533,7 @@ function startTime() {
 	dset("settingsFPS", false);
 	dset("settingsFOV", false);
 	dset("settingsTLVFOV", false);
+	dset("settingsZoom", false);
 	dset("settingsRESTLV", false);
 	dset("settingsVideo", false);
 	dset("settingsHindsight", false);
@@ -803,7 +808,24 @@ function startTime() {
 	if(checkedmode > 9) // not video		
 		cmd = dcmd(cmd,"tlvf"); //fov
 	else
+	{
 		cmd = dcmd(cmd,"f"); //fov
+		
+		document.getElementById(mode).checked;
+		if(	(document.getElementById("f1").checked === true) || //Wide
+			(document.getElementById("f4").checked === true) || //Linear
+			(document.getElementById("f6").checked === true) ) //Linear+HL
+		{
+			dset("settingsZoom", true);
+		}
+		else
+		{
+			dset("settingsZoom", false);
+		}
+	}
+	
+	
+	}
 	
 	if(document.getElementById("sm") !== null)
 	{
