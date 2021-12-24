@@ -225,7 +225,8 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
 <input type="radio" id="sp7" name="placement" value="25,75"> <label for="sp7">Lower Left  </label>&nbsp;&nbsp;
 <input type="radio" id="sp8" name="placement" value="50,75"> <label for="sp8">Lower Center</label>&nbsp;
 <input type="radio" id="sp9" name="placement" value="75,75"> <label for="sp9">Lower Right </label>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="radio" id="sp10" name="placement" value="0"> <label for="sp10">Disable </label><br>
+<input type="radio" id="sp10" name="placement" value="0"> <label for="sp10">Disable </label><br>&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="checkbox" id="sl" value="!2NoSL"> <label for="sm">Exposure Look 3s after scan</label><br>
 </div>
 <div id="settingsPT">
 <input type="checkbox" id="pt" value="t"> <label for="pt">Protune Controls</label><br>
