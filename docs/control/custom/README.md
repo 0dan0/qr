@@ -78,7 +78,7 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   Max Lens Mod:  <input type="radio" id="f7" name="fov" value="oX1fW"> <label for="f7">Enable Wide </label>&nbsp;&nbsp;
   <input type="radio" id="f8" name="fov" value="oX1fX"> <label for="f8">Enable Superview </label>&nbsp;&nbsp;
   <input type="radio" id="f9" name="fov" value="oX0"> <label for="f9">Disable MLM</label>&nbsp;&nbsp;
-  <input type="radio" id="f10" name="fov" value="" checked> <label for="f10">not set</label><br><br>
+  <input type="radio" id="f10" name="fov" value="" checked> <label for="f10">not set</label><br>
  </div>
  
  
@@ -86,12 +86,13 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
 <b>Lens:</b>
   <input type="radio" id="tlvf1" name="tlvfov" value="fW"> <label for="tlvf1">Wide </label>&nbsp;&nbsp;
   <input type="radio" id="tlvf2" name="tlvfov" value="fL"> <label for="tlvf2">Linear </label>&nbsp;&nbsp;
-  <input type="radio" id="tlvf3" name="tlvfov" value="" checked> <label for="tlvf3">not set</label><br><br>
+  <input type="radio" id="tlvf3" name="tlvfov" value="" checked> <label for="tlvf3">not set</label><br>
  </div>
  
 <div id="settingsZoom">
- <b>Zoom:</b> <input type="range" id="zoom" name="zoom" min="0" max="9" value="0"><label for="zoom"></label>&nbsp;&nbsp;<b id="zoomtext"></b>
+ <b>Zoom:</b> <input type="range" id="zoom" name="zoom" min="0" max="9" value="0"><label for="zoom"></label>&nbsp;&nbsp;<b id="zoomtext"></b><br>
 </div>
+<br>
 
 <div id="settingsBurst">
 <b>Burst Style:</b>&nbsp;&nbsp;
