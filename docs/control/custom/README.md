@@ -356,8 +356,9 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="bv2" name="bv" value="V1"> <label for="bv2">10% </label>&nbsp;&nbsp;
   <input type="radio" id="bv3" name="bv" value="V4"> <label for="bv3">40% </label>&nbsp;&nbsp;
   <input type="radio" id="bv4" name="bv" value="V7"> <label for="bv4">70% </label>&nbsp;&nbsp;
-  <input type="radio" id="bv5" name="bv" value="V9"> <label for="bv5">100% </label>&nbsp;&nbsp;
-  <input type="radio" id="bv6" name="bv" value="" checked> <label for="bv6">not set</label>
+  <input type="radio" id="bv5" name="bv" value="V8"> <label for="bv5">85% </label>&nbsp;&nbsp;
+  <input type="radio" id="bv6" name="bv" value="V9"> <label for="bv6">100% </label>&nbsp;&nbsp;
+  <input type="radio" id="bv7" name="bv" value="" checked> <label for="bv7">not set</label>
   </div>
   
 <div id="opDB">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Display Brightness:</b>&nbsp;&nbsp;
@@ -495,8 +496,8 @@ Share this QR Code as a URL: <b id="urltext"></b>
 [![google play](../google-play-823.png)](https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
 [![apple app store](../apple-store-823.png)](https://apps.apple.com/us/app/gopro-app/id1518134202)
 
-## version 1.34
-updated: Dec 24, 2021
+## version 1.35
+updated: Jan 3, 2022
 
 <script>
 var lastcmd = "";
