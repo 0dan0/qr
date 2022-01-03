@@ -893,8 +893,8 @@ function startTime() {
 		cmd = dcmd(cmd,"f"); //fov
 		
 		if(	(document.getElementById("f1").checked === true) || //Wide
-			(document.getElementById("f4").checked === true) || //Linear
-			(document.getElementById("f6").checked === true) ) //Linear+HL
+			(document.getElementById("f3").checked === true) || //Linear
+			(document.getElementById("f5").checked === true) ) //Linear+HL
 		{
 			dset("settingsZoom", true);			
 			
