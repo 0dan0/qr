@@ -71,13 +71,13 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
 <b>Lens:</b>
   <input type="radio" id="f1" name="fov" value="fW"> <label for="f1">Wide </label>&nbsp;&nbsp;
  <!-- <input type="radio" id="f2" name="fov" value="fM"> <label for="f2">Medium </label>&nbsp;&nbsp; -->
-  <input type="radio" id="f2" name="fov" value="fN"> <label for="f3">Narrow </label>&nbsp;&nbsp;
-  <input type="radio" id="f3" name="fov" value="fL"> <label for="f4">Linear </label>&nbsp;&nbsp;
-  <input type="radio" id="f4" name="fov" value="fS"> <label for="f5">Superview </label>&nbsp;&nbsp;
-  <input type="radio" id="f5" name="fov" value="fH"> <label for="f6">Linear+HL </label><br>
-  Max Lens Mod:  <input type="radio" id="f6" name="fov" value="oX1fW"> <label for="f7">Enable Wide </label>&nbsp;&nbsp;
-  <input type="radio" id="f7" name="fov" value="oX1fX"> <label for="f8">Enable Superview </label>&nbsp;&nbsp;
-  <input type="radio" id="f8" name="fov" value="oX0"> <label for="f9">Disable MLM</label>&nbsp;&nbsp;
+  <input type="radio" id="f2" name="fov" value="fN"> <label for="f2">Narrow </label>&nbsp;&nbsp;
+  <input type="radio" id="f3" name="fov" value="fL"> <label for="f3">Linear </label>&nbsp;&nbsp;
+  <input type="radio" id="f4" name="fov" value="fS"> <label for="f4">Superview </label>&nbsp;&nbsp;
+  <input type="radio" id="f5" name="fov" value="fH"> <label for="f5">Linear+HL </label><br>
+  Max Lens Mod:  <input type="radio" id="f6" name="fov" value="oX1fW"> <label for="f6">Enable Wide </label>&nbsp;&nbsp;
+  <input type="radio" id="f7" name="fov" value="oX1fX"> <label for="f7">Enable Superview </label>&nbsp;&nbsp;
+  <input type="radio" id="f8" name="fov" value="oX0"> <label for="f8">Disable MLM</label>&nbsp;&nbsp;
   <input type="radio" id="f9" name="fov" value="" checked> <label for="f9">not set</label><br><br>
  </div>
  
@@ -86,7 +86,7 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="pf1" name="pfov" value="fW"> <label for="pf1">Wide </label>&nbsp;&nbsp;
   <input type="radio" id="pf2" name="pfov" value="fL"> <label for="pf2">Linear </label>&nbsp;&nbsp;
   <input type="radio" id="pf3" name="pfov" value="fN"> <label for="pf3">Narrow </label><br>
-  Max Lens Mod:  <input type="radio" id="pf4" name="fov" value="oX1fW"> <label for="pf4">Enable Wide </label>&nbsp;&nbsp;
+  Max Lens Mod:  <input type="radio" id="pf4" name="pfov" value="oX1fW"> <label for="pf4">Enable Wide </label>&nbsp;&nbsp;
   <input type="radio" id="pf5" name="pfov" value="oX1fX"> <label for="pf5">Enable Superview </label>&nbsp;&nbsp;
   <input type="radio" id="pf6" name="pfov" value="oX0"> <label for="pf6">Disable MLM</label>&nbsp;&nbsp;
   <input type="radio" id="pf7" name="pfov" value="" checked> <label for="pf7">not set</label><br><br>
@@ -107,7 +107,7 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="twf2" name="twfov" value="fL"> <label for="twf2">Linear </label>&nbsp;&nbsp;
   <input type="radio" id="twf3" name="twfov" value="fH"> <label for="twf3">Linear+HL </label>&nbsp;&nbsp;
   <input type="radio" id="twf4" name="twfov" value="fN"> <label for="twf4">Narrow </label>&nbsp;&nbsp;  <br>
-  Max Lens Mod:  <input type="radio" id="twf5" name="fov" value="oX1fW"> <label for="twf5">Enable Wide </label>&nbsp;&nbsp;
+  Max Lens Mod:  <input type="radio" id="twf5" name="twfov" value="oX1fW"> <label for="twf5">Enable Wide </label>&nbsp;&nbsp;
   <input type="radio" id="twf6" name="twfov" value="oX1fX"> <label for="twf6">Enable Superview </label>&nbsp;&nbsp;
   <input type="radio" id="twf7" name="twfov" value="oX0"> <label for="twf7">Disable MLM</label>&nbsp;&nbsp;
   <input type="radio" id="twf8" name="twfov" value="" checked> <label for="twf8">not set</label><br><br>
