@@ -853,6 +853,23 @@ function startTime() {
 				cmd = cmd + zoom; //fov
 			}
 		}
+		elseif(checkedmode == 13) //Photo
+		{
+			cmd = dcmd(cmd,"pf"); //fov		
+		
+			if(	(document.getElementById("pf1").checked === true) || //Wide
+				(document.getElementById("pf2").checked === true) ) //Linear
+			{
+				dset("settingsZoom", true);			
+					
+				var zoom = parseInt(document.getElementById("zoom").value);
+				zoom *= 10;
+				document.getElementById("zoomtext").innerHTML = zoom+"%";	
+				if(zoom == 100) zoom = 99;	
+				
+				cmd = cmd + zoom; //fov
+			}
+		}
 		else //Everything else
 		{
 			cmd = dcmd(cmd,"tlvf"); //fov		
