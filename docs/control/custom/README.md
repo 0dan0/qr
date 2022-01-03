@@ -15,7 +15,7 @@
 Create a custom camera mode, and even start a capture all through QR Codes. This is the fastest way to access many of the new GoPro Labs' firmware features. 
 **†** indicates the control requires HERO10 Labs 1.20 or better. 
 
-<b>Camera Mode:</b>&nbsp;&nbsp;<input type="radio" id="m18" name="mode" value="" checked> <label for="m18">not set</label><br>
+<b>Camera Mode:</b>&nbsp;&nbsp;<input type="radio" id="m19" name="mode" value="" checked> <label for="m19">not set</label><br>
   <input type="radio" id="m1" name="mode" value="mV"> <label  for="m1">Video </label>&nbsp;&nbsp;
   <input type="radio" id="m2" name="mode" value="mVP"> <label for="m2">Performance†</label>&nbsp;&nbsp;
   <input type="radio" id="m3" name="mode" value="mVE"> <label for="m3">Endurance†</label>&nbsp;&nbsp;
@@ -614,7 +614,7 @@ function startTime() {
 	var checkedmode = 0;
 	var x;
 	
-	for (i = 1; i < 18; i++) { 
+	for (i = 1; i < 19; i++) { 
 		var mode = "m"+i;
 		x = document.getElementById(mode).checked;
 		if( x === true)
@@ -701,14 +701,18 @@ function startTime() {
 		dset("settingsPhotoRAW", true);
 		break;
 		
-		case 15: //Night
+		case 15: //Burst Live
+		dset("settingsPT", true);
+		break;
+		
+		case 16: //Night
 		dset("settingsNightexposure", true);
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
 		dset("settingsPhotoRAW", true);
 		break;
 		
-		case 16: //TLP
+		case 17: //TLP
 		dset("settingsTimelapse", true);	
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
@@ -716,7 +720,7 @@ function startTime() {
 		dset("noteMODE", true);
 		break;
 		
-		case 17: //NLP
+		case 18: //NLP
 		dset("settingsNightlapse", true);	
 		dset("settingsNightexposure", true);	
 		dset("settingsPT", true);
