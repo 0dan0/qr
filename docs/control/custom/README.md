@@ -107,7 +107,7 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="twf2" name="twfov" value="fL"> <label for="twf2">Linear </label>&nbsp;&nbsp;
   <input type="radio" id="twf3" name="twfov" value="fH"> <label for="twf3">Linear+HL </label>&nbsp;&nbsp;
   <input type="radio" id="twf4" name="twfov" value="fN"> <label for="twf4">Narrow </label>&nbsp;&nbsp;  <br>
-  Max Lens Mod:  <input type="radio" id="twf5" name="fov" value="oX1fW"> <label for="pf5">Enable Wide </label>&nbsp;&nbsp;
+  Max Lens Mod:  <input type="radio" id="twf5" name="fov" value="oX1fW"> <label for="twf5">Enable Wide </label>&nbsp;&nbsp;
   <input type="radio" id="twf6" name="twfov" value="oX1fX"> <label for="twf6">Enable Superview </label>&nbsp;&nbsp;
   <input type="radio" id="twf7" name="twfov" value="oX0"> <label for="twf7">Disable MLM</label>&nbsp;&nbsp;
   <input type="radio" id="twf8" name="twfov" value="" checked> <label for="twf8">not set</label><br><br>
