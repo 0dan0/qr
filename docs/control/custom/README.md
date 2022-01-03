@@ -635,9 +635,10 @@ function startTime() {
 	//m12 mNL
 	//m13 mP 
 	//m14 mPB
-	//m15 mPN
-	//m16 mTP
-	//m17 mNP
+	//m15 mL
+	//m16 mPN
+	//m17 mTP
+	//m18 mNP
 	
 	switch(checkedmode)
 	{
@@ -876,6 +877,10 @@ function startTime() {
 				
 				cmd = cmd + zoom; //fov
 			}
+		}
+		else if(checkedmode == 15) //Live Burst
+		{
+			// do nothing
 		}
 		else //Everything else
 		{
