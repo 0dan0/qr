@@ -31,11 +31,12 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="m11" name="mode" value="mT"> <label  for="m11">Timelapse</label>&nbsp;&nbsp;
   <input type="radio" id="m12" name="mode" value="mNL"> <label for="m12">Nightlapse</label><br>
   **Photo-Modes:** 
-  <input type="radio" id="m13" name="mode" value="mP"> <label  for="m13">Photo</label>&nbsp;&nbsp;
+  <input type="radio" id="m13" name="mode" value="mP">  <label for="m13">Photo</label>&nbsp;&nbsp;
   <input type="radio" id="m14" name="mode" value="mPB"> <label for="m14">Burst</label>&nbsp;&nbsp;
-  <input type="radio" id="m15" name="mode" value="mPN"> <label for="m15">Night</label>&nbsp;&nbsp;
-  <input type="radio" id="m16" name="mode" value="mTP"> <label for="m16">Timelapse</label>&nbsp;&nbsp;
-  <input type="radio" id="m17" name="mode" value="mNP"> <label for="m17">Nightlapse</label><br>
+  <input type="radio" id="m15" name="mode" value="mL">  <label for="m15">Live Burst</label>&nbsp;&nbsp;
+  <input type="radio" id="m16" name="mode" value="mPN"> <label for="m16">Night</label>&nbsp;&nbsp;
+  <input type="radio" id="m17" name="mode" value="mTP"> <label for="m17">Timelapse</label>&nbsp;&nbsp;
+  <input type="radio" id="m18" name="mode" value="mNP"> <label for="m18">Nightlapse</label><br>
 
 <div id="noteMODE" style="font-size:13px;">
 <b>Time/Night-Lapse modes:</b> The camera defaults to having presets for only one time-lapse mode and one night-lapse mode, yet both modes have two configurations (video or photo.) For all QR Code mode commands to work, a preset is needed for every mode you wish to use. e.g. If you only have a preset for night-lapse video (NLV), the QR command for NLV will work, but will not for night-lapse photo (NLP). To solve this, create a new preset for NLP, and both video and photo night-lapse commands will work.<br><br>
@@ -515,7 +516,7 @@ Share this QR Code as a URL: <b id="urltext"></b>
 [![google play](../google-play-823.png)](https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
 [![apple app store](../apple-store-823.png)](https://apps.apple.com/us/app/gopro-app/id1518134202)
 
-## version 1.35
+## version 1.36
 updated: Jan 3, 2022
 
 <script>
