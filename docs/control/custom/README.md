@@ -853,7 +853,7 @@ function startTime() {
 				cmd = cmd + zoom; //fov
 			}
 		}
-		elseif(checkedmode == 13) //Photo
+		else if(checkedmode == 13) //Photo
 		{
 			cmd = dcmd(cmd,"pf"); //fov		
 		
