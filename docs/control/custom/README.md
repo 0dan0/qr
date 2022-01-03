@@ -392,10 +392,12 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="lo4" name="lo" value="" checked> <label for="lo4">not set</label>
   </div>
 <div id="opOR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Orientation Lock:</b>&nbsp;&nbsp; 
-  <input type="radio" id="or1" name="or" value="R1"> <label for="or1">Landscape Up </label>&nbsp;&nbsp;
-  <input type="radio" id="or2" name="or" value="R2"> <label for="or2">Landscape Down </label>&nbsp;&nbsp;
-  <input type="radio" id="or3" name="or" value="R0"> <label for="or3">Unlocked/Free </label>&nbsp;&nbsp;
-  <input type="radio" id="or4" name="or" value="" checked> <label for="or4">not set</label>
+  <input type="radio" id="or1" name="or" value="R1"> <label for="or1">Landscape </label>&nbsp;&nbsp;
+  <input type="radio" id="or2" name="or" value="R2"> <label for="or2">Upside down </label>&nbsp;&nbsp;
+  <input type="radio" id="or3" name="or" value="R3"> <label for="or3">Portrait Lens Up </label>&nbsp;&nbsp;
+  <input type="radio" id="or4" name="or" value="R4"> <label for="or4">Portrait Lens Down </label>&nbsp;&nbsp;
+  <input type="radio" id="or5" name="or" value="R0"> <label for="or5">Unlocked </label>&nbsp;&nbsp;
+  <input type="radio" id="or6" name="or" value="" checked> <label for="or6">not set</label>
   </div>
 <div id="opAO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Camera Auto Off:</b>&nbsp;&nbsp; 
   <input type="radio" id="ao1" name="ao" value="C5"> <label for="ao1">5 mins </label>&nbsp;&nbsp;
