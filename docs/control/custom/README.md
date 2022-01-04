@@ -822,13 +822,15 @@ function startTime() {
 		case 14: //Burst 
 			cmd = dcmd(cmd,"b");
 			break;	
-		case 15: //Night
+		case 15: //Live Burst 
+			break;	
+		case 16: //Night
 			cmd = dcmd(cmd,"nightexp");
 			break;
-		case 16: //TLP
+		case 17: //TLP
 			cmd = dcmd(cmd,"fpslapse");
 			break;
-		case 17: //NLP	
+		case 18: //NLP	
 			cmd = dcmd(cmd,"fpsnight");
 			cmd = dcmd(cmd,"nightexp");
 			break;
@@ -880,7 +882,7 @@ function startTime() {
 		}
 		else if(checkedmode == 15) //Live Burst
 		{
-			// do nothing
+			// do nothing custom
 		}
 		else //Everything else
 		{
