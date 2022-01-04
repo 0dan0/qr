@@ -803,9 +803,7 @@ function startTime() {
 		}
 	}
 	
-	
 	cmd = dcmd(cmd,"m");  // set mode
-	
 		
 	switch(checkedmode)
 	{
@@ -1377,7 +1375,7 @@ function dcmd(cmd, id) {
 	}
 	else
 	{
-		for (i = 1; i < 15; i++) { 
+		for (i = 1; i < 19; i++) { 
 			var newid = id+i;
 			if(document.getElementById(newid) !== null)
 			{
