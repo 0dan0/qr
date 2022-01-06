@@ -1165,7 +1165,7 @@ function startTime() {
 			}
 			else if(imstart > 0)
 			{
-				cmd = cmd + "!SM" + imstart;
+				cmd = cmd + "!SI" + imstart;
 				SM_added = 1;			
 			
 				if(document.getElementById("imend") !== null)
@@ -1183,14 +1183,6 @@ function startTime() {
 					if(dhold > 0 && SM_added)
 					{
 						cmd = cmd + "D" + dhold;
-					}
-				}
-				if(document.getElementById("immhold") !== null)
-				{
-					var mmhold = document.getElementById("immhold").value;
-					if(mmhold > 0 && SM_added)
-					{
-						cmd = cmd + "M" + mmhold;
 					}
 				}
 				if(document.getElementById("imhold") !== null)
