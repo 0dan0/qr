@@ -423,10 +423,10 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 </div>
 
 <div id="NakedTools">
-  <input type="radio" id="sap1" name="sap" value="!PA"> <label for="sap1">Start Quik App Pairing</label><br>
-  <input type="radio" id="sap2" name="sap" value="!PR"> <label for="sap2">Start Remote Pairing</label><br>
-  <input type="radio" id="sap3" name="sap" value="!FRESET"> <label for="sap3">Factory Reset</label><br>
-  <input type="radio" id="sap4" name="sap" value="" checked> <label for="sap4">not set</label>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap1" name="sap" value="!PA"> <label for="sap1">Start Quik App Pairing</label><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap2" name="sap" value="!PR"> <label for="sap2">Start Remote Pairing</label><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap3" name="sap" value="!FRESET"> <label for="sap3">Factory Reset</label><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap4" name="sap" value="" checked> <label for="sap4">not set</label>
 </div>
 
 <div id="aS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start Capture:</b>
