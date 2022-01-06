@@ -442,6 +442,7 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="dhold" value="" style="width:60px"> seconds to get out of the shot.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="mhold" value="" style="width:60px"> seconds to capture after motion stops.<br>
 <br>
+</div>
 
 | Sensitivity | Activity               |
 |-------------|------------------------|
@@ -451,7 +452,6 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 | 8	          | tiny movement          |
 | 9	          | small tremor           |
 
-</div>
 
 <div id="aR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="repeat" value=""> <b><label for="actions">Repeat Command</label></b><br></div>
 
