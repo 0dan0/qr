@@ -96,7 +96,7 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
   <input type="radio" id="pf1" name="pfov" value="fW"> <label for="pf1">Wide </label>&nbsp;&nbsp;
   <input type="radio" id="pf2" name="pfov" value="fL"> <label for="pf2">Linear </label>&nbsp;&nbsp;
   <input type="radio" id="pf3" name="pfov" value="fN"> <label for="pf3">Narrow </label><br>
-  &nbsp;&nbsp;Max Lens Mod:  <input type="radio" id="pf4" name="pfov" value="oX1fW"> <label for="pf4">Enable Wide </label>&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;Max Lens Mod:  <input type="radio" id="pf4" name="pfov" value="oX1fW"> <label for="pf4">Enable Wide </label>&nbsp;&nbsp;
   <input type="radio" id="pf5" name="pfov" value="oX1fX"> <label for="pf5">Enable Superview </label>&nbsp;&nbsp;
   <input type="radio" id="pf6" name="pfov" value="oX0"> <label for="pf6">Disable MLM</label>&nbsp;&nbsp;
   <input type="radio" id="pf7" name="pfov" value="" checked> <label for="pf7">not set</label><br><br>
@@ -117,7 +117,7 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
   <input type="radio" id="twf2" name="twfov" value="fL"> <label for="twf2">Linear </label>&nbsp;&nbsp;
   <input type="radio" id="twf3" name="twfov" value="fH"> <label for="twf3">Linear+HL </label>&nbsp;&nbsp;
   <input type="radio" id="twf4" name="twfov" value="fN"> <label for="twf4">Narrow </label>&nbsp;&nbsp;  <br>
-  Max Lens Mod:  <input type="radio" id="twf5" name="twfov" value="oX1fW"> <label for="twf5">Enable Wide </label>&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;Max Lens Mod:  <input type="radio" id="twf5" name="twfov" value="oX1fW"> <label for="twf5">Enable Wide </label>&nbsp;&nbsp;
   <input type="radio" id="twf6" name="twfov" value="oX1fX"> <label for="twf6">Enable Superview </label>&nbsp;&nbsp;
   <input type="radio" id="twf7" name="twfov" value="oX0"> <label for="twf7">Disable MLM</label>&nbsp;&nbsp;
   <input type="radio" id="twf8" name="twfov" value="" checked> <label for="twf8">not set</label><br><br>
@@ -356,11 +356,6 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 <input type="checkbox" id="options" value=""> <label for="options">Camera Preferences</label><br>
 </div>
 
-<div id="opGPS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>GPS:</b>&nbsp;&nbsp;
-  <input type="radio" id="gps1" name="gps" value="g0"> <label for="gps1">off </label>&nbsp;&nbsp;
-  <input type="radio" id="gps2" name="gps" value="g1"> <label for="gps2">on </label>&nbsp;&nbsp;
-  <input type="radio" id="gps3" name="gps" value="" checked> <label for="gps3">not set </label>
-</div>
 <div id="opVC">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Voice Control:</b>&nbsp;&nbsp; 
   <input type="radio" id="vc1" name="vc" value="v0"> <label for="vc1">off </label>&nbsp;&nbsp;
   <input type="radio" id="vc2" name="vc" value="v1"> <label for="vc2">on </label>&nbsp;&nbsp;
@@ -386,14 +381,6 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
   <input type="radio" id="bv6" name="bv" value="V9"> <label for="bv6">100% </label>&nbsp;&nbsp;
   <input type="radio" id="bv7" name="bv" value="" checked> <label for="bv7">not set</label>
   </div>
-  
-<div id="opDB">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Display Brightness:</b>&nbsp;&nbsp;
-  <input type="radio" id="db1" name="db" value="B1"> <label for="db1">10% </label>&nbsp;&nbsp;
-  <input type="radio" id="db2" name="db" value="B4"> <label for="db2">40% </label>&nbsp;&nbsp;
-  <input type="radio" id="db3" name="db" value="B7"> <label for="db3">70% </label>&nbsp;&nbsp;
-  <input type="radio" id="db4" name="db" value="B9"> <label for="db4">100% </label>&nbsp;&nbsp;
-  <input type="radio" id="db5" name="db" value="" checked> <label for="db5">not set</label>
-  </div>
 <div id="opLO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>LEDs On:</b>&nbsp;&nbsp;
   <input type="radio" id="lo1" name="lo" value="D0"> <label for="lo1">All Off </label>&nbsp;&nbsp;
   <input type="radio" id="lo2" name="lo" value="D2"> <label for="lo2">Rear Only </label>&nbsp;&nbsp;
@@ -415,35 +402,11 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
   <input type="radio" id="ao4" name="ao" value="C"> <label for="ao4">Never </label>&nbsp;&nbsp;
   <input type="radio" id="ao5" name="ao" value="" checked> <label for="ao5">not set</label>
   </div>
-<div id="opSO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Screen Auto Off:</b>&nbsp;&nbsp;
-  <input type="radio" id="so1" name="so" value="S1"> <label for="so1">1 mins </label>&nbsp;&nbsp;
-  <input type="radio" id="so2" name="so" value="S2"> <label for="so2">2 mins </label>&nbsp;&nbsp;
-  <input type="radio" id="so3" name="so" value="S3"> <label for="so3">3 mins </label>&nbsp;&nbsp;
-  <input type="radio" id="so4" name="so" value="S"> <label for="so4">Never </label>&nbsp;&nbsp;
-  <input type="radio" id="so5" name="so" value="" checked> <label for="so5">not set</label>
-  </div>
 <div id="opWC">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>WiFi Connections:</b>&nbsp;&nbsp; 
   <input type="radio" id="wc1" name="wc" value="W0"> <label for="wc1">Off </label>&nbsp;&nbsp;
   <input type="radio" id="wc2" name="wc" value="W1"> <label for="wc2">On </label>&nbsp;&nbsp;
   <input type="radio" id="wc3" name="wc" value="" checked> <label for="wc3">not set</label>
   </div>
-<div id="opLN">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Language:</b>&nbsp;&nbsp;
-  <input type="radio" id="ln1" name="ln" value="L0"> <label for="ln1">English US </label>&nbsp;&nbsp;
-  <input type="radio" id="ln2" name="ln" value="L01"> <label for="ln2">English UK </label>&nbsp;&nbsp;
-  <input type="radio" id="ln3" name="ln" value="L02"> <label for="ln3">English AUS </label>&nbsp;&nbsp;
-  <input type="radio" id="ln4" name="ln" value="L4"> <label for="ln4">Spanish EU </label>&nbsp;&nbsp;
-  <input type="radio" id="ln5" name="ln" value="L41"> <label for="ln5">Spanish NA </label>&nbsp;&nbsp;
-  <input type="radio" id="ln6" name="ln" value="L2"> <label for="ln6">German </label>&nbsp;&nbsp;<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="ln7" name="ln" value="L3"> <label for="ln7">Italian </label>&nbsp;&nbsp;
-  <input type="radio" id="ln8" name="ln" value="L1"> <label for="ln8">Chinese </label>&nbsp;&nbsp;
-  <input type="radio" id="ln9" name="ln" value="L5"> <label for="ln9">Japanese </label>&nbsp;&nbsp;
-  <input type="radio" id="ln10" name="ln" value="L7"> <label for="ln10">Korean </label>&nbsp;&nbsp;
-  <input type="radio" id="ln11" name="ln" value="L6"> <label for="ln11">French </label>&nbsp;&nbsp;
-  <input type="radio" id="ln12" name="ln" value="L8"> <label for="ln12">Portuguese </label>&nbsp;&nbsp;
-  <input type="radio" id="ln13" name="ln" value="L9"> <label for="ln13">Russian </label>&nbsp;&nbsp;
-  <input type="radio" id="ln14" name="ln" value="" checked> <label for="ln14">not set</label><br>
-</div>
-
 
 <div id="opDT">
 <input type="checkbox" id="dt" value="oT"> <label for="dt">Set date + time automatically</label><br>
@@ -585,18 +548,14 @@ function startTime() {
 	dset("ptSHARP",false);
 	dset("ptAUD",false);
 		
-	dset("opGPS", false);
 	dset("opVC", false);
 	dset("opQC", false);
 	dset("opDM", false);
 	dset("opBV", false);
-	dset("opDB", false);
 	dset("opLO", false);
 	dset("opOR", false);
 	dset("opAO", false);
-	dset("opSO", false);
 	dset("opWC", false);
-	dset("opLN", false);
 	
 	dset("aS", false);
 	dset("aSM", false);
@@ -768,18 +727,14 @@ function startTime() {
 	{
 		if(document.getElementById("options").checked === true)
 		{			
-			dset("opGPS", true);
 			dset("opVC", true);
 			dset("opQC", true);
 			dset("opDM", true);
 			dset("opBV", true);
-			dset("opDB", true);
 			dset("opLO", true);
 			dset("opOR", true);
 			dset("opAO", true);
-			dset("opSO", true);
 			dset("opWC", true);
-			dset("opLN", true);
 		}
 	}
 	
