@@ -61,6 +61,7 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
   <input type="radio" id="r6" name="res" value="r5"   > <label for="r6">5.3k </label>&nbsp;&nbsp;
   <input type="radio" id="r7" name="res" value="r5T"  > <label for="r7">5k 4x3† </label>&nbsp;&nbsp;
   <input type="radio" id="r8" name="res" value="" checked> <label for="r8">not set</label><br>
+  <br>
 </div>
 
 <div id="settingsFPS">
@@ -75,6 +76,7 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
   <input type="radio" id="p8" name="fps" value="p200"> <label for="p8">200 </label>&nbsp;&nbsp;
   <input type="radio" id="p9" name="fps" value="p240"> <label for="p9">240 </label>&nbsp;&nbsp;
   <input type="radio" id="p10" name="fps" value="" checked> <label for="p10">not set</label><br>
+  <br>
 </div>
 
 <div id="settingsFOV">
