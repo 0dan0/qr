@@ -427,7 +427,7 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
   <input type="radio" id="as2" name="as" value="!1S"> <label for="as2">in 2 sec </label>&nbsp;&nbsp;
   <input type="radio" id="as3" name="as" value="!3S"> <label for="as3">in 4 secs </label>&nbsp;&nbsp;
   <input type="radio" id="as4" name="as" value="!9S"> <label for="as4">in 10 secs </label>&nbsp;&nbsp;
-  <input type="radio" id="as5" name="as" value="" checked> <label for="as5">not set</label><br>
+  <input type="radio" id="as5" name="as" value="" checked> <label for="as5">not set</label><br> 
 &nbsp;&nbsp;or
 </div>
 <div id="aSM">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start via Scene Motion Detection:</b> 
@@ -435,6 +435,42 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="dhold" value="" style="width:60px"> seconds to get out of the shot.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mask motion: <input type="text" id="mmhold" value="" style="width:60px"> seconds to learn background motion.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="mhold" value="" style="width:60px"> seconds to capture after motion stops.<br>
+  <small>
+	<table style="margin-left:60px;">
+	  <thead>
+		<tr>
+		  <th>Sensitivity</th>
+		  <th>Activity</th>
+		</tr>
+	  </thead>
+	  <tbody>
+		<tr>
+		  <td>1</td>
+		  <td>Everything moving</td>
+		</tr>
+		<tr>
+		  <td>2</td>
+		  <td>Large nearby movement</td>
+		</tr>
+		<tr>
+		  <td>3</td>
+		  <td>Medium object movement</td>
+		</tr>
+		<tr>
+		  <td>4</td>
+		  <td>small movement</td>
+		</tr>
+		<tr>
+		  <td>5</td>
+		  <td>tiny movement</td>
+		</tr>
+		<tr>
+		  <td>6</td>
+		  <td>any change</td>
+		</tr>
+	  </tbody>
+	</table>
+  </small>
 &nbsp;&nbsp;or
 </div>
 <div id="aIT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start via Camera (IMU) Motion Detection:</b> 
