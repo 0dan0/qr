@@ -422,11 +422,11 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 <input type="checkbox" id="actions" value=""> <label for="actions">Camera Actions</label><br>
 </div>
 
-	<div id="NakedTools">
+<div id="NakedTools">
 	<input type="checkbox" id="sap" value="!PA"> <label for="sap">Start Quik App Pairing</label><br>
 	<input type="checkbox" id="srp" value="!PR"> <label for="srp">Start Remote Pairing</label><br>
-	<input type="checkbox" id="sfr" value="!FRESET"> <label for="sap">Factory Reset</label><br>
-	</div>
+	<input type="checkbox" id="sfr" value="!FRESET"> <label for="sfr">Factory Reset</label><br>
+</div>
 
 <div id="aS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start Capture:</b>
   <input type="radio" id="as1" name="as" value="!S"> <label for="as1">Now </label>&nbsp;&nbsp;
