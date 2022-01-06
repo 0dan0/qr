@@ -443,7 +443,7 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="mhold" value="" style="width:60px"> seconds to capture after motion stops.<br>
 <br>
   <small>
-	<table>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<table>
 	  <thead>
 		<tr>
 		  <th>Sensitivity</th>
@@ -460,24 +460,8 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 		  <td>Jumps</td>
 		</tr>
 		<tr>
-		  <td>3</td>
-		  <td>most handheld movement</td>
-		</tr>
-		<tr>
-		  <td>4</td>
-		  <td>..</td>
-		</tr>
-		<tr>
 		  <td>5</td>
 		  <td>any hand-held movement</td>
-		</tr>
-		<tr>
-		  <td>6</td>
-		  <td>..</td>
-		</tr>
-		<tr>
-		  <td>7</td>
-		  <td>..</td>
 		</tr>
 		<tr>
 		  <td>8</td>
