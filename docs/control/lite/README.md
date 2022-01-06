@@ -12,17 +12,20 @@
         }
 </style>
 
+Create a custom camera mode, and even start a capture all through QR Codes. This is the fastest way to access many of the new GoPro Labs' firmware features. 
+**†** indicates the control requires HERO10 Labs or better. 
+
 ## Scanning Your Code
 
 ![Scanning](scanning.jpg)
 
 Whether you scan a QR Code from a laptop screen or a mobile phone, the code should be a minimum 1.5"/40cm in size with the camera about 6"/15cm away. The larger the QR Code, the easier it is to scan. Point the camera at the center of the code, hold it still for about a second. With each successful scan the LED will flash twice. It will now be in the mode you have selected.
 
-Create a custom camera mode, and even start a capture all through QR Codes. This is the fastest way to access many of the new GoPro Labs' firmware features. 
-**†** indicates the control requires HERO10 Labs or better. 
+## Camera Settings
 
 <b>Camera Mode:</b>&nbsp;&nbsp;<input type="radio" id="m19" name="mode" value="" checked> <label for="m19">not set</label><br>
-  <input type="radio" id="m1" name="mode" value="mV"> <label  for="m1">Video </label>&nbsp;&nbsp;
+  **Video Modes †:** 
+  <input type="radio" id="m1" name="mode" value="mV"> <label  for="m1">Video(current) </label>&nbsp;&nbsp;
   <input type="radio" id="m2" name="mode" value="mVP"> <label for="m2">Performance†</label>&nbsp;&nbsp;
   <input type="radio" id="m3" name="mode" value="mVE"> <label for="m3">Endurance†</label>&nbsp;&nbsp;
   <input type="radio" id="m4" name="mode" value="mVS"> <label for="m4">Stationary†</label><br>
@@ -49,18 +52,19 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
 </div>
 
 <div id="settingsRES">
-<b>Video Resolution:</b>&nbsp;&nbsp;<input type="radio" id="r8" name="res" value="" checked> <label for="r8">not set</label><br>
+<b>Resolution:</b>&nbsp;&nbsp;
   <input type="radio" id="r1" name="res" value="r1080"> <label for="r1">1080p </label>&nbsp;&nbsp;
   <input type="radio" id="r2" name="res" value="r27"  > <label for="r2">2.7k  </label>&nbsp;&nbsp;
   <input type="radio" id="r3" name="res" value="r27T" > <label for="r3">2.7k 4x3 </label>&nbsp;&nbsp;
   <input type="radio" id="r4" name="res" value="r4"   > <label for="r4">4k </label>&nbsp;&nbsp;
   <input type="radio" id="r5" name="res" value="r4T"  > <label for="r5">4k 4x3 </label>&nbsp;&nbsp;
   <input type="radio" id="r6" name="res" value="r5"   > <label for="r6">5.3k </label>&nbsp;&nbsp;
-  <input type="radio" id="r7" name="res" value="r5T"  > <label for="r7">5k 4x3† </label><br><br>
+  <input type="radio" id="r7" name="res" value="r5T"  > <label for="r7">5k 4x3† </label>&nbsp;&nbsp;
+  <input type="radio" id="r8" name="res" value="" checked> <label for="r8">not set</label><br>
 </div>
 
 <div id="settingsFPS">
-<b>FPS Video:</b>&nbsp;&nbsp;<input type="radio" id="p10" name="fps" value="" checked> <label for="p10">not set</label><br>
+<b>Frame Rate:</b>&nbsp;&nbsp;
   <input type="radio" id="p1" name="fps" value="p24">  <label for="p1">24 </label>&nbsp;&nbsp;
   <input type="radio" id="p2" name="fps" value="p25">  <label for="p2">25 </label>&nbsp;&nbsp;
   <input type="radio" id="p3" name="fps" value="p30">  <label for="p3">30 </label>&nbsp;&nbsp;
@@ -69,7 +73,8 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
   <input type="radio" id="p6" name="fps" value="p100"> <label for="p6">100 </label>&nbsp;&nbsp;
   <input type="radio" id="p7" name="fps" value="p120"> <label for="p7">120 </label>&nbsp;&nbsp;
   <input type="radio" id="p8" name="fps" value="p200"> <label for="p8">200 </label>&nbsp;&nbsp;
-  <input type="radio" id="p9" name="fps" value="p240"> <label for="p9">240 </label><br><br>
+  <input type="radio" id="p9" name="fps" value="p240"> <label for="p9">240 </label>&nbsp;&nbsp;
+  <input type="radio" id="p10" name="fps" value="" checked> <label for="p10">not set</label><br>
 </div>
 
 <div id="settingsFOV">
@@ -449,9 +454,17 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
 </div>
 
 <div id="cameraActions">
-<input type="checkbox" id="actions" value=""> <label for="actions">Cool Camera Labs Actions</label><br>
+<input type="checkbox" id="actions" value=""> <label for="actions">Camera Actions</label><br>
 </div>
 
+<div id="aS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start Capture:</b>
+  <input type="radio" id="as1" name="as" value="!S"> <label for="as1">Now </label>&nbsp;&nbsp;
+  <input type="radio" id="as2" name="as" value="!1S"> <label for="as2">in 2 sec </label>&nbsp;&nbsp;
+  <input type="radio" id="as3" name="as" value="!3S"> <label for="as3">in 4 secs </label>&nbsp;&nbsp;
+  <input type="radio" id="as4" name="as" value="!9S"> <label for="as4">in 10 secs </label>&nbsp;&nbsp;
+  <input type="radio" id="as5" name="as" value="" checked> <label for="as5">not set</label>
+  </div>
+or
 <div id="aSM">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start via Scene Motion Detection:</b> 
 <input type="text" id="mstart" value="" style="width:60px">start <input type="text" id="mend" value="" style="width:60px">end sensitivity (1-9)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="dhold" value="" style="width:60px"> seconds to get out of the shot.<br>
@@ -459,7 +472,7 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="mhold" value="" style="width:60px"> seconds to capture after motion stops.<br>
 <br>
 </div>
-
+or
 <div id="aIT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start via Camera (IMU) Motion Detection:</b> 
 <input type="text" id="mstart" value="" style="width:60px">start <input type="text" id="mend" value="" style="width:60px">end sensitivity (1-9)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="dhold" value="" style="width:60px"> seconds to get out of the shot.<br>
@@ -585,6 +598,7 @@ function startTime() {
 	dset("opWC", false);
 	dset("opLN", false);
 	
+	dset("aS", false);
 	dset("aSM", false);
 	dset("aIT", false);
 	dset("aR", false);
@@ -773,6 +787,7 @@ function startTime() {
 	{
 		if(document.getElementById("actions").checked === true)
 		{
+			dset("aS", true);
 			dset("aSM", true);
 			dset("aIT", true);
 			dset("aR", true);
