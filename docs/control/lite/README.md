@@ -442,19 +442,58 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="dhold" value="" style="width:60px"> seconds to get out of the shot.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="mhold" value="" style="width:60px"> seconds to capture after motion stops.<br>
 <br>
+  <small>
+	<table>
+	  <thead>
+		<tr>
+		  <th>Sensitivity</th>
+		  <th>Activity</th>
+		</tr>
+	  </thead>
+	  <tbody>
+		<tr>
+		  <td>1</td>
+		  <td>Throwing the camera</td>
+		</tr>
+		<tr>
+		  <td>2</td>
+		  <td>Jumps</td>
+		</tr>
+		<tr>
+		  <td>3</td>
+		  <td>most handheld movement</td>
+		</tr>
+		<tr>
+		  <td>4</td>
+		  <td>..</td>
+		</tr>
+		<tr>
+		  <td>5</td>
+		  <td>any hand-held movement</td>
+		</tr>
+		<tr>
+		  <td>6</td>
+		  <td>..</td>
+		</tr>
+		<tr>
+		  <td>7</td>
+		  <td>..</td>
+		</tr>
+		<tr>
+		  <td>8</td>
+		  <td>tiny movement</td>
+		</tr>
+		<tr>
+		  <td>9</td>
+		  <td>small tremor</td>
+		</tr>
+	  </tbody>
+	</table>
+  </small>
 </div>
 
-<div id="aIT2">
-<small>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Sensitivity | Activity               |
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-------------|------------------------|
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1	          | Throwing the camera    |
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 2	          | Jumps                  |
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 5	          | any hand-held movement |
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 8	          | tiny movement          |
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 9	          | small tremor           |
-</small>
-</div>
+
+
 
 <div id="aR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="repeat" value=""> <b><label for="actions">Repeat Command</label></b><br></div>
 
@@ -563,7 +602,6 @@ function startTime() {
 	dset("aS", false);
 	dset("aSM", false);
 	dset("aIT", false);
-	dset("aIT2", false);
 	dset("aR", false);
 	
 	var checkedmode = 0;
@@ -749,7 +787,6 @@ function startTime() {
 			dset("aS", true);
 			dset("aSM", true);
 			dset("aIT", true);
-			dset("aIT2", true);
 			dset("aR", true);
 		}
 	}
