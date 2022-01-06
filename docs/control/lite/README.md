@@ -444,14 +444,17 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 <br>
 </div>
 
-| Sensitivity | Activity               |
-|-------------|------------------------|
-| 1	          | Throwing the camera    |
-| 2	          | Jumps                  |
-| 5	          | any hand-held movement |
-| 8	          | tiny movement          |
-| 9	          | small tremor           |
-
+<div id="aIT2">
+<small>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Sensitivity | Activity               |
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-------------|------------------------|
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 1	          | Throwing the camera    |
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 2	          | Jumps                  |
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 5	          | any hand-held movement |
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 8	          | tiny movement          |
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 9	          | small tremor           |
+</small>
+</div>
 
 <div id="aR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="repeat" value=""> <b><label for="actions">Repeat Command</label></b><br></div>
 
@@ -560,6 +563,7 @@ function startTime() {
 	dset("aS", false);
 	dset("aSM", false);
 	dset("aIT", false);
+	dset("aIT2", false);
 	dset("aR", false);
 	
 	var checkedmode = 0;
@@ -745,6 +749,7 @@ function startTime() {
 			dset("aS", true);
 			dset("aSM", true);
 			dset("aIT", true);
+			dset("aIT2", true);
 			dset("aR", true);
 		}
 	}
