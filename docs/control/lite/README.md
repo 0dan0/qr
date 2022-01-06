@@ -422,6 +422,12 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 <input type="checkbox" id="actions" value=""> <label for="actions">Camera Actions</label><br>
 </div>
 
+	<div id="NakedTools">
+	<input type="checkbox" id="sap" value="!PA"> <label for="sap">Start Quik App Pairing</label><br>
+	<input type="checkbox" id="srp" value="!PR"> <label for="srp">Start Remote Pairing</label><br>
+	<input type="checkbox" id="sfr" value="!FRESET"> <label for="sap">Factory Reset</label><br>
+	</div>
+
 <div id="aS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start Capture:</b>
   <input type="radio" id="as1" name="as" value="!S"> <label for="as1">Now </label>&nbsp;&nbsp;
   <input type="radio" id="as2" name="as" value="!1S"> <label for="as2">in 2 sec </label>&nbsp;&nbsp;
@@ -618,6 +624,7 @@ function startTime() {
 	dset("opAO", false);
 	dset("opWC", false);
 	
+	dset("NakedTools", false);
 	dset("aS", false);
 	dset("aSM", false);
 	dset("aIT", false);
@@ -803,6 +810,7 @@ function startTime() {
 	{
 		if(document.getElementById("actions").checked === true)
 		{
+			dset("NakedTools", true);
 			dset("aS", true);
 			dset("aSM", true);
 			dset("aIT", true);
@@ -1119,6 +1127,12 @@ function startTime() {
 	{
 		var S_added = 0;
 		var SM_added = 0;
+		
+		
+		cmd = dcmd(cmd,"sap"); //protune
+		cmd = dcmd(cmd,"srp"); //protune
+		cmd = dcmd(cmd,"sfr"); //protune
+	
 		
 		if(document.getElementById("mstart") !== null)
 		{		
