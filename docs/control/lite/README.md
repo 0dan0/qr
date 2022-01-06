@@ -85,7 +85,7 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
   <input type="radio" id="f3" name="fov" value="fL"> <label for="f3">Linear </label>&nbsp;&nbsp;
   <input type="radio" id="f4" name="fov" value="fS"> <label for="f4">Superview </label>&nbsp;&nbsp;
   <input type="radio" id="f5" name="fov" value="fH"> <label for="f5">Linear+HL </label><br>
-  Max Lens Mod:  <input type="radio" id="f6" name="fov" value="oX1fW"> <label for="f6">Enable Wide </label>&nbsp;&nbsp;
+  &nbsp;&nbsp;Max Lens Mod:  <input type="radio" id="f6" name="fov" value="oX1fW"> <label for="f6">Enable Wide </label>&nbsp;&nbsp;
   <input type="radio" id="f7" name="fov" value="oX1fX"> <label for="f7">Enable Superview </label>&nbsp;&nbsp;
   <input type="radio" id="f8" name="fov" value="oX0"> <label for="f8">Disable MLM</label>&nbsp;&nbsp;
   <input type="radio" id="f9" name="fov" value="" checked> <label for="f9">not set</label><br><br>
@@ -96,7 +96,7 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
   <input type="radio" id="pf1" name="pfov" value="fW"> <label for="pf1">Wide </label>&nbsp;&nbsp;
   <input type="radio" id="pf2" name="pfov" value="fL"> <label for="pf2">Linear </label>&nbsp;&nbsp;
   <input type="radio" id="pf3" name="pfov" value="fN"> <label for="pf3">Narrow </label><br>
-  Max Lens Mod:  <input type="radio" id="pf4" name="pfov" value="oX1fW"> <label for="pf4">Enable Wide </label>&nbsp;&nbsp;
+  &nbsp;&nbsp;Max Lens Mod:  <input type="radio" id="pf4" name="pfov" value="oX1fW"> <label for="pf4">Enable Wide </label>&nbsp;&nbsp;
   <input type="radio" id="pf5" name="pfov" value="oX1fX"> <label for="pf5">Enable Superview </label>&nbsp;&nbsp;
   <input type="radio" id="pf6" name="pfov" value="oX0"> <label for="pf6">Disable MLM</label>&nbsp;&nbsp;
   <input type="radio" id="pf7" name="pfov" value="" checked> <label for="pf7">not set</label><br><br>
