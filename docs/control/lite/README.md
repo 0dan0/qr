@@ -474,9 +474,9 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 &nbsp;&nbsp;or
 </div>
 <div id="aIT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start via Camera (IMU) Motion Detection:</b> 
-<input type="text" id="mstart" value="" style="width:60px">start <input type="text" id="mend" value="" style="width:60px">end sensitivity (1-9)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="dhold" value="" style="width:60px"> seconds before motion is detected.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="mhold" value="" style="width:60px"> seconds to capture after motion stops.<br>
+<input type="text" id="imstart" value="" style="width:60px">start <input type="text" id="imend" value="" style="width:60px">end sensitivity (1-9)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="idhold" value="" style="width:60px"> seconds before motion is detected.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="imhold" value="" style="width:60px"> seconds to capture after motion stops.<br>
   <small>
 	<table style="margin-left:60px;">
 	  <thead>
@@ -1119,196 +1119,102 @@ function startTime() {
 	{
 		var S_added = 0;
 		var SM_added = 0;
-		var SK_added = 0;
-		if(document.getElementById("starthrs") !== null && document.getElementById("startmins") !== null && document.getElementById("time") !== null)
-		{
-			var newcmd = "";
-			var secs = 0;
-			var starttime = document.getElementById("time").value;
-			secs = Number(3600 * document.getElementById("starthrs").value) + Number(60 * document.getElementById("startmins").value) + Number(document.getElementById("startsecs").value);
-			var risemins = 60 * document.getElementById("risemins").value;
-			var setmins = 60 * document.getElementById("setmins").value;
-			if(setmins !== 0)
-			{
-				newcmd = "!s" + setmins + "N" + cmd + "!S";
-				cmd = newcmd;
-				S_added = 1;
-			}
-			else if(risemins !== 0)
-			{
-				newcmd = "!r" + risemins + "N" + cmd + "!S";
-				cmd = newcmd;
-				S_added = 1;
-			}
-			else if(secs > 0)
-			{
-				if(secs < 20)
-				{
-					newcmd = cmd + "!" + secs + "S";
-					cmd = newcmd;
-					S_added = 1;
-				}
-				else
-				{
-					newcmd = "!" + secs + "N" + cmd + "!S";
-					cmd = newcmd;
-					S_added = 1;
-				}
-			}
-			else if(starttime.length == 5)
-			{
-				newcmd = "!" + starttime + "N" + cmd + "!S";
-				cmd = newcmd;
-				S_added = 1;
-			}
-		}
 		
 		if(document.getElementById("mstart") !== null)
-		{
+		{		
 			var mstart = document.getElementById("mstart").value;
+			var imstart = document.getElementById("imstart").value;
 			if(mstart > 0)
 			{
-				if(S_added)	
-				{
-					cmd = cmd + "M" + mstart;
-					SM_added = 1;
-				}
-				else
-				{
-					cmd = cmd + "!SM" + mstart;
-					SM_added = 1;
-				}			
-			}
+				cmd = cmd + "!SM" + mstart;
+				SM_added = 1;			
 			
-			if(document.getElementById("mend") !== null)
-			{
-				var mend = document.getElementById("mend").value;
-				if(mend > 0 && SM_added)
+				if(document.getElementById("mend") !== null)
 				{
-					cmd = cmd + "-" + mend;
+					var mend = document.getElementById("mend").value;
+					if(mend > 0 && SM_added)
+					{
+						cmd = cmd + "-" + mend;
+					}
+				}
+				
+				if(document.getElementById("dhold") !== null)
+				{
+					var dhold = document.getElementById("dhold").value;
+					if(dhold > 0 && SM_added)
+					{
+						cmd = cmd + "D" + dhold;
+					}
+				}
+				if(document.getElementById("mmhold") !== null)
+				{
+					var mmhold = document.getElementById("mmhold").value;
+					if(mmhold > 0 && SM_added)
+					{
+						cmd = cmd + "M" + mmhold;
+					}
+				}
+				if(document.getElementById("mhold") !== null)
+				{
+					var mhold = document.getElementById("mhold").value;
+					if(mhold > 0 && SM_added)
+					{
+						cmd = cmd + "H" + mhold;
+					}
 				}
 			}
+			else if(imstart > 0)
+			{
+				cmd = cmd + "!SM" + imstart;
+				SM_added = 1;			
 			
-			if(document.getElementById("dhold") !== null)
-			{
-				var dhold = document.getElementById("dhold").value;
-				if(dhold > 0 && SM_added)
+				if(document.getElementById("imend") !== null)
 				{
-					cmd = cmd + "D" + dhold;
+					var mend = document.getElementById("imend").value;
+					if(mend > 0 && SM_added)
+					{
+						cmd = cmd + "-" + mend;
+					}
+				}
+				
+				if(document.getElementById("idhold") !== null)
+				{
+					var dhold = document.getElementById("idhold").value;
+					if(dhold > 0 && SM_added)
+					{
+						cmd = cmd + "D" + dhold;
+					}
+				}
+				if(document.getElementById("immhold") !== null)
+				{
+					var mmhold = document.getElementById("immhold").value;
+					if(mmhold > 0 && SM_added)
+					{
+						cmd = cmd + "M" + mmhold;
+					}
+				}
+				if(document.getElementById("imhold") !== null)
+				{
+					var mhold = document.getElementById("imhold").value;
+					if(mhold > 0 && SM_added)
+					{
+						cmd = cmd + "H" + mhold;
+					}
 				}
 			}
-			if(document.getElementById("mmhold") !== null)
+			else
 			{
-				var mmhold = document.getElementById("mmhold").value;
-				if(mmhold > 0 && SM_added)
-				{
-					cmd = cmd + "M" + mmhold;
-				}
-			}
-			if(document.getElementById("mhold") !== null)
-			{
-				var mhold = document.getElementById("mhold").value;
-				if(mhold > 0 && SM_added)
-				{
-					cmd = cmd + "H" + mhold;
-				}
+				cmd = dcmd(cmd,"as");
 			}
 		}
 		
 		
-		if(document.getElementById("vstart") !== null)
-		{
-			var vstart = document.getElementById("vstart").value;
-			if(vstart > 0)
-			{
-				if(S_added)	
-				{
-					cmd = cmd + "K" + vstart;
-					SK_added = 1;
-				}
-				else
-				{
-					cmd = cmd + "!SK" + vstart;
-					SK_added = 1;
-				}			
-			}
-			
-			if(document.getElementById("vend") !== null)
-			{
-				var vend = document.getElementById("vend").value;
-				if(vend > 0 && SK_added)
-				{
-					cmd = cmd + "-" + vend;
-				}
-			}
-			if(document.getElementById("vhold") !== null)
-			{
-				var vhold = document.getElementById("vhold").value;
-				if(vhold > 0 && SK_added)
-				{
-					cmd = cmd + "H" + vhold;
-				}
-			}
-		}
-		
-		
-		
-		if(document.getElementById("endhrs") !== null && document.getElementById("endmins") !== null && document.getElementById("endsecs") !== null && document.getElementById("time") !== null)
-		{
-			var secs = 0;
-			var endtime = document.getElementById("endtime").value;
-			//var endrisemins = 60 * document.getElementById("endrisemins").value;
-			//var endsetmins = 60 * document.getElementById("endsetmins").value;
-			secs = Number(60 * 60 * document.getElementById("endhrs").value) + Number(60 * document.getElementById("endmins").value) + Number(document.getElementById("endsecs").value);
-			/*if(endsetmins != 0)
-			{
-				cmd = cmd + "!s" + endsetmins + "E";
-			}
-			else if(endrisemins != 0)
-			{
-				cmd = cmd + "!r" + endrisemins + "E";
-			}
-			else*/ 
-			if(secs > 0)
-			{
-				cmd = cmd + "!" + secs + "E";
-			}
-			else if(endtime.length == 5)
-			{
-				cmd = cmd + "!" + endtime + "E";
-			}
-		}
+	
 		
 		if(document.getElementById("repeat").checked === true)
 		{
 			cmd = cmd + "!" + "R";
 		}
-		
-		/*
-		if(document.getElementById("repeathrs") !== null && document.getElementById("repeatmins") !== null && document.getElementById("repeatsecs") !== null && document.getElementById("time") !== null)
-		{
-			var secs = 0;
-			var repeattime = document.getElementById("repeattime").value;
-			var repeatrisemins = 60 * document.getElementById("repeatrisemins").value;
-			var repeatsetmins = 60 * document.getElementById("repeatsetmins").value;
-			secs = Number(60 * 60 * document.getElementById("repeathrs").value) + Number(60 * document.getElementById("repeatmins").value) + Number(document.getElementById("repeatsecs").value);
-			if(repeatsetmins !== 0)
-			{
-				cmd = cmd + "!s" + repeatsetmins + "R";
-			}
-			else if(repeatrisemins !== 0)
-			{
-				cmd = cmd + "!r" + repeatrisemins + "R";
-			}
-			else if(secs > 0)
-			{
-				cmd = cmd + "!" + secs + "R";
-			}
-			else if(repeattime.length == 5)
-			{
-				cmd = cmd + "!" + repeattime + "R";
-			}
-		}*/
 	}
 	
 	if(document.getElementById("addcmd") !== null)
