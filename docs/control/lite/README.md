@@ -442,9 +442,8 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="dhold" value="" style="width:60px"> seconds before motion is detected.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="mhold" value="" style="width:60px"> seconds to capture after motion stops.<br>
 <br>
-<center>
   <small>
-	<table>
+	<table style="margin-left:60px;">
 	  <thead>
 		<tr>
 		  <th>Sensitivity</th>
@@ -475,7 +474,6 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 	  </tbody>
 	</table>
   </small>
-</center>
 </div>
 
 
