@@ -272,7 +272,7 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 <input type="checkbox" id="pt" value="t"> <label for="pt">Protune Controls</label><br>
 </div>
 <div id="settingsPTR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Protune Reset:</b>&nbsp;&nbsp;
-<input type="checkbox" id="ptr" value="0"> <label for="ptr"> </label><br>
+<input type="checkbox" id="ptr" value="t0"> <label for="ptr"> </label><br>
 </div>
 <div id="ptCOLOR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Protune Color:</b>&nbsp;&nbsp;
   <input type="radio" id="ptc1" name="ptc" value="cG"> <label for="ptc1">GoPro</label>&nbsp;&nbsp;
@@ -965,8 +965,10 @@ function startTime() {
 		}
 	}
 	
-	cmd = dcmd(cmd,"pt"); //protune
-	cmd = dcmd(cmd,"ptr"); //protune reset
+	if(document.getElementById("pt").checked === true)
+		cmd = dcmd(cmd,"pt"); //protune
+	else
+		cmd = dcmd(cmd,"ptr"); //protune reset
 	cmd = dcmd(cmd,"eis"); //eis
 	cmd = dcmd(cmd,"hind"); //hindsight
 	cmd = dcmd(cmd,"dur"); //duration
