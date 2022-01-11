@@ -766,8 +766,9 @@ function startTime() {
 		
 	if(document.getElementById("pt") !== null)
 	{
-		dset("settingsPTR", true);
-	
+		if(document.getElementById("pt").checked === true)
+			dset("settingsPTR", true);
+		
 		if(document.getElementById("pt").checked === true && document.getElementById("ptr").checked === false)
 		{
 			dset("ptCOLOR", true);
