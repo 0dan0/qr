@@ -966,9 +966,16 @@ function startTime() {
 	}
 	
 	if(document.getElementById("pt").checked === true)
-		cmd = dcmd(cmd,"pt"); //protune
-	else
-		cmd = dcmd(cmd,"ptr"); //protune reset
+	{
+		if(document.getElementById("ptr").checked === true)
+		{
+			cmd = cmd + "t0"; //protune reset
+		}
+		else
+		{
+			cmd = cmd + "t"; //protune
+		}
+	}
 	cmd = dcmd(cmd,"eis"); //eis
 	cmd = dcmd(cmd,"hind"); //hindsight
 	cmd = dcmd(cmd,"dur"); //duration
