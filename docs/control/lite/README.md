@@ -271,6 +271,9 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 <div id="settingsPT">
 <input type="checkbox" id="pt" value="t"> <label for="pt">Protune Controls</label><br>
 </div>
+<div id="settingsPTR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Protune Reset:</b>&nbsp;&nbsp;
+<input type="checkbox" id="ptr" value="0"> <label for="ptr"> </label><br>
+</div>
 <div id="ptCOLOR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Protune Color:</b>&nbsp;&nbsp;
   <input type="radio" id="ptc1" name="ptc" value="cG"> <label for="ptc1">GoPro</label>&nbsp;&nbsp;
   <input type="radio" id="ptc2" name="ptc" value="cN"> <label for="ptc2">Natural†</label>&nbsp;&nbsp;
@@ -426,8 +429,9 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Camera Initization:</b><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap1" name="sap" value="!PA"> <label for="sap1">Start Quik App Pairing</label><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap2" name="sap" value="!PR"> <label for="sap2">Start Remote Pairing</label><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap3" name="sap" value="!FRESET"> <label for="sap3">Factory Reset</label><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap4" name="sap" value="" checked> <label for="sap4">not set</label><br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap3" name="sap" value="!FRESET"> <label for="sap3">Factory Reset†</label><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap4" name="sap" value="!PRESET"> <label for="sap4">Presets Only Reset†</label><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap5" name="sap" value="" checked> <label for="sap5">not set</label><br> 
 &nbsp;&nbsp;or
 </div>
 
@@ -599,6 +603,7 @@ function startTime() {
 	dset("settingsDuration", false);
 	dset("settingsPhotoRAW", false);
 	dset("settingsPT", false);
+	dset("settingsPTR", false);
 	dset("spotMeter", false);
 	dset("settingsBurst", false);
 	dset("settingsTimewarp", false);
@@ -761,7 +766,7 @@ function startTime() {
 		
 	if(document.getElementById("pt") !== null)
 	{
-		if(document.getElementById("pt").checked === true)
+		if(document.getElementById("pt").checked === true && document.getElementById("ptr").checked === false)
 		{
 			dset("ptCOLOR", true);
 			dset("ptBITRATE", true);
@@ -958,6 +963,7 @@ function startTime() {
 	}
 	
 	cmd = dcmd(cmd,"pt"); //protune
+	cmd = dcmd(cmd,"ptr"); //protune reset
 	cmd = dcmd(cmd,"eis"); //eis
 	cmd = dcmd(cmd,"hind"); //hindsight
 	cmd = dcmd(cmd,"dur"); //duration
