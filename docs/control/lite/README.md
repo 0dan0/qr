@@ -525,9 +525,7 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 </div>
 
 
-
-
-<div id="aR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="repeat" value=""> <b><label for="actions">Repeat Command</label></b><br></div>
+<div id="aR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="repeat" value=""> <b><label for="repeat">Repeat Command</label></b><br></div>
 
 Additional Commands: <input type="text" id="addcmd" value="">
 
