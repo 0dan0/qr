@@ -571,6 +571,7 @@ function startTime() {
 	dset("settingsDuration", false);
 	dset("settingsPhotoRAW", false);
 	dset("settingsPT", false);
+	dset("settingsPTR", false);
 	dset("spotMeter", false);
 	dset("settingsBurst", false);
 	dset("settingsTimewarp", false);
@@ -776,7 +777,6 @@ function startTime() {
 		}
 	}
 	
-	
 	if(document.getElementById("options") !== null)
 	{
 		if(document.getElementById("options").checked === true)
@@ -944,7 +944,17 @@ function startTime() {
 		}
 	}
 	
-	cmd = dcmd(cmd,"pt"); //protune
+	if(document.getElementById("pt").checked === true)
+	{
+		if(document.getElementById("ptr").checked === true)
+		{
+			cmd = cmd + "t0"; //protune reset
+		}
+		else
+		{
+			cmd = cmd + "t"; //protune
+		}
+	}
 	cmd = dcmd(cmd,"eis"); //eis
 	cmd = dcmd(cmd,"hind"); //hindsight
 	cmd = dcmd(cmd,"dur"); //duration
@@ -1033,7 +1043,6 @@ function startTime() {
 			cmd = dcmd(cmd,"bit"); //bitrate control
 		}
 	}
-	
 	
 	
 	if(document.getElementById("options") !== null)
