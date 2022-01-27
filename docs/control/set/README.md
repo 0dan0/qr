@@ -16,8 +16,8 @@
   <div id="qrcode"></div>
   QR Command: <b id="qrtext"></b>
 </div>
-<br>
 <button id="copyImg">Copy Image to Clipboard</button>
+<br>
 
 Manual Command: <input type="text" style="width: 500px;" id="addcmd" value="">
  
