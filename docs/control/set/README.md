@@ -2,7 +2,7 @@
 
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
-<script src="../../html2canvas.js"></script>
+<script src="../../html2canvas.min.js"></script>
 <style>
         #qrcode{
             width: 100%;
@@ -24,7 +24,7 @@ Share this QR Code as: <b id="urltext"></b>    <button id="copyBtn">Copy to Clip
 More [GoPro Labs QR Controls](..)
 
 
-## version 1.05
+## version 1.06
 
 <script>
 var changed = false;
