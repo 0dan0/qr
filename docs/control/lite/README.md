@@ -1024,22 +1024,39 @@ function startTime() {
 			cmd = dcmd(cmd,"br"); //bitrate
 			cmd = dcmd(cmd,"wb"); //wb
 
-			if(document.getElementById('iso8').checked === false || document.getElementById('isomin8').checked === false)
+			if(document.getElementById('iso8').checked === false)
 			{
 				cmd = dcmd(cmd,"iso"); //iso max
+				if(document.getElementById('isomin8').checked === false)
+				{
+					cmd = dcmd(cmd,"isomin");//iso min
+					if(document.getElementById('shut7').checked === false)
+					{
+						cmd = dcmd(cmd,"iso"); //iso max
+						cmd = dcmd(cmd,"shut"); //shutter angle
+					}
+				}
+				else if(document.getElementById('shut7').checked === false)
+				{
+					cmd = dcmd(cmd,"shut"); //shutter angle
+				}
+			} 
+			else if(document.getElementById('isomin8').checked === false)
+			{
+				cmd = cmd + "i64"; //ADD fake ISO max
 				cmd = dcmd(cmd,"isomin");//iso min
 				if(document.getElementById('shut7').checked === false)
 				{
-					cmd = dcmd(cmd,"iso"); //iso max
+					cmd = cmd + "i64"; //ADD fake max
 					cmd = dcmd(cmd,"shut"); //shutter angle
 				}
 			}
 			else if(document.getElementById('shut7').checked === false)
 			{
-				cmd = cmd + "i64"; //ADD 
+				cmd = cmd + "i64"; //ADD fake ISO max
 				cmd = dcmd(cmd,"shut"); //shutter angle				
 			}
-				
+								
 			cmd = dcmd(cmd,"ev"); //ev
 			cmd = dcmd(cmd,"sharp"); //sharp
 			cmd = dcmd(cmd,"aud"); //audio control
