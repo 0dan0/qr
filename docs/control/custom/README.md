@@ -522,6 +522,7 @@ Share this QR Code as a URL: <b id="urltext"></b>
 updated: Jan 27, 2022
 
 <script>
+var clipcopy = "";
 var lastcmd = "";
 var lasttimecmd = "xxxxxxxxx";
 var changed = false;
@@ -1365,7 +1366,8 @@ function startTime() {
 		if(cmd != lasttimecmd)
 		{
 			document.getElementById('txt').innerHTML = cmd;	
-			document.getElementById("urltext").innerHTML = "https://gopro.github.io/labs/control/set/?cmd=" + cmd;			
+			clipcopy = "https://gopro.github.io/labs/control/set/?cmd=" + cmd;	
+			document.getElementById("urltext").innerHTML = clipcopy;				
 			lasttimecmd = cmd;
 		}		
 		
@@ -1426,7 +1428,22 @@ function myReloadFunction() {
 }
 
 
+async function copyTextToClipboard(text) {
+	try {
+		await navigator.clipboard.writeText(text);
+	} catch(err) {
+		alert('Error in copying text: ', err);
+	}
+}
+
+function setupButtons() {	
+    document.getElementById("copyBtn").onclick = function() { 
+        copyTextToClipboard(clipcopy);
+	}
+}
+	
 makeQR();
+setupButtons();
 startTime();
 
 </script>
