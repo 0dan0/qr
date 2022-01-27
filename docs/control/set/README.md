@@ -26,7 +26,7 @@ Share this QR Code as: <b id="urltext"></b>    <button id="copyBtn">Copy to Clip
 More [GoPro Labs QR Controls](..)
 
 
-## version 1.06
+## version 1.07
 
 <script>
 var changed = false;
@@ -149,7 +149,7 @@ async function copyTextToClipboard(text) {
 }
 
 async function copyImageToClipboard() {
-    html2canvas(document.querySelector("#qrcode")).then(canvas => canvas.toBlob(blob => navigator.clipboard.write([new ClipboardItem({'image/png': blob})])));
+    html2canvas(document.querySelector("#qrcode_txt")).then(canvas => canvas.toBlob(blob => navigator.clipboard.write([new ClipboardItem({'image/png': blob})])));
 }
 
 
