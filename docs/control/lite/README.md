@@ -1350,16 +1350,19 @@ function myReloadFunction() {
     location.reload();
 }
 
+async function copyTextToClipboard(text) {
+	try {
+		await navigator.clipboard.writeText(text);
+		alert('Text copied to clipboard');
+	} catch(err) {
+		alert('Error in copying text: ', err);
+	}
+}
+
 function setupButtons() {	
-    document.getElementById("copyBtn").onclick = function() {
-	  let text = document.getElementById("textId").value;
-	  navigator.clipboard.writeText(text)
-		.then(() => {
-		  alert('Text copied to clipboard');
-		})
-		.catch(err => {
-		  alert('Error in copying text: ', err);
-		});
+    document.getElementById("copyBtn").onclick = function() { 
+		let text = document.getElementById("urltext").value;
+        copyTextToClipboard(text);
 	}
 }
 	
