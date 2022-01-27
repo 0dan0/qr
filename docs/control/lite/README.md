@@ -537,7 +537,7 @@ Additional Commands: <input type="text" id="addcmd" value="">
 
 GoPro QR Command: <b id="txt"></b>
 
-Share this QR Code as a URL: <b id="urltext"></b>  <button id="copyBtn">Copy URL to Clipboard</button>
+Share this QR Code as a URL: <b id="urltext"></b>  <button id="copyBtn">Copy to Clipboard</button>
 
 <button onclick="myReloadFunction()">Reset page</button>
 
@@ -549,6 +549,7 @@ Share this QR Code as a URL: <b id="urltext"></b>  <button id="copyBtn">Copy URL
 updated: Jan 26, 2022
 
 <script>
+var clipcopy = "";
 var lastcmd = "";
 var lasttimecmd = "xxxxxxxxx";
 var changed = false;
@@ -1290,7 +1291,8 @@ function startTime() {
 		if(cmd != lasttimecmd)
 		{
 			document.getElementById('txt').innerHTML = cmd;	
-			document.getElementById("urltext").innerHTML = "https://gopro.github.io/labs/control/set/?cmd=" + cmd;			
+			clipcopy = "https://gopro.github.io/labs/control/set/?cmd=" + cmd;	
+			document.getElementById("urltext").innerHTML = clipcopy;			
 			lasttimecmd = cmd;
 		}		
 		
@@ -1353,7 +1355,6 @@ function myReloadFunction() {
 async function copyTextToClipboard(text) {
 	try {
 		await navigator.clipboard.writeText(text);
-		alert('Text copied to clipboard');
 	} catch(err) {
 		alert('Error in copying text: ', err);
 	}
@@ -1361,8 +1362,7 @@ async function copyTextToClipboard(text) {
 
 function setupButtons() {	
     document.getElementById("copyBtn").onclick = function() { 
-		let text = document.getElementById("urltext").value;
-        copyTextToClipboard(text);
+        copyTextToClipboard(clipcopy);
 	}
 }
 	
