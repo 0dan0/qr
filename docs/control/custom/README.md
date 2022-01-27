@@ -739,49 +739,40 @@ function startTime() {
 		
 	if(document.getElementById("pt") !== null)
 	{
+		if(document.getElementById("pt").checked === true)
+			dset("settingsPTR", true);
+		
 		if(document.getElementById("pt").checked === true && document.getElementById("ptr").checked === false)
 		{
-			cmd = dcmd(cmd,"ptc"); //color
-			cmd = dcmd(cmd,"br"); //bitrate
-			cmd = dcmd(cmd,"wb"); //wb
+			dset("ptCOLOR", true);
+			dset("ptBITRATE", true);
+			dset("ptWBAL", true);
+			dset("ptISO",true);
+			dset("ptIMIN",true);
+			dset("ptSHUT",true);
 
-			if(document.getElementById('iso8').checked === false)
+			if(document.getElementById('iso8').checked === true)
 			{
-				cmd = dcmd(cmd,"iso"); //iso max
-				if(document.getElementById('isomin8').checked === false)
-				{
-					cmd = dcmd(cmd,"isomin");//iso min
-					if(document.getElementById('shut7').checked === false)
-					{
-						cmd = dcmd(cmd,"iso"); //iso max
-						cmd = dcmd(cmd,"shut"); //shutter angle
-					}
-				}
-				else if(document.getElementById('shut7').checked === false)
-				{
-					cmd = dcmd(cmd,"shut"); //shutter angle
-				}
-			} 
-			else if(document.getElementById('isomin8').checked === false)
+				//dset("ptSHUT",false);
+				dset("ptEV",true);
+			}
+			else
 			{
-				cmd = cmd + "i64"; //ADD fake ISO max
-				cmd = dcmd(cmd,"isomin");//iso min
-				if(document.getElementById('shut7').checked === false)
-				{
-					cmd = cmd + "i64"; //ADD fake max
-					cmd = dcmd(cmd,"shut"); //shutter angle
+				//dset("ptSHUT",true);
+
+				if(document.getElementById('shut7').checked === true || document.getElementById('shut6').checked === true) 
+				{  // not shutter lock
+					dset("ptEV",true);
 				}
 			}
-			else if(document.getElementById('shut7').checked === false)
+			
+			if(checkedmode >= 1 && checkedmode <= 10) //Video
 			{
-				cmd = cmd + "i64"; //ADD fake ISO max
-				cmd = dcmd(cmd,"shut"); //shutter angle				
+				dset("ptAUD",true);
 			}
-								
-			cmd = dcmd(cmd,"ev"); //ev
-			cmd = dcmd(cmd,"sharp"); //sharp
-			cmd = dcmd(cmd,"aud"); //audio control
-			cmd = dcmd(cmd,"bit"); //bitrate control
+				
+			dset("ptSHARP",true);
+			dset("ptAUD",true);
 		}
 	}
 	
