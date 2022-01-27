@@ -576,6 +576,7 @@ function startTime() {
 	dset("settingsDuration", false);
 	dset("settingsPhotoRAW", false);
 	dset("settingsPT", false);
+	dset("settingsPTR", false);
 	dset("spotMeter", false);
 	dset("settingsBurst", false);
 	dset("settingsTimewarp", false);
