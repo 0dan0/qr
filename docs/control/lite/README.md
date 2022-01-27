@@ -1026,12 +1026,18 @@ function startTime() {
 
 			if(document.getElementById('iso8').checked === false || document.getElementById('isomin8').checked === false)
 			{
-				cmd = dcmd(cmd,"iso"); //iso
-				
+				cmd = dcmd(cmd,"iso"); //iso max
+				cmd = dcmd(cmd,"isomin");//iso min
 				if(document.getElementById('shut7').checked === false)
+				{
+					cmd = dcmd(cmd,"iso"); //iso max
 					cmd = dcmd(cmd,"shut"); //shutter angle
-				else
-					cmd = dcmd(cmd,"isomin");//
+				}
+			}
+			else if(document.getElementById('shut7').checked === false)
+			{
+				cmd = cmd + "i64"; //ADD 
+				cmd = dcmd(cmd,"shut"); //shutter angle				
 			}
 				
 			cmd = dcmd(cmd,"ev"); //ev
