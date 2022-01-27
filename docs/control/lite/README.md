@@ -198,7 +198,7 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 </div>
 
 <div id="settingsNightexposure">
-<b>Night Exposure:</b>&nbsp;&nbsp;
+<b>Shutter:</b>&nbsp;&nbsp;
   <input type="radio" id="nightexp1" name="nightexp" value="eA" > <label for="nightexp1">auto </label>&nbsp;&nbsp;
   <input type="radio" id="nightexp2" name="nightexp" value="e2" > <label for="nightexp2">2s </label>&nbsp;&nbsp;
   <input type="radio" id="nightexp3" name="nightexp" value="e5" > <label for="nightexp3">5s </label>&nbsp;&nbsp;
@@ -773,16 +773,17 @@ function startTime() {
 			dset("ptBITRATE", true);
 			dset("ptWBAL", true);
 			dset("ptISO",true);
-			dset("ptIMIN",true);
+			dset("ptIMIN",true);{
+			dset("ptSHUT",true);
 
 			if(document.getElementById('iso8').checked === true)
 			{
-				dset("ptSHUT",false);
+				//dset("ptSHUT",false);
 				dset("ptEV",true);
 			}
 			else
 			{
-				dset("ptSHUT",true);
+				//dset("ptSHUT",true);
 
 				if(document.getElementById('shut7').checked === true || document.getElementById('shut6').checked === true) 
 				{  // not shutter lock
