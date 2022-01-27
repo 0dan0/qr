@@ -23,7 +23,7 @@ Share this QR Code as: <b id="urltext"></b>    <button id="copyBtn">Copy to Clip
 More [GoPro Labs QR Controls](..)
 
 
-## version 1.04
+## version 1.05
 
 <script>
 var changed = false;
@@ -69,11 +69,11 @@ function updateTime()
 		if(letter == '.')
 		{
 			newtimetxt = newtimetxt + "." + ms;
-			cmd = src_cmd.slice(0,position) + newtimetxt + src_cmd.slice(position+17);
+			cmd = src_cmd.slice(0,position+2) + newtimetxt + src_cmd.slice(position+17);
 		}
 		else
 		{
-			cmd = src_cmd.slice(0,position) + newtimetxt + src_cmd.slice(position+14);
+			cmd = src_cmd.slice(0,position+2) + newtimetxt + src_cmd.slice(position+14);
 		}    	
 	}
 
