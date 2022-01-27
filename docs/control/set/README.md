@@ -12,10 +12,12 @@
             display: inline-block;
         }
 </style>
-      
-<div id="qrcode"></div><button id="copyImg">Copy Image to Clipboard</button>
-	  
-QR Command: <b id="qrtext"></b><br>
+<div id="qrcode_txt">
+  <div id="qrcode"></div>
+  QR Command: <b id="qrtext"></b>
+</div>
+<br>
+<button id="copyImg">Copy Image to Clipboard</button>
 
 Manual Command: <input type="text" style="width: 500px;" id="addcmd" value="">
  
