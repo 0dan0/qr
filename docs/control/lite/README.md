@@ -537,7 +537,7 @@ Additional Commands: <input type="text" id="addcmd" value="">
 
 GoPro QR Command: <b id="txt"></b>
 
-Share this QR Code as a URL: <b id="urltext"></b> 
+Share this QR Code as a URL: <b id="urltext"></b>  <button id="copyBtn">Copy URL to Clipboard</button>
 
 <button onclick="myReloadFunction()">Reset page</button>
 
@@ -585,7 +585,7 @@ function startTime() {
 	var timecodefps = 30;
 	var cmd = "";
 	var timenotchecked;
-		
+	
 	dset("settingsRES", false);
 	dset("noteMODE", false);
 	dset("settingsFPS", false);
@@ -1350,8 +1350,21 @@ function myReloadFunction() {
     location.reload();
 }
 
-
+function setupButtons() {	
+    document.getElementById("copyBtn").onclick = function() {
+	  let text = document.getElementById("textId").value;
+	  navigator.clipboard.writeText(text)
+		.then(() => {
+		  alert('Text copied to clipboard');
+		})
+		.catch(err => {
+		  alert('Error in copying text: ', err);
+		});
+	}
+}
+	
 makeQR();
+setupButtons();
 startTime();
 
 </script>
