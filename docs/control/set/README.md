@@ -12,7 +12,7 @@
         }
 </style>
       
-<div id="qrcode"></div>
+<div id="qrcode"></div><button id="copyImg">Copy Image to Clipboard</button>
 	  
 QR Command: <b id="qrtext"></b><br>
 
@@ -23,7 +23,7 @@ Share this QR Code as: <b id="urltext"></b>    <button id="copyBtn">Copy to Clip
 More [GoPro Labs QR Controls](..)
 
 
-## version 1.05
+## version 1.06
 
 <script>
 var changed = false;
@@ -79,6 +79,7 @@ function updateTime()
 
 	document.getElementById("qrtext").innerHTML = cmd;
 }
+
 
 function makeQR() 
 {	
@@ -136,6 +137,22 @@ function myReloadFunction() {
 }
 
 
+function copyImage() {
+  var imgCap = document.getElementById('qrcode');
+  var imgCanvas = document.createElement('canvas');
+
+  imgCanvas.id = 'imgCanvas';
+  imgCanvas.height = 360;
+  imgCanvas.width = 360;
+
+  document.body.appendChild(imgCanvas);
+  var originalContext = imgCanvas.getContext('2d');
+  originalContext.drawImage(imgCap, 0, 0);
+
+  return imgCanvas.toDataURL();
+}
+
+
 async function copyTextToClipboard(text) {
 	try {
 		await navigator.clipboard.writeText(text);
@@ -148,6 +165,12 @@ function setupButtons() {
     document.getElementById("copyBtn").onclick = function() { 
         copyTextToClipboard(clipcopy);
 	};
+	
+    document.getElementById("copyImg").onclick = function() { 
+        copyTextToClipboard(copyImage());
+	};
+	
+	
 }
 	
 makeQR();
