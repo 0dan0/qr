@@ -773,7 +773,7 @@ function startTime() {
 			dset("ptBITRATE", true);
 			dset("ptWBAL", true);
 			dset("ptISO",true);
-			dset("ptIMIN",true);{
+			dset("ptIMIN",true);
 			dset("ptSHUT",true);
 
 			if(document.getElementById('iso8').checked === true)
