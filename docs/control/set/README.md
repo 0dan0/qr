@@ -17,16 +17,17 @@
 QR Command: <b id="qrtext"></b><br>
 
 Manual Command: <input type="text" style="width: 500px;" id="addcmd" value="">
-
-Share this QR Code as: <b id="urltext"></b> 
+ 
+Share this QR Code as: <b id="urltext"></b>    <button id="copyBtn">Copy to Clipboard</button>
 
 More [GoPro Labs QR Controls](..)
 
 
-## version 1.03
+## version 1.04
 
 <script>
        
+var clipcopy = "";
 var once = true;
 var qrcode;
 var cmd = "\"Hello World\"";
@@ -116,7 +117,8 @@ function timeLoop()
   if(changed === true)
   {
 	document.getElementById("qrtext").innerHTML = cmd;
-	document.getElementById("urltext").innerHTML = window.location.href.split('?')[0] + "?cmd=" + cmd;
+	clipcopy = window.location.href.split('?')[0] + "?cmd=" + cmd;
+	document.getElementById("urltext").innerHTML = clipcopy;
 
 	changed = false;
   }
@@ -133,7 +135,23 @@ function myReloadFunction() {
   location.reload();
 }
 
+
+async function copyTextToClipboard(text) {
+	try {
+		await navigator.clipboard.writeText(text);
+	} catch(err) {
+		alert('Error in copying text: ', err);
+	}
+}
+
+function setupButtons() {	
+    document.getElementById("copyBtn").onclick = function() { 
+        copyTextToClipboard(clipcopy);
+	}
+}
+	
 makeQR();
+setupButtons();
 timeLoop();
 
 </script>
