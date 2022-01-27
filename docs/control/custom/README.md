@@ -14,8 +14,8 @@
 
 Create a custom camera mode, and even start a capture all through QR Codes. This is the fastest way to access many of the new GoPro Labs' firmware features. 
 **†** indicates the control requires HERO10 Labs 1.20 or better. Many features of this page are also available as a mobile app<br>
-[![google play](../google-play-small.png)](https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
-[![apple app store](../apple-store-small.png)](https://apps.apple.com/us/app/gopro-app/id1518134202)
+&nbsp;&nbsp;&nbsp;&nbsp;[![google play](../google-play-small.png)](https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
+&nbsp;&nbsp;[![apple app store](../apple-store-small.png)](https://apps.apple.com/us/app/gopro-app/id1518134202)
 
 <b>Camera Mode:</b>&nbsp;&nbsp;<input type="radio" id="m19" name="mode" value="" checked> <label for="m19">not set</label><br>
   <input type="radio" id="m1" name="mode" value="mV"> <label  for="m1">Video </label>&nbsp;&nbsp;
