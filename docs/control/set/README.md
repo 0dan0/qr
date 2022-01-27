@@ -26,7 +26,7 @@ More [GoPro Labs QR Controls](..)
 ## version 1.04
 
 <script>
-       
+var changed = false;
 var clipcopy = "";
 var once = true;
 var qrcode;
@@ -147,7 +147,7 @@ async function copyTextToClipboard(text) {
 function setupButtons() {	
     document.getElementById("copyBtn").onclick = function() { 
         copyTextToClipboard(clipcopy);
-	}
+	};
 }
 	
 makeQR();
