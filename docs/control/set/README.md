@@ -23,9 +23,8 @@
  </td><br>
 <button id="copyImg">Copy Image to Clipboard</button>
 
-Manual Command: <input type="text" style="width: 500px;" id="addcmd" value="">
- 
-Share this QR Code as: <b id="urltext"></b>    <button id="copyBtn">Copy to Clipboard</button>
+<!-- Manual Command: <input type="text" style="width: 500px;" id="addcmd" value="">
+Share this QR Code as: <b id="urltext"></b>  -->
 
 More [GoPro Labs QR Controls](..)
 
@@ -114,12 +113,12 @@ function timeLoop()
   qrcode.clear(); 
   qrcode.makeCode(cmd);
   
-  if(document.getElementById("addcmd") !== null)
-  {
-	var addcmd = document.getElementById("addcmd").value;
-	if(addcmd.length > 0)
-		cmd = addcmd;
-  }	
+//  if(document.getElementById("addcmd") !== null)
+//  {
+//	var addcmd = document.getElementById("addcmd").value;
+//	if(addcmd.length > 0)
+//		cmd = addcmd;
+//  }	
   
   if(cmd != lasttimecmd)
   {
@@ -163,10 +162,6 @@ async function copyImageToClipboard() {
 
 
 function setupButtons() {	
-    document.getElementById("copyBtn").onclick = function() { 
-        copyTextToClipboard(clipcopy);
-	};
-	
     document.getElementById("copyImg").onclick = function() { 
         copyImageToClipboard();
 	};
