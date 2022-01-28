@@ -192,13 +192,14 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
   <input type="radio" id="fpsnight3" name="fpsnight" value="p.5"  >  <label for="fpsnight3">5s </label>&nbsp;&nbsp;
   <input type="radio" id="fpsnight4" name="fpsnight" value="p.10"  > <label for="fpsnight4">10s </label>&nbsp;&nbsp;
   <input type="radio" id="fpsnight5" name="fpsnight" value="p.15"  > <label for="fpsnight5">15s </label>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight6" name="fpsnight" value="p.30"  > <label for="fpsnight6">30s </label>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight7" name="fpsnight" value="p.60"  > <label for="fpsnight7">60s </label><br>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight8" name="fpsnight" value="p.120" > <label for="fpsnight8">2min </label>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight9" name="fpsnight" value="p.300" > <label for="fpsnight9">5min </label>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight10" name="fpsnight" value="p.1800"> <label for="fpsnight10">30min </label>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight11" name="fpsnight" value="p.3600"> <label for="fpsnight11">60min </label>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight12" name="fpsnight" value="" checked> <label for="fpsnight12">not set</label><br><br>
+  <input type="radio" id="fpsnight6" name="fpsnight" value="p.20"  > <label for="fpsnight6">20s </label>&nbsp;&nbsp;
+  <input type="radio" id="fpsnight7" name="fpsnight" value="p.30"  > <label for="fpsnight7">30s </label>&nbsp;&nbsp;
+  <input type="radio" id="fpsnight8" name="fpsnight" value="p.60"  > <label for="fpsnight8">60s </label><br>&nbsp;&nbsp;
+  <input type="radio" id="fpsnight9" name="fpsnight" value="p.120" > <label for="fpsnight9">2min </label>&nbsp;&nbsp;
+  <input type="radio" id="fpsnight10" name="fpsnight" value="p.300" > <label for="fpsnight10">5min </label>&nbsp;&nbsp;
+  <input type="radio" id="fpsnight11" name="fpsnight" value="p.1800"> <label for="fpsnight11">30min </label>&nbsp;&nbsp;
+  <input type="radio" id="fpsnight12" name="fpsnight" value="p.3600"> <label for="fpsnight12">60min </label>&nbsp;&nbsp;
+  <input type="radio" id="fpsnight13" name="fpsnight" value="" checked> <label for="fpsnight13">not set</label><br><br>
 </div>
 
 <div id="settingsNightexposure">
