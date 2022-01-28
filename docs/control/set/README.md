@@ -30,7 +30,7 @@ Share this QR Code as: <b id="urltext"></b>  -->
 More [GoPro Labs QR Controls](..)
 
 
-## version 1.06
+## version 1.07
 
 <script>
 var changed = false;
@@ -130,7 +130,7 @@ function timeLoop()
   {
 	document.getElementById("qrtext").innerHTML = cmd;
 	clipcopy = window.location.href.split('?')[0] + "?cmd=" + cmdnotime;
-	document.getElementById("urltext").innerHTML = clipcopy;
+	//document.getElementById("urltext").innerHTML = clipcopy;
 
 	changed = false;
   }
