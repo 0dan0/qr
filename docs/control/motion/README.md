@@ -32,7 +32,7 @@ While your GoPro camera is not equipped with ultra sonic or another motion senso
 <label for="h10lcd">Set LCD brightness to low (10%)</label><br>
 
 <input type="checkbox" id="h10lcdon" name="h10lcdon"> 
-<label for="h10lcdon">Leave LCD on</label><br>
+<label for="h10lcdon">Leave LCD on</label> (Required on HERO10)<br>
 
 <input type="checkbox" id="repeat" name="repeat" checked> 
 <label for="repeat">Repeat motion capture.</label><br>
