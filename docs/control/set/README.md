@@ -12,7 +12,7 @@
             display: inline-block;
         }
 </style>
-<table>
+<table border="0">
 <tbody>
 <tr>
 <td width="500">div id="qrcode_txt" style="width:500;">
