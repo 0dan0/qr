@@ -28,6 +28,10 @@ While your GoPro camera is not equipped with ultra sonic or another motion senso
 <label for="h10lcd">Set LCD brightness to low (10%)</label><br>
 <br>
 
+<input type="checkbox" id="h10lcdon" name="h10lcdon"> 
+<label for="h10lcd">Leave LCD on</label><br>
+<br>
+
 <input type="checkbox" id="repeat" name="repeat" checked> 
 <label for="repeat">Repeat motion capture.</label><br>
 
@@ -75,7 +79,7 @@ The motion detection will now always use the mask.pgm, so using motion mask opti
 	
 **Compatibility:** Labs enabled HERO7, HERO8, HERO9, HERO10 and MAX.  Masking fixed on HERO9 & 10.
         
-## ver 1.07
+## ver 1.08
 [Learn more](..) on QR Control
 
 <script>
@@ -85,6 +89,7 @@ var cmd = "oC";
 var lasttimecmd = "";
 var changed = true;
 var h10lcdlow = "oB1";
+var h10lcdon = "oS";
 
 function dcmd(cmd, id) {
     var x;
@@ -155,9 +160,13 @@ function timeLoop()
     }
 
     // Hero10 LCD set to low
-
     if(document.getElementById("h10lcd") != null && document.getElementById("h10lcd").checked) {
         cmd = cmd + h10lcdlow;
+    }
+	
+    // Hero10 LCD timeout to Never
+    if(document.getElementById("h10lcdon") != null && document.getElementById("h10lcdon").checked) {
+        cmd = cmd + h10lcdlowon;
     }
     
   }
