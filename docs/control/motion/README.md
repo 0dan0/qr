@@ -173,11 +173,11 @@ function timeLoop()
     }
     // Hero10 LCD set to low
     if(document.getElementById("h10lcd") != null && document.getElementById("h10lcd").checked) {
-        cmd = cmd + h10lcdlow;
+        cmd = h10lcdlow + cmd;
     }
     // Hero10 LCD timeout to Never
     if(document.getElementById("h10lcdon") != null && document.getElementById("h10lcdon").checked) {
-        cmd = cmd + h10lcdon;
+        cmd = h10lcdon + cmd;
     }    
   }
   
