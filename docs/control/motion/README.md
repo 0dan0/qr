@@ -2,6 +2,7 @@
 
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
+<script src="../../html2canvas.min.js"></script>
 <style>
         #qrcode{
             width: 100%;
@@ -26,11 +27,9 @@ While your GoPro camera is not equipped with ultra sonic or another motion senso
 
 <input type="checkbox" id="h10lcd" name="h10lcd"> 
 <label for="h10lcd">Set LCD brightness to low (10%)</label><br>
-<br>
 
 <input type="checkbox" id="h10lcdon" name="h10lcdon"> 
 <label for="h10lcd">Leave LCD on</label><br>
-<br>
 
 <input type="checkbox" id="repeat" name="repeat" checked> 
 <label for="repeat">Repeat motion capture.</label><br>
@@ -38,11 +37,16 @@ While your GoPro camera is not equipped with ultra sonic or another motion senso
 Note: you will have to manually set the mode in which you capture.  Motion detection works is in video, TimeWarp and Timelapse Video modes. 
  
 <center>
-<div id="qrcode"></div>
-<br>
+<div id="qrcode_txt" style="width: 360px">
+ <center>
+  <div id="qrcode"></div><br>
+  <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em>
+ </center>
+</div>
+<br><button id="copyImg">Copy Image to Clipboard</button>
 </center>
-
-QR Command: <b id="qrtext">time</b><br>
+<br>
+Share this QR Code as a URL: <b id="urltext"></b>   <button id="copyBtn">Copy to Clipboard</button>
 
 ## Limitations
 
@@ -86,6 +90,7 @@ The motion detection will now always use the mask.pgm, so using motion mask opti
 var once = true;
 var qrcode;
 var cmd = "oC";
+var clipcopy = "";
 var lasttimecmd = "";
 var changed = true;
 var h10lcdlow = "oB1";
@@ -166,7 +171,7 @@ function timeLoop()
 	
     // Hero10 LCD timeout to Never
     if(document.getElementById("h10lcdon") != null && document.getElementById("h10lcdon").checked) {
-        cmd = cmd + h10lcdlowon;
+        cmd = cmd + h10lcdon;
     }
     
   }
@@ -183,6 +188,10 @@ function timeLoop()
   if(changed === true)
   {
 	document.getElementById("qrtext").innerHTML = cmd;
+	
+	clipcopy = "https://gopro.github.io/labs/control/set/?cmd=" + cmd;	
+	document.getElementById("urltext").innerHTML = clipcopy;				
+			
 	changed = false;
   }
   
@@ -193,7 +202,29 @@ function myReloadFunction() {
   location.reload();
 }
 
+
+async function copyImageToClipboard() {
+    html2canvas(document.querySelector("#qrcode_txt")).then(canvas => canvas.toBlob(blob => navigator.clipboard.write([new ClipboardItem({'image/png': blob})])));
+}
+async function copyTextToClipboard(text) {
+	try {
+		await navigator.clipboard.writeText(text);
+	} catch(err) {
+		alert('Error in copying text: ', err);
+	}
+}
+
+function setupButtons() {	
+    document.getElementById("copyBtn").onclick = function() { 
+        copyTextToClipboard(clipcopy);
+	};
+    document.getElementById("copyImg").onclick = function() { 
+        copyImageToClipboard();
+	};
+}
+	
 makeQR();
+setupButtons();
 timeLoop();
 
 
