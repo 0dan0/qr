@@ -157,13 +157,13 @@ async function copyTextToClipboard(text) {
 }
 
 async function copyImageToClipboard() {
+	qrcode.makeCode(cmdnotime);
     html2canvas(document.querySelector("#qrcode_txt")).then(canvas => canvas.toBlob(blob => navigator.clipboard.write([new ClipboardItem({'image/png': blob})])));
 }
 
 
 function setupButtons() {	
     document.getElementById("copyImg").onclick = function() { 
-		qrcode.makeCode(cmdnotime);
         copyImageToClipboard();
 	};	
 }
