@@ -12,14 +12,14 @@
             display: inline-block;
         }
 </style>
-<table border="0">
+
+<table>
 <tbody>
 <tr>
-<td width="500">div id="qrcode_txt" style="width:500;">
-  <div id="qrcode"></div>
-  <b><font color="#009FDF">GoPro</font><font color="#005DAC">QR:</font></b> <p id="qrtext"></p>
+<td width="500"><div id="qrcode_txt" style="width:500;"><div id="qrcode"></div><br>
+  <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em>
 </div></td>
-<td><button id="copyImg">Copy Image to Clipboard</button></td>
+<td width="75%"><button id="copyImg">Copy Image to Clipboard</button></td>
 </tr>
 </tbody>
 </table>
@@ -31,7 +31,7 @@ Share this QR Code as: <b id="urltext"></b>    <button id="copyBtn">Copy to Clip
 More [GoPro Labs QR Controls](..)
 
 
-## version 1.06
+## version 1.07
 
 <script>
 var changed = false;
@@ -39,6 +39,7 @@ var clipcopy = "";
 var once = true;
 var qrcode;
 var cmd = "\"Hello World\"";
+var cmdnotime = "";
 var cmdurl;
 var lasttimecmd = ""; 
 let urlParams = new URLSearchParams(document.location.search);
@@ -49,6 +50,8 @@ if(cmdurl !== null)
 function updateTime()
 {
 	let position = cmd.search(/oT/);
+	
+	cmdnotime = cmd;
 	if(position >= 0)
 	{
 		var src_cmd = cmd;
@@ -78,10 +81,12 @@ function updateTime()
 		{
 			newtimetxt = newtimetxt + "." + ms;
 			cmd = src_cmd.slice(0,position+2) + newtimetxt + src_cmd.slice(position+17);
+			cmdnotime = src_cmd.slice(0,position) + src_cmd.slice(position+17);
 		}
 		else
 		{
 			cmd = src_cmd.slice(0,position+2) + newtimetxt + src_cmd.slice(position+14);
+			cmdnotime = src_cmd.slice(0,position) + src_cmd.slice(position+14);
 		}    	
 	}
 
@@ -126,7 +131,7 @@ function timeLoop()
   if(changed === true)
   {
 	document.getElementById("qrtext").innerHTML = cmd;
-	clipcopy = window.location.href.split('?')[0] + "?cmd=" + cmd;
+	clipcopy = window.location.href.split('?')[0] + "?cmd=" + cmdnotime;
 	document.getElementById("urltext").innerHTML = clipcopy;
 
 	changed = false;
