@@ -19,10 +19,10 @@
 <div id="qrcode_txt" style="width: 460px">
  <center>
   <div id="qrcode"></div><br>
-   <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em>
-  </div>
- </center><br>
-<button id="copyImg">Copy Image to Clipboard</button>
+  <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em>
+ </center>
+</div>
+<br><button id="copyImg">Copy Image to Clipboard</button>
 
 <!-- Manual Command: <input type="text" style="width: 500px;" id="addcmd" value="">
 Share this QR Code as: <b id="urltext"></b>  -->
