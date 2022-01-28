@@ -16,11 +16,12 @@
 		}
 </style>
 
-<div id="qrcode_txt" style="width: 500px">
+<div id="qrcode_txt" style="width: 460px">
+ <center>
   <div id="qrcode"></div><br>
    <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em>
   </div>
- </td><br>
+ </center><br>
 <button id="copyImg">Copy Image to Clipboard</button>
 
 <!-- Manual Command: <input type="text" style="width: 500px;" id="addcmd" value="">
@@ -29,7 +30,7 @@ Share this QR Code as: <b id="urltext"></b>  -->
 More [GoPro Labs QR Controls](..)
 
 
-## version 1.06
+## version 1.07
 
 <script>
 var changed = false;
