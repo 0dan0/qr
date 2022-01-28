@@ -12,12 +12,17 @@
             display: inline-block;
         }
 </style>
-<div id="qrcode_txt" style="width:500;">
+<table>
+<tbody>
+<tr>
+<td><div id="qrcode_txt" style="width:500;">
   <div id="qrcode"></div>
-  <p style="color:blue">GoProQR: <b id="qrtext"></b></p>
-</div>
-<button id="copyImg">Copy Image to Clipboard</button>
-<br>
+  <font color="#009FDF">GoPro</font><font color="#005DAC">QR:</font> <b id="qrtext"></b>
+</div></td>
+<td><button id="copyImg">Copy Image to Clipboard</button></td>
+</tr>
+</tbody>
+</table>
 
 Manual Command: <input type="text" style="width: 500px;" id="addcmd" value="">
  
