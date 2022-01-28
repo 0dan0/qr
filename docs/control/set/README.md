@@ -15,9 +15,9 @@
 <table>
 <tbody>
 <tr>
-<td><div id="qrcode_txt" style="width:500;">
+<td width="500">div id="qrcode_txt" style="width:500;">
   <div id="qrcode"></div>
-  <font color="#009FDF">GoPro</font><font color="#005DAC">QR:</font> <b id="qrtext"></b>
+  <b><font color="#009FDF">GoPro</font><font color="#005DAC">QR:</font></b> <p id="qrtext"></p>
 </div></td>
 <td><button id="copyImg">Copy Image to Clipboard</button></td>
 </tr>
@@ -31,7 +31,7 @@ Share this QR Code as: <b id="urltext"></b>    <button id="copyBtn">Copy to Clip
 More [GoPro Labs QR Controls](..)
 
 
-## version 1.07
+## version 1.06
 
 <script>
 var changed = false;
