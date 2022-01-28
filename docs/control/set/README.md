@@ -163,6 +163,7 @@ async function copyImageToClipboard() {
 
 function setupButtons() {	
     document.getElementById("copyImg").onclick = function() { 
+		qrcode.makeCode(cmdnotime);
         copyImageToClipboard();
 	};	
 }
