@@ -25,11 +25,14 @@ While your GoPro camera is not equipped with ultra sonic or another motion senso
 **HERO10 Note:** For motion detection to work on HERO10, the LCD must remain on. For extended motion captures set the LCD brightness to low.  
 
 
+<input type="checkbox" id="camoff" name="camoff"> 
+<label for="camoff">Disable auto power off</label><br>
+
 <input type="checkbox" id="h10lcd" name="h10lcd"> 
 <label for="h10lcd">Set LCD brightness to low (10%)</label><br>
 
 <input type="checkbox" id="h10lcdon" name="h10lcdon"> 
-<label for="h10lcd">Leave LCD on</label><br>
+<label for="h10lcdon">Leave LCD on</label><br>
 
 <input type="checkbox" id="repeat" name="repeat" checked> 
 <label for="repeat">Repeat motion capture.</label><br>
@@ -151,7 +154,7 @@ function timeLoop()
 	var hold = parseInt(document.getElementById("hold").value);	
 	document.getElementById("holdtext").innerHTML = hold;	
 		
-	cmd = "oC" + "!SM" + snstvty;	
+	cmd = "!SM" + snstvty;	
 	if(delay > 0) cmd = cmd + 'D' + delay;
 	if(mask > 0) cmd = cmd + 'M' + mask;
 	if(hold > 0) cmd = cmd + 'H' + hold;	
@@ -164,16 +167,18 @@ function timeLoop()
       }
     }
 
+    // Auto off
+    if(document.getElementById("camoff") != null && document.getElementById("camoff").checked) {
+        cmd = "oC" + cmd;
+    }
     // Hero10 LCD set to low
     if(document.getElementById("h10lcd") != null && document.getElementById("h10lcd").checked) {
         cmd = cmd + h10lcdlow;
     }
-	
     // Hero10 LCD timeout to Never
     if(document.getElementById("h10lcdon") != null && document.getElementById("h10lcdon").checked) {
         cmd = cmd + h10lcdon;
-    }
-    
+    }    
   }
   
   qrcode.clear(); 
