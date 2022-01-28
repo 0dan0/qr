@@ -13,7 +13,7 @@
         }
 </style>
 
-<table>
+<table border="0">
 <tbody>
 <tr>
 <td><div id="qrcode_txt" width="500">
