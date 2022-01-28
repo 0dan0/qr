@@ -38,7 +38,7 @@ var clipcopy = "";
 var once = true;
 var qrcode;
 var cmd = "\"Hello World\"";
-var cmdnotime = "";
+//var cmdnotime = "";
 var cmdurl;
 var lasttimecmd = ""; 
 let urlParams = new URLSearchParams(document.location.search);
@@ -79,12 +79,12 @@ function updateTime()
 		{
 			newtimetxt = newtimetxt + "." + ms;
 			cmd = src_cmd.slice(0,position+2) + newtimetxt + src_cmd.slice(position+17);
-			cmdnotime = src_cmd.slice(0,position) + src_cmd.slice(position+17);
+			//cmdnotime = src_cmd.slice(0,position) + src_cmd.slice(position+17);
 		}
 		else
 		{
 			cmd = src_cmd.slice(0,position+2) + newtimetxt + src_cmd.slice(position+14);
-			cmdnotime = src_cmd.slice(0,position) + src_cmd.slice(position+14);
+			//cmdnotime = src_cmd.slice(0,position) + src_cmd.slice(position+14);
 		}    	
 	}
 
@@ -120,20 +120,19 @@ function timeLoop()
 //		cmd = addcmd;
 //  }	
   
-  if(cmd != lasttimecmd)
-  {
-	changed = true;
-	lasttimecmd = cmd;
-  }
-	
-  if(changed === true)
-  {
-	document.getElementById("qrtext").innerHTML = cmd;
-	clipcopy = window.location.href.split('?')[0] + "?cmd=" + cmdnotime;
-	//document.getElementById("urltext").innerHTML = clipcopy;
-
-	changed = false;
-  }
+//  if(cmd != lasttimecmd)
+//  {
+//	changed = true;
+//	lasttimecmd = cmd;
+//  }
+//	
+//  if(changed === true)
+//  {
+//	document.getElementById("qrtext").innerHTML = cmd;
+//	clipcopy = window.location.href.split('?')[0] + "?cmd=" + cmdnotime;
+//
+//	changed = false;
+//  }
 	
   var t = setTimeout(timeLoop, 100);
 }
@@ -157,7 +156,6 @@ async function copyTextToClipboard(text) {
 }
 
 async function copyImageToClipboard() {
-	qrcode.makeCode(cmdnotime);
     html2canvas(document.querySelector("#qrcode_txt")).then(canvas => canvas.toBlob(blob => navigator.clipboard.write([new ClipboardItem({'image/png': blob})])));
 }
 
