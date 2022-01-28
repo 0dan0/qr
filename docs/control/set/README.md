@@ -1,4 +1,4 @@
-# QR Control Quick Command
+# GoPro QR Command
 
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
@@ -16,7 +16,7 @@
 		}
 </style>
 
-<div id="qrcode_txt" style="width: 460px">
+<div id="qrcode_txt" style="width: 360px">
  <center>
   <div id="qrcode"></div><br>
   <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em>
@@ -30,7 +30,7 @@ Share this QR Code as: <b id="urltext"></b>  -->
 More [GoPro Labs QR Controls](..)
 
 
-## version 1.07
+## version 1.06
 
 <script>
 var changed = false;
@@ -56,7 +56,6 @@ function updateTime()
 		var src_cmd = cmd;
 		var today = new Date();
 		
-		var ms = today.getTime();
 		var	yy = today.getFullYear() - 2000;
 		var	mm = today.getMonth() + 1;
 		var	dd = today.getDate();
@@ -165,9 +164,7 @@ async function copyImageToClipboard() {
 function setupButtons() {	
     document.getElementById("copyImg").onclick = function() { 
         copyImageToClipboard();
-	};
-	
-	
+	};	
 }
 	
 makeQR();
