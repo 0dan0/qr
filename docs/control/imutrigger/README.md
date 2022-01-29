@@ -215,11 +215,11 @@ function timeLoop()
   if(changed === true)
   {
 	document.getElementById("qrtext1").innerHTML = cmd1;
-	clipcopy1 = "https://gopro.github.io/labs/control/set/?cmd=" + cmd1;
+	clipcopy1 = "https://gopro.github.io/labs/control/set/?cmd=" + cmd1 + "&title=IMU%20Trigger";	
 	document.getElementById("urltext1").innerHTML = clipcopy1;
 	
 	document.getElementById("qrtext2").innerHTML = cmd2;
-	clipcopy2 = "https://gopro.github.io/labs/control/set/?cmd=" + cmd2;
+	clipcopy2 = "https://gopro.github.io/labs/control/set/?cmd=" + cmd2 + "&title=Drone%20Boot%20Command%20and%20Trigger";	
 	document.getElementById("urltext2").innerHTML = clipcopy2;
 	
 	changed = false;
