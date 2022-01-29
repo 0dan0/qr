@@ -546,7 +546,6 @@ Additional Commands: <input type="text" id="addcmd" value="">
 <button id="copyImg">Copy Image to Clipboard</button>
 </div>
 <br>
-<br>
 Share this QR Code as a URL: <small id="urltext"></small><br>
 <button id="copyBtn">Copy URL to Clipboard</button>
 <br>
