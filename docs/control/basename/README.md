@@ -41,7 +41,8 @@ Your filenames will be in the format: <b id="newnameMP4">nameGH013607.MP4</b> an
 <div id="qrcode_txt" style="width: 360px">
   <center>
   <div id="qrcode"></div><br>
-  <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em>
+  <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em><br>
+  <b><font color="#005CAC">Base filename change</font>
   </center>
 </div>
 <button id="copyImg">Copy Image to Clipboard</button>
