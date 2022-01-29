@@ -62,7 +62,11 @@ else
 	dset("title_div", false);
 }
 
-dset("button_show", true);
+let hastime = cmd.search(/oT/);
+if(hastime === false)
+	dset("button_show", true);
+else	
+	dset("button_show", false);   // don't what user printing or sharing code with wrong date and time
 
 function updateTime()
 {
@@ -104,8 +108,6 @@ function updateTime()
 			cmd = src_cmd.slice(0,position+2) + newtimetxt + src_cmd.slice(position+14);
 			//cmdnotime = src_cmd.slice(0,position) + src_cmd.slice(position+14);
 		}
-		
-		dset("button_show", false);   // don't what user printing or sharing code with wrong date and time
 	}
 
 	document.getElementById("qrtext").innerHTML = cmd;
@@ -146,26 +148,27 @@ function timeLoop()
   qrcode.clear(); 
   qrcode.makeCode(cmd);
   
-//  if(document.getElementById("addcmd") !== null)
-//  {
-//	var addcmd = document.getElementById("addcmd").value;
-//	if(addcmd.length > 0)
-//		cmd = addcmd;
-//  }	
-  
-//  if(cmd != lasttimecmd)
-//  {
-//	changed = true;
-//	lasttimecmd = cmd;
-//  }
-//	
-//  if(changed === true)
-//  {
-//	document.getElementById("qrtext").innerHTML = cmd;
-//	clipcopy = window.location.href.split('?')[0] + "?cmd=" + cmdnotime;
-//
-//	changed = false;
-//  }
+/* if(document.getElementById("addcmd") !== null)
+  {
+	var addcmd = document.getElementById("addcmd").value;
+	if(addcmd.length > 0)
+		cmd = addcmd;
+  }	
+
+  if(cmd != lasttimecmd)
+  {
+	changed = true;
+	lasttimecmd = cmd;
+  }
+	
+  if(changed === true)
+  {
+	document.getElementById("qrtext").innerHTML = cmd;
+	clipcopy = window.location.href.split('?')[0] + "?cmd=" + cmdnotime;
+
+	changed = false;
+  }
+*/
 	
   var t = setTimeout(timeLoop, 100);
 }
