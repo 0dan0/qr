@@ -536,8 +536,10 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 Additional Commands: <input type="text" id="addcmd" value="">
 
 <div id="qrcode_txt" style="width: 360px">
+  <center>
   <div id="qrcode"></div><br>
   <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em>
+  </center>
 </div>
 <button id="copyImg">Copy Image to Clipboard</button>
 <br>
