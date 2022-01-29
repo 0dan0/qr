@@ -21,11 +21,18 @@ This improves the timecode track precision. While this works best outdoors with 
 
 <input type="checkbox" id="gsync" name="gsync" checked> 
 <label for="gsync">Enable GPS Time Sync</label><br>
-<center>
-<div id="qrcode"></div>
+
+<div id="qrcode_txt" style="width: 360px">
+  <center>
+  <div id="qrcode"></div><br>
+  <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em>
+  </center>
+</div>
+<button id="copyImg">Copy Image to Clipboard</button>
 <br>
-</center>
-QR Command: <b id="qrtext">command</b><br>
+<br>
+Share this QR Code as a URL: <b id="urltext"></b><br>
+<button id="copyBtn">Copy URL to Clipboard</button>
 
 ## Time-of-day Timecode for 24, 25 and 30p Modes
 
