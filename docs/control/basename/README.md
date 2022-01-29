@@ -37,13 +37,21 @@ Note: Unfortunately filenames can't contain common date/time delimiters, only +-
 <br>
 Your filenames will be in the format: <b id="newnameMP4">nameGH013607.MP4</b> and <b id="newnameJPG">nameGOPR3607.JPEG</b><br>
 
-<center>
-<div id="qrcode"></div>
+<div id="qrcode_txt" style="width: 360px">
+  <center>
+  <div id="qrcode"></div><br>
+  <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em>
+  </center>
+</div>
+<button id="copyImg">Copy Image to Clipboard</button>
+<br>
+<br>
+Share this QR Code as a URL: <b id="urltext"></b><br>
+<button id="copyBtn">Copy URL to Clipboard</button>
 
 <input type="checkbox" id="permanent" name="permanent"> <label for="permanent">Make this name change permanent</label><br>
 Can be restored by setting the basename to nothing.
 
-</center>
 QR Command: <b id="qrtext">time</b><br>
 
 
@@ -80,6 +88,7 @@ So you have a corrupted/unclosed GoPro file. You crashed your drone, and the bat
 <script>
 var once = true;
 var qrcode;
+var clipcopy = "";
 var cmd = "";
 var lasttimecmd = "";
 var changed = true;
@@ -167,6 +176,8 @@ function timeLoop()
   if(changed === true)
   {
 	document.getElementById("qrtext").innerHTML = cmd;
+	clipcopy = "https://gopro.github.io/labs/control/set/?cmd=" + cmd;
+	document.getElementById("urltext").innerHTML = clipcopy;
 	changed = false;
   }
   
@@ -177,7 +188,29 @@ function myReloadFunction() {
   location.reload();
 }
 
+
+async function copyImageToClipboard() {
+    html2canvas(document.querySelector("#qrcode_txt")).then(canvas => canvas.toBlob(blob => navigator.clipboard.write([new ClipboardItem({'image/png': blob})])));
+}
+async function copyTextToClipboard(text) {
+	try {
+		await navigator.clipboard.writeText(text);
+	} catch(err) {
+		alert('Error in copying text: ', err);
+	}
+}
+
+function setupButtons() {	
+    document.getElementById("copyBtn").onclick = function() { 
+        copyTextToClipboard(clipcopy);
+	};
+    document.getElementById("copyImg").onclick = function() { 
+        copyImageToClipboard();
+	};
+}
+
 makeQR();
-timeLoop();
+setupButtons();
+startTime();
 
 </script>
