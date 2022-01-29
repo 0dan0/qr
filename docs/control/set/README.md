@@ -67,9 +67,9 @@ else
 
 let hastime = cmd.search(/oT/);
 if(hastime >= 0)
-	dset("copyshow", true);
-else	
 	dset("copyshow", false);   // don't what user printing or sharing code with wrong date and time
+else	
+	dset("copyshow", true);
 
 function updateTime()
 {
