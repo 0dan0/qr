@@ -2,6 +2,7 @@
 
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
+<script src="../../html2canvas.min.js"></script>
 <style>
         #qrcode{
             width: 100%;
@@ -510,10 +511,14 @@ Additional Commands: <input type="text" id="addcmd" value="">
   <div id="qrcode"></div><br>
   <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em>
 </div>
-<br><button id="copyImg">Copy Image to Clipboard</button>
+<button id="copyImg">Copy Image to Clipboard</button>
+<button id="copyImg">Copy Image to Clipboard</button>
 <br>
-Share this QR Code as a URL: <b id="urltext"></b>   <button id="copyBtn">Copy to Clipboard</button><br>
-
+<br>
+Share this QR Code as a URL: <b id="urltext"></b><br>
+<button id="copyBtn">Copy to Clipboard</button>
+<br>
+<br>
 <button onclick="myReloadFunction()">Reset page</button>
 
 **Compatibility:** Labs enabled [HERO5 Session](../session5), HERO7, HERO8, HERO9, HERO10 and MAX 
