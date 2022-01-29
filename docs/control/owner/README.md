@@ -30,7 +30,7 @@ Your personalization info here: <br>
 <button id="copyImg">Copy Image to Clipboard</button>
 <br>
 <br>
-Share this QR Code as a URL: <b id="urltext"></b><br>
+Share this QR Code as a URL: <small id="urltext"></small><br>
 <button id="copyBtn">Copy URL to Clipboard</button>
 
 Note: For additional lines use \n within your text. 
