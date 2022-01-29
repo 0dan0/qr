@@ -541,10 +541,13 @@ Additional Commands: <input type="text" id="addcmd" value="">
   <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em>
   </center>
 </div>
+<div id="copyshow">
+<br>
 <button id="copyImg">Copy Image to Clipboard</button>
+</div>
 <br>
 <br>
-Share this QR Code as a URL: <b id="urltext"></b><br>
+Share this QR Code as a URL: <small id="urltext"></small><br>
 <button id="copyBtn">Copy URL to Clipboard</button>
 <br>
 <br>
@@ -1123,6 +1126,7 @@ function startTime() {
 	if(dt === true)
 	{
 		dset("opDTS", true);
+		dset("copyshow", false);   // don't what user printing or sharing code with wrong date and time
 	
 		var frms;
 		var secs = true;//document.getElementById("dtsec").checked;
@@ -1165,6 +1169,8 @@ function startTime() {
 	else
 	{
 		dset("opDTS", false);
+		dset("copyshow", true);
+		
 		if(timechecked === true)
 		{
 			ms = today.getTime();
