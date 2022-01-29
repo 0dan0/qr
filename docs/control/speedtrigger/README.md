@@ -43,7 +43,7 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
 **Compatibility:** Labs enabled HERO7, HERO8, HERO9, HERO10 and MAX 
         
 ## ver 1.03
-[Learn more](..) on QR Control
+[More features](..) for Labs enabled cameras
 
 <script>
 var once = true;

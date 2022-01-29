@@ -88,7 +88,7 @@ The motion detection will now always use the mask.pgm, so using motion mask opti
 **Compatibility:** Labs enabled HERO7, HERO8, HERO9, HERO10 and MAX.  Masking fixed on HERO9 & 10.
         
 ## ver 1.09
-[Learn more](..) on QR Control
+[More features](..) for Labs enabled cameras
 
 <script>
 var once = true;

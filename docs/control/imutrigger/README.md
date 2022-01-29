@@ -91,7 +91,7 @@ Now that starting and stopping your GoPro's capture is solved, you also don't wa
 
 
 ## ver 1.14
-[Learn more](..) on QR Control
+[More features](..) for Labs enabled cameras
 
 <script>
 var once = true;
