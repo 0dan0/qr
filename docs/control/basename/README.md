@@ -2,6 +2,7 @@
 
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
+<script src="../../html2canvas.min.js"></script>
 <style>
         #qrcode{
             width: 100%;
@@ -82,7 +83,7 @@ So you have a corrupted/unclosed GoPro file. You crashed your drone, and the bat
 
 **Compatibility:** Labs enabled HERO8, HERO9, HERO10 and MAX 
         
-## ver 1.10
+## ver 1.11
 [Learn more](..) on QR Control
 
 <script>

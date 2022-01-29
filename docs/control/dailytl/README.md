@@ -2,6 +2,7 @@
 
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
+<script src="../../html2canvas.min.js"></script>
 <style>
         #qrcode{
             width: 100%;
@@ -64,13 +65,14 @@ A/C powering the camera via USB is the best. With continuous power supplied, rem
 	
 **Compatibility:** Labs enabled HERO9/10 only
         
-## ver 1.00
+## ver 1.02
 [Learn more](..) on QR Control
 
 <script>
 var once = true;
 var qrcode;
 var cmd = "mPdP!60SQ!1R";
+var clipcopy = "";
 var lasttimecmd = "";
 var changed = false;
 
@@ -224,7 +226,29 @@ function myReloadFunction() {
   location.reload();
 }
 
+
+async function copyImageToClipboard() {
+    html2canvas(document.querySelector("#qrcode_txt")).then(canvas => canvas.toBlob(blob => navigator.clipboard.write([new ClipboardItem({'image/png': blob})])));
+}
+async function copyTextToClipboard(text) {
+	try {
+		await navigator.clipboard.writeText(text);
+	} catch(err) {
+		alert('Error in copying text: ', err);
+	}
+}
+
+function setupButtons() {	
+    document.getElementById("copyBtn").onclick = function() { 
+        copyTextToClipboard(clipcopy);
+	};
+    document.getElementById("copyImg").onclick = function() { 
+        copyImageToClipboard();
+	};
+}
+
 makeQR();
-timeLoop();
+setupButtons();
+startTime();
 
 </script>

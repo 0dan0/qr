@@ -2,6 +2,7 @@
 
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
+<script src="../../html2canvas.min.js"></script>
 <style>
         #qrcode{
             width: 100%;
@@ -62,7 +63,7 @@ Auto exposure might result in these behaviors (shooting 24p) <br>
 
 **Compatibility:** Labs enabled HERO7, HERO8, HERO9, HERO10 and MAX 
         
-## ver 1.02
+## ver 1.03
 [Learn more](..) on QR Control
 
 [BACK](..)
@@ -71,6 +72,7 @@ Auto exposure might result in these behaviors (shooting 24p) <br>
 var once = true;
 var qrcode;
 var cmd = "oC15dTmNLeA";
+var clipcopy = "";
 var lasttimecmd = "";
 var changed = true;
 
@@ -155,8 +157,30 @@ function myReloadFunction() {
   location.reload();
 }
 
+
+async function copyImageToClipboard() {
+    html2canvas(document.querySelector("#qrcode_txt")).then(canvas => canvas.toBlob(blob => navigator.clipboard.write([new ClipboardItem({'image/png': blob})])));
+}
+async function copyTextToClipboard(text) {
+	try {
+		await navigator.clipboard.writeText(text);
+	} catch(err) {
+		alert('Error in copying text: ', err);
+	}
+}
+
+function setupButtons() {	
+    document.getElementById("copyBtn").onclick = function() { 
+        copyTextToClipboard(clipcopy);
+	};
+    document.getElementById("copyImg").onclick = function() { 
+        copyImageToClipboard();
+	};
+}
+
 makeQR();
-timeLoop();
+setupButtons();
+startTime();
 
 
 </script>
