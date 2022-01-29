@@ -47,7 +47,7 @@ Notes:
 <button id="copyImg1">Copy Image to Clipboard</button>
 <br>
 <br>
-Share this QR Code as a URL: <b id="urltext"></b><br>
+Share this QR Code as a URL: <b id="urltext1"></b><br>
 <button id="copyBtn1">Copy URL to Clipboard</button>
 
 
@@ -61,7 +61,7 @@ Share this QR Code as a URL: <b id="urltext"></b><br>
 <button id="copyImg2">Copy Image to Clipboard</button>
 <br>
 <br>
-Share this QR Code as a URL: <b id="urltext"></b><br>
+Share this QR Code as a URL: <b id="urltext2"></b><br>
 <button id="copyBtn2">Copy URL to Clipboard</button>
 
 
@@ -216,11 +216,11 @@ function timeLoop()
   {
 	document.getElementById("qrtext1").innerHTML = cmd1;
 	clipcopy1 = "https://gopro.github.io/labs/control/set/?cmd=" + cmd1;
-	document.getElementById("qrtext1").innerHTML = clipcopy1;
+	document.getElementById("urltext1").innerHTML = clipcopy1;
 	
 	document.getElementById("qrtext2").innerHTML = cmd2;
 	clipcopy2 = "https://gopro.github.io/labs/control/set/?cmd=" + cmd2;
-	document.getElementById("qrtext1").innerHTML = clipcopy2;
+	document.getElementById("urltext2").innerHTML = clipcopy2;
 	
 	changed = false;
   }
