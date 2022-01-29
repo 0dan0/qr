@@ -42,7 +42,7 @@ Share this QR Code as a URL: <b id="urltext"></b><br>
 
 **Compatibility:** Labs enabled HERO7, HERO8, HERO9, HERO10 and MAX 
         
-## ver 1.02
+## ver 1.03
 [Learn more](..) on QR Control
 
 <script>
@@ -117,7 +117,7 @@ function timeLoop()
   if(changed === true)
   {
 	document.getElementById("qrtext").innerHTML = cmd;
-	clipcopy = "https://gopro.github.io/labs/control/set/?cmd=" + cmd;
+	clipcopy = "https://gopro.github.io/labs/control/set/?cmd=" + cmd + "&title=Speed%20Trigger";
 	document.getElementById("urltext").innerHTML = clipcopy;
 	changed = false;
   }
