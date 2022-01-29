@@ -23,7 +23,7 @@
   <div id="title_div"><font color="#005CAC"><b id="title_txt"></b></font></div>
  </center>
 </div>
-<br><button id="copyImg">Copy Image to Clipboard</button>
+<br><div id="button_show"><button id="copyImg">Copy Image to Clipboard</button></div>
 
 <!-- Manual Command: <input type="text" style="width: 500px;" id="addcmd" value="">
 Share this QR Code as: <b id="urltext"></b>  -->
@@ -31,7 +31,7 @@ Share this QR Code as: <b id="urltext"></b>  -->
 More [GoPro Labs QR Controls](..)
 
 
-## version 1.07
+## version 1.10
 
 <script>
 var changed = false;
@@ -61,6 +61,8 @@ else
 {	
 	dset("title_div", false);
 }
+
+dset("button_show", true);
 
 function updateTime()
 {
@@ -101,7 +103,9 @@ function updateTime()
 		{
 			cmd = src_cmd.slice(0,position+2) + newtimetxt + src_cmd.slice(position+14);
 			//cmdnotime = src_cmd.slice(0,position) + src_cmd.slice(position+14);
-		}    	
+		}
+		
+		dset("button_show", false);   // don't what user printing or sharing code with wrong date and time
 	}
 
 	document.getElementById("qrtext").innerHTML = cmd;
