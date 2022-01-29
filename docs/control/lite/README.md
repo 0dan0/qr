@@ -534,11 +534,13 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 
 Additional Commands: <input type="text" id="addcmd" value="">
 
-<div id="qrcode"></div>
-
-GoPro QR Command: <b id="txt"></b>
-
-Share this QR Code as a URL: <b id="urltext"></b>  <button id="copyBtn">Copy to Clipboard</button>
+<div id="qrcode_txt" style="width: 360px">
+  <div id="qrcode"></div><br>
+  <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em>
+</div>
+<br><button id="copyImg">Copy Image to Clipboard</button>
+<br>
+Share this QR Code as a URL: <b id="urltext"></b>   <button id="copyBtn">Copy to Clipboard</button><br>
 
 <button onclick="myReloadFunction()">Reset page</button>
 
@@ -1291,9 +1293,9 @@ function startTime() {
 		
 		if(cmd != lasttimecmd)
 		{
-			document.getElementById('txt').innerHTML = cmd;	
-			clipcopy = "https://gopro.github.io/labs/control/set/?cmd=" + cmd;	
-			document.getElementById("urltext").innerHTML = clipcopy;			
+			document.getElementById("qrtext").innerHTML = cmd;
+			clipcopy = "https://gopro.github.io/labs/control/set/?cmd=" + cmd;
+			document.getElementById("urltext").innerHTML = clipcopy;
 			lasttimecmd = cmd;
 		}		
 		
@@ -1353,6 +1355,9 @@ function myReloadFunction() {
     location.reload();
 }
 
+async function copyImageToClipboard() {
+    html2canvas(document.querySelector("#qrcode_txt")).then(canvas => canvas.toBlob(blob => navigator.clipboard.write([new ClipboardItem({'image/png': blob})])));
+}
 async function copyTextToClipboard(text) {
 	try {
 		await navigator.clipboard.writeText(text);
@@ -1364,9 +1369,12 @@ async function copyTextToClipboard(text) {
 function setupButtons() {	
     document.getElementById("copyBtn").onclick = function() { 
         copyTextToClipboard(clipcopy);
-	}
+	};
+    document.getElementById("copyImg").onclick = function() { 
+        copyImageToClipboard();
+	};
 }
-	
+
 makeQR();
 setupButtons();
 startTime();
