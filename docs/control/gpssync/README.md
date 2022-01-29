@@ -120,6 +120,6 @@ function setupButtons() {
 
 makeQR();
 setupButtons();
-startTime();
+timeLoop();
 
 </script>
