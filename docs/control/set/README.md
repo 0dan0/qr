@@ -23,7 +23,10 @@
   <div id="title_div"><font color="#005CAC"><b id="title_txt"></b></font></div>
  </center>
 </div>
-<br><div id="button_show"><button id="copyImg">Copy Image to Clipboard</button></div>
+<br>
+<div id="copyshow">
+<button id="copyImg">Copy Image to Clipboard</button>
+</div>
 
 <!-- Manual Command: <input type="text" style="width: 500px;" id="addcmd" value="">
 Share this QR Code as: <b id="urltext"></b>  -->
@@ -63,10 +66,10 @@ else
 }
 
 let hastime = cmd.search(/oT/);
-if(hastime === false)
-	dset("button_show", true);
+if(hastime >= 0)
+	dset("copyshow", true);
 else	
-	dset("button_show", false);   // don't what user printing or sharing code with wrong date and time
+	dset("copyshow", false);   // don't what user printing or sharing code with wrong date and time
 
 function updateTime()
 {
