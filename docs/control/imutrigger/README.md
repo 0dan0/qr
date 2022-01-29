@@ -75,7 +75,8 @@ Now that starting and stopping your GoPro's capture is solved, you also don't wa
 var once = true;
 var qrcode1;
 var qrcode2;
-var clipcopy = "";
+var clipcopy1 = "";
+var clipcopy2 = "";
 var cmd1 = "";
 var cmd2 = "";
 var lasttimecmd1 = "";
@@ -192,7 +193,13 @@ function timeLoop()
   if(changed === true)
   {
 	document.getElementById("qrtext1").innerHTML = cmd1;
+	clipcopy1 = "https://gopro.github.io/labs/control/set/?cmd=" + cmd1;
+	document.getElementById("qrtext1").innerHTML = clipcopy1;
+	
 	document.getElementById("qrtext2").innerHTML = cmd2;
+	clipcopy2 = "https://gopro.github.io/labs/control/set/?cmd=" + cmd2;
+	document.getElementById("qrtext1").innerHTML = clipcopy2;
+	
 	changed = false;
   }
   

@@ -52,12 +52,17 @@ Capture Length: <input type="range" style="width: 240px;" id="tlend" name="tlend
 
 Daily playback length (at 30fps): <b id="length"></b> seconds
  
-<center>
-<div id="qrcode"></div>
+<div id="qrcode_txt" style="width: 360px">
+  <center>
+  <div id="qrcode"></div><br>
+  <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em>
+  </center>
+</div>
+<button id="copyImg">Copy Image to Clipboard</button>
 <br>
-</center>
-
-QR Command: <b id="qrtext">time</b><br>
+<br>
+Share this QR Code as a URL: <b id="urltext"></b><br>
+<button id="copyBtn">Copy URL to Clipboard</button>
       
 ## Solutions for extra long captures
 
@@ -216,6 +221,8 @@ function timeLoop()
   if(changed === true)
   {
 	document.getElementById("qrtext").innerHTML = cmd;
+	clipcopy = "https://gopro.github.io/labs/control/set/?cmd=" + cmd;
+	document.getElementById("urltext").innerHTML = clipcopy;
 	changed = false;
   }
   
