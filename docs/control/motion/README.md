@@ -43,7 +43,8 @@ Note: you will have to manually set the mode in which you capture.  Motion detec
 <div id="qrcode_txt" style="width: 360px">
  <center>
   <div id="qrcode"></div><br>
-  <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em>
+  <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em><br>
+  <b><font color="#005CAC">Motion Detection</font></b>
  </center>
 </div>
 <br><button id="copyImg">Copy Image to Clipboard</button>
