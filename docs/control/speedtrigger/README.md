@@ -110,6 +110,8 @@ function timeLoop()
   if(changed === true)
   {
 	document.getElementById("qrtext").innerHTML = cmd;
+	clipcopy = "https://gopro.github.io/labs/control/set/?cmd=" + cmd;
+	document.getElementById("urltext").innerHTML = clipcopy;
 	changed = false;
   }
   
