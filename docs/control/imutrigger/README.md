@@ -47,7 +47,7 @@ Notes:
 <button id="copyImg1">Copy Image to Clipboard</button>
 <br>
 <br>
-Share this QR Code as a URL: <b id="urltext1"></b><br>
+Share this QR Code as a URL: <small id="urltext1"></small><br>
 <button id="copyBtn1">Copy URL to Clipboard</button>
 
 
@@ -61,7 +61,7 @@ Share this QR Code as a URL: <b id="urltext1"></b><br>
 <button id="copyImg2">Copy Image to Clipboard</button>
 <br>
 <br>
-Share this QR Code as a URL: <b id="urltext2"></b><br>
+Share this QR Code as a URL: <small id="urltext2"></small><br>
 <button id="copyBtn2">Copy URL to Clipboard</button>
 
 

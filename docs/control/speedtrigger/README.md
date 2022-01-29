@@ -37,7 +37,7 @@ Note: you will have to manually set the mode in which you capture.  The detector
 <button id="copyImg">Copy Image to Clipboard</button>
 <br>
 <br>
-Share this QR Code as a URL: <b id="urltext"></b><br>
+Share this QR Code as a URL: <small id="urltext"></small><br>
 <button id="copyBtn">Copy URL to Clipboard</button>
 
 **Compatibility:** Labs enabled HERO7, HERO8, HERO9, HERO10 and MAX 
