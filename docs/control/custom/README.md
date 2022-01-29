@@ -512,11 +512,10 @@ Additional Commands: <input type="text" id="addcmd" value="">
   <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em>
 </div>
 <button id="copyImg">Copy Image to Clipboard</button>
-<button id="copyImg">Copy Image to Clipboard</button>
 <br>
 <br>
 Share this QR Code as a URL: <b id="urltext"></b><br>
-<button id="copyBtn">Copy to Clipboard</button>
+<button id="copyBtn">Copy URL to Clipboard</button>
 <br>
 <br>
 <button onclick="myReloadFunction()">Reset page</button>
