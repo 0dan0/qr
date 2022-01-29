@@ -26,6 +26,7 @@ This improves the timecode track precision. While this works best outdoors with 
   <center>
   <div id="qrcode"></div><br>
   <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em>
+  <b><font color="#005CAC">GPS Camera Sync</font></b>
   </center>
 </div>
 <button id="copyImg">Copy Image to Clipboard</button>
