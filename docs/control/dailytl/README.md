@@ -55,7 +55,8 @@ Daily playback length (at 30fps): <b id="length"></b> seconds
 <div id="qrcode_txt" style="width: 360px">
   <center>
   <div id="qrcode"></div><br>
-  <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em>
+  <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em><br>
+  <b><font color="#005CAC">Daily Timelapse and Upload</font></b>
   </center>
 </div>
 <button id="copyImg">Copy Image to Clipboard</button>

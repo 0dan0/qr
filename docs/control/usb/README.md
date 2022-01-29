@@ -15,7 +15,7 @@
 
 The camera can use the switching on of USB power to boot the camera, and perform an action of your choice.
 
-The command to perform: <input type="text" id="addcmd" value="!S">  e.g. **!S** Will start capture in the camera's default mode. You can make you own command using many of the features within the [**QR Control Customizer**](../custom).
+The command to perform: <input type="text" id="addcmd" value="!S">  e.g. **!S** Will start capture in the camera's default mode. You can make you own command using many of the features within the [**GoPro QR Code Creator**](../custom).
 
 Start command <input type="range" style="width: 200px;" id="tlsec" name="tlsec" min="0" max="60" value="0"><label for="tlsec"></label>&nbsp;&nbsp;<b id="secstext"></b> seconds after USB power,<br> 
 and end after <input type="range" style="width: 200px;" id="tlendsec" name="tlendsec" min="0" max="60" value="2"><label for="tlendsec"></label>&nbsp;&nbsp;<b id="secsendtext"></b> seconds after USB power is off.

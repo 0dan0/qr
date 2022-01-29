@@ -32,7 +32,8 @@ Estimated runtime per charged battery: <b id="daystext">0</b> days
 <div id="qrcode_txt" style="width: 360px">
   <center>
   <div id="qrcode"></div><br>
-  <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em>
+  <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em><br>
+  <b><font color="#005CAC">Construction Timelapse</font></b>
   </center>
 </div>
 <button id="copyImg">Copy Image to Clipboard</button>
