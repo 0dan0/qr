@@ -21,7 +21,7 @@ GoPro cameras normally split long recordings into 4GB segments, we call these ch
 <div id="qrcode_txt" style="width: 360px">
   <center>
   <div id="qrcode"></div><br>
-  <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em>
+  <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em><br>
   <b><font color="#005CAC">Large Chapter Control</font></b>
   </center>
 </div>
