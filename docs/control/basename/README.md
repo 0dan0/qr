@@ -53,8 +53,6 @@ Share this QR Code as a URL: <b id="urltext"></b><br>
 <input type="checkbox" id="permanent" name="permanent"> <label for="permanent">Make this name change permanent</label><br>
 Can be restored by setting the basename to nothing.
 
-QR Command: <b id="qrtext">time</b><br>
-
 
 ## Useful Tip - Manual File Recovery 
  
