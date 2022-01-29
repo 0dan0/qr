@@ -48,7 +48,7 @@ var lasttimecmd = "";
 let urlParams = new URLSearchParams(document.location.search);
 cmd_url = urlParams.get('cmd');
 if(cmd_url !== null)
-	cmd = cmdurl;
+	cmd = cmd_url;
 	
 title_url = urlParams.get('title');
 if(title_url !== null)
