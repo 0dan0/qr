@@ -19,11 +19,20 @@ Your personalization info here: <br>
   Line 1: <input type="text" id="addnam1" value=""><br>
   Line 2: <input type="text" id="addnam2" value=""> (optional)<br>
   Line 3: <input type="text" id="addnam3" value=""> (optional)<br>
-<center>
-<div id="qrcode"></div>
+
+<div id="qrcode_txt" style="width: 360px">
+ <center>
+  <div id="qrcode"></div><br>
+  <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em><br>
+  <b><font color="#005CAC">Owner Information</font></b>
+ </center>
+</div>
+<button id="copyImg">Copy Image to Clipboard</button>
 <br>
-</center>
-QR Command: <b id="qrtext">time</b><br>
+<br>
+Share this QR Code as a URL: <b id="urltext"></b><br>
+<button id="copyBtn">Copy URL to Clipboard</button>
+
 Note: For additional lines use \n within your text. 
 e.g. Joe Bloggs\ncall (555)555-5555 
 

@@ -27,12 +27,18 @@ Start <input type="range" id="tlmin" name="tlmin" min="1" max="60" value="15"><l
 -->
 Note: you will have to manually set the interval and resolution for the night lapse mode, unfortunately not everything got hooked up with a QR Code. 
  
-<center>
-<div id="qrcode"></div>
+<div id="qrcode_txt" style="width: 360px">
+ <center>
+  <div id="qrcode"></div><br>
+  <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em><br>
+  <b><font color="#005CAC">Sunrise/Sunset Timer</font></b>
+ </center>
+</div>
+<button id="copyImg">Copy Image to Clipboard</button>
 <br>
-</center>
-
-QR Command: <b id="qrtext">time</b><br>
+<br>
+Share this QR Code as a URL: <b id="urltext"></b><br>
+<button id="copyBtn">Copy URL to Clipboard</button>
         
 **Compatibility:** Labs enabled HERO7, HERO8, HERO9, HERO10 and MAX 
         

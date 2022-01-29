@@ -25,12 +25,18 @@ and end after <input type="range" style="width: 200px;" id="tlendsec" name="tlen
 <input type="checkbox" id="repeat" name="repeat" checked> 
 <label for="repeat">Repeat for the next USB power on event</label><br>
 
-<center>
-<div id="qrcode"></div>
+<div id="qrcode_txt" style="width: 360px">
+ <center>
+  <div id="qrcode"></div><br>
+  <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em><br>
+  <b><font color="#005CAC">USB Power Trigger</font></b>
+ </center>
+</div>
+<button id="copyImg">Copy Image to Clipboard</button>
 <br>
-</center>
-
-QR Command: <b id="qrtext">time</b><br>
+<br>
+Share this QR Code as a URL: <b id="urltext"></b><br>
+<button id="copyBtn">Copy URL to Clipboard</button>
         
 **Compatibility:** Labs enabled HERO7 (limited), HERO8, HERO9, HERO10 and MAX 
         

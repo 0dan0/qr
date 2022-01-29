@@ -37,12 +37,19 @@
 <input type="checkbox" id="permanent" name="permanent" checked> 
 <label for="permanent">Make this setting survive a power off</label><br>
 
-<center>
-<div id="qrcode"></div>
+<div id="qrcode_txt" style="width: 360px">
+ <center>
+  <div id="qrcode"></div><br>
+  <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em><br>
+  <b><font color="#005CAC">Maximum Shutter Angle</font></b>
+ </center>
+</div>
+<button id="copyImg">Copy Image to Clipboard</button>
 <br>
-</center>
+<br>
+Share this QR Code as a URL: <b id="urltext"></b><br>
+<button id="copyBtn">Copy URL to Clipboard</button>
 
-QR Command: <b id="qrtext">time</b><br>
         
 ## Background
 Shutter Angle describes the amount of potential motion blur in the image, it is a nice way to describe shutter speed independent of the video frame rate. A maximum shutter angle of 360&deg; means the blur can capture all the motion from one video frame to the next, e.g. 24p with a 360&deg; will expose for 1/24th of a second,  at 120p with the same angle exposes for 1/120th of a second. In low light, the camera will typically expose longer, increasing the shutter angle, resulting in more motion blur. 
