@@ -90,7 +90,7 @@ Now that starting and stopping your GoPro's capture is solved, you also don't wa
 **Compatibility:** Labs enabled HERO7, HERO8, HERO9, HERO10 and MAX 
 
 
-## ver 1.13
+## ver 1.14
 [Learn more](..) on QR Control
 
 <script>
