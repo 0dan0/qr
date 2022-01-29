@@ -20,6 +20,7 @@
  <center>
   <div id="qrcode"></div><br>
   <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em>
+  <div id="title_div"><font color="#005CAC"><b id="title_txt"></b></font><div>
  </center>
 </div>
 <br><button id="copyImg">Copy Image to Clipboard</button>
@@ -35,16 +36,31 @@ More [GoPro Labs QR Controls](..)
 <script>
 var changed = false;
 var clipcopy = "";
+var title = "";
 var once = true;
 var qrcode;
 var cmd = "\"Hello World\"";
 //var cmdnotime = "";
-var cmdurl;
+var cmd_url;
+var title_url;
 var lasttimecmd = ""; 
+
 let urlParams = new URLSearchParams(document.location.search);
-cmdurl = urlParams.get('cmd');
-if(cmdurl !== null)
+cmd_url = urlParams.get('cmd');
+if(cmd_url !== null)
 	cmd = cmdurl;
+	
+title_url = urlParams.get('title');
+if(title_url !== null)
+{
+	title = title_url;
+	document.getElementById("title_txt").innerHTML = title;
+	dset("title_div", true);
+}
+else
+{	
+	dset("title_div", false);
+}
 
 function updateTime()
 {
@@ -91,6 +107,19 @@ function updateTime()
 	document.getElementById("qrtext").innerHTML = cmd;
 }
 
+
+function dset(label, on) {
+	var settings = document.getElementById(label);
+	if(on === true)
+	{
+		if (settings.style.display === 'none') 
+			settings.style.display = 'block';
+	}
+	else
+	{
+		settings.style.display = 'none';
+	}
+}
 
 function makeQR() 
 {	
