@@ -2,6 +2,7 @@
 
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
+<script src="../../html2canvas.min.js"></script>
 <style>
         #qrcode{
             width: 100%;
@@ -79,11 +80,17 @@ All metadata QR commands are written in the form oM**wxzy**=value(s) or !M**wxzy
 Metadata Four CC: <input type="text" id="addcmd" value="">  e.g. BIAS, HIST etc.<br>
 Metadata Value(s): <input type="text" id="addvalue" value="">  e.g. 2.0 or "Joe Blogg", strings in quotes, numbers comma separated.
 
-<center>
-<div id="qrcode"></div>
+<div id="qrcode_txt" style="width: 360px">
+  <center>
+  <div id="qrcode"></div><br>
+  <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em><br>
+  </center>
+</div>
+<button id="copyImg">Copy Image to Clipboard</button>
 <br>
-</center>
-QR Command: <b id="qrtext">command</b><br>
+<br>
+Share this QR Code as a URL: <small id="urltext"></small><br>
+<button id="copyBtn">Copy URL to Clipboard</button>
 
 
 ## Alternative Exposure Controls. 
@@ -101,6 +108,7 @@ QR Command: <b id="qrtext">command</b><br>
 <script>
 var once = true;
 var qrcode;
+var clipcopy = "";
 var cmd = "";
 var lasttimecmd = "";
 var changed = true;
@@ -145,6 +153,9 @@ function timeLoop()
 
 	if(cmd != lasttimecmd)
 	{
+		document.getElementById("qrtext").innerHTML = cmd;
+		clipcopy = "https://gopro.github.io/labs/control/set/?cmd=" + cmd;
+		document.getElementById("urltext").innerHTML = clipcopy;
 		changed = true;
 		lasttimecmd = cmd;
 	}
