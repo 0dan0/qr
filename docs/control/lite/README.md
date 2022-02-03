@@ -773,6 +773,7 @@ function startTime() {
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
 		dset("settingsPhotoRAW", true);
+		dset("settingsDuration", true);
 		dset("noteMODE", true);
 		break;
 		
@@ -782,6 +783,7 @@ function startTime() {
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
 		dset("settingsPhotoRAW", true);
+		dset("settingsDuration", true);
 		dset("noteMODE", true);
 		break;
 		
