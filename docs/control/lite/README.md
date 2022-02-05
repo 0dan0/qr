@@ -1081,7 +1081,7 @@ function startTime() {
 				cmd = dcmd(cmd,"isomin");//iso min
 				if(document.getElementById('shut7').checked === false)
 				{
-					cmd = cmd + "i64"; //ADD fake max
+					//cmd = cmd + "i64"; //ADD fake max
 					cmd = dcmd(cmd,"shut"); //shutter angle
 				}
 			}
