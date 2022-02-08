@@ -450,11 +450,13 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 </div>
 
 <div id="NakedTools">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Camera Initization: </b> <input type="radio" id="sap5" name="sap" value="" checked> <label for="sap5">not set</label><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Camera Initization: </b> <input type="radio" id="sap7" name="sap" value="" checked> <label for="sap7">not set</label><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap1" name="sap" value="!PA"> <label for="sap1">Start Quik App Pairing</label>
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap2" name="sap" value="!PR"> <label for="sap2">Start Remote Pairing</label><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap3" name="sap" value="!FRESET"> <label for="sap3">Factory Reset†</label>
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap4" name="sap" value="!PRESET"> <label for="sap4">Presets Only Reset†</label><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap5" name="sap" value="!MWAKE=1"> <label for="sap5">Auto wake on Power†</label>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap6" name="sap" value="!MWAKE=0"> <label for="sap6">disable wake†</label><br>
 &nbsp;&nbsp;or
 </div>
 
