@@ -657,7 +657,7 @@ function startTime() {
 	dset("opLN", false);
 	
 	dset("NakedTools", false);
-	//dset("aS", false);
+	dset("aS", false);
 	dset("aSM", false);
 	dset("aIT", false);
 	dset("aR", false);
@@ -851,7 +851,7 @@ function startTime() {
 		if(document.getElementById("actions").checked === true)
 		{
 			dset("NakedTools", true);
-			//dset("aS", true);
+			dset("aS", true);
 			dset("aSM", true);
 			dset("aIT", true);
 			dset("aR", true);
