@@ -460,13 +460,7 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 </div>
 
 <div id="aS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start Capture:</b>
-  <input type="text" id="dstart" value="" style="width:60px">start in seconds (1-999999).<br>
-  <input type="text" id="dend" value="" style="width:60px">end in seconds (1-999999).<br>
-<--  <input type="radio" id="as1" name="as" value="!S"> <label for="as1">Now </label>&nbsp;&nbsp;
-  <input type="radio" id="as2" name="as" value="!1S"> <label for="as2">in 2 sec </label>&nbsp;&nbsp;
-  <input type="radio" id="as3" name="as" value="!3S"> <label for="as3">in 4 secs </label>&nbsp;&nbsp;
-  <input type="radio" id="as4" name="as" value="!9S"> <label for="as4">in 10 secs </label>&nbsp;&nbsp;
-  <input type="radio" id="as5" name="as" value="" checked> <label for="as5">not set</label><br>  --!> 
+  Start in <input type="text" id="dstart" value="" style="width:60px"> seconds (1-999999). End in <input type="text" id="dend" value="" style="width:60px">seconds (1-999999).<br>
 &nbsp;&nbsp;or
 </div>
 <div id="aSM">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start via Scene Motion Detection:</b> 
@@ -1292,12 +1286,19 @@ function startTime() {
 				if(document.getElementById("dstart") !== null)
 				{		
 					var dstart = document.getElementById("dstart").value;
-					cmd = cmd + "!" + dstart + "S";
-			
-					if(document.getElementById("dend") !== null)
-					{		
-						var dend = document.getElementById("dend").value;
-						cmd = cmd + "!" + dend + "E";
+					
+					if(dstart > 0)
+					{
+						cmd = cmd + "!" + dstart + "S";
+				
+						if(document.getElementById("dend") !== null)
+						{		
+							var dend = document.getElementById("dend").value;
+							if(dend > 0)
+							{
+								cmd = cmd + "!" + dend + "E";
+							}	
+						}
 					}
 				}
 				//cmd = dcmd(cmd,"as");
