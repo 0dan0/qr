@@ -459,7 +459,7 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 </div>
 
 <div id="aS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start Capture:</b>
-  Start in <input type="text" id="dstart" value="" style="width:60px"> seconds (1-999999). End in <input type="text" id="dend" value="" style="width:60px">seconds (1-999999).<br>
+  Start in <input type="text" id="dstart" value="" style="width:60px"> seconds. End in <input type="text" id="dend" value="" style="width:60px">seconds (range 1-∞).<br>
 &nbsp;&nbsp;or
 </div>
 <div id="aSM">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start via Motion Detection:</b> 
