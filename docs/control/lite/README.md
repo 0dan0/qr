@@ -450,11 +450,11 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 </div>
 
 <div id="NakedTools">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Camera Initization: <input type="radio" id="sap5" name="sap" value="" checked> <label for="sap5">not set</label><br> </b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Camera Initization: </b> <input type="radio" id="sap5" name="sap" value="" checked> <label for="sap5">not set</label><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap1" name="sap" value="!PA"> <label for="sap1">Start Quik App Pairing</label>
-&nbsp;&nbsp;<input type="radio" id="sap2" name="sap" value="!PR"> <label for="sap2">Start Remote Pairing</label><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap2" name="sap" value="!PR"> <label for="sap2">Start Remote Pairing</label><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap3" name="sap" value="!FRESET"> <label for="sap3">Factory Reset†</label>
-&nbsp;&nbsp;<input type="radio" id="sap4" name="sap" value="!PRESET"> <label for="sap4">Presets Only Reset†</label><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap4" name="sap" value="!PRESET"> <label for="sap4">Presets Only Reset†</label><br>
 &nbsp;&nbsp;or
 </div>
 
@@ -467,6 +467,8 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="dhold" value="" style="width:60px"> seconds to get out of the shot.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mask motion: <input type="text" id="mmhold" value="" style="width:60px"> seconds to learn background motion.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="mhold" value="" style="width:60px"> seconds to capture after motion stops.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="helpM" value=""> <label for="actions">Sensitivity Help</label><br>
+ <div id="motionHelp">
   <small>
 	<table style="margin-left:60px;">
 	  <thead>
@@ -503,12 +505,15 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 	  </tbody>
 	</table>
   </small>
+ </div>  
 &nbsp;&nbsp;or
 </div>
 <div id="aIT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start via Camera (IMU) Motion Detection:</b> 
 <input type="text" id="imstart" value="" style="width:60px">start <input type="text" id="imend" value="" style="width:60px">end sensitivity (1-9)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="idhold" value="" style="width:60px"> seconds before motion is detected.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="imhold" value="" style="width:60px"> seconds to capture after motion stops.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="helpI" value=""> <label for="actions">Sensitivity Help</label><br>
+<div id="imuHelp">
   <small>
 	<table style="margin-left:60px;">
 	  <thead>
@@ -541,6 +546,7 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 	  </tbody>
 	</table>
   </small>
+ </div>  
 </div>
 
 
@@ -658,8 +664,10 @@ function startTime() {
 	dset("NakedTools", false);
 	dset("aS", false);
 	dset("aSM", false);
+	dset("motionHelp", false);
 	dset("aIT", false);
 	dset("aR", false);
+	dset("imuHelp", false);
 	
 	var checkedmode = 0;
 	var x;
@@ -854,8 +862,25 @@ function startTime() {
 			dset("aSM", true);
 			dset("aIT", true);
 			dset("aR", true);
+			
+			
+			if(document.getElementById("helpM") !== null)
+			{
+				if(document.getElementById("helpM").checked === true)
+				{
+					dset("motionHelp", true);
+				}
+			}
+			if(document.getElementById("helpI") !== null)
+			{
+				if(document.getElementById("helpI").checked === true)
+				{
+					dset("imuHelp", true);
+				}
+			}
 		}
 	}
+	
 	
 	cmd = dcmd(cmd,"m");  // set mode
 		
