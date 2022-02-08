@@ -462,8 +462,8 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
   Start in <input type="text" id="dstart" value="" style="width:60px"> seconds (1-999999). End in <input type="text" id="dend" value="" style="width:60px">seconds (1-999999).<br>
 &nbsp;&nbsp;or
 </div>
-<div id="aSM">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start via Scene Motion Detection:</b> 
-<input type="text" id="mstart" value="" style="width:60px">start <input type="text" id="mend" value="" style="width:60px">end sensitivity (1-9) &nbsp;&nbsp;<input type="checkbox" id="helpM" value=""> <label for="actions">Sensitivity Help</label><br>
+<div id="aSM">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start via Motion Detection:</b> 
+<input type="text" id="mstart" value="" style="width:60px">start <input type="text" id="mend" value="" style="width:60px">end sensitivity (1-6) &nbsp;&nbsp;<input type="checkbox" id="helpM" value=""> <label for="actions">Sensitivity Help</label><br>
  <div id="motionHelp">
   <small>
 	<table style="margin-left:60px;">
@@ -507,7 +507,7 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="mhold" value="" style="width:60px"> seconds to capture after motion stops.<br>
 &nbsp;&nbsp;or
 </div>
-<div id="aIT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start via Camera (IMU) Motion Detection:</b> 
+<div id="aIT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start via IMU Detection:</b> 
 <input type="text" id="imstart" value="" style="width:60px">start <input type="text" id="imend" value="" style="width:60px">end sensitivity (1-9)&nbsp;&nbsp;<input type="checkbox" id="helpI" value=""> <label for="actions">Sensitivity Help</label><br>
 <div id="imuHelp">
   <small>
