@@ -1084,21 +1084,21 @@ function startTime() {
 				cmd = dcmd(cmd,"iso"); //iso max
 				if(document.getElementById('isomin8').checked === false)
 				{
-					let isomin = dcmd("","isomin");  //min
+					let isomin = dcmd("","isomin"); //min
 					let isomax = dcmd("","iso");    //max
 				
 					var min = isomin.substring(1);
 					var max = isomax.substring(1);
-
-cmd = cmd + "min=" + min + "max=" + max;
-					if(max >= min)
+					
+					if(max < min)
+						cmd = cmd + "M" + max;    //set the min to match the max iso
+					else
+						cmd = dcmd(cmd,"isomin"); //add iso min
+						
+					if(document.getElementById('shut7').checked === false)
 					{
-						cmd = dcmd(cmd,"isomin");//iso min
-						if(document.getElementById('shut7').checked === false)
-						{
-							//cmd = dcmd(cmd,"iso"); //iso max
-							cmd = dcmd(cmd,"shut"); //shutter angle
-						}
+						//cmd = dcmd(cmd,"iso"); //iso max
+						cmd = dcmd(cmd,"shut");  //shutter angle
 					}
 				}
 				else if(document.getElementById('shut7').checked === false)
