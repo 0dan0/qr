@@ -1084,8 +1084,8 @@ function startTime() {
 				cmd = dcmd(cmd,"iso"); //iso max
 				if(document.getElementById('isomin8').checked === false)
 				{
-					let isomin = document.getElementById(isomin).value; //min
-					let isomax = document.getElementById(iso).value;    //max
+					let isomin = dcmd("","isomin");  //min
+					let isomax = dcmd("","iso");    //max
 				
 					var min = isomin.substring(1);
 					var max = isomax.substring(1);
