@@ -161,19 +161,18 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
  
 <div id="settingsTimelapse">
 <b>Timelapse Interval:</b>&nbsp;&nbsp;
-  <input type="radio" id="fpslapse1"    name="fpslapse" value="p2"> <label for="fpslapse1">0.5s </label>&nbsp;&nbsp;
-  <input type="radio" id="fpslapse2"    name="fpslapse" value="p1"> <label for="fpslapse2">1s </label>&nbsp;&nbsp;
-  <input type="radio" id="fpslapse3"   name="fpslapse" value="p.2"> <label for="fpslapse3">2s </label>&nbsp;&nbsp;
-  <input type="radio" id="fpslapse4"   name="fpslapse" value="p.5"> <label for="fpslapse4">5s </label>&nbsp;&nbsp;
-  <input type="radio" id="fpslapse5"  name="fpslapse" value="p.10"> <label for="fpslapse5">10s </label>&nbsp;&nbsp;
-  <input type="radio" id="fpslapse6"  name="fpslapse" value="p.30"> <label for="fpslapse6">30s </label>&nbsp;&nbsp;
+  <input type="radio" id="fpslapse1" name="fpslapse" value="p2"> <label for="fpslapse1">0.5s </label>&nbsp;&nbsp;
+  <input type="radio" id="fpslapse2" name="fpslapse" value="p1"> <label for="fpslapse2">1s </label>&nbsp;&nbsp;
+  <input type="radio" id="fpslapse3" name="fpslapse" value="p.2"> <label for="fpslapse3">2s </label>&nbsp;&nbsp;
+  <input type="radio" id="fpslapse4" name="fpslapse" value="p.5"> <label for="fpslapse4">5s </label>&nbsp;&nbsp;
+  <input type="radio" id="fpslapse5" name="fpslapse" value="p.10"> <label for="fpslapse5">10s </label>&nbsp;&nbsp;
+  <input type="radio" id="fpslapse6" name="fpslapse" value="p.30"> <label for="fpslapse6">30s </label>&nbsp;&nbsp;
   <input type="radio" id="fpslapse7" name="fpslapse" value="p.60"> <label for="fpslapse7">60s </label>&nbsp;&nbsp;<br>
   
   &nbsp;&nbsp;&nbsp;&nbsp;HERO 8/9&nbsp;&nbsp; <input type="radio" id="fpslapse8"  name="fpslapse" value="p.120" > <label for="fpslapse8">2min </label>&nbsp;&nbsp;
   <input type="radio" id="fpslapse9"  name="fpslapse" value="p.300" > <label for="fpslapse9">5min </label>&nbsp;&nbsp;
   <input type="radio" id="fpslapse10" name="fpslapse" value="p.1800"> <label for="fpslapse10">30min </label>&nbsp;&nbsp;
-  <input type="radio" id="fpslapse11" name="fpslapse" value="p.3600"> <label for="fpslapse11">60min </label>&nbsp;&nbsp;
-  
+  <input type="radio" id="fpslapse11" name="fpslapse" value="p.3600"> <label for="fpslapse11">60min </label>&nbsp;&nbsp;  
   <input type="radio" id="fpslapse12" name="fpslapse" value="" checked> <label for="fpslapse12">not set</label><br><br>
 </div>
 
@@ -1079,17 +1078,27 @@ function startTime() {
 			cmd = dcmd(cmd,"ptc"); //color
 			cmd = dcmd(cmd,"br"); //bitrate
 			cmd = dcmd(cmd,"wb"); //wb
-
+			
 			if(document.getElementById('iso8').checked === false)
 			{
 				cmd = dcmd(cmd,"iso"); //iso max
 				if(document.getElementById('isomin8').checked === false)
 				{
-					cmd = dcmd(cmd,"isomin");//iso min
-					if(document.getElementById('shut7').checked === false)
+					let isomin = document.getElementById(isomin).value; //min
+					let isomax = document.getElementById(iso).value;    //max
+				
+					var min = isomin.substring(1);
+					var max = isomax.substring(1);
+
+cmd = cmd + "min=" + min + "max=" + max;
+					if(max >= min)
 					{
-						//cmd = dcmd(cmd,"iso"); //iso max
-						cmd = dcmd(cmd,"shut"); //shutter angle
+						cmd = dcmd(cmd,"isomin");//iso min
+						if(document.getElementById('shut7').checked === false)
+						{
+							//cmd = dcmd(cmd,"iso"); //iso max
+							cmd = dcmd(cmd,"shut"); //shutter angle
+						}
 					}
 				}
 				else if(document.getElementById('shut7').checked === false)
