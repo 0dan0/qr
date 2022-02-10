@@ -1092,12 +1092,12 @@ function startTime() {
 					
 					if(max < min)
 					{
-						if(max == 1) document.getElementById('iso1').checked = true;
-						if(max == 2) document.getElementById('iso2').checked = true;
-						if(max == 4) document.getElementById('iso3').checked = true;
-						if(max == 8) document.getElementById('iso4').checked = true;
-						if(max == 16) document.getElementById('iso5').checked = true;
-						if(max == 32) document.getElementById('iso6').checked = true;
+						if(max == 1) document.getElementById('isomin1').checked = true;
+						if(max == 2) document.getElementById('isomin2').checked = true;
+						if(max == 4) document.getElementById('isomin3').checked = true;
+						if(max == 8) document.getElementById('isomin4').checked = true;
+						if(max == 16) document.getElementById('isomin5').checked = true;
+						if(max == 32) document.getElementById('isomin6').checked = true;
 						cmd = cmd + "M" + max;    //set the min to match the max iso
 					}
 					else
