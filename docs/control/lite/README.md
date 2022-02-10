@@ -1091,7 +1091,15 @@ function startTime() {
 					var max = parseInt(isomax.substring(1));
 					
 					if(max < min)
+					{
+						if(max == 1) document.getElementById('iso1').checked = true;
+						if(max == 2) document.getElementById('iso2').checked = true;
+						if(max == 4) document.getElementById('iso3').checked = true;
+						if(max == 8) document.getElementById('iso4').checked = true;
+						if(max == 16) document.getElementById('iso5').checked = true;
+						if(max == 32) document.getElementById('iso6').checked = true;
 						cmd = cmd + "M" + max;    //set the min to match the max iso
+					}
 					else
 						cmd = dcmd(cmd,"isomin"); //add iso min
 						
