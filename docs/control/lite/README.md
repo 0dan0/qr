@@ -1087,8 +1087,8 @@ function startTime() {
 					let isomin = dcmd("","isomin"); //min
 					let isomax = dcmd("","iso");    //max
 				
-					var min = isomin.substring(1);
-					var max = isomax.substring(1);
+					int min = parseInt(isomin.substring(1));
+					int max = parseInt(isomax.substring(1));
 					
 					if(max < min)
 						cmd = cmd + "M" + max;    //set the min to match the max iso
