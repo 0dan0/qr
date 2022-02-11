@@ -391,12 +391,12 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
   <input type="radio" id="bv6" name="bv" value="V9"> <label for="bv6">100% </label>&nbsp;&nbsp;
   <input type="radio" id="bv7" name="bv" value="" checked> <label for="bv7">not set</label>
   </div>
-<div id="opLO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>LEDs On:</b>&nbsp;&nbsp;
+<!--<div id="opLO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>LEDs On:</b>&nbsp;&nbsp;
   <input type="radio" id="lo1" name="lo" value="D0"> <label for="lo1">All Off </label>&nbsp;&nbsp;
   <input type="radio" id="lo2" name="lo" value="D2"> <label for="lo2">Rear Only </label>&nbsp;&nbsp;
   <input type="radio" id="lo3" name="lo" value="D4"> <label for="lo3">All On </label>&nbsp;&nbsp;
   <input type="radio" id="lo4" name="lo" value="" checked> <label for="lo4">not set</label>
-  </div>
+  </div>-->
 <div id="opOR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Orientation Lock:</b>&nbsp;&nbsp; 
   Landscape <input type="radio" id="or1" name="or" value="R1"> <label for="or1">↑</label>&nbsp;&nbsp;&nbsp;
   <input type="radio" id="or2" name="or" value="R2"> <label for="or2">↓</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -576,8 +576,8 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
 
 [More features](..) for Labs enabled cameras
 
-## version 1.46
-updated: Feb 10, 2022
+## version 1.47
+updated: Feb 11, 2022
 
 <script>
 var clipcopy = "";
@@ -656,7 +656,7 @@ function startTime() {
 	dset("opQC", false);
 	dset("opDM", false);
 	dset("opBV", false);
-	dset("opLO", false);
+	//dset("opLO", false);
 	dset("opOR", false);
 	dset("opAO", false);
 	dset("opWC", false);
@@ -846,7 +846,7 @@ function startTime() {
 			dset("opQC", true);
 			dset("opDM", true);
 			dset("opBV", true);
-			dset("opLO", true);
+			//dset("opLO", true);
 			dset("opOR", true);
 			dset("opAO", true);
 			dset("opWC", true);
