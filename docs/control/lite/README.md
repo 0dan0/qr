@@ -382,7 +382,7 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
   <input type="radio" id="dm3" name="dm" value="dT">  <label for="dm3">Last Used Timelapse</label>&nbsp;&nbsp;
   <input type="radio" id="dm4" name="dm" value="" checked> <label for="dm4">not set</label>
 </div>
-<div id="opBV">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Beep Volume:</b>&nbsp;&nbsp; 
+<!--<div id="opBV">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Beep Volume:</b>&nbsp;&nbsp; 
   <input type="radio" id="bv1" name="bv" value="V0"> <label for="bv1">0% </label>&nbsp;&nbsp;
   <input type="radio" id="bv2" name="bv" value="V1"> <label for="bv2">10% </label>&nbsp;&nbsp;
   <input type="radio" id="bv3" name="bv" value="V4"> <label for="bv3">40% </label>&nbsp;&nbsp;
@@ -390,7 +390,7 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
   <input type="radio" id="bv5" name="bv" value="V8"> <label for="bv5">85% </label>&nbsp;&nbsp;
   <input type="radio" id="bv6" name="bv" value="V9"> <label for="bv6">100% </label>&nbsp;&nbsp;
   <input type="radio" id="bv7" name="bv" value="" checked> <label for="bv7">not set</label>
-  </div>
+  </div>-->
 <!--<div id="opLO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>LEDs On:</b>&nbsp;&nbsp;
   <input type="radio" id="lo1" name="lo" value="D0"> <label for="lo1">All Off </label>&nbsp;&nbsp;
   <input type="radio" id="lo2" name="lo" value="D2"> <label for="lo2">Rear Only </label>&nbsp;&nbsp;
@@ -415,7 +415,9 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 <div id="opWC">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>WiFi Connections:</b>&nbsp;&nbsp; 
   <input type="radio" id="wc1" name="wc" value="W0"> <label for="wc1">Off </label>&nbsp;&nbsp;
   <input type="radio" id="wc2" name="wc" value="W1"> <label for="wc2">On </label>&nbsp;&nbsp;
-  <input type="radio" id="wc3" name="wc" value="" checked> <label for="wc3">not set</label>
+  <input type="radio" id="wc3" name="wc" value="W2"> <label for="wc3">On 2.4GHz</label>&nbsp;&nbsp;
+  <input type="radio" id="wc4" name="wc" value="W5"> <label for="wc4">On 5GHz</label>&nbsp;&nbsp;
+  <input type="radio" id="wc5" name="wc" value="" checked> <label for="wc5">not set</label>
   </div>
 <div id="opLN">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Voice Language:</b>&nbsp;&nbsp;
   <input type="radio" id="ln1" name="ln" value="L0"> <label for="ln1">English US </label>&nbsp;&nbsp;
@@ -655,7 +657,7 @@ function startTime() {
 	dset("opVC", false);
 	dset("opQC", false);
 	dset("opDM", false);
-	dset("opBV", false);
+	//dset("opBV", false);
 	//dset("opLO", false);
 	dset("opOR", false);
 	dset("opAO", false);
@@ -845,7 +847,7 @@ function startTime() {
 			dset("opVC", true);
 			dset("opQC", true);
 			dset("opDM", true);
-			dset("opBV", true);
+			//dset("opBV", true);
 			//dset("opLO", true);
 			dset("opOR", true);
 			dset("opAO", true);
