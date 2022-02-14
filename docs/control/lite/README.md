@@ -378,9 +378,9 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
   </div>
 <div id="opDM">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Default Mode:</b>&nbsp;&nbsp;
   <input type="radio" id="dm1" name="dm" value="dL">  <label for="dm1">Last Used</label>&nbsp;&nbsp;
-  <input type="radio" id="dm2" name="dm" value="dV">  <label for="dm2">Last Used Video</label>&nbsp;&nbsp;
-  <input type="radio" id="dm3" name="dm" value="dP">  <label for="dm3">Last Used Photo</label>&nbsp;&nbsp;
-  <input type="radio" id="dm4" name="dm" value="dT">  <label for="dm4">Last Used Timelapse</label>&nbsp;&nbsp;
+  <input type="radio" id="dm2" name="dm" value="dV">  <label for="dm2">Last Video</label>&nbsp;&nbsp;
+  <input type="radio" id="dm3" name="dm" value="dP">  <label for="dm3">Last Photo</label>&nbsp;&nbsp;
+  <input type="radio" id="dm4" name="dm" value="dT">  <label for="dm4">Last Timelapse</label>&nbsp;&nbsp;
   <input type="radio" id="dm5" name="dm" value="" checked> <label for="dm5">not set</label>
 </div>
 <!--<div id="opBV">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Beep Volume:</b>&nbsp;&nbsp; 
