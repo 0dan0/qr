@@ -217,7 +217,7 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 <div id="settingsVideo">
 <b>Hypersmooth:</b>&nbsp;&nbsp;
 	<input type="radio" id="eis1" name="eis" value="e0"> <label for="eis1">Off</label>&nbsp;&nbsp;&nbsp;
-	<input type="radio" id="eis2" name="eis" value="e1"> <label for="eis2">On</label>&nbsp;&nbsp;&nbsp;
+	<input type="radio" id="eis2" name="eis" value="e1"> <label for="eis2">Standard</label>&nbsp;&nbsp;&nbsp;
 	<input type="radio" id="eis3" name="eis" value="e2"> <label for="eis3">High</label>&nbsp;&nbsp;&nbsp;
 	<input type="radio" id="eis4" name="eis" value="e3"> <label for="eis4">Boost</label>&nbsp;&nbsp;&nbsp;
 	<input type="radio" id="eis5" name="eis" value="" checked> <label for="eis5">not set</label><br><br>
