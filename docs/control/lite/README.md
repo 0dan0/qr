@@ -90,10 +90,14 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
   <input type="radio" id="f3" name="fov" value="fL"> <label for="f3">Linear </label>&nbsp;&nbsp;
   <input type="radio" id="f4" name="fov" value="fS"> <label for="f4">Superview </label>&nbsp;&nbsp;
   <input type="radio" id="f5" name="fov" value="fH"> <label for="f5">Linear+HL </label><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;Max Lens Mod:&nbsp;&nbsp; <input type="radio" id="f6" name="fov" value="oX1fW"> <label for="f6">Enable Wide </label>&nbsp;&nbsp;
-  <input type="radio" id="f7" name="fov" value="oX1fX"> <label for="f7">Enable Superview </label>&nbsp;&nbsp;
-  <input type="radio" id="f8" name="fov" value="oX0"> <label for="f8">Disable MLM</label>&nbsp;&nbsp;
-  <input type="radio" id="f9" name="fov" value="" checked> <label for="f9">not set</label><br><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;Max Lens Mod:&nbsp;&nbsp; <input type="radio" id="f6" name="fov" value="oX1fW"> <label for="f6">MLM Wide </label>&nbsp;&nbsp;
+  <input type="radio" id="f7" name="fov" value="oX1fX"> <label for="f7">MLM Superview </label>&nbsp;&nbsp;
+  <input type="radio" id="f8" name="fov" value="oX1fL"> <label for="f8">MLM Linear </label><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" id="f9" name="fov" value="oX1fWL"> <label for="f9">MLM Wide+HL</label>
+  <input type="radio" id="f10" name="fov" value="oX1fXL"><label for="f10">MLM Superview+HL</label>&nbsp;&nbsp; 
+  <input type="radio" id="f11" name="fov" value="oX1fLL"> <label for="f11">MLM Linear+HL </label><br>
+  <input type="radio" id="f12" name="fov" value="oX0"> <label for="f12">Disable MLM</label>&nbsp;&nbsp; 
+  <input type="radio" id="f13" name="fov" value="" checked> <label for="f13">not set</label><br><br>
  </div>
  
 <div id="settingsPFOV">
