@@ -90,13 +90,13 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
   <input type="radio" id="f3" name="fov" value="fL"> <label for="f3">Linear </label>&nbsp;&nbsp;
   <input type="radio" id="f4" name="fov" value="fS"> <label for="f4">Superview </label>&nbsp;&nbsp;
   <input type="radio" id="f5" name="fov" value="fH"> <label for="f5">Linear+HL </label><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;Max Lens Mod:&nbsp;&nbsp; <input type="radio" id="f6" name="fov" value="oX1fW"> <label for="f6">Wide </label>&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;<b>Max Lens Mod:</b>&nbsp;&nbsp; <input type="radio" id="f6" name="fov" value="oX1fW"> <label for="f6">Wide </label>&nbsp;&nbsp;
   <input type="radio" id="f7" name="fov" value="oX1fX"> <label for="f7">Superview </label>&nbsp;&nbsp;
   <input type="radio" id="f8" name="fov" value="oX1fL"> <label for="f8">Linear </label><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" id="f9" name="fov" value="oX1fWL"> <label for="f9">Wide+HL</label>
-  <input type="radio" id="f10" name="fov" value="oX1fXL"><label for="f10">Superview+HL</label>&nbsp;&nbsp; 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" id="f9" name="fov" value="oX1fWL"> <label for="f9">Wide+HL</label>&nbsp;&nbsp;
+  <input type="radio" id="f10" name="fov" value="oX1fXL"> <label for="f10">Superview+HL</label>&nbsp;&nbsp; 
   <input type="radio" id="f11" name="fov" value="oX1fLL"> <label for="f11">Linear+HL </label><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" id="f12" name="fov" value="oX0"> <label for="f12">Disable MLM</label>&nbsp;&nbsp; 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" id="f12" name="fov" value="oX0"> <label for="f12">Disable MLM</label>&nbsp;&nbsp; 
   <input type="radio" id="f13" name="fov" value="" checked> <label for="f13">not set</label><br><br>
  </div>
  
