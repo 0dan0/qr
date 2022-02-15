@@ -93,10 +93,10 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
   &nbsp;&nbsp;&nbsp;&nbsp;<b>Max Lens Mod:</b>&nbsp;&nbsp; <input type="radio" id="f6" name="fov" value="oX1fW"> <label for="f6">Wide </label>&nbsp;&nbsp;
   <input type="radio" id="f7" name="fov" value="oX1fX"> <label for="f7">Superview </label>&nbsp;&nbsp;
   <input type="radio" id="f8" name="fov" value="oX1fL"> <label for="f8">Linear </label><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;<b>MLM Horizon Level:</b> <input type="radio" id="f9" name="fov" value="oX1fWL"> <label for="f9">Wide </label>&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;<b>MLM Horizon Level:</b>&nbsp;&nbsp; <input type="radio" id="f9" name="fov" value="oX1fWL"> <label for="f9">Wide </label>&nbsp;&nbsp;
   <input type="radio" id="f10" name="fov" value="oX1fXL"> <label for="f10">Superview </label>&nbsp;&nbsp; 
   <input type="radio" id="f11" name="fov" value="oX1fLL"> <label for="f11">Linear </label><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" id="f12" name="fov" value="oX0"> <label for="f12">Disable MLM</label>&nbsp;&nbsp; 
+  &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="f12" name="fov" value="oX0"> <label for="f12">Disable MLM</label>&nbsp;&nbsp; 
   <input type="radio" id="f13" name="fov" value="" checked> <label for="f13">not set</label><br><br>
  </div>
  
