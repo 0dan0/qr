@@ -143,7 +143,7 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
   <input type="radio" id="b2" name="burst" value="b3N1"> <label for="b2">3/1 </label>&nbsp;&nbsp;
   <input type="radio" id="b3" name="burst" value="b5N1"> <label for="b3">5/1 </label>&nbsp;&nbsp;
   <input type="radio" id="b4" name="burst" value="b10N1"> <label for="b4">10/1 </label>&nbsp;&nbsp;
-  <input type="radio" id="b5" name="burst" value="b25N1"> <label for="b5">25/1 </label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="b5" name="burst" value="b25N1"> <label for="b5">25/1 </label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="radio" id="b6" name="burst" value="b10N2"> <label for="b6">10/2 </label>&nbsp;&nbsp;
   <input type="radio" id="b7" name="burst" value="b10N3"> <label for="b7">10/3 </label>&nbsp;&nbsp;
   <input type="radio" id="b8" name="burst" value="b30N3"> <label for="b8">30/3 </label>&nbsp;&nbsp;
