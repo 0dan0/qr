@@ -950,6 +950,15 @@ function startTime() {
 				if(zoom == 100) zoom = 99;	
 				
 				cmd = cmd + zoom; //fov
+			}			
+			else if((document.getElementById("twf5").checked === true) || //MLM Wide
+				(document.getElementById("twf6").checked === true) || //MLM Superview
+				(document.getElementById("twf7").checked === true) ) //MLM Linear
+			{
+				if(document.getElementById("twmlmhl").checked === true)
+				{
+					cmd = cmd + "L"; //level MLM modes
+				}
 			}
 		}
 		else if(checkedmode == 13) //Photo
