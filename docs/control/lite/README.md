@@ -110,11 +110,12 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 <b>Lens:</b>&nbsp;&nbsp;
   <input type="radio" id="pf1" name="pfov" value="fW"> <label for="pf1">Wide </label>&nbsp;&nbsp;
   <input type="radio" id="pf2" name="pfov" value="fL"> <label for="pf2">Linear </label>&nbsp;&nbsp;
-  <input type="radio" id="pf3" name="pfov" value="fN"> <label for="pf3">Narrow </label><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;Max Lens Mod:&nbsp;&nbsp; <input type="radio" id="pf4" name="pfov" value="oX1fW"> <label for="pf4">Enable Wide </label>&nbsp;&nbsp;
-  <input type="radio" id="pf5" name="pfov" value="oX1fX"> <label for="pf5">Enable Superview </label>&nbsp;&nbsp;
-  <input type="radio" id="pf6" name="pfov" value="oX0"> <label for="pf6">Disable MLM</label>&nbsp;&nbsp;
-  <input type="radio" id="pf7" name="pfov" value="" checked> <label for="pf7">not set</label><br><br>
+  <input type="radio" id="pf3" name="pfov" value="fN"> <label for="pf3">Narrow </label><br>  
+  &nbsp;&nbsp;&nbsp;&nbsp;<b>Max Lens Mod:</b>&nbsp;&nbsp; <input type="radio" id="pf4" name="fov" value="oX1fW"> <label for="pf4">Wide </label>&nbsp;&nbsp;
+  <input type="radio" id="pf5" name="fov" value="oX1fX"> <label for="pf5">Superview </label>&nbsp;&nbsp;
+  <input type="checkbox" id="pmlmhl" value="L"> <label for="pmlmhl">Horizon Level</label><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="pf6" name="fov" value="oX0"> <label for="pf6">Disable MLM</label>&nbsp;&nbsp; 
+  <input type="radio" id="pf7 name="fov" value="" checked> <label for="pf7>not set</label><br><br>
  </div>
   
  
@@ -586,8 +587,8 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
 
 [More features](..) for Labs enabled cameras
 
-## version 1.51
-updated: Feb 17, 2022
+## version 1.52
+updated: Feb 18, 2022
 
 <script>
 var clipcopy = "";
@@ -975,6 +976,14 @@ function startTime() {
 				if(zoom == 100) zoom = 99;	
 				
 				cmd = cmd + zoom; //fov
+			}
+			else if((document.getElementById("pf4").checked === true) || //MLM Wide
+				(document.getElementById("pf5").checked === true)) //MLM Superview
+			{
+				if(document.getElementById("pmlmhl").checked === true)
+				{
+					cmd = cmd + "L"; //level MLM modes
+				}
 			}
 		}
 		else if(checkedmode == 15) //Live Burst
