@@ -276,7 +276,9 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
   <input type="radio" id="audt3" name="audt" value="aW"> <label for="audt3">Wind</label>&nbsp;&nbsp;
   <input type="radio" id="audt4" name="audt" value="" checked> <label for="audt4"> not set</label><br><br>
 </div>
+<div id="spotMeterCheck">
 <input type="checkbox" id="sm" value="oSM"> <label for="sm">Spot Metering (H10) † </label><br>
+</div>
 <div id="spotMeter">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp1" name="placement" value="25,25"> <label for="sp1">Top Left    </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="radio" id="sp2" name="placement" value="50,25"> <label for="sp2">Top Center  </label>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -655,6 +657,7 @@ function startTime() {
 	dset("settingsPhotoRAW", false);
 	dset("settingsPT", false);
 	dset("settingsPTR", false);
+	dset("spotMeterCheck", false);
 	dset("spotMeter", false);
 	dset("settingsBurst", false);
 	dset("settingsTimewarp", false);
@@ -824,7 +827,10 @@ function startTime() {
 		{	
 			document.getElementById("sm").checked = false;
 		}
-		
+		else
+		{
+			dset("spotMeterCheck", true);
+		}
 		
 		dset("spotMeter", document.getElementById("sm").checked);	
 	}
