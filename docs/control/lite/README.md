@@ -262,10 +262,10 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 
 <div id="settingsPhotoRAW">
 <b>Photo Properties:</b><br>
-  <input type="radio" id="raw1" name="raw" value="rW"> <label for="raw1">Standard </label>&nbsp;&nbsp;
+  <input type="radio" id="raw1" name="raw" value="r0"> <label for="raw1">Standard </label>&nbsp;&nbsp;
   <input type="radio" id="raw2" name="raw" value="r"> <label for="raw2">Raw + JPEG </label>&nbsp;&nbsp;
   <input type="radio" id="raw3" name="raw" value="rS"> <label for="raw3">Superphoto </label>&nbsp;&nbsp;
-  <input type="radio" id="raw4" name="raw" value="rS"> <label for="raw4">HDR </label>&nbsp;&nbsp;
+  <input type="radio" id="raw4" name="raw" value="rH"> <label for="raw4">HDR </label>&nbsp;&nbsp;
   <input type="radio" id="raw5" name="raw" value="" checked> <label for="raw5"> not set</label><br><br>
 </div>
 
@@ -818,7 +818,12 @@ function startTime() {
 	
 	if(document.getElementById("sm") !== null)
 	{
-		dset("spotMeter", document.getElementById("sm").checked);	
+	
+		if( (document.getElementById("raw2").checked === false) && //!Superphoto
+			(document.getElementById("raw3").checked === false)) //!HDR
+		{	
+			dset("spotMeter", document.getElementById("sm").checked);	
+		}
 	}
 		
 	if(document.getElementById("pt") !== null)
@@ -1052,6 +1057,9 @@ function startTime() {
 		}
 	}
 	
+	if(checkedmode >= 13 && checkedmode <= 17) //RAW
+		cmd = dcmd(cmd,"raw"); //raw photo control
+		
 	if(document.getElementById("sm") !== null)
 	{
 		if(document.getElementById("sm").checked === true)
@@ -1085,9 +1093,6 @@ function startTime() {
 	cmd = dcmd(cmd,"all"); //auto low light	
 	cmd = dcmd(cmd,"audt"); //audio control
 	
-	
-	if(checkedmode >= 13 && checkedmode <= 17) //RAW
-		cmd = dcmd(cmd,"raw"); //raw photo control
 		
 	if(document.getElementById("p1") !== null)
 	{
