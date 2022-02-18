@@ -111,11 +111,12 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
   <input type="radio" id="pf1" name="pfov" value="fW"> <label for="pf1">Wide </label>&nbsp;&nbsp;
   <input type="radio" id="pf2" name="pfov" value="fL"> <label for="pf2">Linear </label>&nbsp;&nbsp;
   <input type="radio" id="pf3" name="pfov" value="fN"> <label for="pf3">Narrow </label><br>  
-  &nbsp;&nbsp;&nbsp;&nbsp;<b>Max Lens Mod:</b>&nbsp;&nbsp; <input type="radio" id="pf4" name="fov" value="oX1fW"> <label for="pf4">Wide </label>&nbsp;&nbsp;
-  <input type="radio" id="pf5" name="fov" value="oX1fX"> <label for="pf5">Superview </label>&nbsp;&nbsp; <input type="checkbox" id="pmlmhl" value="L"> <label for="pmlmhl">Horizon Level</label>
-  <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="pf6" name="fov" value="oX0"> <label for="pf6">Disable MLM</label>&nbsp;&nbsp; 
-  <input type="radio" id="pf7" name="fov" value="" checked> <label for="pf7">not set</label><br><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<b>Max Lens Mod:</b>&nbsp;&nbsp; 
+  <input type="radio" id="pf4" name="pfov" value="oX1fW"> <label for="pf4">Wide </label>&nbsp;&nbsp;
+  <input type="radio" id="pf5" name="pfov" value="oX1fX"> <label for="pf5">Superview </label>&nbsp;&nbsp; 
+  <input type="checkbox" id="pmlmhl" value="L"> <label for="pmlmhl">Horizon Level</label><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="pf6" name="pfov" value="oX0"> <label for="pf6">Disable MLM</label>&nbsp;&nbsp; 
+  <input type="radio" id="pf7" name="pfov" value="" checked> <label for="pf7">not set</label><br><br>
  </div>
   
  
@@ -133,10 +134,10 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
   <input type="radio" id="twf2" name="twfov" value="fL"> <label for="twf2">Linear </label>&nbsp;&nbsp;
   <input type="radio" id="twf3" name="twfov" value="fH"> <label for="twf3">Linear+HL </label>&nbsp;&nbsp;
   <input type="radio" id="twf4" name="twfov" value="fN"> <label for="twf4">Narrow </label>&nbsp;&nbsp;  <br>
-  &nbsp;&nbsp;&nbsp;&nbsp;<b>Max Lens Mod:</b>&nbsp;&nbsp; <input type="radio" id="twf5" name="fov" value="oX1fW"> <label for="twf5">Wide </label>&nbsp;&nbsp;
-  <input type="radio" id="twf6" name="fov" value="oX1fX"> <label for="twf6">Superview </label>&nbsp;&nbsp;
-  <input type="radio" id="twf7" name="fov" value="oX1fL"> <label for="twf7">Linear </label>&nbsp;&nbsp;<input type="checkbox" id="twmlmhl" value="L"> <label for="twmlmhl">Horizon Level</label><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="twf8" name="fov" value="oX0"> <label for="twf8">Disable MLM</label>&nbsp;&nbsp; 
-  <input type="radio" id="twf9" name="fov" value="" checked> <label for="twf9">not set</label><br><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<b>Max Lens Mod:</b>&nbsp;&nbsp; <input type="radio" id="twf5" name="twfov" value="oX1fW"> <label for="twf5">Wide </label>&nbsp;&nbsp;
+  <input type="radio" id="twf6" name="twfov" value="oX1fX"> <label for="twf6">Superview </label>&nbsp;&nbsp;
+  <input type="radio" id="twf7" name="twfov" value="oX1fL"> <label for="twf7">Linear </label>&nbsp;&nbsp;<input type="checkbox" id="twmlmhl" value="L"> <label for="twmlmhl">Horizon Level</label><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="twf8" name="twfov" value="oX0"> <label for="twf8">Disable MLM</label>&nbsp;&nbsp; 
+  <input type="radio" id="twf9" name="twfov" value="" checked> <label for="twf9">not set</label><br><br>
  </div>
  
  
