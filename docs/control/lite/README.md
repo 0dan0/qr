@@ -819,11 +819,14 @@ function startTime() {
 	if(document.getElementById("sm") !== null)
 	{
 	
-		if( (document.getElementById("raw2").checked === false) && //!Superphoto
-			(document.getElementById("raw3").checked === false)) //!HDR
+		if( (document.getElementById("raw3").checked === true) || //Superphoto
+			(document.getElementById("raw4").checked === true)) //HDR
 		{	
-			dset("spotMeter", document.getElementById("sm").checked);	
+			document.getElementById("sm").checked = false;
 		}
+		
+		
+		dset("spotMeter", document.getElementById("sm").checked);	
 	}
 		
 	if(document.getElementById("pt") !== null)
