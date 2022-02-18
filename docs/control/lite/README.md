@@ -146,7 +146,7 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
   <input type="radio" id="twf7" name="twfov" value="fL"> <label for="twf7">Linear </label>&nbsp;&nbsp;
   <input type="checkbox" id="twmlmhl" value="L"> <label for="twmlmhl">Horizon Level</label><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="radio" id="twf8" name="twfov" value="oX1"> <label for="twf8">Enable MLM</label>&nbsp;&nbsp; 
-  <input type="radio" id="twf9" name="twfov" value="oX0"> <label for="twf8">Disable MLM</label>&nbsp;&nbsp;
+  <input type="radio" id="twf9" name="twfov" value="oX0"> <label for="twf9">Disable MLM</label>&nbsp;&nbsp;
   <input type="radio" id="twf10" name="twfov" value="" checked> <label for="twf10">not set</label><br><br>
  </div>
  
