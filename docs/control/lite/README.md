@@ -115,7 +115,7 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
   <input type="radio" id="pf5" name="fov" value="oX1fX"> <label for="pf5">Superview </label>&nbsp;&nbsp;
   <input type="checkbox" id="pmlmhl" value="L"> <label for="pmlmhl">Horizon Level</label><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="pf6" name="fov" value="oX0"> <label for="pf6">Disable MLM</label>&nbsp;&nbsp; 
-  <input type="radio" id="pf7 name="fov" value="" checked> <label for="pf7>not set</label><br><br>
+  <input type="radio" id="pf7" name="fov" value="" checked> <label for="pf7>not set</label><br><br>
  </div>
   
  
