@@ -791,13 +791,12 @@ function startTime() {
 				}
 			}
 			
-			if(checkedmode >= 1 && checkedmode <= 10) //Video
+			if(checkedmode >= 1 && checkedmode <= 9) //Video + audio modes
 			{
 				dset("ptAUD",true);
 			}
 				
 			dset("ptSHARP",true);
-			dset("ptAUD",true);
 		}
 	}
 	
