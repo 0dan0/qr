@@ -901,8 +901,7 @@ function startTime() {
 				document.getElementById("zoomtext").innerHTML = zoom+"%";	
 				if(zoom == 100) zoom = 99;	
 				
-				if(zoom > 0)
-					cmd = cmd + zoom; //fov
+				cmd = cmd + zoom; //fov
 			}
 		}
 		else if(checkedmode == 13) //Photo
@@ -919,8 +918,7 @@ function startTime() {
 				document.getElementById("zoomtext").innerHTML = zoom+"%";	
 				if(zoom == 100) zoom = 99;	
 				
-				if(zoom > 0)
-					cmd = cmd + zoom; //fov
+				cmd = cmd + zoom; //fov
 			}
 		}
 		else if(checkedmode == 15) //Live Burst
@@ -932,8 +930,7 @@ function startTime() {
 			document.getElementById("zoomtext").innerHTML = zoom+"%";	
 			if(zoom == 100) zoom = 99;	
 			
-			if(zoom > 0)
-				cmd = cmd + "fW" + zoom; //fov
+			cmd = cmd + "fW" + zoom; //fov
 		}
 		else //Everything else
 		{
@@ -949,8 +946,7 @@ function startTime() {
 				document.getElementById("zoomtext").innerHTML = zoom+"%";	
 				if(zoom == 100) zoom = 99;	
 				
-				if(zoom > 0)
-					cmd = cmd + zoom; //fov
+				cmd = cmd + zoom; //fov
 			}
 		}
 	}
