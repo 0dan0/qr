@@ -986,7 +986,8 @@ function startTime() {
 				document.getElementById("zoomtext").innerHTML = zoom+"%";	
 				if(zoom == 100) zoom = 99;	
 				
-				cmd = cmd + zoom; //fov
+				if(zoom > 0)
+					cmd = cmd + zoom; //fov
 			}			
 			else if((document.getElementById("twf5").checked === true) || //MLM Wide
 				(document.getElementById("twf6").checked === true) || //MLM Superview
@@ -1012,7 +1013,8 @@ function startTime() {
 				document.getElementById("zoomtext").innerHTML = zoom+"%";	
 				if(zoom == 100) zoom = 99;	
 				
-				cmd = cmd + zoom; //fov
+				if(zoom > 0)
+					cmd = cmd + zoom; //fov
 			}
 			else if((document.getElementById("pf4").checked === true) || //MLM Wide
 				(document.getElementById("pf5").checked === true)) //MLM Superview
@@ -1032,7 +1034,8 @@ function startTime() {
 			document.getElementById("zoomtext").innerHTML = zoom+"%";	
 			if(zoom == 100) zoom = 99;	
 			
-			cmd = cmd + zoom; //fov
+			if(zoom > 0)
+				cmd = cmd + "fW" + zoom; //fov
 		}
 		else //Everything else
 		{
@@ -1048,7 +1051,8 @@ function startTime() {
 				document.getElementById("zoomtext").innerHTML = zoom+"%";	
 				if(zoom == 100) zoom = 99;	
 				
-				cmd = cmd + zoom; //fov
+				if(zoom > 0)
+					cmd = cmd + zoom; //fov
 			}
 		}
 	}
