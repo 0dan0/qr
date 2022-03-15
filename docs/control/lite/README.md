@@ -1025,7 +1025,14 @@ function startTime() {
 		}
 		else if(checkedmode == 15) //Live Burst
 		{
-			// do nothing custom
+			dset("settingsZoom", true);
+					
+			var zoom = parseInt(document.getElementById("zoom").value);
+			zoom *= 10;
+			document.getElementById("zoomtext").innerHTML = zoom+"%";	
+			if(zoom == 100) zoom = 99;	
+			
+			cmd = cmd + zoom; //fov
 		}
 		else //Everything else
 		{
