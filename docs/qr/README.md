@@ -1,8 +1,8 @@
 # GoPro QR Command
 
-<script src="../../jquery.min.js"></script>
-<script src="../../qrcodeborder.js"></script>
-<script src="../../html2canvas.min.js"></script>
+<script src="../jquery.min.js"></script>
+<script src="../qrcodeborder.js"></script>
+<script src="../html2canvas.min.js"></script>
 <style>
         #qrcode{
             width: 100%;
