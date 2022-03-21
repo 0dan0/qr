@@ -156,7 +156,7 @@ function timeLoop()
 	if(addcmd.length > 0)
 		cmd = addcmd;
 	else
-		document.getElementById("addcmd").innerHTML = "Hello";
+		document.getElementById("addcmd").value = "Hello";
   }	
 
   if(cmd != lasttimecmd)
