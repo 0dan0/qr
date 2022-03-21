@@ -29,7 +29,6 @@
 </div>
 
 Manual Command: <input type="text" style="width: 500px;" id="addcmd" value="">
-Share this QR Code as: <b id="urltext"></b>
 
 [More features](..) for Labs enabled cameras
 
@@ -151,11 +150,13 @@ function timeLoop()
   qrcode.clear(); 
   qrcode.makeCode(cmd);
   
- if(document.getElementById("addcmd") !== null)
+  if(document.getElementById("addcmd") !== null)
   {
 	var addcmd = document.getElementById("addcmd").value;
 	if(addcmd.length > 0)
 		cmd = addcmd;
+	else
+		document.getElementById("addcmd").innerHTML = cmd;
   }	
 
   if(cmd != lasttimecmd)
