@@ -30,10 +30,10 @@
 
 Manual Command: <input type="text" style="width: 500px;" id="addcmd" value="">
 
-[More features](..) for Labs enabled cameras
+[More features](../control) for Labs enabled cameras
 
 
-## version 1.11
+## version 1.12
 
 <script>
 var changed = false;
