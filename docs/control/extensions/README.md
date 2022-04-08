@@ -120,8 +120,8 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
 
 <br> 
 		
-## ver 1.14
-updated: Apr 5, 2022
+## ver 1.15
+updated: Apr 8, 2022
 [BACK](..)
 
 <script>
