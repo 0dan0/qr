@@ -32,7 +32,7 @@ Proxies can be used directly from the SD card (when mounted on your PC or Mac), 
   <center>
   <div id="qrcode"></div><br>
   <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em><br>
-  <b><font color="#005CAC">Enable Proxies</font></b>
+  <b><font color="#005CAC"><em id="status"></em> Proxies</font></b>
   </center>
 </div>
 <button id="copyImg">Copy Image to Clipboard</button>
@@ -55,6 +55,7 @@ updated: Apr 8, 2022
 var once = true;
 var qrcode;
 var cmd = "";
+var stts = "";
 var clipcopy = "";
 var lasttimecmd = "";
 var changed = true;
@@ -76,11 +77,13 @@ function makeQR()
 
 function timeLoop()
 {
+  stts = "Disabled";
   cmd = "!MPRXY=0";
   if(document.getElementById("proxies") !== null)
   {
     if(document.getElementById("proxies").checked === true)
     {
+      stts = "Enabled";
       cmd = "!MPRXY=1";
     }
   }
@@ -97,6 +100,7 @@ function timeLoop()
 	
   if(changed === true)
   {
+	document.getElementById("status").innerHTML = stts;
 	document.getElementById("qrtext").innerHTML = cmd;
 	clipcopy = "https://gopro.github.io/labs/control/set/?cmd=" + cmd + "&title=Large%20Chapter%20Control";
 	document.getElementById("urltext").innerHTML = clipcopy;
