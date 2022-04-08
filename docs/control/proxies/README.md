@@ -23,6 +23,7 @@ When Proxies are enabled, the LRV files will be created with names that are read
 &nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GX013785.MP4`<br>
 &nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/Proxies/GX013784_Proxy.MP4`<br>
 &nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/Proxies/GX013785_Proxy.MP4`<br>
+Proxies can be used directly from the SD card (when mounted on your PC or Mac), or can be transfered with the MP4s to local storage for the fastest editing experience.
 
 <input type="checkbox" id="proxies" name="proxies" checked> 
 <label for="proxies">Enable Proxies</label><br>
