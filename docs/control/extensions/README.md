@@ -72,17 +72,19 @@ All metadata QR commands are written in the form oM**wxzy**=value(s) or !M**wxzy
 - **DLRV=1** - Disable LRV, all videos will have an MP4 old. This is not good idea for Quik uses, as the LRV video helps in video preview. Application: high bit-rate drones video.
 - **DAUD=1** - Disable audio, all video created video files will have no audio. Application: high bit-rate drones video.
 - **DAMP=0.1 to 1000** - Control over the auto-exposure damping. When moving a camera through dramatically changing lighting, like biking through a forest, in and out of sunlight, or flying a drone through a short tunnel, the exposure will adjust automatically, correctly in most scenarios, but sometimes not optimal for some rapidly changing light levels. The camera's auto-exposure currently takes about one second to adjust from sunlight to indoor conditions, but if you are flying a drone through indoors for only a few seconds, the camera would over-expose on exit. In this scenario using an exposure lock might be preferable, maintaining an outdoor exposure throwout, but exposure lock is risky for shooting under variable lighting conditions. Changing the damping might be what you need. Setting the DAMP=1 is the default, so setting to 10 would slow the camera's exposure adjustments 10X. Now shooting into dark for moment will not cause much over-exposure (if any).  Setting DAMP=60 will take a minute for exposure changes. Setting DAMP lower than 1, like 0.2, would make it adjust faster. There is no perfect setting, this is just more control.
-- **PRXY=1** <span style="color:steelblue">**NEW**</span> - Store LRV files as Adobe Premiere Pro™ style proxy files. Normally a camera will encode and LRV (Low Res Video) for every MP4 using this standard directory structure:
-&nbsp;&nbsp;&nbsp;&nbsp; DCIM/100GOPRO/GX013784.MP4<br>
-&nbsp;&nbsp;&nbsp;&nbsp; DCIM/100GOPRO/GL013784.LRV<br>
-&nbsp;&nbsp;&nbsp;&nbsp; DCIM/100GOPRO/GX013785.MP4<br>
-&nbsp;&nbsp;&nbsp;&nbsp; DCIM/100GOPRO/GL013785.LRV<br>
+- **PRXY=1** <span style="color:steelblue">**NEW**</span> - Store LRV files as Adobe Premiere Pro™ style proxy files. Normally a camera will encode and LRV (Low Res Video) for every MP4 using this standard directory structure:<br>
+&nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GX013784.MP4`<br>
+&nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GL013784.LRV`<br>
+&nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GX013785.MP4`<br>
+&nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GL013785.LRV`<br>
 When Proxies are enabled, the LRV files will be created with name naming that is ready for Premiere Pro's **Attach Proxies** function, greatly speeding up a professional workflows The new folder structure is:<br>
-&nbsp;&nbsp;&nbsp;&nbsp; DCIM/100GOPRO/GX013784.MP4<br>
-&nbsp;&nbsp;&nbsp;&nbsp; DCIM/100GOPRO/GX013785.MP4<br>
-&nbsp;&nbsp;&nbsp;&nbsp; DCIM/100GOPRO/Proxies/GX013784_Proxy.MP4<br>
-&nbsp;&nbsp;&nbsp;&nbsp; DCIM/100GOPRO/Proxies/GX013785_Proxy.MP4<br>
+&nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GX013784.MP4`<br>
+&nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GX013785.MP4`<br>
+&nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/Proxies/GX013784_Proxy.MP4`<br>
+&nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/Proxies/GX013785_Proxy.MP4`<br>
 Note: When this feature is enabled, the lack of LRVs will mean the Quik App will not be able to preview video on the camera. However, this will not prevent the full resolution transfers, or on camera playback.
+
+
 - **TCAL=milliseconds** <span style="color:steelblue">**NEW**</span> - Timecode CALibration, help to increase the precision of setting timecode via QR Code. The milliseconds can be positive or negative as needed.
 - **TONE=0,1,2 or 3** - Tone-mapping controls. Tone-mapping is the in-camera contrast control, dynamically adjusting the video to look good under a range of lighting conditions. HERO10 adds LTM - Local Tone-Mapping, enabling you to see details in leaves and grass textures, way better than all previous GoPro's. HERO9 and earlier, used GTM, Global Tone-Mapping which adjusts the contrast curve for the image automatically. If you wanted to do these in post, you could use Protune Flat, where all in-camera tone-mapping is disabled and a log curve is applied. For a more developed Rec709 video, by shooting GoPro Color or Natural modes, but you wanted to do your own tone-mapping in post--you can now do that.
   - **TONE=0** - using the cameras default  
