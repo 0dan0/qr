@@ -13,12 +13,12 @@
         }
 </style>
 
-Decoding 4K and 5K HEVC Video can be very demanding on video tools. A common solution to speed up the editing workflow is to transcode high resolution files into Proxies. With this option the camera automatically convert the cameras LRV files into Adobe Premiere Pro™ style proxy files. Normally a camera will encode and LRV (Low Res Video) for every MP4 using this standard directory structure:<br>
+Decoding 4K and 5K HEVC Video can be very demanding on video tools. To speed up the editing workflow, a common solution is to transcode high resolution files into proxies. With this Labs extension enabled, the camera automatically produces Adobe Premiere Pro™ style proxy files, saving you the time consuming transcoding step. Normally a camera will encode and LRV (Low Res Video) for every MP4 using this standard directory structure:<br>
 &nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GX013784.MP4`<br>
 &nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GL013784.LRV`<br>
 &nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GX013785.MP4`<br>
 &nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GL013785.LRV`<br>
-When Proxies are enabled, the LRV files will be created with name naming that is ready for Premiere Pro's **Attach Proxies** function, greatly speeding up a professional workflows The new folder structure is:<br>
+When Proxies are enabled, the LRV files will be created with names that are ready for Premiere Pro's **Attach Proxies** function, greatly speeding up professional workflows. The new folder structure is:<br>
 &nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GX013784.MP4`<br>
 &nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GX013785.MP4`<br>
 &nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/Proxies/GX013784_Proxy.MP4`<br>
@@ -40,7 +40,7 @@ When Proxies are enabled, the LRV files will be created with name naming that is
 Share this QR Code as a URL: <small id="urltext"></small><br>
 <button id="copyBtn">Copy URL to Clipboard</button>
 
-**Warning:** When this feature is enabled, the lack of LRVs will mean the Quik App will not be able to preview video on the camera. However, this will not prevent the full resolution transfers, or on camera playback.
+**Warning:** When this feature is enabled, the lack of LRVs will mean the Quik App will not be able to preview video on the camera. However, this will not prevent the full resolution transfer, or on camera playback.
 
 **Compatibility:** Labs enabled HERO10 
 
