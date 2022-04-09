@@ -329,7 +329,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 <div id="settingsPTR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Protune Reset:</b>&nbsp;&nbsp;
 <input type="checkbox" id="ptr" value="t0"> <label for="ptr"> </label><br>
 </div>
-<div id="ptCOLOR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Protune Color:</b>&nbsp;&nbsp;
+<div id="ptCOLOR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Color:</b>&nbsp;&nbsp;
   <input type="radio" id="ptc1" name="ptc" value="cG"> <label for="ptc1">Vibrant</label>&nbsp;&nbsp;
   <input type="radio" id="ptc2" name="ptc" value="cN"> <label for="ptc2">Natural</label>&nbsp;&nbsp;
   <input type="radio" id="ptc3" name="ptc" value="cF"> <label for="ptc3">Flat</label>&nbsp;&nbsp;
@@ -346,7 +346,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   <input type="radio" id="wb3" name="wb" value="w28" > <label for="wb3">2800K </label>&nbsp;&nbsp;
   <input type="radio" id="wb4" name="wb" value="w32" > <label for="wb4">3200K </label>&nbsp;&nbsp;
   <input type="radio" id="wb5" name="wb" value="w40" > <label for="wb5">4000K </label>&nbsp;&nbsp;
-  <input type="radio" id="wb6" name="wb" value="w45" > <label for="wb6">4500K </label>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="wb6" name="wb" value="w45" > <label for="wb6">4500K </label>&nbsp;&nbsp;
   <input type="radio" id="wb7" name="wb" value="w50" > <label for="wb7">5000K </label>&nbsp;&nbsp;
   <input type="radio" id="wb8" name="wb" value="w55" > <label for="wb8">5500K </label>&nbsp;&nbsp;
   <input type="radio" id="wb9" name="wb" value="w60"> <label for="wb9">6000K </label>&nbsp;&nbsp;
@@ -380,11 +380,11 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   <input type="radio" id="shut3" name="shut" value="S90" > <label for="shut3">90&deg; </label>&nbsp;&nbsp;
   <input type="radio" id="shut4" name="shut" value="S45" > <label for="shut4">45&deg; </label>&nbsp;&nbsp;
   <input type="radio" id="shut5" name="shut" value="S22" > <label for="shut5">22&deg; </label>&nbsp;&nbsp;
-  <input type="radio" id="shut6" name="shut" value="S0"  > <label for="shut6">Auto</label>
-  <input type="radio" id="shut7" name="shut" value="" checked> <label for="shut7">not set</label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(extended beyond camera menu)
-  <input type="radio" id="shut8" name="shut" value="S10" > <label for="shut8">10&deg; </label>&nbsp;&nbsp;
-  <input type="radio" id="shut9" name="shut" value="S5" > <label for="shut9">5&deg; </label>&nbsp;&nbsp;
-  <input type="radio" id="shut10" name="shut" value="S2" > <label for="shut10">2&deg; </label>&nbsp;&nbsp;
+  <input type="radio" id="shut6" name="shut" value="S10" > <label for="shut6">10&deg; </label>&nbsp;&nbsp;
+  <input type="radio" id="shut7" name="shut" value="S5"  > <label for="shut7">5&deg; </label>&nbsp;&nbsp;
+  <input type="radio" id="shut8" name="shut" value="S2"  > <label for="shut8">2&deg; </label>&nbsp;&nbsp;
+  <input type="radio" id="shut9" name="shut" value="S0"  > <label for="shut9">Auto</label>
+  <input type="radio" id="shut10" name="shut" value="" checked> <label for="shut10">not set</label>
 </div>
 <div id="ptEV">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>EV Compensation:</b>&nbsp;&nbsp;
   <input type="radio" id="ev1" name="ev" value="x-2"  > <label for="ev1">-2 </label>&nbsp;&nbsp;
@@ -410,7 +410,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   <input type="radio" id="aud2" name="aud" value="aL"> <label for="aud2">Low </label>&nbsp;&nbsp;
   <input type="radio" id="aud3" name="aud" value="aM"> <label for="aud3">Medium </label>&nbsp;&nbsp;
   <input type="radio" id="aud4" name="aud" value="aH"> <label for="aud4">High</label>&nbsp;&nbsp;
-  <input type="radio" id="aud5" name="aud" value="" checked> <label for="aud5">not set</label><br>
+  <input type="radio" id="aud5" name="aud" value="" checked> <label for="aud5">not set</label>
 </div> -->
 
 <div id="cameraOptions">
