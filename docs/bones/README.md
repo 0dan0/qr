@@ -515,9 +515,52 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 &nbsp;&nbsp;<b>Auto Wake on Power:</b>&nbsp;&nbsp;<input type="radio" id="sap8" name="sap" value="!MWAKE=1"> <label for="sap8">Enable</label>
 &nbsp;&nbsp;<input type="radio" id="sap9" name="sap" value="!MWAKE=0"> <label for="sap9">Disable</label><br>
 &nbsp;&nbsp;<b>Auto Capture Trigger:</b><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap10" name="sap"> <label for="sap10">Sound Pressure Level (range 30-120dB)</label><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap10" name="sap"> <label for="sap10">Sound Pressure Level (range 30-120dB)</label>&nbsp;&nbsp;
+<input type="checkbox" id="helpS" value=""> <label for="actions">Help</label>
+<div id="splHelp">
+  <small>
+	<table style="margin-left:60px;">
+	  <thead>
+		<tr>
+		  <th>SPL (dB) at 1m/3ft</th>
+		  <th>Activity</th>
+		</tr>
+	  </thead>
+	  <tbody>
+		<tr>
+		  <td>30</td>
+		  <td>calm room</td>
+		</tr>
+		<tr>
+		  <td>40-60</td>
+		  <td>conversation</td>
+		</tr>
+		<tr>
+		  <td>60-80</td>
+		  <td>passenger car</td>
+		</tr>
+		<tr>
+		  <td>80-90</td>
+		  <td>busy roadway</td>
+		</tr>
+		<tr>
+		  <td>100</td>
+		  <td>jack hammer</td>
+		</tr>
+		<tr>
+		  <td>110</td>
+		  <td>chain saw</td>
+		</tr>
+		<tr>
+		  <td>120</td>
+		  <td>air horn</td>
+		</tr>
+	  </tbody>
+	</table>
+  </small>
+</div><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap11" name="sap"> <label for="sap11">IMU, Gyro+Accel (range 1-9)</label>&nbsp;&nbsp;
-<input type="checkbox" id="helpI" value=""> <label for="actions">Help</label><br>
+<input type="checkbox" id="helpI" value=""> <label for="actions">Help</label>
 <div id="imuHelp">
   <small>
 	<table style="margin-left:60px;">
@@ -553,7 +596,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   </small>
 </div><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap14" name="sap"> <label for="sap14">Motion (range 1-6)</label>&nbsp;&nbsp;
-<input type="checkbox" id="helpM" value="">&nbsp;&nbsp;<label for="actions">Help</label><br>
+<input type="checkbox" id="helpM" value="">&nbsp;&nbsp;<label for="actions">Help</label>
  <div id="motionHelp">
   <small>
 	<table style="margin-left:60px;">
@@ -926,6 +969,13 @@ function startTime() {
 				if(document.getElementById("helpI").checked === true)
 				{
 					dset("imuHelp", true);
+				}
+			}
+			if(document.getElementById("helpS") !== null)
+			{
+				if(document.getElementById("helpS").checked === true)
+				{
+					dset("splHelp", true);
 				}
 			}
 		}
