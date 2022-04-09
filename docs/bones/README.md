@@ -801,10 +801,12 @@ function startTime() {
 	
 	
 	for (i = 1; i < 14; i++) { 
-		var val = "sap"+i;
-		x = document.getElementById(val).checked;
-		if( x === true)
-			actionmode = i;
+		var amode = "sap"+i;
+		if(document.getElementById(amode) !== null)	{
+			x = document.getElementById(amode).checked;
+			if( x === true)
+				actionmode = i;
+		}
 	}
 	
 	//m1 mV 
