@@ -294,30 +294,30 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 
 <div id="spotMeter">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your Virtual Touch Screen<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp1"  name="placement" value="1,1">   <label for="sp1" >..</label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp2"  name="placement" value="25,1">  <label for="sp2" >..</label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp3"  name="placement" value="50,1">  <label for="sp3" >..</label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp4"  name="placement" value="75,1">  <label for="sp4" >..</label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp1"  name="placement" value="1,1">   <label for="sp1" >  </label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp2"  name="placement" value="25,1">  <label for="sp2" >  </label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp3"  name="placement" value="50,1">  <label for="sp3" >  </label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp4"  name="placement" value="75,1">  <label for="sp4" >  </label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp5"  name="placement" value="99,1">  <label for="sp5" >  </label><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp6"  name="placement" value="1,25">  <label for="sp6" >..</label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp7"  name="placement" value="25,25"> <label for="sp7" >..</label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp8"  name="placement" value="50,25"> <label for="sp8" >..</label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp9"  name="placement" value="75,25"> <label for="sp9" >..</label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp6"  name="placement" value="1,25">  <label for="sp6" >  </label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp7"  name="placement" value="25,25"> <label for="sp7" >  </label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp8"  name="placement" value="50,25"> <label for="sp8" >  </label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp9"  name="placement" value="75,25"> <label for="sp9" >  </label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp10" name="placement" value="99,25"> <label for="sp10">  </label><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp11" name="placement" value="1,50">  <label for="sp11">..</label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp12" name="placement" value="25,50"> <label for="sp12">..</label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp13" name="placement" value="50,50" checked> <label for="sp13">..</label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp14" name="placement" value="75,50"> <label for="sp14">..</label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp11" name="placement" value="1,50">  <label for="sp11">  </label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp12" name="placement" value="25,50"> <label for="sp12">  </label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp13" name="placement" value="50,50" checked> <label for="sp13">  </label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp14" name="placement" value="75,50"> <label for="sp14">  </label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp15" name="placement" value="99,50"> <label for="sp15">  </label><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp16" name="placement" value="1 ,75"> <label for="sp16">..</label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp17" name="placement" value="25,75"> <label for="sp17">..</label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp18" name="placement" value="50,75"> <label for="sp18">..</label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp19" name="placement" value="75,75"> <label for="sp19">..</label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp16" name="placement" value="1 ,75"> <label for="sp16">  </label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp17" name="placement" value="25,75"> <label for="sp17">  </label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp18" name="placement" value="50,75"> <label for="sp18">  </label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp19" name="placement" value="75,75"> <label for="sp19">  </label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp20" name="placement" value="99,75"> <label for="sp20">  </label><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp21" name="placement" value="1,99">  <label for="sp21">..</label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp22" name="placement" value="25,99"> <label for="sp22">..</label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp23" name="placement" value="50,99"> <label for="sp23">..</label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp24" name="placement" value="75,99"> <label for="sp24">..</label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp21" name="placement" value="1,99">  <label for="sp21">  </label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp22" name="placement" value="25,99"> <label for="sp22">  </label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp23" name="placement" value="50,99"> <label for="sp23">  </label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp24" name="placement" value="75,99"> <label for="sp24">  </label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp25" name="placement" value="99,99"> <label for="sp25">  </label><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp26" name="placement" value="0"> <label for="sp26">Disable </label><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="sl" value="oSM0!2NoSL"> <label for="sl">Exposure Lock 3s after scan (to avoid locking on the QR Code)</label><br>
