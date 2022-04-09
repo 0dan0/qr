@@ -1,8 +1,8 @@
 # GoPro Bones QR Code Creator
 
-<script src="../../jquery.min.js"></script>
-<script src="../../qrcodeborder.js"></script>
-<script src="../../html2canvas.min.js"></script>
+<script src="../jquery.min.js"></script>
+<script src="../qrcodeborder.js"></script>
+<script src="../html2canvas.min.js"></script>
 <style>
         #qrcode{
             width: 100%;
