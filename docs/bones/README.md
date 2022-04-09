@@ -278,7 +278,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 <div id="spotMeterCheck">
 <input type="checkbox" id="sm" value="oSM"> <label for="sm">Spot Metering</label><br>
 </div>
-<div id="spotMeter">
+<!-- <div id="spotMeter">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp1" name="placement" value="25,25"> <label for="sp1">Top Left    </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="radio" id="sp2" name="placement" value="50,25"> <label for="sp2">Top Center  </label>&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="radio" id="sp3" name="placement" value="75,25"> <label for="sp3">Top Right   </label><br>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -290,7 +290,44 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 <input type="radio" id="sp9" name="placement" value="75,75"> <label for="sp9">Lower Right </label>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="radio" id="sp10" name="placement" value="0"> <label for="sp10">Disable </label><br>&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="checkbox" id="sl" value="oSM0!2NoSL"> <label for="sl">Exposure Lock 3s after scan (to avoid locking on the QR Code)</label><br>
+</div> -->
+
+<div id="spotMeter">
+<input type="radio" id="sp1" name="placement" value="25,25"> <label for="sp1"></label>
+<input type="radio" id="sp2" name="placement" value="50,25"> <label for="sp2"></label>
+<input type="radio" id="sp3" name="placement" value="75,25"> <label for="sp3"></label>
+<input type="radio" id="sp4" name="placement" value="25,50"> <label for="sp4"></label>
+<input type="radio" id="sp5" name="placement" value="50,50"> <label for="sp5"></label><br>
+
+<input type="radio" id="sp6" name="placement" value="75,50"> <label for="sp6"></label>
+<input type="radio" id="sp7" name="placement" value="25,75"> <label for="sp7"></label>
+<input type="radio" id="sp8" name="placement" value="50,75"> <label for="sp8"></label>
+<input type="radio" id="sp9" name="placement" value="75,75"> <label for="sp9"></label>
+<input type="radio" id="sp10" name="placement" value="75,75"> <label for="sp10"></label><br>
+
+<input type="radio" id="sp11" name="placement" value="25,25"> <label for="sp11"></label>
+<input type="radio" id="sp12" name="placement" value="50,25"> <label for="sp12"></label>
+<input type="radio" id="sp13" name="placement" value="75,25" checked> <label for="sp13"></label>
+<input type="radio" id="sp14" name="placement" value="25,50"> <label for="sp14"></label>
+<input type="radio" id="sp15" name="placement" value="50,50"> <label for="sp15"></label><br>
+
+<input type="radio" id="sp16" name="placement" value="75,50"> <label for="sp16"></label>
+<input type="radio" id="sp17" name="placement" value="25,75"> <label for="sp17"></label>
+<input type="radio" id="sp18" name="placement" value="50,75"> <label for="sp18"></label>
+<input type="radio" id="sp19" name="placement" value="75,75"> <label for="sp19"></label>
+<input type="radio" id="sp20" name="placement" value="75,75"> <label for="sp20"></label><br>
+
+<input type="radio" id="sp21" name="placement" value="25,25"> <label for="sp21"></label>
+<input type="radio" id="sp22" name="placement" value="50,25"> <label for="sp22"></label>
+<input type="radio" id="sp23" name="placement" value="75,25"> <label for="sp23"></label>
+<input type="radio" id="sp24" name="placement" value="25,50"> <label for="sp24"></label>
+<input type="radio" id="sp25" name="placement" value="50,50"> <label for="sp25"></label><br>
+
+
+<input type="radio" id="sp26" name="placement" value="0"> <label for="sp26">Disable </label><br>
+<input type="checkbox" id="sl" value="oSM0!2NoSL"> <label for="sl">Exposure Lock 3s after scan (to avoid locking on the QR Code)</label><br>
 </div>
+
 <div id="settingsPT">
 <input type="checkbox" id="pt" value="t"> <label for="pt">Protune Controls</label><br>
 </div>
