@@ -518,7 +518,43 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap10" name="sap"> <label for="sap10">Sound Pressure Level (range 30-120dB)</label><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap11" name="sap"> <label for="sap11">Gyroscope (range 1-9)</label><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap12" name="sap"> <label for="sap12">Accelerometer (range 1-9)</label><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap13" name="sap"> <label for="sap13">Gyro+Accel (range 1-9)</label><input type="checkbox" id="helpM" value=""> <label for="actions">Help</label><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap13" name="sap"> <label for="sap13">Gyro+Accel (range 1-9)</label><input type="checkbox" id="helpI" value=""> <label for="actions">Help</label><br>
+<div id="imuHelp">
+  <small>
+	<table style="margin-left:60px;">
+	  <thead>
+		<tr>
+		  <th>Sensitivity</th>
+		  <th>Activity</th>
+		</tr>
+	  </thead>
+	  <tbody>
+		<tr>
+		  <td>1</td>
+		  <td>Throwing the camera</td>
+		</tr>
+		<tr>
+		  <td>2</td>
+		  <td>Jumps</td>
+		</tr>
+		<tr>
+		  <td>5</td>
+		  <td>any hand-held movement</td>
+		</tr>
+		<tr>
+		  <td>8</td>
+		  <td>tiny movement</td>
+		</tr>
+		<tr>
+		  <td>9</td>
+		  <td>small tremor</td>
+		</tr>
+	  </tbody>
+	</table>
+  </small>
+</div><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap14" name="sap"> <label for="sap14">Motion (range 1-6)</label>
+<input type="checkbox" id="helpM" value=""> <label for="actions">Help</label><br>
  <div id="motionHelp">
   <small>
 	<table style="margin-left:60px;">
@@ -555,41 +591,9 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 		</tr>
 	  </tbody>
 	</table>
-  </small><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap14" name="sap"> <label for="sap14">Motion (range 1-6)</label><input type="checkbox" id="helpI" value=""> <label for="actions">Sensitivity Help</label><br>
-<div id="imuHelp">
-  <small>
-	<table style="margin-left:60px;">
-	  <thead>
-		<tr>
-		  <th>Sensitivity</th>
-		  <th>Activity</th>
-		</tr>
-	  </thead>
-	  <tbody>
-		<tr>
-		  <td>1</td>
-		  <td>Throwing the camera</td>
-		</tr>
-		<tr>
-		  <td>2</td>
-		  <td>Jumps</td>
-		</tr>
-		<tr>
-		  <td>5</td>
-		  <td>any hand-held movement</td>
-		</tr>
-		<tr>
-		  <td>8</td>
-		  <td>tiny movement</td>
-		</tr>
-		<tr>
-		  <td>9</td>
-		  <td>small tremor</td>
-		</tr>
-	  </tbody>
-	</table>
-  </small><br>
+  </small>
+</div>
+<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitivity: <input type="text" id="mstart" value="" style="width:60px"> (value from range).<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="dhold" value="" style="width:60px"> seconds.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="mhold" value="" style="width:60px"> capture seconds after motion stops.<br>
