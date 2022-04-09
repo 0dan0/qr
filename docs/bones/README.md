@@ -518,7 +518,8 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap10" name="sap"> <label for="sap10">Sound Pressure Level (range 30-120dB)</label><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap11" name="sap"> <label for="sap11">Gyroscope (range 1-9)</label><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap12" name="sap"> <label for="sap12">Accelerometer (range 1-9)</label><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap13" name="sap"> <label for="sap13">Gyro+Accel (range 1-9)</label><input type="checkbox" id="helpI" value=""> <label for="actions">Help</label><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap13" name="sap"> <label for="sap13">Gyro+Accel (range 1-9)</label>&nbsp;&nbsp;
+<input type="checkbox" id="helpI" value=""> <label for="actions">Help</label><br>
 <div id="imuHelp">
   <small>
 	<table style="margin-left:60px;">
@@ -553,8 +554,8 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 	</table>
   </small>
 </div><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap14" name="sap"> <label for="sap14">Motion (range 1-6)</label>
-<input type="checkbox" id="helpM" value=""> <label for="actions">Help</label><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap14" name="sap"> <label for="sap14">Motion (range 1-6)</label>&nbsp;&nbsp;
+<input type="checkbox" id="helpM" value="">&nbsp;&nbsp;<label for="actions">Help</label><br>
  <div id="motionHelp">
   <small>
 	<table style="margin-left:60px;">
