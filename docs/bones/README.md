@@ -14,8 +14,8 @@
 </style>
 
 Create a custom camera mode, and even start a capture all through QR Codes. This is the fastest way to access many of the new GoPro Labs' firmware features that are pre-installed on Bones. Many features of this page are also available as a mobile app.<br>
-Install from: [![google play](../google-play-small.png)](https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
-[![apple app store](../apple-store-small.png)](https://apps.apple.com/us/app/gopro-app/id1518134202)
+Install from: [![google play](../control/google-play-small.png)](https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
+[![apple app store](../control/apple-store-small.png)](https://apps.apple.com/us/app/gopro-app/id1518134202)
 
 ## Scanning Your Code
 
@@ -26,22 +26,22 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
 ## Camera Settings
 
 <b>Camera Mode:</b>
-  &nbsp;&nbsp;<input type="radio" id="m1" name="mode" value="mV" checked> <label for="m1">Video</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m5" name="mode" value="mV0"> <label for="m5">Standard</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m6" name="mode" value="mV1"> <label for="m6">Activity</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m7" name="mode" value="mV2"> <label for="m7">Cinematic</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m8" name="mode" value="mV4"> <label for="m8">SloMo</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m9" name="mode" value="mV5"> <label for="m9">Basic</label><br>
-  &nbsp;&nbsp;<input type="radio" id="m10" name="mode" value="mTW"> <label for="m10">TimeWarp</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m11" name="mode" value="mT"> <label  for="m11">Timelapse</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m12" name="mode" value="mNL"> <label for="m12">Nightlapse</label><br>
-  &nbsp;&nbsp;<input type="radio" id="m13" name="mode" value="mP">  <label for="m13">Photo</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m14" name="mode" value="mPB"> <label for="m14">Burst</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m15" name="mode" value="mL">  <label for="m15">Live Burst</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m16" name="mode" value="mPN"> <label for="m16">Night</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m17" name="mode" value="mTP"> <label for="m17">Timelapse</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m18" name="mode" value="mNP"> <label for="m18">Nightlapse</label><br>
-  &nbsp;&nbsp;<input type="radio" id="m19" name="mode" value=""> <label for="m19">not set</label><br>
+  &nbsp;&nbsp;<input type="radio" id="m1" name="mode"  value="mV" checked> <label for="m1">Video</label>&nbsp;&nbsp;
+  &nbsp;&nbsp;<input type="radio" id="m2" name="mode"  value="mV0"> <label for="m2">Standard</label>&nbsp;&nbsp;
+  &nbsp;&nbsp;<input type="radio" id="m3" name="mode"  value="mV1"> <label for="m3">Activity</label>&nbsp;&nbsp;
+  &nbsp;&nbsp;<input type="radio" id="m4" name="mode"  value="mV2"> <label for="m4">Cinematic</label>&nbsp;&nbsp;
+  &nbsp;&nbsp;<input type="radio" id="m5" name="mode"  value="mV4"> <label for="m5">SloMo</label>&nbsp;&nbsp;
+  &nbsp;&nbsp;<input type="radio" id="m6" name="mode"  value="mV5"> <label for="m6">Basic</label><br>
+  &nbsp;&nbsp;<input type="radio" id="m7" name="mode"  value="mTW"> <label for="m7">TimeWarp</label>&nbsp;&nbsp;
+  &nbsp;&nbsp;<input type="radio" id="m8" name="mode"  value="mT">  <label for="m8">Timelapse</label>&nbsp;&nbsp;
+  &nbsp;&nbsp;<input type="radio" id="m9" name="mode"  value="mNL"> <label for="m9">Nightlapse</label>&nbsp;&nbsp;
+  &nbsp;&nbsp;<input type="radio" id="m10" name="mode" value="mP">  <label for="m10">Photo</label>&nbsp;&nbsp;
+  &nbsp;&nbsp;<input type="radio" id="m11" name="mode" value="mPB"> <label for="m11">Burst</label>&nbsp;&nbsp;
+  &nbsp;&nbsp;<input type="radio" id="m12" name="mode" value="mL">  <label for="m12">Live Burst</label>&nbsp;&nbsp;
+  &nbsp;&nbsp;<input type="radio" id="m13" name="mode" value="mPN"> <label for="m13">Night</label>&nbsp;&nbsp;
+<!--  &nbsp;&nbsp;<input type="radio" id="m14" name="mode" value="mTP"> <label for="m14">Timelapse</label>&nbsp;&nbsp;
+  &nbsp;&nbsp;<input type="radio" id="m15" name="mode" value="mNP"> <label for="m15">Nightlapse</label>&nbsp;&nbsp; -->
+  &nbsp;&nbsp;<input type="radio" id="m16" name="mode" value=""> <label for="m14">not set</label><br>
 
 <div id="noteMODE" style="font-size:13px;">
 <b>Time/Night-Lapse modes:</b> The camera defaults to having presets for only one time-lapse mode and one night-lapse mode, yet both modes have two configurations (video or photo.) For all QR Code mode commands to work, a preset is needed for every mode you wish to use. e.g. If you only have a preset for night-lapse video (NLV), the QR command for NLV will work, but will not for night-lapse photo (NLP). My may need to use the GoPro Quik App to edit you presets to be of the needed type.<br><br>
@@ -690,7 +690,7 @@ function startTime() {
 	var checkedmode = 0;
 	var x;
 	
-	for (i = 1; i < 19; i++) { 
+	for (i = 1; i < 14; i++) { 
 		var mode = "m"+i;
 		x = document.getElementById(mode).checked;
 		if( x === true)
@@ -698,36 +698,30 @@ function startTime() {
 	}
 	
 	//m1 mV 
-	//m2 mVP
-	//m3 mVE
-	//m4 mVS
-	//m5 mV0
-	//m6 mV1
-	//m7 mV2
-	//m8 mV3
-	//m9 mV4
-	//m10 mTW
-	//m11 mT 
-	//m12 mNL
-	//m13 mP 
-	//m14 mPB
-	//m15 mL
-	//m16 mPN
-	//m17 mTP
-	//m18 mNP
+	//m2 mV0
+	//m3 mV1
+	//m4 mV2
+	//m5 mV3
+	//m6 mV4
+	//m7 mTW
+	//m8 mT 
+	//m9 mNL
+	//m10 mP 
+	//m11 mPB
+	//m12 mL
+	//m13 mPN
+	//m14 mTP
+	//m15 mNP
 	
 	switch(checkedmode)
 	{
 		default:
-		case 1: //Video		
-		case 2: //mVP
-		case 3: //mVE
-		case 4: //mVS
-		case 5: //mV0
-		case 6: //mV1
-		case 7: //mV2
-		case 8: //mV3
-		case 9: //mV4
+		case 1: //Video	
+		case 2: //mV0
+		case 3: //mV1
+		case 4: //mV2
+		case 5: //mV3
+		case 6: //mV4
 		dset("settingsRES", true);
 		dset("settingsFPS", true);
 		dset("settingsFOV", true);
@@ -738,7 +732,7 @@ function startTime() {
 		dset("settingsAUDT",true);
 		break;
 		
-		case 10: //TimeWarp Video
+		case 7: //TimeWarp Video
 		dset("settingsTimewarp", true);		
 		dset("settingsDuration", true);
 		dset("settingsRESTLV", true);
@@ -746,7 +740,7 @@ function startTime() {
 		dset("settingsPT", true);
 		break;		
 		
-		case 11: //Timelapse Video
+		case 8: //Timelapse Video
 		dset("settingsTimelapse", true);	
 		dset("settingsDuration", true);	
 		dset("settingsRESTLV", true);
@@ -755,7 +749,7 @@ function startTime() {
 		dset("noteMODE", true);
 		break;		
 		
-		case 12: //NL Video
+		case 9: //NL Video
 		dset("settingsNightlapse", true);	
 		dset("settingsNightexposure", true);
 		dset("settingsDuration", true);		
@@ -765,32 +759,32 @@ function startTime() {
 		dset("noteMODE", true);
 		break;
 	
-		case 13: //Photo
+		case 10: //Photo
 		dset("settingsPT", true);
 		dset("settingsPFOV", true);
 		dset("settingsPhotoRAW", true);
 		break;
 		
-		case 14: //Burst
+		case 11: //Burst
 		dset("settingsBurst", true);
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
 		dset("settingsPhotoRAW", true);
 		break;
 		
-		case 15: //Burst Live
+		case 12: //Burst Live
 		dset("settingsPT", true);
 		dset("settingsAUDT",true);
 		break;
 		
-		case 16: //Night
+		case 13: //Night
 		dset("settingsNightexposure", true);
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
 		dset("settingsPhotoRAW", true);
 		break;
 		
-		case 17: //TLP
+		case 14: //TLP
 		dset("settingsTimelapse", true);	
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
@@ -799,7 +793,7 @@ function startTime() {
 		dset("noteMODE", true);
 		break;
 		
-		case 18: //NLP
+		case 15: //NLP
 		dset("settingsNightlapse", true);	
 		dset("settingsNightexposure", true);	
 		dset("settingsPT", true);
@@ -855,11 +849,11 @@ function startTime() {
 				}
 			}
 			
-			if(checkedmode >= 1 && checkedmode <= 9) //Video + Audio modes
+			if(checkedmode >= 1 && checkedmode <= 6) //Video + Audio modes
 			{
 				dset("ptAUD",true);
 			}
-			if(checkedmode >= 1 && checkedmode <= 12) //Video modes
+			if(checkedmode >= 1 && checkedmode <= 9) //Video modes
 			{
 				dset("ptBITRATE", true);
 			}
@@ -917,37 +911,37 @@ function startTime() {
 		
 	switch(checkedmode)
 	{
-		case 10: //TWarp
+		case 7: //TWarp
 			cmd = dcmd(cmd,"fpswarp");
 			break;
-		case 11: //TLV
+		case 8: //TLV
 			cmd = dcmd(cmd,"fpslapse");
 			break;
-		case 12: //NLV	
+		case 9: //NLV	
 			cmd = dcmd(cmd,"fpsnight");
 			cmd = dcmd(cmd,"nightexp");
 			break;
-		case 14: //Burst 
+		case 11: //Burst 
 			cmd = dcmd(cmd,"b");
 			break;	
-		case 15: //Live Burst 
+		case 12: //Live Burst 
 			break;	
-		case 16: //Night
+		case 13: //Night
 			cmd = dcmd(cmd,"nightexp");
 			break;
-		case 17: //TLP
+		case 14: //TLP
 			cmd = dcmd(cmd,"fpslapse");
 			break;
-		case 18: //NLP	
+		case 15: //NLP	
 			cmd = dcmd(cmd,"fpsnight");
 			cmd = dcmd(cmd,"nightexp");
 			break;
 	}
 	
 	
-	if(checkedmode <= 12)
+	if(checkedmode <= 9)
 	{
-		if(checkedmode == 10 || checkedmode == 11 || checkedmode == 12) // TLV/TWarp Res/NLV
+		if(checkedmode == 7 || checkedmode == 8 || checkedmode == 9) // TLV/TWarp Res/NLV
 		{
 			cmd = dcmd(cmd, "rt");
 		}
@@ -957,14 +951,14 @@ function startTime() {
 		}
 	}
 		
-	if(checkedmode <= 9) // video mode
+	if(checkedmode <= 6) // video mode
 	{
 		cmd = dcmd(cmd,"p"); //fps
 	}
 	
-	if(checkedmode > 9) // not video	
+	if(checkedmode > 6) // not video	
 	{
-		if(checkedmode == 10) //TWarp
+		if(checkedmode == 7) //TWarp
 		{
 			cmd = dcmd(cmd,"twf"); //fov		
 		
@@ -991,7 +985,7 @@ function startTime() {
 				}
 			}
 		}
-		else if(checkedmode == 13) //Photo
+		else if(checkedmode == 10) //Photo
 		{
 			cmd = dcmd(cmd,"pf"); //fov		
 		
@@ -1016,7 +1010,7 @@ function startTime() {
 				}
 			}
 		}
-		else if(checkedmode == 15) //Live Burst
+		else if(checkedmode == 12) //Live Burst
 		{
 			dset("settingsZoom", true);
 					
@@ -1078,7 +1072,7 @@ function startTime() {
 		}
 	}
 	
-	if(checkedmode >= 13 && checkedmode <= 18) //RAW PHoto modes
+	if(checkedmode >= 10 && checkedmode <= 15) //RAW PHoto modes
 		cmd = dcmd(cmd,"raw"); //raw photo control
 		
 	if(document.getElementById("sm") !== null)
