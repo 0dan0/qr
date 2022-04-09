@@ -513,8 +513,8 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap5" name="sap" value="!PRESET"> <label for="sap5">Presets Reset</label>
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap6" name="sap" value="!WRESET"> <label for="sap6">Wireless Reset</label>
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap7" name="sap" value="!RESET"> <label for="sap7">Labs Reset</label><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap8" name="sap" value="!MWAKE=1"> <label for="sap8">Auto wake on Power</label>
-&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap9" name="sap" value="!MWAKE=0"> <label for="sap9">disable wake</label><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap8" name="sap" value="!MWAKE=1"> <label for="sap8">Auto Wake on Power</label>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap9" name="sap" value="!MWAKE=0"> <label for="sap9">Disable Auto Wake</label><br>
 &nbsp;&nbsp;or
 </div>
 
