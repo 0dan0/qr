@@ -19,7 +19,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 
 ## Scanning Your Code
 
-<table style="border: 0px;">
+<table border="0">
   <tbody>
 	<tr>
 	  <td>
