@@ -640,8 +640,8 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitivity: <input type="text" id="mstart" value="" style="width:60px"> (value from range).<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="dhold" value="" style="width:60px"> seconds.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="mhold" value="" style="width:60px"> capture seconds after motion stops.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap12" name="sap" value="" checked> <label for="sap12">not set</label><br>
   </div>
+&nbsp;&nbsp;<input type="radio" id="sap12" name="sap" value="" checked> <label for="sap12">not set</label><br>
 </div>
 
 
@@ -800,7 +800,7 @@ function startTime() {
 	}
 	
 	
-	for (i = 1; i < 14; i++) { 
+	for (i = 1; i < 12; i++) { 
 		var amode = "sap"+i;
 		if(document.getElementById(amode) !== null)	{
 			x = document.getElementById(amode).checked;
