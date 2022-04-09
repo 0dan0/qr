@@ -512,16 +512,18 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 &nbsp;&nbsp;<input type="radio" id="sap5" name="sap" value="!PRESET"> <label for="sap5">Presets</label>
 &nbsp;&nbsp;<input type="radio" id="sap6" name="sap" value="!WRESET"> <label for="sap6">WiFi</label>
 &nbsp;&nbsp;<input type="radio" id="sap7" name="sap" value="!RESET"> <label for="sap7">Labs</label><br>
-&nbsp;&nbsp;<b>Auto Wake:</b>&nbsp;&nbsp;<input type="radio" id="sap8" name="sap" value="!MWAKE=1"> <label for="sap8">Enable</label>
+&nbsp;&nbsp;<b>Auto Wake on Power:</b>&nbsp;&nbsp;<input type="radio" id="sap8" name="sap" value="!MWAKE=1"> <label for="sap8">Enable</label>
 &nbsp;&nbsp;<input type="radio" id="sap9" name="sap" value="!MWAKE=0"> <label for="sap9">Disable</label><br>
-&nbsp;&nbsp;<b>Auto Capture:</b>&nbsp;&nbsp;
-  <input type="radio" id="sap10" name="sap"> <label for="sap10">Sound</label>&nbsp;&nbsp;
-  <input type="radio" id="sap11" name="sap"> <label for="sap11">Gyro</label>&nbsp;&nbsp;
-  <input type="radio" id="sap12" name="sap"> <label for="sap12">Accel</label>&nbsp;&nbsp;
-  <input type="radio" id="sap13" name="sap"> <label for="sap13">Gyro+Accel</label>&nbsp;&nbsp;
-  <input type="radio" id="sap14" name="sap"> <label for="sap14">Motion</label><br>
-<input type="radio" id="sap15" name="sap" value="" checked> <label for="sap15">not set</label><br>
-or
+&nbsp;&nbsp;<b>Auto Capture Trigger:</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap10" name="sap"> <label for="sap10">Sound Pressure Level (range 30-120dB)</label><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap11" name="sap"> <label for="sap11">Gyroscope (range 1-9)</label><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap12" name="sap"> <label for="sap12">Accelerometer (range 1-9)</label><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap13" name="sap"> <label for="sap13">Gyro+Accel (range 1-9)</label><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap14" name="sap"> <label for="sap14">Motion (range 1-6)</label><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitive: <input type="text" id="mstart" value="" style="width:60px"> (value from range).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="dhold" value="" style="width:60px"> seconds.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="mhold" value="" style="width:60px"> capture seconds after motion stops.<br>
+&nbsp;&nbsp;<input type="radio" id="sap15" name="sap" value="" checked> <label for="sap15">not set</label><br>
 </div>
 
 
