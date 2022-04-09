@@ -505,16 +505,22 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 </div>
 
 <div id="NakedTools">
-&nbsp;&nbsp;<b>Pairing:</b><input type="radio" id="sap1" name="sap" value="!PA"> <label for="sap1">Quik App</label>
+&nbsp;&nbsp;<b>Pairing:</b>&nbsp;&nbsp;<input type="radio" id="sap1" name="sap" value="!PA"> <label for="sap1">Quik App</label>
 &nbsp;&nbsp;<input type="radio" id="sap2" name="sap" value="!PR"> <label for="sap2">Remote</label>
 &nbsp;&nbsp;<input type="radio" id="sap3" name="sap" value="!PS"> <label for="sap3">Cancel</label><br>
-&nbsp;&nbsp;<b>Reset:</b><input type="radio" id="sap4" name="sap" value="!FRESET"> <label for="sap4">Factory</label>
+&nbsp;&nbsp;<b>Reset:</b>&nbsp;&nbsp;<input type="radio" id="sap4" name="sap" value="!FRESET"> <label for="sap4">Factory</label>
 &nbsp;&nbsp;<input type="radio" id="sap5" name="sap" value="!PRESET"> <label for="sap5">Presets</label>
 &nbsp;&nbsp;<input type="radio" id="sap6" name="sap" value="!WRESET"> <label for="sap6">WiFi</label>
 &nbsp;&nbsp;<input type="radio" id="sap7" name="sap" value="!RESET"> <label for="sap7">Labs</label><br>
-&nbsp;&nbsp;<b>Auto Wake:</b><input type="radio" id="sap8" name="sap" value="!MWAKE=1"> <label for="sap8">Enable</label>
+&nbsp;&nbsp;<b>Auto Wake:</b>&nbsp;&nbsp;<input type="radio" id="sap8" name="sap" value="!MWAKE=1"> <label for="sap8">Enable</label>
 &nbsp;&nbsp;<input type="radio" id="sap9" name="sap" value="!MWAKE=0"> <label for="sap9">Disable</label><br>
-<input type="radio" id="sap10" name="sap" value="" checked> <label for="sap10">not set</label><br>
+&nbsp;&nbsp;<b>Auto Capture:</b>&nbsp;&nbsp;
+  <input type="radio" id="sap10" name="sap"> <label for="sap10">Sound</label>&nbsp;&nbsp;
+  <input type="radio" id="sap11" name="sap"> <label for="sap11">Gyro</label>&nbsp;&nbsp;
+  <input type="radio" id="sap12" name="sap"> <label for="sap12">Accel</label>&nbsp;&nbsp;
+  <input type="radio" id="sap13" name="sap"> <label for="sap13">Gyro+Accel</label>&nbsp;&nbsp;
+  <input type="radio" id="sap14" name="sap"> <label for="sap14">Motion</label><br>
+<input type="radio" id="sap15" name="sap" value="" checked> <label for="sap15">not set</label><br>
 or
 </div>
 
@@ -523,14 +529,6 @@ or
 
 
 <div id="aS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Auto Capture:</b>
-
-  <input type="radio" id="asc1" name="asc"> <label for="asc1">Sound</label>&nbsp;&nbsp;
-  <input type="radio" id="asc2" name="asc"> <label for="asc2">Gyro</label>&nbsp;&nbsp;
-  <input type="radio" id="asc3" name="asc"> <label for="asc3">Accel</label>&nbsp;&nbsp;
-  <input type="radio" id="asc4" name="asc"> <label for="asc4">Gyro+Accel</label>&nbsp;&nbsp;
-  <input type="radio" id="asc5" name="asc"> <label for="asc5">Motion</label>&nbsp;&nbsp;
-  <input type="radio" id="asc6" name="asc" value="" checked> <label for="asc6">not set</label><br>
-  
   Start in <input type="text" id="dstart" value="" style="width:60px"> seconds. End in <input type="text" id="dend" value="" style="width:60px">seconds (range 1-∞).<br>
 &nbsp;&nbsp;or
 </div>
