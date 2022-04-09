@@ -358,13 +358,14 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
   <input type="radio" id="sharp3" name="sharp" value="sH"> <label for="sharp3">High</label>&nbsp;&nbsp;
   <input type="radio" id="sharp4" name="sharp" value="" checked> <label for="sharp4">not set</label>
 </div>
+<!--
 <div id="ptAUD">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RAW Audio:</b>&nbsp;&nbsp;
   <input type="radio" id="aud1" name="aud" value="a"> <label for="aud1">Off </label>&nbsp;&nbsp;
   <input type="radio" id="aud2" name="aud" value="aL"> <label for="aud2">Low </label>&nbsp;&nbsp;
   <input type="radio" id="aud3" name="aud" value="aM"> <label for="aud3">Medium </label>&nbsp;&nbsp;
   <input type="radio" id="aud4" name="aud" value="aH"> <label for="aud4">High</label>&nbsp;&nbsp;
   <input type="radio" id="aud5" name="aud" value="" checked> <label for="aud5">not set</label><br>
-</div>
+</div> -->
 
 <div id="cameraOptions">
 <input type="checkbox" id="options" value=""> <label for="options">Camera Preferences</label><br>
@@ -659,7 +660,7 @@ function startTime() {
 	dset("ptIMIN",false);
 	dset("ptEV",false);
 	dset("ptSHARP",false);
-	dset("ptAUD",false);
+	//dset("ptAUD",false);
 		
 	dset("opVC", false);
 	dset("opQC", false);
@@ -718,7 +719,7 @@ function startTime() {
 		dset("settingsHindsight", true);
 		dset("settingsDuration", true);
 		dset("settingsPT", true);
-		dset("settingsAUDT",true);
+		//dset("settingsAUDT",true);
 		break;
 		
 		case 7: //TimeWarp Video
@@ -812,10 +813,10 @@ function startTime() {
 				}
 			}
 			
-			if(checkedmode >= 1 && checkedmode <= 6) //Video + Audio modes
-			{
-				dset("ptAUD",true);
-			}
+			//if(checkedmode >= 1 && checkedmode <= 6) //Video + Audio modes
+			//{
+			//	dset("ptAUD",true);
+			//}
 			if(checkedmode >= 1 && checkedmode <= 9) //Video modes
 			{
 				dset("ptBITRATE", true);
@@ -1144,7 +1145,7 @@ function startTime() {
 								
 			cmd = dcmd(cmd,"ev"); //ev
 			cmd = dcmd(cmd,"sharp"); //sharp
-			cmd = dcmd(cmd,"aud"); //audio control
+			//cmd = dcmd(cmd,"aud"); //audio control
 			cmd = dcmd(cmd,"bit"); //bitrate control
 		}
 	}
