@@ -431,9 +431,9 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   </div>
 <div id="opDM">&nbsp;&nbsp;<b>Default Mode:</b>&nbsp;&nbsp;
   <input type="radio" id="dm1" name="dm" value="dL">  <label for="dm1">Last Used</label>&nbsp;&nbsp;
-  <input type="radio" id="dm2" name="dm" value="dV">  <label for="dm2">Last Video</label>&nbsp;&nbsp;
-  <input type="radio" id="dm3" name="dm" value="dP">  <label for="dm3">Last Photo</label>&nbsp;&nbsp;
-  <input type="radio" id="dm4" name="dm" value="dT">  <label for="dm4">Last Timelapse</label>&nbsp;&nbsp;
+  <input type="radio" id="dm2" name="dm" value="dV">  <label for="dm2">Video</label>&nbsp;&nbsp;
+  <input type="radio" id="dm3" name="dm" value="dP">  <label for="dm3">Photo</label>&nbsp;&nbsp;
+  <input type="radio" id="dm4" name="dm" value="dT">  <label for="dm4">Timelapse</label>&nbsp;&nbsp;
   <input type="radio" id="dm5" name="dm" value="" checked> <label for="dm5">not set</label>
 </div>
 <!--<div id="opBV">&nbsp;&nbsp;<b>Beep Volume:</b>&nbsp;&nbsp; 
