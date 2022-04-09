@@ -518,24 +518,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap10" name="sap"> <label for="sap10">Sound Pressure Level (range 30-120dB)</label><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap11" name="sap"> <label for="sap11">Gyroscope (range 1-9)</label><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap12" name="sap"> <label for="sap12">Accelerometer (range 1-9)</label><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap13" name="sap"> <label for="sap13">Gyro+Accel (range 1-9)</label><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap14" name="sap"> <label for="sap14">Motion (range 1-6)</label><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitive: <input type="text" id="mstart" value="" style="width:60px"> (value from range).<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="dhold" value="" style="width:60px"> seconds.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="mhold" value="" style="width:60px"> capture seconds after motion stops.<br>
-&nbsp;&nbsp;<input type="radio" id="sap15" name="sap" value="" checked> <label for="sap15">not set</label><br>
-</div>
-
-
-
-
-
-<div id="aS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Auto Capture:</b>
-  Start in <input type="text" id="dstart" value="" style="width:60px"> seconds. End in <input type="text" id="dend" value="" style="width:60px">seconds (range 1-∞).<br>
-&nbsp;&nbsp;or
-</div>
-<div id="aSM">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start via Motion Detection:</b> 
-<input type="text" id="mstart" value="" style="width:60px">start <input type="text" id="mend" value="" style="width:60px">end sensitivity (1-6) &nbsp;&nbsp;<input type="checkbox" id="helpM" value=""> <label for="actions">Sensitivity Help</label><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap13" name="sap"> <label for="sap13">Gyro+Accel (range 1-9)</label><input type="checkbox" id="helpM" value=""> <label for="actions">Help</label><br>
  <div id="motionHelp">
   <small>
 	<table style="margin-left:60px;">
@@ -572,15 +555,8 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 		</tr>
 	  </tbody>
 	</table>
-  </small>
- </div>  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="dhold" value="" style="width:60px"> seconds to get out of the shot.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mask motion: <input type="text" id="mmhold" value="" style="width:60px"> seconds to learn background motion.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="mhold" value="" style="width:60px"> seconds to capture after motion stops.<br>
-&nbsp;&nbsp;or
-</div>
-<div id="aIT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start via IMU Detection:</b> 
-<input type="text" id="imstart" value="" style="width:60px">start <input type="text" id="imend" value="" style="width:60px">end sensitivity (1-9)&nbsp;&nbsp;<input type="checkbox" id="helpI" value=""> <label for="actions">Sensitivity Help</label><br>
+  </small><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap14" name="sap"> <label for="sap14">Motion (range 1-6)</label><input type="checkbox" id="helpI" value=""> <label for="actions">Sensitivity Help</label><br>
 <div id="imuHelp">
   <small>
 	<table style="margin-left:60px;">
@@ -613,7 +589,31 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 		</tr>
 	  </tbody>
 	</table>
-  </small>
+  </small><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitivity: <input type="text" id="mstart" value="" style="width:60px"> (value from range).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="dhold" value="" style="width:60px"> seconds.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="mhold" value="" style="width:60px"> capture seconds after motion stops.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap15" name="sap" value="" checked> <label for="sap15">not set</label><br>
+</div>
+
+
+
+
+
+<div id="aS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Auto Capture:</b>
+  Start in <input type="text" id="dstart" value="" style="width:60px"> seconds. End in <input type="text" id="dend" value="" style="width:60px">seconds (range 1-∞).<br>
+&nbsp;&nbsp;or
+</div>
+<div id="aSM">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start via Motion Detection:</b> 
+<input type="text" id="mstart" value="" style="width:60px">start <input type="text" id="mend" value="" style="width:60px">end sensitivity (1-6) &nbsp;&nbsp;
+ </div>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="dhold" value="" style="width:60px"> seconds to get out of the shot.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mask motion: <input type="text" id="mmhold" value="" style="width:60px"> seconds to learn background motion.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="mhold" value="" style="width:60px"> seconds to capture after motion stops.<br>
+&nbsp;&nbsp;or
+</div>
+<div id="aIT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start via IMU Detection:</b> 
+<input type="text" id="imstart" value="" style="width:60px">start <input type="text" id="imend" value="" style="width:60px">end sensitivity (1-9)&nbsp;&nbsp;
  </div>  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="idhold" value="" style="width:60px"> seconds before motion is detected.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="imhold" value="" style="width:60px"> seconds to capture after motion stops.<br>
