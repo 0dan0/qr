@@ -518,7 +518,19 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 &nbsp;&nbsp;or
 </div>
 
-<div id="aS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start Capture:</b>
+
+
+
+
+<div id="aS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Auto Capture:</b>
+
+  <input type="radio" id="asc1" name="asc"> <label for="asc1">Sound</label>&nbsp;&nbsp;
+  <input type="radio" id="asc2" name="asc"> <label for="asc2">Gyro</label>&nbsp;&nbsp;
+  <input type="radio" id="asc3" name="asc"> <label for="asc3">Accel</label>&nbsp;&nbsp;
+  <input type="radio" id="asc4" name="asc"> <label for="asc4">Gyro+Accel</label>&nbsp;&nbsp;
+  <input type="radio" id="asc5" name="asc"> <label for="asc5">Motion</label>&nbsp;&nbsp;
+  <input type="radio" id="asc6" name="asc" value="" checked> <label for="asc6">not set</label><br>
+  
   Start in <input type="text" id="dstart" value="" style="width:60px"> seconds. End in <input type="text" id="dend" value="" style="width:60px">seconds (range 1-∞).<br>
 &nbsp;&nbsp;or
 </div>
