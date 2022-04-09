@@ -22,7 +22,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 <table border="0">
   <tbody>
 	<tr>
-	  <td>
+	  <td width="300">
 	  
 	  <img src="https://0dan0.github.io/qr/bones/scanning.jpg" alt="scanning">
 
