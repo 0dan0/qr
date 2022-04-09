@@ -39,9 +39,7 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
   &nbsp;&nbsp;<input type="radio" id="m11" name="mode" value="mPB"> <label for="m11">Burst</label>&nbsp;&nbsp;
   &nbsp;&nbsp;<input type="radio" id="m12" name="mode" value="mL">  <label for="m12">Live Burst</label>&nbsp;&nbsp;
   &nbsp;&nbsp;<input type="radio" id="m13" name="mode" value="mPN"> <label for="m13">Night</label>&nbsp;&nbsp;
-<!--  &nbsp;&nbsp;<input type="radio" id="m14" name="mode" value="mTP"> <label for="m14">Timelapse</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m15" name="mode" value="mNP"> <label for="m15">Nightlapse</label>&nbsp;&nbsp; -->
-  &nbsp;&nbsp;<input type="radio" id="m16" name="mode" value=""> <label for="m14">not set</label><br>
+  &nbsp;&nbsp;<input type="radio" id="m14" name="mode" value=""> <label for="m14">not set</label><br>
 
 <div id="noteMODE" style="font-size:13px;">
 <b>Time/Night-Lapse modes:</b> The camera defaults to having presets for only one time-lapse mode and one night-lapse mode, yet both modes have two configurations (video or photo.) For all QR Code mode commands to work, a preset is needed for every mode you wish to use. e.g. If you only have a preset for night-lapse video (NLV), the QR command for NLV will work, but will not for night-lapse photo (NLP). My may need to use the GoPro Quik App to edit you presets to be of the needed type.<br><br>
@@ -710,8 +708,6 @@ function startTime() {
 	//m11 mPB
 	//m12 mL
 	//m13 mPN
-	//m14 mTP
-	//m15 mNP
 	
 	switch(checkedmode)
 	{
@@ -782,25 +778,6 @@ function startTime() {
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
 		dset("settingsPhotoRAW", true);
-		break;
-		
-		case 14: //TLP
-		dset("settingsTimelapse", true);	
-		dset("settingsPT", true);
-		dset("settingsTLVFOV", true);
-		dset("settingsPhotoRAW", true);
-		dset("settingsDuration", true);
-		dset("noteMODE", true);
-		break;
-		
-		case 15: //NLP
-		dset("settingsNightlapse", true);	
-		dset("settingsNightexposure", true);	
-		dset("settingsPT", true);
-		dset("settingsTLVFOV", true);
-		dset("settingsPhotoRAW", true);
-		dset("settingsDuration", true);
-		dset("noteMODE", true);
 		break;
 		
 	}
@@ -927,13 +904,6 @@ function startTime() {
 		case 12: //Live Burst 
 			break;	
 		case 13: //Night
-			cmd = dcmd(cmd,"nightexp");
-			break;
-		case 14: //TLP
-			cmd = dcmd(cmd,"fpslapse");
-			break;
-		case 15: //NLP	
-			cmd = dcmd(cmd,"fpsnight");
 			cmd = dcmd(cmd,"nightexp");
 			break;
 	}
@@ -1072,7 +1042,7 @@ function startTime() {
 		}
 	}
 	
-	if(checkedmode >= 10 && checkedmode <= 15) //RAW PHoto modes
+	if(checkedmode >= 10 && checkedmode <= 14) //RAW Photo modes
 		cmd = dcmd(cmd,"raw"); //raw photo control
 		
 	if(document.getElementById("sm") !== null)
