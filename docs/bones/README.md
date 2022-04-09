@@ -595,7 +595,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 	</table>
   </small>
 </div><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap14" name="sap"> <label for="sap14">Motion (range 1-6)</label>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap12" name="sap"> <label for="sap12">Motion (range 1-6)</label>&nbsp;&nbsp;
 <input type="checkbox" id="helpM" value="">&nbsp;&nbsp;<label for="actions">Help</label>
  <div id="motionHelp">
   <small>
@@ -636,16 +636,18 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   </small>
 </div>
 <br>
+  <div id="motionParams">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitivity: <input type="text" id="mstart" value="" style="width:60px"> (value from range).<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="dhold" value="" style="width:60px"> seconds.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="mhold" value="" style="width:60px"> capture seconds after motion stops.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap12" name="sap" value="" checked> <label for="sap12">not set</label><br>
+  </div>
 </div>
 
 
 
 
-
+<!--
 <div id="aS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Auto Capture:</b>
   Start in <input type="text" id="dstart" value="" style="width:60px"> seconds. End in <input type="text" id="dend" value="" style="width:60px">seconds (range 1-∞).<br>
 &nbsp;&nbsp;or
@@ -665,7 +667,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="imhold" value="" style="width:60px"> seconds to capture after motion stops.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
-
+-->
 
 <div id="aR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="repeat" value=""> <b><label for="repeat">Repeat Command</label></b><br></div>
 
@@ -777,14 +779,17 @@ function startTime() {
 	dset("opLN", false);
 	
 	dset("NakedTools", false);
-	dset("aS", false);
-	dset("aSM", false);
 	dset("motionHelp", false);
-	dset("aIT", false);
+	//dset("aS", false);
+	//dset("aSM", false);
+	//dset("aIT", false);
 	dset("aR", false);
 	dset("imuHelp", false);
+	dset("splHelp", false);
+	dset("motionParams", false);
 	
 	var checkedmode = 0;
+	var actionmode = 0;
 	var x;
 	
 	for (i = 1; i < 14; i++) { 
@@ -792,6 +797,14 @@ function startTime() {
 		x = document.getElementById(mode).checked;
 		if( x === true)
 			checkedmode = i;
+	}
+	
+	
+	for (i = 1; i < 14; i++) { 
+		var val = "sap"+i;
+		x = document.getElementById(val).checked;
+		if( x === true)
+			actionmode = i;
 	}
 	
 	//m1 mV 
@@ -951,10 +964,13 @@ function startTime() {
 		if(document.getElementById("actions").checked === true)
 		{
 			dset("NakedTools", true);
-			dset("aS", true);
-			dset("aSM", true);
-			dset("aIT", true);
+			//dset("aS", true);
+			//dset("aSM", true);
+			//dset("aIT", true);
 			dset("aR", true);
+			
+			if(actionmode > 9) 
+				dset("motionParams", true);	
 			
 			
 			if(document.getElementById("helpM") !== null)
