@@ -344,7 +344,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   <input type="radio" id="wb4" name="wb" value="w32" > <label for="wb4">3200K </label>&nbsp;&nbsp;
   <input type="radio" id="wb5" name="wb" value="w40" > <label for="wb5">4000K </label>&nbsp;&nbsp;
   <input type="radio" id="wb6" name="wb" value="w45" > <label for="wb6">4500K </label>&nbsp;&nbsp;
-  <input type="radio" id="wb7" name="wb" value="w50" > <label for="wb7">5000K </label>&nbsp;&nbsp;
+  <input type="radio" id="wb7" name="wb" value="w50" > <label for="wb7">5000K </label><br>&nbsp;&nbsp;
   <input type="radio" id="wb8" name="wb" value="w55" > <label for="wb8">5500K </label>&nbsp;&nbsp;
   <input type="radio" id="wb9" name="wb" value="w60"> <label for="wb9">6000K </label>&nbsp;&nbsp;
   <input type="radio" id="wb10" name="wb" value="w65"> <label for="wb10">6500K </label>&nbsp;&nbsp;
