@@ -582,9 +582,7 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
 <br>
 <button onclick="myReloadFunction()">Reset page</button>
 
-**Compatibility:** Labs naked cameras HERO7, HERO8, HERO9, HERO10
-
-[More features](..) for Labs enabled cameras
+[More features](../control) for Labs enabled cameras
 
 ## version 1.00
 updated: Apr 8, 2022
