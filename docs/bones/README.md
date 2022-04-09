@@ -37,13 +37,8 @@ Whether you scan a QR Code from a laptop screen or a mobile phone, the code shou
   &nbsp;&nbsp;<input type="radio" id="m9" name="mode"  value="mNL"> <label for="m9">Nightlapse</label>&nbsp;&nbsp;
   &nbsp;&nbsp;<input type="radio" id="m10" name="mode" value="mP">  <label for="m10">Photo</label>&nbsp;&nbsp;
   &nbsp;&nbsp;<input type="radio" id="m11" name="mode" value="mPB"> <label for="m11">Burst</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m12" name="mode" value="mL">  <label for="m12">Live Burst</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m13" name="mode" value="mPN"> <label for="m13">Night</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m14" name="mode" value=""> <label for="m14">not set</label><br>
-
-<div id="noteMODE" style="font-size:13px;">
-<b>Time/Night-Lapse modes:</b> The camera defaults to having presets for only one time-lapse mode and one night-lapse mode, yet both modes have two configurations (video or photo.) For all QR Code mode commands to work, a preset is needed for every mode you wish to use. e.g. If you only have a preset for night-lapse video (NLV), the QR command for NLV will work, but will not for night-lapse photo (NLP). My may need to use the GoPro Quik App to edit you presets to be of the needed type.<br><br>
-</div>
+  &nbsp;&nbsp;<input type="radio" id="m12" name="mode" value="mPN"> <label for="m12">Night</label>&nbsp;&nbsp;
+  &nbsp;&nbsp;<input type="radio" id="m13" name="mode" value=""> <label for="m13">not set</label><br>
 
 <div id="settingsRES">
 <b>Resolution:</b>&nbsp;&nbsp;
@@ -633,7 +628,6 @@ function startTime() {
 	var timenotchecked;
 	
 	dset("settingsRES", false);
-	dset("noteMODE", false);
 	dset("settingsFPS", false);
 	dset("settingsFOV", false);
 	dset("settingsPFOV", false);
@@ -706,8 +700,7 @@ function startTime() {
 	//m9 mNL
 	//m10 mP 
 	//m11 mPB
-	//m12 mL
-	//m13 mPN
+	//m12 mPN
 	
 	switch(checkedmode)
 	{
@@ -742,7 +735,6 @@ function startTime() {
 		dset("settingsRESTLV", true);
 		dset("settingsTLVFOV", true);
 		dset("settingsPT", true);
-		dset("noteMODE", true);
 		break;		
 		
 		case 9: //NL Video
@@ -752,7 +744,6 @@ function startTime() {
 		dset("settingsRESTLV", true);
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
-		dset("noteMODE", true);
 		break;
 	
 		case 10: //Photo
@@ -767,13 +758,8 @@ function startTime() {
 		dset("settingsTLVFOV", true);
 		dset("settingsPhotoRAW", true);
 		break;
-		
-		case 12: //Burst Live
-		dset("settingsPT", true);
-		dset("settingsAUDT",true);
-		break;
-		
-		case 13: //Night
+				
+		case 12: //Night
 		dset("settingsNightexposure", true);
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
@@ -901,9 +887,7 @@ function startTime() {
 		case 11: //Burst 
 			cmd = dcmd(cmd,"b");
 			break;	
-		case 12: //Live Burst 
-			break;	
-		case 13: //Night
+		case 12: //Night
 			cmd = dcmd(cmd,"nightexp");
 			break;
 	}
@@ -980,17 +964,6 @@ function startTime() {
 				}
 			}
 		}
-		else if(checkedmode == 12) //Live Burst
-		{
-			dset("settingsZoom", true);
-					
-			var zoom = parseInt(document.getElementById("zoom").value);
-			zoom *= 10;
-			document.getElementById("zoomtext").innerHTML = zoom+"%";	
-			if(zoom == 100) zoom = 99;	
-			
-			cmd = cmd + "fW" + zoom; //fov
-		}
 		else //Everything else
 		{
 			cmd = dcmd(cmd,"tlvf"); //fov		
@@ -1042,7 +1015,7 @@ function startTime() {
 		}
 	}
 	
-	if(checkedmode >= 10 && checkedmode <= 14) //RAW Photo modes
+	if(checkedmode >= 10 && checkedmode <= 13) //RAW Photo modes
 		cmd = dcmd(cmd,"raw"); //raw photo control
 		
 	if(document.getElementById("sm") !== null)
