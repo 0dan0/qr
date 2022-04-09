@@ -1197,7 +1197,7 @@ function startTime() {
 		lastcmd = cmd;
 	}
 	
-	if(dt === true)
+	if(dt === true && document.getElementById("repeat").checked === false)
 	{
 		dset("opDTS", true);
 		dset("copyshow", false);   // don't what user printing or sharing code with wrong date and time
