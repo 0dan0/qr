@@ -505,17 +505,17 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 </div>
 
 <div id="NakedTools">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Camera Initization: </b> <input type="radio" id="sap10" name="sap" value="" checked> <label for="sap10">not set</label><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap1" name="sap" value="!PA"> <label for="sap1">Start Quik App Pairing</label>
-&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap2" name="sap" value="!PR"> <label for="sap2">Start Remote Pairing</label>
-&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap3" name="sap" value="!PS"> <label for="sap3">Cancel BLE Pairing</label><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap4" name="sap" value="!FRESET"> <label for="sap4">Factory Reset</label>
-&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap5" name="sap" value="!PRESET"> <label for="sap5">Presets Reset</label>
-&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap6" name="sap" value="!WRESET"> <label for="sap6">Wireless Reset</label>
-&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap7" name="sap" value="!RESET"> <label for="sap7">Labs Reset</label><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap8" name="sap" value="!MWAKE=1"> <label for="sap8">Auto Wake on Power</label>
-&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap9" name="sap" value="!MWAKE=0"> <label for="sap9">Disable Auto Wake</label><br>
-&nbsp;&nbsp;or
+&nbsp;&nbsp;<b>Pairing:</b><input type="radio" id="sap1" name="sap" value="!PA"> <label for="sap1">Quik App</label>
+&nbsp;&nbsp;<input type="radio" id="sap2" name="sap" value="!PR"> <label for="sap2">Remote</label>
+&nbsp;&nbsp;<input type="radio" id="sap3" name="sap" value="!PS"> <label for="sap3">Cancel</label><br>
+&nbsp;&nbsp;<b>Reset:</b><input type="radio" id="sap4" name="sap" value="!FRESET"> <label for="sap4">Factory</label>
+&nbsp;&nbsp;<input type="radio" id="sap5" name="sap" value="!PRESET"> <label for="sap5">Presets</label>
+&nbsp;&nbsp;<input type="radio" id="sap6" name="sap" value="!WRESET"> <label for="sap6">WiFi</label>
+&nbsp;&nbsp;<input type="radio" id="sap7" name="sap" value="!RESET"> <label for="sap7">Labs</label><br>
+&nbsp;&nbsp;<b>Auto Wake:</b><input type="radio" id="sap8" name="sap" value="!MWAKE=1"> <label for="sap8">Enable</label>
+&nbsp;&nbsp;<input type="radio" id="sap9" name="sap" value="!MWAKE=0"> <label for="sap9">Disable</label><br>
+<input type="radio" id="sap10" name="sap" value="" checked> <label for="sap10">not set</label><br>
+or
 </div>
 
 
