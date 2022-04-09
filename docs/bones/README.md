@@ -326,9 +326,6 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 <div id="settingsPT">
 <input type="checkbox" id="pt" value="t"> <label for="pt">Protune Controls</label><br>
 </div>
-<div id="settingsPTR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Protune Reset:</b>&nbsp;&nbsp;
-<input type="checkbox" id="ptr" value="t0"> <label for="ptr"> </label><br>
-</div>
 <div id="ptCOLOR">&nbsp;&nbsp;<b>Color:</b>&nbsp;&nbsp;
   <input type="radio" id="ptc1" name="ptc" value="cG"> <label for="ptc1">Vibrant</label>&nbsp;&nbsp;
   <input type="radio" id="ptc2" name="ptc" value="cN"> <label for="ptc2">Natural</label>&nbsp;&nbsp;
@@ -412,6 +409,11 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   <input type="radio" id="aud4" name="aud" value="aH"> <label for="aud4">High</label>&nbsp;&nbsp;
   <input type="radio" id="aud5" name="aud" value="" checked> <label for="aud5">not set</label>
 </div> -->
+
+<div id="settingsPTR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Protune Reset:</b>&nbsp;&nbsp;
+<input type="checkbox" id="ptr" value="t0"> <label for="ptr"> </label><br>
+</div>
+
 
 <div id="cameraOptions">
 <input type="checkbox" id="options" value=""> <label for="options">Camera Preferences</label><br>
