@@ -19,7 +19,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 
 ## Scanning Your Code
 
-<table border="1" cellpadding="1" cellspacing="1" bordercolor="#FFFFFF">
+<table border="1" cellpadding="1" cellspacing="1" bordercolor="#ffffff">
   <tbody>
 	<tr>
 	  <td width="300">
