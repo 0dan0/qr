@@ -19,9 +19,23 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 
 ## Scanning Your Code
 
+<table>
+  <tbody>
+	<tr>
+	  <td>
+	  
 ![Scanning](scanning.jpg)
 
-Whether you scan a QR Code from a laptop screen or a mobile phone, the code should be a minimum 1.5"/4cm in size with the camera about 6"/15cm away. The larger the QR Code, the easier it is to scan. Point the camera at the center of the code, hold it still for about a second. With each successful scan the LED will flash twice. The camera will now be in the mode you have selected.
+	  </td>
+	  <td>
+	  
+	  Whether you scan a QR Code from a laptop screen or a mobile phone, the code should be a minimum 1.5"/4cm in size with the camera about 6"/15cm away. The larger the QR Code, the easier it is to scan. Point the camera at the center of the code, hold it still for about a second. With each successful scan the LED will flash twice. The camera will now be in the mode you have selected.
+	  
+	  </td>
+	</tr>
+  </tbody>
+</table>
+	
 
 ## Camera Settings
 
