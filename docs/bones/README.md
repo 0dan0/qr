@@ -19,10 +19,10 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 
 ## Scanning Your Code
 
-<table border-style:none>
+<table border-collapse: collapse>
   <tbody>
 	<tr>
-	  <td>
+	  <td width: 300px>
 	  
 	  <img src="https://0dan0.github.io/qr/bones/scanning.jpg" alt="scanning">
 
