@@ -969,10 +969,12 @@ function startTime() {
 			//dset("aS", true);
 			//dset("aSM", true);
 			//dset("aIT", true);
-			dset("aR", true);
 			
 			if(actionmode > 9) 
+			{
 				dset("motionParams", true);	
+				dset("aR", true);
+			}
 			
 			
 			if(document.getElementById("helpM") !== null)
@@ -1391,6 +1393,7 @@ function startTime() {
 		
 		cmd = dcmd(cmd,"sap"); //naked action
 		
+		/*
 		if(document.getElementById("mstart") !== null)
 		{		
 			var mstart = document.getElementById("mstart").value;
@@ -1489,6 +1492,7 @@ function startTime() {
 				//cmd = dcmd(cmd,"as");
 			}
 		}
+		*/
 		
 		
 	
