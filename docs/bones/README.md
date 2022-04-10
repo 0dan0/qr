@@ -174,7 +174,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
  
  
 <div id="settingsTimelapse">
-<b>Timelapse Interval:</b>&nbsp;&nbsp;
+<b>TLV Interval:</b>&nbsp;&nbsp;
   <input type="radio" id="fpslapse1" name="fpslapse" value="p2"> <label for="fpslapse1">0.5s </label>&nbsp;
   <input type="radio" id="fpslapse2" name="fpslapse" value="p1"> <label for="fpslapse2">1s </label>&nbsp;
   <input type="radio" id="fpslapse3" name="fpslapse" value="p.2"> <label for="fpslapse3">2s </label>&nbsp;
@@ -190,15 +190,15 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 </div>
 
 <div id="settingsNightlapse">
-<b>Nightlapse Interval:</b>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight1" name="fpsnight" value="p"     > <label for="fpsnight1">Auto </label>&nbsp
+<b>NLV Interval:</b>&nbsp;&nbsp;
+  <input type="radio" id="fpsnight1" name="fpsnight" value="p"     > <label for="fpsnight1">Auto </label>&nbsp;
   <input type="radio" id="fpsnight2" name="fpsnight" value="p.4"  >  <label for="fpsnight2">4s </label>&nbsp;
   <input type="radio" id="fpsnight3" name="fpsnight" value="p.5"  >  <label for="fpsnight3">5s </label>&nbsp;
-  <input type="radio" id="fpsnight4" name="fpsnight" value="p.10"  > <label for="fpsnight4">10s </label>&nbsp;
+  <input type="radio" id="fpsnight4" name="fpsnight" value="p.10"  > <label for="fpsnight4">10s </label><br>&nbsp;&nbsp; &nbsp;&nbsp;  
   <input type="radio" id="fpsnight5" name="fpsnight" value="p.15"  > <label for="fpsnight5">15s </label>&nbsp;
   <input type="radio" id="fpsnight6" name="fpsnight" value="p.20"  > <label for="fpsnight6">20s </label>&nbsp;
   <input type="radio" id="fpsnight7" name="fpsnight" value="p.30"  > <label for="fpsnight7">30s </label>&nbsp;
-  <input type="radio" id="fpsnight8" name="fpsnight" value="p.60"  > <label for="fpsnight8">60s </label><br>&nbsp;
+  <input type="radio" id="fpsnight8" name="fpsnight" value="p.60"  > <label for="fpsnight8">60s </label><br>&nbsp;&nbsp; &nbsp;&nbsp;  
   <input type="radio" id="fpsnight9" name="fpsnight" value="p.120" > <label for="fpsnight9">2min </label>&nbsp;
   <input type="radio" id="fpsnight10" name="fpsnight" value="p.300" > <label for="fpsnight10">5min </label>&nbsp;
   <input type="radio" id="fpsnight11" name="fpsnight" value="p.1800"> <label for="fpsnight11">30min </label>&nbsp;
@@ -208,13 +208,13 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 
 <div id="settingsNightexposure">
 <b>Shutter:</b>&nbsp;&nbsp;
-  <input type="radio" id="nightexp1" name="nightexp" value="eA" > <label for="nightexp1">auto </label>&nbsp;&nbsp;
-  <input type="radio" id="nightexp2" name="nightexp" value="e2" > <label for="nightexp2">2s </label>&nbsp;&nbsp;
-  <input type="radio" id="nightexp3" name="nightexp" value="e5" > <label for="nightexp3">5s </label>&nbsp;&nbsp;
-  <input type="radio" id="nightexp4" name="nightexp" value="e10"> <label for="nightexp4">10s </label>&nbsp;&nbsp;
-  <input type="radio" id="nightexp5" name="nightexp" value="e15"> <label for="nightexp5">15s </label>&nbsp;&nbsp;
-  <input type="radio" id="nightexp6" name="nightexp" value="e20"> <label for="nightexp6">20s </label>&nbsp;&nbsp;
-  <input type="radio" id="nightexp7" name="nightexp" value="e30"> <label for="nightexp7">30s </label>&nbsp;&nbsp;
+  <input type="radio" id="nightexp1" name="nightexp" value="eA" > <label for="nightexp1">auto </label>&nbsp;
+  <input type="radio" id="nightexp2" name="nightexp" value="e2" > <label for="nightexp2">2s </label>  &nbsp;
+  <input type="radio" id="nightexp3" name="nightexp" value="e5" > <label for="nightexp3">5s </label>  &nbsp;
+  <input type="radio" id="nightexp4" name="nightexp" value="e10"> <label for="nightexp4">10s </label><br>&nbsp;&nbsp; &nbsp;&nbsp;  
+  <input type="radio" id="nightexp5" name="nightexp" value="e15"> <label for="nightexp5">15s </label>&nbsp;
+  <input type="radio" id="nightexp6" name="nightexp" value="e20"> <label for="nightexp6">20s </label>&nbsp;
+  <input type="radio" id="nightexp7" name="nightexp" value="e30"> <label for="nightexp7">30s </label>&nbsp;
   <input type="radio" id="nightexp8" name="nightexp" value="" checked> <label for="nightexp8"> not set</label><br>
 </div>
 
