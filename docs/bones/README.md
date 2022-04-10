@@ -566,7 +566,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="mhold" value="5" style="width:60px"> capture seconds after motion stops.<br>
   </div>
   <div id="aR">
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="repeat" value="" checked> <b><label for="repeat">Repeat Command</label></b><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="repeat" value="" checked> <label for="repeat">Repeat Command</label><br>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="boot" value=""> <label for="boot">Make Boot Command on SD Card -- Automatic Action on boot</label><br>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="remboot" value=""> <label for="remboot">Remove Boot Command</label><br>
   </div>
