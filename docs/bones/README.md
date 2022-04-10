@@ -1371,7 +1371,9 @@ function startTime() {
       document.getElementById("bitrtext").innerHTML = bitrate + "Mb/s";
 	  
 	  if(actionmode == 10)
-		cmd = cmd + bitrate;
+	  {
+		  cmd = cmd + bitrate;
+	  }
 	}
 	
 	if(document.getElementById("addcmd") !== null)
