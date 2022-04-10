@@ -565,9 +565,9 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 </div>
 <br>
   <div id="motionParams">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitivity: <input type="text" id="mstart" value="" style="width:60px"> (value from range).<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="dhold" value="" style="width:60px"> seconds.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="mhold" value="" style="width:60px"> capture seconds after motion stops.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitivity: <input type="text" id="mstart" value="6" style="width:60px"> (value from range).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="dhold" value="1" style="width:60px"> seconds.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="mhold" value="5" style="width:60px"> capture seconds after motion stops.<br>
   </div>
   <div id="aR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="repeat" value=""> <b><label for="repeat">Repeat Command</label></b><br></div>
 &nbsp;&nbsp;<input type="radio" id="sap13" name="sap" value="" checked> <label for="sap13">not set</label><br>
@@ -1320,109 +1320,49 @@ function startTime() {
 		
 		cmd = dcmd(cmd,"sap"); //naked action
 		
-		/*
-		if(document.getElementById("mstart") !== null)
-		{		
-			var mstart = document.getElementById("mstart").value;
-			var imstart = document.getElementById("imstart").value;
-			if(mstart > 0)
-			{
-				cmd = cmd + "!SM" + mstart;
-				SM_added = 1;			
+		if(actionmode >= 10)
+		{
+			if(document.getElementById("mstart") !== null)
+			{		
+				var mstart = document.getElementById("mstart").value;
+				
+				if(mstart <= 0) mstart = 6;
+				if(actionmode == 10 ) //audio trigger
+				{
+					while(mstart <= 30) mstart*=10;
+					if(mstart > 120) mstart = 120;
+				}
+				else
+					if(mstart > 9) mstart = 9;
+							
+				cmd = cmd + mstart;	
 			
-				if(document.getElementById("mend") !== null)
+				/*if(document.getElementById("mend") !== null)
 				{
 					var mend = document.getElementById("mend").value;
 					if(mend > 0 && SM_added)
 					{
 						cmd = cmd + "-" + mend;
 					}
-				}
-				
+				}*/
 				if(document.getElementById("dhold") !== null)
 				{
 					var dhold = document.getElementById("dhold").value;
-					if(dhold > 0 && SM_added)
+					if(dhold > 0)
 					{
 						cmd = cmd + "D" + dhold;
-					}
-				}
-				if(document.getElementById("mmhold") !== null)
-				{
-					var mmhold = document.getElementById("mmhold").value;
-					if(mmhold > 0 && SM_added)
-					{
-						cmd = cmd + "M" + mmhold;
 					}
 				}
 				if(document.getElementById("mhold") !== null)
 				{
 					var mhold = document.getElementById("mhold").value;
-					if(mhold > 0 && SM_added)
+					if(mhold > 0)
 					{
 						cmd = cmd + "H" + mhold;
 					}
 				}
-			}
-			else if(imstart > 0)
-			{
-				cmd = cmd + "!SI" + imstart;
-				SM_added = 1;			
-			
-				if(document.getElementById("imend") !== null)
-				{
-					var mend = document.getElementById("imend").value;
-					if(mend > 0 && SM_added)
-					{
-						cmd = cmd + "-" + mend;
-					}
-				}
-				
-				if(document.getElementById("idhold") !== null)
-				{
-					var dhold = document.getElementById("idhold").value;
-					if(dhold > 0 && SM_added)
-					{
-						cmd = cmd + "D" + dhold;
-					}
-				}
-				if(document.getElementById("imhold") !== null)
-				{
-					var mhold = document.getElementById("imhold").value;
-					if(mhold > 0 && SM_added)
-					{
-						cmd = cmd + "H" + mhold;
-					}
-				}
-			}
-			else
-			{
-			
-				if(document.getElementById("dstart") !== null)
-				{		
-					var dstart = document.getElementById("dstart").value;
-					
-					if(dstart > 0)
-					{
-						cmd = cmd + "!" + dstart + "S";
-				
-						if(document.getElementById("dend") !== null)
-						{		
-							var dend = document.getElementById("dend").value;
-							if(dend > 0)
-							{
-								cmd = cmd + "!" + dend + "E";
-							}	
-						}
-					}
-				}
-				//cmd = dcmd(cmd,"as");
-			}
+			}	
 		}
-		*/
-		
-		
-	
 		
 		if(document.getElementById("repeat").checked === true)
 		{
