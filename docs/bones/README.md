@@ -41,19 +41,19 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 
 <div id="camMODE">
 <b>Mode:</b>
-  &nbsp;<input type="radio" id="m1" name="mode"  value="mV" checked> <label for="m1">Video</label>&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;<input type="radio" id="m2" name="mode"  value="mV0"> <label for="m2">Standard</label>&nbsp; 
-  &nbsp;<input type="radio" id="m3" name="mode"  value="mV1"> <label for="m3">Activity</label><br>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-  &nbsp;<input type="radio" id="m4" name="mode"  value="mV2"> <label for="m4">Cinematic</label>&nbsp;
-  &nbsp;<input type="radio" id="m5" name="mode"  value="mV4"> <label for="m5">SloMo</label>&nbsp;&nbsp;     
-  &nbsp;<input type="radio" id="m6" name="mode"  value="mV5"> <label for="m6">Basic</label><br>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  
-  &nbsp;<input type="radio" id="m7" name="mode"  value="mTW"> <label for="m7">TimeWarp</label>&nbsp;
-  &nbsp;<input type="radio" id="m8" name="mode"  value="mT">  <label for="m8">Timelapse</label>&nbsp;
-  &nbsp;<input type="radio" id="m9" name="mode"  value="mNL"> <label for="m9">Nightlapse</label><br>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-  &nbsp;<input type="radio" id="m10" name="mode" value="mP">  <label for="m10">Photo</label>&nbsp;&nbsp;    
-  &nbsp;<input type="radio" id="m11" name="mode" value="mPB"> <label for="m11">Burst</label>&nbsp;&nbsp;    
-  &nbsp;<input type="radio" id="m12" name="mode" value="mPN"> <label for="m12">Night</label><br>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-  &nbsp;<input type="radio" id="m13" name="mode" value=""> <label for="m13">not set</label>
+  <input type="radio" id="m1" name="mode"  value="mV" checked> <label for="m1">Video</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="m2" name="mode"  value="mV0"> <label for="m2">Standard</label>&nbsp; 
+  <input type="radio" id="m3" name="mode"  value="mV1"> <label for="m3">Activity</label><br>&nbsp;&nbsp; &nbsp;&nbsp; 
+  <input type="radio" id="m4" name="mode"  value="mV2"> <label for="m4">Cinematic</label>&nbsp;
+  <input type="radio" id="m5" name="mode"  value="mV4"> <label for="m5">SloMo</label>&nbsp;&nbsp;     
+  <input type="radio" id="m6" name="mode"  value="mV5"> <label for="m6">Basic</label><br>&nbsp;&nbsp; &nbsp;&nbsp; 
+  <input type="radio" id="m7" name="mode"  value="mTW"> <label for="m7">TimeWarp</label>&nbsp;
+  <input type="radio" id="m8" name="mode"  value="mT">  <label for="m8">Timelapse</label>&nbsp;
+  <input type="radio" id="m9" name="mode"  value="mNL"> <label for="m9">Nightlapse</label><br>&nbsp;&nbsp; &nbsp;&nbsp;
+  <input type="radio" id="m10" name="mode" value="mP">  <label for="m10">Photo</label>&nbsp;&nbsp;    
+  <input type="radio" id="m11" name="mode" value="mPB"> <label for="m11">Burst</label>&nbsp;&nbsp;    
+  <input type="radio" id="m12" name="mode" value="mPN"> <label for="m12">Night</label><br>&nbsp;&nbsp; &nbsp;&nbsp;
+  <input type="radio" id="m13" name="mode" value=""> <label for="m13">not set</label>
 </div>
 
 <div id="settingsRES">
