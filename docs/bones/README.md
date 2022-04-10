@@ -275,24 +275,11 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   <input type="radio" id="audt3" name="audt" value="aW"> <label for="audt3">On</label>&nbsp;&nbsp;
   <input type="radio" id="audt4" name="audt" value="" checked> <label for="audt4"> not set</label><br>
 </div>
+
+<br>
 <div id="spotMeterCheck">
 <input type="checkbox" id="sm" value="oSM"> <label for="sm">Spot Metering</label><br>
 </div>
-<!-- <div id="spotMeter">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp1" name="placement" value="25,25"> <label for="sp1">Top Left    </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="radio" id="sp2" name="placement" value="50,25"> <label for="sp2">Top Center  </label>&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="radio" id="sp3" name="placement" value="75,25"> <label for="sp3">Top Right   </label><br>&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="radio" id="sp4" name="placement" value="25,50"> <label for="sp4">Mid Left    </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="radio" id="sp5" name="placement" value="50,50" checked> <label for="sp5">Center    </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="radio" id="sp6" name="placement" value="75,50"> <label for="sp6">Mid Right   </label><br>&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="radio" id="sp7" name="placement" value="25,75"> <label for="sp7">Lower Left  </label>&nbsp;&nbsp;
-<input type="radio" id="sp8" name="placement" value="50,75"> <label for="sp8">Lower Center</label>&nbsp;
-<input type="radio" id="sp9" name="placement" value="75,75"> <label for="sp9">Lower Right </label>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="radio" id="sp10" name="placement" value="0"> <label for="sp10">Disable </label><br>&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="checkbox" id="sl" value="oSM0!2NoSL"> <label for="sl">Exposure Lock 3s after scan (to avoid locking on the QR Code)</label><br>
-</div> -->
-
-<br>
 <div id="spotMeter">
 &nbsp;&nbsp;Your Virtual Touch Screen<br>
 &nbsp;&nbsp;<input type="radio" id="sp1"  name="placement" value="1,1">   <label for="sp1" >&nbsp;&nbsp;&nbsp;&nbsp;</label>
