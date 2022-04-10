@@ -41,7 +41,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 
 <div id="camMODE">
 <b>Mode:</b>
-  <input type="radio" id="m1" name="mode"  value="mV" checked> <label for="m1">Video</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="m1" name="mode"  value="mV" checked> <label for="m1">Video</label>&nbsp;&nbsp;
   <input type="radio" id="m2" name="mode"  value="mV0"> <label for="m2">Standard</label>&nbsp; 
   <input type="radio" id="m3" name="mode"  value="mV1"> <label for="m3">Activity</label><br>&nbsp;&nbsp; &nbsp;&nbsp; 
   <input type="radio" id="m4" name="mode"  value="mV2"> <label for="m4">Cinematic</label>&nbsp;
