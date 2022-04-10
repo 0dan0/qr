@@ -568,8 +568,8 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   </div>
   <div id="aR">
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="repeat" value=""> <b><label for="repeat">Repeat Command</label></b><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="boot" value=""> <b><label for="boot">Make Boot Command on SD Card</label></b><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="remboot" value=""> <b><label for="remboot">Remove Boot Command</label></b><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="boot" value=""> <label for="boot">Make Boot Command on SD Card -- Automatic Action on boot</label><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="remboot" value=""> <label for="remboot">Remove Boot Command</label><br>
   </div>
   &nbsp;&nbsp;<input type="radio" id="sap13" name="sap" value="" checked> <label for="sap13">not set</label><br>
 </div>
