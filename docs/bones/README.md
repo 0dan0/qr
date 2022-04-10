@@ -52,7 +52,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   &nbsp;&nbsp;<input type="radio" id="m10" name="mode" value="mP">  <label for="m10">Photo</label>&nbsp;&nbsp;
   &nbsp;&nbsp;<input type="radio" id="m11" name="mode" value="mPB"> <label for="m11">Burst</label>&nbsp;&nbsp;
   &nbsp;&nbsp;<input type="radio" id="m12" name="mode" value="mPN"> <label for="m12">Night</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m13" name="mode" value=""> <label for="m13">not set</label><br>
+  &nbsp;&nbsp;<input type="radio" id="m13" name="mode" value=""> <label for="m13">not set</label>
 
 <div id="settingsRES">
 <b>Resolution:</b>&nbsp;&nbsp;
@@ -63,7 +63,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   <input type="radio" id="r5" name="res" value="r4T"  > <label for="r5">4k 4x3 </label>&nbsp;&nbsp;
   <input type="radio" id="r6" name="res" value="r5"   > <label for="r6">5.3k </label>&nbsp;&nbsp;
   <input type="radio" id="r7" name="res" value="r5T"  > <label for="r7">5k 4x3 </label>&nbsp;&nbsp;
-  <input type="radio" id="r8" name="res" value="" checked> <label for="r8">not set</label><br><br>
+  <input type="radio" id="r8" name="res" value="" checked> <label for="r8">not set</label><br>
 </div>
 
 <div id="settingsRESTLV">
@@ -73,7 +73,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   <input type="radio" id="rt3" name="restlv" value="r27T" > <label for="rt3">2.7k 4x3 </label>&nbsp;&nbsp;
   <input type="radio" id="rt4" name="restlv" value="r4"   > <label for="rt4">4k </label>&nbsp;&nbsp;
   <input type="radio" id="rt5" name="restlv" value="r4T"  > <label for="rt5">4k 4x3 </label>&nbsp;&nbsp;
-  <input type="radio" id="rt6" name="restlv" value="" checked> <label for="rt6">not set</label><br><br>
+  <input type="radio" id="rt6" name="restlv" value="" checked> <label for="rt6">not set</label><br>
  </div>
 
 <div id="settingsFPS">
@@ -88,7 +88,6 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   <input type="radio" id="p8" name="fps" value="p200"> <label for="p8">200 </label>&nbsp;&nbsp;
   <input type="radio" id="p9" name="fps" value="p240"> <label for="p9">240 </label>&nbsp;&nbsp;
   <input type="radio" id="p10" name="fps" value="" checked> <label for="p10">not set</label><br>
-  <br>
 </div>
 
 <div id="settingsFOV">
@@ -107,7 +106,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="radio" id="f9" name="fov" value="oX1"> <label for="f9">Enable MLM</label>&nbsp;&nbsp; 
   <input type="radio" id="f10" name="fov" value="oX0"> <label for="f10">Disable MLM</label>&nbsp;&nbsp;  -->
-  <input type="radio" id="f9" name="fov" value="" checked> <label for="f9">not set</label><br><br>
+  <input type="radio" id="f9" name="fov" value="" checked> <label for="f9">not set</label><br>
  </div>
  
 <div id="settingsPFOV">
@@ -122,7 +121,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="radio" id="pf6" name="pfov" value="oX1"> <label for="pf6">Enable MLM</label>&nbsp;&nbsp; 
   <input type="radio" id="pf7" name="pfov" value="oX0"> <label for="pf7">Disable MLM</label>&nbsp;&nbsp; -->
-  <input type="radio" id="pf6" name="pfov" value="" checked> <label for="pf6">not set</label><br><br>
+  <input type="radio" id="pf6" name="pfov" value="" checked> <label for="pf6">not set</label><br>
  </div>
   
  
@@ -131,7 +130,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   <input type="radio" id="tlvf1" name="tlvfov" value="fW"> <label for="tlvf1">Wide </label>&nbsp;&nbsp;
   <input type="radio" id="tlvf2" name="tlvfov" value="fL"> <label for="tlvf2">Linear </label>&nbsp;&nbsp;
   <input type="radio" id="tlvf3" name="tlvfov" value="fN"> <label for="tlvf3">Narrow </label>&nbsp;&nbsp;  
-  <input type="radio" id="tlvf4" name="tlvfov" value="" checked> <label for="tlvf4">not set</label><br><br>
+  <input type="radio" id="tlvf4" name="tlvfov" value="" checked> <label for="tlvf4">not set</label><br>
  </div>
   
 <div id="settingsTWFOV">
@@ -147,12 +146,12 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   <input type="checkbox" id="twmlmhl" value="L"> <label for="twmlmhl">Horizon Lock</label>&nbsp;&nbsp;&nbsp;&nbsp;  <!-- <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="radio" id="twf8" name="twfov" value="oX1"> <label for="twf8">Enable MLM</label>&nbsp;&nbsp; 
   <input type="radio" id="twf9" name="twfov" value="oX0"> <label for="twf9">Disable MLM</label>&nbsp;&nbsp; -->
-  <input type="radio" id="twf8" name="twfov" value="" checked> <label for="twf8">not set</label><br><br>
+  <input type="radio" id="twf8" name="twfov" value="" checked> <label for="twf8">not set</label><br>
  </div>
  
  
 <div id="settingsZoom">
- <b>Zoom:</b> <input type="range" id="zoom" name="zoom" min="0" max="10" value="0"><label for="zoom"></label>&nbsp;&nbsp;<b id="zoomtext"></b><br><br>
+ <b>Zoom:</b> <input type="range" id="zoom" name="zoom" min="0" max="10" value="0"><label for="zoom"></label>&nbsp;&nbsp;<b id="zoomtext"></b><br>
 </div>
 
 <div id="settingsBurst">
@@ -166,7 +165,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   <input type="radio" id="b7" name="burst" value="b30N3"> <label for="b7">30/3 </label>&nbsp;&nbsp;
   <input type="radio" id="b8" name="burst" value="b30N6"> <label for="b8">30/6 </label>&nbsp;&nbsp;
   <input type="radio" id="b9" name="burst" value="b30N10"> <label for="b9">30/10 </label>&nbsp;&nbsp;
-  <input type="radio" id="b10" name="burst" value="" checked> <label for="b10">not set</label><br><br>
+  <input type="radio" id="b10" name="burst" value="" checked> <label for="b10">not set</label><br>
 </div>
 
 <div id="settingsTimewarp">
@@ -177,7 +176,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   <input type="radio" id="fpswarp4"    name="fpswarp" value="p2"> <label for="fpswarp4">15X </label>&nbsp;&nbsp;
   <input type="radio" id="fpswarp5"    name="fpswarp" value="p1"> <label for="fpswarp5">30X </label>&nbsp;&nbsp;
   <input type="radio" id="fpswarp6"    name="fpswarp" value="pA"> <label for="fpswarp6">Auto </label>&nbsp;&nbsp;
-  <input type="radio" id="fpswarp7"    name="fpswarp" value="" checked> <label for="fpswarp7">not set</label><br><br>
+  <input type="radio" id="fpswarp7"    name="fpswarp" value="" checked> <label for="fpswarp7">not set</label><br>
 </div>
  
  
@@ -194,7 +193,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   <input type="radio" id="fpslapse9"  name="fpslapse" value="p.300" > <label for="fpslapse9">5min </label>&nbsp;&nbsp;
   <input type="radio" id="fpslapse10" name="fpslapse" value="p.1800"> <label for="fpslapse10">30min </label>&nbsp;&nbsp;
   <input type="radio" id="fpslapse11" name="fpslapse" value="p.3600"> <label for="fpslapse11">60min </label>&nbsp;&nbsp;  
-  <input type="radio" id="fpslapse12" name="fpslapse" value="" checked> <label for="fpslapse12">not set</label><br><br>
+  <input type="radio" id="fpslapse12" name="fpslapse" value="" checked> <label for="fpslapse12">not set</label><br>
 </div>
 
 <div id="settingsNightlapse">
@@ -211,7 +210,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   <input type="radio" id="fpsnight10" name="fpsnight" value="p.300" > <label for="fpsnight10">5min </label>&nbsp;&nbsp;
   <input type="radio" id="fpsnight11" name="fpsnight" value="p.1800"> <label for="fpsnight11">30min </label>&nbsp;&nbsp;
   <input type="radio" id="fpsnight12" name="fpsnight" value="p.3600"> <label for="fpsnight12">60min </label>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight13" name="fpsnight" value="" checked> <label for="fpsnight13">not set</label><br><br>
+  <input type="radio" id="fpsnight13" name="fpsnight" value="" checked> <label for="fpsnight13">not set</label><br>
 </div>
 
 <div id="settingsNightexposure">
@@ -223,7 +222,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   <input type="radio" id="nightexp5" name="nightexp" value="e15"> <label for="nightexp5">15s </label>&nbsp;&nbsp;
   <input type="radio" id="nightexp6" name="nightexp" value="e20"> <label for="nightexp6">20s </label>&nbsp;&nbsp;
   <input type="radio" id="nightexp7" name="nightexp" value="e30"> <label for="nightexp7">30s </label>&nbsp;&nbsp;
-  <input type="radio" id="nightexp8" name="nightexp" value="" checked> <label for="nightexp8"> not set</label><br><br>
+  <input type="radio" id="nightexp8" name="nightexp" value="" checked> <label for="nightexp8"> not set</label><br>
 </div>
 
 <div id="settingsVideo">
@@ -232,7 +231,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 	<input type="radio" id="eis2" name="eis" value="e1"> <label for="eis2">Standard</label>&nbsp;&nbsp;&nbsp;
 	<input type="radio" id="eis3" name="eis" value="e2"> <label for="eis3">High</label>&nbsp;&nbsp;&nbsp;
 	<input type="radio" id="eis4" name="eis" value="e3"> <label for="eis4">Boost</label>&nbsp;&nbsp;&nbsp;
-	<input type="radio" id="eis5" name="eis" value="" checked> <label for="eis5">not set</label><br><br>
+	<input type="radio" id="eis5" name="eis" value="" checked> <label for="eis5">not set</label><br>
 </div>
 
 <div id="settingsHindsight">
@@ -240,7 +239,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 	<input type="radio" id="hind1" name="hind" value="hS0"> <label for="hind1">Off</label>&nbsp;&nbsp;&nbsp;
 	<input type="radio" id="hind2" name="hind" value="hS1"> <label for="hind2">15s</label>&nbsp;&nbsp;&nbsp;
 	<input type="radio" id="hind3" name="hind" value="hS2"> <label for="hind3">30s</label>&nbsp;&nbsp;&nbsp;
-	<input type="radio" id="hind4" name="hind" value="" checked> <label for="hind4">not set</label><br><br>
+	<input type="radio" id="hind4" name="hind" value="" checked> <label for="hind4">not set</label><br>
 </div>
 					
 <div id="settingsDuration">
@@ -255,7 +254,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 	<input type="radio" id="dur8" name="dur" value="dR3600"> <label for="dur8">1hour</label>&nbsp;&nbsp;
 	<input type="radio" id="dur9" name="dur" value="dR7200"> <label for="dur9">2hour</label>&nbsp;&nbsp;
 	<input type="radio" id="dur10" name="dur" value="dR9999"> <label for="dur10">3hour</label>&nbsp;&nbsp;
-	<input type="radio" id="dur11" name="dur" value="" checked> <label for="dur11">not set</label><br><br>
+	<input type="radio" id="dur11" name="dur" value="" checked> <label for="dur11">not set</label><br>
 </div>
 
 <div id="settingsPhotoRAW">
@@ -264,7 +263,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   <input type="radio" id="raw2" name="raw" value="r"> <label for="raw2">Raw + JPEG </label>&nbsp;&nbsp;
   <input type="radio" id="raw3" name="raw" value="rS"> <label for="raw3">Superphoto </label>&nbsp;&nbsp;
   <input type="radio" id="raw4" name="raw" value="rH"> <label for="raw4">HDR </label>&nbsp;&nbsp;
-  <input type="radio" id="raw5" name="raw" value="" checked> <label for="raw5"> not set</label><br><br>
+  <input type="radio" id="raw5" name="raw" value="" checked> <label for="raw5"> not set</label><br>
 </div>
 
 <div id="settingsAUDT">
@@ -272,7 +271,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   <input type="radio" id="audt1" name="audt" value="aA"> <label for="audt1">Auto </label>&nbsp;&nbsp;
   <input type="radio" id="audt2" name="audt" value="aS"> <label for="audt2">Off </label>&nbsp;&nbsp;
   <input type="radio" id="audt3" name="audt" value="aW"> <label for="audt3">On</label>&nbsp;&nbsp;
-  <input type="radio" id="audt4" name="audt" value="" checked> <label for="audt4"> not set</label><br><br>
+  <input type="radio" id="audt4" name="audt" value="" checked> <label for="audt4"> not set</label><br>
 </div>
 <div id="spotMeterCheck">
 <input type="checkbox" id="sm" value="oSM"> <label for="sm">Spot Metering</label><br>
