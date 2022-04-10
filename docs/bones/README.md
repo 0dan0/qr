@@ -515,131 +515,61 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 &nbsp;&nbsp;<b>Auto Wake on Power:</b>&nbsp;&nbsp;<input type="radio" id="sap8" name="sap" value="!MWAKE=1"> <label for="sap8">Enable</label>
 &nbsp;&nbsp;<input type="radio" id="sap9" name="sap" value="!MWAKE=0"> <label for="sap9">Disable</label><br>
 &nbsp;&nbsp;<b>Auto Capture Trigger:</b><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap10" name="sap" value="!SA"> <label for="sap10">Sound Pressure Level (range 30-120dB)</label>&nbsp;&nbsp;
-<input type="checkbox" id="helpS" value=""> <label for="actions">Help</label>
-<div id="splHelp">
-  <small><table style="margin-left:60px;">
-    <thead>	<tr><th>SPL (dB) at 1m/3ft</th>  <th>Activity</th>	</tr> </thead>
-	  <tbody> 
-		<tr> <td>30</td>    <td>calm room</td> </tr>
-		<tr> <td>40-60</td> <td>conversation</td> </tr>
-		<tr> <td>60-80</td> <td>passenger car</td> </tr>
-		<tr> <td>80-90</td> <td>busy roadway</td> </tr>
-		<tr> <td>100</td>   <td>jack hammer</td> </tr>
-		<tr> <td>110</td>   <td>chain saw</td> </tr>
-		<tr> <td>120</td>   <td>air horn</td> </tr>
-	  </tbody>
-	</table>
-  </small>
-</div><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap11" name="sap" value="!SI"> <label for="sap11">IMU, Gyro+Accel (range 1-9)</label>&nbsp;&nbsp;
-<input type="checkbox" id="helpI" value=""> <label for="actions">Help</label>
-<div id="imuHelp">
-  <small><table style="margin-left:60px;">
-	  <thead> <tr> <th>Sensitivity</th> <th>Activity</th></tr> </thead>
-	  <tbody>
-		<tr> <td>1</td> <td>Throwing the camera</td></tr>
-		<tr> <td>2</td> <td>Jumps</td></tr>
-		<tr> <td>5</td> <td>any hand-held movement</td></tr>
-		<tr> <td>8</td> <td>tiny movement</td> </tr>
-		<tr> <td>9</td> <td>small tremor</td> </tr>
-	  </tbody>
-	</table>
-  </small>
-</div><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap12" name="sap" value="!SM"> <label for="sap12">Motion (range 1-6)</label>&nbsp;&nbsp;
-<input type="checkbox" id="helpM" value="">&nbsp;&nbsp;<label for="actions">Help</label>
- <div id="motionHelp">
-  <small> <table style="margin-left:60px;"> 
-    <thead> <tr> <th>Sensitivity</th><th>Activity</th></tr></thead>
-	  <tbody>
-		<tr> <td>1</td> <td>Everything moving</td></tr>
-		<tr> <td>2</td> <td>Large nearby movement</td></tr>
-		<tr> <td>3</td> <td>Medium object movement</td></tr>
-		<tr> <td>4</td> <td>small movement</td></tr>
-		<tr> <td>5</td> <td>tiny movement</td></tr>
-		<tr> <td>6</td> <td>any change</td></tr>
-	  </tbody>
-	</table>
-  </small>
-</div>
-<br>
-  <div id="motionParams">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitivity: <input type="text" id="mstart" value="6" style="width:60px"> (value from range ). <input type="checkbox" id="helpRange" value="">&nbsp;&nbsp;<label for="actions">Help</label>
-<div id="splHelp2">
-  <small><table style="margin-left:60px;">
-    <thead>	<tr><th>SPL (dB) at 1m/3ft</th>  <th>Activity</th>	</tr> </thead>
-	  <tbody> 
-		<tr> <td>30</td>    <td>calm room</td> </tr>
-		<tr> <td>40-60</td> <td>conversation</td> </tr>
-		<tr> <td>60-80</td> <td>passenger car</td> </tr>
-		<tr> <td>80-90</td> <td>busy roadway</td> </tr>
-		<tr> <td>100</td>   <td>jack hammer</td> </tr>
-		<tr> <td>110</td>   <td>chain saw</td> </tr>
-		<tr> <td>120</td>   <td>air horn</td> </tr>
-	  </tbody>
-	</table>
-  </small>
-</div>
-<div id="imuHelp2">
-  <small><table style="margin-left:60px;">
-	  <thead> <tr> <th>Sensitivity</th> <th>Activity</th></tr> </thead>
-	  <tbody>
-		<tr> <td>1</td> <td>Throwing the camera</td></tr>
-		<tr> <td>2</td> <td>Jumps</td></tr>
-		<tr> <td>5</td> <td>any hand-held movement</td></tr>
-		<tr> <td>8</td> <td>tiny movement</td> </tr>
-		<tr> <td>9</td> <td>small tremor</td> </tr>
-	  </tbody>
-	</table>
-  </small>
-</div>
-<div id="motionHelp2">
-  <small> <table style="margin-left:60px;"> 
-    <thead> <tr> <th>Sensitivity</th><th>Activity</th></tr></thead>
-	  <tbody>
-		<tr> <td>1</td> <td>Everything moving</td></tr>
-		<tr> <td>2</td> <td>Large nearby movement</td></tr>
-		<tr> <td>3</td> <td>Medium object movement</td></tr>
-		<tr> <td>4</td> <td>small movement</td></tr>
-		<tr> <td>5</td> <td>tiny movement</td></tr>
-		<tr> <td>6</td> <td>any change</td></tr>
-	  </tbody>
-	</table>
-  </small>
-</div>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="dhold" value="1" style="width:60px"> seconds.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="mhold" value="5" style="width:60px"> capture seconds after motion stops.<br>
-  </div>
-  <div id="aR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="repeat" value=""> <b><label for="repeat">Repeat Command</label></b><br></div>
-&nbsp;&nbsp;<input type="radio" id="sap13" name="sap" value="" checked> <label for="sap13">not set</label><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap10" name="sap" value="!SA"> <label for="sap10">Sound Pressure Level (range 30-120dB)</label><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap11" name="sap" value="!SI"> <label for="sap11">IMU, Gyro+Accel (range 1-9)</label><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap12" name="sap" value="!SM"> <label for="sap12">Motion (range 1-6)</label><br>
+<div id="motionParams">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitivity: <input type="text" id="mstart" value="6" style="width:60px"> (value from range ). <input type="checkbox" id="helpRange" value="">&nbsp;&nbsp;<label for="actions">Help</label>
+	<div id="splHelp2">
+	  <small><table style="margin-left:60px;">
+		<thead>	<tr><th>SPL (dB) at 1m/3ft</th>  <th>Activity</th>	</tr> </thead>
+		  <tbody> 
+			<tr> <td>30</td>    <td>calm room</td> </tr>
+			<tr> <td>40-60</td> <td>conversation</td> </tr>
+			<tr> <td>60-80</td> <td>passenger car</td> </tr>
+			<tr> <td>80-90</td> <td>busy roadway</td> </tr>
+			<tr> <td>100</td>   <td>jack hammer</td> </tr>
+			<tr> <td>110</td>   <td>chain saw</td> </tr>
+			<tr> <td>120</td>   <td>air horn</td> </tr>
+		  </tbody>
+		</table>
+	  </small>
+	</div>
+	<div id="imuHelp2">
+	  <small><table style="margin-left:60px;">
+		  <thead> <tr> <th>Sensitivity</th> <th>Activity</th></tr> </thead>
+		  <tbody>
+			<tr> <td>1</td> <td>Throwing the camera</td></tr>
+			<tr> <td>2</td> <td>Jumps</td></tr>
+			<tr> <td>5</td> <td>any hand-held movement</td></tr>
+			<tr> <td>8</td> <td>tiny movement</td> </tr>
+			<tr> <td>9</td> <td>small tremor</td> </tr>
+		  </tbody>
+		</table>
+	  </small>
+	</div>
+	<div id="motionHelp2">
+	  <small> <table style="margin-left:60px;"> 
+		<thead> <tr> <th>Sensitivity</th><th>Activity</th></tr></thead>
+		  <tbody>
+			<tr> <td>1</td> <td>Everything moving</td></tr>
+			<tr> <td>2</td> <td>Large nearby movement</td></tr>
+			<tr> <td>3</td> <td>Medium object movement</td></tr>
+			<tr> <td>4</td> <td>small movement</td></tr>
+			<tr> <td>5</td> <td>tiny movement</td></tr>
+			<tr> <td>6</td> <td>any change</td></tr>
+		  </tbody>
+		</table>
+	  </small>
+	</div>
+	<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="dhold" value="1" style="width:60px"> seconds.<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="mhold" value="5" style="width:60px"> capture seconds after motion stops.<br>
+	  </div>
+	  <div id="aR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="repeat" value=""> <b><label for="repeat">Repeat Command</label></b><br></div>
+	&nbsp;&nbsp;<input type="radio" id="sap13" name="sap" value="" checked> <label for="sap13">not set</label><br>
 </div>
 
-
-
-
-<!--
-<div id="aS">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Auto Capture:</b>
-  Start in <input type="text" id="dstart" value="" style="width:60px"> seconds. End in <input type="text" id="dend" value="" style="width:60px">seconds (range 1-∞).<br>
-&nbsp;&nbsp;or
-</div>
-<div id="aSM">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start via Motion Detection:</b> 
-<input type="text" id="mstart" value="" style="width:60px">start <input type="text" id="mend" value="" style="width:60px">end sensitivity (1-6) &nbsp;&nbsp;
- </div>  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="dhold" value="" style="width:60px"> seconds to get out of the shot.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mask motion: <input type="text" id="mmhold" value="" style="width:60px"> seconds to learn background motion.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="mhold" value="" style="width:60px"> seconds to capture after motion stops.<br>
-&nbsp;&nbsp;or
-</div>
-<div id="aIT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Start via IMU Detection:</b> 
-<input type="text" id="imstart" value="" style="width:60px">start <input type="text" id="imend" value="" style="width:60px">end sensitivity (1-9)&nbsp;&nbsp;
- </div>  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="idhold" value="" style="width:60px"> seconds before motion is detected.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="imhold" value="" style="width:60px"> seconds to capture after motion stops.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</div>
--->
 
 Additional Commands: <input type="text" id="addcmd" value="">
 
@@ -948,30 +878,7 @@ function startTime() {
 				dset("motionParams", true);	
 				dset("aR", true);
 			}
-			
-			
-			if(document.getElementById("helpM") !== null)
-			{
-				if(document.getElementById("helpM").checked === true)
-				{
-					dset("motionHelp", true);
-				}
-			}
-			if(document.getElementById("helpI") !== null)
-			{
-				if(document.getElementById("helpI").checked === true)
-				{
-					dset("imuHelp", true);
-				}
-			}
-			if(document.getElementById("helpS") !== null)
-			{
-				if(document.getElementById("helpS").checked === true)
-				{
-					dset("splHelp", true);
-				}
-			}
-			
+						
 			if(document.getElementById("helpRange") !== null)
 			{
 				if(document.getElementById("helpRange").checked === true)
