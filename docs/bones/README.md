@@ -904,6 +904,8 @@ function startTime() {
 				}
 			}
 		}
+		else
+			actionmode = 0;
 	}
 
 	if(document.getElementById("helpBitr") !== null)
