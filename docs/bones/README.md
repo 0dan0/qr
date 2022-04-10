@@ -40,13 +40,13 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 ## Camera Settings
 
 <div id="camMODE">
-<b>Camera Mode:</b>
+<b>Mode:</b>
   &nbsp;&nbsp;<input type="radio" id="m1" name="mode"  value="mV" checked> <label for="m1">Video</label>&nbsp;&nbsp;
   &nbsp;&nbsp;<input type="radio" id="m2" name="mode"  value="mV0"> <label for="m2">Standard</label>&nbsp;&nbsp;
   &nbsp;&nbsp;<input type="radio" id="m3" name="mode"  value="mV1"> <label for="m3">Activity</label>&nbsp;&nbsp;
   &nbsp;&nbsp;<input type="radio" id="m4" name="mode"  value="mV2"> <label for="m4">Cinematic</label>&nbsp;&nbsp;
   &nbsp;&nbsp;<input type="radio" id="m5" name="mode"  value="mV4"> <label for="m5">SloMo</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m6" name="mode"  value="mV5"> <label for="m6">Basic</label>&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;<input type="radio" id="m6" name="mode"  value="mV5"> <label for="m6">Basic</label>&nbsp;&nbsp;
   &nbsp;&nbsp;<input type="radio" id="m7" name="mode"  value="mTW"> <label for="m7">TimeWarp</label>&nbsp;&nbsp;
   &nbsp;&nbsp;<input type="radio" id="m8" name="mode"  value="mT">  <label for="m8">Timelapse</label>&nbsp;&nbsp;
   &nbsp;&nbsp;<input type="radio" id="m9" name="mode"  value="mNL"> <label for="m9">Nightlapse</label>&nbsp;&nbsp;
