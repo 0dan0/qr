@@ -492,7 +492,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 </div>
 
 <div id="opDT">
-<input type="checkbox" id="dt" value="oT" checked> <label for="dt">Set date + time automatically</label><br>
+<input type="checkbox" id="dt" value="oT" checked> <label for="dt">Set date and time</label><br>
 </div>
 
 <div id="opDTS">
