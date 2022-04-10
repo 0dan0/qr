@@ -518,7 +518,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   <div id="bitrHelp">
 	 &nbsp;&nbsp;&nbsp;&nbsp;<small>
 	 
-	 <b>Warning:</b> SD Card and encoding reliability is only thoroughly tested at the default bitrates, up to 100Mb/s. Some SD cards can support higher bit-rates when fairly new, but then may fail when extensively used. As the bit-rate is increased, the probability of capture failures increase. Lower frame rate maybe more reliable than higher framerates as some extreme overclocks. Experiment extensively before using this feature on critical projects. You can also disable LRVs and audio capture to help push the video bitrate to the maximum. See more on these <a href="../control/extensions">Labs extensions</a>.
+	 <b>Warning:</b> SD Card and encoding reliability is only thoroughly tested at the default bitrates, up to 100Mb/s. Some SD cards can support higher bit-rates when fairly new, but then may fail when extensively used. As the bit-rate is increased, the probability of capture failures increase. Lower frame rate maybe more reliable than higher framerates as some extreme overclocks. Experiment extensively before using this feature on critical projects. You can also disable LRVs and audio capture to help push the video bitrate to the maximum. See more on these <a href="../control/extensions">Labs extensions</a>. Changes can be reversed with a Labs reset. 
 	 
 	 </small>
 </div>
