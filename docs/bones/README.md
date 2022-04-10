@@ -292,6 +292,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 <input type="checkbox" id="sl" value="oSM0!2NoSL"> <label for="sl">Exposure Lock 3s after scan (to avoid locking on the QR Code)</label><br>
 </div> -->
 
+<br>
 <div id="spotMeter">
 &nbsp;&nbsp;Your Virtual Touch Screen<br>
 &nbsp;&nbsp;<input type="radio" id="sp1"  name="placement" value="1,1">   <label for="sp1" >&nbsp;&nbsp;&nbsp;&nbsp;</label>
