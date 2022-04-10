@@ -690,6 +690,7 @@ function startTime() {
 	dset("imuHelp", false);
 	dset("motionHelp", false);
 	dset("motionParams", false);
+	dset("opDTS", false);
 	
 	var checkedmode = 0;
 	var actionmode = 0;
