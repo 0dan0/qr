@@ -60,11 +60,11 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 <b>Resolution:</b>&nbsp;&nbsp;
   <input type="radio" id="r1" name="res" value="r1080"> <label for="r1">1080p </label>&nbsp;&nbsp;
   <input type="radio" id="r2" name="res" value="r27"  > <label for="r2">2.7k  </label>&nbsp;&nbsp;
-  <input type="radio" id="r3" name="res" value="r27T" > <label for="r3">2.7k 4:3 </label>&nbsp;&nbsp;
-  <input type="radio" id="r4" name="res" value="r4"   > <label for="r4">4k </label>&nbsp;&nbsp;
-  <input type="radio" id="r5" name="res" value="r4T"  > <label for="r5">4k 4:3 </label>&nbsp;&nbsp;
-  <input type="radio" id="r6" name="res" value="r5"   > <label for="r6">5.3k </label>&nbsp;&nbsp;
-  <input type="radio" id="r7" name="res" value="r5T"  > <label for="r7">5k 4:3 </label>&nbsp;&nbsp;
+  <input type="radio" id="r3" name="res" value="r27T" > <label for="r3">2.7k  </label><small>4:3</small>&nbsp;&nbsp;
+  <input type="radio" id="r4" name="res" value="r4"   > <label for="r4">4k    </label>&nbsp;&nbsp;
+  <input type="radio" id="r5" name="res" value="r4T"  > <label for="r5">4k    </label><small>4:3</small>&nbsp;&nbsp;
+  <input type="radio" id="r6" name="res" value="r5"   > <label for="r6">5.3k  </label>&nbsp;&nbsp;
+  <input type="radio" id="r7" name="res" value="r5T"  > <label for="r7">5k    </label><small>4:3</small>&nbsp;&nbsp;
   <input type="radio" id="r8" name="res" value="" checked> <label for="r8">not set</label><br>
 </div>
 
