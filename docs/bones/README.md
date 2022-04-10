@@ -507,16 +507,18 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 &nbsp;&nbsp;<b>Pairing:</b>&nbsp;&nbsp;<input type="radio" id="sap1" name="sap" value="!PA"> <label for="sap1">Quik App</label>
 &nbsp;&nbsp;<input type="radio" id="sap2" name="sap" value="!PR"> <label for="sap2">Remote</label>
 &nbsp;&nbsp;<input type="radio" id="sap3" name="sap" value="!PS"> <label for="sap3">Cancel</label><br>
-&nbsp;&nbsp;<b>Reset:</b>&nbsp;&nbsp;<input type="radio" id="sap4" name="sap" value="!FRESET"> <label for="sap4">Factory</label>
+&nbsp;&nbsp;<b>Reset:</b>&nbsp;&nbsp;<input type="radio" id="sap4" name="sap" value="!MBOOT=\"\"!MBITR=0!FRESET"> <label for="sap4">Factory</label>
 &nbsp;&nbsp;<input type="radio" id="sap5" name="sap" value="!PRESET"> <label for="sap5">Presets</label>
 &nbsp;&nbsp;<input type="radio" id="sap6" name="sap" value="!WRESET"> <label for="sap6">WiFi</label>
 &nbsp;&nbsp;<input type="radio" id="sap7" name="sap" value="!RESET"> <label for="sap7">Labs</label><br>
 &nbsp;&nbsp;<b>Auto Wake on Power:</b>&nbsp;&nbsp;<input type="radio" id="sap8" name="sap" value="!MWAKE=1"> <label for="sap8">Enable</label>
 &nbsp;&nbsp;<input type="radio" id="sap9" name="sap" value="!MWAKE=0"> <label for="sap9">Disable</label><br>
+&nbsp;&nbsp;<input type="radio" id="sap10" name="sap" value="b1!MBITR=0"> <label for="sap9">Overclock Bitrate</label> <input type="range" style="width: 200px;" id="bitr" name="bitr" min="100" max="200" value="0"> <b id="bitrtext"></b>
+Number of hours <input type="range" style="width: 300px;" id=
 &nbsp;&nbsp;<b>Auto Capture Trigger:</b><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap10" name="sap" value="!SA"> <label for="sap10">Sound Pressure Level (range 30-120dB)</label><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap11" name="sap" value="!SI"> <label for="sap11">IMU, Gyro+Accel (range 1-9)</label><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap12" name="sap" value="!SM"> <label for="sap12">Motion (range 1-6)</label><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap11" name="sap" value="!SA"> <label for="sap10">Sound Pressure Level (range 30-120dB)</label><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap12" name="sap" value="!SI"> <label for="sap11">IMU, Gyro+Accel (range 1-9)</label><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap13" name="sap" value="!SM"> <label for="sap12">Motion (range 1-6)</label><br>
   <div id="motionParams">
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitivity: <input type="text" id="mstart" value="6" style="width:60px"> (value from range ). <input type="checkbox" id="helpRange" value="">&nbsp;&nbsp;<label for="actions">Help</label>
 	<div id="splHelp">
@@ -568,9 +570,8 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   <div id="aR">
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="repeat" value="" checked> <label for="repeat">Repeat Command</label><br>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="boot" value=""> <label for="boot">Make Boot Command on SD Card -- Automatic Action on boot</label><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="remboot" value=""> <label for="remboot">Remove Boot Command</label><br>
   </div>
-  &nbsp;&nbsp;<input type="radio" id="sap13" name="sap" value="" checked> <label for="sap13">not set</label><br>
+  &nbsp;&nbsp;<input type="radio" id="sap14" name="sap" value="" checked> <label for="sap14">not set</label><br>
 </div>
 
 
@@ -704,7 +705,7 @@ function startTime() {
 	}
 	
 	
-	for (i = 1; i < 13; i++) { 
+	for (i = 1; i < 14; i++) { 
 		var amode = "sap"+i;
 		if(document.getElementById(amode) !== null)	{
 			x = document.getElementById(amode).checked;
@@ -874,7 +875,7 @@ function startTime() {
 			//dset("aSM", true);
 			//dset("aIT", true);
 			
-			if(actionmode > 9) 
+			if(actionmode > 10) 
 			{
 				dset("motionParams", true);	
 				dset("aR", true);
@@ -884,9 +885,9 @@ function startTime() {
 			{
 				if(document.getElementById("helpRange").checked === true)
 				{	
-					if(actionmode == 10) dset("splHelp", true);
-					if(actionmode == 11) dset("imuHelp", true);
-					if(actionmode == 12) dset("motionHelp", true);
+					if(actionmode == 11) dset("splHelp", true);
+					if(actionmode == 12) dset("imuHelp", true);
+					if(actionmode == 13) dset("motionHelp", true);
 				}
 			}
 		}
@@ -1220,7 +1221,7 @@ function startTime() {
 		lastcmd = cmd;
 	}
 	
-	if((dt === true && actionmode<10) || (dt === true && actionmode>=10 && document.getElementById("repeat").checked === false && document.getElementById("boot").checked === false))
+	if((dt === true && actionmode<11) || (dt === true && actionmode>=11 && document.getElementById("repeat").checked === false && document.getElementById("boot").checked === false))
 	{
 		//dset("opDTS", true);
 		dset("copyshow", false);   // don't what user printing or sharing code with wrong date and time
@@ -1285,14 +1286,14 @@ function startTime() {
 		
 		cmd = dcmd(cmd,"sap"); //naked action
 		
-		if(actionmode >= 10)
+		if(actionmode >= 11)
 		{
 			if(document.getElementById("mstart") !== null)
 			{		
 				var mstart = document.getElementById("mstart").value;
 				
 				if(mstart <= 0) mstart = 6;
-				if(actionmode == 10 ) //audio trigger
+				if(actionmode == 11 ) //audio trigger
 				{
 					while(mstart <= 30) mstart*=10;
 					if(mstart > 120) mstart = 120;
@@ -1329,9 +1330,10 @@ function startTime() {
 			}	
 		}
 		
-		if(actionmode>=10 && document.getElementById("repeat").checked === true)
+		if(actionmode>=11 && document.getElementById("repeat").checked === true)
 		{
 			cmd = cmd + "!" + "R";
+			document.getElementById("dt").checked = false;
 		}
 	}
 	
@@ -1340,15 +1342,10 @@ function startTime() {
 		cmd = cmd + document.getElementById("addcmd").value;
 	}
 	
-	if(document.getElementById("remboot").checked === true)
-	{
-		cmd = "!MBOOT=\"\"" + cmd;
-	}
 	
 	if(document.getElementById("boot").checked === true)
 	{
 		cmd = "!MQRDR=1!MBOOT=\"!Lboot\"!SAVEboot=" + cmd;
-		document.getElementById("remboot").checked = false;
 	}
 	
 	
