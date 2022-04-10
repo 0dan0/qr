@@ -518,9 +518,9 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap10" name="sap" value="!SA"> <label for="sap10">Sound Pressure Level (range 30-120dB)</label><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap11" name="sap" value="!SI"> <label for="sap11">IMU, Gyro+Accel (range 1-9)</label><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap12" name="sap" value="!SM"> <label for="sap12">Motion (range 1-6)</label><br>
-<div id="motionParams">
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitivity: <input type="text" id="mstart" value="6" style="width:60px"> (value from range ). <input type="checkbox" id="helpRange" value="">&nbsp;&nbsp;<label for="actions">Help</label>
-	<div id="splHelp2">
+  <div id="motionParams">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitivity: <input type="text" id="mstart" value="6" style="width:60px"> (value from range ). <input type="checkbox" id="helpRange" value="">&nbsp;&nbsp;<label for="actions">Help</label>
+	<div id="splHelp">
 	  <small><table style="margin-left:60px;">
 		<thead>	<tr><th>SPL (dB) at 1m/3ft</th>  <th>Activity</th>	</tr> </thead>
 		  <tbody> 
@@ -535,7 +535,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 		</table>
 	  </small>
 	</div>
-	<div id="imuHelp2">
+	<div id="imuHelp">
 	  <small><table style="margin-left:60px;">
 		  <thead> <tr> <th>Sensitivity</th> <th>Activity</th></tr> </thead>
 		  <tbody>
@@ -548,7 +548,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 		</table>
 	  </small>
 	</div>
-	<div id="motionHelp2">
+	<div id="motionHelp">
 	  <small> <table style="margin-left:60px;"> 
 		<thead> <tr> <th>Sensitivity</th><th>Activity</th></tr></thead>
 		  <tbody>
@@ -565,9 +565,9 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 	<br>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="dhold" value="1" style="width:60px"> seconds.<br>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="mhold" value="5" style="width:60px"> capture seconds after motion stops.<br>
-	  </div>
-	  <div id="aR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="repeat" value=""> <b><label for="repeat">Repeat Command</label></b><br></div>
-	&nbsp;&nbsp;<input type="radio" id="sap13" name="sap" value="" checked> <label for="sap13">not set</label><br>
+  </div>
+  <div id="aR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="repeat" value=""> <b><label for="repeat">Repeat Command</label></b><br></div>
+  &nbsp;&nbsp;<input type="radio" id="sap13" name="sap" value="" checked> <label for="sap13">not set</label><br>
 </div>
 
 
@@ -686,9 +686,6 @@ function startTime() {
 	dset("splHelp", false);
 	dset("imuHelp", false);
 	dset("motionHelp", false);
-	dset("splHelp2", false);
-	dset("imuHelp2", false);
-	dset("motionHelp2", false);
 	dset("motionParams", false);
 	
 	var checkedmode = 0;
@@ -883,9 +880,9 @@ function startTime() {
 			{
 				if(document.getElementById("helpRange").checked === true)
 				{	
-					if(actionmode == 10) dset("splHelp2", true);
-					if(actionmode == 11) dset("imuHelp2", true);
-					if(actionmode == 12) dset("motionHelp2", true);
+					if(actionmode == 10) dset("splHelp", true);
+					if(actionmode == 11) dset("imuHelp", true);
+					if(actionmode == 12) dset("motionHelp", true);
 				}
 			}
 		}
@@ -932,6 +929,7 @@ function startTime() {
 		cmd = dcmd(cmd,"p"); //fps
 	}
 	
+	var zoom;
 	if(checkedmode > 6) // not video	
 	{
 		if(checkedmode == 7) //TWarp
@@ -944,7 +942,7 @@ function startTime() {
 			{
 				dset("settingsZoom", true);			
 					
-				var zoom = parseInt(document.getElementById("zoom").value);
+				zoom = parseInt(document.getElementById("zoom").value);
 				zoom *= 10;
 				document.getElementById("zoomtext").innerHTML = zoom+"%";	
 				if(zoom == 100) zoom = 99;	
@@ -970,7 +968,7 @@ function startTime() {
 			{
 				dset("settingsZoom", true);			
 					
-				var zoom = parseInt(document.getElementById("zoom").value);
+				zoom = parseInt(document.getElementById("zoom").value);
 				zoom *= 10;
 				document.getElementById("zoomtext").innerHTML = zoom+"%";	
 				if(zoom == 100) zoom = 99;	
@@ -995,7 +993,7 @@ function startTime() {
 			{
 				dset("settingsZoom", true);			
 					
-				var zoom = parseInt(document.getElementById("zoom").value);
+				zoom = parseInt(document.getElementById("zoom").value);
 				zoom *= 10;
 				document.getElementById("zoomtext").innerHTML = zoom+"%";	
 				if(zoom == 100) zoom = 99;	
@@ -1014,7 +1012,7 @@ function startTime() {
 		{
 			dset("settingsZoom", true);			
 			
-			var zoom = parseInt(document.getElementById("zoom").value);
+			zoom = parseInt(document.getElementById("zoom").value);
 			zoom *= 10;
 			document.getElementById("zoomtext").innerHTML = zoom+"%";	
 			if(zoom == 100) zoom = 99;	
@@ -1278,8 +1276,8 @@ function startTime() {
 	var actions = document.getElementById("actions").checked;
  	if(actions === true)
 	{
-		var S_added = 0;
-		var SM_added = 0;
+		//var S_added = 0;
+		//var SM_added = 0;
 		
 		cmd = dcmd(cmd,"sap"); //naked action
 		
