@@ -507,13 +507,13 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 &nbsp;&nbsp;<b>Pairing:</b>&nbsp;&nbsp;<input type="radio" id="sap1" name="sap" value="!PA"> <label for="sap1">Quik App</label>
 &nbsp;&nbsp;<input type="radio" id="sap2" name="sap" value="!PR"> <label for="sap2">Remote</label>
 &nbsp;&nbsp;<input type="radio" id="sap3" name="sap" value="!PS"> <label for="sap3">Cancel</label><br>
-&nbsp;&nbsp;<b>Reset:</b>&nbsp;&nbsp;<input type="radio" id="sap4" name="sap" value="!MBOOT=\"\"!MBITR=0!FRESET"> <label for="sap4">Factory</label>
+&nbsp;&nbsp;<b>Reset:</b>&nbsp;&nbsp;<input type="radio" id="sap4" name="sap" value="!MBOOT=0!MBITR=0!FRESET"> <label for="sap4">Factory</label>
 &nbsp;&nbsp;<input type="radio" id="sap5" name="sap" value="!PRESET"> <label for="sap5">Presets</label>
 &nbsp;&nbsp;<input type="radio" id="sap6" name="sap" value="!WRESET"> <label for="sap6">WiFi</label>
 &nbsp;&nbsp;<input type="radio" id="sap7" name="sap" value="!RESET"> <label for="sap7">Labs</label><br>
 &nbsp;&nbsp;<b>Auto Wake on Power:</b>&nbsp;&nbsp;<input type="radio" id="sap8" name="sap" value="!MWAKE=1"> <label for="sap8">Enable</label>
 &nbsp;&nbsp;<input type="radio" id="sap9" name="sap" value="!MWAKE=0"> <label for="sap9">Disable</label><br>
-&nbsp;&nbsp;<input type="radio" id="sap10" name="sap" value="b1!MBITR=0"> <label for="sap9">Overclock Bitrate</label> <input type="range" style="width: 200px;" id="bitr" name="bitr" min="100" max="200" value="0"> <b id="bitrtext"></b>
+&nbsp;&nbsp;<b>Overclock Bitrate</b><input type="radio" id="sap10" name="sap" value="b1!MBITR="> <label for="sap9"></label> <input type="range" style="width: 200px;" id="bitr" name="bitr" min="100" max="200" value="100"> <b id="bitrtext"></b>
 Number of hours <input type="range" style="width: 300px;" id=
 &nbsp;&nbsp;<b>Auto Capture Trigger:</b><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap11" name="sap" value="!SA"> <label for="sap10">Sound Pressure Level (range 30-120dB)</label><br>
