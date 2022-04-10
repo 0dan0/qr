@@ -39,13 +39,14 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 
 ## Camera Settings
 
+<div id="camMODE">
 <b>Camera Mode:</b>
   &nbsp;&nbsp;<input type="radio" id="m1" name="mode"  value="mV" checked> <label for="m1">Video</label>&nbsp;&nbsp;
   &nbsp;&nbsp;<input type="radio" id="m2" name="mode"  value="mV0"> <label for="m2">Standard</label>&nbsp;&nbsp;
   &nbsp;&nbsp;<input type="radio" id="m3" name="mode"  value="mV1"> <label for="m3">Activity</label>&nbsp;&nbsp;
   &nbsp;&nbsp;<input type="radio" id="m4" name="mode"  value="mV2"> <label for="m4">Cinematic</label>&nbsp;&nbsp;
   &nbsp;&nbsp;<input type="radio" id="m5" name="mode"  value="mV4"> <label for="m5">SloMo</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m6" name="mode"  value="mV5"> <label for="m6">Basic</label><br>
+  &nbsp;&nbsp;<input type="radio" id="m6" name="mode"  value="mV5"> <label for="m6">Basic</label>&nbsp;&nbsp;
   &nbsp;&nbsp;<input type="radio" id="m7" name="mode"  value="mTW"> <label for="m7">TimeWarp</label>&nbsp;&nbsp;
   &nbsp;&nbsp;<input type="radio" id="m8" name="mode"  value="mT">  <label for="m8">Timelapse</label>&nbsp;&nbsp;
   &nbsp;&nbsp;<input type="radio" id="m9" name="mode"  value="mNL"> <label for="m9">Nightlapse</label>&nbsp;&nbsp;
@@ -53,6 +54,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   &nbsp;&nbsp;<input type="radio" id="m11" name="mode" value="mPB"> <label for="m11">Burst</label>&nbsp;&nbsp;
   &nbsp;&nbsp;<input type="radio" id="m12" name="mode" value="mPN"> <label for="m12">Night</label>&nbsp;&nbsp;
   &nbsp;&nbsp;<input type="radio" id="m13" name="mode" value=""> <label for="m13">not set</label>
+</div>
 
 <div id="settingsRES">
 <b>Resolution:</b>&nbsp;&nbsp;
@@ -250,7 +252,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 	<input type="radio" id="dur4" name="dur" value="dR60"> <label for="dur4">1min</label>&nbsp;&nbsp;
 	<input type="radio" id="dur5" name="dur" value="dR300"> <label for="dur5">5min</label>&nbsp;&nbsp;
 	<input type="radio" id="dur6" name="dur" value="dR900"> <label for="dur6">15min</label>&nbsp;&nbsp;
-	<input type="radio" id="dur7" name="dur" value="dR1800"> <label for="dur7">30min</label><br>
+	<input type="radio" id="dur7" name="dur" value="dR1800"> <label for="dur7">30min</label>&nbsp;&nbsp;
 	<input type="radio" id="dur8" name="dur" value="dR3600"> <label for="dur8">1hour</label>&nbsp;&nbsp;
 	<input type="radio" id="dur9" name="dur" value="dR7200"> <label for="dur9">2hour</label>&nbsp;&nbsp;
 	<input type="radio" id="dur10" name="dur" value="dR9999"> <label for="dur10">3hour</label>&nbsp;&nbsp;
