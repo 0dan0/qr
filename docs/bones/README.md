@@ -513,7 +513,8 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 &nbsp;&nbsp;<input type="radio" id="sap7" name="sap" value="!RESET"> <label for="sap7">Labs</label><br>
 &nbsp;&nbsp;<b>Auto Wake on Power:</b>&nbsp;&nbsp;<input type="radio" id="sap8" name="sap" value="!MWAKE=1"> <label for="sap8">Enable</label>
 &nbsp;&nbsp;<input type="radio" id="sap9" name="sap" value="!MWAKE=0"> <label for="sap9">Disable</label><br>
-&nbsp;&nbsp;<b>Overclock Bitrate:</b>&nbsp;&nbsp;<input type="radio" id="sap10" name="sap" value="b1!MBITR="> <label for="sap10">Take On Risk</label><input type="checkbox" id="helpBitr" value="">&nbsp;&nbsp; <input type="range" style="width: 100px;" id="bitr" name="bitr" min="100" max="200" value="100"> <b id="bitrtext"></b><br>
+&nbsp;&nbsp;<b>Overclock Bitrate:</b>&nbsp;&nbsp;<input type="radio" id="sap10" name="sap" value="b1!MBITR="> 
+  <label for="sap10">Take On Risk</label>&nbsp;&nbsp;<input type="checkbox" id="helpBitr" name="helpBitr" value=""><label for="helpBitr">Help</label>&nbsp;&nbsp; <input type="range" style="width: 100px;" id="bitr" name="bitr" min="100" max="200" value="100"> <b id="bitrtext"></b><br>
 <div id="bitrHelp">
 	 &nbsp;&nbsp;&nbsp;&nbsp;<small>
 	 
