@@ -93,7 +93,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 </div>
 
 <div id="settingsFOV">
-<b>Lens:</b>&nbsp;&nbsp;
+<b>Lens FOV:</b>&nbsp;&nbsp;
   <input type="radio" id="f1" name="fov" value="fW"> <label for="f1">Wide </label>&nbsp;&nbsp;
  <!-- <input type="radio" id="f2" name="fov" value="fM"> <label for="f2">Medium </label>&nbsp;&nbsp; -->
   <input type="radio" id="f2" name="fov" value="fN"> <label for="f2">Narrow </label>&nbsp;&nbsp;
