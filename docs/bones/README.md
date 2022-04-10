@@ -60,10 +60,10 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 <b>Resolution:</b>&nbsp;&nbsp;
   <input type="radio" id="r1" name="res" value="r1080"> <label for="r1">1080p</label>&nbsp;
   <input type="radio" id="r2" name="res" value="r27"  > <label for="r2">2.7k</label>&nbsp;
-  <input type="radio" id="r4" name="res" value="r4"   > <label for="r3">4k</label>&nbsp;
-  <input type="radio" id="r6" name="res" value="r5"   > <label for="r4">5.3k</label><br>&nbsp;&nbsp; &nbsp;&nbsp; 
-  <input type="radio" id="r3" name="res" value="r27T" > <label for="r5">2.7k</label><small>4:3</small>&nbsp;
-  <input type="radio" id="r5" name="res" value="r4T"  > <label for="r6">4k</label><small>4:3</small>&nbsp;
+  <input type="radio" id="r3" name="res" value="r4"   > <label for="r3">4k</label>&nbsp;
+  <input type="radio" id="r4" name="res" value="r5"   > <label for="r4">5.3k</label><br>&nbsp;&nbsp; &nbsp;&nbsp; 
+  <input type="radio" id="r5" name="res" value="r27T" > <label for="r5">2.7k</label><small>4:3</small>&nbsp;
+  <input type="radio" id="r6" name="res" value="r4T"  > <label for="r6">4k</label><small>4:3</small>&nbsp;
   <input type="radio" id="r7" name="res" value="r5T"  > <label for="r7">5k</label><small>4:3</small>&nbsp;
   <input type="radio" id="r8" name="res" value="" checked> <label for="r8">not set</label><br>
 </div>
@@ -72,8 +72,8 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 <b>Resolution:</b>&nbsp;&nbsp;
   <input type="radio" id="rt1" name="restlv" value="r1080"> <label for="rt1">1080p </label>&nbsp;
   <input type="radio" id="rt2" name="restlv" value="r27" >  <label for="rt2">2.7k </label>&nbsp;
-  <input type="radio" id="rt4" name="restlv" value="r4"   > <label for="rt3">4k </label><br>&nbsp;&nbsp; &nbsp;&nbsp; 
-  <input type="radio" id="rt3" name="restlv" value="r27T" > <label for="rt4">2.7k</label><small>4:3</small>&nbsp;
+  <input type="radio" id="rt3" name="restlv" value="r4"   > <label for="rt3">4k </label><br>&nbsp;&nbsp; &nbsp;&nbsp; 
+  <input type="radio" id="rt4" name="restlv" value="r27T" > <label for="rt4">2.7k</label><small>4:3</small>&nbsp;
   <input type="radio" id="rt5" name="restlv" value="r4T"  > <label for="rt5">4k</label><small>4:3</small>&nbsp;
   <input type="radio" id="rt6" name="restlv" value="" checked> <label for="rt6">not set</label><br>
  </div>
