@@ -101,8 +101,8 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   <input type="radio" id="f5" name="fov" value="fH"> <label for="f5">Linear+HL </label><br>
   or <b>Max Lens Mod:</b>&nbsp;&nbsp;
   <input type="radio" id="f6" name="fov" value="fM"> <label for="f6">Wide </label>&nbsp;&nbsp;
-  <input type="radio" id="f7" name="fov" value="fX"> <label for="f7">Superview </label>&nbsp;&nbsp;
-  <input type="radio" id="f8" name="fov" value="fR"> <label for="f8">Linear(1080) </label><br>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+  <input type="radio" id="f7" name="fov" value="fX"> <label for="f7">Superview </label><br>&nbsp;&nbsp; &nbsp;&nbsp;  
+  <input type="radio" id="f8" name="fov" value="fR"> <label for="f8">Linear(1080) </label>&nbsp;&nbsp;
   <input type="checkbox" id="mlmhl" value="L"> <label for="mlmhl">Horizon Lock</label>&nbsp;&nbsp;&nbsp;&nbsp;  <!-- <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="radio" id="f9" name="fov" value="oX1"> <label for="f9">Enable MLM</label>&nbsp;&nbsp; 
