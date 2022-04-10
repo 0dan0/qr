@@ -178,8 +178,8 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   <input type="radio" id="fpslapse1" name="fpslapse" value="p2"> <label for="fpslapse1">0.5s </label>&nbsp;
   <input type="radio" id="fpslapse2" name="fpslapse" value="p1"> <label for="fpslapse2">1s </label>&nbsp;
   <input type="radio" id="fpslapse3" name="fpslapse" value="p.2"> <label for="fpslapse3">2s </label>&nbsp;
-  <input type="radio" id="fpslapse4" name="fpslapse" value="p.5"> <label for="fpslapse4">5s </label><br>&nbsp;&nbsp; &nbsp;&nbsp;  
-  <input type="radio" id="fpslapse5" name="fpslapse" value="p.10"> <label for="fpslapse5">10s </label>&nbsp;
+  <input type="radio" id="fpslapse4" name="fpslapse" value="p.5"> <label for="fpslapse4">5s </label>&nbsp;  
+  <input type="radio" id="fpslapse5" name="fpslapse" value="p.10"> <label for="fpslapse5">10s </label><br>&nbsp;&nbsp; &nbsp;&nbsp;
   <input type="radio" id="fpslapse6" name="fpslapse" value="p.30"> <label for="fpslapse6">30s </label>&nbsp;
   <input type="radio" id="fpslapse7" name="fpslapse" value="p.60"> <label for="fpslapse7">60s </label>&nbsp;
   <input type="radio" id="fpslapse8"  name="fpslapse" value="p.120" > <label for="fpslapse8">2min </label>&nbsp;
@@ -198,8 +198,8 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   <input type="radio" id="fpsnight5" name="fpsnight" value="p.15"  > <label for="fpsnight5">15s </label>&nbsp;
   <input type="radio" id="fpsnight6" name="fpsnight" value="p.20"  > <label for="fpsnight6">20s </label>&nbsp;
   <input type="radio" id="fpsnight7" name="fpsnight" value="p.30"  > <label for="fpsnight7">30s </label>&nbsp;
-  <input type="radio" id="fpsnight8" name="fpsnight" value="p.60"  > <label for="fpsnight8">60s </label><br>&nbsp;&nbsp; &nbsp;&nbsp;  
-  <input type="radio" id="fpsnight9" name="fpsnight" value="p.120" > <label for="fpsnight9">2min </label>&nbsp;
+  <input type="radio" id="fpsnight8" name="fpsnight" value="p.60"  > <label for="fpsnight8">60s </label>&nbsp;  
+  <input type="radio" id="fpsnight9" name="fpsnight" value="p.120" > <label for="fpsnight9">2min </label><br>&nbsp;&nbsp; &nbsp;&nbsp;
   <input type="radio" id="fpsnight10" name="fpsnight" value="p.300" > <label for="fpsnight10">5min </label>&nbsp;
   <input type="radio" id="fpsnight11" name="fpsnight" value="p.1800"> <label for="fpsnight11">30min </label>&nbsp;
   <input type="radio" id="fpsnight12" name="fpsnight" value="p.3600"> <label for="fpsnight12">60min </label>&nbsp;
