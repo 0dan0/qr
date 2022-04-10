@@ -253,9 +253,9 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 	<input type="radio" id="dur5" name="dur" value="dR300"> <label for="dur5">5min</label>&nbsp;&nbsp;
 	<input type="radio" id="dur6" name="dur" value="dR900"> <label for="dur6">15min</label>&nbsp;&nbsp;
 	<input type="radio" id="dur7" name="dur" value="dR1800"> <label for="dur7">30min</label>&nbsp;&nbsp;
-	<input type="radio" id="dur8" name="dur" value="dR3600"> <label for="dur8">1hour</label>&nbsp;&nbsp;
-	<input type="radio" id="dur9" name="dur" value="dR7200"> <label for="dur9">2hour</label>&nbsp;&nbsp;
-	<input type="radio" id="dur10" name="dur" value="dR9999"> <label for="dur10">3hour</label>&nbsp;&nbsp;
+	<input type="radio" id="dur8" name="dur" value="dR3600"> <label for="dur8">1hr</label>&nbsp;&nbsp;
+	<input type="radio" id="dur9" name="dur" value="dR7200"> <label for="dur9">2hr</label>&nbsp;&nbsp;
+	<input type="radio" id="dur10" name="dur" value="dR9999"> <label for="dur10">3hr</label>&nbsp;&nbsp;
 	<input type="radio" id="dur11" name="dur" value="" checked> <label for="dur11">not set</label><br>
 </div>
 
