@@ -1220,7 +1220,7 @@ function startTime() {
 		lastcmd = cmd;
 	}
 	
-	if(dt === true && document.getElementById("repeat").checked === false)
+	if(dt === true && document.getElementById("repeat").checked === false && document.getElementById("boot").checked === false)
 	{
 		dset("opDTS", true);
 		dset("copyshow", false);   // don't what user printing or sharing code with wrong date and time
@@ -1338,6 +1338,16 @@ function startTime() {
 	if(document.getElementById("addcmd") !== null)
 	{
 		cmd = cmd + document.getElementById("addcmd").value;
+	}
+	
+	if(document.getElementById("remboot").checked === true)
+	{
+		document.getElementById("boot").checked = false;
+	}
+	
+	if(document.getElementById("boot").checked === true)
+	{
+		document.getElementById("remboot").checked = false;
 	}
 	
 	
