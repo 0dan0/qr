@@ -1340,7 +1340,7 @@ function startTime() {
     if(actionmode == 10 && document.getElementById("bitr") !== null)
     {
 	  var bitrate = parseInt(document.getElementById("bitr").value);
-      document.getElementById("bitrtext").innerHTML = bitrate + Mb/s;
+      document.getElementById("bitrtext").innerHTML = bitrate + "Mb/s";
 	  
 	  cmd = cmd + bitrate;
 		
