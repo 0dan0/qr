@@ -42,17 +42,17 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 <div id="camMODE">
 <b>Mode:</b>
   &nbsp;&nbsp;<input type="radio" id="m1" name="mode"  value="mV" checked> <label for="m1">Video</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m2" name="mode"  value="mV0"> <small><label for="m2">Standard</label>&nbsp;&nbsp;       </small>
-  &nbsp;&nbsp;<input type="radio" id="m3" name="mode"  value="mV1"> <small><label for="m3">Activity</label>&nbsp;&nbsp;       </small>
-  &nbsp;&nbsp;<input type="radio" id="m4" name="mode"  value="mV2"> <small><label for="m4">Cinematic</label>&nbsp;&nbsp;      </small>
-  &nbsp;&nbsp;<input type="radio" id="m5" name="mode"  value="mV4"> <small><label for="m5">SloMo</label>&nbsp;&nbsp;          </small>
-  &nbsp;&nbsp;<input type="radio" id="m6" name="mode"  value="mV5"> <small><label for="m6">Basic</label>&nbsp;&nbsp;          </small>
-  &nbsp;&nbsp;<input type="radio" id="m7" name="mode"  value="mTW"> <small><label for="m7">TimeWarp</label>&nbsp;&nbsp;       </small>
-  &nbsp;&nbsp;<input type="radio" id="m8" name="mode"  value="mT">  <small><label for="m8">Timelapse</label>&nbsp;&nbsp;      </small>
-  &nbsp;&nbsp;<input type="radio" id="m9" name="mode"  value="mNL"> <small><label for="m9">Nightlapse</label>&nbsp;&nbsp;     </small>
-  &nbsp;&nbsp;<input type="radio" id="m10" name="mode" value="mP">  <small><label for="m10">Photo</label>&nbsp;&nbsp;         </small>
-  &nbsp;&nbsp;<input type="radio" id="m11" name="mode" value="mPB"> <small><label for="m11">Burst</label>&nbsp;&nbsp;         </small>
-  &nbsp;&nbsp;<input type="radio" id="m12" name="mode" value="mPN"> <small><label for="m12">Night</label>&nbsp;&nbsp;         </small>
+  &nbsp;&nbsp;<input type="radio" id="m2" name="mode"  value="mV0"> <label for="m2">Standard</label>&nbsp;&nbsp;  
+  &nbsp;&nbsp;<input type="radio" id="m3" name="mode"  value="mV1"> <label for="m3">Activity</label>&nbsp;&nbsp;  
+  &nbsp;&nbsp;<input type="radio" id="m4" name="mode"  value="mV2"> <label for="m4">Cinematic</label>&nbsp;&nbsp; 
+  &nbsp;&nbsp;<input type="radio" id="m5" name="mode"  value="mV4"> <label for="m5">SloMo</label>&nbsp;&nbsp;     
+  &nbsp;&nbsp;<input type="radio" id="m6" name="mode"  value="mV5"> <label for="m6">Basic</label>&nbsp;&nbsp;     
+  &nbsp;&nbsp;<input type="radio" id="m7" name="mode"  value="mTW"> <label for="m7">TimeWarp</label>&nbsp;&nbsp;  
+  &nbsp;&nbsp;<input type="radio" id="m8" name="mode"  value="mT">  <label for="m8">Timelapse</label>&nbsp;&nbsp; 
+  &nbsp;&nbsp;<input type="radio" id="m9" name="mode"  value="mNL"> <label for="m9">Nightlapse</label>&nbsp;&nbsp;
+  &nbsp;&nbsp;<input type="radio" id="m10" name="mode" value="mP">  <label for="m10">Photo</label>&nbsp;&nbsp;    
+  &nbsp;&nbsp;<input type="radio" id="m11" name="mode" value="mPB"> <label for="m11">Burst</label>&nbsp;&nbsp;    
+  &nbsp;&nbsp;<input type="radio" id="m12" name="mode" value="mPN"> <label for="m12">Night</label>&nbsp;&nbsp;    
   &nbsp;&nbsp;<input type="radio" id="m13" name="mode" value=""> <label for="m13">not set</label>
 </div>
 
@@ -276,7 +276,6 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   <input type="radio" id="audt4" name="audt" value="" checked> <label for="audt4"> not set</label><br>
 </div>
 
-<br>
 <div id="spotMeterCheck">
 <input type="checkbox" id="sm" value="oSM"> <label for="sm">Spot Metering</label><br>
 </div>
