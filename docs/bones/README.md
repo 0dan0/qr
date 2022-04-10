@@ -70,25 +70,25 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 
 <div id="settingsRESTLV">
 <b>Resolution:</b>&nbsp;&nbsp;
-  <input type="radio" id="rt1" name="restlv" value="r1080"> <label for="rt1">1080p </label>&nbsp;&nbsp;
-  <input type="radio" id="rt2" name="restlv" value="r27" >  <label for="rt2">2.7k </label>&nbsp;&nbsp;
-  <input type="radio" id="rt3" name="restlv" value="r27T" > <label for="rt3">2.7k 4x3 </label>&nbsp;&nbsp;
-  <input type="radio" id="rt4" name="restlv" value="r4"   > <label for="rt4">4k </label>&nbsp;&nbsp;
-  <input type="radio" id="rt5" name="restlv" value="r4T"  > <label for="rt5">4k 4x3 </label>&nbsp;&nbsp;
+  <input type="radio" id="rt1" name="restlv" value="r1080"> <label for="rt1">1080p </label>&nbsp;
+  <input type="radio" id="rt2" name="restlv" value="r27" >  <label for="rt2">2.7k </label>&nbsp;
+  <input type="radio" id="rt4" name="restlv" value="r4"   > <label for="rt3">4k </label><br>&nbsp;&nbsp; &nbsp;&nbsp; 
+  <input type="radio" id="rt3" name="restlv" value="r27T" > <label for="rt4">2.7k</label><small>4:3</small>&nbsp;
+  <input type="radio" id="rt5" name="restlv" value="r4T"  > <label for="rt5">4k</label><small>4:3</small>&nbsp;
   <input type="radio" id="rt6" name="restlv" value="" checked> <label for="rt6">not set</label><br>
  </div>
 
 <div id="settingsFPS">
 <b>Frame Rate:</b>&nbsp;&nbsp;
-  <input type="radio" id="p1" name="fps" value="p24">  <label for="p1">24 </label>&nbsp;&nbsp;
-  <input type="radio" id="p2" name="fps" value="p25">  <label for="p2">25 </label>&nbsp;&nbsp;
-  <input type="radio" id="p3" name="fps" value="p30">  <label for="p3">30 </label>&nbsp;&nbsp;
-  <input type="radio" id="p4" name="fps" value="p50">  <label for="p4">50 </label>&nbsp;&nbsp;
-  <input type="radio" id="p5" name="fps" value="p60">  <label for="p5">60 </label>&nbsp;&nbsp;
-  <input type="radio" id="p6" name="fps" value="p100"> <label for="p6">100 </label>&nbsp;&nbsp;
-  <input type="radio" id="p7" name="fps" value="p120"> <label for="p7">120 </label>&nbsp;&nbsp;
-  <input type="radio" id="p8" name="fps" value="p200"> <label for="p8">200 </label>&nbsp;&nbsp;
-  <input type="radio" id="p9" name="fps" value="p240"> <label for="p9">240 </label>&nbsp;&nbsp;
+  <input type="radio" id="p1" name="fps" value="p24">  <label for="p1">24 </label>&nbsp;
+  <input type="radio" id="p2" name="fps" value="p25">  <label for="p2">25 </label>&nbsp;
+  <input type="radio" id="p3" name="fps" value="p30">  <label for="p3">30 </label>&nbsp;
+  <input type="radio" id="p4" name="fps" value="p50">  <label for="p4">50 </label>&nbsp;
+  <input type="radio" id="p5" name="fps" value="p60">  <label for="p5">60 </label><br>&nbsp;&nbsp; &nbsp;&nbsp; 
+  <input type="radio" id="p6" name="fps" value="p100"> <label for="p6">100 </label>&nbsp;
+  <input type="radio" id="p7" name="fps" value="p120"> <label for="p7">120 </label>&nbsp;
+  <input type="radio" id="p8" name="fps" value="p200"> <label for="p8">200 </label>&nbsp;
+  <input type="radio" id="p9" name="fps" value="p240"> <label for="p9">240 </label>&nbsp;
   <input type="radio" id="p10" name="fps" value="" checked> <label for="p10">not set</label><br>
 </div>
 
