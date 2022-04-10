@@ -565,7 +565,50 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 </div>
 <br>
   <div id="motionParams">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitivity: <input type="text" id="mstart" value="6" style="width:60px"> (value from range).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitivity: <input type="text" id="mstart" value="6" style="width:60px"> (value from range ). <input type="checkbox" id="helpRange" value="">&nbsp;&nbsp;<label for="actions">Help</label>
+<div id="splHelp2">
+  <small><table style="margin-left:60px;">
+    <thead>	<tr><th>SPL (dB) at 1m/3ft</th>  <th>Activity</th>	</tr> </thead>
+	  <tbody> 
+		<tr> <td>30</td>    <td>calm room</td> </tr>
+		<tr> <td>40-60</td> <td>conversation</td> </tr>
+		<tr> <td>60-80</td> <td>passenger car</td> </tr>
+		<tr> <td>80-90</td> <td>busy roadway</td> </tr>
+		<tr> <td>100</td>   <td>jack hammer</td> </tr>
+		<tr> <td>110</td>   <td>chain saw</td> </tr>
+		<tr> <td>120</td>   <td>air horn</td> </tr>
+	  </tbody>
+	</table>
+  </small>
+</div>
+<div id="imuHelp2">
+  <small><table style="margin-left:60px;">
+	  <thead> <tr> <th>Sensitivity</th> <th>Activity</th></tr> </thead>
+	  <tbody>
+		<tr> <td>1</td> <td>Throwing the camera</td></tr>
+		<tr> <td>2</td> <td>Jumps</td></tr>
+		<tr> <td>5</td> <td>any hand-held movement</td></tr>
+		<tr> <td>8</td> <td>tiny movement</td> </tr>
+		<tr> <td>9</td> <td>small tremor</td> </tr>
+	  </tbody>
+	</table>
+  </small>
+</div>
+<div id="motionHelp2">
+  <small> <table style="margin-left:60px;"> 
+    <thead> <tr> <th>Sensitivity</th><th>Activity</th></tr></thead>
+	  <tbody>
+		<tr> <td>1</td> <td>Everything moving</td></tr>
+		<tr> <td>2</td> <td>Large nearby movement</td></tr>
+		<tr> <td>3</td> <td>Medium object movement</td></tr>
+		<tr> <td>4</td> <td>small movement</td></tr>
+		<tr> <td>5</td> <td>tiny movement</td></tr>
+		<tr> <td>6</td> <td>any change</td></tr>
+	  </tbody>
+	</table>
+  </small>
+</div>
+<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="dhold" value="1" style="width:60px"> seconds.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="mhold" value="5" style="width:60px"> capture seconds after motion stops.<br>
   </div>
@@ -706,13 +749,16 @@ function startTime() {
 	dset("opLN", false);
 	
 	dset("NakedTools", false);
-	dset("motionHelp", false);
 	//dset("aS", false);
 	//dset("aSM", false);
 	//dset("aIT", false);
 	dset("aR", false);
-	dset("imuHelp", false);
 	dset("splHelp", false);
+	dset("imuHelp", false);
+	dset("motionHelp", false);
+	dset("splHelp2", false);
+	dset("imuHelp2", false);
+	dset("motionHelp2", false);
 	dset("motionParams", false);
 	
 	var checkedmode = 0;
@@ -923,6 +969,16 @@ function startTime() {
 				if(document.getElementById("helpS").checked === true)
 				{
 					dset("splHelp", true);
+				}
+			}
+			
+			if(document.getElementById("helpRange") !== null)
+			{
+				if(document.getElementById("helpRange").checked === true)
+				{	
+					if(actionmode == 10) dset("splHelp2", true);
+					if(actionmode == 11) dset("imuHelp2", true);
+					if(actionmode == 12) dset("motionHelp2", true);
 				}
 			}
 		}
