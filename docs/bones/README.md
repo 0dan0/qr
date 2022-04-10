@@ -94,19 +94,16 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 
 <div id="settingsFOV">
 <b>Lens FOV:</b>&nbsp;&nbsp;
-  <input type="radio" id="f1" name="fov" value="fW"> <label for="f1">Wide </label>&nbsp;&nbsp;
-  <input type="radio" id="f2" name="fov" value="fN"> <label for="f2">Narrow </label>&nbsp;&nbsp;
+  <input type="radio" id="f1" name="fov" value="fW"> <label for="f1">Wide </label>&nbsp;
+  <input type="radio" id="f2" name="fov" value="fN"> <label for="f2">Narrow </label>&nbsp;
   <input type="radio" id="f3" name="fov" value="fL"> <label for="f3">Linear </label><br>&nbsp;&nbsp; &nbsp;&nbsp; 
-  <input type="radio" id="f4" name="fov" value="fS"> <label for="f4">Superview </label>&nbsp;&nbsp;
+  <input type="radio" id="f4" name="fov" value="fS"> <label for="f4">Superview </label>&nbsp;
   <input type="radio" id="f5" name="fov" value="fH"> <label for="f5">Linear+HL </label><br>
   or <b>Max Lens Mod:</b>&nbsp;&nbsp;
-  <input type="radio" id="f6" name="fov" value="fM"> <label for="f6">Wide </label>&nbsp;&nbsp;
+  <input type="radio" id="f6" name="fov" value="fM"> <label for="f6">Wide </label>&nbsp;
   <input type="radio" id="f7" name="fov" value="fX"> <label for="f7">Superview </label><br>&nbsp;&nbsp; &nbsp;&nbsp;  
-  <input type="radio" id="f8" name="fov" value="fR"> <label for="f8">Linear(1080) </label>&nbsp;&nbsp;
-  <input type="checkbox" id="mlmhl" value="L"> <label for="mlmhl">Horizon Lock</label>&nbsp;&nbsp;&nbsp;&nbsp;  <!-- <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="radio" id="f9" name="fov" value="oX1"> <label for="f9">Enable MLM</label>&nbsp;&nbsp; 
-  <input type="radio" id="f10" name="fov" value="oX0"> <label for="f10">Disable MLM</label>&nbsp;&nbsp;  -->
+  <input type="radio" id="f8" name="fov" value="fR"> <label for="f8">Linear(1080) </label>&nbsp;
+  <input type="checkbox" id="mlmhl" value="L"> <label for="mlmhl">Horizon Lock</label>&nbsp;&nbsp;
   <input type="radio" id="f9" name="fov" value="" checked> <label for="f9">not set</label><br>
  </div>
  
@@ -118,10 +115,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   or <b>Max Lens Mod:</b>&nbsp;&nbsp; 
   <input type="radio" id="pf4" name="pfov" value="fM"> <label for="pf4">Wide </label>&nbsp;&nbsp;
   <input type="radio" id="pf5" name="pfov" value="fX"> <label for="pf5">Superview </label>&nbsp;&nbsp; 
-  <input type="checkbox" id="pmlmhl" value="L"> <label for="pmlmhl">Horizon Lock</label>&nbsp;&nbsp;&nbsp;&nbsp;  <!-- <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="radio" id="pf6" name="pfov" value="oX1"> <label for="pf6">Enable MLM</label>&nbsp;&nbsp; 
-  <input type="radio" id="pf7" name="pfov" value="oX0"> <label for="pf7">Disable MLM</label>&nbsp;&nbsp; -->
+  <input type="checkbox" id="pmlmhl" value="L"> <label for="pmlmhl">Horizon Lock</label>&nbsp;&nbsp;&nbsp;&nbsp;  
   <input type="radio" id="pf6" name="pfov" value="" checked> <label for="pf6">not set</label><br>
  </div>
   
@@ -136,17 +130,15 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   
 <div id="settingsTWFOV">
 <b>Lens:</b>
-  <input type="radio" id="twf1" name="twfov" value="fW"> <label for="twf1">Wide </label>&nbsp;&nbsp;
-  <input type="radio" id="twf2" name="twfov" value="fL"> <label for="twf2">Linear </label>&nbsp;&nbsp;
-  <input type="radio" id="twf3" name="twfov" value="fH"> <label for="twf3">Linear+HL </label>&nbsp;&nbsp;
-  <input type="radio" id="twf4" name="twfov" value="fN"> <label for="twf4">Narrow </label>&nbsp;&nbsp;  <br>
+  <input type="radio" id="twf1" name="twfov" value="fW"> <label for="twf1">Wide </label>&nbsp;
+  <input type="radio" id="twf2" name="twfov" value="fL"> <label for="twf2">Linear </label>&nbsp;
+  <input type="radio" id="twf3" name="twfov" value="fH"> <label for="twf3">Linear+HL </label><br>&nbsp;&nbsp; &nbsp;&nbsp; 
+  <input type="radio" id="twf4" name="twfov" value="fN"> <label for="twf4">Narrow </label> <br>
   or <b>Max Lens Mod:</b>&nbsp;&nbsp; 
-  <input type="radio" id="twf5" name="twfov" value="fM"> <label for="twf5">Wide </label>&nbsp;&nbsp;
-  <input type="radio" id="twf6" name="twfov" value="fX"> <label for="twf6">Superview </label>&nbsp;&nbsp;
-  <input type="radio" id="twf7" name="twfov" value="fL"> <label for="twf7">Linear </label>&nbsp;&nbsp;
-  <input type="checkbox" id="twmlmhl" value="L"> <label for="twmlmhl">Horizon Lock</label>&nbsp;&nbsp;&nbsp;&nbsp;  <!-- <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="radio" id="twf8" name="twfov" value="oX1"> <label for="twf8">Enable MLM</label>&nbsp;&nbsp; 
-  <input type="radio" id="twf9" name="twfov" value="oX0"> <label for="twf9">Disable MLM</label>&nbsp;&nbsp; -->
+  <input type="radio" id="twf5" name="twfov" value="fM"> <label for="twf5">Wide </label>&nbsp;
+  <input type="radio" id="twf6" name="twfov" value="fX"> <label for="twf6">Superview </label><br>&nbsp;&nbsp; &nbsp;&nbsp; 
+  <input type="radio" id="twf7" name="twfov" value="fL"> <label for="twf7">Linear </label>&nbsp;
+  <input type="checkbox" id="twmlmhl" value="L"> <label for="twmlmhl">Horizon Lock</label>&nbsp;&nbsp;
   <input type="radio" id="twf8" name="twfov" value="" checked> <label for="twf8">not set</label><br>
  </div>
  
@@ -171,11 +163,11 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 
 <div id="settingsTimewarp">
 <b>TimeWarp Speed:</b>&nbsp;&nbsp;
-  <input type="radio" id="fpswarp1"    name="fpswarp" value="p15"> <label for="fpswarp1">2X </label>&nbsp;&nbsp;
-  <input type="radio" id="fpswarp2"    name="fpswarp" value="p6"> <label for="fpswarp2">5X </label>&nbsp;&nbsp;
-  <input type="radio" id="fpswarp3"    name="fpswarp" value="p3"> <label for="fpswarp3">10X </label>&nbsp;&nbsp;
-  <input type="radio" id="fpswarp4"    name="fpswarp" value="p2"> <label for="fpswarp4">15X </label>&nbsp;&nbsp;
-  <input type="radio" id="fpswarp5"    name="fpswarp" value="p1"> <label for="fpswarp5">30X </label>&nbsp;&nbsp;
+  <input type="radio" id="fpswarp1"    name="fpswarp" value="p15"> <label for="fpswarp1">2X </label>&nbsp;
+  <input type="radio" id="fpswarp2"    name="fpswarp" value="p6"> <label for="fpswarp2">5X </label>&nbsp;
+  <input type="radio" id="fpswarp3"    name="fpswarp" value="p3"> <label for="fpswarp3">10X </label>&nbsp;
+  <input type="radio" id="fpswarp4"    name="fpswarp" value="p2"> <label for="fpswarp4">15X </label><br>&nbsp;&nbsp; &nbsp;&nbsp;  
+  <input type="radio" id="fpswarp5"    name="fpswarp" value="p1"> <label for="fpswarp5">30X </label>&nbsp;
   <input type="radio" id="fpswarp6"    name="fpswarp" value="pA"> <label for="fpswarp6">Auto </label>&nbsp;&nbsp;
   <input type="radio" id="fpswarp7"    name="fpswarp" value="" checked> <label for="fpswarp7">not set</label><br>
 </div>
@@ -183,34 +175,34 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
  
 <div id="settingsTimelapse">
 <b>Timelapse Interval:</b>&nbsp;&nbsp;
-  <input type="radio" id="fpslapse1" name="fpslapse" value="p2"> <label for="fpslapse1">0.5s </label>&nbsp;&nbsp;
-  <input type="radio" id="fpslapse2" name="fpslapse" value="p1"> <label for="fpslapse2">1s </label>&nbsp;&nbsp;
-  <input type="radio" id="fpslapse3" name="fpslapse" value="p.2"> <label for="fpslapse3">2s </label>&nbsp;&nbsp;
-  <input type="radio" id="fpslapse4" name="fpslapse" value="p.5"> <label for="fpslapse4">5s </label>&nbsp;&nbsp;
-  <input type="radio" id="fpslapse5" name="fpslapse" value="p.10"> <label for="fpslapse5">10s </label>&nbsp;&nbsp;
-  <input type="radio" id="fpslapse6" name="fpslapse" value="p.30"> <label for="fpslapse6">30s </label>&nbsp;&nbsp;
-  <input type="radio" id="fpslapse7" name="fpslapse" value="p.60"> <label for="fpslapse7">60s </label>&nbsp;&nbsp;<br>
-  <input type="radio" id="fpslapse8"  name="fpslapse" value="p.120" > <label for="fpslapse8">2min </label>&nbsp;&nbsp;
-  <input type="radio" id="fpslapse9"  name="fpslapse" value="p.300" > <label for="fpslapse9">5min </label>&nbsp;&nbsp;
-  <input type="radio" id="fpslapse10" name="fpslapse" value="p.1800"> <label for="fpslapse10">30min </label>&nbsp;&nbsp;
-  <input type="radio" id="fpslapse11" name="fpslapse" value="p.3600"> <label for="fpslapse11">60min </label>&nbsp;&nbsp;  
+  <input type="radio" id="fpslapse1" name="fpslapse" value="p2"> <label for="fpslapse1">0.5s </label>&nbsp;
+  <input type="radio" id="fpslapse2" name="fpslapse" value="p1"> <label for="fpslapse2">1s </label>&nbsp;
+  <input type="radio" id="fpslapse3" name="fpslapse" value="p.2"> <label for="fpslapse3">2s </label>&nbsp;
+  <input type="radio" id="fpslapse4" name="fpslapse" value="p.5"> <label for="fpslapse4">5s </label><br>&nbsp;&nbsp; &nbsp;&nbsp;  
+  <input type="radio" id="fpslapse5" name="fpslapse" value="p.10"> <label for="fpslapse5">10s </label>&nbsp;
+  <input type="radio" id="fpslapse6" name="fpslapse" value="p.30"> <label for="fpslapse6">30s </label>&nbsp;
+  <input type="radio" id="fpslapse7" name="fpslapse" value="p.60"> <label for="fpslapse7">60s </label>&nbsp;
+  <input type="radio" id="fpslapse8"  name="fpslapse" value="p.120" > <label for="fpslapse8">2min </label>&nbsp;
+  <input type="radio" id="fpslapse9"  name="fpslapse" value="p.300" > <label for="fpslapse9">5min </label><br>&nbsp;&nbsp; &nbsp;&nbsp;  
+  <input type="radio" id="fpslapse10" name="fpslapse" value="p.1800"> <label for="fpslapse10">30min </label>&nbsp;
+  <input type="radio" id="fpslapse11" name="fpslapse" value="p.3600"> <label for="fpslapse11">60min </label>&nbsp;
   <input type="radio" id="fpslapse12" name="fpslapse" value="" checked> <label for="fpslapse12">not set</label><br>
 </div>
 
 <div id="settingsNightlapse">
 <b>Nightlapse Interval:</b>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight1" name="fpsnight" value="p"     > <label for="fpsnight1">Auto </label>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight2" name="fpsnight" value="p.4"  >  <label for="fpsnight2">4s </label>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight3" name="fpsnight" value="p.5"  >  <label for="fpsnight3">5s </label>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight4" name="fpsnight" value="p.10"  > <label for="fpsnight4">10s </label>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight5" name="fpsnight" value="p.15"  > <label for="fpsnight5">15s </label>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight6" name="fpsnight" value="p.20"  > <label for="fpsnight6">20s </label>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight7" name="fpsnight" value="p.30"  > <label for="fpsnight7">30s </label>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight8" name="fpsnight" value="p.60"  > <label for="fpsnight8">60s </label><br>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight9" name="fpsnight" value="p.120" > <label for="fpsnight9">2min </label>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight10" name="fpsnight" value="p.300" > <label for="fpsnight10">5min </label>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight11" name="fpsnight" value="p.1800"> <label for="fpsnight11">30min </label>&nbsp;&nbsp;
-  <input type="radio" id="fpsnight12" name="fpsnight" value="p.3600"> <label for="fpsnight12">60min </label>&nbsp;&nbsp;
+  <input type="radio" id="fpsnight1" name="fpsnight" value="p"     > <label for="fpsnight1">Auto </label>&nbsp
+  <input type="radio" id="fpsnight2" name="fpsnight" value="p.4"  >  <label for="fpsnight2">4s </label>&nbsp;
+  <input type="radio" id="fpsnight3" name="fpsnight" value="p.5"  >  <label for="fpsnight3">5s </label>&nbsp;
+  <input type="radio" id="fpsnight4" name="fpsnight" value="p.10"  > <label for="fpsnight4">10s </label>&nbsp;
+  <input type="radio" id="fpsnight5" name="fpsnight" value="p.15"  > <label for="fpsnight5">15s </label>&nbsp;
+  <input type="radio" id="fpsnight6" name="fpsnight" value="p.20"  > <label for="fpsnight6">20s </label>&nbsp;
+  <input type="radio" id="fpsnight7" name="fpsnight" value="p.30"  > <label for="fpsnight7">30s </label>&nbsp;
+  <input type="radio" id="fpsnight8" name="fpsnight" value="p.60"  > <label for="fpsnight8">60s </label><br>&nbsp;
+  <input type="radio" id="fpsnight9" name="fpsnight" value="p.120" > <label for="fpsnight9">2min </label>&nbsp;
+  <input type="radio" id="fpsnight10" name="fpsnight" value="p.300" > <label for="fpsnight10">5min </label>&nbsp;
+  <input type="radio" id="fpsnight11" name="fpsnight" value="p.1800"> <label for="fpsnight11">30min </label>&nbsp;
+  <input type="radio" id="fpsnight12" name="fpsnight" value="p.3600"> <label for="fpsnight12">60min </label>&nbsp;
   <input type="radio" id="fpsnight13" name="fpsnight" value="" checked> <label for="fpsnight13">not set</label><br>
 </div>
 
@@ -230,7 +222,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 <b>Hypersmooth:</b>&nbsp;&nbsp;
 	<input type="radio" id="eis1" name="eis" value="e0"> <label for="eis1">Off</label>&nbsp;&nbsp;
 	<input type="radio" id="eis2" name="eis" value="e1"> <label for="eis2">Standard</label>&nbsp;&nbsp;
-	<input type="radio" id="eis3" name="eis" value="e2"> <label for="eis3">High</label>&nbsp;&nbsp;
+	<input type="radio" id="eis3" name="eis" value="e2"> <label for="eis3">High</label><br>&nbsp;&nbsp; &nbsp;&nbsp;  
 	<input type="radio" id="eis4" name="eis" value="e3"> <label for="eis4">Boost</label>&nbsp;&nbsp;
 	<input type="radio" id="eis5" name="eis" value="" checked> <label for="eis5">not set</label><br>
 </div>
@@ -249,12 +241,12 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 	<input type="radio" id="dur2" name="dur" value="dR15"> <label for="dur2">15s</label>&nbsp;
 	<input type="radio" id="dur3" name="dur" value="dR30"> <label for="dur3">30s</label>&nbsp;
 	<input type="radio" id="dur4" name="dur" value="dR60"> <label for="dur4">1min</label>&nbsp;
-	<input type="radio" id="dur5" name="dur" value="dR300"> <label for="dur5">5min</label>&nbsp;
+	<input type="radio" id="dur5" name="dur" value="dR300"> <label for="dur5">5min</label><br>&nbsp;&nbsp; &nbsp;&nbsp;  
 	<input type="radio" id="dur6" name="dur" value="dR900"> <label for="dur6">15min</label>&nbsp;
 	<input type="radio" id="dur7" name="dur" value="dR1800"> <label for="dur7">30min</label>&nbsp;
 	<input type="radio" id="dur8" name="dur" value="dR3600"> <label for="dur8">1hr</label>&nbsp;
 	<input type="radio" id="dur9" name="dur" value="dR7200"> <label for="dur9">2hr</label>&nbsp;
-	<input type="radio" id="dur10" name="dur" value="dR9999"> <label for="dur10">3hr</label>&nbsp;
+	<input type="radio" id="dur10" name="dur" value="dR9999"> <label for="dur10">3hr</label><br>&nbsp;&nbsp; &nbsp;&nbsp;  
 	<input type="radio" id="dur11" name="dur" value="" checked> <label for="dur11">not set</label><br>
 </div>
 
