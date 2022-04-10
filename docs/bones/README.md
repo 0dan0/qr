@@ -515,7 +515,11 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 &nbsp;&nbsp;<input type="radio" id="sap9" name="sap" value="!MWAKE=0"> <label for="sap9">Disable</label><br>
 &nbsp;&nbsp;<b>Overclock Bitrate:</b>&nbsp;&nbsp;<input type="radio" id="sap10" name="sap" value="b1!MBITR="> <label for="sap10">Take On Risk</label><input type="checkbox" id="helpBitr" value="">&nbsp;&nbsp; <input type="range" style="width: 100px;" id="bitr" name="bitr" min="100" max="200" value="100"> <b id="bitrtext"></b><br>
 <div id="bitrHelp">
-	 &nbsp;&nbsp;&nbsp;&nbsp;<small><b>Warning:</b> SD Card and encoding reliability is only thoroughly tested at the default bitrates, up to 100Mb/s. Some SD card can support higher bit-rates when fairly new, but then may fail when extensively used. As the bit-rate is increased, the probability of capture failures increase. Experiment extensively before using this feature on critical projects. You can also disable LRVs and audio capture to help push the video bitrate to the maximum. See more on these [Labs extensions](../control/extensions).</small>
+	 &nbsp;&nbsp;&nbsp;&nbsp;<small>
+	 
+	 **Warning:** SD Card and encoding reliability is only thoroughly tested at the default bitrates, up to 100Mb/s. Some SD cards can support higher bit-rates when fairly new, but then may fail when extensively used. As the bit-rate is increased, the probability of capture failures increase. Experiment extensively before using this feature on critical projects. You can also disable LRVs and audio capture to help push the video bitrate to the maximum. See more on these [Labs extensions](../control/extensions).
+	 
+	 </small>
 </div>
 &nbsp;&nbsp;<b>Auto Capture Trigger:</b><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap11" name="sap" value="!SA"> <label for="sap11">Sound Pressure Level (range 30-120dB)</label><br>
