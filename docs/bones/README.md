@@ -42,17 +42,17 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 <div id="camMODE">
 <b>Mode:</b>
   &nbsp;&nbsp;<input type="radio" id="m1" name="mode"  value="mV" checked> <label for="m1">Video</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m2" name="mode"  value="mV0"> <label for="m2">Standard</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m3" name="mode"  value="mV1"> <label for="m3">Activity</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m4" name="mode"  value="mV2"> <label for="m4">Cinematic</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m5" name="mode"  value="mV4"> <label for="m5">SloMo</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m6" name="mode"  value="mV5"> <label for="m6">Basic</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m7" name="mode"  value="mTW"> <label for="m7">TimeWarp</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m8" name="mode"  value="mT">  <label for="m8">Timelapse</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m9" name="mode"  value="mNL"> <label for="m9">Nightlapse</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m10" name="mode" value="mP">  <label for="m10">Photo</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m11" name="mode" value="mPB"> <label for="m11">Burst</label>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="m12" name="mode" value="mPN"> <label for="m12">Night</label>&nbsp;&nbsp;
+  &nbsp;&nbsp;<input type="radio" id="m2" name="mode"  value="mV0"> <small><label for="m2">Standard</label>&nbsp;&nbsp;       </small>
+  &nbsp;&nbsp;<input type="radio" id="m3" name="mode"  value="mV1"> <small><label for="m3">Activity</label>&nbsp;&nbsp;       </small>
+  &nbsp;&nbsp;<input type="radio" id="m4" name="mode"  value="mV2"> <small><label for="m4">Cinematic</label>&nbsp;&nbsp;      </small>
+  &nbsp;&nbsp;<input type="radio" id="m5" name="mode"  value="mV4"> <small><label for="m5">SloMo</label>&nbsp;&nbsp;          </small>
+  &nbsp;&nbsp;<input type="radio" id="m6" name="mode"  value="mV5"> <small><label for="m6">Basic</label>&nbsp;&nbsp;          </small>
+  &nbsp;&nbsp;<input type="radio" id="m7" name="mode"  value="mTW"> <small><label for="m7">TimeWarp</label>&nbsp;&nbsp;       </small>
+  &nbsp;&nbsp;<input type="radio" id="m8" name="mode"  value="mT">  <small><label for="m8">Timelapse</label>&nbsp;&nbsp;      </small>
+  &nbsp;&nbsp;<input type="radio" id="m9" name="mode"  value="mNL"> <small><label for="m9">Nightlapse</label>&nbsp;&nbsp;     </small>
+  &nbsp;&nbsp;<input type="radio" id="m10" name="mode" value="mP">  <small><label for="m10">Photo</label>&nbsp;&nbsp;         </small>
+  &nbsp;&nbsp;<input type="radio" id="m11" name="mode" value="mPB"> <small><label for="m11">Burst</label>&nbsp;&nbsp;         </small>
+  &nbsp;&nbsp;<input type="radio" id="m12" name="mode" value="mPN"> <small><label for="m12">Night</label>&nbsp;&nbsp;         </small>
   &nbsp;&nbsp;<input type="radio" id="m13" name="mode" value=""> <label for="m13">not set</label>
 </div>
 
@@ -60,11 +60,11 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 <b>Resolution:</b>&nbsp;&nbsp;
   <input type="radio" id="r1" name="res" value="r1080"> <label for="r1">1080p </label>&nbsp;&nbsp;
   <input type="radio" id="r2" name="res" value="r27"  > <label for="r2">2.7k  </label>&nbsp;&nbsp;
-  <input type="radio" id="r3" name="res" value="r27T" > <label for="r3">2.7k 4x3 </label>&nbsp;&nbsp;
+  <input type="radio" id="r3" name="res" value="r27T" > <label for="r3">2.7k 4:3 </label>&nbsp;&nbsp;
   <input type="radio" id="r4" name="res" value="r4"   > <label for="r4">4k </label>&nbsp;&nbsp;
-  <input type="radio" id="r5" name="res" value="r4T"  > <label for="r5">4k 4x3 </label>&nbsp;&nbsp;
+  <input type="radio" id="r5" name="res" value="r4T"  > <label for="r5">4k 4:3 </label>&nbsp;&nbsp;
   <input type="radio" id="r6" name="res" value="r5"   > <label for="r6">5.3k </label>&nbsp;&nbsp;
-  <input type="radio" id="r7" name="res" value="r5T"  > <label for="r7">5k 4x3 </label>&nbsp;&nbsp;
+  <input type="radio" id="r7" name="res" value="r5T"  > <label for="r7">5k 4:3 </label>&nbsp;&nbsp;
   <input type="radio" id="r8" name="res" value="" checked> <label for="r8">not set</label><br>
 </div>
 
