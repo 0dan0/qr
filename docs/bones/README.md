@@ -1342,11 +1342,12 @@ function startTime() {
 	
 	if(document.getElementById("remboot").checked === true)
 	{
-		document.getElementById("boot").checked = false;
+		cmd = cmd + "!MBOOT=0";
 	}
 	
 	if(document.getElementById("boot").checked === true)
 	{
+		cmd = "!MQRDR=1!MBOOT="!Lboot"!SAVEboot=" + cmd;
 		document.getElementById("remboot").checked = false;
 	}
 	
