@@ -518,7 +518,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap11" name="sap" value="!SI"> <label for="sap11">IMU, Gyro+Accel (range 1-9)</label><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap12" name="sap" value="!SM"> <label for="sap12">Motion (range 1-6)</label><br>
   <div id="motionParams">
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitivity: <input type="text" id="mstart" value="6" style="width:60px"> (value from range ). <input type="checkbox" id="helpRange" value="">&nbsp;&nbsp;<label for="actions">Help</label>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitivity: <input type="text" id="mstart" value="6" style="width:60px"> (value from range ). <input type="checkbox" id="helpRange" value="">&nbsp;&nbsp;<label for="actions">Help</label>
 	<div id="splHelp">
 	  <small><table style="margin-left:60px;">
 		<thead>	<tr><th>SPL (dB) at 1m/3ft</th>  <th>Activity</th>	</tr> </thead>
@@ -562,8 +562,8 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 	  </small>
 	</div>
 	<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="dhold" value="1" style="width:60px"> seconds.<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="mhold" value="5" style="width:60px"> capture seconds after motion stops.<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delay start: <input type="text" id="dhold" value="1" style="width:60px"> seconds.<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hold time: <input type="text" id="mhold" value="5" style="width:60px"> capture seconds after motion stops.<br>
   </div>
   <div id="aR">
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="repeat" value="" checked> <label for="repeat">Repeat Command</label><br>
