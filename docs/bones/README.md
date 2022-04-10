@@ -1342,7 +1342,7 @@ function startTime() {
 	
 	if(document.getElementById("remboot").checked === true)
 	{
-		cmd = cmd + "!MBOOT=0";
+		cmd = "!MBOOT=0" + cmd;
 	}
 	
 	if(document.getElementById("boot").checked === true)
