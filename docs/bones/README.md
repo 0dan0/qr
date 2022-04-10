@@ -114,8 +114,8 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   <input type="radio" id="pf3" name="pfov" value="fN"> <label for="pf3">Narrow </label><br>  
   or <b>Max Lens Mod:</b>&nbsp;&nbsp; 
   <input type="radio" id="pf4" name="pfov" value="fM"> <label for="pf4">Wide </label>&nbsp;&nbsp;
-  <input type="radio" id="pf5" name="pfov" value="fX"> <label for="pf5">Superview </label>&nbsp;&nbsp; 
-  <input type="checkbox" id="pmlmhl" value="L"> <label for="pmlmhl">Horizon Lock</label>&nbsp;&nbsp;&nbsp;&nbsp;  
+  <input type="radio" id="pf5" name="pfov" value="fX"> <label for="pf5">Superview </label><br>&nbsp;&nbsp;&nbsp;&nbsp;  
+  <input type="checkbox" id="pmlmhl" value="L"> <label for="pmlmhl">Horizon Lock</label>&nbsp;&nbsp;
   <input type="radio" id="pf6" name="pfov" value="" checked> <label for="pf6">not set</label><br>
  </div>
   
@@ -149,15 +149,15 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 
 <div id="settingsBurst">
 <b>Burst Style:</b>&nbsp;&nbsp;
-  <input type="radio" id="b1" name="burst" value="bA"> <label for="b1">Auto </label>&nbsp;&nbsp;
-  <input type="radio" id="b2" name="burst" value="b3N1"> <label for="b2">3/1 </label>&nbsp;&nbsp;
-  <input type="radio" id="b3" name="burst" value="b5N1"> <label for="b3">5/1 </label>&nbsp;&nbsp;
-  <input type="radio" id="b4" name="burst" value="b10N1"> <label for="b4">10/1 </label>&nbsp;&nbsp;
-  <input type="radio" id="b5" name="burst" value="b25N1"> <label for="b5">25/1 </label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="radio" id="b6" name="burst" value="b10N3"> <label for="b6">10/3 </label>&nbsp;&nbsp;
-  <input type="radio" id="b7" name="burst" value="b30N3"> <label for="b7">30/3 </label>&nbsp;&nbsp;
-  <input type="radio" id="b8" name="burst" value="b30N6"> <label for="b8">30/6 </label>&nbsp;&nbsp;
-  <input type="radio" id="b9" name="burst" value="b30N10"> <label for="b9">30/10 </label>&nbsp;&nbsp;
+  <input type="radio" id="b1" name="burst" value="bA"> <label for="b1">Auto </label>&nbsp;
+  <input type="radio" id="b2" name="burst" value="b3N1"> <label for="b2">3/1 </label>&nbsp;
+  <input type="radio" id="b3" name="burst" value="b5N1"> <label for="b3">5/1 </label>&nbsp;
+  <input type="radio" id="b4" name="burst" value="b10N1"> <label for="b4">10/1 </label><br>&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="b5" name="burst" value="b25N1"> <label for="b5">25/1 </label>&nbsp;
+  <input type="radio" id="b6" name="burst" value="b10N3"> <label for="b6">10/3 </label>&nbsp;
+  <input type="radio" id="b7" name="burst" value="b30N3"> <label for="b7">30/3 </label>&nbsp;
+  <input type="radio" id="b8" name="burst" value="b30N6"> <label for="b8">30/6 </label><br>&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="b9" name="burst" value="b30N10"> <label for="b9">30/10 </label>&nbsp;
   <input type="radio" id="b10" name="burst" value="" checked> <label for="b10">not set</label><br>
 </div>
 
@@ -255,7 +255,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   <input type="radio" id="raw1" name="raw" value="r0"> <label for="raw1">Standard </label>&nbsp;&nbsp;
   <input type="radio" id="raw2" name="raw" value="r"> <label for="raw2">Raw + JPEG </label>&nbsp;&nbsp;
   <input type="radio" id="raw3" name="raw" value="rS"> <label for="raw3">Superphoto </label>&nbsp;&nbsp;
-  <input type="radio" id="raw4" name="raw" value="rH"> <label for="raw4">HDR </label>&nbsp;&nbsp;
+  <input type="radio" id="raw4" name="raw" value="rH"> <label for="raw4">HDR </label><br>&nbsp;&nbsp; &nbsp;&nbsp;
   <input type="radio" id="raw5" name="raw" value="" checked> <label for="raw5"> not set</label><br>
 </div>
 
