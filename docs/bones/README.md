@@ -245,7 +245,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 </div>
 					
 <div id="settingsDuration">
-<b>Duration:</b>&nbsp;&nbsp;
+<b>Duration:</b>&nbsp;&nbsp;<small>
 	<input type="radio" id="dur1" name="dur" value="dR0"> <label for="dur1">Off</label>&nbsp;&nbsp;
 	<input type="radio" id="dur2" name="dur" value="dR15"> <label for="dur2">15s</label>&nbsp;&nbsp;
 	<input type="radio" id="dur3" name="dur" value="dR30"> <label for="dur3">30s</label>&nbsp;&nbsp;
@@ -256,7 +256,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 	<input type="radio" id="dur8" name="dur" value="dR3600"> <label for="dur8">1hr</label>&nbsp;&nbsp;
 	<input type="radio" id="dur9" name="dur" value="dR7200"> <label for="dur9">2hr</label>&nbsp;&nbsp;
 	<input type="radio" id="dur10" name="dur" value="dR9999"> <label for="dur10">3hr</label>&nbsp;&nbsp;
-	<input type="radio" id="dur11" name="dur" value="" checked> <label for="dur11">not set</label><br>
+	<input type="radio" id="dur11" name="dur" value="" checked> <label for="dur11">not set</label></small><br>
 </div>
 
 <div id="settingsPhotoRAW">
