@@ -534,7 +534,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitivity: <input type="text" id="mstart" value="6" style="width:60px"> (value from range ). <input type="checkbox" id="helpRange" value="">&nbsp;&nbsp;<label for="actions">Help</label>
 	<div id="splHelp">
 	  <small><table style="margin-left:60px;">
-		<thead>	<tr><th>SPL (dB) at 1m/3ft</th>  <th>Activity</th>	</tr> </thead>
+		<thead>	<tr><th>SPL (dB) at 1m/3ft</th>  <th>Activity                </th>	</tr> </thead>
 		  <tbody> 
 			<tr> <td>30</td>    <td>calm room</td> </tr>
 			<tr> <td>40-60</td> <td>conversation</td> </tr>
@@ -549,7 +549,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 	</div>
 	<div id="imuHelp">
 	  <small><table style="margin-left:60px;">
-		  <thead> <tr> <th>Sensitivity</th> <th>Activity</th></tr> </thead>
+		  <thead> <tr> <th>Sensitivity</th> <th>Activity                </th></tr> </thead>
 		  <tbody>
 			<tr> <td>1</td> <td>Throwing the camera</td></tr>
 			<tr> <td>2</td> <td>Jumps</td></tr>
@@ -562,7 +562,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 	</div>
 	<div id="motionHelp">
 	  <small> <table style="margin-left:60px;"> 
-		<thead> <tr> <th>Sensitivity</th><th>Activity</th></tr></thead>
+		<thead> <tr> <th>Sensitivity</th><th>Activity                </th></tr></thead>
 		  <tbody>
 			<tr> <td>1</td> <td>Everything moving</td></tr>
 			<tr> <td>2</td> <td>Large nearby movement</td></tr>
