@@ -528,8 +528,8 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 
 &nbsp;&nbsp;<b>Auto Capture Trigger:</b><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap11" name="sap" value="!SA"> <label for="sap11">Sound Pressure Level (range 30-120dB)</label><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap12" name="sap" value="!SI"> <label for="sap12">IMU, Gyro+Accel (range 1-9)</label><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap13" name="sap" value="!SM"> <label for="sap13">Motion (range 1-6)</label><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap12" name="sap" value="!SI"> <label for="sap12">Camera Motion - Gyro+Accel (range 1-9)</label><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap13" name="sap" value="!SM"> <label for="sap13">Scene Motion (range 1-6)</label><br>
   <div id="motionParams">
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sensitivity: <input type="text" id="mstart" value="6" style="width:60px"> (value from range ). <input type="checkbox" id="helpRange" value="">&nbsp;&nbsp;<label for="actions">Help</label>
 	<div id="splHelp">
