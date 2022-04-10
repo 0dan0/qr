@@ -1221,7 +1221,7 @@ function startTime() {
 	
 	if((dt === true && actionmode<10) || (dt === true && actionmode>=10 && document.getElementById("repeat").checked === false && document.getElementById("boot").checked === false))
 	{
-		dset("opDTS", true);
+		//dset("opDTS", true);
 		dset("copyshow", false);   // don't what user printing or sharing code with wrong date and time
 	
 		var frms;
