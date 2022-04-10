@@ -229,23 +229,23 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 
 <div id="settingsVideo">
 <b>Hypersmooth:</b>&nbsp;&nbsp;
-	<input type="radio" id="eis1" name="eis" value="e0"> <label for="eis1">Off</label>&nbsp;&nbsp;&nbsp;
-	<input type="radio" id="eis2" name="eis" value="e1"> <label for="eis2">Standard</label>&nbsp;&nbsp;&nbsp;
-	<input type="radio" id="eis3" name="eis" value="e2"> <label for="eis3">High</label>&nbsp;&nbsp;&nbsp;
-	<input type="radio" id="eis4" name="eis" value="e3"> <label for="eis4">Boost</label>&nbsp;&nbsp;&nbsp;
+	<input type="radio" id="eis1" name="eis" value="e0"> <label for="eis1">Off</label>&nbsp;&nbsp;
+	<input type="radio" id="eis2" name="eis" value="e1"> <label for="eis2">Standard</label>&nbsp;&nbsp;
+	<input type="radio" id="eis3" name="eis" value="e2"> <label for="eis3">High</label>&nbsp;&nbsp;
+	<input type="radio" id="eis4" name="eis" value="e3"> <label for="eis4">Boost</label>&nbsp;&nbsp;
 	<input type="radio" id="eis5" name="eis" value="" checked> <label for="eis5">not set</label><br>
 </div>
 
 <div id="settingsHindsight">
 <b>Hindsight:</b>&nbsp;&nbsp;
-	<input type="radio" id="hind1" name="hind" value="hS0"> <label for="hind1">Off</label>&nbsp;&nbsp;&nbsp;
-	<input type="radio" id="hind2" name="hind" value="hS1"> <label for="hind2">15s</label>&nbsp;&nbsp;&nbsp;
-	<input type="radio" id="hind3" name="hind" value="hS2"> <label for="hind3">30s</label>&nbsp;&nbsp;&nbsp;
+	<input type="radio" id="hind1" name="hind" value="hS0"> <label for="hind1">Off</label>&nbsp;&nbsp;
+	<input type="radio" id="hind2" name="hind" value="hS1"> <label for="hind2">15s</label>&nbsp;&nbsp;
+	<input type="radio" id="hind3" name="hind" value="hS2"> <label for="hind3">30s</label>&nbsp;&nbsp;
 	<input type="radio" id="hind4" name="hind" value="" checked> <label for="hind4">not set</label><br>
 </div>
 					
 <div id="settingsDuration">
-<b>Duration:</b>&nbsp;&nbsp;<small>
+<b>Duration:</b>&nbsp;&nbsp;
 	<input type="radio" id="dur1" name="dur" value="dR0"> <label for="dur1">Off</label>&nbsp;&nbsp;
 	<input type="radio" id="dur2" name="dur" value="dR15"> <label for="dur2">15s</label>&nbsp;&nbsp;
 	<input type="radio" id="dur3" name="dur" value="dR30"> <label for="dur3">30s</label>&nbsp;&nbsp;
@@ -256,7 +256,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 	<input type="radio" id="dur8" name="dur" value="dR3600"> <label for="dur8">1hr</label>&nbsp;&nbsp;
 	<input type="radio" id="dur9" name="dur" value="dR7200"> <label for="dur9">2hr</label>&nbsp;&nbsp;
 	<input type="radio" id="dur10" name="dur" value="dR9999"> <label for="dur10">3hr</label>&nbsp;&nbsp;
-	<input type="radio" id="dur11" name="dur" value="" checked> <label for="dur11">not set</label></small><br>
+	<input type="radio" id="dur11" name="dur" value="" checked> <label for="dur11">not set</label><br>
 </div>
 
 <div id="settingsPhotoRAW">
