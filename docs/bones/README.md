@@ -514,14 +514,18 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 &nbsp;&nbsp;<b>Auto Wake on Power:</b>&nbsp;&nbsp;<input type="radio" id="sap8" name="sap" value="!MWAKE=1"> <label for="sap8">Enable</label>
 &nbsp;&nbsp;<input type="radio" id="sap9" name="sap" value="!MWAKE=0"> <label for="sap9">Disable</label><br>
 &nbsp;&nbsp;<b>Overclock Bitrate:</b>&nbsp;&nbsp;<input type="radio" id="sap10" name="sap" value="b1!MBITR="> 
-  <label for="sap10">Take On Risk</label>&nbsp;&nbsp;<input type="checkbox" id="helpBitr" name="helpBitr" value=""><label for="helpBitr">Help</label>&nbsp;&nbsp; <input type="range" style="width: 100px;" id="bitr" name="bitr" min="100" max="200" value="100"> <em id="bitrtext"></em><br>
-<div id="bitrHelp">
+  <label for="sap10">Take On Risk</label>&nbsp;&nbsp;<input type="checkbox" id="helpBitr" name="helpBitr" value=""><label for="helpBitr">Help</label>
+  <div id="bitrHelp">
 	 &nbsp;&nbsp;&nbsp;&nbsp;<small>
 	 
 	 <b>Warning:</b> SD Card and encoding reliability is only thoroughly tested at the default bitrates, up to 100Mb/s. Some SD cards can support higher bit-rates when fairly new, but then may fail when extensively used. As the bit-rate is increased, the probability of capture failures increase. Lower frame rate maybe more reliable than higher framerates as some extreme overclocks. Experiment extensively before using this feature on critical projects. You can also disable LRVs and audio capture to help push the video bitrate to the maximum. See more on these <a href="../control/extensions">Labs extensions</a>.
 	 
 	 </small>
 </div>
+<div id="bitrSlider">
+     &nbsp;&nbsp;&nbsp;&nbsp;<input type="range" style="width: 140px;" id="bitr" name="bitr" min="100" max="200" value="100"> <em id="bitrtext"></em><br>
+</div>
+
 &nbsp;&nbsp;<b>Auto Capture Trigger:</b><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap11" name="sap" value="!SA"> <label for="sap11">Sound Pressure Level (range 30-120dB)</label><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap12" name="sap" value="!SI"> <label for="sap12">IMU, Gyro+Accel (range 1-9)</label><br>
@@ -698,6 +702,7 @@ function startTime() {
 	dset("imuHelp", false);
 	dset("motionHelp", false);
 	dset("bitrHelp", false);
+	dset("bitrSlider", false);
 	dset("motionParams", false);
 	dset("opDTS", false);
 	
@@ -907,6 +912,12 @@ function startTime() {
 		{	
 			dset("bitrHelp", true);
 		}
+	}
+	
+	
+	if(actionmode == 10)
+	{	
+		dset("bitrSlider", true);
 	}
 			
 	
