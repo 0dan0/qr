@@ -513,8 +513,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 &nbsp;&nbsp;<input type="radio" id="sap7" name="sap" value="!RESET"> <label for="sap7">Labs</label><br>
 &nbsp;&nbsp;<b>Auto Wake on Power:</b>&nbsp;&nbsp;<input type="radio" id="sap8" name="sap" value="!MWAKE=1"> <label for="sap8">Enable</label>
 &nbsp;&nbsp;<input type="radio" id="sap9" name="sap" value="!MWAKE=0"> <label for="sap9">Disable</label><br>
-&nbsp;&nbsp;<b>Overclock Bitrate</b><input type="radio" id="sap10" name="sap" value="b1!MBITR="> <label for="sap9"></label> <input type="range" style="width: 200px;" id="bitr" name="bitr" min="100" max="200" value="100"> <b id="bitrtext"></b>
-Number of hours <input type="range" style="width: 300px;" id=
+&nbsp;&nbsp;<b>Overclock Bitrate</b><input type="radio" id="sap10" name="sap" value="b1!MBITR="> <label for="sap10">Take the Risk</label> <input type="range" style="width: 200px;" id="bitr" name="bitr" min="100" max="200" value="100"> <b id="bitrtext"></b>
 &nbsp;&nbsp;<b>Auto Capture Trigger:</b><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap11" name="sap" value="!SA"> <label for="sap10">Sound Pressure Level (range 30-120dB)</label><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sap12" name="sap" value="!SI"> <label for="sap11">IMU, Gyro+Accel (range 1-9)</label><br>
