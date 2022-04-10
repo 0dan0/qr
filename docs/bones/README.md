@@ -50,9 +50,9 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
   <input type="radio" id="m7" name="mode"  value="mTW"> <label for="m7">TimeWarp</label>&nbsp;
   <input type="radio" id="m8" name="mode"  value="mT">  <label for="m8">Timelapse</label>&nbsp;
   <input type="radio" id="m9" name="mode"  value="mNL"> <label for="m9">Nightlapse</label><br>&nbsp;&nbsp; &nbsp;&nbsp;
-  <input type="radio" id="m10" name="mode" value="mP">  <label for="m10">Photo</label>&nbsp;&nbsp;    
-  <input type="radio" id="m11" name="mode" value="mPB"> <label for="m11">Burst</label>&nbsp;&nbsp;    
-  <input type="radio" id="m12" name="mode" value="mPN"> <label for="m12">Night</label><br>&nbsp;&nbsp; &nbsp;&nbsp;
+  <input type="radio" id="m10" name="mode" value="mP">  <label for="m10">Photo</label>&nbsp;   
+  <input type="radio" id="m11" name="mode" value="mPB"> <label for="m11">Burst</label>&nbsp; 
+  <input type="radio" id="m12" name="mode" value="mPN"> <label for="m12">Night</label>&nbsp;&nbsp;
   <input type="radio" id="m13" name="mode" value=""> <label for="m13">not set</label>
 </div>
 
