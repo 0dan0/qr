@@ -24,7 +24,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 	<tr border="0" padding="0">
 	  <td width="30%" border="0" padding="0">
 	  
-	  <img src="https://0dan0.github.io/qr/bones/scanning.jpg" alt="scanning">
+	  <img src="https://gopro.github.io/labs/bones/scanning.jpg" alt="scanning">
 
 	  </td>
 	  <td border="0" padding="0">
@@ -586,8 +586,8 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
 
 [More features](../control) for Labs enabled cameras
 
-## version 1.01
-updated: Apr 9, 2022
+## version 1.03
+updated: Apr 11, 2022
 
 <script>
 var clipcopy = "";
