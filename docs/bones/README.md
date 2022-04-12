@@ -588,8 +588,8 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
 
 [More features](../control) for Labs enabled cameras
 
-## version 1.03
-updated: Apr 11, 2022
+## version 1.04
+updated: Apr 12, 2022
 
 <script>
 var clipcopy = "";
