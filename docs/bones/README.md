@@ -1365,7 +1365,7 @@ function startTime() {
 	}
 	
 	
-	if(document.getElementById("boot").checked === true)
+	if(actionmode>=13 && document.getElementById("boot").checked === true)
 	{
 		cmd = "!MQRDR=1!MBOOT=\"!Lboot\"!SAVEboot=" + cmd;
 	}
