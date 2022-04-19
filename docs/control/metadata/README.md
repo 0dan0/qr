@@ -17,24 +17,18 @@ Every wanted to know what settings where used on an existing GoPro video? This s
 
 
 <div>
+
 Open GoPro video file: <input id="file" type="file" /><br>
 file name: <span id="name"></span><br>
 file size: <span id="size"></span><br>
+
 </div>
 
-<small>
 <table id="scrollTable" class="scrollTable" border="1">
-	<thead id="tableHead" class="scrollHead">
-		<tr>
-			<td>FourCC</td>
-			<td>Data</td>
-		</tr>
-	</thead>
 	<tbody id="tableBody" class="scrollBody">
 		<tr><td></td><td></td></tr>
 	</tbody>
 </table>
-</small>
 
 <div id="header"></div>
 <div id="result"></div>
@@ -43,7 +37,7 @@ file size: <span id="size"></span><br>
 
 **Compatibility:** All GoPro cameras since HERO5 Black
  
-## ver 1.00
+## ver 1.01
 updated: Apr 18, 2022
 
 [More features](..) for Labs enabled cameras
