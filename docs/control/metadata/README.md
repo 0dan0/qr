@@ -1,5 +1,7 @@
 # Global File Metadata Extraction
 
+Every wanted to know what settings where used on an existing GoPro video? This simple utility will display the GPMF header metadata for any GoPro file you open.  In the section label "User Metadata", this has a list of the Labs hacks/features you may have enabled, and your ownership information. 
+
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
 <script src="../../html2canvas.min.js"></script>
@@ -20,7 +22,8 @@ file name: <span id="name"></span><br>
 file size: <span id="size"></span><br>
 </div>
 
-<table id="scrollTable" class="scrollTable" border="2">
+<small>
+<table id="scrollTable" class="scrollTable" border="1">
 	<thead id="tableHead" class="scrollHead">
 		<tr>
 			<td>FourCC</td>
@@ -31,6 +34,7 @@ file size: <span id="size"></span><br>
 		<tr><td></td><td></td></tr>
 	</tbody>
 </table>
+</small>
 
 <div id="header"></div>
 <div id="result"></div>
