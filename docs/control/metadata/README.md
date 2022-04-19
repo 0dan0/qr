@@ -24,15 +24,15 @@ file size: <span id="size"></span><br>
 
 </div>
 
-<table id="scrollTable" class="scrollTable" border="1">
-	<tbody id="tableBody" class="scrollBody">
-		<tr><td></td><td></td></tr>
-	</tbody>
-</table>
 
-<div id="header"></div>
-<div id="result"></div>
-
+<div id="myMetadata">
+  <small> 
+    <table id="scrollTable" class="scrollTable" border="1">
+	  <thead> <tr> <th>FourCC</th><th align="left">Data</th></tr></thead>
+	  <tbody> <tr><td></td><td></td></tr></tbody>
+    </table>
+  </small>
+</div>
 
 
 **Compatibility:** All GoPro cameras since HERO5 Black
