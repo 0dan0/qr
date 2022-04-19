@@ -16,7 +16,7 @@
 
 <div>
 Open GoPro video file: <input id="file" type="file" /><br>
-file name: <span id="name"></span><br
+file name: <span id="name"></span><br>
 file size: <span id="size"></span><br>
 </div>
 
