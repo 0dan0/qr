@@ -199,7 +199,7 @@ updated: Apr 18, 2022
 			}
 
 			for(j=0; j<indent; j++)
-				txt += "&nbsp;&nbsp;";
+				txt += "&nbsp;&nbsp;&nbsp;&nbsp;";
 			txt += String.fromCharCode(bytes[i]);
 			txt += String.fromCharCode(bytes[i+1]);
 			txt += String.fromCharCode(bytes[i+2]);
