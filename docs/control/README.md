@@ -52,7 +52,7 @@ and as a mobile app:<br>
 * <span style="color:steelblue">**UPDATED**</span> Many more [**extensions**](./extensions) via QR Code
 
 ### Metadta Extraction
-* **All GPMF Enabled Cameras** - Read the header metadata stored within GoPro MP4, LRV, 360 and JPG files.
+* **All GPMF Enabled Cameras** - [**Read the header metadata**](./metadata) stored within GoPro MP4, LRV, 360 and JPG files.
 
 ## Forum Discussions 
 
