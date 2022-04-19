@@ -51,8 +51,8 @@ and as a mobile app:<br>
 * **HERO9** - Enable media [**encryption**](./encrypt) for increased security
 * <span style="color:steelblue">**UPDATED**</span> Many more [**extensions**](./extensions) via QR Code
 
-### Metadta Extraction
-* **All GPMF Enabled Cameras** - [**Read the header metadata**](./metadata) stored within GoPro MP4, LRV, 360 and JPG files.
+### Metadata Extraction
+* **All GPMF Enabled Cameras** - [**Read metadata**](./metadata) stored within headers of most GoPro media files.
 
 ## Forum Discussions 
 
