@@ -16,34 +16,31 @@
 
 <div>
 Open GoPro video file: <input id="file" type="file" /><br>
-file name: <span id="name"></span><br>
-<!-- type: <span id="type"></span><br> -->
+file name: <span id="name"></span><br
 file size: <span id="size"></span><br>
 </div>
-<br>
 
 <code>
-<table id="scrollTable" class="scrollTable" border="0">
+
+<table id="scrollTable" class="scrollTable" border="2">
 	<thead id="tableHead" class="scrollHead">
 		<tr>
 			<td>FourCC</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
 			<td>Data</td>
 		</tr>
 	</thead>
 	<tbody id="tableBody" class="scrollBody">
-		<tr><td></td><td></td><td></td><td></td></tr>
+		<tr><td><td></td></tr>
 	</tbody>
 </table>
+
 </code>
-<br>
-<br>
 
 <code>
+
 <div id="header"></div>
 <div id="result"></div>
+
 </code>
 
 
@@ -328,16 +325,9 @@ updated: Apr 18, 2022
 			var row = table.insertRow(-1);
 			var cell1 = row.insertCell(-1);
 			var cell2 = row.insertCell(-1);
-			var cell3 = row.insertCell(-1);
-			var cell4 = row.insertCell(-1);
-			var cell5 = row.insertCell(-1);
 
 			cell1.innerHTML = txt;
-			//cell2.innerHTML = "&nbsp;";
-			//cell3.innerHTML = size.toString();
-			cell4.innerHTML = "&nbsp;";
-			cell5.innerHTML = dat;
-
+			cell2.innerHTML = dat;
 		}
 
 		txt += "\n";
