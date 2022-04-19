@@ -1,47 +1,64 @@
-# Metadata Extraction - Global Settings
-Ever wanted to know what settings where used on an existing GoPro video? This simple utility will display the GPMF header metadata for any GoPro file you open.  In the section label "User Metadata", this has a list of the Labs hacks/features you may have enabled, and your ownership information if stored. 
-
-<script src="../../jquery.min.js"></script>
-<script src="../../qrcodeborder.js"></script>
-<script src="../../html2canvas.min.js"></script>
+<html>
+<head>
 <style>
-        #qrcode{
-            width: 100%;
-        }
-        div{
-            width: 100%;
-            display: inline-block;
-        }
-</style>
+	table.scrollTable {
+		border: solid 1px #000000;
+		border-spacing: 2px 2px;
+	}
 
+	thead.scrollHead, tbody.scrollBody {
+		display: block;
+	} 
+
+	thead.scrollHead {
+		background-color: #ddd;
+	}
+
+	tbody.scrollBody {
+		overflow-y: scroll;
+		height: 500px;
+	}
+
+	td, th {
+		table-layout: fixed;
+	}
+</style>
+</head>
+<body>
 
 <div>
-
 Open GoPro MP4/LRV/360 or JPG file: <input id="file" type="file" /><br>
-file name: <b><span id="name"></span></b><br>
-file size: <b><span id="size"></span></b><br>
-
+file name: <span id="name"></span><br>
+<!-- type: <span id="type"></span><br> -->
+file size: <span id="size"></span><br>
 </div>
+<br>
 
+<code>
+<table id="scrollTable" class="scrollTable" border="0">
+	<thead id="tableHead" class="scrollHead">
+		<tr>
+			<td>FourCC</td>
+			<td>Data</td>
+		</tr>
+	</thead>
+	<tbody id="tableBody" class="scrollBody">
+		<tr><td></td><td></td></tr>
+	</tbody>
+</table>
+</code>
+<br>
+<br>
 
-<div id="myMetadata">
-  <small> 
-    <table id="scrollTable" class="scrollTable" border="1">
-	  <thead> <tr> <th>FourCC</th><th align="left">Data</th></tr></thead>
-	  <tbody> <tr><td></td><td></td></tr></tbody>
-    </table>
-  </small>
-</div>
+<code>
+<div id="header"></div>
+<div id="result"></div>
+</code>
+<br>
 
-
-**Compatibility:** All GoPro cameras since HERO5 Black
- 
-## ver 1.01
-updated: Apr 19, 2022
-
-[More features](..) for Labs enabled cameras
 
 <script>
+
 
 (function() {
 
@@ -384,3 +401,5 @@ updated: Apr 19, 2022
 
 
 </script>
+</body>
+</html>
