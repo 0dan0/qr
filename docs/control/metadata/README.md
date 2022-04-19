@@ -20,8 +20,6 @@ file name: <span id="name"></span><br
 file size: <span id="size"></span><br>
 </div>
 
-<code>
-
 <table id="scrollTable" class="scrollTable" border="2">
 	<thead id="tableHead" class="scrollHead">
 		<tr>
@@ -30,18 +28,13 @@ file size: <span id="size"></span><br>
 		</tr>
 	</thead>
 	<tbody id="tableBody" class="scrollBody">
-		<tr><td><td></td></tr>
+		<tr><td></td><td></td></tr>
 	</tbody>
 </table>
-
-</code>
-
-<code>
 
 <div id="header"></div>
 <div id="result"></div>
 
-</code>
 
 
 **Compatibility:** All GoPro cameras since HERO5 Black
