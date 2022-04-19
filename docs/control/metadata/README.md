@@ -19,8 +19,8 @@ Every wanted to know what settings where used on an existing GoPro video? This s
 <div>
 
 Open GoPro video file: <input id="file" type="file" /><br>
-file name: <span id="name"></span><br>
-file size: <span id="size"></span><br>
+file name: <b><span id="name"></span></b><br>
+file size: <b><span id="size"></span></b><br>
 
 </div>
 
