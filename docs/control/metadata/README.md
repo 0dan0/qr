@@ -1,6 +1,6 @@
 # Global File Metadata Extraction
 
-Every wanted to know what settings where used on an existing GoPro video? This simple utility will display the GPMF header metadata for any GoPro file you open.  In the section label "User Metadata", this has a list of the Labs hacks/features you may have enabled, and your ownership information. 
+Ever wanted to know what settings where used on an existing GoPro video? This simple utility will display the GPMF header metadata for any GoPro file you open.  In the section label "User Metadata", this has a list of the Labs hacks/features you may have enabled, and your ownership information if stored. 
 
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
@@ -37,7 +37,7 @@ file size: <b><span id="size"></span></b><br>
 
 **Compatibility:** All GoPro cameras since HERO5 Black
  
-## ver 1.01
+## ver 1.00
 updated: Apr 18, 2022
 
 [More features](..) for Labs enabled cameras
