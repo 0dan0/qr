@@ -825,7 +825,7 @@ function startTime() {
 			{
 				//dset("ptSHUT",true);
 
-				if(document.getElementById('shut7').checked === true || document.getElementById('shut6').checked === true) 
+				if(document.getElementById('shut9').checked === true || document.getElementById('shut10').checked === true) 
 				{  // not shutter lock
 					dset("ptEV",true);
 				}
@@ -1150,13 +1150,13 @@ function startTime() {
 					else
 						cmd = dcmd(cmd,"isomin"); //add iso min
 						
-					if(document.getElementById('shut7').checked === false)
+					if(document.getElementById('shut10').checked === false)
 					{
 						//cmd = dcmd(cmd,"iso"); //iso max
 						cmd = dcmd(cmd,"shut");  //shutter angle
 					}
 				}
-				else if(document.getElementById('shut7').checked === false)
+				else if(document.getElementById('shut10').checked === false)
 				{
 					cmd = dcmd(cmd,"shut"); //shutter angle
 				}
@@ -1165,13 +1165,13 @@ function startTime() {
 			{
 				cmd = cmd + "i64"; //ADD fake ISO max
 				cmd = dcmd(cmd,"isomin");//iso min
-				if(document.getElementById('shut7').checked === false)
+				if(document.getElementById('shut10').checked === false)
 				{
 					//cmd = cmd + "i64"; //ADD fake max
 					cmd = dcmd(cmd,"shut"); //shutter angle
 				}
 			}
-			else if(document.getElementById('shut7').checked === false)
+			else if(document.getElementById('shut10').checked === false)
 			{
 				cmd = cmd + "i64"; //ADD fake ISO max
 				cmd = dcmd(cmd,"shut"); //shutter angle				
