@@ -495,7 +495,7 @@ Install from: [![google play](../control/google-play-small.png)](https://play.go
 &nbsp;&nbsp;<b>Use 12GB Chapters:</b>&nbsp;&nbsp;<input type="radio" id="sap10" name="sap" value="!M64BT=1"> <label for="sap10">Enable</label>
 &nbsp;&nbsp;<input type="radio" id="sap11" name="sap" value="!M64BT=0"> <label for="sap11">Disable</label><br>
 &nbsp;&nbsp;<b>Overclock Bitrate:</b>&nbsp;&nbsp;<input type="radio" id="sap12" name="sap" value="b1!MBITR="> 
-  <label for="sap12">Take On Risk</label>&nbsp;&nbsp;<input type="checkbox" id="helpBitr" name="helpBitr" value=""><label for="helpBitr">Help</label><br>
+  <label for="sap12">Take On Risk</label>&nbsp;&nbsp;<input type="checkbox" id="helpBitr" name="helpBitr" value=""><label for="helpBitr">More Info</label><br>
   <div id="bitrHelp">
 	 &nbsp;&nbsp;&nbsp;&nbsp;<small>
 	 
