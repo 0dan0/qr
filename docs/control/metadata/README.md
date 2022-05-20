@@ -364,7 +364,7 @@ var clipcopy = "";
 						var new_expo = expo + 127; 
 						
 						// extract the 23-bit mantissa from the MSBs of the double's mantissa 
-						int new_mant23 = (((bytes[i+8+k*8+1] & 0x0f) << 19) + (bytes[i+8+k*8+2] << 11) + (bytes[i+8+k*8+3] << 3) + ((bytes[i+8+k*8+4]) >> 5));
+						var new_mant23 = (((bytes[i+8+k*8+1] & 0x0f) << 19) + (bytes[i+8+k*8+2] << 11) + (bytes[i+8+k*8+3] << 3) + ((bytes[i+8+k*8+4]) >> 5));
 
 						// reconstruct a 32-bit float
 						new_float_bytes[0] = (signbit << 7) + (new_expo>>1);
