@@ -299,8 +299,10 @@ var clipcopy = "";
 					{
 						for(j=0; j<size; j++)
 						{
-							if(bytes[i+8+j] != 0)
+							if(bytes[i+8+j] != 0 && bytes[i+8+j] != 10 && bytes[i+8+j] != 13)
 								dat += String.fromCharCode(bytes[i+8+j]);
+							if(bytes[i+8+j] == 10 || bytes[i+8+j] == 13)
+								dat += '.';
 						}
 					}
 				}
