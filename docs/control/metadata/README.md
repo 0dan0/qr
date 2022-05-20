@@ -40,7 +40,7 @@ file size: <b><span id="size"></span></b><br>
 
 **Compatibility:** All GoPro cameras since HERO5 Black
  
-## ver 1.04
+## ver 1.03
 updated: May 20, 2022
 
 [More features](..) for Labs enabled cameras
@@ -233,7 +233,6 @@ var clipcopy = "";
 		var k = 0;
 		
 		var cleantxt = "";
-		var cleandat = "";
 		var indent = 0;
 		var devcsize = 0;
 		var strmsize = 0;
@@ -401,16 +400,7 @@ var clipcopy = "";
 			cell1.innerHTML = txt;
 			cell2.innerHTML = dat;
 			
-			cleandat = dat;
-			
-			if(cleandat.length > 0)
-			{
-				clipcopy = clipcopy + cleantxt + " " + cleandat + "\n";
-			}
-			else
-			{			
-				clipcopy = clipcopy + cleantxt + "\n";
-			}
+			clipcopy = clipcopy + cleantxt + " " + dat + "\n";
 		}
 
 		txt += "\n";
