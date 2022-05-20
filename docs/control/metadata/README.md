@@ -229,6 +229,7 @@ var clipcopy = "";
 		var j = 0;
 		var k = 0;
 		
+		var lines = 0;
 		var cleantxt = "";
 		var indent = 0;
 		var devcsize = 0;
@@ -374,9 +375,7 @@ var clipcopy = "";
 				{
 					dat += ".complex.";
 				}
-				
-				Bytes2Float32
-				
+								
 				i += 8+align_size;
 				devcsize -= 8+align_size;
 				
@@ -396,7 +395,11 @@ var clipcopy = "";
 			cell1.innerHTML = txt;
 			cell2.innerHTML = dat;
 			
+			clipcopy = clipcopy + "line " + lines + "\n";
+			
 			clipcopy = clipcopy + cleantxt + " " + dat + "\n";
+			
+			
 		}
 
 		txt += "\n";
