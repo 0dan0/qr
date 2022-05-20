@@ -324,16 +324,16 @@ var clipcopy = "";
 						dat += num.toString();
 					}
 				}
-				if(type == 0x42 || type == 0x62 /* B or b */)
-				{
-					if(typsize > 1) repeat *= typsize;
-					for(k=0; k<repeat; k++)
-					{
-						var num = (bytes[i+8+k]);
-						if(k > 0) dat += ", ";
-						dat += num.toString();
-					}
-				}
+				//if(type == 0x42 || type == 0x62 /* B or b */)
+				//{
+				//	if(typsize > 1) repeat *= typsize;
+				//	for(k=0; k<repeat; k++)
+				//	{
+				//		var num = (bytes[i+8+k]);
+				//		if(k > 0) dat += ", ";
+				//		dat += num.toString();
+				//	}
+				//}
 				if(type == 0x66 /* f */) //float
 				{
 					if(typsize > 4) repeat *= typsize / 4;
