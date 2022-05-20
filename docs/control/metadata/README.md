@@ -45,10 +45,12 @@ updated: May 20, 2022
 
 [More features](..) for Labs enabled cameras
 
+
 <script>
 
 var clipcopy = "";
 var hdr_bytes;
+var file;
 
 (function() {
 
@@ -76,7 +78,6 @@ var hdr_bytes;
 	var jpeg_gpmf_offset = 0;
 	var jpeg_gpmf_size = 0;
 	
-	var file;
 	function fileChange(event){
 		var target = event.target;
 		file = target.files[0];
@@ -185,53 +186,7 @@ var hdr_bytes;
 		
 		if(mdat_offset == 0 && jpeg_gpmf_offset == 0) 
 		{
-			var table = document.getElementById("scrollTable");
-			var row = table.insertRow(-1);
-			var cell1 = row.insertCell(-1);
-			var cell2 = row.insertCell(-1);
-
-			cell1.innerHTML = "Invalid Source Media";
-			cell2.innerHTML = "Not GoPro Media or Corrupted";
-			
-			clipcopy = "Invalid Source Media : Not GoPro Media or Corrupted\n\n";
-			
-			var line,rows;
-			var pos = 0;
-			var hex;
-			for(line=0; line < 16; line++)
-			{
-				row = table.insertRow(-1);
-				cell1 = row.insertCell(-1);
-				cell2 = row.insertCell(-1);
-				
-				hex = hexpad(line);
-				cell1.innerHTML = "0x"+hex; 
-				
-				clipcopy = clipcopy + "0x" + hex + "  "; 
-				
-				var hexline = "";
-				var charline = "";
-				for(rows = 0; rows < 16; rows++)
-				{
-					
-					var chr = hdr_bytes[pos];
-					hex = hexpad(chr); 
-					
-					if(chr >= 0x21 && chr <= 0x7f)
-						charline = charline + String.fromCharCode(chr);
-					else 
-						charline = charline + ".";
-					
-					pos++;
-					
-					hexline = hexline + hex + " ";
-				}		
-				
-				cell2.innerHTML = hexline + "  |  " + charline;
-				
-				clipcopy = clipcopy + hexline + "  " + charline + "\n";				
-			}
-			
+			dumpHeader(0);
 			return;
 		}
 
@@ -268,17 +223,9 @@ var hdr_bytes;
 				//console.log("GPMF size:" + gpmf_size.toString());
 			}
 			
-			if(gpmf_offset == 0 || gpmf_size == 0) {
-			
-				var table = document.getElementById("scrollTable");
-				var row = table.insertRow(-1);
-				var cell1 = row.insertCell(-1);
-				var cell2 = row.insertCell(-1);
-
-				cell1.innerHTML = "MP4 Source Type";
-				cell2.innerHTML = "No GPMF metadata found";
-				
-				clipcopy = "MP4 Source Type : No GPMF metadata found";
+			if(gpmf_offset == 0 || gpmf_size == 0) 
+			{							
+				dumpHeader(1);			
 				return;
 			}
 		}
@@ -508,6 +455,73 @@ var hdr_bytes;
 	//	dset("copyMetadata",false);
 
 }());
+
+
+function dumpHeader(type)
+{
+	var table = document.getElementById("scrollTable");
+	var row = table.insertRow(-1);
+	var cell1 = row.insertCell(-1);
+	var cell2 = row.insertCell(-1);
+
+	if(type == 1)
+	{
+		clipcopy = "MP4 Source Type : No GPMF metadata found\n\n";
+		cell1.innerHTML = "MP4 Source Type";
+		cell2.innerHTML = "No GPMF metadata found";
+	}
+	else
+	{	
+		clipcopy = "Invalid Source Media : Not GoPro Media or Corrupted\n\n";
+		cell1.innerHTML = "Invalid Source Media";
+		cell2.innerHTML = "Not GoPro Media or Corrupted";
+	}
+	
+	row = table.insertRow(-1);
+	cell1 = row.insertCell(-1);
+	cell2 = row.insertCell(-1);
+	
+	clipcopy = clipcopy + file.name + " : " + file.size + " Bytes" + "\n\n";				
+		
+	var line,rows;
+	var pos = 0;
+	var hex;
+	for(line=0; line < 16; line++)
+	{
+		row = table.insertRow(-1);
+		cell1 = row.insertCell(-1);
+		cell2 = row.insertCell(-1);
+		
+		hex = hexpad(line);
+		cell1.innerHTML = "0x"+hex; 
+		
+		clipcopy = clipcopy + "0x" + hex + "   "; 
+		
+		var hexline = "";
+		var charline = "";
+		for(rows = 0; rows < 16; rows++)
+		{
+			
+			var chr = hdr_bytes[pos];
+			hex = hexpad(chr); 
+			
+			if(chr >= 0x21 && chr <= 0x7f)
+				charline = charline + String.fromCharCode(chr);
+			else 
+				charline = charline + ".";
+			
+			pos++;
+			
+			hexline = hexline + hex + " ";
+		}		
+		
+		cell2.innerHTML = hexline + "  |  " + charline;
+		
+		clipcopy = clipcopy + hexline + "  " + charline + "\n";				
+	}
+	
+	return;
+}
 
 function hexpad(line)
 {
