@@ -40,7 +40,7 @@ file size: <b><span id="size"></span></b><br>
 
 **Compatibility:** All GoPro cameras since HERO5 Black
  
-## ver 1.03
+## ver 1.04
 updated: May 20, 2022
 
 [More features](..) for Labs enabled cameras
