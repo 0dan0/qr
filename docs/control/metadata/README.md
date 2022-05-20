@@ -22,7 +22,7 @@ file name: <b><span id="name"></span></b><br>
 file size: <b><span id="size"></span></b><br>
 </div>
 
-<div>
+<div><br>
 <button id="copyBtn">Copy Metadata to Clipboard</button><br>
 </div>
 
@@ -398,7 +398,7 @@ var clipcopy = "";
 			
 			clipcopy = clipcopy + "line " + lines + "\n";  lines++;
 			
-			//clipcopy = clipcopy + cleantxt + " " + dat + "\n";
+			clipcopy = clipcopy + cleantxt + " " + "\n";
 			
 			
 		}
