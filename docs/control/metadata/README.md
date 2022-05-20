@@ -347,7 +347,8 @@ var clipcopy = "";
 						var val = Bytes2Float32(num);
 						//val = Math.round(val * 1000000) / 1000000
 						//dat += val.toString();
-						dat += val.toFixed(4);
+						var fnum = val.toFixed(4);
+						dat += fnum.toString();
 					}
 				}
 				if(type == 0x46 /* F */) //FOURCC
@@ -406,10 +407,10 @@ var clipcopy = "";
 		txt += "\n";
 	}
 	
-	if(clipcopy.length > 0)
-		dset("copyMetadata",true);
-	else
-		dset("copyMetadata",false);
+	//if(clipcopy.length > 0)
+	//	dset("copyMetadata",true);
+	//else
+	//	dset("copyMetadata",false);
 
 }());
 
