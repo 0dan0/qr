@@ -20,7 +20,10 @@ Ever wanted to know what settings were used on an existing GoPro video or photo?
 Open GoPro MP4/LRV/360 or JPG file: <input id="file" type="file" /><br>
 file name: <b><span id="name"></span></b><br>
 file size: <b><span id="size"></span></b><br>
+</div>
 
+<div>
+<button id="copyBtn">Copy Metadata to Clipboard</button><br>
 </div>
 
 
@@ -32,8 +35,6 @@ file size: <b><span id="size"></span></b><br>
     </table>
   </small>
 </div>
-
-<button id="copyBtn">Copy Metadata to Clipboard</button><br>
 
 **Compatibility:** All GoPro cameras since HERO5 Black
  
@@ -397,7 +398,7 @@ var clipcopy = "";
 			
 			clipcopy = clipcopy + "line " + lines + "\n";  lines++;
 			
-			clipcopy = clipcopy + cleantxt + " " + dat + "\n";
+			//clipcopy = clipcopy + cleantxt + " " + dat + "\n";
 			
 			
 		}
