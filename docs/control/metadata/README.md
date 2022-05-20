@@ -220,7 +220,8 @@ var clipcopy = "";
 			gpmf_size = jpeg_gpmf_size;
 		}
 		
-		clipcopy = ""; //reset for each new file.
+		if(gpmf_size > 0)
+			clipcopy = ""; //reset for each new file.
 		
 		var txt = "";
 		var hex;
@@ -410,5 +411,8 @@ function setupButtons() {
         copyTextToClipboard(clipcopy);
 	};
 }
+
+
+setupButtons();
 
 </script>
