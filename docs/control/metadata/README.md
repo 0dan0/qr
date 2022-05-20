@@ -237,9 +237,9 @@ var clipcopy = "";
 				var cell2 = row.insertCell(-1);
 
 				cell1.innerHTML = "MP4 Source Type";
-				cell2.innerHTML = "Not GoPro Media or Corrupted";
+				cell2.innerHTML = "No GPMF metadata found";
 				
-				clipcopy = "Invalid Source Media : Not GoPro Media or Corrupted";
+				clipcopy = "MP4 Source Type : No GPMF metadata found";
 				return;
 			}
 		}
