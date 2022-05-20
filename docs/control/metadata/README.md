@@ -345,8 +345,20 @@ var clipcopy = "";
 						if(k > 0) dat += ", ";
 				
 						var val = Bytes2Float32(num);
-						//val = Math.round(val * 1000000) / 1000000
-						//dat += val.toString();
+						var fnum = val.toFixed(4);
+						dat += fnum.toString();
+					}
+				}
+				if(type == 0x64 /* d */) //double
+				{
+					if(typsize > 8) repeat *= typsize / 8;
+					for(k=0; k<repeat; k++)
+					{
+						var num = (bytes[i+8+k*8]*16777216);
+							num += (bytes[i+8+k*4+1]<<16) + (bytes[i+8+k*4+2]<<8) + (bytes[i+8+k*4+3]<<0);
+						if(k > 0) dat += ", ";
+				
+						var val = Bytes2Float32(num);
 						var fnum = val.toFixed(4);
 						dat += fnum.toString();
 					}
