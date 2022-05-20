@@ -400,7 +400,7 @@ var clipcopy = "";
 			
 			cleandat = dat;
 			
-			if(cleandata.length > 0)
+			if(cleandat.length > 0)
 			{
 				clipcopy = clipcopy + cleantxt + " " + cleandat + "\n";
 			}
