@@ -229,10 +229,12 @@ var clipcopy = "";
 		var j = 0;
 		var k = 0;
 		
+		var cleantxt = "";
 		var indent = 0;
 		var devcsize = 0;
 		var strmsize = 0;
 		for (var i = gpmf_offset; i < gpmf_offset+gpmf_size;) {
+			cleantxt = "";
 			txt = "";
 			dat = "";
 			
@@ -266,6 +268,12 @@ var clipcopy = "";
 			txt += String.fromCharCode(bytes[i+2]);
 			txt += String.fromCharCode(bytes[i+3]);
 			
+			for(j=0; j<indent; j++)
+				cleantxt += "  ";
+			cleantxt += String.fromCharCode(bytes[i]);
+			cleantxt += String.fromCharCode(bytes[i+1]);
+			cleantxt += String.fromCharCode(bytes[i+2]);
+			cleantxt += String.fromCharCode(bytes[i+3]);
 			
 			if(type == 0)
 			{
@@ -388,7 +396,7 @@ var clipcopy = "";
 			cell1.innerHTML = txt;
 			cell2.innerHTML = dat;
 			
-			clipcopy = clipcopy + txt + " " + dat + "\n";
+			clipcopy = clipcopy + cleantxt + " " + dat + "\n";
 		}
 
 		txt += "\n";
