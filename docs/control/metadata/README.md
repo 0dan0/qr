@@ -232,7 +232,6 @@ var clipcopy = "";
 		var j = 0;
 		var k = 0;
 		
-		var lines = 0;
 		var cleantxt = "";
 		var cleandat = "";
 		var indent = 0;
@@ -401,9 +400,10 @@ var clipcopy = "";
 			
 			cleandat = dat;
 			
-			clipcopy = clipcopy + "line " + lines + "\n";  lines++;
-			
-			clipcopy = clipcopy + cleantxt + " " + cleandat + "\n";
+			if(cleandata.length > 0)
+			{
+				clipcopy = clipcopy + cleantxt + " " + cleandat + "\n";
+			}
 		}
 
 		txt += "\n";
