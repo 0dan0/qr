@@ -40,7 +40,7 @@ file size: <b><span id="size"></span></b><br>
 
 **Compatibility:** All GoPro cameras since HERO5 Black
  
-## ver 1.04
+## ver 1.03
 updated: May 20, 2022
 
 [More features](..) for Labs enabled cameras
@@ -298,7 +298,9 @@ var clipcopy = "";
 					else
 					{
 						for(j=0; j<size; j++)
-							dat += String.fromCharCode(bytes[i+8+j]);
+						{
+							if(bytes[i+8+j] != 0)
+								dat += String.fromCharCode(bytes[i+8+j]);
 					}
 				}
 				
@@ -323,16 +325,16 @@ var clipcopy = "";
 						dat += num.toString();
 					}
 				}
-				//if(type == 0x42 || type == 0x62 /* B or b */)
-				//{
-				//	if(typsize > 1) repeat *= typsize;
-				//	for(k=0; k<repeat; k++)
-				//	{
-				//		var num = (bytes[i+8+k]);
-				//		if(k > 0) dat += ", ";
-				//		dat += num.toString();
-				//	}
-				//}
+				if(type == 0x42 || type == 0x62 /* B or b */)
+				{
+					if(typsize > 1) repeat *= typsize;
+					for(k=0; k<repeat; k++)
+					{
+						var num = (bytes[i+8+k]);
+						if(k > 0) dat += ", ";
+						dat += num.toString();
+					}
+				}
 				if(type == 0x66 /* f */) //float
 				{
 					if(typsize > 4) repeat *= typsize / 4;
@@ -403,6 +405,10 @@ var clipcopy = "";
 			if(cleandat.length > 0)
 			{
 				clipcopy = clipcopy + cleantxt + " " + cleandat + "\n";
+			}
+			else
+			{			
+				clipcopy = clipcopy + cleantxt + "\n";
 			}
 		}
 
