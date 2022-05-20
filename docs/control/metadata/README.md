@@ -33,11 +33,12 @@ file size: <b><span id="size"></span></b><br>
   </small>
 </div>
 
+<button id="copyBtn">Copy Metadata to Clipboard</button><br>
 
 **Compatibility:** All GoPro cameras since HERO5 Black
  
-## ver 1.02
-updated: Apr 19, 2022
+## ver 1.03
+updated: May 20, 2022
 
 [More features](..) for Labs enabled cameras
 
@@ -217,7 +218,7 @@ updated: Apr 19, 2022
 			gpmf_size = jpeg_gpmf_size;
 		}
 		
-		
+		var cliptxt = "";
 		var txt = "";
 		var hex;
 		var dat;
@@ -382,11 +383,29 @@ updated: Apr 19, 2022
 
 			cell1.innerHTML = txt;
 			cell2.innerHTML = dat;
+			
+			cliptxt = cliptxt + txt + " " + dat + "\n";
 		}
 
 		txt += "\n";
 	}
 
 }());
+
+
+
+async function copyTextToClipboard(text) {
+	try {
+		await navigator.clipboard.writeText(text);
+	} catch(err) {
+		alert('Error in copying text: ', err);
+	}
+}
+
+function setupButtons() {	
+    document.getElementById("copyBtn").onclick = function() { 
+        copyTextToClipboard(clipcopy);
+	};
+}
 
 </script>
