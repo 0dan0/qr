@@ -40,7 +40,7 @@ file size: <b><span id="size"></span></b><br>
 
 **Compatibility:** All GoPro cameras since HERO5 Black
  
-## ver 1.03
+## ver 1.04
 updated: May 20, 2022
 
 [More features](..) for Labs enabled cameras
@@ -185,6 +185,7 @@ var clipcopy = "";
 		if(mdat_offset == 0 && jpeg_gpmf_offset == 0) return;
 
 		var bytes = new Uint8Array(reader2.result);
+		var new_float_bytes = new Uint8Array(4);
 
 		mdat_offset = 0;
 		var udta_offset = 0;
@@ -354,8 +355,25 @@ var clipcopy = "";
 					if(typsize > 8) repeat *= typsize / 8;
 					for(k=0; k<repeat; k++)
 					{
-						var num = (bytes[i+8+k*8]*16777216);
-							num += (bytes[i+8+k*4+1]<<16) + (bytes[i+8+k*4+2]<<8) + (bytes[i+8+k*4+3]<<0);
+						var signbit = (bytes[i+8+k*8] & 0x80) >> 7;
+						
+						// Convert 64-bit double to 32-bit float, directly.
+						
+						// convert an 11-bit exponent to 8-bit 
+						var expo = ((bytes[i+8+k*8] & 0x7f) << 4) + ((bytes[i+8+k*8+1] & 0xf0) >> 4) - 1023; 
+						var new_expo = expo + 127; 
+						
+						// extract the 23-bit mantissa from the MSBs of the double's mantissa 
+						int new_mant23 = (((bytes[i+8+k*8+1] & 0x0f) << 19) + (bytes[i+8+k*8+2] << 11) + (bytes[i+8+k*8+3] << 3) + ((bytes[i+8+k*8+4]) >> 5));
+
+						// reconstruct a 32-bit float
+						new_float_bytes[0] = (signbit << 7) + (new_expo>>1);
+						new_float_bytes[1] = ((new_expo << 7) & 0x80) + ((new_mant23 >> 16) & 0x7f);
+						new_float_bytes[2] = ((new_mant23 >> 8) & 0xff);
+						new_float_bytes[3] = (new_mant23 & 0xff);
+					
+						var num = (new_float_bytes[0]*16777216);
+							num += (new_float_bytes[1]<<16) + (new_float_bytes[2]<<8) + (new_float_bytes[3]<<0);
 						if(k > 0) dat += ", ";
 				
 						var val = Bytes2Float32(num);
