@@ -395,7 +395,7 @@ var clipcopy = "";
 			cell1.innerHTML = txt;
 			cell2.innerHTML = dat;
 			
-			clipcopy = clipcopy + "line " + lines + "\n";
+			clipcopy = clipcopy + "line " + lines + "\n";  lines++;
 			
 			clipcopy = clipcopy + cleantxt + " " + dat + "\n";
 			
