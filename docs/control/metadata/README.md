@@ -44,6 +44,8 @@ updated: May 20, 2022
 
 <script>
 
+var clipcopy = "";
+
 (function() {
 
 	var inputFile = document.getElementById("file");
@@ -218,7 +220,8 @@ updated: May 20, 2022
 			gpmf_size = jpeg_gpmf_size;
 		}
 		
-		var cliptxt = "";
+		clipcopy = ""; //reset for each new file.
+		
 		var txt = "";
 		var hex;
 		var dat;
@@ -384,7 +387,7 @@ updated: May 20, 2022
 			cell1.innerHTML = txt;
 			cell2.innerHTML = dat;
 			
-			cliptxt = cliptxt + txt + " " + dat + "\n";
+			clipcopy = clipcopy + txt + " " + dat + "\n";
 		}
 
 		txt += "\n";
