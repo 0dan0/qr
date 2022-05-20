@@ -22,8 +22,10 @@ file name: <b><span id="name"></span></b><br>
 file size: <b><span id="size"></span></b><br>
 </div>
 
-<div><br>
+<div>
+<br>
 <button id="copyBtn">Copy Metadata to Clipboard</button><br>
+<br>
 </div>
 
 
@@ -232,6 +234,7 @@ var clipcopy = "";
 		
 		var lines = 0;
 		var cleantxt = "";
+		var cleandat = "";
 		var indent = 0;
 		var devcsize = 0;
 		var strmsize = 0;
@@ -396,11 +399,11 @@ var clipcopy = "";
 			cell1.innerHTML = txt;
 			cell2.innerHTML = dat;
 			
+			cleandat = dat;
+			
 			clipcopy = clipcopy + "line " + lines + "\n";  lines++;
 			
-			clipcopy = clipcopy + cleantxt + " " + "\n";
-			
-			
+			clipcopy = clipcopy + cleantxt + " " + cleandat + "\n";
 		}
 
 		txt += "\n";
