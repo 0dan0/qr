@@ -1,6 +1,6 @@
-# Release Notes 
+# GoPro Labs Firmware Release Notes 
 
-Only the more recent releases are document below.
+Only the more recent releases are documented below. This a general list of Labs enhancements on top on the mainline firmware updates. Changes to mainline firmware are not listed.
 
 ## HERO10 Black 
 
@@ -33,26 +33,28 @@ Only the more recent releases are document below.
 ### 1.30.70 - Feburary, 2022
  - Added MLM support for Photos
  - Added Command for selecting Live Burst
- - Added oMDLRV=1 disable LRV
- - Added oMDAUD=1 disable audio
- - Added BITH bitrate control for H264 encodes (LRVs typically), BITR is for HEVC (MP4s typically)
+ - Added oM**DLRV**=1 disable LRV
+ - Added oM**DAUD**=1 disable audio
+ - Added oM**BITH**=x bitrate control for H264 encodes (LRVs typically), BITR is for HEVC (MP4s typically)
  - Added WiFi band switching commands oW2 - 2.4GHz and oW5 - 5GHz
  - Fixed Photo FOV support
  - Fixed for Beep Levels below 70%
  - Fixed BITR so that only the MP4 is increased
  - Fixed Long timelapse with Battery and External power (the recommend configuration for this firmware)
  - Fixed metadata storage for change variable length data (change OWNR info, could erase data.)
- - Enhanced !MWAKE=2 - wake on power option to bypass any delay.txt (improves robustness for extra long timelapses.)
+ - Enhanced !M**WAKE**=2 - wake on power option to bypass any delay.txt (improves robustness for extra long timelapses.)
  - Enhanced - removed all first boot UI notifications for naked cameras
  - Enhanced logging got IMU triggers
  - Enhanced extra long time-lapses with improved handling of RTC errors 
  
 ### 1.20.70 - December, 2021
- - Naked camera support (FPV community.)
- - The first few HERO10 Labs releases were mostly going for HERO9 Labs parity 
+ - Added oM**BITR**=x bitrate control for increasing video quality (typical max for a good SD card is 180mbs)
+ - Added !M**24HZ**=1 set all the 24p video mode to run at the film standard of 24.0, rather than the broadcast standard of 23.976.
+ - Naked camera support (FPV community), firmware updates within the orginal battery, and other optimizations.
  
 ### 1.10.70 - October, 2021
  - Labs features on Launch firmware.
+ - The first few HERO10 Labs releases were mostly going for HERO9 Labs parity 
  
  
 ## HERO9 Black
