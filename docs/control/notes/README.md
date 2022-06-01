@@ -30,7 +30,7 @@ Only the more recent releases are documented below. This a general list of Labs 
  - Fixed Language selection (Voice and user interface.)
  - Fixed Battery level reporting at 80% if you start in TimeLapse or Photo modes on some cameras.
  
-### 1.30.70 - Feburary, 2022
+### 1.30.71 - Feburary, 2022
  - Added MLM support for Photos
  - Added Command for selecting Live Burst
  - Added oM**DLRV**=1 disable LRV
