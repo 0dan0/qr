@@ -9,9 +9,10 @@ Only the more recent releases are documented below. This a general list of Labs 
  - Added !M**IWFR**=1 Increased Write FRequency to support for higher precision file recoveries (defaulted on with !MBITR=x also).  
  - Added rate control for slow SD media (activated using either !MBITR=x or !MIWFR=1), allowing for potentially improved capture reliability with older media or at higher bitrates.
  - Added Trust USB !M**TUSB**=1 to allow power from USB with unknown current (assumes USB is 2A source.)
+ - Added support for text and graphics overlay. Limited as is will only work up to 4k30, 2.7Kp60 and 1080p120.   
  - Enhanced SPL trigger levels now reported to the qrlog.txt file.
+ - Enhanced, upon boot the LCD will repeat any permanent Labs modification you might have active.
  - Fixed for rare crash when waking the LCD during a Night Lapse video capture.
- - Limited support for text and graphics overlay. Limited as is will only work up to 4k30, 2.7Kp60 and 1080p120.   
 
 ### 1.40.70 - April, 2022
  - Added default Last Used preset (dL), match the camera menus
