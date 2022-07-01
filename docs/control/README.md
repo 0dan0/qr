@@ -37,7 +37,6 @@ and as a mobile app:<br>
 ### Video Alteration Features
 * **HERO8/9/10/MAX/Bones** - Set the [**Max Shutter Angle**](./maxshut) for control over stabilization in low light
 * **HERO8/9/10/MAX** - Add text like Date and Time with [**Video 'Burn-in' Overlays**](./overlays)
-* **HERO8/9** Set the [**Exposure Lock**](./explock) via QR Code
 * **HERO8/9/10** - Add a logo or any small image to your video with [**Logo Overlays**](./logo)
 
 ### Miscellaneous Features
@@ -48,11 +47,14 @@ and as a mobile app:<br>
 * **HERO8/9/10/MAX/Bones** - Multi-camera users, label you media with [**Altered File Naming**](./basename)
 * **HERO9/10** - Timecode Support via [**LTC**](./ltc) over audio line-in using Media Mod 
 * **HERO10** - Support for Adobe Premiere Pro™ style [**Proxy Files**](./proxies) 
-* **HERO9** - Enable media [**encryption**](./encrypt) for increased security
+
+### Metadata Feature and Extraction
+* **All GPMF Enabled Cameras** - [**Read metadata**](./metadata) stored within headers of most GoPro media files.
 * <span style="color:steelblue">**UPDATED**</span> Many more [**extensions**](./extensions) via QR Code
 
-### Metadata Extraction
-* **All GPMF Enabled Cameras** - [**Read metadata**](./metadata) stored within headers of most GoPro media files.
+### Features Phasing Out (if we don't see feedback feature may not get ported to the next camera)
+* **HERO8/9** Set the [**Exposure Lock**](./explock) via QR Code
+* **HERO9** - Enable media [**encryption**](./encrypt) for increased security
 
 ## Forum Discussions 
 
