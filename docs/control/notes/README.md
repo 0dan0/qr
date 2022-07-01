@@ -133,6 +133,6 @@ Only the more recent releases are documented below. This a general list of Labs 
 
 
 ### ver 1.02
-updated: July 5, 2022
+updated: July 1, 2022
 
 [Learn more](..) on QR Control

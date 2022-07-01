@@ -52,18 +52,16 @@ and as a mobile app:<br>
 * **All GPMF Enabled Cameras** - [**Read metadata**](./metadata) stored within headers of most GoPro media files.
 * <span style="color:steelblue">**UPDATED**</span> Many more [**extensions**](./extensions) via QR Code
 
-### Features Phasing Out (if we don't see feedback feature may not get ported to the next camera)
+### Features Phasing Out
+If we don't see feedback on features it may not get ported to the next camera. If you are uses a Labs feature, provide feedback on the [**GoPro Labs forum**](https://community.gopro.com/s/gopro-labs)
 * **HERO8/9** Set the [**Exposure Lock**](./explock) via QR Code
 * **HERO9** - Enable media [**encryption**](./encrypt) for increased security
 
 ## Forum Discussions 
-
 Please join the [**GoPro Labs Discussion**](https://community.gopro.com/s/gopro-labs)
 
 ## Firmware Release Notes 
-
 An incomplete set of [**Release Notes**](./notes) 
-
 
 ## The Commands Under The Hood 
 
@@ -88,7 +86,7 @@ Subset of commands for the [**HERO 5 Session**](./session5). Limit to camera set
 
 
 ### ver 1.27
-updated: July 5, 2022
+updated: July 1, 2022
 
 
 <script>

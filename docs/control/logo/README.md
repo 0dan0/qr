@@ -50,7 +50,7 @@ QR Command: <b id="qrtext">time</b><br>
 **Compatibility:** Labs enabled HERO8, HERO9 and HERO10
         
 ## ver 1.02
-updated: July 5, 2022
+updated: July 1, 2022
 
 [Learn more](..) on QR Control
 

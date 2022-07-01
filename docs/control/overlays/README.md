@@ -88,7 +88,7 @@ Known Issues:
 **Compatibility:** Labs enabled HERO8, HERO9, HERO10 and MAX 
         
 ## ver 1.31
-updated: July 5, 2022
+updated: July 1, 2022
 
 [Learn more](..) on QR Control
 

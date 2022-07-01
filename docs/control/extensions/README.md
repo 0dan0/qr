@@ -129,7 +129,7 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
 <br> 
 		
 ### ver 1.19
-updated: July 5, 2022<br>
+updated: July 1, 2022<br>
 
 [Learn more](..) on QR Control
 
