@@ -38,8 +38,7 @@ All metadata QR commands are written in the form oM**wxzy**=value(s) or !M**wxzy
 	- **LRUN=”Runner Name”** - displays "Runner", with the name you provide
 - **BOOT=!Lscript** - A command to run automatically at boot. For safety, this should only be a load script command, so that the command is dependent on the SD card presence. e.g. !MBOOT="!Lboot"  Then you can place whatever command you need in the boot script with !SAVEboot="your command here". See an example in [IMU Triggers for Drones](../imutrigger)
 	
-### **HERO9/10 only** - Overlay extensions
-- **HSTO=x** minutes <span style="color:steelblue">**NEW**</span> - controlling the length of the Hindsight timeout, changing from the default for 15 minutes. e.g. !MHSTO=60 for a 60 minute Hindsight timeout.
+### **HERO8/9/10 only** - Overlay extensions
 - **CBAR=1** - enable a small 75% saturated color bars for video tools evaluation (HERO10 limitation: only works 4Kp30 or lower res/fps.)
 - **LBAR=1** - enable a small luma sweep for video tools evaluation  (HERO10 limitation: only works 4Kp30 or lower res/fps.)<br>
 ![EnableCBARLBAR.png](EnableCBARLBAR.png)
@@ -52,16 +51,21 @@ All metadata QR commands are written in the form oM**wxzy**=value(s) or !M**wxzy
 <!-- - **DECR="password"** - Decrypt existing encrypted files. <span style="color:red">If the passwords do not match,</span> the data is doubly encrypted, <span style="color:red">there is no recovery of the data. **Be careful**.</span> With the correct password, all files are decrypted on camera. The onto camera process is slow, and the entire encrypted file must be read and rewritten, expect a similar processing time to the capture length. If low battery is an issue, provide the camera external power before decryption.-->
 
 
-### **HERO9/10 and Bones camera** - Extensions latest Labs firmware
+### **HERO8/9/10 and Bones cameras** - Extensions latest Labs firmware
 
+- **HSTO=x** - minutes <span style="color:steelblue">**NEW**</span> - controlling the length of the Hindsight timeout, changing from the default for 15 minutes. e.g. !MHSTO=60 for a 60 minute Hindsight timeout.
 - **WAKE=1** - This will make the camera wake on any power addition, but only if there is a delay action pending (determined by a delay.txt file in the MISC folder, created automatically with wake timer events.) Inserting a battery or the connection of USB power, will boot up the camera to continue a script after a power failure. With some experimentation, this may be used to improve very long time-lapse reliability, by cycling USB power every 24 hours -- reseting the camera to restart scripts.
-- **WAKE=2** - (HERO10 only) Same as WAKE=1, expect it will ignore any pending actions, and wake of any power addition. This is useful with combined with a boot command. 
-- **MUTE=mask** - Mute one or more channels of audio (microphones). For HERO9 cameras, there are four channels, although three microphones. The mask is binary mask for channels 4321. e.g. oMMUTE=15 mute all channels (15 = 1111B), oMMUTE=8 mute the fourth channel (8 = 1000B), oMMUTE=7 mutes the first 3 channels (7 = 0111B).
-- **SOLO=channel** - Use only one channel of audio. e.g. oMSOLO=1 use only channel 1, oMSOLO=4 only use the fourth channel.
-- **GAIN=dB** - Digitally gain up the audio. e.g. oMGAIN=12, increase audio by 12dB.  Will likely reduce the dynamic range.
+- **WAKE=2** - (HERO8/10 only) Same as WAKE=1, expect it will ignore any pending actions, and wake of any power addition. This is useful with combined with a boot command. 
 - **HDMI=0,1 or 2** - Media Mod users can change the output default from Gallery (0) to clean monitoring with no overlays (1), or monitoring live video with overlays (2).
 - **SPED=x** - SD Card Speed Test. 'x' is the number of runs, each run is around 10 seconds.  Data rates should have minimums above 120Mb/s is you want to reliably capture the high bitrate modes. 
 ![SPED.jpg](SPED.jpg)
+
+### **HERO9/10 and Bones cameras** - Audio extensions
+
+- **MUTE=mask** - (HERO9/10/Bones) Mute one or more channels of audio (microphones). For HERO9 cameras, there are four channels, although three microphones. The mask is binary mask for channels 4321. e.g. oMMUTE=15 mute all channels (15 = 1111B), oMMUTE=8 mute the fourth channel (8 = 1000B), oMMUTE=7 mutes the first 3 channels (7 = 0111B).
+- **SOLO=channel** - Use only one channel of audio. e.g. oMSOLO=1 use only channel 1, oMSOLO=4 only use the fourth channel.
+- **GAIN=dB** - Digitally gain up the audio. e.g. oMGAIN=12, increase audio by 12dB.  Will likely reduce the dynamic range.
+
 
 
 ### **HERO10 and Bones cameras** - Advanced features
@@ -126,8 +130,9 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
 
 <br> 
 		
-## ver 1.18
-updated: June 15, 2022
+### ver 1.19
+updated: July 5, 2022
+
 [BACK](..)
 
 <script>
