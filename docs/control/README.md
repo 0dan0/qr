@@ -56,18 +56,16 @@ and as a mobile app:<br>
 If we don't see feedback on features it may not get ported to the next camera. If you are uses a Labs feature, provide feedback on the [**GoPro Labs forum**](https://community.gopro.com/s/gopro-labs)
 * **HERO8/9** Set the [**Exposure Lock**](./explock) via QR Code
 * **HERO9** - Enable media [**encryption**](./encrypt) for increased security
+* Subset of commands for the [**HERO 5 Session**](./session5). Limit to camera settings, date & time, scheduled captures and ownership information.
 
 ## Forum Discussions and Feedback 
-Please join the [**GoPro Labs Discussion**](https://community.gopro.com/s/gopro-labs) or post [**questions and feedback on Github**](https://github.com/gopro/labs/issues)
+Please join the [**GoPro Labs Discussion**](https://community.gopro.com/s/gopro-labs) or post [**questions and feedback**](https://github.com/gopro/labs/issues) on Github
 
 ## Firmware Release Notes 
 An incomplete set of [**Release Notes**](./notes) 
 
 ## The Commands Under The Hood 
 Technical information on the [**Labs command language**](./tech)
-
-Subset of commands for the [**HERO 5 Session**](./session5). Limit to camera settings, date & time, scheduled captures and ownership information.
-
 
 ### ver 1.28
 updated: July 7, 2022
