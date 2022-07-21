@@ -41,7 +41,7 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
  
 Whether you are using the larger chapter feature or not, you may still end up with more than one file for very long video captures. Tools like ReelSteady can only operate one file at a time, so here is a solution for merging chapters so that they operate as a valid GoPro MP4 of any length, with all the needed metadata.
 
-### Easy Solution
+### Easy Solution:
 
 Try [ReelSteady-Joiner](https://github.com/rubegartor/ReelSteady-Joiner/releases)
 
