@@ -14,7 +14,7 @@
 </style>
 
 Create a custom camera mode, and even start a capture all through QR Codes. This is the fastest way to access many of the new GoPro Labs' firmware features. 
-**†** indicates the control requires HERO10 Labs 1.20 or better. Many features of this page are also available as a mobile app.<br>
+**†** indicates the control requires HERO10 Labs or better. Many features of this page are also available as a mobile app.<br>
 Install from: [![google play](../google-play-small.png)](https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
 [![apple app store](../apple-store-small.png)](https://apps.apple.com/us/app/gopro-app/id1518134202)
 
@@ -28,7 +28,7 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="m6" name="mode" value="mV1"> <label for="m6">Activity</label>&nbsp;&nbsp;
   <input type="radio" id="m7" name="mode" value="mV2"> <label for="m7">Cinematic</label>&nbsp;&nbsp;
   <input type="radio" id="m8" name="mode" value="mV4"> <label for="m8">SloMo</label>&nbsp;&nbsp;
-  <input type="radio" id="m9" name="mode" value="mV5"> <label for="m9">Basic</label><br>
+  <input type="radio" id="m9" name="mode" value="mV3"> <label for="m9">Full Frame†</label><br>
   **VideoTL-Modes:** 
   <input type="radio" id="m10" name="mode" value="mTW"> <label for="m10">TimeWarp</label>&nbsp;&nbsp;
   <input type="radio" id="m11" name="mode" value="mT"> <label  for="m11">Timelapse</label>&nbsp;&nbsp;
@@ -212,7 +212,8 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
 	<input type="radio" id="eis2" name="eis" value="e1"> <label for="eis2">On</label>&nbsp;&nbsp;&nbsp;
 	<input type="radio" id="eis3" name="eis" value="e2"> <label for="eis3">High</label>&nbsp;&nbsp;&nbsp;
 	<input type="radio" id="eis4" name="eis" value="e3"> <label for="eis4">Boost</label>&nbsp;&nbsp;&nbsp;
-	<input type="radio" id="eis5" name="eis" value="" checked> <label for="eis5">not set</label><br><br>
+	<input type="radio" id="eis5" name="eis" value="e4"> <label for="eis5">Auto</label>&nbsp;&nbsp;&nbsp;
+	<input type="radio" id="eis6" name="eis" value="" checked> <label for="eis6">not set</label><br><br>
 </div>
 
 <div id="settingsHindsight">
@@ -536,8 +537,8 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
         
 [More features](..) for Labs enabled cameras
 
-## version 1.54
-updated: Mar 15, 2022
+## version 1.55
+updated: Aug 9, 2022
 
 <script>
 var clipcopy = "";
