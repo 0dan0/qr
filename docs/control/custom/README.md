@@ -773,8 +773,8 @@ function startTime() {
 			bounds=this.getBoundingClientRect();
 			var left=bounds.left;
 			var top=bounds.top;
-			spot_x = event.pageX - left;
-			spot_y = event.pageY - top;
+			spot_x = Math.trunc(event.pageX - left - 77);
+			spot_y = Math.trunc(event.pageY - top);
 			//alert("x: " + x + " y: " + y);
 		});
 
@@ -1007,9 +1007,9 @@ function startTime() {
 			else
 			{
 				if(pos == 0)
-					cmd = dcmd(cmd,"sm") + pos;  // disable spot
+					cmd = dcmd(cmd,"sm") + "50,50";  // disable spot
 				else
-					cmd = dcmd(cmd,"sm") + spot_x + "'" + spot_y; //spotMeter
+					cmd = dcmd(cmd,"sm") + spot_x + "," + spot_y; //spotMeter
 			}
 		}
 	}
