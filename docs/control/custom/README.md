@@ -576,6 +576,10 @@ function makeQR() {
 }
 
 function drawLine(x, y, stopX, stopY){
+
+	var can = document.getElementById('LCD');
+	var ctx = can.getContext('2d');
+ 
 	ctx.clearRect (0, 0, can.width, can.height);
 	ctx.beginPath();
 	ctx.moveTo(x, y);
