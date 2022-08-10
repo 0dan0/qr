@@ -766,20 +766,19 @@ function startTime() {
 	
 	if(document.getElementById("sm") !== null)
 	{
-		$(document).ready(function() {
-			$("img").on("click", function(event) {
-				var left=bounds.left;
-				var top=bounds.top;
-				var x = event.pageX - left;
-				var y = event.pageY - top;
-				var cw=this.clientWidth
-				var ch=this.clientHeight
-				var iw=this.naturalWidth
-				var ih=this.naturalHeight
-				var px=x/cw*iw
-				var py=y/ch*ih
-				alert("X Coordinate: " + px + " Y Coordinate: " + py);
-			});
+		document.getElementById(LCD).addEventListener('click', function (event) {
+			bounds=this.getBoundingClientRect();
+			var left=bounds.left;
+			var top=bounds.top;
+			var x = event.pageX - left;
+			var y = event.pageY - top;
+			var cw=this.clientWidth
+			var ch=this.clientHeight
+			var iw=this.naturalWidth
+			var ih=this.naturalHeight
+			var px=x/cw*iw
+			var py=y/ch*ih
+			alert("X Coordinate: " + px + " Y Coordinate: " + py);
 		});
 
 		dset("spotMeter", document.getElementById("sm").checked);	
