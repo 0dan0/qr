@@ -559,6 +559,9 @@ var even = 0;
 var qrcode;
 var i;
 
+var spot_x = 50
+var spot_y = 50;
+
 function makeQR() {	
 	if(once === true)
 	{
@@ -770,15 +773,9 @@ function startTime() {
 			bounds=this.getBoundingClientRect();
 			var left=bounds.left;
 			var top=bounds.top;
-			var x = event.pageX - left;
-			var y = event.pageY - top;
-			var cw=this.clientWidth
-			var ch=this.clientHeight
-			var iw=this.naturalWidth
-			var ih=this.naturalHeight
-			var px=x/cw*iw
-			var py=y/ch*ih
-			alert("left: " + left + " top: " + top + " x: " + x + " cw: " + cw + " iw: " + iw + " px: " + px);
+			spot_x = event.pageX - left;
+			spot_y = event.pageY - top;
+			//alert("x: " + x + " y: " + y);
 		});
 
 		dset("spotMeter", document.getElementById("sm").checked);	
@@ -1009,7 +1006,10 @@ function startTime() {
 			}
 			else
 			{
-				cmd = dcmd(cmd,"sm") + pos; //spotMeter
+				if(pos == 0)
+					cmd = dcmd(cmd,"sm") + pos;  // disable spot
+				else
+					cmd = dcmd(cmd,"sm") + spot_x + "'" + spot_y; //spotMeter
 			}
 		}
 	}
