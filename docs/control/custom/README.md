@@ -280,7 +280,7 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
 <input type="checkbox" id="ptr" value="t0"> <label for="ptr"> </label><br>
 </div>
 <div id="ptCOLOR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Protune Color:</b>&nbsp;&nbsp;
-  <input type="radio" id="ptc1" name="ptc" value="cG"> <label for="ptc1">GoPro</label>&nbsp;&nbsp;
+  <input type="radio" id="ptc1" name="ptc" value="cG"> <label for="ptc1">Vibrant</label>&nbsp;&nbsp;
   <input type="radio" id="ptc2" name="ptc" value="cN"> <label for="ptc2">Natural†</label>&nbsp;&nbsp;
   <input type="radio" id="ptc3" name="ptc" value="cF"> <label for="ptc3">Flat</label>&nbsp;&nbsp;
   <input type="radio" id="ptc4" name="ptc" value="" checked> <label for="ptc4">not set</label>
@@ -382,10 +382,11 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="qc3" name="qc" value="" checked> <label for="qc3">not set </label>
   </div>
 <div id="opDM">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Default Mode:</b>&nbsp;&nbsp;
-  <input type="radio" id="dm1" name="dm" value="dV">  <label for="dm1">Last Used Video</label>&nbsp;&nbsp;
-  <input type="radio" id="dm2" name="dm" value="dP">  <label for="dm2">Last Used Photo</label>&nbsp;&nbsp;
-  <input type="radio" id="dm3" name="dm" value="dT">  <label for="dm3">Last Used Timelapse</label>&nbsp;&nbsp;
-  <input type="radio" id="dm4" name="dm" value="" checked> <label for="dm4">not set</label>
+  <input type="radio" id="dm1" name="dm" value="dL">  <label for="dm1">Last Used</label>&nbsp;&nbsp;
+  <input type="radio" id="dm2" name="dm" value="dV">  <label for="dm2">Video</label>&nbsp;&nbsp;
+  <input type="radio" id="dm3" name="dm" value="dP">  <label for="dm3">Photo</label>&nbsp;&nbsp;
+  <input type="radio" id="dm4" name="dm" value="dT">  <label for="dm4">Timelapse</label>&nbsp;&nbsp;
+  <input type="radio" id="dm5" name="dm" value="" checked> <label for="dm5">not set</label>
 </div>
 <div id="opBV">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Beep Volume:</b>&nbsp;&nbsp; 
   <input type="radio" id="bv1" name="bv" value="V0"> <label for="bv1">0% </label>&nbsp;&nbsp;
