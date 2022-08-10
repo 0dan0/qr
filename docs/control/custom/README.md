@@ -1003,7 +1003,11 @@ function startTime() {
 	{
 		if(document.getElementById("sm").checked === true)
 		{
-			if(document.getElementById("sl").checked === true)
+			if(document.getElementById("smd").checked === true)
+			{
+				cmd = cmd + "oSM0"; 
+			}
+			else if(document.getElementById("sl").checked === true)
 			{
 				cmd = dcmd(cmd,"sl") + spot_x + "," + spot_y; //spot Lock
 			}
