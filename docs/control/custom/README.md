@@ -575,6 +575,21 @@ function makeQR() {
 	once = false;
 }
 
+function drawLine(x, y, stopX, stopY){
+	ctx.clearRect (0, 0, can.width, can.height);
+	ctx.beginPath();
+	ctx.moveTo(x, y);
+	ctx.lineTo(stopX, stopY);
+	ctx.closePath();
+	ctx.stroke();
+
+	// calculate length   
+	var pixelLength = Math.sqrt(Math.pow((stopX - x),2) + Math.pow((stopY-y),2));
+	var physicalLength = pixelLength / imageDpi;
+	console.log("line length = " + physicalLength + 
+				" inches (image at " + imageDpi + " dpi)");
+}
+
 function startTime() {	
     var today;
     var yy;
@@ -778,6 +793,8 @@ function startTime() {
 			if(spot_x > 90) spot_x = 90;
 			if(spot_y < 10) spot_y = 10;
 			if(spot_y > 90) spot_y = 90;
+			
+			drawLine(150, 100, event.pageX, event.pageY);
 			
 			//alert("x: " + x + " y: " + y);
 		});
