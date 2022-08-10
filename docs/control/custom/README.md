@@ -254,6 +254,10 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
 </div>
 <input type="checkbox" id="sm" value="oSM"> <label for="sm">Spot Metering (H10) † </label><br>
 <div id="spotMeter">
+   <div id="LCD">
+      <img src="https://gopro.github.io/labs/control/custom/RearCamera.png" alt="LCD"> 
+   </div>
+<!--
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sp1" name="placement" value="25,25"> <label for="sp1">Top Left    </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="radio" id="sp2" name="placement" value="50,25"> <label for="sp2">Top Center  </label>&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="radio" id="sp3" name="placement" value="75,25"> <label for="sp3">Top Right   </label><br>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -264,6 +268,9 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
 <input type="radio" id="sp8" name="placement" value="50,75"> <label for="sp8">Lower Center</label>&nbsp;
 <input type="radio" id="sp9" name="placement" value="75,75"> <label for="sp9">Lower Right </label>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="radio" id="sp10" name="placement" value="0"> <label for="sp10">Disable </label><br>&nbsp;&nbsp;&nbsp;&nbsp;
+-->
+<input type="radio" id="sp1" name="placement" value="1"> <label for="sp1">Enabled </label>
+<input type="radio" id="sp2" name="placement" value="0"> <label for="sp2">Disabled </label>
 <input type="checkbox" id="sl" value="oSM0!2NoSL"> <label for="sl">Exposure Lock 3s after scan (to avoid locking on the QR Code)</label><br>
 </div>
 <div id="settingsPT">
@@ -759,6 +766,22 @@ function startTime() {
 	
 	if(document.getElementById("sm") !== null)
 	{
+		$(document).ready(function() {
+			$("img").on("click", function(event) {
+				var left=bounds.left;
+				var top=bounds.top;
+				var x = event.pageX - left;
+				var y = event.pageY - top;
+				var cw=this.clientWidth
+				var ch=this.clientHeight
+				var iw=this.naturalWidth
+				var ih=this.naturalHeight
+				var px=x/cw*iw
+				var py=y/ch*ih
+				alert("X Coordinate: " + px + " Y Coordinate: " + py);
+			});
+		});
+
 		dset("spotMeter", document.getElementById("sm").checked);	
 	}
 		
