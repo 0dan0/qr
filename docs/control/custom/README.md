@@ -269,7 +269,7 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
 <input type="radio" id="sp9" name="placement" value="75,75"> <label for="sp9">Lower Right </label>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="radio" id="sp10" name="placement" value="0"> <label for="sp10">Disable </label><br>&nbsp;&nbsp;&nbsp;&nbsp;
 -->
-&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009FDF">Spot Meter Coord (%,%):</font> <em id="coordtext"></em>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009FDF">Spot Meter Coord (x,y):</font> <em id="coordtext"></em>
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="smd" value="oSM0"> <label for="smd">Disable Spot</label><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="sl" value="oSM0!2NoSL"> <label for="sl">Exposure Lock 3s after scan (to avoid locking on the QR Code)</label><br>
 </div>
@@ -781,7 +781,7 @@ function startTime() {
 			if(spot_y < 10) spot_y = 10;
 			if(spot_y > 90) spot_y = 90;
 			
-			document.getElementById("coordtext").innerHTML = spot_x + ',' + spot_y;
+			document.getElementById("coordtext").innerHTML = spot_x + "%," + spot_y + "%";
 			
 			//alert("x: " + x + " y: " + y);
 		});
