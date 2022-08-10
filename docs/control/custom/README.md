@@ -770,7 +770,8 @@ function startTime() {
 	
 	if(document.getElementById("sm") !== null)
 	{
-		document.getElementById("LCD").addEventListener('click', function (event) {
+		document.getElementById("LCD").addEventListener('click', function (event) 
+		{
 			bounds=this.getBoundingClientRect();
 			
 			spot_x = Math.trunc((event.offsetX - 77)*100/270);
@@ -781,11 +782,11 @@ function startTime() {
 			if(spot_y < 10) spot_y = 10;
 			if(spot_y > 90) spot_y = 90;
 			
-			document.getElementById("coordtext").innerHTML = spot_x + "%," + spot_y + "%";
-			
 			//alert("x: " + x + " y: " + y);
 		});
 
+		document.getElementById("coordtext").innerHTML = spot_x + "%," + spot_y + "%";
+			
 		dset("spotMeter", document.getElementById("sm").checked);	
 	}
 		
