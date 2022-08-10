@@ -766,7 +766,7 @@ function startTime() {
 	
 	if(document.getElementById("sm") !== null)
 	{
-		document.getElementById(LCD).addEventListener('click', function (event) {
+		document.getElementById("LCD").addEventListener('click', function (event) {
 			bounds=this.getBoundingClientRect();
 			var left=bounds.left;
 			var top=bounds.top;
