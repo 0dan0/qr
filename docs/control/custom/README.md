@@ -269,6 +269,7 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
 <input type="radio" id="sp9" name="placement" value="75,75"> <label for="sp9">Lower Right </label>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="radio" id="sp10" name="placement" value="0"> <label for="sp10">Disable </label><br>&nbsp;&nbsp;&nbsp;&nbsp;
 -->
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009FDF">Spot Meter Coord (%,%):</font> <em id="coordtext"></em>
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="smd" value="oSM0"> <label for="smd">Disable Spot</label><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="sl" value="oSM0!2NoSL"> <label for="sl">Exposure Lock 3s after scan (to avoid locking on the QR Code)</label><br>
 </div>
@@ -575,24 +576,6 @@ function makeQR() {
 	once = false;
 }
 
-function drawLine(x, y, stopX, stopY){
-
-	var can = document.getElementById('LCD');
-	var ctx = can.getContext('2d');
- 
-	ctx.clearRect (0, 0, can.width, can.height);
-	ctx.beginPath();
-	ctx.moveTo(x, y);
-	ctx.lineTo(stopX, stopY);
-	ctx.closePath();
-	ctx.stroke();
-
-	// calculate length   
-	var pixelLength = Math.sqrt(Math.pow((stopX - x),2) + Math.pow((stopY-y),2));
-	var physicalLength = pixelLength / imageDpi;
-	console.log("line length = " + physicalLength + 
-				" inches (image at " + imageDpi + " dpi)");
-}
 
 function startTime() {	
     var today;
@@ -798,7 +781,7 @@ function startTime() {
 			if(spot_y < 10) spot_y = 10;
 			if(spot_y > 90) spot_y = 90;
 			
-			drawLine(150, 100, event.pageX, event.pageY);
+			document.getElementById("coordtext").innerHTML = spot_x + ',' + spot_y;
 			
 			//alert("x: " + x + " y: " + y);
 		});
