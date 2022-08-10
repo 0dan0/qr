@@ -771,15 +771,15 @@ function startTime() {
 	{
 		document.getElementById("LCD").addEventListener('click', function (event) {
 			bounds=this.getBoundingClientRect();
-			//var left=bounds.left;
-			//var top=bounds.top;
+			
 			spot_x = Math.trunc((event.offsetX - 77)*100/270);
-			spot_y = Math.trunc(event.offsetY);
+			spot_y = Math.trunc((event.offsetY-50)*100/185);
 			
 			if(spot_x < 0) spot_x = 0;
 			if(spot_x > 100) spot_x = 100;
-			//if(spot_y < 0) spot_y = 0;
-			//if(spot_y > 100) spot_y = 100;
+			if(spot_y < 0) spot_y = 0;
+			if(spot_y > 100) spot_y = 100;
+			
 			//alert("x: " + x + " y: " + y);
 		});
 
