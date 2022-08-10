@@ -778,7 +778,7 @@ function startTime() {
 			var ih=this.naturalHeight
 			var px=x/cw*iw
 			var py=y/ch*ih
-			alert("X Coordinate: " + px + " Y Coordinate: " + py);
+			alert("left: " + left + " top: " + top + " x: " + x + " cw: " + cw + " iw: " + iw + " px: " + px);
 		});
 
 		dset("spotMeter", document.getElementById("sm").checked);	
