@@ -773,10 +773,10 @@ function startTime() {
 			spot_x = Math.trunc((event.offsetX - 77)*100/270);
 			spot_y = Math.trunc((event.offsetY-50)*100/185);
 			
-			if(spot_x < 0) spot_x = 0;
-			if(spot_x > 99) spot_x = 99;
-			if(spot_y < 0) spot_y = 0;
-			if(spot_y > 99) spot_y = 99;
+			if(spot_x < 10) spot_x = 10;
+			if(spot_x > 90) spot_x = 90;
+			if(spot_y < 10) spot_y = 10;
+			if(spot_y > 90) spot_y = 90;
 			
 			//alert("x: " + x + " y: " + y);
 		});
@@ -1004,11 +1004,11 @@ function startTime() {
 		{
 			if(document.getElementById("sl").checked === true)
 			{
-				cmd = dcmd(cmd,"sl") + checkTime(spot_x) + "," + checkTime(spot_y); //spot Lock
+				cmd = dcmd(cmd,"sl") + spot_x + "," + spot_y; //spot Lock
 			}
 			else
 			{
-				cmd = dcmd(cmd,"sm") + checkTime(spot_x) + "," + checkTime(spot_y); //spotMeter
+				cmd = dcmd(cmd,"sm") + spot_x + "," + spot_y; //spotMeter
 			}
 		}
 	}
