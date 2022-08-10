@@ -999,17 +999,14 @@ function startTime() {
 	{
 		if(document.getElementById("sm").checked === true)
 		{
-			var pos = dcmd("","sp");	
+			//var pos = dcmd("","sp");	
 			if(document.getElementById("sl").checked === true)
 			{
 				cmd = dcmd(cmd,"sl") + pos; //spot Lock
 			}
 			else
 			{
-				if(pos == 0)
-					cmd = dcmd(cmd,"sm") + "50,50";  // disable spot
-				else
-					cmd = dcmd(cmd,"sm") + spot_x + "," + spot_y; //spotMeter
+				cmd = dcmd(cmd,"sm") + spot_x + "," + spot_y; //spotMeter
 			}
 		}
 	}
