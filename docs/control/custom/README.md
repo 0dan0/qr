@@ -773,8 +773,13 @@ function startTime() {
 			bounds=this.getBoundingClientRect();
 			var left=bounds.left;
 			var top=bounds.top;
-			spot_x = Math.trunc(event.pageX - left - 77);
+			spot_x = Math.trunc((event.pageX - left - 77)*100/270);
 			spot_y = Math.trunc(event.pageY - top);
+			
+			if(spot_x < 0) spot_x = 0;
+			if(spot_x > 100) spot_x = 100;
+			//if(spot_y < 0) spot_y = 0;
+			//if(spot_y > 100) spot_y = 100;
 			//alert("x: " + x + " y: " + y);
 		});
 
