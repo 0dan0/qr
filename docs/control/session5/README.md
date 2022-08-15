@@ -484,7 +484,7 @@ function startTime() {
 			cmd = dcmd(cmd,"ptc"); //color
 			cmd = dcmd(cmd,"wb"); //wb
 
-			if(document.getElementById('iso8').checked === false)
+			if(document.getElementById('iso4').checked === false)
 			{
 				cmd = dcmd(cmd,"iso"); //iso
 				
