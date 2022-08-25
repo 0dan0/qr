@@ -793,10 +793,9 @@ function startTime() {
 		
 	if(document.getElementById("pt") !== null)
 	{
-		if(document.getElementById("pt").checked === true)
+		if(document.getElementById("ptr").checked === true)
 			dset("settingsPTR", true);
-		
-		if(document.getElementById("pt").checked === true && document.getElementById("ptr").checked === false)
+		else if(document.getElementById("pt").checked === true)
 		{
 			dset("ptCOLOR", true);
 			dset("ptWBAL", true);
