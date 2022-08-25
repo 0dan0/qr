@@ -544,8 +544,8 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
         
 [More features](..) for Labs enabled cameras
 
-## version 1.55
-updated: Aug 10, 2022
+## version 1.56
+updated: Aug 25, 2022
 
 <script>
 var clipcopy = "";
@@ -793,9 +793,10 @@ function startTime() {
 		
 	if(document.getElementById("pt") !== null)
 	{
-		if(document.getElementById("ptr").checked === true)
+		if(document.getElementById("pt").checked === true)
 			dset("settingsPTR", true);
-		else if(document.getElementById("pt").checked === true)
+		
+		if(document.getElementById("pt").checked === true && document.getElementById("ptr").checked === false)
 		{
 			dset("ptCOLOR", true);
 			dset("ptWBAL", true);
@@ -1022,8 +1023,19 @@ function startTime() {
 			}
 		}
 	}
+
+	if(document.getElementById("pt").checked === true)
+	{
+		if(document.getElementById("ptr").checked === true)
+		{
+			cmd = cmd + "t0"; //protune reset
+		}
+		else
+		{
+			cmd = cmd + "t"; //protune
+		}
+	}
 	
-	cmd = dcmd(cmd,"pt"); //protune
 	cmd = dcmd(cmd,"eis"); //eis
 	cmd = dcmd(cmd,"hind"); //hindsight
 	cmd = dcmd(cmd,"dur"); //duration
