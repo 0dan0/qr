@@ -98,7 +98,7 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="p7" name="fps" value="p120"> <label for="p7">120 </label>&nbsp;&nbsp;
   <input type="radio" id="p8" name="fps" value="p200"> <label for="p8">200 </label>&nbsp;&nbsp;
   <input type="radio" id="p9" name="fps" value="p240"> <label for="p9">240 </label>&nbsp;&nbsp;
-  <input type="radio" id="p10" name="fps" value="" checked> <label for="p10">not set</label><br>
+  <input type="radio" id="p10" name="fps" value="" checked> <label for="p10">not set</label><br><br>
 </div>
 
 <div id="settingsFOV">
