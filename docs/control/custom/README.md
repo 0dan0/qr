@@ -23,7 +23,7 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="m2" name="mode" value="mVP"> <label for="m2">Performance<sup>10/11</sup></label>&nbsp;&nbsp;
   <input type="radio" id="m3" name="mode" value="mVE"> <label for="m3">Endurance<sup>10/11</sup></label>&nbsp;&nbsp;
   <input type="radio" id="m4" name="mode" value="mVS"> <label for="m4">Stationary<sup>10</sup></label><br>
-  **Presets** <sup>10/11</sup>: 
+  **Presets:** <sup>10/11</sup>
   <input type="radio" id="m5" name="mode" value="mV0"> <label for="m5">Standard</label>&nbsp;&nbsp;
   <input type="radio" id="m6" name="mode" value="mV1"> <label for="m6">Activity</label>&nbsp;&nbsp;
   <input type="radio" id="m7" name="mode" value="mV2"> <label for="m7">Cinematic</label>&nbsp;&nbsp;
@@ -33,7 +33,7 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="m10" name="mode" value="mTW"> <label for="m10">TimeWarp</label>&nbsp;&nbsp;
   <input type="radio" id="m11" name="mode" value="mT"> <label  for="m11">Timelapse</label>&nbsp;&nbsp;
   <input type="radio" id="m12" name="mode" value="mNL"> <label for="m12">Nightlapse</label><br>
-  **Compuational VideoTL-Modes:** 
+  **Compuational VideoTL-Modes:**
   <input type="radio" id="m13" name="mode" value="mST"> <label for="m13">Star Trails<sup>11</sup></label>&nbsp;&nbsp;
   <input type="radio" id="m14" name="mode" value="mLP"> <label for="m14">Light Painting<sup>11</sup></label>&nbsp;&nbsp;
   <input type="radio" id="m15" name="mode" value="mLT"> <label for="m15">Vechical Lights<sup>11</sup></label><br>
@@ -50,7 +50,7 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
 </div>
 
 <div id="settingsRES">
-<b>Video Resolution:</b>&nbsp;&nbsp;<input type="radio" id="r12" name="res" value="" checked> <label for="r12">not set</label><br>
+<b>Video Resolution:</b>&nbsp;&nbsp;
   <input type="radio" id="r1"  name="res" value="r1080"> <label for="r1">1080p </label>&nbsp;&nbsp;
   <input type="radio" id="r2"  name="res" value="r1440"> <label for="r2">1440p </label>&nbsp;&nbsp;
   <input type="radio" id="r3"  name="res" value="r27"  > <label for="r3">2.7k  </label>&nbsp;&nbsp;
@@ -61,7 +61,8 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="r8"  name="res" value="r4X"  > <label for="r8">4k 8:7<sup>11</sup> </label>&nbsp;&nbsp;
   <input type="radio" id="r9"  name="res" value="r5"   > <label for="r9">5k </label>
   <input type="radio" id="r10" name="res" value="r5T"  > <label for="r10">5k 4:3<sup>11</sup> </label>&nbsp;&nbsp;
-  <input type="radio" id="r11" name="res" value="r5X"  > <label for="r11">5k 8:7<sup>11</sup> </label><br><br>
+  <input type="radio" id="r11" name="res" value="r5X"  > <label for="r11">5k 8:7<sup>11</sup> </label>&nbsp;&nbsp;
+  <input type="radio" id="r12" name="res" value="" checked> <label for="r12">not set</label><br><br>
 </div>
 
 <div id="settingsRESTLV">
@@ -756,7 +757,7 @@ function startTime() {
 		dset("noteMODE", true);
 		break;		
 		
-		case 15 //Cars
+		case 15: //Cars
 		dset("settingsTimelapse", true);	
 		dset("settingsDuration", true);	
 		dset("settingsRESTLV", true);
@@ -764,7 +765,6 @@ function startTime() {
 		dset("settingsPT", true);
 		dset("noteMODE", true);
 		break;		
-		
 	
 		case 16: //Photo
 		dset("settingsPT", true);
