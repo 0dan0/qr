@@ -32,7 +32,8 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   **VideoTL-Modes:** 
   <input type="radio" id="m10" name="mode" value="mTW"> <label for="m10">TimeWarp</label>&nbsp;&nbsp;
   <input type="radio" id="m11" name="mode" value="mT"> <label  for="m11">Timelapse</label>&nbsp;&nbsp;
-  <input type="radio" id="m12" name="mode" value="mNL"> <label for="m12">Nightlapse</label>&nbsp;&nbsp;
+  <input type="radio" id="m12" name="mode" value="mNL"> <label for="m12">Nightlapse</label><br>
+  **Compuational VideoTL-Modes:** 
   <input type="radio" id="m13" name="mode" value="mST"> <label for="m13">Star Trails<sup>11</sup></label>&nbsp;&nbsp;
   <input type="radio" id="m14" name="mode" value="mLP"> <label for="m14">Light Painting<sup>11</sup></label>&nbsp;&nbsp;
   <input type="radio" id="m15" name="mode" value="mLT"> <label for="m15">Vechical Lights<sup>11</sup></label><br>
