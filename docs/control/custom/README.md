@@ -23,7 +23,7 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="m2" name="mode" value="mVP"> <label for="m2">Performance<sup>10/11</sup></label>&nbsp;&nbsp;
   <input type="radio" id="m3" name="mode" value="mVE"> <label for="m3">Endurance<sup>10/11</sup></label>&nbsp;&nbsp;
   <input type="radio" id="m4" name="mode" value="mVS"> <label for="m4">Stationary<sup>10</sup></label><br>
-  **Presets <sup>10</sup>:** 
+  **Presets** <sup>10/11</sup>: 
   <input type="radio" id="m5" name="mode" value="mV0"> <label for="m5">Standard</label>&nbsp;&nbsp;
   <input type="radio" id="m6" name="mode" value="mV1"> <label for="m6">Activity</label>&nbsp;&nbsp;
   <input type="radio" id="m7" name="mode" value="mV2"> <label for="m7">Cinematic</label>&nbsp;&nbsp;
@@ -32,14 +32,17 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   **VideoTL-Modes:** 
   <input type="radio" id="m10" name="mode" value="mTW"> <label for="m10">TimeWarp</label>&nbsp;&nbsp;
   <input type="radio" id="m11" name="mode" value="mT"> <label  for="m11">Timelapse</label>&nbsp;&nbsp;
-  <input type="radio" id="m12" name="mode" value="mNL"> <label for="m12">Nightlapse</label><br>
+  <input type="radio" id="m12" name="mode" value="mNL"> <label for="m12">Nightlapse</label>&nbsp;&nbsp;
+  <input type="radio" id="m13" name="mode" value="mST"> <label for="m13">Star Trails<sup>11</sup></label>&nbsp;&nbsp;
+  <input type="radio" id="m14" name="mode" value="mLP"> <label for="m14">Light Painting<sup>11</sup></label>&nbsp;&nbsp;
+  <input type="radio" id="m15" name="mode" value="mLT"> <label for="m15">Vechical Lights<sup>11</sup></label><br>
   **Photo-Modes:** 
-  <input type="radio" id="m13" name="mode" value="mP">  <label for="m13">Photo</label>&nbsp;&nbsp;
-  <input type="radio" id="m14" name="mode" value="mPB"> <label for="m14">Burst</label>&nbsp;&nbsp;
-  <input type="radio" id="m15" name="mode" value="mL">  <label for="m15">Live Burst</label>&nbsp;&nbsp;
-  <input type="radio" id="m16" name="mode" value="mPN"> <label for="m16">Night</label>&nbsp;&nbsp;
-  <input type="radio" id="m17" name="mode" value="mTP"> <label for="m17">Timelapse</label>&nbsp;&nbsp;
-  <input type="radio" id="m18" name="mode" value="mNP"> <label for="m18">Nightlapse</label><br>
+  <input type="radio" id="m16" name="mode" value="mP">  <label for="m16">Photo</label>&nbsp;&nbsp;
+  <input type="radio" id="m17" name="mode" value="mPB"> <label for="m17">Burst</label>&nbsp;&nbsp;
+  <input type="radio" id="m18" name="mode" value="mL">  <label for="m18">Live Burst</label>&nbsp;&nbsp;
+  <input type="radio" id="m19" name="mode" value="mPN"> <label for="m19">Night</label>&nbsp;&nbsp;
+  <input type="radio" id="m20" name="mode" value="mTP"> <label for="m20">Timelapse</label>&nbsp;&nbsp;
+  <input type="radio" id="m21" name="mode" value="mNP"> <label for="m21">Nightlapse</label><br>
 
 <div id="noteMODE" style="font-size:13px;">
 <b>Time/Night-Lapse modes:</b> The camera defaults to having presets for only one time-lapse mode and one night-lapse mode, yet both modes have two configurations (video or photo.) For all QR Code mode commands to work, a preset is needed for every mode you wish to use. e.g. If you only have a preset for night-lapse video (NLV), the QR command for NLV will work, but will not for night-lapse photo (NLP). To solve this, create a new preset for NLP, and both video and photo night-lapse commands will work.<br><br>
@@ -658,7 +661,7 @@ function startTime() {
 	var checkedmode = 0;
 	var x;
 	
-	for (i = 1; i < 19; i++) { 
+	for (i = 1; i < 22; i++) { 
 		var mode = "m"+i;
 		x = document.getElementById(mode).checked;
 		if( x === true)
@@ -732,33 +735,62 @@ function startTime() {
 		dset("settingsTLVFOV", true);
 		dset("noteMODE", true);
 		break;
+		
+		
+		case 13: //Stars
+		dset("settingsTimelapse", true);	
+		dset("settingsDuration", true);	
+		dset("settingsRESTLV", true);
+		dset("settingsTLVFOV", true);
+		dset("settingsPT", true);
+		dset("noteMODE", true);
+		break;	
+		
+		case 14: //Painting
+		dset("settingsTimelapse", true);	
+		dset("settingsDuration", true);	
+		dset("settingsRESTLV", true);
+		dset("settingsTLVFOV", true);
+		dset("settingsPT", true);
+		dset("noteMODE", true);
+		break;		
+		
+		case 15 //Cars
+		dset("settingsTimelapse", true);	
+		dset("settingsDuration", true);	
+		dset("settingsRESTLV", true);
+		dset("settingsTLVFOV", true);
+		dset("settingsPT", true);
+		dset("noteMODE", true);
+		break;		
+		
 	
-		case 13: //Photo
+		case 16: //Photo
 		dset("settingsPT", true);
 		dset("settingsPFOV", true);
 		dset("settingsPhotoRAW", true);
 		break;
 		
-		case 14: //Burst
+		case 17: //Burst
 		dset("settingsBurst", true);
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
 		dset("settingsPhotoRAW", true);
 		break;
 		
-		case 15: //Burst Live
+		case 18: //Burst Live
 		dset("settingsPT", true);
 		dset("settingsAUDT",true);
 		break;
 		
-		case 16: //Night
+		case 19: //Night
 		dset("settingsNightexposure", true);
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
 		dset("settingsPhotoRAW", true);
 		break;
 		
-		case 17: //TLP
+		case 20: //TLP
 		dset("settingsTimelapse", true);	
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
@@ -767,7 +799,7 @@ function startTime() {
 		dset("noteMODE", true);
 		break;
 		
-		case 18: //NLP
+		case 21: //NLP
 		dset("settingsNightlapse", true);	
 		dset("settingsNightexposure", true);	
 		dset("settingsPT", true);
