@@ -14,21 +14,21 @@
 </style>
 
 Create a custom camera mode, and even start a capture all through QR Codes. This is the fastest way to access many of the new GoPro Labs' firmware features. 
-**†** indicates the control requires HERO10 Labs 1.20 or better. Many features of this page are also available as a mobile app.<br>
+**<sup>10/11</sup>** indicates the control requires HERO10/11 Labs. Many features of this page are also available as a mobile app.<br>
 Install from: [![google play](../google-play-small.png)](https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
 [![apple app store](../apple-store-small.png)](https://apps.apple.com/us/app/gopro-app/id1518134202)
 
 <b>Camera Mode:</b>&nbsp;&nbsp;<input type="radio" id="m19" name="mode" value="" checked> <label for="m19">not set</label><br>
   <input type="radio" id="m1" name="mode" value="mV"> <label  for="m1">Video </label>&nbsp;&nbsp;
-  <input type="radio" id="m2" name="mode" value="mVP"> <label for="m2">Performance†</label>&nbsp;&nbsp;
-  <input type="radio" id="m3" name="mode" value="mVE"> <label for="m3">Endurance†</label>&nbsp;&nbsp;
-  <input type="radio" id="m4" name="mode" value="mVS"> <label for="m4">Stationary†</label><br>
-  **Presets †:** 
+  <input type="radio" id="m2" name="mode" value="mVP"> <label for="m2">Performance<sup>10/11</sup></label>&nbsp;&nbsp;
+  <input type="radio" id="m3" name="mode" value="mVE"> <label for="m3">Endurance<sup>10/11</sup></label>&nbsp;&nbsp;
+  <input type="radio" id="m4" name="mode" value="mVS"> <label for="m4">Stationary<sup>10</sup></label><br>
+  **Presets <sup>10</sup>:** 
   <input type="radio" id="m5" name="mode" value="mV0"> <label for="m5">Standard</label>&nbsp;&nbsp;
   <input type="radio" id="m6" name="mode" value="mV1"> <label for="m6">Activity</label>&nbsp;&nbsp;
   <input type="radio" id="m7" name="mode" value="mV2"> <label for="m7">Cinematic</label>&nbsp;&nbsp;
   <input type="radio" id="m8" name="mode" value="mV4"> <label for="m8">SloMo</label>&nbsp;&nbsp;
-  <input type="radio" id="m9" name="mode" value="mV5"> <label for="m9">Basic</label><br>
+  <input type="radio" id="m9" name="mode" value="mV3"> <label for="m9">Full Frame<sup>11</sup></label><br>
   **VideoTL-Modes:** 
   <input type="radio" id="m10" name="mode" value="mTW"> <label for="m10">TimeWarp</label>&nbsp;&nbsp;
   <input type="radio" id="m11" name="mode" value="mT"> <label  for="m11">Timelapse</label>&nbsp;&nbsp;
@@ -46,26 +46,30 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
 </div>
 
 <div id="settingsRES">
-<b>Video Resolution:</b>&nbsp;&nbsp;<input type="radio" id="r10" name="res" value="" checked> <label for="r10">not set</label><br>
+<b>Video Resolution:</b>&nbsp;&nbsp;<input type="radio" id="r12" name="res" value="" checked> <label for="r12">not set</label><br>
   <input type="radio" id="r1" name="res" value="r1080"> <label for="r1">1080p </label>&nbsp;&nbsp;
   <input type="radio" id="r2" name="res" value="r1440"> <label for="r2">1440p </label>&nbsp;&nbsp;
   <input type="radio" id="r3" name="res" value="r27"  > <label for="r3">2.7k  </label>&nbsp;&nbsp;
-  <input type="radio" id="r4" name="res" value="r27T" > <label for="r4">2.7k 4x3 </label>&nbsp;&nbsp;
+  <input type="radio" id="r4" name="res" value="r27T" > <label for="r4">2.7k 4:3 </label>&nbsp;&nbsp;
   <input type="radio" id="r5" name="res" value="r3"   > <label for="r5">3k 360°</label>&nbsp;&nbsp;
   <input type="radio" id="r6" name="res" value="r4"   > <label for="r6">4k </label>&nbsp;&nbsp;
-  <input type="radio" id="r7" name="res" value="r4T"  > <label for="r7">4k 4x3 </label>&nbsp;&nbsp;
-  <input type="radio" id="r8" name="res" value="r5"   > <label for="r8">5.3k </label>&nbsp;&nbsp;
-  <input type="radio" id="r9" name="res" value="r5T"  > <label for="r9">5k 4x3† </label><br><br>
+  <input type="radio" id="r7" name="res" value="r4T"  > <label for="r7">4k 4:3 </label>&nbsp;&nbsp;
+  <input type="radio" id="r8" name="res" value="r5"   > <label for="r8">5k </label>&nbsp;&nbsp;
+  <input type="radio" id="r9" name="res" value="r5T"  > <label for="r9">5k 4:3<sup>11</sup> </label><br>&nbsp;&nbsp;HERO11 only:&nbsp;&nbsp;
+  <input type="radio" id="r10" name="res" value="r4X"  > <label for="r10">4k 8:7<sup>11</sup> </label>&nbsp;&nbsp;
+  <input type="radio" id="r11" name="res" value="r5X"  > <label for="r11">5k 8:7<sup>11</sup> </label><br><br>
 </div>
 
 <div id="settingsRESTLV">
 <b>Video Resolution:</b>&nbsp;&nbsp;
   <input type="radio" id="rt1" name="restlv" value="r1080"> <label for="rt1">1080p </label>&nbsp;&nbsp;
   <input type="radio" id="rt2" name="restlv" value="r27" >  <label for="rt2">2.7k </label>&nbsp;&nbsp;
-  <input type="radio" id="rt3" name="restlv" value="r27T" > <label for="rt3">2.7k 4x3 </label>&nbsp;&nbsp;
+  <input type="radio" id="rt3" name="restlv" value="r27T" > <label for="rt3">2.7k 4:3 </label>&nbsp;&nbsp;
   <input type="radio" id="rt4" name="restlv" value="r4"   > <label for="rt4">4k </label>&nbsp;&nbsp;
-  <input type="radio" id="rt5" name="restlv" value="r4T"  > <label for="rt5">4k 4x3† </label>&nbsp;&nbsp;
-  <input type="radio" id="rt6" name="restlv" value="" checked> <label for="rt6">not set</label><br><br>
+  <input type="radio" id="rt5" name="restlv" value="r4T"  > <label for="rt5">4k 4:3<sup>10</sup> </label>&nbsp;&nbsp;
+  <input type="radio" id="rt6" name="restlv" value="r5"   > <label for="rt4">5k<sup>11</sup> </label>&nbsp;&nbsp;
+  <input type="radio" id="rt7" name="restlv" value="r5T"  > <label for="rt5">5k 4:3<sup>11</sup> </label>&nbsp;&nbsp;
+  <input type="radio" id="rt8" name="restlv" value="" checked> <label for="rt8">not set</label><br><br>
  </div>
  
 <div id="settingsFPS">
@@ -88,11 +92,12 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="f2" name="fov" value="fN"> <label for="f2">Narrow </label>&nbsp;&nbsp;
   <input type="radio" id="f3" name="fov" value="fL"> <label for="f3">Linear </label>&nbsp;&nbsp;
   <input type="radio" id="f4" name="fov" value="fS"> <label for="f4">Superview </label>&nbsp;&nbsp;
-  <input type="radio" id="f5" name="fov" value="fH"> <label for="f5">Linear+HL </label><br>
-  Max Lens Mod:  <input type="radio" id="f6" name="fov" value="oX1fW"> <label for="f6">Enable Wide </label>&nbsp;&nbsp;
-  <input type="radio" id="f7" name="fov" value="oX1fX"> <label for="f7">Enable Superview </label>&nbsp;&nbsp;
-  <input type="radio" id="f8" name="fov" value="oX0"> <label for="f8">Disable MLM</label>&nbsp;&nbsp;
-  <input type="radio" id="f9" name="fov" value="" checked> <label for="f9">not set</label><br><br>
+  <input type="radio" id="f5" name="fov" value="fH"> <label for="f5">Linear+HL </label>&nbsp;&nbsp;
+  <input type="radio" id="f6" name="fov" value="fV"> <label for="f6">Hyperview </label><br>
+  Max Lens Mod:  <input type="radio" id="f7" name="fov" value="oX1fW"> <label for="f7">Enable Wide </label>&nbsp;&nbsp;
+  <input type="radio" id="f8" name="fov" value="oX1fX"> <label for="f8">Enable Superview </label>&nbsp;&nbsp;
+  <input type="radio" id="f9" name="fov" value="oX0"> <label for="f9">Disable MLM</label>&nbsp;&nbsp;
+  <input type="radio" id="f10" name="fov" value="" checked> <label for="f10">not set</label><br><br>
  </div>
  
 <div id="settingsPFOV">
@@ -212,19 +217,20 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
 	<input type="radio" id="eis2" name="eis" value="e1"> <label for="eis2">On</label>&nbsp;&nbsp;&nbsp;
 	<input type="radio" id="eis3" name="eis" value="e2"> <label for="eis3">High</label>&nbsp;&nbsp;&nbsp;
 	<input type="radio" id="eis4" name="eis" value="e3"> <label for="eis4">Boost</label>&nbsp;&nbsp;&nbsp;
-	<input type="radio" id="eis5" name="eis" value="" checked> <label for="eis5">not set</label><br><br>
+	<input type="radio" id="eis5" name="eis" value="e4"> <label for="eis5">Auto<sup>11</sup></label>&nbsp;&nbsp;&nbsp;
+	<input type="radio" id="eis6" name="eis" value="" checked> <label for="eis6">not set</label><br><br>
 </div>
 
 <div id="settingsHindsight">
-<b>Hindsight (HERO9/10):</b>&nbsp;&nbsp;
+<b>Hindsight (HERO9/10/11):</b>&nbsp;&nbsp;
 	<input type="radio" id="hind1" name="hind" value="hS0"> <label for="hind1">Off</label>&nbsp;&nbsp;&nbsp;
 	<input type="radio" id="hind2" name="hind" value="hS1"> <label for="hind2">15s</label>&nbsp;&nbsp;&nbsp;
 	<input type="radio" id="hind3" name="hind" value="hS2"> <label for="hind3">30s</label>&nbsp;&nbsp;&nbsp;
 	<input type="radio" id="hind4" name="hind" value="" checked> <label for="hind4">not set</label><br><br>
 </div>
-					
+
 <div id="settingsDuration">
-<b>Duration (HERO9/10):</b>&nbsp;&nbsp;
+<b>Duration (HERO9/10/11):</b>&nbsp;&nbsp;
 	<input type="radio" id="dur1" name="dur" value="dR0"> <label for="dur1">Off</label>&nbsp;&nbsp;
 	<input type="radio" id="dur2" name="dur" value="dR15"> <label for="dur2">15s</label>&nbsp;&nbsp;
 	<input type="radio" id="dur3" name="dur" value="dR30"> <label for="dur3">30s</label>&nbsp;&nbsp;
@@ -288,7 +294,11 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
 <div id="ptBITRATE">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Bit rate:</b>&nbsp;&nbsp;
   <input type="radio" id="br1" name="br" value="b0"> <label for="br1">Standard</label>&nbsp;&nbsp;
   <input type="radio" id="br2" name="br" value="b1"> <label for="br2">High</label>&nbsp;&nbsp;
-  <input type="radio" id="br3" name="br" value="" checked> <label for="br3">not set</label>
+  <input type="radio" id="br3" name="br" value="" checked> <label for="br3">not set</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>Depth:</b>&nbsp;&nbsp;<input type="radio" id="dp1" name="dp" value="d0"> <label for="dp1">8-bit<sup>11</sup></label>&nbsp;&nbsp;
+  <input type="radio" id="dp2" name="dp" value="d1"> <label for="dp2">10-bit<sup>11</sup></label>&nbsp;&nbsp;
+  <input type="radio" id="dp3" name="dp" value="" checked> <label for="dp3">not set</label>
+  
 </div>
 <div id="ptWBAL">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>White Balance:</b>&nbsp;&nbsp;
   <input type="radio" id="wb1" name="wb" value="wA" checked> <label for="wb1">Auto </label>&nbsp;&nbsp;
@@ -538,14 +548,14 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
 <br>
 <button onclick="myReloadFunction()">Reset page</button>
 
-**Compatibility:** Labs enabled [HERO5 Session](../session5), HERO7, HERO8, HERO9, HERO10, MAX and Bones 
+**Compatibility:** Labs enabled [HERO5 Session](../session5), HERO7, HERO8, HERO9, HERO10, HERO11, MAX and Bones 
 
 **HERO10 Note:** LCD must be on for the QR Code scanning to be active.<br>
         
 [More features](..) for Labs enabled cameras
 
 ## version 1.56
-updated: Aug 25, 2022
+updated: Sep 14, 2022
 
 <script>
 var clipcopy = "";
