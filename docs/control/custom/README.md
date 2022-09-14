@@ -23,11 +23,11 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="m2" name="mode" value="mVP"> <label for="m2">Performance<sup>10/11</sup></label>&nbsp;&nbsp;
   <input type="radio" id="m3" name="mode" value="mVE"> <label for="m3">Endurance<sup>10/11</sup></label>&nbsp;&nbsp;
   <input type="radio" id="m4" name="mode" value="mVS"> <label for="m4">Stationary<sup>10</sup></label><br>
-  **Presets:** <sup>10/11</sup>
-  <input type="radio" id="m5" name="mode" value="mV0"> <label for="m5">Standard</label>&nbsp;&nbsp;
-  <input type="radio" id="m6" name="mode" value="mV1"> <label for="m6">Activity</label>&nbsp;&nbsp;
-  <input type="radio" id="m7" name="mode" value="mV2"> <label for="m7">Cinematic</label>&nbsp;&nbsp;
-  <input type="radio" id="m8" name="mode" value="mV4"> <label for="m8">SloMo</label>&nbsp;&nbsp;
+  **Presets:**
+  <input type="radio" id="m5" name="mode" value="mV0"> <label for="m5">Standard<sup>10/11</sup></label>&nbsp;&nbsp;
+  <input type="radio" id="m6" name="mode" value="mV1"> <label for="m6">Activity<sup>10/11</sup></label>&nbsp;&nbsp;
+  <input type="radio" id="m7" name="mode" value="mV2"> <label for="m7">Cinematic<sup>10/11</sup></label>&nbsp;&nbsp;
+  <input type="radio" id="m8" name="mode" value="mV4"> <label for="m8">SloMo<sup>10/11</sup></label>&nbsp;&nbsp;
   <input type="radio" id="m9" name="mode" value="mV3"> <label for="m9">Full Frame<sup>11</sup></label><br>
   **VideoTL-Modes:** 
   <input type="radio" id="m10" name="mode" value="mTW"> <label for="m10">TimeWarp</label>&nbsp;&nbsp;
