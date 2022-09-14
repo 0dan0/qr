@@ -77,6 +77,15 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="rt8" name="restlv" value="" checked> <label for="rt8">not set</label><br><br>
  </div>
  
+<div id="settingsCOMPTLV">
+<b>Video Resolution:</b>&nbsp;&nbsp;
+  <input type="radio" id="crt1" name="comptlv" value="r4"   > <label for="crt1">4k </label>&nbsp;&nbsp;
+  <input type="radio" id="crt2" name="comptlv" value="r4T"  > <label for="crt2">4k 4:3 </label>&nbsp;&nbsp;
+  <input type="radio" id="crt3" name="comptlv" value="r5"   > <label for="crt3">5k </label>&nbsp;&nbsp;
+  <input type="radio" id="crt4" name="comptlv" value="r5T"  > <label for="crt4">5k 4:3 </label>&nbsp;&nbsp;
+  <input type="radio" id="crt5" name="comptlv" value="" checked> <label for="crt5">not set</label><br><br>
+ </div>
+ 
 <div id="settingsFPS">
 <b>FPS Video:</b>&nbsp;&nbsp;<input type="radio" id="p10" name="fps" value="" checked> <label for="p10">not set</label><br>
   <input type="radio" id="p1" name="fps" value="p24">  <label for="p1">24 </label>&nbsp;&nbsp;
@@ -614,6 +623,7 @@ function startTime() {
 	dset("settingsTWFOV", false);
 	dset("settingsZoom", false);
 	dset("settingsRESTLV", false);
+	dset("settingsCOMPTLV", false);
 	dset("settingsVideo", false);
 	dset("settingsHindsight", false);
 	dset("settingsDuration", false);
@@ -742,28 +752,22 @@ function startTime() {
 		case 13: //Stars
 		dset("settingsTimelapse", true);	
 		dset("settingsDuration", true);	
-		dset("settingsRESTLV", true);
-		dset("settingsTLVFOV", true);
+		dset("settingsCOMPTLV", true);
 		dset("settingsPT", true);
-		dset("noteMODE", true);
 		break;	
 		
 		case 14: //Painting
 		dset("settingsTimelapse", true);	
 		dset("settingsDuration", true);	
-		dset("settingsRESTLV", true);
-		dset("settingsTLVFOV", true);
+		dset("settingsCOMPTLV", true);
 		dset("settingsPT", true);
-		dset("noteMODE", true);
 		break;		
 		
 		case 15: //Cars
 		dset("settingsTimelapse", true);	
 		dset("settingsDuration", true);	
-		dset("settingsRESTLV", true);
-		dset("settingsTLVFOV", true);
+		dset("settingsCOMPTLV", true);
 		dset("settingsPT", true);
-		dset("noteMODE", true);
 		break;		
 	
 		case 16: //Photo
@@ -922,30 +926,33 @@ function startTime() {
 			cmd = dcmd(cmd,"fpsnight");
 			cmd = dcmd(cmd,"nightexp");
 			break;
-		case 14: //Burst 
+		case 17: //Burst 
 			cmd = dcmd(cmd,"b");
 			break;	
-		case 15: //Live Burst 
+		case 18: //Live Burst 
 			break;	
-		case 16: //Night
+		case 19: //Night
 			cmd = dcmd(cmd,"nightexp");
 			break;
-		case 17: //TLP
+		case 20: //TLP
 			cmd = dcmd(cmd,"fpslapse");
 			break;
-		case 18: //NLP	
+		case 21: //NLP	
 			cmd = dcmd(cmd,"fpsnight");
 			cmd = dcmd(cmd,"nightexp");
 			break;
 	}
 	
-	if(checkedmode <= 12)
+	if(checkedmode <= 15)
 	{
 		if(checkedmode == 10 || checkedmode == 11 || checkedmode == 12) // TLV/TWarp Res/NLV
 		{
 			cmd = dcmd(cmd, "rt");
 		}
-		else
+		else if(checkedmode == 13 || checkedmode == 14 || checkedmode == 15) // COMP TLV
+		{
+			cmd = dcmd(cmd, "crt");
+		}
 		{
 			cmd = dcmd(cmd,"r"); //RES
 		}
@@ -976,7 +983,7 @@ function startTime() {
 				cmd = cmd + zoom; //fov
 			}
 		}
-		else if(checkedmode == 13) //Photo
+		else if(checkedmode == 16) //Photo
 		{
 			cmd = dcmd(cmd,"pf"); //fov		
 		
@@ -993,7 +1000,7 @@ function startTime() {
 				cmd = cmd + zoom; //fov
 			}
 		}
-		else if(checkedmode == 15) //Live Burst
+		else if(checkedmode == 17) //Live Burst
 		{
 			dset("settingsZoom", true);
 					
@@ -1045,7 +1052,7 @@ function startTime() {
 		}
 	}
 	
-	if(checkedmode >= 13 && checkedmode <= 18) //RAW Photo modes
+	if(checkedmode >= 16 && checkedmode <= 21) //RAW Photo modes
 		cmd = dcmd(cmd,"raw"); //raw photo control
 		
 	if(document.getElementById("sm") !== null)
