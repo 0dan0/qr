@@ -18,32 +18,33 @@ Create a custom camera mode, and even start a capture all through QR Codes. This
 Install from: [![google play](../google-play-small.png)](https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
 [![apple app store](../apple-store-small.png)](https://apps.apple.com/us/app/gopro-app/id1518134202)
 
-<b>Camera Mode:</b>&nbsp;&nbsp;<input type="radio" id="m22" name="mode" value="" checked> <label for="m22">not set</label>&nbsp;&nbsp;
+<b>Camera Mode:</b>&nbsp;&nbsp;
   <input type="radio" id="m1" name="mode" value="mV"> <label  for="m1">Video </label>&nbsp;&nbsp;
   <input type="radio" id="m2" name="mode" value="mVP"> <label for="m2">Performance<sup>10/11</sup></label>&nbsp;&nbsp;
   <input type="radio" id="m3" name="mode" value="mVE"> <label for="m3">Endurance<sup>10/11</sup></label>&nbsp;&nbsp;
   <input type="radio" id="m4" name="mode" value="mVS"> <label for="m4">Stationary<sup>10</sup></label><br>
-  **Presets:**
+  ** Presets:**
   <input type="radio" id="m5" name="mode" value="mV0"> <label for="m5">Standard<sup>10/11</sup></label>&nbsp;&nbsp;
   <input type="radio" id="m6" name="mode" value="mV1"> <label for="m6">Activity<sup>10/11</sup></label>&nbsp;&nbsp;
   <input type="radio" id="m7" name="mode" value="mV2"> <label for="m7">Cinematic<sup>10/11</sup></label>&nbsp;&nbsp;
   <input type="radio" id="m8" name="mode" value="mV4"> <label for="m8">SloMo<sup>10/11</sup></label>&nbsp;&nbsp;
   <input type="radio" id="m9" name="mode" value="mV3"> <label for="m9">Full Frame<sup>11</sup></label><br>
-  **VideoTL-Modes:** 
+  ** VideoTL-Modes:** 
   <input type="radio" id="m10" name="mode" value="mTW"> <label for="m10">TimeWarp</label>&nbsp;&nbsp;
   <input type="radio" id="m11" name="mode" value="mT"> <label  for="m11">Timelapse</label>&nbsp;&nbsp;
   <input type="radio" id="m12" name="mode" value="mNL"> <label for="m12">Nightlapse</label><br>
-  **Compuational VideoTL-Modes:**
+  ** Computational Modes:**
   <input type="radio" id="m13" name="mode" value="mST"> <label for="m13">Star Trails<sup>11</sup></label>&nbsp;&nbsp;
   <input type="radio" id="m14" name="mode" value="mLP"> <label for="m14">Light Painting<sup>11</sup></label>&nbsp;&nbsp;
   <input type="radio" id="m15" name="mode" value="mLT"> <label for="m15">Vechical Lights<sup>11</sup></label><br>
-  **Photo-Modes:** 
+  ** Photo-Modes:** 
   <input type="radio" id="m16" name="mode" value="mP">  <label for="m16">Photo</label>&nbsp;&nbsp;
   <input type="radio" id="m17" name="mode" value="mPB"> <label for="m17">Burst</label>&nbsp;&nbsp;
   <input type="radio" id="m18" name="mode" value="mL">  <label for="m18">Live Burst</label>&nbsp;&nbsp;
   <input type="radio" id="m19" name="mode" value="mPN"> <label for="m19">Night</label>&nbsp;&nbsp;
   <input type="radio" id="m20" name="mode" value="mTP"> <label for="m20">Timelapse</label>&nbsp;&nbsp;
-  <input type="radio" id="m21" name="mode" value="mNP"> <label for="m21">Nightlapse</label><br>
+  <input type="radio" id="m21" name="mode" value="mNP"> <label for="m21">Nightlapse</label>&nbsp;&nbsp;
+  <input type="radio" id="m22" name="mode" value="" checked> <label for="m22">not set</label>&nbsp;&nbsp;<br>
 
 <div id="noteMODE" style="font-size:13px;">
 <b>Time/Night-Lapse modes:</b> The camera defaults to having presets for only one time-lapse mode and one night-lapse mode, yet both modes have two configurations (video or photo.) For all QR Code mode commands to work, a preset is needed for every mode you wish to use. e.g. If you only have a preset for night-lapse video (NLV), the QR command for NLV will work, but will not for night-lapse photo (NLP). To solve this, create a new preset for NLP, and both video and photo night-lapse commands will work.<br><br>
@@ -87,7 +88,7 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
  </div>
  
 <div id="settingsFPS">
-<b>FPS Video:</b>&nbsp;&nbsp;<input type="radio" id="p10" name="fps" value="" checked> <label for="p10">not set</label><br>
+<b>FPS Video:</b>&nbsp;&nbsp;
   <input type="radio" id="p1" name="fps" value="p24">  <label for="p1">24 </label>&nbsp;&nbsp;
   <input type="radio" id="p2" name="fps" value="p25">  <label for="p2">25 </label>&nbsp;&nbsp;
   <input type="radio" id="p3" name="fps" value="p30">  <label for="p3">30 </label>&nbsp;&nbsp;
@@ -96,7 +97,8 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="p6" name="fps" value="p100"> <label for="p6">100 </label>&nbsp;&nbsp;
   <input type="radio" id="p7" name="fps" value="p120"> <label for="p7">120 </label>&nbsp;&nbsp;
   <input type="radio" id="p8" name="fps" value="p200"> <label for="p8">200 </label>&nbsp;&nbsp;
-  <input type="radio" id="p9" name="fps" value="p240"> <label for="p9">240 </label><br><br>
+  <input type="radio" id="p9" name="fps" value="p240"> <label for="p9">240 </label>&nbsp;&nbsp;
+  <input type="radio" id="p10" name="fps" value="" checked> <label for="p10">not set</label><br>
 </div>
 
 <div id="settingsFOV">
