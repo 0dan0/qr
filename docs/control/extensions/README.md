@@ -131,8 +131,8 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
 
 <br> 
 		
-### ver 1.21
-updated: Sept 14, 2022<br>
+### ver 1.22
+updated: Nov 8, 2022<br>
 
 [Learn more](..) on QR Control
 

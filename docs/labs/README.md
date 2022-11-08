@@ -20,57 +20,55 @@ GoPro QR code generator for basic [camera settings](https://gopro.github.io/labs
 
 ## Overview of Labs functionality and device compatibility: 
 
-| Feature                                               | HERO11/Mini  | HERO10/Bones  | HERO9 | HERO8 | HERO7 | MAX |
-|-------------------------------------------------------|---------|---------|-------|-------|-------|-----|
-| [24.0Hz capture vs 23.976](https://gopro.github.io/labs/control/extensions)        | Yes     | Yes     |       |       |       |     |
-| [Adobe-compatible proxies](https://gopro.github.io/labs/control/proxies)           | Yes     | Yes/No  |       |       |       |     |
-| [Altered File Naming](https://gopro.github.io/labs/control/basename)               | Yes     | Yes     | Yes   | Yes   | Yes   | Yes |
-| [Archive Mode](https://gopro.github.io/labs/control/archive) (locked settings)     | Yes     | Yes     | Yes   | Yes   | Yes   | Yes |
-| [Audio Channels Gain/Solo/Mute](https://gopro.github.io/labs/control/extensions)   | Yes     | Yes     | Yes   |       |       |     |
-| [Audio Disable](https://gopro.github.io/labs/control/extensions)                   | Yes     | Yes     | Yes   |       |       |     |
-| [Bitrate Controls](https://gopro.github.io/labs/control/extensions)                | Yes     | Yes     |       |       |       |     |
-| [Boot Command](https://gopro.github.io/labs/control/extensions)                    | Yes     | Yes     |       | Yes   |       |     |
-| [Exposure Display](https://gopro.github.io/labs/control/extensions)                | Yes     |         |       |       |       |     |
-| [Exposure Damping](https://gopro.github.io/labs/control/extensions) Control        | Yes     | Yes     |       |       |       |     |
-| [Extra Long time-lapse](https://gopro.github.io/labs/control/longtimelapse)        | Yes     | Yes     | Yes   | Yes   | Yes   | Yes |
-| [GPS time sync](https://gopro.github.io/labs/control/gpssync)                      | Yes/No  | Yes/No  | Yes   |       |       |     |
-| [HDMI display settings](https://gopro.github.io/labs/control/extensions)           | Yes/No  | Yes     | Yes   |       |       |     |
-| [Hindsight Timeout Extension](https://gopro.github.io/labs/control/extensions)     | Yes     | Yes     |       |       |       |     |
-| [Histogram](https://gopro.github.io/labs/control/extensions) (on LCD screen)       | Yes     | Yes     | Yes   | Yes   |       |     |
-| [Large Charpter](https://gopro.github.io/labs/control/chapters) Support (12GB)     | Standard| Yes     | Yes   | Yes   |       | Yes |
-| [Live Stream Initiation](https://gopro.github.io/labs/control/rtmp)                | Yes     | Yes     | Yes   | Yes   |       |     |
-| [LRV Disable](https://gopro.github.io/labs/control/extensions)                     | limited | limited |       |       |       |     |
-| [LTC Time support](https://gopro.github.io/labs/control/ltc) (via MediaMod)        | Yes/No  | Yes/No  | Yes   |       |       |     |
-| [Max Shutter Angle](https://gopro.github.io/labs/control/maxshut) exposure control | Yes     | Yes     | Yes   | Yes   | Yes   | Yes |
-| [Metadata Injections](https://gopro.github.io/labs/control/extensions)             | Yes     | Yes     | Yes   | Yes   | Yes   | Yes |
-| [Overlay - Burn-ins](https://gopro.github.io/labs/control/overlays) e.g. Time/Date | limited | limited | Yes   | Yes   |       |     |
-| [Overlay - Color Bar](https://gopro.github.io/labs/control/extensions)             | limited | limited | Yes   | Yes   |       |     |
-| [Overlays - Logo Burn-In](https://gopro.github.io/labs/control/logo)               | limited | limited | Yes   |       |       |     |
-| [Overlays - Luma Sweep](https://gopro.github.io/labs/control/extensions)           | limited | limited | Yes   | Yes   |       |     |
-| [Owner Information](https://gopro.github.io/labs/control/owner)                    | Yes     | Yes     | Yes   | Yes   | Yes   | Yes |
-| [QR decoding while recording](https://gopro.github.io/labs/control/extensions)     | Yes     | Yes     | Yes   | Yes   | Yes   | Yes |
-| [SD card speed test](https://gopro.github.io/labs/control/extensions)              | Yes     | Yes     | Yes   | Yes   |       |     |
-| [Sunrize/Sunset starts](https://gopro.github.io/labs/control/solartimelapse)       | Yes     | Yes/No  | Yes   | Yes   | Yes   | Yes |
-| [Time delayed Starts](https://gopro.github.io/labs/control/custom)                 | Yes     | Yes     | Yes   | Yes   | Yes   | Yes |
-| [Time/date/timecode QR Code](https://gopro.github.io/labs/control/precisiontime)   | Yes     | Yes     | Yes   | Yes   | Yes   | Yes |
-| [Tone Mapping Controls](https://gopro.github.io/labs/control/extensions)           | Yes     | Yes     |       |       |       |     |
-| [Trigger - Accelerometer](https://gopro.github.io/labs/control/imutrigger)         | Yes     | Yes     | Yes   | Yes   | Yes   | Yes |
-| [Trigger - GPS speed](https://gopro.github.io/labs/control/speedtrigger)           | Yes     | Yes/No  | Yes   | Yes   | Yes   | Yes |
-| [Trigger - Gyroscope](https://gopro.github.io/labs/control/imutrigger)             | Yes     | Yes     | Yes   | Yes   | Yes   | Yes |
-| [Trigger - IMU Motion](https://gopro.github.io/labs/control/imutrigger)            | Yes     | Yes     | Yes   | Yes   | Yes   | Yes |
-| [Trigger - Motion detection](https://gopro.github.io/labs/control/motion)          | Yes     | Yes     | Yes   | Yes   | Yes   | Yes |
-| [Trigger - Sound Pressure Level](https://gopro.github.io/labs/control/spltrigger)  | Yes     | Yes     | Yes   |       |       |     |
-| [Trigger - USB Power](https://gopro.github.io/labs/control/usb)                    | Yes/No  | Yes/No  | Yes   | Yes   |       | Yes |
-| [Upload scripting](https://gopro.github.io/labs/control/dailytl)                   | Yes     | Yes     | Yes   |       |       |     |
-| [USB power trust override](https://gopro.github.io/labs/control/extensions)        | Yes     | Yes/No  |       |       |       |     |
-| [Wake on Power](https://gopro.github.io/labs/control/extensions)                   | Yes     | Yes     |       | Yes   |       |     |
+| Feature                                                                            | HERO11/Mini | HERO10/Bones | HERO9 | HERO8 | HERO7 | MAX |
+|------------------------------------------------------------------------------------|-------------|--------------|-------|-------|-------|-----|
+| [24.0Hz capture vs 23.976](https://gopro.github.io/labs/control/extensions)                 | Yes     | Yes     |       |       |       |     |
+| [Adobe-compatible proxies](https://gopro.github.io/labs/control/proxies)                    | Yes     | Yes/No  |       |       |       |     |
+| [Altered File Naming](https://gopro.github.io/labs/control/basename)                        | Yes     | Yes     | Yes   | Yes   | Yes   | Yes |
+| [Archive Mode](https://gopro.github.io/labs/control/archive) (locked settings)              | Yes     | Yes     | Yes   | Yes   | Yes   | Yes |
+| [Audio Channels Gain/Solo/Mute](https://gopro.github.io/labs/control/extensions)            | Yes     | Yes     | Yes   |       |       |     |
+| [Audio Disable](https://gopro.github.io/labs/control/extensions)                            | Yes     | Yes     | Yes   |       |       |     |
+| [Bitrate Controls](https://gopro.github.io/labs/control/extensions)                         | Yes     | Yes     |       |       |       |     |
+| [Boot Command](https://gopro.github.io/labs/control/extensions)                             | Yes     | Yes     |       | Yes   |       |     |
+| [Exposure Display](https://gopro.github.io/labs/control/extensions) current ISO and shutter <span style="color:steelblue">**NEW**</span> | Yes     |         |       |       |       |     |
+| [Exposure Damping](https://gopro.github.io/labs/control/extensions) control                 | Yes     | Yes     |       |       |       |     |
+| [Exposure Curve](https://gopro.github.io/labs/control/extensions) custom log encoding <span style="color:steelblue">**NEW**</span>      | Yes     |         |       |       |       |     |
+| [Exposure Min/Max Times](https://gopro.github.io/labs/control/extensions)  <span style="color:steelblue">**NEW**</span>      | Yes     |         |       |       |       |     |
+| [Extra Long time-lapse](https://gopro.github.io/labs/control/longtimelapse)                 | Yes     | Yes     | Yes   | Yes   | Yes   | Yes |
+| [GPS time sync](https://gopro.github.io/labs/control/gpssync) <span style="color:steelblue">**ENHANCED**</span>                               | Yes/No  | Yes/No  | Yes   |       |       |     |
+| [Guidelines Display](https://gopro.github.io/labs/control/extensions) on rear LCD <span style="color:steelblue">**NEW**</span>          | Yes/No  |         |       |       |       |     |
+| [HDMI display settings](https://gopro.github.io/labs/control/extensions)                    | Yes/No  | Yes     | Yes   |       |       |     |
+| [Hindsight Timeout Extension](https://gopro.github.io/labs/control/extensions)              | Yes     | Yes     |       |       |       |     |
+| [Histogram](https://gopro.github.io/labs/control/extensions) (on display)                   | Yes     | Yes     | Yes   | Yes   |       |     |
+| [Histogram Position/Size](https://gopro.github.io/labs/control/extensions) (either screen) <span style="color:steelblue">**NEW**</span> | Yes/No  |         |       |       |       |     |
+| [Large Charpter](https://gopro.github.io/labs/control/chapters) Support (12GB)              | Standard| Yes     | Yes   | Yes   |       | Yes |
+| [Live Stream Initiation](https://gopro.github.io/labs/control/rtmp)                         | Yes     | Yes     | Yes   | Yes   |       |     |
+| [LRV Disable](https://gopro.github.io/labs/control/extensions)                              | limited | limited |       |       |       |     |
+| [LTC Time support](https://gopro.github.io/labs/control/ltc) (via MediaMod)                 | Yes/No  | Yes/No  | Yes   |       |       |     |
+| [Max Shutter Angle](https://gopro.github.io/labs/control/maxshut) exposure control          | Yes     | Yes     | Yes   | Yes   | Yes   | Yes |
+| [Metadata Injections](https://gopro.github.io/labs/control/extensions)                      | Yes     | Yes     | Yes   | Yes   | Yes   | Yes |
+| [Noise Reduction](https://gopro.github.io/labs/control/extensions) control <span style="color:steelblue">**NEW**</span>                 | Yes     |         |       |       |       |     |
+| [Overlay - Burn-ins](https://gopro.github.io/labs/control/overlays) e.g. Time/Date          | limited | limited | Yes   | Yes   |       |     |
+| [Overlay - Color Bar](https://gopro.github.io/labs/control/extensions)                      | limited | limited | Yes   | Yes   |       |     |
+| [Overlays - Logo Burn-In](https://gopro.github.io/labs/control/logo)                        | limited | limited | Yes   |       |       |     |
+| [Overlays - Luma Sweep](https://gopro.github.io/labs/control/extensions)                    | limited | limited | Yes   | Yes   |       |     |
+| [Owner Information](https://gopro.github.io/labs/control/owner)                             | Yes     | Yes     | Yes   | Yes   | Yes   | Yes |
+| [QR decoding while recording](https://gopro.github.io/labs/control/extensions)              | Yes     | Yes     | Yes   | Yes   | Yes   | Yes |
+| [SD card speed test](https://gopro.github.io/labs/control/extensions)                       | Yes     | Yes     | Yes   | Yes   |       |     |
+| [Spirit Level Display](https://gopro.github.io/labs/control/extensions) on rear LCD <span style="color:steelblue">**NEW**</span>        | Yes/No  |         |       |       |       |     |
+| [Sunrize/Sunset starts](https://gopro.github.io/labs/control/solartimelapse)                | Yes     | Yes/No  | Yes   | Yes   | Yes   | Yes |
+| [Time delayed Starts](https://gopro.github.io/labs/control/custom)                          | Yes     | Yes     | Yes   | Yes   | Yes   | Yes |
+| [Time/date/timecode QR Code](https://gopro.github.io/labs/control/precisiontime)            | Yes     | Yes     | Yes   | Yes   | Yes   | Yes |
+| [Tone Mapping Controls](https://gopro.github.io/labs/control/extensions)                    | Yes     | Yes     |       |       |       |     |
+| [Trigger - Accelerometer](https://gopro.github.io/labs/control/imutrigger)                  | Yes     | Yes     | Yes   | Yes   | Yes   | Yes |
+| [Trigger - GPS speed](https://gopro.github.io/labs/control/speedtrigger)                    | Yes     | Yes/No  | Yes   | Yes   | Yes   | Yes |
+| [Trigger - Gyroscope](https://gopro.github.io/labs/control/imutrigger)                      | Yes     | Yes     | Yes   | Yes   | Yes   | Yes |
+| [Trigger - IMU Motion](https://gopro.github.io/labs/control/imutrigger)                     | Yes     | Yes     | Yes   | Yes   | Yes   | Yes |
+| [Trigger - Motion detection](https://gopro.github.io/labs/control/motion)                   | Yes     | Yes     | Yes   | Yes   | Yes   | Yes |
+| [Trigger - Sound Pressure Level](https://gopro.github.io/labs/control/spltrigger)           | Yes     | Yes     | Yes   |       |       |     |
+| [Trigger - USB Power](https://gopro.github.io/labs/control/usb)                             | Yes/No  | Yes/No  | Yes   | Yes   |       | Yes |
+| [Upload scripting](https://gopro.github.io/labs/control/dailytl)                            | Yes     | Yes     | Yes   |       |       |     |
+| [USB power trust override](https://gopro.github.io/labs/control/extensions)                 | Yes     | Yes/No  |       |       |       |     |
+| [Wake on Power](https://gopro.github.io/labs/control/extensions)                            | Yes     | Yes     |       | Yes   |       |     |
 
 ## ver 1.03
-
-- Added oMEXPS=1 - exposure settings display
-- Added oMLOGB=base,[offset] - Logbase control for more flattened 10-bit  e.g. cFoMLOGB=1000
-- Added oMNR01=x - x is Noise Reduction level 1-100 (100 is normal)
-- Added oMGUID=aspect,aspect,... - on screen framing guides, up to 8, e.g. oMGUID=2.35,1.777
-- Added oMLEVL=size - on screen spirit level sizes 1-9. e.g. oMLEVL=3
-- Added oHSTP=x,y,s - histogram position and size (used with oMHIST=x), negative x position will render it to the front LCD.
-
