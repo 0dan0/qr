@@ -13,11 +13,31 @@
         }
 </style>
 
-After the release of the the first Labs firmware for HERO8, we heard the feedback and added features wherever possible. Some of the more major features got their own page, the rest are documented in this collection.
+After the release of the the first Labs firmware for HERO8, we heard the feedback and added features wherever possible. 
+Some of the more major features got their own page, the rest are documented in this collection.
 
-## Miscellaneous Metadata controls. 
 
-All metadata QR commands are written in the form oM**wxzy**=value(s) or !M**wxzy**=value(s) -- where the four character code (4CC) **wxzy** is under your control, along with the data it stores. The **!M** version will permanently store the metadata, and the **oM** will store it for only this power-on session. Metadata is available to flag your files for special uses, or just to label the [camera owner](./owner). Some particular 4CCs will also change camera behavior and/or enable features. Here is a list of additional metadata driven controls: 
+## Metadata Features
+
+These new features are stored in your camera's metadata, this metadata is helpful for detemining what may go wrong when your 
+use too many hacks at once.  The metadata from your captures can be [extracted with this page](../metadata).
+
+All metadata QR commands are written in the form oM**wxzy**=value(s) or !M**wxzy**=value(s) -- where the four character code (4CC) 
+**wxzy** is under your control, along with the data it stores. The **!M** version will permanently store the metadata, and the **oM** 
+will store it for only this power-on session. Metadata is available to flag your files for special uses, or just to label the [camera owner](./owner). 
+Some particular 4CCs will also change camera behavior and/or enable features. Here is a list of additional metadata driven controls: 
+
+
+### **HERO11 and Mini cameras** - Extensions in the latest Labs firmware (Nov '22)
+
+- **GUID=aspect,aspect,...** - Displays an on-scene shooting guide for difference aspect ratio, independent from the camera current video mode. Up to 8 guide supported at once. e.g. GUID=1.777 will enable a 16:9 guide. GUID=2.35,0.5625 will add guides for cinescope and tall 9:16.
+![GUID.jpg](GUID.jpg)
+- **GUIC=level,level,...** - The shooting guides default to white at 255, but you can select there luma level. e.g. GUIC=255,0, will be white for the first guide and black the for second.
+- **EXPS=1** - Display the current ISO and shutter speed being used during preview and capture. For 11-Mini EXPS=num, the number relates to how often the record time or shooting mode is display.
+![EXPS.jpg](EXPS.jpg)![EXPSmini.jpg](EXPSmini.jpg)
+
+
+### Miscellaneous controls for most Labs cammeras. 
 
 - **BOOT=!Lscript** - A command to run automatically at boot. For safety, this should only be a load script command, so that the command is dependent on the SD card presence. e.g. !MBOOT="!Lboot"  Then you can place whatever command you need in the boot script with !SAVEboot="your command here". See an example in [IMU Triggers for Drones](../imutrigger)
 	- An inventive use of oMBOOT="command", 'oM' commands do not survive power cycles, so this is not a "boot" command, but this style of command will run as a subroutine. 
