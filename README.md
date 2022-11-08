@@ -30,6 +30,7 @@ GoPro QR code generator for basic [camera settings](https://gopro.github.io/labs
 | [Audio Disable](https://gopro.github.io/labs/control/extensions)                   | Yes     | Yes     | Yes   |       |       |     |
 | [Bitrate Controls](https://gopro.github.io/labs/control/extensions)                | Yes     | Yes     |       |       |       |     |
 | [Boot Command](https://gopro.github.io/labs/control/extensions)                    | Yes     | Yes     |       | Yes   |       |     |
+| [Exposure Display](https://gopro.github.io/labs/control/extensions)                | Yes     |         |       |       |       |     |
 | [Exposure Damping](https://gopro.github.io/labs/control/extensions) Control        | Yes     | Yes     |       |       |       |     |
 | [Extra Long time-lapse](https://gopro.github.io/labs/control/longtimelapse)        | Yes     | Yes     | Yes   | Yes   | Yes   | Yes |
 | [GPS time sync](https://gopro.github.io/labs/control/gpssync)                      | Yes/No  | Yes/No  | Yes   |       |       |     |
@@ -66,4 +67,10 @@ GoPro QR code generator for basic [camera settings](https://gopro.github.io/labs
 
 ## ver 1.03
 
+- Added oMEXPS=1 - exposure settings display
+- Added oMLOGB=base,[offset] - Logbase control for more flattened 10-bit  e.g. cFoMLOGB=1000
+- Added oMNR01=x - x is Noise Reduction level 1-100 (100 is normal)
+- Added oMGUID=aspect,aspect,... - on screen framing guides, up to 8, e.g. oMGUID=2.35,1.777
+- Added oMLEVL=size - on screen spirit level sizes 1-9. e.g. oMLEVL=3
+- Added oHSTP=x,y,s - histogram position and size (used with oMHIST=x), negative x position will render it to the front LCD.
 
