@@ -13,20 +13,15 @@
         }
 </style>
 
-After the release of the the first Labs firmware for HERO8, we heard the feedback and added features wherever possible. 
-Some of the more major features got their own page, the rest are documented in this collection.
-
-
 ## Metadata Features
 
-These new features are stored in your camera's metadata, this metadata is helpful for detemining what may go wrong when your 
-use too many hacks at once.  The metadata from your captures can be [extracted with this page](../metadata).
+These new features are stored in your camera's metadata, this metadata is helpful for detemining what features are used per clip.
+The metadata, and the features it enables, can be [extracted with this page](../metadata).
 
 All metadata QR commands are written in the form oM**wxzy**=value(s) or !M**wxzy**=value(s) -- where the four character code (4CC) 
 **wxzy** is under your control, along with the data it stores. The **!M** version will permanently store the metadata, and the **oM** 
 will store it for only this power-on session. Metadata is available to flag your files for special uses, or just to label the [camera owner](./owner). 
 Some particular 4CCs will also change camera behavior and/or enable features. Here is a list of additional metadata driven controls: 
-
 
 ### **HERO11 and Mini cameras** - Extensions in the latest Labs firmware (Nov '22)
 
