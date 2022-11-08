@@ -34,10 +34,10 @@ Some particular 4CCs will also change camera behavior and/or enable features. He
 ![GUID.jpg](GUID.jpg)
 - **GUIC=level,level,...** - The shooting guides default to white at 255, but you can select there luma level. e.g. GUIC=255,0, will be white for the first guide and black the for second.
 - **EXPS=1** - Display the current ISO and shutter speed being used during preview and capture. For 11-Mini EXPS=num, the number relates to how often the record time or shooting mode is display.
-![EXPS.jpg](EXPS.jpg)![EXPSmini.jpg](EXPSmini.jpg)
+<br>![EXPS.jpg](EXPS.jpg) ![EXPSmini.jpg](EXPSmini.jpg)
 - **HSTP=x,z,size** - Used with HIST=1, this set the size (40-100) and position (x,y as 1-100) of the histogram. 
 A negative x-value will place the histograme on the front screen. e.g. oMHSTP=1,83,67 or oMHSTP=-3,55,87.
-![HSTPfront.jpg](HSTPfront.jpg)
+<br>![HSTPfront.jpg](HSTPfront.jpg)
 
 ### Miscellaneous controls for most Labs cammeras. 
 
