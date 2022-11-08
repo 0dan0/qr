@@ -25,16 +25,27 @@ Some particular 4CCs will also change camera behavior and/or enable features. He
 
 ### **HERO11 and Mini cameras** - Extensions in the latest Labs firmware (Nov '22)
 
-- **GUID=aspect,aspect,...** - Displays an on-scene shooting guide for difference aspect ratio, independent from the camera current video mode. Up to 8 guide supported at once. e.g. GUID=1.777 will enable a 16:9 guide. GUID=2.35,0.5625 will add guides for cinescope and tall 9:16.
+- **GUID=aspect,aspect,...** - Displays an on-scene shooting guide for different aspect ratios, independent from the camera's current video mode. 
+Up to 8 guides supported at once. e.g. GUID=1.777 will enable a 16:9 guide. GUID=2.35,0.5625 will add guides for Cinemascope and 9:16 social.
 <br>![GUID.jpg](GUID.jpg)
-- **GUIC=level,level,...** - The shooting guides default to white at 255, but you can select there luma level. e.g. GUIC=255,0, will be white for the first guide and black the for second.
-- **EXPS=1** - Display the current ISO and shutter speed being used during preview and capture. For 11-Mini EXPS=num, the number relates to how often the record time or shooting mode is display.
+- **GUIC=level,level,...** - The shooting guides default to white at 255, but you can select their luma level. e.g. GUIC=255,0, will be white for the first guide and black the for second.
+- **EXPS=1** - Display the current ISO and shutter speed being used during preview and capture. For 11-Mini EXPS=num, 
+the number relates to how often the record time or shooting mode is displayed.
 <br>![EXPS.jpg](EXPS.jpg) ![EXPSmini.jpg](EXPSmini.jpg)
 - **HSTP=x,z,size** - Used with HIST=1, this sets the size (40-100) and position (x,y as 1-100) of the histogram. 
 A negative x-value will place the histograme on the front screen. e.g. oMHSTP=1,83,67 or oMHSTP=-3,55,87.
 <br>![HSTPfront.jpg](HSTPfront.jpg)
-- **LEVL=size** - Add a spirit level to the read LCD, where the size can be 1-9. e.g. oMLEVL=6
+- **LEVL=size** - Add a spirit level to the rear LCD, where the size can be 1-9. e.g. oMLEVL=6
 <br>![LEVL.jpg](LEVL.jpg)
+- **LOGB=logbase,offset** - Super experimental, alter the log encoding for more dynamic range, or for a closer match with other camera's log curves. 
+i.e design your own flat profile. Ideal for use with 10-bit, and the existing flat color setting.  
+e.g. oMLOGB=400 for a little push in dynamic range or oMLOGB=200,-128 for a crude Fuji F-Log emulation.  
+Note: As the pixel size isn't changing, that increasing the logbase (flatness) may not significantly increase the dynamic range.
+<br>[Log curve designer](https://www.desmos.com/calculator/qwdbih1z5t)
+- **NR01=x** - Noise Reduction control, which should be combined with the LOGB control. When pushing the dynamic range of any camera, shadow details may be suppress by noise reduction. 
+Increasing the logbase will enhance the shadows, but will also reveal noise reduction artifacts tuned for a different encoding curve (the more consumer friendly Rec709.)  
+You can back-off the noise reduction to restore shadow details, with the downside being a noiser image (protentially requiring noise reduction in post.)  
+Also a noiser image will need a higher-bitrate to store the additional information (so BITR, NR01 and LOBG are all related.) 
 
 ### Miscellaneous controls for most Labs cammeras. 
 
