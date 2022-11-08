@@ -47,7 +47,7 @@ and as a mobile app:<br>
 * **HERO8-11/MAX/Bones** - Multi-camera users, label you media with [**Altered File Naming**](./basename)
 * **HERO9-11** - Timecode Support via [**LTC**](./ltc) over audio line-in using Media Mod 
 * **HERO10-11** - Support for Adobe Premiere Pro™ style [**Proxy Files**](./proxies) 
-* <span style="color:steelblue">**UPDATED**</span> Dozens more [**extensions**](./extensions) via QR Code
+* **ALL** - <span style="color:steelblue">**UPDATED**</span> Dozens more [**extensions**](./extensions) via QR Code
 
 ### Metadata Extraction
 * **All GPMF Enabled Cameras** - [**Read metadata**](./metadata) stored within headers of most GoPro media files.
