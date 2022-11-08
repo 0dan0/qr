@@ -31,7 +31,7 @@ Some particular 4CCs will also change camera behavior and/or enable features. He
 ### **HERO11 and Mini cameras** - Extensions in the latest Labs firmware (Nov '22)
 
 - **GUID=aspect,aspect,...** - Displays an on-scene shooting guide for difference aspect ratio, independent from the camera current video mode. Up to 8 guide supported at once. e.g. GUID=1.777 will enable a 16:9 guide. GUID=2.35,0.5625 will add guides for cinescope and tall 9:16.
-![GUID.jpg](GUID.jpg)
+<br>![GUID.jpg](GUID.jpg)
 - **GUIC=level,level,...** - The shooting guides default to white at 255, but you can select there luma level. e.g. GUIC=255,0, will be white for the first guide and black the for second.
 - **EXPS=1** - Display the current ISO and shutter speed being used during preview and capture. For 11-Mini EXPS=num, the number relates to how often the record time or shooting mode is display.
 <br>![EXPS.jpg](EXPS.jpg) ![EXPSmini.jpg](EXPSmini.jpg)
@@ -51,7 +51,7 @@ A negative x-value will place the histograme on the front screen. e.g. oMHSTP=1,
 	- e.g.   h6mP!S  ← this command will only run on cameras with IDs 2 and 3.
     - e.g.   h1mVh2mPB ← set camera 1 to mode Video and camera 2 to Photo Burst.
 - **HIST=x** - Displays a histogram with contrast from 1 to 11. e.g. try setting HIST to 5. HIST=0 will disable it.  On 11-Mini the number is a display duratrion.
-![HIST.jpg](HIST.jpg)![HISTmini.jpg](HISTmini.jpg)
+<br>![HIST.jpg](HIST.jpg) ![HISTmini.jpg](HISTmini.jpg)
 - **LAPS=1** turns on the burn-in laptime, a hackathon designed for live-streaming auto races. LAPS=0 will disable it. **HERO8/9 only**
 	- **BRNP=”xx”**  this the burnin position TL, TR, BL, BR (default) - T-Top L-Left B-Bottom R-Right, e.g. oMBRNP="TR"
 	- **LFIN=latt,long** GPS location for the Lap Line (finish line), used to compute the lap times. e.g. !MLFIN=36.586221,-121.756818 The finish line at Laguna Seca. You need a high degree of GPS precision for this to work correctly.
