@@ -72,3 +72,4 @@ GoPro QR code generator for basic [camera settings](https://gopro.github.io/labs
 | [Wake on Power](https://gopro.github.io/labs/control/extensions)                            | Yes     | Yes     |       | Yes   |       |     |
 
 ## ver 1.03
+updated: Nov 8, 2022<br>
