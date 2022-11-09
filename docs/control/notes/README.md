@@ -17,6 +17,7 @@ Only the more recent releases are documented below. This a general list of Labs 
 - Added !Dx wait for GPS lock with a DOP less than x, then sync time. For time only locks !D is fine. 
    If GPS is off it will be switch on temporarily for this command, then off again.
 - Added oMEXPS=1 - exposure settings display
+- Added oMEXPX=x and oMEXPN=n - exposure shutter speed mi(n) and ma(x). e.g. oMEXPX=48 (for 1/48) and oMEXPN=500 (for 1/500) 
 - Added oMLOGB=base,[offset] - Logbase control for more flattened 10-bit  e.g. cFoMLOGB=1000
 - Added oMNR01=x - x is Noise Reduction level 1-100 (100 is normal)
 - Added oMGUID=aspect,aspect,... - on screen framing guides, up to 8, e.g. oMGUID=2.35,1.777
