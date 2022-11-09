@@ -1,4 +1,4 @@
-# Extensions and Other Smaller Additions
+# Extensions and Other Additions
 
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>

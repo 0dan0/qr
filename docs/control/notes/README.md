@@ -5,13 +5,8 @@ Only the more recent releases are documented below. This a general list of Labs 
 
 ## HERO11 Black Mini
 
-### 1.20.70 - Nov 8, 2022
-- Added oTZx  e.g -7 or oTZ-420  -7 hour or -420 minutes timezone offset
-- Added oDT or oTD1 for daylight savings on or oDT0 for off
-- Added oMEXPS=1 - exposure settings display
-- Added oMLOGB=base,[offset] - Logbase control for more flattened 10-bit  e.g. cFoMLOGB=1000
-- Added oMNR01=x - x is Noise Reduction level 1-100 (100 is normal)
-
+### 1.10.70 - Nov 8, 2022
+- All the features and fixes of HERO11 Labs 1.20.70, minus on-screen and GPS features.
 
 ## HERO11 Black 
 
