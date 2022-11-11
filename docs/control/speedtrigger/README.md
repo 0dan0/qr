@@ -53,8 +53,8 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
 
 **Compatibility:** Labs enabled HERO7, HERO8, HERO9, HERO10, HERO11 and MAX 
         
-## ver 1.05
-updated: Sept 14, 2022
+## ver 1.07
+updated: Nov 11, 2022
 
 [More features](..) for Labs enabled cameras
 
