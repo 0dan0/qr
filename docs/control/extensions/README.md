@@ -42,7 +42,7 @@ A negative x-value will place the histograme on the front screen. e.g. oMHSTP=1,
 i.e design your own flat profile. Ideal for use with 10-bit, and the existing flat color setting.  
 e.g. oMLOGB=400 for a little push in dynamic range or oMLOGB=200,-128 for a crude Fuji F-Log emulation.  
 Note: As the pixel size isn't changing, that increasing the logbase (flatness) may not significantly increase the dynamic range.
-<br>[GoPro Log curve designer](https://www.desmos.com/calculator/qwdbih1z5t)
+<br>[GoPro Log curve designer](https://www.desmos.com/calculator/sfxqtunzty)
 <br>[Example scene with different curves parameters](LogBase.jpg)
 - **NR01=x** - Noise Reduction control, which should be combined with the LOGB control. e.g. oMNR01=50 range 1-100, 100 being 100% active (default), so 1 is the noisest. 
 When pushing the dynamic range of any camera, shadow details may be suppress by noise reduction. 
@@ -122,7 +122,7 @@ Also a noiser image will need a higher-bitrate to store the additional informati
 ### **HERO10/11 only** - Advanced features
 
 - **IWFR=1** <span style="color:steelblue">**NEW**</span> - Increased Write FRequency to support for higher precision file recoveries (this is also defaulted on with !MBITR=x bitrate changes). If you have ever had a big crash that ejects the battery, you may have noticed the file recovery will miss 5-15 seconds of your video. Missing even the lead up to the great moment. This hack increases the rate in which video data is flushed to the SD Card, improving the recoverability for footage. With this enabled, battery ejects will not lose more than 1-2 seconds of footage.  Great for FPV users. 
-- **PRXY=1** <span style="color:steelblue">**NEW**</span> - Store LRV files as Adobe Premiere Pro™ style proxy files. Normally a camera will encode and LRV (Low Res Video) for every MP4 using this standard directory structure:<br>
+- **PRXY=1** <span style="color:steelblue">**NEW**</span> - Store LRV files as Adobe Premiere Pro™ style proxy files. Normally a camera will encode a LRV (Low Res Video) for every MP4 using this standard directory structure:<br>
 &nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GX013784.MP4`<br>
 &nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GL013784.LRV`<br>
 &nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GX013785.MP4`<br>
