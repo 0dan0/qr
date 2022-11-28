@@ -115,7 +115,7 @@ Also a noiser image will need a higher-bitrate to store the additional informati
 HERO10 adds LTM - Local Tone-Mapping, enabling you to see details in leaves and grass textures, way better than all previous GoPro's. HERO9 and earlier, used GTM, Global 
 Tone-Mapping which adjusts the contrast curve for the image automatically. If you wanted to do these in post, you could use Protune Flat, where all in-camera tone-mapping is 
 disabled and a log curve is applied (do not use these control with Flat, can be weird results.) For a more developed Rec709 video, by shooting GoPro Color or Natural modes, 
-but you wanted to do your own tone-mapping in post--you can now do that.  Note: HERO11 is a tad odd with TONE=3, as it tend to under-expose. Always experiment before using.
+but you wanted to do your own tone-mapping in post--you can now do that.  Note: HERO11 is a tad odd with TONE=3, as it tends to under-expose. Always experiment before using an feature.
   - **TONE=0** - using the cameras default  
   - **TONE=1** - use GTM only
   - **TONE=2** - use GTM+LTM
