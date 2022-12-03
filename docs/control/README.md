@@ -70,7 +70,7 @@ An incomplete set of [**Release Notes**](./notes)
 Technical information on the [**Labs command language**](./tech)
 
 ## GoPro Labs
-[**Labs Top on GitHub**](https://github.com/gopro/labs)
+[**Labs start on GitHub**](https://gopro.github.io/labs).
 
 ### ver 1.32
 updated: Dec 3, 2022
