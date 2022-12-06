@@ -169,8 +169,8 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
 
 <br> 
 		
-### ver 1.23
-updated: Nov 28, 2022<br>
+### ver 1.24
+updated: Dec 6, 2022<br>
 
 [Learn more](..) on QR Control
 
