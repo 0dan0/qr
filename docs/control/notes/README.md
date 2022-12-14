@@ -14,11 +14,11 @@ Only the more recent releases are documented below. This a general list of Labs 
 - Added FRNT=1 display most LCD Labs message on the Front screen.
 - Added AUDS=1 display the approximate audio levels in dB SPL
 - Added oE1 thru oE5  - External microphone type selector, for MediaMod or the mic adaptor
-    1 - standard
-    2 - standard plus
-    3 - powered
-	4 - powered plus
-    5 - line_in
+   * 1 - standard
+   * 2 - standard plus
+   * 3 - powered
+   * 4 - powered plus
+   * 5 - line_in
 
 ### 1.20.70 - Nov 8, 2022
 - All the features and fixes of HERO11 Labs 1.10.70
