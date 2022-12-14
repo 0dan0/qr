@@ -6,10 +6,6 @@ Only the more recent releases are documented below. This a general list of Labs 
 ## HERO11 Black 
 
 ### 2.01.70 - Dec 14, 2022
-- Enhanced Faster Live-Stream start and reliability via QR code
-- Enhanced QR code decoder was improved
-- Enhanced !MPRXY=x  so that 1- moves LRVs, 2 - moves THMs, 3 moves both in the proxies folder.
-- Enhanced xV EV compensation can again support the range -6 to 6 (menus are still limited to -2 to 2)  e.g. -x3 or -x-4
 - Added EVBS=x for EV Comp Bias, global for all video modes that also works with Live-Stream and web-cam, and can be changed during capture if QRDR=1 is set.
 - Added FRNT=1 display most LCD Labs message on the Front screen.
 - Added AUDS=1 display the approximate audio levels in dB SPL
@@ -19,6 +15,10 @@ Only the more recent releases are documented below. This a general list of Labs 
    * 3 - powered
    * 4 - powered plus
    * 5 - line_in
+- Enhanced Faster Live-Stream start and reliability via QR code
+- Enhanced QR code decoder was improved
+- Enhanced !MPRXY=x  so that 1- moves LRVs, 2 - moves THMs, 3 moves both in the proxies folder.
+- Enhanced xV EV compensation can again support the range -6 to 6 (menus are still limited to -2 to 2)  e.g. -x3 or -x-4
 
 ### 1.20.70 - Nov 8, 2022
 - All the features and fixes of HERO11 Labs 1.10.70
