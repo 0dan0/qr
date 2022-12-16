@@ -1,8 +1,8 @@
 # GoPro Labs Software
 
-# GoPro FX Reframe (beta)
+## GoPro FX Reframe (beta)
 
-The current release version of the tools is posted [with our community pages](https://community.gopro.com/s/article/GoPro-FX-Reframe
+The current release version of the tools is posted [within our community pages](https://community.gopro.com/s/article/GoPro-FX-Reframe)
 
 FX Reframe is the ultimate GoPro image reframing tool, while it is marketed for it use with 360 cameras, it is just a useful reframe any GoPro source footage. 
 GoPro's own media team uses this filter of large percentage producted.
