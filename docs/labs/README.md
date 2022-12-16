@@ -2,7 +2,7 @@
 
 # Software 
 
-Labs is expanding, experiment software for GoPro users [GoPro Labs software](https://gopro.github.io/labs/software).
+Labs is expanding, experiment software for GoPro users [GoPro Labs software](software).
 
 # Firmware
 
