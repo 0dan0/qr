@@ -164,7 +164,7 @@ Option (‘o’) commands:
 - Language - **oL**x - **0** English USA, **01** English UK, **02** English Aus, **03** English India, **1** German, **2** French, **3** Italian, **4** Spanish, **5** Chinese, **6** Japanese, **7** Korean, **8** Portuaguese, **9** Russian, **91** Swedish
 - Rotation, Camera Orientation - **oR0** - Auto, **oR1** - Up, **oR2** - Down
 - Screen Auto Off - **oS** - Never, **oS1** - 1min ... **oS3** - 3min
-- Shortcut - **oSBL**x - Bottom Left, **oSBR**x - Bottom Right, **oSTL**x - Top Left, **oSTR**x - Top Right where x is **0** zoom, **1** fov, **2** slowmo, **3** low light, **4** white balance , **5** shutter , **6** bit rate, **7** burst rate, **8** clips , **9** color , **10** EV comp , **11** hypersmooth , **12** interval, **13** ISO min , **14** ISO max , **15** mics, **16** output, **17** raw audio , **18** sharpness , **19** timer , **20** timewarp speed, **21** format, **22** noise , **23** horizon control , **24** speed ramp, **25** scheduled capture, **26** hindsight , **27** 10-bit, **28** nightphoto, **29** trail length  (coming soon)
+- Shortcut Menu on LCD - **oSBL**x - Bottom Left, **oSBR**x - Bottom Right, **oSTL**x - Top Left, **oSTR**x - Top Right where x is in the list below.
 - Time and date - **oT**yymmddhhmmss.sss
 - Time, daylight savings - **oTD** or **oTD1** for daylight savings on or **oDT0** for off
 - Timezone (H11) - **oTZ-7** or **oTZ-420** e.g. -7 hour or -420 minutes timezone offset
@@ -183,6 +183,12 @@ GoPro HERO9/10/11 Front Screen option commands
  * **oF2** - turn off after 2 minutes
  * **oF3** - turn off after 3 minutes
  * **oF5** - turn off after 5 minutes
+ 
+ Shortcut Menu Types (to be used with oSBL, oSBR, oSTL and oSTR)  (coming soon)
+ * **0** zoom 
+ * **1** fov * **2** slowmo * **3** low light * **4** white balance  * **5** shutter  * **6** bit rate * **7** burst rate * **8** clips  * **9** color  * **10** EV comp  * **11** hypersmooth  * **12** interval * **13** ISO min  * **14** ISO max  * **15** mics * **16** output * **17** raw audio  * **18** sharpness  * **19** timer  * **20** timewarp speed * **21** format * **22** noise  * **23** horizon control  * **24** speed ramp * **25** scheduled capture * **26** hindsight  * **27** 10-bit * **28** nightphoto
+ * **29** trail length 
+
 
 HERO11 UX modes:
 - mE - mode Easy
