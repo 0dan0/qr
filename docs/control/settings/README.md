@@ -188,14 +188,13 @@ Shortcut Menu Types (to be used with oSA, oSB, oSC and oSD)  (coming soon)
 
 | Feature      | value  | Feature      | value  |Feature      | value  |Feature      | value  |
 |--------------|--------|--------------|--------|-------------|--------|-------------|--------|
-|clear shortcut|0|burst rate |8 |mics type     |16|horizon control  |24|
-|zoom          |1|clips      |9 |output        |17|speed ramp       |25|
+|clear shortcut|0|burst rate |8 |ISO max       |15|horizon control  |24|
+|zoom          |1|duration   |9 |mic type      |16|speed ramp       |25|
 |fov           |2|color      |10|raw audio     |18|scheduled capture|26|
 |slowmo        |3|EV comp    |11|sharpness     |19|hindsight        |27|
-|low light     |4|hypersmooth|12|timer         |20|10-bit           |28|
-|white balance |5|interval   |13|timewarp speed|21|nightphoto       |29|
-|shutter       |6|ISO min    |14|format        |22|trail length     |30|
-|bit rate      |7|ISO max    |15|noise         |23|                 |  |
+|white balance |5|hypersmooth|12|timer         |20|10-bit           |28|
+|shutter       |6|interval   |13|timewarp speed|21|nightphoto       |29|
+|bit rate      |7|ISO min    |14|wind noise    |23|trail length     |30|
 
 
 HERO11 UX modes:
