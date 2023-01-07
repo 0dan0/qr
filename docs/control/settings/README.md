@@ -184,13 +184,18 @@ GoPro HERO9/10/11 Front Screen option commands
  * **oF3** - turn off after 3 minutes
  * **oF5** - turn off after 5 minutes
  
- Shortcut Menu Types (to be used with oSA, oSB, oSC and oSD)  (coming soon)
- * **0** clear shortcut 
- * **1** zoom 
- * **2** fov * **3** slowmo * **4** low light * **5** white balance  * **6** shutter  * **7** bit rate * **8** burst rate * **9** clips  * **10** color  * **11** EV comp  * **12** hypersmooth  * **13** interval * **14** ISO min  * **15** ISO max  * **16** mics * **17** output * **18** raw audio  * **19** sharpness  * **20** timer  * **21** timewarp speed * **22** format * **23** noise  * **24** horizon control  * **25** speed ramp * **26** scheduled capture * **27** hindsight  * **28** 10-bit * **29** nightphoto
- * **30** trail length 
- 
- 
+Shortcut Menu Types (to be used with oSA, oSB, oSC and oSD)  (coming soon)
+
+| Feature      | value  | Feature      | value  |Feature      | value  |Feature      | value  |
+|--------------|--------|--------------|--------|-------------|--------|-------------|--------|
+|clear shortcut|0|burst rate |8 |mics type     |16|horizon control  |24|
+|zoom          |1|clips      |9 |output        |17|speed ramp       |25|
+|fov           |2|color      |10|raw audio     |18|scheduled capture|26|
+|slowmo        |3|EV comp    |11|sharpness     |19|hindsight        |27|
+|low light     |4|hypersmooth|12|timer         |20|10-bit           |28|
+|white balance |5|interval   |13|timewarp speed|21|nightphoto       |29|
+|shutter       |6|ISO min    |14|format        |22|trail length     |30|
+|bit rate      |7|ISO max    |15|noise         |23|                 |  |
 
 
 HERO11 UX modes:
