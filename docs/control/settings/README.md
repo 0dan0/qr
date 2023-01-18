@@ -156,7 +156,7 @@ Feature with off and on commands:
 
 Option (‘o’) commands:
 - Brightness of the LCDs - **oB0** … **oB9** - (100%)
-- Camera Auto Off - **oC** - Never, **oC5** - 5min ... **oC30** - 30min
+- Camera Auto Off - **oC** - Never, **oC0** - default, **oC1** - 1min, **oC5** - 5min, **oC15** - 15min, **oC30** - 30min
 - LCDs off now - **oDO**
 - LED control - **oD** - all off, **oD2** - some on, **oD4** - all on
 - Extern Audio options - **oE1** - Standard Mic, **oE2** - Standard+ Mic, **oE3** - Powered Mic, **oE4** - Powered+ Mic, **oE5** - Line In (HERO10/11 only)
@@ -208,7 +208,7 @@ HERO11 UX modes:
 Custom Mode: <input type="text" id="tryit" value=""><br>
 
 
-updated: Jan 17, 2022
+updated: Jan 18, 2022
 
 [Learn more](..) on QR Control
 
