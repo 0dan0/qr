@@ -198,8 +198,8 @@ Shortcut Menu Types (to be used with oSA, oSB, oSC and oSD)  (coming soon)
 
 
 HERO11 UX modes:
-- mE - mode Easy
-- mPR - mode Pro
+- **mE** - mode Easy
+- **mPR** - mode Pro
 
 # Experiment Here
 ## Typing-in Your Custom Mode:
@@ -208,7 +208,7 @@ HERO11 UX modes:
 Custom Mode: <input type="text" id="tryit" value=""><br>
 
 
-updated: Jan 6, 2022
+updated: Jan 17, 2022
 
 [Learn more](..) on QR Control
 
