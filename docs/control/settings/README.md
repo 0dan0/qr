@@ -208,7 +208,7 @@ HERO11 UX modes:
 Custom Mode: <input type="text" id="tryit" value=""><br>
 
 
-updated: Jan 18, 2022
+updated: Jan 18, 2023
 
 [Learn more](..) on QR Control
 
