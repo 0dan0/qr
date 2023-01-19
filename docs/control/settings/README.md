@@ -24,8 +24,8 @@ Mode commands:
  * **mTW** - mode TimeWarp
  * **mPB** - mode Photo Burst 
  * **mPN** - mode Photo Night
- * **mNL** - mode Night-Lapse Video (\*)
- * **mNP** - mode Night-Lapse Photo (\*)
+ * **mNL** - mode Night-Lapse Video (\*\*)
+ * **mNP** - mode Night-Lapse Photo (\*\*)
  * **mL** - mode Live-Burst Photo (HERO10 only)
  * **mST** - mode Star Trails (HERO11 only)
  * **mLP** - mode Light Painting (HERO11 only)
