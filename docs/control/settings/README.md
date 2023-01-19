@@ -26,7 +26,7 @@ Mode commands:
  * **mPN** - mode Photo Night
  * **mNL** - mode Night-Lapse Video (\*)
  * **mNP** - mode Night-Lapse Photo (\*)
- * **mL** - mode Live-Burst Photo (HERO10/11 only)
+ * **mL** - mode Live-Burst Photo (HERO10 only)
  * **mST** - mode Star Trails (HERO11 only)
  * **mLP** - mode Light Painting (HERO11 only)
  * **mLT** - mode Vechical Lights (HERO11 only)
@@ -226,7 +226,7 @@ HERO11 UX modes:
 Custom Mode: <input type="text" id="tryit" value=""><br>
 
 
-updated: Jan 18, 2023
+updated: Jan 19, 2023
 
 [Learn more](..) on QR Control
 
