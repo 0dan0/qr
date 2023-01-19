@@ -41,8 +41,8 @@ Defaults modes (on power up):
  * **dT** - last used Timelapse mode
   
 Resolutions: 
- * **r1080** - 1920x1080
- * **r1440** - 1920x1440
+ * **r1080** or **r1** or **r10** - 1920x1080
+ * **r1440** or **r1T** or **r14** - 1920x1440
  * **r27** - for 2.7K 16x9
  * **r27T** - for 2.7K Tall the 4x3 mode
  * **r3** - 3K 360° for GoPro MAX
