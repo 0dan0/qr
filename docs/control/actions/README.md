@@ -91,11 +91,30 @@ The geek factor is highest in this section.  This is not a Turing-complete langu
 * **!SAVEname=script**  e.g. !SAVEdaily=dPmP!12:00S!Ldaily - a save script called ‘daily’ that repeatedly shots one photo every day at noon. 
 * **!Lname**  e.g. !LnightLapse - load add run a script called nightLapse
 * **oAxxxx=1** e.g. oAMETA=1  --  to implement a basic counter in metadata
+* **"any text"** e.g. mV"Video Mode"!S!5E!4NmP"Photo Mode"!S!5R - this will display "Video Mode" and "Photo Mode" when switch to those modes.  
+
+### Conditional Based on Time
+
 * **\<**time**CMD**  e.g. \<09:00!30R!Lother - if current time is less than 9am, wait 30mins and loop, otherwise load script called ‘other’.
 * **\>**time**CMD** e.g. !SM9\>22:00!R - do motion detection until 10PM, then stop
 * **\>**timeA**\<**timeB**cmdTrue~cmdFalse** e.g. mP>06:00<20:00!180SQ~!06:00S!R - If time is between 06:00 and 20:00 take a photo in 180 seconds else start a 6am, repeat.
 * **\>**timeA**\<**timeB**cmdTrue+cmdTrue~cmdFalse+cmdFalse** e.g. mP>06:00<20:00"wait 3m"+!180SQ~"wait tomorrow"+!06:00S!R - The '+' characters allow you to extend the conditional command, like changing mode before the action.
-* **"any text"** e.g. mV"Video Mode"!S!5E!4NmP"Photo Mode"!S!5R - this will display "Video Mode" and "Photo Mode" when switch to those modes.  
+
+### Conditionals Base on Camera Status
+
+Added new conditional commands. Now \>x and/or \<x can be used to test camera states, where 'x' is the camera state to test:
+
+* u USB power - **\>u**CMD1~CMD2 if(power is on USB) then CMD1 else CMD2 e.g. \>u"Power On"~"Power Off"
+* r recording - **\>r**CMD1~CMD2 if(Recording) then CMD1 else CMD2 
+* a accelerationValue - **\>aValue**CMD if(acceleration greater than Valye) then CMD e.g. \>a100!S, numbers are in milli-gs (1000 is 1 unit of gravity.)
+* d GPS DOP - **\<dValue**CMD - if(DOP less than Value) then CMD ...
+* e random - **\<eValue**CMD \<e50 - 50% true \<e90 - 90% true.
+* g gyroValue - **\>gValue**CMD if(gryo greater than Value) CMD e.g. >g15!S, numbers are in degrees per second.
+* k speedValue - **\>kValue**CMD if(gps Speed greater than Value) CMD e.g. >k45!S, numbers are in km/h.
+* p soundpressureValue - **\>pValue**CMD if(spl greater than Value) CMD, numbers are in dB
+* i isoValue - **\>iValue** - testing ISO where ISO ranges from 100 to 6400
+* s shutterValue - **\>sValue** - testing shutter, where 1/Value is used for shutter speed
+
 
 # Experiment Here
 
