@@ -100,7 +100,7 @@ The geek factor is highest in this section.  This is not a Turing-complete langu
 * **\>**timeA**\<**timeB**cmdTrue~cmdFalse** e.g. mP>06:00<20:00!180SQ~!06:00S!R - If time is between 06:00 and 20:00 take a photo in 180 seconds else start a 6am, repeat.
 * **\>**timeA**\<**timeB**cmdTrue+cmdTrue~cmdFalse+cmdFalse** e.g. mP>06:00<20:00"wait 3m"+!180SQ~"wait tomorrow"+!06:00S!R - The '+' characters allow you to extend the conditional command, like changing mode before the action.
 
-### Conditionals Base on Camera Status
+### Conditionals Based on Camera Status
 
 Added new conditional commands. Now \>x and/or \<x can be used to test camera states, where 'x' is the camera state to test:
 
