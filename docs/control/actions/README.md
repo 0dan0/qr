@@ -125,7 +125,7 @@ Added new conditional commands. Now \>x and/or \<x can be used to test camera st
 Custom Mode: <input type="text" id="tryit" value=""><br>
 
 
-## ver 1.01 - 2022 Nov 8  
+## updated 2023 Jan 21 
 [BACK](..)
 
 
