@@ -104,16 +104,16 @@ The geek factor is highest in this section.  This is not a Turing-complete langu
 
 Added new conditional commands. Now \>x and/or \<x can be used to test camera states, where 'x' is the camera state to test:
 
-* u USB power - **\>u**CMD1~CMD2 if(power is on USB) then CMD1 else CMD2 e.g. \>u"Power On"~"Power Off"
-* r recording - **\>r**CMD1~CMD2 if(Recording) then CMD1 else CMD2 
-* a accelerationValue - **\>aValue**CMD if(acceleration greater than Valye) then CMD e.g. \>a100!S, numbers are in milli-gs (1000 is 1 unit of gravity.)
-* d GPS DOP - **\<dValue**CMD - if(DOP less than Value) then CMD ...
-* e random - **\<eValue**CMD \<e50 - 50% true \<e90 - 90% true.
-* g gyroValue - **\>gValue**CMD if(gryo greater than Value) CMD e.g. >g15!S, numbers are in degrees per second.
-* k speedValue - **\>kValue**CMD if(gps Speed greater than Value) CMD e.g. >k45!S, numbers are in km/h.
-* p soundpressureValue - **\>pValue**CMD if(spl greater than Value) CMD, numbers are in dB
-* i isoValue - **\>iValue** - testing ISO where ISO ranges from 100 to 6400
-* s shutterValue - **\>sValue** - testing shutter, where 1/Value is used for shutter speed
+* **u** USB power - **\>u**CMD1~CMD2 if(power is on USB) then CMD1 else CMD2
+* **r** recording - **\>r**CMD1~CMD2 if(Recording) then CMD1 else CMD2 
+* **a** accelerationValue - **\>aValue**CMD if(acceleration \> Valie) then CMD, units in milli-Gs
+* **d** GPS DOP - **\<dValue**CMD - if(DOP \< Value) then CMD ...
+* **e** random - **\<eValue**CMD \<e50 - 50% true \<e90 - 90% true.
+* **g** gyroValue - **\>gValue**CMD if(gryo \> Value) CMD, numbers are in degrees per second.
+* **k** speedValue - **\>kValue**CMD if(gps Speed \> Value) CMD e.g. >k45!S, numbers are in km/h.
+* **p** soundpressureValue - **\>pValue**CMD if(spl \> Value) CMD, numbers are in dB
+* **i** isoValue - **\>iValue** - testing ISO where ISO ranges from 100 to 6400
+* **s** shutterValue - **\>sValue** - testing shutter, where 1/Value is used for shutter speed
 
 
 # Experiment Here
