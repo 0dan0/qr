@@ -112,8 +112,8 @@ Added new conditional commands. Now \>x and/or \<x can be used to test camera st
 * **g** gyroValue - **\>gValue**CMD if(gryo \> Value) CMD, numbers are in degrees per second.
 * **k** speedValue - **\>kValue**CMD if(gps Speed \> Value) CMD e.g. >k45!S, numbers are in km/h.
 * **p** soundpressureValue - **\>pValue**CMD if(spl \> Value) CMD, numbers are in dB
-* **i** isoValue - **\>iValue** - testing ISO where ISO ranges from 100 to 6400
-* **s** shutterValue - **\>sValue** - testing shutter, where 1/Value is used for shutter speed
+* **i** isoValue - **\>iValue**CMD - testing ISO where ISO ranges from 100 to 6400
+* **s** shutterValue - **\>sValue**CMD - testing shutter, where 1/Value is used for shutter speed
 
 
 # Experiment Here
