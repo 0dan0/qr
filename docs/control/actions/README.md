@@ -26,7 +26,7 @@
 * **!**time**OR** - shutdown and restart the camera.
 * **!**time**U** - Attempt a network contention and Upload <sup>9/10/11</sup>.
 * **!**time**W** - Connect to a network, requires JOIN metadata to have been previous stored <sup>9/10/11</sup>.
-* **!**time**G(S or M or L)(C)** - Start Live-streaming, **S** - 480p, **M** - 720p, **L** - 1080p, optional **C** for capture a local fine, requires a previously successful **!W** command <sup>8/9/10/11</sup>
+* **!**time**G(S or M or L)(C)** - Start Live-streaming, **S** - 480p, **M** - 720p, **L** - 1080p, optional **C** for capture a local file, requires a previously successful **!W** command <sup>8/9/10/11</sup>
 * **!**time**Dx** - (H11) !Dx wait for GPS lock with a DOP less than x, then sync time. For time only locks !D is fine. 
 
 ## Capture Triggers
@@ -102,7 +102,7 @@ The geek factor is highest in this section.  This is not a Turing-complete langu
 
 ### Conditionals Based on Camera Status
 
-Added new conditional commands. Now \>x and/or \<x can be used to test camera states, where 'x' is the camera state to test:
+Coming soon (HERO11), new conditional commands. Now \>x and/or \<x can be used to test camera states, where 'x' is the camera state to test:
 
 * **u** USB power - **\>u**CMD1~CMD2 if(power is on USB) then CMD1 else CMD2
 * **r** recording - **\>r**CMD1~CMD2 if(Recording) then CMD1 else CMD2 
