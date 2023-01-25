@@ -104,16 +104,19 @@ The geek factor is highest in this section.  This is not a Turing-complete langu
 
 Coming soon (HERO11), new conditional commands. Now \>x and/or \<x can be used to test camera states, where 'x' is the camera state to test:
 
-* **u** USB power - **\>u**CMD1~CMD2 if(power is on USB) then CMD1 else CMD2
-* **r** recording - **\>r**CMD1~CMD2 if(Recording) then CMD1 else CMD2 
-* **a** accelerationValue - **\>aValue**CMD if(acceleration \> Valie) then CMD, units in milli-Gs
-* **d** GPS DOP - **\<dValue**CMD - if(DOP \< Value) then CMD ...
+* **a** accelerationValue - **\>aValue**CMD if(acceleration \> Value) then CMD, units in milli-Gs
+* **b** batteryLevel - **\>bValue**CMD if(battery \> Value) then CMD, units in percentage
+* **c** CoordDistance - **\>cDist**CMD or **\>cX,Dist**CMD if(distance \> Value) then CMD, units in meters. There are up to 10 pre-stored GPS locations oMFRM0=latt,long thru oMFRM9.  If nothing in FRMx, initialize with current location.
+* **d** GPS DOP - **\<dValue**CMD - if(DOP \< Value) then CMD, units in 100x DOP. GPS location precision.
 * **e** random - **\<eValue**CMD \<e50 - 50% true \<e90 - 90% true.
 * **g** gyroValue - **\>gValue**CMD if(gryo \> Value) CMD, numbers are in degrees per second.
+* **h** heightValue - **\>hValue**CMD if(height \> Value) CMD, numbers are in meters above sealevel.
 * **k** speedValue - **\>kValue**CMD if(gps Speed \> Value) CMD e.g. >k45!S, numbers are in km/h.
 * **p** soundpressureValue - **\>pValue**CMD if(spl \> Value) CMD, numbers are in dB
 * **i** isoValue - **\>iValue**CMD - testing ISO where ISO ranges from 100 to 6400
+* **r** recording - **\>r**CMD1~CMD2 if(Recording) then CMD1 else CMD2 
 * **s** shutterValue - **\>sValue**CMD - testing shutter, where 1/Value is used for shutter speed
+* **u** USB power - **\>u**CMD1~CMD2 if(power is on USB) then CMD1 else CMD2
 
 
 # Experiment Here
@@ -125,7 +128,7 @@ Coming soon (HERO11), new conditional commands. Now \>x and/or \<x can be used t
 Custom Mode: <input type="text" id="tryit" value=""><br>
 
 
-## updated 2023 Jan 21 
+## updated 2023 Jan 25 
 [BACK](..)
 
 
