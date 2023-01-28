@@ -106,7 +106,7 @@ Coming soon (HERO11), new conditional commands. Now \>x and/or \<x can be used t
 
 * **a** accelerationValue - **\>aValue**CMD if(acceleration \> Value) then CMD, units in milli-Gs
 * **b** batteryLevel - **\>bValue**CMD if(battery \> Value) then CMD, units in percentage
-* **c** CoordDistance - **\>cDist**CMD or **\>cX,Dist**CMD if(distance \> Value) then CMD, units in meters. There are up to 10 pre-stored GPS locations oMFRM0=latt,long thru oMFRM9.  If nothing in FRMx, initialize with current location.
+* **c** CoordDistance - **\>cDist**CMD or **\>cXDist**CMD if(distance \> Value) then CMD, units in meters. There are up to 27 pre-stored GPS locations oMFRMA=latt,long thru oMFRMZ.  If nothing in FRMx, initialize with current location.
 * **d** GPS DOP - **\<dValue**CMD - if(DOP \< Value) then CMD, units in 100x DOP. GPS location precision.
 * **e** random - **\<eValue**CMD \<e50 - 50% true \<e90 - 90% true.
 * **g** gyroValue - **\>gValue**CMD if(gryo \> Value) CMD, numbers are in degrees per second.
