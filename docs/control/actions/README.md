@@ -241,21 +241,15 @@ So if thought the above is crazy, it gets weirder.
 
 ### Why Add Math to QR codes
 
-You the user can have very particular shooting needs, this improves the robustness of Labs to cover a wider range of automatic captures. 
+You the user can have very particular shooting needs, this improves the robustness of Labs to cover a wider range of automatic captures. And is it cool. ;)
 
 Say you want use a GoPro as a crude light meter, and report the output as an [exposure value](https://en.wikipedia.org/wiki/Exposure_value), then make capture decision base on that EV value.
 
-> EV = logbase2 (f-number^2/(time x gain_above_base_iso))  is the formula for EV<br>
-> <br>
-> time is 1/s (our shutter value)<br>
-> gain is ISO * 0.01<br>
-> GoPro F-number is a fixed 2.5 and F-number ^ 2 = 6.25<br>
-> <br>
-> Variable E for EV<br>
-> Variable G for gain<br>
-><br>
-> As a QR command: **=E6.25=Gi=G*0.01=E/G=E*s=E#2"Exposure value $E"!R**<br>
-> <br>
+EV = logbase2 (f-number^2/(time x gain_above_base_iso))  is the formula for EV<br>
+
+As a QR command: **=E6.25=Gi=G*0.01=E/G=E*s=E#2"Exposure value $E"!R**<br>
+
+Command steps explained:
 > E=6.25<br>
 > G=ISO value<br>
 > G=G*0.01<br>
