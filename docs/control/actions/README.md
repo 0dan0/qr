@@ -72,7 +72,7 @@ Any four character code can be used for store other information. You can also st
 
 ## Storing metadata (Temporarily, until power off)
 
-* **oM**fourcc**=”string”**  
+* **oM**fourcc**=\"string\"**  
 * **oM**fourcc**=Number metadata**
 
 
@@ -178,12 +178,6 @@ However the else can only be applied to the last condition. **\>09:15<10:00!S+"H
 
 The command language is kept simple, so it doesn't maintain a stack on the conditional nesting. 
 
-Example command formatting:
-* **\<**time**CMD**  e.g. \<09:00!30R!Lother - if current time is less than 9am, wait 30mins and loop, otherwise load script called ‘other’.
-* **\>**time**CMD** e.g. !SM9\>22:00!R - do motion detection until 10PM, then stop
-* **\>**timeA**\<**timeB**cmdTrue~cmdFalse** e.g. mP>06:00<20:00!180SQ~!06:00S!R - If time is between 06:00 and 20:00 take a photo in 180 seconds else start a 6am, repeat.
-* **\>**timeA**\<**timeB**cmdTrue+cmdTrue~cmdFalse+cmdFalse** e.g. mP>06:00<20:00"wait 3m"+!180SQ~"wait tomorrow"+!06:00S!R - The '+' characters allow you to extend the conditional command, like changing mode before the action.
-
 ### Conditionals Based on Camera Status
 
 Coming soon (HERO11), new conditional commands. Now \>x and/or \<x can be used to test camera states, where 'x' is the camera state to test:
@@ -199,7 +193,8 @@ Coming soon (HERO11), new conditional commands. Now \>x and/or \<x can be used t
 * **i** isoValue - **\>iValue**CMD - testing ISO where ISO ranges from 100 to 6400
 * **k** speedValue - **\>kValue**CMD if(gps Speed \> Value) CMD e.g. >k45!S, numbers are in km/h.
 * **l** loopNumValue - **\<lValue**CMD if(loop_count \< Value) CMD e.g. \<l45!R, this is the loop count for !R repeat, since last QR scan or boot.
-* **m** motionValue - **\<mValue**CMD if(motion \< Value) CMD e.g. >m5!S+60E!R, this look of motion, and record for 60seconds when detected.
+* **m** motionValue - **\<mValue**CMD if(motion \< Value) CMD Motion value is a percentage of pixels moving  e.g. >m5!S+60E!R, this look of motion greater than 5%, and record for 60seconds when detected.
+* **m:X** motionSensivityValue - <m:A through <m:Z adjusts the sensitivity of the detector, the above is the equivalent <m:J.  'A' is very low sensitivity, only large pixel changes detected, 'Z' tiniest change detected. 
 * **p** soundpressureValue - **\>pValue**CMD if(spl \> Value) CMD, numbers are in dB
 * **r** recording - **\>r**CMD1~CMD2 if(Recording) then CMD1 else CMD2 
 * **r:C** remote Connected - **\>r:C**CMD1~CMD2 if(RC_Connected) then CMD1 else CMD2 
@@ -209,6 +204,50 @@ Coming soon (HERO11), new conditional commands. Now \>x and/or \<x can be used t
 * **u** USB power - **\>u**CMD1~CMD2 if(power is on USB) then CMD1 else CMD2
 
 
+### Assignments, Variables and Math
+
+Coming soon (HERO11), QR Command scripts can include variables and operation on them. Why? Fun maybe? A complete program in a QR Code.
+
+As 'a' to 'z' and system system fields, 'A' to 'Z' are the variable can contain any floating point number. This new variables are all initialized to zero, 
+and can be test with the '<' and '>' conditionals. To make them non-zero, they can be assign with and '=' command. Just like with conditions and action, 
+the '=' character is the command delimiter and comes first.  
+
+**=A5**  is the command variable A = 5.
+
+**=P3.14159265** assigns Pi to variable P.  
+
+Now math can be used to modify your variables.
+
+**=A+1.4** adds in form A = A + 1.4
+**=D-2** substraction D = D - 2  (note: assignments of negative numbers aren't support, but subtracting is. So **=D0=D-2** would initialize D to be -2, although =D0 is unnessary as all variable are initialize to zero at boot.)
+**=A*P** multiply A = A * P
+**=E/7 divide E = E / 7
+**=H^A raised to a power H = H ^ A
+**=F^0.5 raised to a power F = sqrt(F)
+**=B%10 modulus  B = B % 10 
+**=J&6 and  J = (float)((int)J & 6) 
+**=K|3 or  K = (float)((int)K | 3) 
+
+There should be a prize if some can come up with a practical use for all of these ;)
+
+So if thought the above is crazy, it gets weirder.
+
+**=B$BITR  load the contents of the BITR (bitrate) hack into variable B, otherwise store zero.  So you can test if a feature is enabled.
+**=Tt:W load the day of the week into varible T
+**=Di load the current ISO value into varible D
+**oMEVBS=E  store the current into EV Bias hack, so you can make a variable mess with your exposure (potential mid capture.)
+**!MVarC=C  permanently store the current variable C into metadata field VarC, so this can be read back on next boot.  
+
+### Why Add Math to QR codes
+
+You the user can have very particular shooting needs, this improves the robustness of Labs to cover a wider range of automatic captures. 
+
+Let say you are a skydiver, and you want only to capture just after you left the plane, but you want to set up your camera before you leave the ground. 
+ 
+if(ground speed has been > 100km/h) //in plane 
+   if(accelerometer peaks > 0.9Gs)  //falling out of plane
+ 
+ 
 # Experiment Here
 
 ## Typing-in Your Custom Action:
