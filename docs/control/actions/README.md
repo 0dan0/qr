@@ -245,26 +245,26 @@ You the user can have very particular shooting needs, this improves the robustne
 
 Say you want use a GoPro as a crude light meter, and report the output as an [exposure value](https://en.wikipedia.org/wiki/Exposure_value), then make capture decision base on that EV value.
 
-> EV = logbase2 (f-number^2/(time*gain))  is the formal for EV
-> 
-> time is 1/s (our shutter value)
-> gain is ISO * 0.01
-> GoPro F-number is a fixed 2.5 and F-number ^ 2 = 6.25
-> 
-> Variable E for EV
-> Variable G for gain
->
-> As a QR command
-> **=E6.25=Gi=G*0.01=E/G=E*s=E#2"Exposure value $E"!R**
-> 
-> E=6.25
-> G=ISO value
-> G=G*0.01
-> E=E/G
-> E=E*shutter value (1/s)
-> E=log(E)/log(2)
-> print E
-> repeat
+> EV = logbase2 (f-number^2/(time*gain))  is the formal for EV<br>
+> <br>
+> time is 1/s (our shutter value)<br>
+> gain is ISO * 0.01<br>
+> GoPro F-number is a fixed 2.5 and F-number ^ 2 = 6.25<br>
+> <br>
+> Variable E for EV<br>
+> Variable G for gain<br>
+><br>
+> As a QR command<br>
+> **=E6.25=Gi=G*0.01=E/G=E*s=E#2"Exposure value $E"!R**<br>
+> <br>
+> E=6.25<br>
+> G=ISO value<br>
+> G=G*0.01<br>
+> E=E/G<br>
+> E=E*shutter value (1/s)<br>
+> E=log(E)/log(2)<br>
+> print E<br>
+> repeat<br>
  
 # Experiment Here
 
