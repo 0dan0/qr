@@ -72,7 +72,7 @@ Any four character code can be used for store other information. You can also st
 
 ## Storing metadata (Temporarily, until power off)
 
-* **oM**fourcc**&#61"string"**  
+* **oM**fourcc**&#61;"string"**  
 * **oM**fourcc**=Number metadata**
 
 
@@ -232,11 +232,11 @@ There should be a prize if some can come up with a practical use for all of thes
 
 So if thought the above is crazy, it gets weirder.
 
-* **=B$BITR  load the contents of the BITR (bitrate) hack into variable B, otherwise store zero.  So you can test if a feature is enabled.
-* **=Tt:W load the day of the week into varible T
-* **=Di load the current ISO value into varible D
-* **oMEVBS=E  store the current into EV Bias hack, so you can make a variable mess with your exposure (potential mid capture.)
-* **!MVarC=C  permanently store the current variable C into metadata field VarC, so this can be read back on next boot.  
+* **=B$BITR**  load the contents of the BITR (bitrate) hack into variable B, otherwise store zero.  So you can test if a feature is enabled.
+* **=Tt:W** load the day of the week into varible T
+* **=Di** load the current ISO value into varible D
+* **oMEVBS=E**  store the current into EV Bias hack, so you can make a variable mess with your exposure (potential mid capture.)
+* **!MVarC=C**  permanently store the current variable C into metadata field VarC, so this can be read back on next boot.  
 
 ### Why Add Math to QR codes
 
