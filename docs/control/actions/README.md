@@ -123,17 +123,17 @@ The start will happen if the condition is true, but the print message occurs whe
 
 > if(current_time < 8:45) <br>
 > {<br>
-> &nbsp;&nbsp;&nbsp;    Start<br>
-> &nbsp;&nbsp;&nbsp;    print "Hello World"<br>
+> &nbsp;&nbsp;&nbsp;    Start <br>
+> &nbsp;&nbsp;&nbsp;    print "Hello World" <br>
 > }
 
 These can be stacked too, e.g. **\<08:45!S+"Hello World"+!60E** is equalivant to
 
 > if(current_time < 8:45) <br>
 > {<br>
-> &nbsp;&nbsp;&nbsp;    Start<br>
-> &nbsp;&nbsp;&nbsp;    print "Hello World"<br>
-> &nbsp;&nbsp;&nbsp;    After 60 seconds End the capture
+> &nbsp;&nbsp;&nbsp;    Start <br>
+> &nbsp;&nbsp;&nbsp;    print "Hello World" <br>
+> &nbsp;&nbsp;&nbsp;    After 60 seconds End the capture <br>
 > }
 
 Conditions support **else** statements using the **~** character after the last 'true' command
@@ -142,13 +142,13 @@ Conditions support **else** statements using the **~** character after the last 
 
 > if(current_time < 8:45) <br>
 > {<br>
-> &nbsp;&nbsp;&nbsp;    Start<br>
-> &nbsp;&nbsp;&nbsp;    print "Hello World"<br>
-> &nbsp;&nbsp;&nbsp;    After 60 seconds End the capture<br>
+> &nbsp;&nbsp;&nbsp;    Start <br>
+> &nbsp;&nbsp;&nbsp;    print "Hello World" <br>
+> &nbsp;&nbsp;&nbsp;    After 60 seconds End the capture <br>
 > }<br>
 > else<br>
 > {<br>
-> &nbsp;&nbsp;&nbsp;    Sleep until 8:44 the next day<br>
+> &nbsp;&nbsp;&nbsp;    Sleep until 8:44 the next day <br>
 > }<br>
 > Repeat
 
