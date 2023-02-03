@@ -243,7 +243,7 @@ So if thought the above is crazy, it gets weirder.
 
 You the user can have very particular shooting needs, this improves the robustness of Labs to cover a wider range of automatic captures. And is it cool. ;)
 
-Say you want use a GoPro as a crude light meter, and report the output as an [exposure value](https://en.wikipedia.org/wiki/Exposure_value), then make capture decision base on that EV value.
+Say you want use a GoPro as a crude light meter, and report the output as an [exposure value](https://en.wikipedia.org/wiki/Exposure_value), then make capture decision based on that EV value.
 
 EV = logbase2 (f-number^2/(time x gain_above_base_iso))  is the formula for EV<br>
 
