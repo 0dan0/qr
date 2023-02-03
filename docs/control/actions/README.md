@@ -252,9 +252,9 @@ As a QR command: **=E6.25=Gi=G&#42;0.01=E/G=E&#42;s=E#2"Exposure value $E"!R**<b
 Command steps explained:
 > E=6.25<br>
 > G=ISO value<br>
-> G=G*0.01<br>
+> G=G&#42;0.01<br>
 > E=E/G<br>
-> E=E*shutter value (1/s)<br>
+> E=E&#42;shutter value (1/s)<br>
 > E=log(E)/log(2)<br>
 > print E<br>
 > repeat<br>
