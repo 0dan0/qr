@@ -209,7 +209,7 @@ Coming soon (HERO11), new conditional commands. Now \>x and/or \<x can be used t
 Coming soon (HERO11), QR Command scripts can include variables and operation on them. Why? Fun maybe? A complete program in a QR Code.
 
 As 'a' to 'z' and system system fields, 'A' to 'Z' are the variable can contain any floating point number. This new variables are all initialized to zero, 
-and can be test with the '<' and '>' conditionals. To make them non-zero, they can be assign with and '=' command. Just like with conditions and action, 
+and can be tested with the '<' and '>' conditionals. To make them non-zero, they can be assign with and '=' command. Just like with conditions and action, 
 the '=' character is the command delimiter and comes first.  
 
 **=A5**  is the command variable A = 5.
@@ -218,25 +218,25 @@ the '=' character is the command delimiter and comes first.
 
 Now math can be used to modify your variables.
 
-**=A+1.4** adds in form A = A + 1.4
-**=D-2** substraction D = D - 2  (note: assignments of negative numbers aren't support, but subtracting is. So **=D0=D-2** would initialize D to be -2, although =D0 is unnessary as all variable are initialize to zero at boot.)
-**=A*P** multiply A = A * P
-**=E/7 divide E = E / 7
-**=H^A raised to a power H = H ^ A
-**=F^0.5 raised to a power F = sqrt(F)
-**=B%10 modulus  B = B % 10 
-**=J&6 and  J = (float)((int)J & 6) 
-**=K|3 or  K = (float)((int)K | 3) 
+* **=A+1.4** adds in form A = A + 1.4
+* **=D-2** substraction D = D - 2  (note: assignments of negative numbers aren't support, but subtracting is. So **=D0=D-2** would initialize D to be -2, although =D0 is unnessary as all variable are initialize to zero at boot.)
+* **=A*P** multiply A = A * P
+* **=E/7 divide E = E / 7
+* **=H^A raised to a power H = H ^ A
+* **=F^0.5 raised to a power F = sqrt(F)
+* **=B%10 modulus  B = B % 10 
+* **=J&6 and  J = (float)((int)J & 6) 
+* **=K|3 or  K = (float)((int)K | 3) 
 
 There should be a prize if some can come up with a practical use for all of these ;)
 
 So if thought the above is crazy, it gets weirder.
 
-**=B$BITR  load the contents of the BITR (bitrate) hack into variable B, otherwise store zero.  So you can test if a feature is enabled.
-**=Tt:W load the day of the week into varible T
-**=Di load the current ISO value into varible D
-**oMEVBS=E  store the current into EV Bias hack, so you can make a variable mess with your exposure (potential mid capture.)
-**!MVarC=C  permanently store the current variable C into metadata field VarC, so this can be read back on next boot.  
+* **=B$BITR  load the contents of the BITR (bitrate) hack into variable B, otherwise store zero.  So you can test if a feature is enabled.
+* **=Tt:W load the day of the week into varible T
+* **=Di load the current ISO value into varible D
+* **oMEVBS=E  store the current into EV Bias hack, so you can make a variable mess with your exposure (potential mid capture.)
+* **!MVarC=C  permanently store the current variable C into metadata field VarC, so this can be read back on next boot.  
 
 ### Why Add Math to QR codes
 
@@ -244,8 +244,8 @@ You the user can have very particular shooting needs, this improves the robustne
 
 Let say you are a skydiver, and you want only to capture just after you left the plane, but you want to set up your camera before you leave the ground. 
  
-if(ground speed has been > 100km/h) //in plane 
-   if(accelerometer peaks > 0.9Gs)  //falling out of plane
+> &nbsp;&nbsp;&nbsp; if(ground speed has been > 100km/h) //in plane 
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    if(accelerometer peaks > 0.9Gs)  //falling out of plane
  
  
 # Experiment Here
