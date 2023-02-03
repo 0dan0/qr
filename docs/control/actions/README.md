@@ -93,8 +93,85 @@ The geek factor is highest in this section.  This is not a Turing-complete langu
 * **oAxxxx=1** e.g. oAMETA=1  --  to implement a basic counter in metadata
 * **"any text"** e.g. mV"Video Mode"!S!5E!4NmP"Photo Mode"!S!5R - this will display "Video Mode" and "Photo Mode" when switch to those modes.  
 
-### Conditional Based on Time
+### Conditionals Based on Time
 
+**\<** and **>** character are used to indicate a conditionals, less than, and greater than equal.
+
+**\<08:45!S** is equalivant to **if(current_time < 8:45) then Start**
+**>18:30!R** is equalivant to **if(current_time >= 18:30) then Repeat**
+
+Note: there is not **equals** condition; nothing like if(time==09:00).
+
+The if condition defaults to effecting only the one command after the condition
+
+**\<08:45!S"Hello World"** is equalivant to:
+
+    if(current_time < 8:45) 
+	    Start
+	print "Hello World"
+	
+The start will happen if the condition is true, but the print message occurs whether true or false.  To make the print also part of the true state you can use **+** between the joined commands.
+
+**\<08:45!S+"Hello World"** is equalivant to
+
+    if(current_time < 8:45) 
+	{
+	    Start
+	    print "Hello World"
+	}
+
+These can be stacked too, e.g. **\<08:45!S+"Hello World"+!60E** is equalivant to
+
+    if(current_time < 8:45) 
+	{
+	    Start
+	    print "Hello World"
+		After 60 seconds End the capture
+	}
+
+Conditions support **else** statements which the **~** character
+
+**\<08:45!S+"Hello World"+!60E~!08:44N!R** is equalivant to
+
+    if(current_time < 8:45) 
+	{
+	    Start
+	    print "Hello World"
+		After 60 seconds End the capture
+	}
+	else
+	{
+		Sleep until 8:44 the next day
+	}
+	Repeat
+
+
+Conditionals themselves can be stacked like **\>09:15<10:00!S** is equalivant to 
+
+	if(current_time >= 9:15) 
+		if(current_time <= 10:00) 
+			Start
+			
+However the else can only be applied to the last condition. **\>09:15<10:00!S+"Hello World"+!60E~!09:30N!R** is equalivant to
+
+	if(current_time >= 9:15) 
+	{
+		if(current_time <= 10:00) 
+		{
+			Start
+			print "Hello World"
+			After 60 seconds End the capture
+		}
+		else
+		{
+			Sleep until 9:30 the next day
+		}
+	}
+	Repeat
+
+The command language is kept simple, so it doesn't maintain a stack on the conditional nesting. 
+
+Example command formatting:
 * **\<**time**CMD**  e.g. \<09:00!30R!Lother - if current time is less than 9am, wait 30mins and loop, otherwise load script called ‘other’.
 * **\>**time**CMD** e.g. !SM9\>22:00!R - do motion detection until 10PM, then stop
 * **\>**timeA**\<**timeB**cmdTrue~cmdFalse** e.g. mP>06:00<20:00!180SQ~!06:00S!R - If time is between 06:00 and 20:00 take a photo in 180 seconds else start a 6am, repeat.
@@ -106,7 +183,8 @@ Coming soon (HERO11), new conditional commands. Now \>x and/or \<x can be used t
 
 * **a** accelerationValue - **\>aValue**CMD if(acceleration \> Value) then CMD, units in milli-Gs
 * **b** batteryLevel - **\>bValue**CMD if(battery \> Value) then CMD, units in percentage
-* **c** CoordDistance - **\>cDist**CMD or **\>cXDist**CMD if(distance \> Value) then CMD, units in meters. There are up to 27 pre-stored GPS locations oMFRMA=latt,long thru oMFRMZ.  If nothing in FRMx, initialize with current location.
+* **c** CoordDistance - **\>cDist**CMD  then CMD, units in meters, compare distance from initial GPS location
+* **c:X** CoordDistance - **\>c:XDist**CMD There are up to 26 pre-stored GPS locations oMFRMA=latt,long thru oMFRMZ. If nothing is store in FRMx, it will initialize with the current location.
 * **d** GPS DOP - **\<dValue**CMD - if(DOP \< Value) then CMD, units in 100x DOP. GPS location precision.
 * **e** random - **\<eValue**CMD \<e50 - 50% true \<e90 - 90% true.
 * **g** gyroValue - **\>gValue**CMD if(gryo \> Value) CMD, numbers are in degrees per second.
@@ -117,10 +195,10 @@ Coming soon (HERO11), new conditional commands. Now \>x and/or \<x can be used t
 * **m** motionValue - **\<mValue**CMD if(motion \< Value) CMD e.g. >m5!S+60E!R, this look of motion, and record for 60seconds when detected.
 * **p** soundpressureValue - **\>pValue**CMD if(spl \> Value) CMD, numbers are in dB
 * **r** recording - **\>r**CMD1~CMD2 if(Recording) then CMD1 else CMD2 
-* **rC** remote Contented - **\>rC**CMD1~CMD2 if(RC_Connected) then CMD1 else CMD2 
-* **rA** remote App Contented - **\>rA**CMD1~CMD2 if(App_Connected) then CMD1 else CMD2 
+* **r:C** remote Connected - **\>r:C**CMD1~CMD2 if(RC_Connected) then CMD1 else CMD2 
+* **r:A** remote App Connected - **\>r:A**CMD1~CMD2 if(App_Connected) then CMD1 else CMD2 
 * **s** shutterValue - **\>sValue**CMD - testing shutter, where 1/Value is used for shutter speed
-* **tX** timedate - **\>tXValue**CMD - where X: Y-Year M-Month D-Day H-Hour N-miNute S-second W-day_of_the_Week B-seconds_since_Boot Q-seconds_since_Qrcode
+* **t:X** timedate - **\>t:XValue**CMD - where X Y-Year M-Month D-Day H-Hour N-miNute S-second W-day_of_the_Week B-seconds_since_Boot Q-seconds_since_Qrcode
 * **u** USB power - **\>u**CMD1~CMD2 if(power is on USB) then CMD1 else CMD2
 
 
@@ -133,7 +211,7 @@ Coming soon (HERO11), new conditional commands. Now \>x and/or \<x can be used t
 Custom Mode: <input type="text" id="tryit" value=""><br>
 
 
-## updated 2023 Feb 1
+## updated 2023 Feb 2
 [BACK](..)
 
 
