@@ -244,7 +244,7 @@ You the user can have very particular shooting needs, this improves the robustne
 
 Let say you are a skydiver, and you want only to capture just after you left the plane, but you want to set up your camera before you leave the ground. 
  
-> &nbsp;&nbsp;&nbsp; if(ground speed has been > 100km/h) //in plane 
+> &nbsp;&nbsp;&nbsp; if(ground speed has been > 100km/h) //in plane  <br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    if(accelerometer peaks > 0.9Gs)  //falling out of plane
  
  
