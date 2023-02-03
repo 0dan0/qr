@@ -72,7 +72,7 @@ Any four character code can be used for store other information. You can also st
 
 ## Storing metadata (Temporarily, until power off)
 
-* **oM**fourcc**=\"string\"**  
+* **oM**fourcc**\=\"string\"**  
 * **oM**fourcc**=Number metadata**
 
 
