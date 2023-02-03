@@ -247,7 +247,7 @@ Say you want use a GoPro as a crude light meter, and report the output as an [ex
 
 EV = logbase2 (f-number^2/(time x gain_above_base_iso))  is the formula for EV<br>
 
-As a QR command: **=E6.25=Gi=G*0.01=E/G=E*s=E#2"Exposure value $E"!R**<br>
+As a QR command: **=E6.25=Gi=G&#42;0.01=E/G=E&#42;s=E#2"Exposure value $E"!R**<br>
 
 Command steps explained:
 > E=6.25<br>
