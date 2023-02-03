@@ -225,6 +225,7 @@ Now math can be used to modify your variables.
 * **=H^A** raised to a power H = H ^ A
 * **=F^0.5** raised to a power F = sqrt(F)
 * **=B%10** modulus  B = B % 10 
+* **=G#2** Log base N  G = log(G)/log(2) 
 * **=J&6** and  J = (float)((int)J & 6) 
 * **=K&#124;3** or  K = (float)((int)K &#124; 3) 
 
@@ -242,11 +243,28 @@ So if thought the above is crazy, it gets weirder.
 
 You the user can have very particular shooting needs, this improves the robustness of Labs to cover a wider range of automatic captures. 
 
-Let say you are a skydiver, and you want only to capture just after you left the plane, but you want to set up your camera before you leave the ground. 
- 
-> &nbsp;&nbsp;&nbsp; if(ground speed has been > 100km/h) //in plane  <br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    if(accelerometer peaks > 0.9Gs)  //falling out of plane
- 
+Say you want use a GoPro as a crude light meter, and report the output as an [exposure value](https://en.wikipedia.org/wiki/Exposure_value), then make capture decision base on that EV value.
+
+> EV = logbase2 (f-number^2/(time*gain))  is the formal for EV
+> 
+> time is 1/s (our shutter value)
+> gain is ISO * 0.01
+> GoPro F-number is a fixed 2.5 and F-number ^ 2 = 6.25
+> 
+> Variable E for EV
+> Variable G for gain
+>
+> As a QR command
+> **=E6.25=Gi=G*0.01=E/G=E*s=E#2"Exposure value $E"!R**
+> 
+> E=6.25
+> G=ISO value
+> G=G*0.01
+> E=E/G
+> E=E*shutter value (1/s)
+> E=log(E)/log(2)
+> print E
+> repeat
  
 # Experiment Here
 
