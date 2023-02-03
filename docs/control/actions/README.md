@@ -72,7 +72,7 @@ Any four character code can be used for store other information. You can also st
 
 ## Storing metadata (Temporarily, until power off)
 
-* **oM**fourcc**\=\"string\"**  
+* **oM**fourcc**&#61"string"**  
 * **oM**fourcc**=Number metadata**
 
 
@@ -221,12 +221,12 @@ Now math can be used to modify your variables.
 * **=A+1.4** adds in form A = A + 1.4
 * **=D-2** substraction D = D - 2  (note: assignments of negative numbers aren't support, but subtracting is. So **=D0=D-2** would initialize D to be -2, although =D0 is unnessary as all variable are initialize to zero at boot.)
 * **=A*P** multiply A = A * P
-* **=E//7 divide E = E // 7
-* **=H^A raised to a power H = H ^ A
-* **=F^0.5 raised to a power F = sqrt(F)
-* **=B%10 modulus  B = B % 10 
-* **=J&6 and  J = (float)((int)J & 6) 
-* **=K/|3 or  K = (float)((int)K /| 3) 
+* **=E&#47;7** divide E = E &#47; 7
+* **=H^A** raised to a power H = H ^ A
+* **=F^0.5** raised to a power F = sqrt(F)
+* **=B%10** modulus  B = B % 10 
+* **=J&6** and  J = (float)((int)J & 6) 
+* **=K&#124;3** or  K = (float)((int)K &#124; 3) 
 
 There should be a prize if some can come up with a practical use for all of these ;)
 
