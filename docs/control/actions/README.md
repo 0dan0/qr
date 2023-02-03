@@ -97,8 +97,15 @@ The geek factor is highest in this section.  This is not a Turing-complete langu
 
 **\<** and **>** character are used to indicate a conditionals, less than, and greater than equal.
 
-**\<08:45!S** is equalivant to **if(current_time < 8:45) then Start**
-**>18:30!R** is equalivant to **if(current_time >= 18:30) then Repeat**
+**\<08:45!S** is equalivant to 
+
+> if(current_time < 8:45) <br>
+> &nbsp;&nbsp;&nbsp;   Start
+
+**>18:30!R** is equalivant to 
+
+> if(current_time >= 18:30) <br>
+> &nbsp;&nbsp;&nbsp;  Repeat
 
 Note: there is not **equals** condition; nothing like if(time==09:00).
 
@@ -129,7 +136,7 @@ These can be stacked too, e.g. **\<08:45!S+"Hello World"+!60E** is equalivant to
 > &nbsp;&nbsp;&nbsp;    After 60 seconds End the capture
 > }
 
-Conditions support **else** statements which the **~** character
+Conditions support **else** statements using the **~** character after the last 'true' command
 
 **\<08:45!S+"Hello World"+!60E~!08:44N!R** is equalivant to
 
