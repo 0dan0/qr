@@ -106,8 +106,8 @@ The if condition defaults to effecting only the one command after the condition
 
 **\<08:45!S"Hello World"** is equalivant to:
 
-> if(current_time < 8:45) 
->    Start
+> if(current_time < 8:45) <br>
+> &nbsp;&nbsp;&nbsp;   Start<br>
 > print "Hello World"
 	
 The start will happen if the condition is true, but the print message occurs whether true or false.  To make the print also part of the true state you can use **+** between the joined commands.
@@ -122,51 +122,51 @@ The start will happen if the condition is true, but the print message occurs whe
 
 These can be stacked too, e.g. **\<08:45!S+"Hello World"+!60E** is equalivant to
 
-> if(current_time < 8:45) 
-> {
->     Start
->     print "Hello World"
-> 	After 60 seconds End the capture
+> if(current_time < 8:45) <br>
+> {<br>
+> &nbsp;&nbsp;&nbsp;    Start<br>
+> &nbsp;&nbsp;&nbsp;    print "Hello World"<br>
+> &nbsp;&nbsp;&nbsp;    After 60 seconds End the capture
 > }
 
 Conditions support **else** statements which the **~** character
 
 **\<08:45!S+"Hello World"+!60E~!08:44N!R** is equalivant to
 
-> if(current_time < 8:45) 
-> {
->     Start
->     print "Hello World"
-> 	  After 60 seconds End the capture
-> }
-> else
-> {
-> 	  Sleep until 8:44 the next day
-> }
+> if(current_time < 8:45) <br>
+> {<br>
+> &nbsp;&nbsp;&nbsp;    Start<br>
+> &nbsp;&nbsp;&nbsp;    print "Hello World"<br>
+> &nbsp;&nbsp;&nbsp;    After 60 seconds End the capture<br>
+> }<br>
+> else<br>
+> {<br>
+> &nbsp;&nbsp;&nbsp;    Sleep until 8:44 the next day<br>
+> }<br>
 > Repeat
 
 
 Conditionals themselves can be stacked like **\>09:15<10:00!S** is equalivant to 
 
-> if(current_time >= 9:15) 
-> 	if(current_time <= 10:00) 
-> 		Start
+> if(current_time >= 9:15) <br>
+> &nbsp;&nbsp;&nbsp; if(current_time <= 10:00) <br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Start<br>
 	
 However the else can only be applied to the last condition. **\>09:15<10:00!S+"Hello World"+!60E~!09:30N!R** is equalivant to
 
-> if(current_time >= 9:15) 
-> {
-> 	if(current_time <= 10:00) 
-> 	{
-> 		Start
-> 		print "Hello World"
-> 		After 60 seconds End the capture
-> 	}
-> 	else
-> 	{
-> 		Sleep until 9:30 the next day
-> 	}
-> }
+> if(current_time >= 9:15) <br>
+> {<br>
+> &nbsp;&nbsp;&nbsp;	if(current_time <= 10:00) <br>
+> &nbsp;&nbsp;&nbsp;	{<br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		Start<br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		print "Hello World"<br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		After 60 seconds End the capture<br>
+> &nbsp;&nbsp;&nbsp;	}<br>
+> &nbsp;&nbsp;&nbsp;	else<br>
+> &nbsp;&nbsp;&nbsp;	{<br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		Sleep until 9:30 the next day<br>
+> &nbsp;&nbsp;&nbsp;	}<br>
+> }<br>
 > Repeat
 
 The command language is kept simple, so it doesn't maintain a stack on the conditional nesting. 
