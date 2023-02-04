@@ -182,7 +182,7 @@ The command language is kept simple, so it doesn't maintain a stack on the condi
 
 Coming soon (HERO11), new conditional commands. Now \>x and/or \<x can be used to test camera states, where 'x' is the camera state to test:
 
-* **a** accelerationValue - **\>aValue**CMD if(acceleration \> Value) then CMD, units in milli-Gs
+* **a** accelerationValue - **\>aValue**CMD if(acceleration \> Value) then CMD, units in Gs
 * **b** batteryLevel - **\>bValue**CMD if(battery \> Value) then CMD, units in percentage
 * **c** CoordDistance - **\>cDist**CMD  then CMD, units in meters, compare distance from initial GPS location
 * **c:X** CoordDistance - **\>c:XDist**CMD There are up to 26 pre-stored GPS locations oMFRMA=latt,long thru oMFRMZ. If nothing is store in FRMx, it will initialize with the current location.
