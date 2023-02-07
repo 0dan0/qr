@@ -50,10 +50,21 @@ function id5() {  // 5 characters, so up to 17-bit ID
   );
 }
 
+function getMachineId() 
+{
+    let machineId = localStorage.getItem('MachineId');
+    if (!machineId) {
+        machineId = id5();
+        localStorage.setItem('MachineId', machineId);
+    }
+    return machineId;
+}
+
+
 function makeQR() {	
   if(once === true)
   {
-    id = id5();  // 5 character 10-base, so up to 17-bit ID
+  	id = getMachineId();  // 5 character 10-base, so up to 17-bit ID
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
       text : "oT0",
