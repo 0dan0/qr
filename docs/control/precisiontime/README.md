@@ -31,10 +31,24 @@ updated: Sept 14, 2022
 var once = true;
 var qrcode;
 var cmd = "";
+var id = 0;
+
+function uuidv4() {
+  return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+    (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+  );
+}
+
+function id32() {
+  return ([1e3]+1e3).replace(/[018]/g, c =>
+    (c ^ crypto.getRandomValues(new Uint8Array(1))[0] % 10 >> c / 4).toString(16)
+  );
+}
 
 function makeQR() {	
   if(once === true)
   {
+    id = id32();
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
       text : "oT0",
@@ -72,7 +86,7 @@ function timeLoop()
   ms = Math.floor(ms / 10); // hundredths
   ms = padTime(ms);
 
-  cmd = "oT" + yy + mm + dd + h + m + s + "." + ms;
+  cmd = "oT" + yy + mm + dd + h + m + s + "." + ms + "I" + id;
   qrcode.clear(); 
   qrcode.makeCode(cmd);
   document.getElementById("qrtext").innerHTML = cmd;

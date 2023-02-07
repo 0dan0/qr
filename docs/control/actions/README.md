@@ -196,9 +196,9 @@ Coming soon (HERO11), new conditional commands. Now \>x and/or \<x can be used t
 * **m** motionValue - **\<mValue**CMD if(motion \< Value) CMD Motion value is a percentage of pixels moving  e.g. >m5!S+60E!R, this look of motion greater than 5%, and record for 60seconds when detected.
 * **m:X** motionSensivityValue - <m:A through <m:Z adjusts the sensitivity of the detector, the above is the equivalent <m:J.  'A' is very low sensitivity, only large pixel changes detected, 'Z' tiniest change detected. 
 * **p** soundpressureValue - **\>pValue**CMD if(spl \> Value) CMD, numbers are in dB
-* **r** recording - **\>r**CMD1~CMD2 if(Recording) then CMD1 else CMD2 
-* **r:C** remote Connected - **\>r:C**CMD1~CMD2 if(RC_Connected) then CMD1 else CMD2 
-* **r:A** remote App Connected - **\>r:A**CMD1~CMD2 if(App_Connected) then CMD1 else CMD2 
+* **r** recording - **\>r0**CMD1~CMD2 if(Recording) then CMD1 else CMD2 
+* **r:C** remote Connected - **\>r:C0**CMD1~CMD2 if(RC_Connected) then CMD1 else CMD2 
+* **r:A** remote App Connected - **\>r0:A**CMD1~CMD2 if(App_Connected) then CMD1 else CMD2 
 * **s** shutterValue - **\>sValue**CMD - testing shutter, where 1/Value is used for shutter speed
 * **t:X** timedate - **\>t:XValue**CMD - where X Y-Year M-Month D-Day H-Hour N-miNute S-second W-day_of_the_Week B-seconds_since_Boot Q-seconds_since_Qrcode
 * **u** USB power - **\>u**CMD1~CMD2 if(power is on USB) then CMD1 else CMD2
