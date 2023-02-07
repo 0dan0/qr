@@ -22,8 +22,7 @@ QR Command: <b id="qrtext"></b>
 
 **Compatibility:** Labs enabled HERO5 Session, HERO7, HERO8, HERO9, HERO10, HERO11, MAX and BONES 
         
-## ver 1.04
-updated: Sept 14, 2022
+updated: Feb 7, 2023
 
 [Learn more](..) on QR Control
 
