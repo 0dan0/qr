@@ -268,7 +268,7 @@ Command steps explained:
 Custom Mode: <input type="text" id="tryit" value=""><br>
 
 
-## updated 2023 Feb 2
+## updated 2023 Feb 7
 [BACK](..)
 
 
