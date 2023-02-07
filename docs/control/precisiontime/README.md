@@ -91,7 +91,7 @@ function timeLoop()
   ms = Math.floor(ms / 10); // hundredths
   ms = padTime(ms);
 
-  cmd = "oT" + yy + mm + dd + h + m + s + "." + ms + "I" + id;
+  cmd = "oT" + yy + mm + dd + h + m + s + "." + ms + "TI" + id;
   qrcode.clear(); 
   qrcode.makeCode(cmd);
   document.getElementById("qrtext").innerHTML = cmd;
