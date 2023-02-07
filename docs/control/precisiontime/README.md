@@ -39,7 +39,13 @@ function uuidv4() {
   );
 }
 
-function id32() {
+function id8() { // 8 characters, so up to 27-bit ID
+  return ([1e3]+1e3).replace(/[018]/g, c =>
+    (c ^ crypto.getRandomValues(new Uint8Array(1))[0] % 10 >> c / 4).toString(16)
+  );
+}
+
+function id5() {  // 5 characters, so up to 17-bit ID
   return ([1e3]+1e3).replace(/[018]/g, c =>
     (c ^ crypto.getRandomValues(new Uint8Array(1))[0] % 10 >> c / 4).toString(16)
   );
@@ -48,7 +54,7 @@ function id32() {
 function makeQR() {	
   if(once === true)
   {
-    id = id32();
+    id = id5();  // 5 character 10-base, so up to 17-bit ID
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
       text : "oT0",
