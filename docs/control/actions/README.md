@@ -71,11 +71,14 @@ Any four character code can be used for store other information. You can also st
 * **!MABCD=45.234** - metadata ABCD will be floating point 45.234
 * **!MUNIT=-1723** - metadata UNIT will be -1723 
 
-## Storing metadata (Temporarily, until power off)
-
+## Storing metadata (Temporarily, until power off)<br>
+(Deprecated)<br>
 * **oM**fourcc**&#61;"string"**  
 * **oM**fourcc**=Number metadata**
-
+<br>
+(Alternative H11 v2.1)<br>
+* **#M**fourcc**&#61;"string"**  
+* **#M**fourcc**=Number metadata**
 
 ## Reset Actions ##
 

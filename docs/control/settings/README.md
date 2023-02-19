@@ -127,7 +127,7 @@ ISO Minimum and Maximum (set to together with format i(max)M(min)): <br>
  * **i16S22** - 1600 ISO Max with a 22 degree shutter angle
  * **i1S0** - 100 ISO Max with an **Automatic** shutter angle<br>
 <br>
-(coming soon):<br>
+(Coming soon):<br>
  * **i1j1** - 100 ISO Max & Min
  * **i2j1** - 200 ISO Max with 100 ISO Min
  * **i16j8** - 1600 ISO Max with 800 ISO Min
