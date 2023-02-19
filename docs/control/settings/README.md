@@ -124,8 +124,8 @@ ISO Minimum and Maximum (set to together with format i(max)M(min)):
  * **i64M16** - 6400 ISO Mac with 1600 ISO Min
  * **i1S180** - 100 ISO Max with a 180 degree shutter angle
  * **i16S22** - 1600 ISO Max with a 22 degree shutter angle
- * **i1S0** - 100 ISO Max with an **Automatic** shutter angle
-  (coming soon)
+ * **i1S0** - 100 ISO Max with an **Automatic** shutter angle<br>
+  (coming soon)<br>
  * **i1j1** - 100 ISO Max & Min
  * **i2j1** - 200 ISO Max with 100 ISO Min
  * **i16j8** - 1600 ISO Max with 800 ISO Min
