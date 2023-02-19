@@ -116,7 +116,8 @@ White Balance:
  * **wN** - Native White Balance (sensor raw)
 
 ISO Minimum and Maximum (set to together with format i(max)M(min)): <br>
-(Deprecated)<br>
+<br>
+(Deprecated):<br>
  * **i1M1** - 100 ISO Max & Min
  * **i2M1** - 200 ISO Max with 100 ISO Min
  * **i16M8** - 1600 ISO Max with 800 ISO Min
@@ -125,7 +126,8 @@ ISO Minimum and Maximum (set to together with format i(max)M(min)): <br>
  * **i1S180** - 100 ISO Max with a 180 degree shutter angle
  * **i16S22** - 1600 ISO Max with a 22 degree shutter angle
  * **i1S0** - 100 ISO Max with an **Automatic** shutter angle<br>
-(coming soon)<br>
+<br>
+(coming soon):<br>
  * **i1j1** - 100 ISO Max & Min
  * **i2j1** - 200 ISO Max with 100 ISO Min
  * **i16j8** - 1600 ISO Max with 800 ISO Min
@@ -134,7 +136,7 @@ ISO Minimum and Maximum (set to together with format i(max)M(min)): <br>
  * **i1k180** - 100 ISO Max with a 180 degree shutter angle
  * **i16k22** - 1600 ISO Max with a 22 degree shutter angle
  * **i1k0** - 100 ISO Max with an **Automatic** shutter angle
- * **i j & k** - can be all set separately 
+ * **i**, **j** & **k** - can be all set separately 
 
 Mote: Angles between 22 and 1 degrees do have limited support. Experiment for higher shutter speeds.  You will need a good amount of light and/or a higher ISO.
 
@@ -229,12 +231,6 @@ HERO11 UX modes:
 - **mE** - mode Easy
 - **mPR** - mode Pro
 
-Useful in scripting (for advanced usage)
- * **z0** - Enable the mode and shutter buttons (default)
- * **z1** - Disable the shutter button
- * **z2** - Disable the mode button
- * **z3** - Disable both buttons
-
 # Experiment Here
 ## Typing-in Your Custom Mode:
 
@@ -242,7 +238,7 @@ Useful in scripting (for advanced usage)
 Custom Mode: <input type="text" id="tryit" value=""><br>
 
 
-updated: Feb 18, 2023
+updated: Feb 19, 2023
 
 [Learn more](..) on QR Control
 

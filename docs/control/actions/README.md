@@ -28,6 +28,7 @@
 * **!**time**W** - Connect to a network, requires JOIN metadata to have been previous stored <sup>9/10/11</sup>.
 * **!**time**G(S or M or L)(C)** - Start Live-streaming, **S** - 480p, **M** - 720p, **L** - 1080p, optional **C** for capture a local file, requires a previously successful **!W** command <sup>8/9/10/11</sup>
 * **!**time**Dx** - (H11) !Dx wait for GPS lock with a DOP less than x, then sync time. For time only locks !D is fine. 
+* **!**time**Zx** - (H11 v2.1)  **!Z3** - Disable Buttons, **!Z0** - Enable (default), **!Z1** - Disable Shutter, **!Z2** - Disable Mode
 
 ## Capture Triggers
 
@@ -268,7 +269,7 @@ Command steps explained:
 Custom Mode: <input type="text" id="tryit" value=""><br>
 
 
-updated: Feb 18, 2023
+updated: Feb 19, 2023
 
 [BACK](..)
 
