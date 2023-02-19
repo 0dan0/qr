@@ -115,8 +115,8 @@ White Balance:
  * **w50**, **w55**, **w60**, **w65**  - 5000K, 5500K, 6000K, 6500K
  * **wN** - Native White Balance (sensor raw)
 
-ISO Minimum and Maximum (set to together with format i(max)M(min)): 
-  (Deprecated)
+ISO Minimum and Maximum (set to together with format i(max)M(min)): <br>
+(Deprecated)<br>
  * **i1M1** - 100 ISO Max & Min
  * **i2M1** - 200 ISO Max with 100 ISO Min
  * **i16M8** - 1600 ISO Max with 800 ISO Min
@@ -125,7 +125,7 @@ ISO Minimum and Maximum (set to together with format i(max)M(min)):
  * **i1S180** - 100 ISO Max with a 180 degree shutter angle
  * **i16S22** - 1600 ISO Max with a 22 degree shutter angle
  * **i1S0** - 100 ISO Max with an **Automatic** shutter angle<br>
-  (coming soon)<br>
+(coming soon)<br>
  * **i1j1** - 100 ISO Max & Min
  * **i2j1** - 200 ISO Max with 100 ISO Min
  * **i16j8** - 1600 ISO Max with 800 ISO Min
