@@ -116,20 +116,27 @@ White Balance:
  * **wN** - Native White Balance (sensor raw)
 
 ISO Minimum and Maximum (set to together with format i(max)M(min)): 
+  (Deprecated)
  * **i1M1** - 100 ISO Max & Min
  * **i2M1** - 200 ISO Max with 100 ISO Min
  * **i16M8** - 1600 ISO Max with 800 ISO Min
  * **i32M1**  - 3200 ISO Mac with 100 ISO Min
- * **i64M16**  - 6400 ISO Mac with 1600 ISO Min
-
-ISO Maximum and Shutter Lock (set to together format i(max)S(angle)): 
+ * **i64M16** - 6400 ISO Mac with 1600 ISO Min
  * **i1S180** - 100 ISO Max with a 180 degree shutter angle
- * **i8S90** - 800 ISO Max with a 90 degree shutter angle
- * **i4S45** - 400 ISO Max with a 45 degree shutter angle
  * **i16S22** - 1600 ISO Max with a 22 degree shutter angle
- * **i1S22** - 100 ISO Max with a 22 degree shutter angle
  * **i1S0** - 100 ISO Max with an **Automatic** shutter angle
- * Angles between 22 and 1 degrees do have limited support. Experiment for higher shutter speeds.  You will need a good amount of light and/or a higher ISO.
+  (coming soon)
+ * **i1j1** - 100 ISO Max & Min
+ * **i2j1** - 200 ISO Max with 100 ISO Min
+ * **i16j8** - 1600 ISO Max with 800 ISO Min
+ * **i32j1**  - 3200 ISO Mac with 100 ISO Min
+ * **i64j16** - 6400 ISO Mac with 1600 ISO Min
+ * **i1k180** - 100 ISO Max with a 180 degree shutter angle
+ * **i16k22** - 1600 ISO Max with a 22 degree shutter angle
+ * **i1k0** - 100 ISO Max with an **Automatic** shutter angle
+ * **i j & k** - can be all set separately 
+
+Mote: Angles between 22 and 1 degrees do have limited support. Experiment for higher shutter speeds.  You will need a good amount of light and/or a higher ISO.
 
 EV Compensation: 
  * **x0** - EV 0 default
@@ -174,19 +181,19 @@ Feature with off and on commands:
 
 Option (‘o’) commands:
 - Brightness of the LCDs - **oB0** … **oB9** - (100%)
-- Camera Auto Off - **oC** - Never, **oC0** - default, **oC1** - 1min, **oC5** - 5min, **oC15** - 15min, **oC30** - 30min
+- Camera Auto Off - **oC0** - Never, **oC1** - 1min, **oC5** - 5min, **oC15** - 15min, **oC30** - 30min
 - LCDs off now - **oDO**
-- LED control - **oD** - all off, **oD2** - some on, **oD4** - all on
+- LED control - **oD0** - all off, **oD2** - some on, **oD4** - all on
 - Extern Audio options - **oE1** - Standard Mic, **oE2** - Standard+ Mic, **oE3** - Powered Mic, **oE4** - Powered+ Mic, **oE5** - Line In (HERO10/11 only)
 - Front Screen control - **oFxy** - (see list below)
 - GPS Options (HERO11 v2.1) - **oG0** - off, **oG1** - on
 - Language - **oL**x - **0** English USA, **01** English UK, **02** English Aus, **03** English India, **1** German, **2** French, **3** Italian, **4** Spanish, **5** Chinese, **6** Japanese, **7** Korean, **8** Portuaguese, **9** Russian, **91** Swedish
 - Quick Capture (HERO11 v2.1) - **oQ0** - off, **oQ1** - on
 - Rotation, Camera Orientation - **oR0** - Auto, **oR1** - Up, **oR2** - Down, **oR2** - Left, **oR3** - Right
-- Screen Auto Off - **oS** - Never, **oS1** - 1min ... **oS3** - 3min
+- Screen Auto Off - **oS0** - Never, **oS1** - 1min ... **oS3** - 3min
 - Shortcut Menu on LCD - **oSA**x - Upper Left, **oSB**x - Lower Left, **oSC**x - Upper Right, **oSD**x - Lower Right, **oSR** - reset. Where x is in the list below.
 - Time and date - **oT**yymmddhhmmss.sss
-- Time, daylight savings - **oTD** or **oTD1** for daylight savings on or **oTD0** for off
+- Time, daylight savings - **oTD1** for daylight savings on or **oTD0** for off
 - Timezone (H11) - **oTZ-7** or **oTZ-420** e.g. -7 hour or -420 minutes timezone offset
 - Volume of Beeps - **oV0** - Mute, **oV1** ... **oV9** (min through max.)
 - Volume Control - **oVC0** - off, **oVC1** - on
@@ -222,6 +229,12 @@ HERO11 UX modes:
 - **mE** - mode Easy
 - **mPR** - mode Pro
 
+Useful in scripting (for advanced usage)
+ * **z0** - Enable the mode and shutter buttons (default)
+ * **z1** - Disable the shutter button
+ * **z2** - Disable the mode button
+ * **z3** - Disable both buttons
+
 # Experiment Here
 ## Typing-in Your Custom Mode:
 
@@ -229,7 +242,7 @@ HERO11 UX modes:
 Custom Mode: <input type="text" id="tryit" value=""><br>
 
 
-updated: Feb 1, 2023
+updated: Feb 18, 2023
 
 [Learn more](..) on QR Control
 

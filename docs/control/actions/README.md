@@ -180,29 +180,29 @@ The command language is kept simple, so it doesn't maintain a stack on the condi
 
 ### Conditionals Based on Camera Status
 
-Coming soon (HERO11), new conditional commands. Now \>x and/or \<x can be used to test camera states, where 'x' is the camera state to test:
-
+Coming soon (HERO11), new conditional commands. Now \>xValue and/or \<xValue can be used to test camera states, where 'x' is the camera state to test, and Value the amount to test against:<br>
 * **a** accelerationValue - **\>aValue**CMD if(acceleration \> Value) then CMD, units in Gs
 * **b** batteryLevel - **\>bValue**CMD if(battery \> Value) then CMD, units in percentage
-* **c** CoordDistance - **\>cDist**CMD  then CMD, units in meters, compare distance from initial GPS location
-* **c:X** CoordDistance - **\>c:XDist**CMD There are up to 26 pre-stored GPS locations oMFRMA=latt,long thru oMFRMZ. If nothing is store in FRMx, it will initialize with the current location.
+* **c** coordDistance - **\>cDist**CMD  then CMD, units in meters, compare distance from initial GPS location
+* **c:X** coord[A-Z]Distance - **\>c:XDist**CMD There are up to 26 pre-stored GPS locations oMFRMA=latt,long thru oMFRMZ. If nothing is store in FRMx, it will initialize with the current location.
 * **d** GPS DOP - **\<dValue**CMD - if(DOP \< Value) then CMD, units in 100x DOP. GPS location precision.
 * **e** random - **\<eValue**CMD \<e50 - 50% true \<e90 - 90% true.
 * **g** gyroValue - **\>gValue**CMD if(gryo \> Value) CMD, numbers are in degrees per second.
 * **h** heightValue - **\>hValue**CMD if(height \> Value) CMD, numbers are in meters above sealevel.
 * **i** isoValue - **\>iValue**CMD - testing ISO where ISO ranges from 100 to 6400
 * **k** speedValue - **\>kValue**CMD if(gps Speed \> Value) CMD e.g. >k45!S, numbers are in km/h.
-* **l** loopNumValue - **\<lValue**CMD if(loop_count \< Value) CMD e.g. \<l45!R, this is the loop count for !R repeat, since last QR scan or boot.
+* **l** loop_countValue - **\<lValue**CMD if(loop_count \< Value) CMD e.g. \<l45!R, this is the loop count for !R repeat, since last QR scan or boot.
 * **m** motionValue - **\<mValue**CMD if(motion \< Value) CMD Motion value is a percentage of pixels moving  e.g. >m5!S+60E!R, this look of motion greater than 5%, and record for 60seconds when detected.
-* **m:X** motionSensivityValue - <m:A through <m:Z adjusts the sensitivity of the detector, the above is the equivalent <m:J.  'A' is very low sensitivity, only large pixel changes detected, 'Z' tiniest change detected. 
+* **m:X** motion[A-Z]Value - <m:A through <m:Z adjusts the sensitivity of the detector, the above is the equivalent <m:J.  'A' is very low sensitivity, only large pixel changes detected, 'Z' tiniest change detected. 
 * **p** soundpressureValue - **\>pValue**CMD if(spl \> Value) CMD, numbers are in dB
-* **r** recording - **\>r0**CMD1~CMD2 if(Recording) then CMD1 else CMD2 
+* **r** recording - **\>r0**CMD1~CMD2 if(Recording > 0) then CMD1 else CMD2 
 * **r:C** remote Connected - **\>r:C0**CMD1~CMD2 if(RC_Connected) then CMD1 else CMD2 
 * **r:A** remote App Connected - **\>r0:A**CMD1~CMD2 if(App_Connected) then CMD1 else CMD2 
 * **s** shutterValue - **\>sValue**CMD - testing shutter, where 1/Value is used for shutter speed
 * **t:X** timedate - **\>t:XValue**CMD - where X Y-Year M-Month D-Day H-Hour N-miNute S-second W-day_of_the_Week B-seconds_since_Boot Q-seconds_since_Qrcode
-* **u** USB power - **\>u**CMD1~CMD2 if(power is on USB) then CMD1 else CMD2
-
+* **u** USB power - **\>u0**CMD1~CMD2 if(power is on USB) then CMD1 else CMD2
+* **y** mode_pressesValue - **\y>0**CMD1~CMD2 if(mode_presses > 0) then CMD1 else CMD2
+* **z** shutter_pressesValue - **\y>0**CMD1~CMD2 if(shutter_presses > 0) then CMD1 else CMD2
 
 ### Assignments, Variables and Math
 
@@ -268,7 +268,8 @@ Command steps explained:
 Custom Mode: <input type="text" id="tryit" value=""><br>
 
 
-## updated 2023 Feb 7
+updated: Feb 18, 2023
+
 [BACK](..)
 
 
