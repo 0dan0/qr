@@ -72,11 +72,14 @@ Any four character code can be used for store other information. You can also st
 * **!MUNIT=-1723** - metadata UNIT will be -1723 
 
 ## Storing metadata (Temporarily, until power off)<br>
-(Deprecated)<br>
+<br>
+(All cameras and Older Labs)<br>
+<br>
 * **oM**fourcc**&#61;"string"**  
 * **oM**fourcc**=Number metadata**
 <br>
 (Alternative H11 v2.1)<br>
+<br>
 * **#M**fourcc**&#61;"string"**  
 * **#M**fourcc**=Number metadata**
 

@@ -117,7 +117,7 @@ White Balance:
 
 ISO Minimum and Maximum (set to together with format i(max)M(min)): <br>
 <br>
-(Deprecated):<br>
+(All cameras and Older Labs):<br>
  * **i1M1** - 100 ISO Max & Min
  * **i2M1** - 200 ISO Max with 100 ISO Min
  * **i16M8** - 1600 ISO Max with 800 ISO Min
@@ -128,6 +128,7 @@ ISO Minimum and Maximum (set to together with format i(max)M(min)): <br>
  * **i1S0** - 100 ISO Max with an **Automatic** shutter angle<br>
 <br>
 (Coming soon):<br>
+<br>
  * **i1j1** - 100 ISO Max & Min
  * **i2j1** - 200 ISO Max with 100 ISO Min
  * **i16j8** - 1600 ISO Max with 800 ISO Min
