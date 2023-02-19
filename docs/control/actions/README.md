@@ -201,8 +201,8 @@ Coming soon (HERO11), new conditional commands. Now \>xValue and/or \<xValue can
 * **s** shutterValue - **\>sValue**CMD - testing shutter, where 1/Value is used for shutter speed
 * **t:X** timedate - **\>t:XValue**CMD - where X Y-Year M-Month D-Day H-Hour N-miNute S-second W-day_of_the_Week B-seconds_since_Boot Q-seconds_since_Qrcode
 * **u** USB power - **\>u0**CMD1~CMD2 if(power is on USB) then CMD1 else CMD2
-* **y** mode_pressesValue - **\y>0**CMD1~CMD2 if(mode_presses > 0) then CMD1 else CMD2
-* **z** shutter_pressesValue - **\y>0**CMD1~CMD2 if(shutter_presses > 0) then CMD1 else CMD2
+* **y** mode_pressesValue - **\>y0**CMD1~CMD2 if(mode_presses > 0) then CMD1 else CMD2
+* **z** shutter_pressesValue - **\>z0**CMD1~CMD2 if(shutter_presses > 0) then CMD1 else CMD2
 
 ### Assignments, Variables and Math
 
