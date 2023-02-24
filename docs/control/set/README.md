@@ -34,7 +34,7 @@ Share this QR Code as: <b id="urltext"></b>  -->
 [More features](..) for Labs enabled cameras
 
 
-## version 1.10
+## version 1.11
 
 <script>
 var changed = false;
@@ -52,10 +52,9 @@ let urlParams = new URLSearchParams(document.location.search);
 cmd_url = urlParams.get('cmd');
 var cmd2 = cmd_url.replaceAll("&#60;", "<");
 var cmd3 = cmd2.replaceAll("&#62;", ">");
-cmd_url = cmd3;
 	
-if(cmd_url !== null)
-	cmd = cmd_url;
+if(cmd3 !== null)
+	cmd = cmd3;
 	
 title_url = urlParams.get('title');
 if(title_url !== null)
@@ -118,9 +117,9 @@ function updateTime()
 	}
 	
 	
-	cmd2 = cmd.replaceAll("<", "&#60;");
-	cmd = cmd2.replaceAll(">", "&#62;");
-	document.getElementById("qrtext").innerHTML = cmd;
+	var cmd4 = cmd.replaceAll("<", "&#60;");
+	var cmd5 = cmd4.replaceAll(">", "&#62;");
+	document.getElementById("qrtext").innerHTML = cmd5;
 }
 
 
@@ -157,30 +156,6 @@ function timeLoop()
   updateTime();
   qrcode.clear(); 
   qrcode.makeCode(cmd);
-  
-/* if(document.getElementById("addcmd") !== null)
-  {
-	var addcmd = document.getElementById("addcmd").value;
-	if(addcmd.length > 0)
-		cmd = addcmd;
-  }	
-
-  if(cmd != lasttimecmd)
-  {
-	changed = true;
-	lasttimecmd = cmd;
-  }
-	
-  if(changed === true)
-  {
-	var cmd2 = cmd.replaceAll("<", "&#60;");
-	var cmd3 = cmd2.replaceAll(">", "&#62;");
-	document.getElementById("qrtext").innerHTML = cmd3;
-	clipcopy = window.location.href.split('?')[0] + "?cmd=" + cmdnotime;
-
-	changed = false;
-  }
-*/
 	
   var t = setTimeout(timeLoop, 100);
 }
