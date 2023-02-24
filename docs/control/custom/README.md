@@ -1555,7 +1555,8 @@ function startTime() {
 			var cmd3 = cmd2.replaceAll(">", "&#62;");
 			document.getElementById("qrtext").innerHTML = cmd3;
 			clipcopy = "https://gopro.github.io/labs/control/set/?cmd=" + cmd;
-			document.getElementById("urltext").innerHTML = clipcopy;
+			var srntext = "https://gopro.github.io/labs/control/set/?cmd=" + cmd3;
+			document.getElementById("urltext").innerHTML = srntext;
 			lasttimecmd = cmd;
 		}		
 		
