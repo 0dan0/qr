@@ -50,7 +50,7 @@ var lasttimecmd = "";
 
 let urlParams = new URLSearchParams(document.location.search);
 cmd_url = urlParams.get('cmd');
-var cmd2 = cmd.replaceAll("&#60;", "<");
+var cmd2 = cmd_url.replaceAll("&#60;", "<");
 var cmd3 = cmd2.replaceAll("&#62;", ">");
 cmd_url = cmd3;
 	
