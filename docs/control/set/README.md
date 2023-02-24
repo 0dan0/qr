@@ -50,6 +50,10 @@ var lasttimecmd = "";
 
 let urlParams = new URLSearchParams(document.location.search);
 cmd_url = urlParams.get('cmd');
+var cmd2 = cmd.replaceAll("&#60;", "<");
+var cmd3 = cmd2.replaceAll("&#62;", ">");
+cmd_url = cmd3;
+	
 if(cmd_url !== null)
 	cmd = cmd_url;
 	
@@ -166,7 +170,9 @@ function timeLoop()
 	
   if(changed === true)
   {
-	document.getElementById("qrtext").innerHTML = cmd;
+	var cmd2 = cmd.replaceAll("<", "&#60;");
+	var cmd3 = cmd2.replaceAll(">", "&#62;");
+	document.getElementById("qrtext").innerHTML = cmd3;
 	clipcopy = window.location.href.split('?')[0] + "?cmd=" + cmdnotime;
 
 	changed = false;
