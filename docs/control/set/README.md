@@ -116,7 +116,10 @@ function updateTime()
 			//cmdnotime = src_cmd.slice(0,position) + src_cmd.slice(position+14);
 		}
 	}
-
+	
+	
+	cmd2 = cmd.replaceAll("<", "&#60;");
+	cmd = cmd2.replaceAll(">", "&#62;");
 	document.getElementById("qrtext").innerHTML = cmd;
 }
 
