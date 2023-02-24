@@ -71,6 +71,15 @@ if(hastime >= 0)
 	dset("copyshow", false);   // don't what user printing or sharing code with wrong date and time
 else	
 	dset("copyshow", true);
+	
+	
+function HTMLPrint(txt)
+{
+	var txt2 = txt.replaceAll("<", "&#60;");
+	var newtxt = txt2.replaceAll(">", "&#62;");
+	return newtxt;
+}
+
 
 function updateTime()
 {
@@ -114,10 +123,7 @@ function updateTime()
 		}
 	}
 	
-	
-	var cmd4 = cmd.replaceAll("<", "&#60;");
-	var cmd5 = cmd4.replaceAll(">", "&#62;");
-	document.getElementById("qrtext").innerHTML = cmd5;
+	document.getElementById("qrtext").innerHTML = HTMLPrint(cmd);
 }
 
 

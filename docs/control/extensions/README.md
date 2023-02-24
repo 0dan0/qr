@@ -206,6 +206,13 @@ function makeQR()
   }
 }
 
+function HTMLPrint(txt)
+{
+	var txt2 = txt.replaceAll("<", "&#60;");
+	var newtxt = txt2.replaceAll(">", "&#62;");
+	return newtxt;
+}
+
 function timeLoop()
 {
 	if(document.getElementById("addcmd").value.length !== 4)
@@ -231,9 +238,9 @@ function timeLoop()
 
 	if(cmd != lasttimecmd)
 	{
-		document.getElementById("qrtext").innerHTML = cmd;
+		document.getElementById("qrtext").innerHTML = HTMLPrint(cmd);
 		clipcopy = "https://gopro.github.io/labs/control/set/?cmd=" + cmd;
-		document.getElementById("urltext").innerHTML = clipcopy;
+		document.getElementById("urltext").innerHTML = HTMLPrint(clipcopy);
 		changed = true;
 		lasttimecmd = cmd;
 	}
