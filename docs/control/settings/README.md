@@ -139,7 +139,7 @@ ISO Minimum and Maximum (set to together with format i(max)M(min)): <br>
  * **i1k0** - 100 ISO Max with an **Automatic** shutter angle
  * **i**, **j** & **k** - can be all set separately 
 
-Mote: Angles between 22 and 1 degrees do have limited support. Experiment for higher shutter speeds.  You will need a good amount of light and/or a higher ISO.
+Note: Angles between 22 and 1 degrees do have limited support. Experiment for higher shutter speeds.  You will need a good amount of light and/or a higher ISO.
 
 EV Compensation: 
  * **x0** - EV 0 default
