@@ -269,6 +269,13 @@ function makeQR() {
   }
 }
 
+function HTMLPrint(txt)
+{
+	var txt2 = txt.replaceAll("<", "&#60;");
+	var newtxt = txt2.replaceAll(">", "&#62;");
+	return newtxt;
+}
+
 function timeLoop()
 {
   if(document.getElementById("tryit") != null)
