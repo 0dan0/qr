@@ -34,7 +34,7 @@ Share this QR Code as: <b id="urltext"></b>  -->
 [More features](..) for Labs enabled cameras
 
 
-## version 1.11
+## version 1.12
 
 <script>
 var changed = false;
