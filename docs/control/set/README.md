@@ -20,7 +20,6 @@
  <center>
   <div id="qrcode"></div><br>
   <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em>
-  <div id="title_div"><font color="#005CAC"><b id="title_txt"></b></font></div>
  </center>
 </div>
 <br>
