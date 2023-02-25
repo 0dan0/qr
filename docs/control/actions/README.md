@@ -272,7 +272,13 @@ Command steps explained:
 ## Typing-in Your Custom Action:
 
 
-<div id="qrcode"></div>
+<div id="qrcode_txt" style="width: 360px">
+ <center>
+  <div id="qrcode"></div><br>
+  <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em>
+ </center>
+</div>
+
 Custom Mode: <input type="text" id="tryit" value=""><br>
 
 
@@ -317,6 +323,9 @@ function timeLoop()
 
   qrcode.clear(); 
   qrcode.makeCode(cmd);
+  
+  document.getElementById("qrtext").innerHTML = HTMLPrint(cmd);
+  
   var t = setTimeout(timeLoop, 50);
 }
 
