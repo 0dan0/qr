@@ -32,7 +32,7 @@ Some particular 4CCs will also change camera behavior and/or enable features. He
 <br>![WIDE.jpg](WIDE.jpg)
 - **WBLK=1** This is an auto lock for balance, it auto white balances until the capture starts. The feature was added for scuba users, as fixed white balance are computed for above water, and while the auto works great in dive scenarios, some prefer a fix white balance per clip.
 - **MTRX=a,b,c,d,e,f,g,h,i** This is the RGB to YUV matrix, new ways to mess up your video. e.g. For an B/W effect in camera try oMMTRX=50,175,25,0,0,0,0,0,0<br>
-![MTRX.jpg](MTRX.jpg)
+![MTRX.jpg](MTRX.jpg)<br>
 Note: the scripting has had a significant update in the March '23 firmware.  [See Assignments, Variables and Math](../actions)
 
 ### **HERO11/10/Mini cameras** - Extensions added in Dec'22 firmware
