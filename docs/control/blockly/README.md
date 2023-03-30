@@ -25,10 +25,44 @@ Blockly.defineBlocksWithJsonArray([
     "helpUrl": ""
   }
 ]);
-
+<script>
 Blockly.JavaScript["basic_print"] = function (block) {
   var text = Blockly.JavaScript.valueToCode(block, "TEXT", Blockly.JavaScript.ORDER_NONE) || '""';
   var code = "PRINT " + text + "\n";
+  return code;
+};
+</script>
+
+Blockly.defineBlocksWithJsonArray([
+  {
+    "type": "basic_if_then",
+    "message0": "IF %1 THEN",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "CONDITION",
+        "check": "Boolean"
+      }
+    ],
+    "message1": "%1",
+    "args1": [
+      {
+        "type": "input_statement",
+        "name": "STATEMENTS"
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 210,
+    "tooltip": "If-Then statement",
+    "helpUrl": ""
+  }
+]);
+
+Blockly.JavaScript["basic_if_then"] = function (block) {
+  var condition = Blockly.JavaScript.valueToCode(block, "CONDITION", Blockly.JavaScript.ORDER_NONE) || "FALSE";
+  var statements = Blockly.JavaScript.statementToCode(block, "STATEMENTS");
+  var code = "IF " + condition + " THEN\n" + statements;
   return code;
 };
 </script>
@@ -39,9 +73,20 @@ Blockly.JavaScript["basic_print"] = function (block) {
     }
     #blocklyDiv {
       height: 480px;
-      width: 500px;
+      width: 800px;
       border: 1px solid #ddd;
+      display: inline-block;
+      vertical-align: top;
     }
+    #toolbox {
+      display: inline-block;
+      width: auto;
+      height: 480px;
+      border: 1px solid #ddd;
+      vertical-align: top;
+      overflow: auto;
+    }
+	
 	#qrcode{
 		width: 100%;
 	}
@@ -51,22 +96,32 @@ Blockly.JavaScript["basic_print"] = function (block) {
 	}
 </style>
 
+<body>
+  <div id="toolbox">
+    <xml id="toolboxXml" style="display: none">
+      <block type="basic_print"></block>
+      <block type="basic_if_then"></block>
+    </xml>
+  </div>
   <div id="blocklyDiv"></div>
+  
   <button onclick="generateLabsCode()">Generate Labs Code</button>
+  
   <pre id="output"></pre>
+  
   <script>
+    var toolbox = document.getElementById("toolboxXml");
+    document.getElementById("toolbox").appendChild(toolbox);
+
     var workspace = Blockly.inject('blocklyDiv', {toolbox: document.getElementById('toolbox')});
     Blockly.JavaScript.addReservedWords('output');
 
-    function generateLabsCode() {
+    function generateBASICCode() {
       var output = document.getElementById('output');
       var code = Blockly.JavaScript.workspaceToCode(workspace);
       output.textContent = code;
     }
   </script>
-  <xml id="toolbox" style="display: none">
-    <block type="basic_print"></block>
-  </xml>
 	
 
 <div id="ptSHUT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Maximum Shutter Angle:</b>&nbsp;&nbsp;
@@ -104,6 +159,7 @@ Blockly.JavaScript["basic_print"] = function (block) {
 Share this QR Code as a URL: <small id="urltext"></small><br>
 <button id="copyBtn">Copy URL to Clipboard</button>
 
+</body>
         
 ## Background
 
