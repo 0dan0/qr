@@ -39,7 +39,7 @@ Blockly.JavaScript["basic_print"] = function (block) {
     }
     #blocklyDiv {
       height: 480px;
-      width: 800px;
+      width: 500px;
       border: 1px solid #ddd;
     }
 	#qrcode{
@@ -51,9 +51,7 @@ Blockly.JavaScript["basic_print"] = function (block) {
 	}
 </style>
 
-## More control over low-light stabilization.
-
-  <div id="blocklyDiv" style="height: 480px; width: 800px;"></div>
+  <div id="blocklyDiv"></div>
   <button onclick="generateLabsCode()">Generate Labs Code</button>
   <pre id="output"></pre>
   <script>
