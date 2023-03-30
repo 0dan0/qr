@@ -79,7 +79,7 @@ Blockly.JavaScript["basic_if_then"] = function (block) {
     }
     #toolbox {
       display: inline-block;
-      width: auto;
+      width: 200px;
       height: 480px;
       border: 1px solid #ddd;
       vertical-align: top;
@@ -95,7 +95,6 @@ Blockly.JavaScript["basic_if_then"] = function (block) {
 	}
 </style>
 
-<body>
   <div id="toolbox">
     <xml id="toolboxXml" style="display: none">
       <block type="basic_print"></block>
@@ -157,8 +156,6 @@ Blockly.JavaScript["basic_if_then"] = function (block) {
 <br>
 Share this QR Code as a URL: <small id="urltext"></small><br>
 <button id="copyBtn">Copy URL to Clipboard</button>
-
-</body>
         
 ## Background
 
