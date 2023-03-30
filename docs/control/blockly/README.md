@@ -34,13 +34,21 @@ Blockly.JavaScript["basic_print"] = function (block) {
 </script>
 
 <style>
-        #qrcode{
-            width: 100%;
-        }
-        div{
-            width: 100%;
-            display: inline-block;
-        }
+    body {
+      font-family: Arial, sans-serif;
+    }
+    #blocklyDiv {
+      height: 480px;
+      width: 800px;
+      border: 1px solid #ddd;
+    }
+	#qrcode{
+		width: 100%;
+	}
+	div{
+		width: 100%;
+		display: inline-block;
+	}
 </style>
 
 ## More control over low-light stabilization.
