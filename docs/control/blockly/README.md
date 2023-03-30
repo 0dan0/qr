@@ -25,7 +25,6 @@ Blockly.defineBlocksWithJsonArray([
     "helpUrl": ""
   }
 ]);
-<script>
 Blockly.JavaScript["basic_print"] = function (block) {
   var text = Blockly.JavaScript.valueToCode(block, "TEXT", Blockly.JavaScript.ORDER_NONE) || '""';
   var code = "PRINT " + text + "\n";
@@ -33,6 +32,7 @@ Blockly.JavaScript["basic_print"] = function (block) {
 };
 </script>
 
+<script>
 Blockly.defineBlocksWithJsonArray([
   {
     "type": "basic_if_then",
@@ -58,7 +58,6 @@ Blockly.defineBlocksWithJsonArray([
     "helpUrl": ""
   }
 ]);
-
 Blockly.JavaScript["basic_if_then"] = function (block) {
   var condition = Blockly.JavaScript.valueToCode(block, "CONDITION", Blockly.JavaScript.ORDER_NONE) || "FALSE";
   var statements = Blockly.JavaScript.statementToCode(block, "STATEMENTS");
