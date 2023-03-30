@@ -66,47 +66,61 @@ Blockly.JavaScript["basic_if_then"] = function (block) {
 };
 </script>
 
-<style>
+  <style>
     body {
       font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
     }
+
+    h1 {
+      margin: 0;
+      padding: 10px;
+      background-color: #f0f0f0;
+    }
+
+    #content {
+      flex: 1;
+      display: flex;
+    }
+
     #blocklyDiv {
-      height: 480px;
-      width: 800px;
+      flex: 1;
+      height: calc(100% - 40px);
       border: 1px solid #ddd;
-      display: inline-block;
-      vertical-align: top;
     }
+
     #toolbox {
-      display: inline-block;
       width: 200px;
-      height: 480px;
+      height: calc(100% - 40px);
       border: 1px solid #ddd;
-      vertical-align: top;
       overflow: auto;
     }
-	
-	#qrcode{
-		width: 100%;
-	}
-	div{
-		width: 100%;
-		display: inline-block;
-	}
-</style>
 
-  <div id="toolbox">
-    <xml id="toolboxXml" style="display: none">
-      <block type="basic_print"></block>
-      <block type="basic_if_then"></block>
-    </xml>
+    #output {
+      width: 100%;
+      height: 100px;
+      border: 1px solid #ddd;
+      margin-top: 10px;
+      white-space: pre-wrap;
+      overflow: auto;
+    }
+  </style>
+  
+  <h1>BASIC Programming with Blockly</h1>
+  <div id="content">
+    <div id="toolbox">
+      <xml id="toolboxXml" style="display: none">
+        <block type="basic_print"></block>
+        <block type="basic_if_then"></block>
+      </xml>
+    </div>
+    <div id="blocklyDiv"></div>
   </div>
-  <div id="blocklyDiv"></div>
-  
-  <button onclick="generateLabsCode()">Generate Labs Code</button>
-  
+  <button onclick="generateBASICCode()">Generate BASIC Code</button>
   <pre id="output"></pre>
-  
   <script>
     var toolbox = document.getElementById("toolboxXml");
     document.getElementById("toolbox").appendChild(toolbox);
@@ -119,8 +133,7 @@ Blockly.JavaScript["basic_if_then"] = function (block) {
       var code = Blockly.JavaScript.workspaceToCode(workspace);
       output.textContent = code;
     }
-  </script>
-	
+  </script>	
 
 <div id="ptSHUT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Maximum Shutter Angle:</b>&nbsp;&nbsp;
   <input type="radio" id="shut1" name="shut" value="MEXPT=0"> <label for="shut1">360&deg;(default) </label>&nbsp;&nbsp;
