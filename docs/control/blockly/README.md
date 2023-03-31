@@ -10,15 +10,6 @@
 <script src="if_then_block.js"></script>
 
   <style>
-
-    #blocklyDiv {
-      height: 480px;
-      width: 800px;
-      border: 1px solid #ddd;
-      display: inline-block;
-      vertical-align: top;
-    }
-
     #toolbox {
       display: inline-block;
       width: 100%;
@@ -27,7 +18,13 @@
       vertical-align: top;
       overflow: auto;
     }
-	
+    #blocklyDiv {
+      height: 480px;
+      width: 100%;
+      border: 1px solid #ddd;
+      display: inline-block;
+      vertical-align: top;
+    }	
     #output {
       width: 100%;
       height: 100px;
