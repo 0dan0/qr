@@ -15,6 +15,8 @@
       height: 480px;
       width: 800px;
       border: 1px solid #ddd;
+      display: inline-block;
+      vertical-align: top;
     }
 
     #toolbox {
@@ -22,6 +24,8 @@
       width: 150px;
       height: 480px;
       border: 1px solid #ddd;
+      vertical-align: top;
+      overflow: auto;
     }
 	
     #output {
