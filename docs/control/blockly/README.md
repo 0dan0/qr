@@ -21,8 +21,8 @@
 
     #toolbox {
       display: inline-block;
-      width: 150px;
-      height: 480px;
+      width: 100%;
+      height: 150px;
       border: 1px solid #ddd;
       vertical-align: top;
       overflow: auto;
