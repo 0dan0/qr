@@ -6,65 +6,8 @@
 <script src="https://unpkg.com/blockly@latest/blockly_compressed.js"></script>
 <script src="https://unpkg.com/blockly@latest/blocks_compressed.js"></script>
 <script src="https://unpkg.com/blockly@latest/javascript_compressed.js"></script>
-<script>
-	Blockly.defineBlocksWithJsonArray([
-	  {
-		"type": "basic_print",
-		"message0": "PRINT %1",
-		"args0": [
-		  {
-			"type": "input_value",
-			"name": "TEXT",
-			"check": "String"
-		  }
-		],
-		"previousStatement": null,
-		"nextStatement": null,
-		"colour": 160,
-		"tooltip": "Print a text string",
-		"helpUrl": ""
-	  }
-	]);
-	Blockly.JavaScript["basic_print"] = function (block) {
-	  var text = Blockly.JavaScript.valueToCode(block, "TEXT", Blockly.JavaScript.ORDER_NONE) || '""';
-	  var code = "PRINT " + text + "\n";
-	  return code;
-	};
-</script>
-
-<script>
-	Blockly.defineBlocksWithJsonArray([
-	  {
-		"type": "basic_if_then",
-		"message0": "IF %1 THEN",
-		"args0": [
-		  {
-			"type": "input_value",
-			"name": "CONDITION",
-			"check": "Boolean"
-		  }
-		],
-		"message1": "%1",
-		"args1": [
-		  {
-			"type": "input_statement",
-			"name": "STATEMENTS"
-		  }
-		],
-		"previousStatement": null,
-		"nextStatement": null,
-		"colour": 210,
-		"tooltip": "If-Then statement",
-		"helpUrl": ""
-	  }
-	]);
-	Blockly.JavaScript["basic_if_then"] = function (block) {
-	  var condition = Blockly.JavaScript.valueToCode(block, "CONDITION", Blockly.JavaScript.ORDER_NONE) || "FALSE";
-	  var statements = Blockly.JavaScript.statementToCode(block, "STATEMENTS");
-	  var code = "IF " + condition + " THEN\n" + statements;
-	  return code;
-	};
-</script>
+<script src="print_block.js"></script>
+<script src="if_then_block.js"></script>
 
   <style>
 
