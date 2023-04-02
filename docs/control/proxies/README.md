@@ -25,8 +25,9 @@ When Proxies are enabled, the LRV files will be created with names that are read
 &nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/Proxies/GX013785_Proxy.MP4`<br>
 Proxies can be used directly from the SD card (when mounted on your PC or Mac), or can be transfered with the MP4s to local storage for the fastest editing experience.
 
-<input type="checkbox" id="proxies" name="proxies" checked> 
-<label for="proxies">Enable Proxies</label><br>
+<input type="checkbox" id="proxies" name="proxies" checked> <label for="proxies">Enable Proxies</label><br>
+
+<input type="checkbox" id="davinci" name="davinci"> <label for="davinci">DaVinci style</label> (Default off is Premiere Pro style)<br> 
 
 <div id="qrcode_txt" style="width: 360px">
   <center>
@@ -83,8 +84,15 @@ function timeLoop()
   {
     if(document.getElementById("proxies").checked === true)
     {
-      stts = "Enabled";
-      cmd = "!MPRXY=1";
+	  stts = "Enabled";
+	  if(document.getElementById("davinci").checked === true)
+	  {
+        cmd = "!MPRXY=4";
+	  }
+	  else
+	  {
+        cmd = "!MPRXY=1";
+	  }
     }
   }
 
