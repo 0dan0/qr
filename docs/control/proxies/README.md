@@ -21,17 +21,17 @@ Decoding 4K and 5K HEVC Video can be very demanding on video tools. To speed up 
 
 <div id="prem">
 When Proxies are enabled, the LRV files will be created with names that are ready for Premiere Pro's <b>Attach Proxies</b> function, greatly speeding up professional workflows. The new folder structure is:<br>
-&nbsp;&nbsp;&nbsp;&nbsp; <pre>DCIM/100GOPRO/GX013784.MP4</pre><br>
-&nbsp;&nbsp;&nbsp;&nbsp; <pre>DCIM/100GOPRO/GX013785.MP4</pre><br>
-&nbsp;&nbsp;&nbsp;&nbsp; <pre>DCIM/100GOPRO/Proxies/GX013784_Proxy.MP4</pre><br>
-&nbsp;&nbsp;&nbsp;&nbsp; <pre>DCIM/100GOPRO/Proxies/GX013785_Proxy.MP4</pre><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <pre>DCIM/100GOPRO/GX013784.MP4</pre>
+&nbsp;&nbsp;&nbsp;&nbsp; <pre>DCIM/100GOPRO/GX013785.MP4</pre>
+&nbsp;&nbsp;&nbsp;&nbsp; <pre>DCIM/100GOPRO/Proxies/GX013784_Proxy.MP4</pre>
+&nbsp;&nbsp;&nbsp;&nbsp; <pre>DCIM/100GOPRO/Proxies/GX013785_Proxy.MP4</pre>
 </div>
 <div id="davi">
 When Proxies are enabled, the LRV files will be created with names that are ready for Premiere Pro's **Attach Proxies** function, greatly speeding up professional workflows. The new folder structure is:<br>
-&nbsp;&nbsp;&nbsp;&nbsp; <pre>DCIM/100GOPRO/GX013784.MP4</pre><br>
-&nbsp;&nbsp;&nbsp;&nbsp; <pre>DCIM/100GOPRO/GX013785.MP4</pre><br>
-&nbsp;&nbsp;&nbsp;&nbsp; <pre>DCIM/100GOPRO/Proxy/GX013784.MP4</pre><br>
-&nbsp;&nbsp;&nbsp;&nbsp; <pre>DCIM/100GOPRO/Proxy/GX013785.MP4</pre><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <pre>DCIM/100GOPRO/GX013784.MP4</pre>
+&nbsp;&nbsp;&nbsp;&nbsp; <pre>DCIM/100GOPRO/GX013785.MP4</pre>
+&nbsp;&nbsp;&nbsp;&nbsp; <pre>DCIM/100GOPRO/Proxy/GX013784.MP4</pre>
+&nbsp;&nbsp;&nbsp;&nbsp; <pre>DCIM/100GOPRO/Proxy/GX013785.MP4</pre>
 </div>
 
 Proxies can be used directly from the SD card (when mounted on your PC or Mac), or can be transfered with the MP4s to local storage for the fastest editing experience.
