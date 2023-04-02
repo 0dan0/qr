@@ -14,24 +14,23 @@
 </style>
 
 Decoding 4K and 5K HEVC Video can be very demanding on video tools. To speed up the editing workflow, a common solution is to transcode high resolution files into proxies. With this Labs extension enabled, the camera automatically produces Adobe Premiere Pro™ style proxy files, saving you the time consuming transcoding step. Normally a camera will encode a LRV (Low Res Video) for every MP4 using this standard directory structure:<br>
-&nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GX013784.MP4`<br>
-&nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GL013784.LRV`<br>
-&nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GX013785.MP4`<br>
-&nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GL013785.LRV`<br>
-
+<pre>   DCIM/100GOPRO/GX013784.MP4
+   DCIM/100GOPRO/GL013784.LRV
+   DCIM/100GOPRO/GX013785.MP4
+   DCIM/100GOPRO/GL013785.LRV</pre>
 <div id="prem">
 When Proxies are enabled, the LRV files will be created with names that are ready for Premiere Pro's <b>Attach Proxies</b> function, greatly speeding up professional workflows. The new folder structure is:<br>
-&nbsp;&nbsp;&nbsp;&nbsp; <pre>DCIM/100GOPRO/GX013784.MP4</pre>
-&nbsp;&nbsp;&nbsp;&nbsp; <pre>DCIM/100GOPRO/GX013785.MP4</pre>
-&nbsp;&nbsp;&nbsp;&nbsp; <pre>DCIM/100GOPRO/Proxies/GX013784_Proxy.MP4</pre>
-&nbsp;&nbsp;&nbsp;&nbsp; <pre>DCIM/100GOPRO/Proxies/GX013785_Proxy.MP4</pre>
+<pre>   DCIM/100GOPRO/GX013784.MP4
+   DCIM/100GOPRO/GX013785.MP4
+   DCIM/100GOPRO/Proxies/GX013784_Proxy.MP4
+   DCIM/100GOPRO/Proxies/GX013785_Proxy.MP4</pre>
 </div>
 <div id="davi">
-When Proxies are enabled, the LRV files will be created with names that are ready for Premiere Pro's **Attach Proxies** function, greatly speeding up professional workflows. The new folder structure is:<br>
-&nbsp;&nbsp;&nbsp;&nbsp; <pre>DCIM/100GOPRO/GX013784.MP4</pre>
-&nbsp;&nbsp;&nbsp;&nbsp; <pre>DCIM/100GOPRO/GX013785.MP4</pre>
-&nbsp;&nbsp;&nbsp;&nbsp; <pre>DCIM/100GOPRO/Proxy/GX013784.MP4</pre>
-&nbsp;&nbsp;&nbsp;&nbsp; <pre>DCIM/100GOPRO/Proxy/GX013785.MP4</pre>
+When Proxies are enabled, the LRV files will be created with names that are ready for DaVinci Resolve, greatly speeding up professional workflows. The new folder structure is:<br>
+<pre>   DCIM/100GOPRO/GX013784.MP4
+   DCIM/100GOPRO/GX013785.MP4
+   DCIM/100GOPRO/Proxy/GX013784.MP4
+   DCIM/100GOPRO/Proxy/GX013785.MP4</pre>
 </div>
 
 Proxies can be used directly from the SD card (when mounted on your PC or Mac), or can be transfered with the MP4s to local storage for the fastest editing experience.
