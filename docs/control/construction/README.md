@@ -33,7 +33,7 @@ Estimated runtime per charged battery: <b id="daystext">0</b> days
   <center>
   <div id="qrcode"></div><br>
   <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em><br>
-  <b><font color="#005CAC">Construction Timelapse</font></b>
+  <b><font color="#005CAC">Daily Timelapse</font></b>
   </center>
 </div>
 <button id="copyImg">Copy Image to Clipboard</button>
@@ -153,7 +153,7 @@ function timeLoop()
   if(changed === true)
   {
 	document.getElementById("qrtext").innerHTML = cmd;
-	clipcopy = "https://gopro.github.io/labs/control/set/?cmd=" + cmd + "&title=Construction%20Timelapse";
+	clipcopy = "https://gopro.github.io/labs/control/set/?cmd=" + cmd + "&title=Daily%20Timelapse";
 	document.getElementById("urltext").innerHTML = clipcopy;
 	changed = false;
   }
