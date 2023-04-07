@@ -1,4 +1,4 @@
-# Daily Time-lapse Video and Upload
+# Daily Time-lapse Video and Optional Upload
 
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
@@ -47,7 +47,7 @@ Start Time: <input type="range" style="width: 300px;" id="tlstrt" name="tlstrt" 
 
 Capture Length: <input type="range" style="width: 360px;" id="tlend" name="tlend" min="1" max="1420" value="292"><label for="tlend"></label> <b id="lentext"></b> minutes &nbsp;&nbsp; End Time: <b id="endtext"></b>
 
-<input type="checkbox" id="upld" name="upld" checked> 
+<input type="checkbox" id="upld" name="upld"> 
 <label for="upld">Upload at the end of each capture</label><br>
 
 Daily playback length (at 30fps): <b id="length"></b> seconds
