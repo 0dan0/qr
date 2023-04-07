@@ -30,9 +30,9 @@ and as a mobile app:<br>
 
 ### Extended Time-lapse Features 
 * Start a 24-hour long time-lapse or greater with [**Extra Long Time-lapses**](./longtimelapse)
-* Use your GoPro to time-lapse [**Construction Projects**](./construction)
+* **HERO8-11/Bones** - [**Daily Time-lapse**] with optional upload(./dailytl) (GoPro Subscription required for uploads)
 * Schedule your camera to automatically [**Time-lapse Sunsets and Sunrises**](./solartimelapse)
-* **HERO9-11/Bones** - Daily Time-lapse with [**auto upload**](./dailytl) (GoPro Subscription required)
+* **Depricated** - This style is less reliable than the above types [**Daily Long Time-lapses**](./construction)
 
 ### Video Alteration Features
 * **HERO8-11/MAX/Bones** - Set the [**Max Shutter Angle**](./maxshut) for control over stabilization in low light
@@ -73,7 +73,7 @@ Technical information on the [**Labs command language**](./tech)
 ## GoPro Labs
 [**Labs start on GitHub**](https://gopro.github.io/labs).
 
-updated: April 2, 2023
+updated: April 7, 2023
 
 
 <script>
