@@ -198,7 +198,7 @@ var file;
 		
 		if(jpeg_gpmf_offset == 0)
 		{
-			for(i=0; i<512; i++)
+			for(i=0; i<1024*1024; i++)
 			{
 				if(bytes[i] == 117 /*'u'*/ && bytes[i+1] == 100 /*'d'*/ && bytes[i+2] == 116 /*'t'*/ && bytes[i+3] == 97 /*'a'*/)
 				{
