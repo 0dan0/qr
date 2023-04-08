@@ -73,7 +73,7 @@ Technical information on the [**Labs command language**](./tech)
 ## GoPro Labs
 [**Labs start on GitHub**](https://gopro.github.io/labs).
 
-updated: April 2, 2023
+updated: April 7, 2023
 
 
 <script>

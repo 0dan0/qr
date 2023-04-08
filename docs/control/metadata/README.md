@@ -157,7 +157,7 @@ var file;
 		}
 		else
 		{
-			var blob = file.slice(mdat_offset, mdat_offset+(1024*64));
+			var blob = file.slice(mdat_offset, mdat_offset+(1024*1024));
 			reader2.readAsArrayBuffer(blob);  
 		}
 	}
