@@ -15,6 +15,8 @@
 
 **Timezone** <input type="range" id="tzid" name="tzid" min="-48" max="48" value="0" style="width: 300px;"><label for="tzid"></label>&nbsp;&nbsp;<b id="tztext"></b> hour <b id="tzmin"></b> minute<br>
 
+**Daylight Saving Time** <input type="checkbox" id="tdid" name="tdid"> <label for="tdid">Active</label><br>
+
 Simply point your Labs enabled camera at this animated QR Code, to set your date and time very accurately to local time. This is particularly useful for multi-camera shoots, as it helps synchronize the timecode between cameras. As the camera's internal clock will drift slowly over time, use this QR Code just before your multi-camera shoot for the best synchronization. 
 
 <center>
@@ -119,9 +121,12 @@ function timeLoop()
 	document.getElementById("tzmin").innerHTML = m;	
   }
 
+  var td = 0;
+  if(document.getElementById("tdid") != null && document.getElementById("tdid").checked) {
+    td = 1;
+  }
 
-
-  cmd = "oT" + yy + mm + dd + h + m + s + "." + ms + "oTZ" + tz + "oTI" + id;
+  cmd = "oT" + yy + mm + dd + h + m + s + "." + ms + "oTD" + td + "oTZ" + tz + "oTI" + id;
   qrcode.clear(); 
   qrcode.makeCode(cmd);
   document.getElementById("qrtext").innerHTML = cmd;
