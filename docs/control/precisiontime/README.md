@@ -61,7 +61,7 @@ function setTZ() {
   {
 	document.getElementById("tzid").value = -tz/15;	
 	
-	var h = math.trunc(tz/4);
+	var h = Math.trunc(tz/4);
 	var m = tz*15 - h*60;
 	document.getElementById("tztext").innerHTML = -h;	
 	document.getElementById("tzmin").innerHTML = -m;	
@@ -113,7 +113,7 @@ function timeLoop()
   {
 	tz = parseInt(document.getElementById("tzid").value) * 15;	
 
-	var h = math.trunc(tz/4);
+	var h = Math.trunc(tz/4);
 	var m = tz*15 - h*60;
 	document.getElementById("tztext").innerHTML = h;	
 	document.getElementById("tzmin").innerHTML = m;	
