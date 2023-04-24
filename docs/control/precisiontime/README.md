@@ -122,8 +122,11 @@ function timeLoop()
   }
 
   var td = 0;
-  if(document.getElementById("tdid") != null && document.getElementById("tdid").checked) {
-    td = 1;
+  if(document.getElementById("tdid") !== null) 
+  {
+	if(document.getElementById("tdid").checked) {
+		td = 1;
+	}
   }
 
   cmd = "oT" + yy + mm + dd + h + m + s + "." + ms + "oTD" + td + "oTZ" + tz + "oTI" + id;
