@@ -55,27 +55,19 @@ function getMachineId()
     return machineId;
 }
 
-
-Date.prototype.stdTimezoneOffset = function () {
-    var jan = new Date(this.getFullYear(), 0, 1);
-    var jul = new Date(this.getFullYear(), 6, 1);
-    return Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
-}
-
-Date.prototype.isDstObserved = function () {
-    return this.getTimezoneOffset() < this.stdTimezoneOffset();
-}
-
-var today = new Date();
-if (today.isDstObserved()) { 
-    alert ("Daylight saving time!");
+function isDST(d) {
+    let jan = new Date(d.getFullYear(), 0, 1).getTimezoneOffset();
+    let jul = new Date(d.getFullYear(), 6, 1).getTimezoneOffset();
+    return Math.max(jan, jul) !== d.getTimezoneOffset();    
 }
 
 function setTZ() {	
   var today = new Date();
-  var tz,td;  
+  var tz,td = 0;  
   tz = today.getTimezoneOffset();
-  td = today.isDstObserved;
+  
+  if(isDST(today))
+     td = 1;
   
   if(document.getElementById("tzid") !== null)
   {
