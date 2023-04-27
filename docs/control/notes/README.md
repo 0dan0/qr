@@ -167,7 +167,7 @@ Only the more recent releases are documented below. This a general list of Labs 
 
 
 ### 2.00.71 - January 2021
- - The only Labs release for MAX
+ - The first Labs release for MAX
 
 
 ## HERO10 Black 
