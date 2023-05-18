@@ -1571,7 +1571,7 @@ function startTime() {
 		lastms = today.getTime();
 		changed = false;
 		
-		delay = 10;
+		delay = 30;
 		//console.log(cmd);
 	}
 	
