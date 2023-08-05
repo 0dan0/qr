@@ -172,10 +172,10 @@ function timeLoop()
   var tc25 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 25 / 1000));
   var tc50 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 50 / 1000));
    
-  h = tmilli / (60 * 60 * 1000);  tmilli -= h / (60 * 60 * 1000);
-  m = tmilli / (60 * 1000);  tmilli -= m / (60 * 1000);
-  s = tmilli / (1000);  tmilli -= s / (1000);
-  ms = tmilli;
+  h = Math.trunc(tmilli / (60 * 60 * 1000));  tmilli -= h / (60 * 60 * 1000);
+  m = Math.trunc(tmilli / (60 * 1000));  tmilli -= m / (60 * 1000);
+  s = Math.trunc(tmilli / (1000));  tmilli -= s / (1000);
+  ms = Math.trunc(tmilli);
    
   var tc24 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 24 / 1000));
   var tc30 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 30 / 1000));
