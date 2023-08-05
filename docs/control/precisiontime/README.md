@@ -208,7 +208,7 @@ function timeLoop()
   document.getElementById("tctext50").innerHTML = tc50;  
   document.getElementById("tctext60").innerHTML = tc60;
    
-  var t = setTimeout(timeLoop, 30);
+  var t = setTimeout(timeLoop, 10);
 }
 
 function myReloadFunction() {
