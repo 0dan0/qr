@@ -20,7 +20,12 @@
 Simply point your Labs enabled camera at this animated QR Code, to set your date and time very accurately to local time. This is particularly useful for multi-camera shoots, as it helps synchronize the timecode between cameras. As the camera's internal clock will drift slowly over time, use this QR Code just before your multi-camera shoot for the best synchronization. 
 
 <center>
-<div id="qrcode"></div>
+<div id="qrcode"></div><br>
+TC 24: <b id="tctext24"></b><br>
+TC 25: <b id="tctext25"></b><br>
+TC 30: <b id="tctext30"></b><br>
+TC 50: <b id="tctext50"></b><br>
+TC 60: <b id="tctext60"></b><br>
 <br>
 </center>
 QR Command: <b id="qrtext"></b>
@@ -159,7 +164,16 @@ function timeLoop()
   qrcode.clear(); 
   qrcode.makeCode(cmd);
   document.getElementById("qrtext").innerHTML = cmd;
- 
+  
+  var tc25 = h + ":" + m + ":" + s + ":" + Math.trunc(ms * 25 / 1000);
+  var tc50 = h + ":" + m + ":" + s + ":" + Math.trunc(ms * 50 / 1000);
+   
+  document.getElementById("tctext24").innerHTML = tc25;  
+  document.getElementById("tctext25").innerHTML = tc25;  
+  document.getElementById("tctext30").innerHTML = tc25;  
+  document.getElementById("tctext50").innerHTML = tc50;  
+  document.getElementById("tctext60").innerHTML = tc50;
+   
   var t = setTimeout(timeLoop, 30);
 }
 
