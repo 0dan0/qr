@@ -181,22 +181,21 @@ function timeLoop()
   qrcode.makeCode(cmd);
   document.getElementById("qrtext").innerHTML = cmd;
   
-  var tmilli = ms + s * 1000 + m * 60 * 1000 + h * 60 * 60 * 1000;
+  var tmilli = ms/1000 + s + m * 60 + h * 60 * 60;
   tmilli /= 1.001;
-  tmilli = Math.trunc(tmilli);
   
   
   var tc25 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 25 / 1000));
   var tc50 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 50 / 1000));
    
-  h = Math.trunc(tmilli / (60 * 60 * 1000));  tmilli -= h * (60 * 60 * 1000);
-  m = Math.trunc(tmilli / (60 * 1000));  tmilli -= m * (60 * 1000);
-  s = Math.trunc(tmilli / (1000));  tmilli -= s * (1000);
-  ms = Math.trunc(tmilli);
+  h = Math.trunc(tmilli / (60 * 60));  tmilli -= h * (60 * 60);
+  m = Math.trunc(tmilli / (60 ));  tmilli -= m * (60);
+  s = Math.trunc(tmilli);  tmilli -= s;
+  ms = Math.trunc(tmilli * 1000);
    
-  var tc24 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 24 / 1000));
-  var tc30 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 30 / 1000));
-  var tc60 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 60 / 1000));
+  var tc24 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 24));
+  var tc30 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 30));
+  var tc60 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 60));
   
   document.getElementById("tctext24").innerHTML = tc24;  
   document.getElementById("tctext25").innerHTML = tc25;  
