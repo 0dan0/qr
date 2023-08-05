@@ -202,7 +202,7 @@ function timeLoop()
   var tc30 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 30 / 1000));
   var tc60 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 60 / 1000));
   
-  document.getElementById("tctext24").innerHTML = fixtmilli;  
+  document.getElementById("tctext24").innerHTML = tc24;  
   document.getElementById("tctext25").innerHTML = tc25;  
   document.getElementById("tctext30").innerHTML = tc30;  
   document.getElementById("tctext50").innerHTML = tc50;  
