@@ -61,9 +61,14 @@ function getMachineId()
 }
 
 function isDST(d) {
-    let jan = new Date(d.getFullYear(), 0, 1).getTimezoneOffset();
-    let jul = new Date(d.getFullYear(), 6, 1).getTimezoneOffset();
-    return Math.max(jan, jul) === d.getTimezoneOffset();    
+  // Get the time zone offset for the given date
+  const timezoneOffsetMinutes = date.getTimezoneOffset();
+
+  // Get the standard time zone offset for the same date but in January (non-DST period)
+  const januaryOffsetMinutes = new Date(date.getFullYear(), 0, 1).getTimezoneOffset();
+
+  // If the current offset is greater than the standard offset, it is DST
+  return timezoneOffsetMinutes < januaryOffsetMinutes;
 }
 
 function setTZ() {	
@@ -167,14 +172,14 @@ function timeLoop()
   
   var tmilli = ms + s * 1000 + m * 60 * 1000 + h * 60 * 60 * 1000;
   tmilli /= 1.001;
-  
+  tmilli = Math.trunc(tmilli);  
   
   var tc25 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 25 / 1000));
   var tc50 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 50 / 1000));
    
-  h = Math.trunc(tmilli / (60 * 60 * 1000));  tmilli -= h / (60 * 60 * 1000);
-  m = Math.trunc(tmilli / (60 * 1000));  tmilli -= m / (60 * 1000);
-  s = Math.trunc(tmilli / (1000));  tmilli -= s / (1000);
+  h = Math.trunc(tmilli / (60 * 60 * 1000));  tmilli -= h * (60 * 60 * 1000);
+  m = Math.trunc(tmilli / (60 * 1000));  tmilli -= m * (60 * 1000);
+  s = Math.trunc(tmilli / (1000));  tmilli -= s * (1000);
   ms = Math.trunc(tmilli);
    
   var tc24 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 24 / 1000));
