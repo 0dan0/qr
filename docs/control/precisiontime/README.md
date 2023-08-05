@@ -165,14 +165,27 @@ function timeLoop()
   qrcode.makeCode(cmd);
   document.getElementById("qrtext").innerHTML = cmd;
   
-  var tc25 = h + ":" + m + ":" + s + ":" + Math.trunc(ms * 25 / 1000);
-  var tc50 = h + ":" + m + ":" + s + ":" + Math.trunc(ms * 50 / 1000);
+  var tmilli = ms + s * 1000 + m * 60 * 1000 + h * 60 * 60 * 1000;
+  tmilli /= 1.001;
+  
+  
+  var tc25 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 25 / 1000));
+  var tc50 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 50 / 1000));
    
-  document.getElementById("tctext24").innerHTML = tc25;  
+  h = tmilli / (60 * 60 * 1000);  tmilli -= h / (60 * 60 * 1000);
+  m = tmilli / (60 * 1000);  tmilli -= m / (60 * 1000);
+  s = tmilli / (1000);  tmilli -= s / (1000);
+  ms = tmilli;
+   
+  var tc24 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 24 / 1000));
+  var tc30 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 30 / 1000));
+  var tc60 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 60 / 1000));
+  
+  document.getElementById("tctext24").innerHTML = tc24;  
   document.getElementById("tctext25").innerHTML = tc25;  
-  document.getElementById("tctext30").innerHTML = tc25;  
+  document.getElementById("tctext30").innerHTML = tc30;  
   document.getElementById("tctext50").innerHTML = tc50;  
-  document.getElementById("tctext60").innerHTML = tc50;
+  document.getElementById("tctext60").innerHTML = tc60;
    
   var t = setTimeout(timeLoop, 30);
 }
