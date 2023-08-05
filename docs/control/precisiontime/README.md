@@ -149,6 +149,11 @@ function timeLoop()
   yy = padTime(yy);
   mm = padTime(mm);
   dd = padTime(dd);
+  
+  var tmilli = (ms/1000) + s + (m * 60) + (h * 60 * 60);
+  tmilli /= 1.001; //29.97 vs 30.0
+  var fixtmilli = tmilli;
+  
   h = padTime(h);
   m = padTime(m);
   s = padTime(s);
@@ -180,10 +185,6 @@ function timeLoop()
   qrcode.clear(); 
   qrcode.makeCode(cmd);
   document.getElementById("qrtext").innerHTML = cmd;
-  
-  var tmilli = (ms/1000) + s + (m * 60) + (h * 60 * 60);
-  tmilli /= 1.001; //29.97 vs 30.0
-  var fixtmilli = tmilli;
   
   var tc25 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 25 / 1000));
   var tc50 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 50 / 1000));
