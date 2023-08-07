@@ -202,13 +202,9 @@ function nonDropframeToDropframe(timecode) {
 	}
 
 	// Format the dropframe timecode
-	const dropframeTimecode = padZero(h)+":"+padZero(m)+":"+padZero(s)+";"+padZero(f);
+	const dropframeTimecode = padTime(h)+":"+padTime(m)+":"+padTime(s)+";"+padTime(f);
 
 	return dropframeTimecode;
-}
-
-function padZero(number) {
-  return number.toString().padStart(2, '0');
 }
 
 function timeLoop()
