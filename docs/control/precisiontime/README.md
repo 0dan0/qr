@@ -147,11 +147,17 @@ function nonDropframeToDropframe(timecode) {
   var i,h,m,s,f;
   for(i=0;i<totalFrames; i++)
   {
-	if(f<30) f++;
+	if(f<30)	
+	   f++;
 	else
 	{ 
 		f = 0;
 		s++;
+		
+		if(Math.trunk(m/10)*10 != m && s == 60)
+		{
+			f = 2;  // drop frame every minute except every 10 minutes
+		}
 		if(s == 60) 
         {
 		   s = 0;
