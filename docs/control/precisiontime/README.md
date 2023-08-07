@@ -202,7 +202,7 @@ function nonDropframeToDropframe(timecode) {
 	}
 
 	// Format the dropframe timecode
-	const dropframeTimecode = "${padZero(h)}:${padZero(m)}:${padZero(s)}:${padZero(f)}";
+	const dropframeTimecode = padZero(h)+":"+padZero(m)+":"+padZero(s)+";"+padZero(f);
 
 	return dropframeTimecode;
 }
