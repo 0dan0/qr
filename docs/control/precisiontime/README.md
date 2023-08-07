@@ -142,16 +142,38 @@ function nonDropframeToDropframe(timecode) {
 
   // Calculate the number of frames to drop at each minute mark
   const framesToDrop = Math.floor((frames * 0.06) * (hours * 60 + minutes));
+  
+  var dfframe = 0;
+  var i,h,m,s,f;
+  for(i=0;i<totalFrames; i++)
+  {
+	if(f<30) f++;
+	else
+	{ 
+		f = 0;
+		s++;
+		if(s == 60) 
+        {
+		   s = 0;
+		   m++;
+		   if(m == 60)
+		   {
+			 m = 0;
+			 h++;
+		   }
+		}
+	} 
+  }
+  
 
   // Calculate the dropframe timecode
-  const dropframeFrames = totalFrames - framesToDrop;
-  const dropframeHours = Math.floor(dropframeFrames / (3600 * 30));
-  const dropframeMinutes = Math.floor((dropframeFrames % (3600 * 30)) / (60 * 30));
-  const dropframeSeconds = Math.floor((dropframeFrames % (60 * 30)) / 30);
-  const dropframeFramesRemainder = dropframeFrames % 30;
+  //const dropframeHours = Math.floor(dropframeFrames / (3600 * 30));
+  //const dropframeMinutes = Math.floor((dropframeFrames % (3600 * 30)) / (60 * 30));
+  //const dropframeSeconds = Math.floor((dropframeFrames % (60 * 30)) / 30);
+  //const dropframeFrames = dropframeFrames % 30;
 
   // Format the dropframe timecode
-  const dropframeTimecode = `${padZero(dropframeHours)}:${padZero(dropframeMinutes)}:${padZero(dropframeSeconds)}:${padZero(dropframeFramesRemainder)}`;
+  const dropframeTimecode = `${padZero(h)}:${padZero(m)}:${padZero(s)}:${padZero(f)}`;
 
   return dropframeTimecode;
 }
