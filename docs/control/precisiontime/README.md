@@ -142,14 +142,14 @@ function nonDropframeToDropframe(timecode) {
 
 	var i=0,h=0,m=0,s=0,f=0;
 	
-/*	for(i=0;i<totalFrames-30;)
+	for(i=0;i<totalFrames-30;)
 	{
 		i += 30-f;
 		f += 30-f;
 		
-		if(f<30)
+		if(f<29)
 		{
-			f++;			
+			f++;	
 		}
 		else
 		{ 
@@ -171,14 +171,14 @@ function nonDropframeToDropframe(timecode) {
 				}
 			}
 		} 
-	}*/
+	}
 	
 	
-	for(i=0; i<totalFrames; i++)
+	for(; i<totalFrames; i++)
 	{
-		if(f<30)
+		if(f<29)
 		{
-			f++;			
+			f++;	
 		}
 		else
 		{ 
