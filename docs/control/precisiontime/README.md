@@ -202,8 +202,6 @@ function nonDropframeToDropframe(timecode) {
 		} 
 	}
 
-	var H 
-
 	// Format the dropframe timecode
 	const dropframeTimecode = padTime(h)+":"+padTime(m)+":"+padTime(s)+";"+padTime(f);
 
