@@ -142,12 +142,43 @@ function nonDropframeToDropframe(timecode) {
 
 	var dfframe = 0;
 	var i,h,m,s,f;
-	for(i=0;i<totalFrames;)
+	
+/*	for(i=0;i<totalFrames-30;)
+	{
+		i += 30-f;
+		
+		if(f<30)
+		{
+			f++;			
+		}
+		else
+		{ 
+			f = 0;
+			s++;
+			
+			if(Math.trunc(m/10)*10 != m && s == 60)
+			{
+				f = 2;  // drop frame every minute except every 10 minutes
+			}
+			if(s == 60) 
+			{
+				s = 0;
+				m++;
+				if(m == 60)
+				{
+					m = 0;
+					h++;
+				}
+			}
+		} 
+	}*/
+	
+	
+	for(i<totalFrames; i++)
 	{
 		if(f<30)
 		{
-			f++;
-			
+			f++;			
 		}
 		else
 		{ 
