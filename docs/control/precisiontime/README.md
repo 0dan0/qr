@@ -23,7 +23,7 @@ Simply point your Labs enabled camera at this animated QR Code, to set your date
 <div id="qrcode"></div><br>
 TC 24: <b id="tctext24"></b><br>
 TC 25: <b id="tctext25"></b><br>
-TC 30: <b id="tctext30"></b><br>
+TC 30: <b id="tctext30">   DF 30: <b id="dftext30"></b><br>
 TC 50: <b id="tctext50"></b><br>
 TC 60: <b id="tctext60"></b><br>
 </center>
@@ -31,7 +31,7 @@ QR Command: <b id="qrtext"></b>
 
 **Compatibility:** Labs enabled HERO5 Session, HERO7, HERO8, HERO9, HERO10, HERO11, MAX and BONES 
         
-updated: May 18, 2023
+updated: Aug 5, 2023
 
 [Learn more](..) back to QR Controls
 
@@ -131,6 +131,35 @@ function padTime1000(i) {
   else if (i < 10) {i = "00" + i;}  // add zero in front of numbers < 10
   return i;
 }
+
+
+function nonDropframeToDropframe(timecode) {
+  // Extract hours, minutes, seconds, and frames from the timecode
+  const [hours, minutes, seconds, frames] = timecode.split(':').map(Number);
+
+  // Calculate the total number of frames
+  const totalFrames = hours * 3600 * 30 + minutes * 60 * 30 + seconds * 30 + frames;
+
+  // Calculate the number of frames to drop at each minute mark
+  const framesToDrop = Math.floor((frames * 0.06) * (hours * 60 + minutes));
+
+  // Calculate the dropframe timecode
+  const dropframeFrames = totalFrames - framesToDrop;
+  const dropframeHours = Math.floor(dropframeFrames / (3600 * 30));
+  const dropframeMinutes = Math.floor((dropframeFrames % (3600 * 30)) / (60 * 30));
+  const dropframeSeconds = Math.floor((dropframeFrames % (60 * 30)) / 30);
+  const dropframeFramesRemainder = dropframeFrames % 30;
+
+  // Format the dropframe timecode
+  const dropframeTimecode = `${padZero(dropframeHours)}:${padZero(dropframeMinutes)}:${padZero(dropframeSeconds)}:${padZero(dropframeFramesRemainder)}`;
+
+  return dropframeTimecode;
+}
+
+function padZero(number) {
+  return number.toString().padStart(2, '0');
+}
+
 function timeLoop()
 {
   var today;
@@ -200,10 +229,13 @@ function timeLoop()
   var tc24 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 24 / 1000));
   var tc30 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 30 / 1000));
   var tc60 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 60 / 1000));
-  
+ 
+  var df30 = nonDropframeToDropframe(tc30);
+ 
   document.getElementById("tctext24").innerHTML = tc24;  
   document.getElementById("tctext25").innerHTML = tc25;  
   document.getElementById("tctext30").innerHTML = tc30;  
+  document.getElementById("dftext30").innerHTML = df30;  
   document.getElementById("tctext50").innerHTML = tc50;  
   document.getElementById("tctext60").innerHTML = tc60;
    
