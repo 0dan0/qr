@@ -25,7 +25,7 @@ TC 24: <b id="tctext24"></b><br>
 TC 25: <b id="tctext25"></b><br>
 TC 30: <b id="tctext30"></b>   DF 30: <b id="dftext30"></b><br>
 TC 50: <b id="tctext50"></b><br>
-TC 60: <b id="tctext60"></b><br>
+TC 60: <b id="tctext60"></b>   DF 60: <b id="dftext60"></b><br>
 </center>
 QR Command: <b id="qrtext"></b>
 
@@ -133,21 +133,21 @@ function padTime1000(i) {
 }
 
 
-function nonDropframeToDropframe(timecode) {
+function nonDropframeToDropframe(timecode, fps) {
 	// Extract hours, minutes, seconds, and frames from the timecode
 	const [hours, minutes, seconds, frames] = timecode.split(':').map(Number);
 
 	// Calculate the total number of frames
-	const totalFrames = hours * 3600 * 30 + minutes * 60 * 30 + seconds * 30 + frames;
+	const totalFrames = hours * 3600 * fps + minutes * 60 * fps + seconds * fps + frames;
 
 	var i=0,h=0,m=0,s=0,f=0;
 	
-	for(i=0;i<totalFrames-30;)
+	for(i=0;i<totalFrames-fps;)
 	{
-		i += 30-f;
-		f += 30-f;
+		i += fps-f;
+		f += fps-f;
 		
-		if(f<29)
+		if(f<fps-1)
 		{
 			f++;	
 		}
@@ -176,7 +176,7 @@ function nonDropframeToDropframe(timecode) {
 	
 	for(; i<totalFrames; i++)
 	{
-		if(f<29)
+		if(f<fps-1)
 		{
 			f++;	
 		}
@@ -278,7 +278,8 @@ function timeLoop()
   var tc30 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 30 / 1000));
   var tc60 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 60 / 1000));
  
-  var df30 = nonDropframeToDropframe(tc30);
+  var df30 = nonDropframeToDropframe(tc30, 30);
+  var df60 = nonDropframeToDropframe(tc60, 60);
  
   document.getElementById("tctext24").innerHTML = tc24;  
   document.getElementById("tctext25").innerHTML = tc25;  
@@ -286,6 +287,7 @@ function timeLoop()
   document.getElementById("dftext30").innerHTML = df30;  
   document.getElementById("tctext50").innerHTML = tc50;  
   document.getElementById("tctext60").innerHTML = tc60;
+  document.getElementById("dftext60").innerHTML = df60;
    
   var t = setTimeout(timeLoop, 10);
 }
