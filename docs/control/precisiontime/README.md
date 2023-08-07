@@ -158,7 +158,11 @@ function nonDropframeToDropframe(timecode, fps) {
 			
 			if(Math.trunc(m/10)*10 != m && s == 60)
 			{
-				f = 2;  // drop frame every minute except every 10 minutes
+			    // drop frame every minute except every 10 minutes
+			    if(fps == 60)
+			    	f = 4;
+			    else
+			        f = 2;
 			}
 			if(s == 60) 
 			{
@@ -187,7 +191,11 @@ function nonDropframeToDropframe(timecode, fps) {
 			
 			if(Math.trunc(m/10)*10 != m && s == 60)
 			{
-				f = 2;  // drop frame every minute except every 10 minutes
+			    // drop frame every minute except every 10 minutes
+			    if(fps == 60)
+			    	f = 4;
+			    else
+			        f = 2;
 			}
 			if(s == 60) 
 			{
