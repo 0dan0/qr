@@ -141,7 +141,7 @@ function nonDropframeToDropframe(timecode) {
 	const totalFrames = hours * 3600 * 30 + minutes * 60 * 30 + seconds * 30 + frames;
 
 	var dfframe = 0;
-	var i,h,m,s,f;
+	var i=0,h,m,s,f;
 	
 /*	for(i=0;i<totalFrames-30;)
 	{
