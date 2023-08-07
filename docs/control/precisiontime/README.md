@@ -142,10 +142,13 @@ function nonDropframeToDropframe(timecode) {
 
 	var dfframe = 0;
 	var i,h,m,s,f;
-	for(i=0;i<totalFrames; i++)
+	for(i=0;i<totalFrames;)
 	{
-		if(f<30)	
+		if(f<30)
+		{
 			f++;
+			
+		}
 		else
 		{ 
 			f = 0;
@@ -169,7 +172,7 @@ function nonDropframeToDropframe(timecode) {
 	}
 
 	// Format the dropframe timecode
-	const dropframeTimecode = '${padZero(h)}:${padZero(m)}:${padZero(s)}:${padZero(f)}';
+	const dropframeTimecode = `${padZero(h)}:${padZero(m)}:${padZero(s)}:${padZero(f)}`;
 
 	return dropframeTimecode;
 }
