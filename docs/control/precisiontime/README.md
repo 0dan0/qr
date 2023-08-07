@@ -23,9 +23,9 @@ Simply point your Labs enabled camera at this animated QR Code, to set your date
 <div id="qrcode"></div><br>
 TC 24: <b id="tctext24"></b><br>
 TC 25: <b id="tctext25"></b><br>
-TC 30: <b id="tctext30"></b>   DF 30: <b id="dftext30"></b><br>
+NDF 30: <b id="tctext30"></b>   DF 30: <b id="dftext30"></b><br>
 TC 50: <b id="tctext50"></b><br>
-TC 60: <b id="tctext60"></b>   DF 60: <b id="dftext60"></b><br>
+NDF 60: <b id="tctext60"></b>   DF 60: <b id="dftext60"></b><br>
 </center>
 QR Command: <b id="qrtext"></b>
 
