@@ -134,54 +134,44 @@ function padTime1000(i) {
 
 
 function nonDropframeToDropframe(timecode) {
-  // Extract hours, minutes, seconds, and frames from the timecode
-  const [hours, minutes, seconds, frames] = timecode.split(':').map(Number);
+	// Extract hours, minutes, seconds, and frames from the timecode
+	const [hours, minutes, seconds, frames] = timecode.split(':').map(Number);
 
-  // Calculate the total number of frames
-  const totalFrames = hours * 3600 * 30 + minutes * 60 * 30 + seconds * 30 + frames;
+	// Calculate the total number of frames
+	const totalFrames = hours * 3600 * 30 + minutes * 60 * 30 + seconds * 30 + frames;
 
-  // Calculate the number of frames to drop at each minute mark
-  const framesToDrop = Math.floor((frames * 0.06) * (hours * 60 + minutes));
-  
-  var dfframe = 0;
-  var i,h,m,s,f;
-  for(i=0;i<totalFrames; i++)
-  {
-	if(f<30)	
-	   f++;
-	else
-	{ 
-		f = 0;
-		s++;
-		
-		if(Math.trunk(m/10)*10 != m && s == 60)
-		{
-			f = 2;  // drop frame every minute except every 10 minutes
-		}
-		if(s == 60) 
-        {
-		   s = 0;
-		   m++;
-		   if(m == 60)
-		   {
-			 m = 0;
-			 h++;
-		   }
-		}
-	} 
-  }
-  
+	var dfframe = 0;
+	var i,h,m,s,f;
+	for(i=0;i<totalFrames; i++)
+	{
+		if(f<30)	
+			f++;
+		else
+		{ 
+			f = 0;
+			s++;
+			
+			if(Math.trunk(m/10)*10 != m && s == 60)
+			{
+				f = 2;  // drop frame every minute except every 10 minutes
+			}
+			if(s == 60) 
+			{
+				s = 0;
+				m++;
+				if(m == 60)
+				{
+					m = 0;
+					h++;
+				}
+			}
+		} 
+	}
 
-  // Calculate the dropframe timecode
-  //const dropframeHours = Math.floor(dropframeFrames / (3600 * 30));
-  //const dropframeMinutes = Math.floor((dropframeFrames % (3600 * 30)) / (60 * 30));
-  //const dropframeSeconds = Math.floor((dropframeFrames % (60 * 30)) / 30);
-  //const dropframeFrames = dropframeFrames % 30;
+	// Format the dropframe timecode
+	const dropframeTimecode = '${padZero(h)}:${padZero(m)}:${padZero(s)}:${padZero(f)}';
 
-  // Format the dropframe timecode
-  const dropframeTimecode = `${padZero(h)}:${padZero(m)}:${padZero(s)}:${padZero(f)}`;
-
-  return dropframeTimecode;
+	return dropframeTimecode;
 }
 
 function padZero(number) {
