@@ -140,7 +140,6 @@ function nonDropframeToDropframe(timecode) {
 	// Calculate the total number of frames
 	const totalFrames = hours * 3600 * 30 + minutes * 60 * 30 + seconds * 30 + frames;
 
-	var dfframe = 0;
 	var i=0,h,m,s,f;
 	
 /*	for(i=0;i<totalFrames-30;)
@@ -174,7 +173,7 @@ function nonDropframeToDropframe(timecode) {
 	}*/
 	
 	
-	for(i<totalFrames; i++)
+	for(i=0; i<totalFrames; i++)
 	{
 		if(f<30)
 		{
@@ -203,7 +202,7 @@ function nonDropframeToDropframe(timecode) {
 	}
 
 	// Format the dropframe timecode
-	const dropframeTimecode = `${padZero(h)}:${padZero(m)}:${padZero(s)}:${padZero(f)}`;
+	const dropframeTimecode = "${padZero(h)}:${padZero(m)}:${padZero(s)}:${padZero(f)}";
 
 	return dropframeTimecode;
 }
