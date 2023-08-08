@@ -20,7 +20,7 @@ Only the more recent releases are documented below. This a general list of Labs 
 - Fixed GPS time SYNC=1 to update the year.
 - Improved support for external power with internal battery, wake alarm events.
 - General performance improvement to Labs processing.
-- Support for the new Blockly visual scripting tool https://gopro.github.io/labs/build/
+- Support for the new Blockly visual scripting tool [Blockly Labs](https://gopro.github.io/labs/build/)
 
 
 ### 2.10.70 - Mar 15, 2023
