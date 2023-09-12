@@ -239,7 +239,7 @@ Shortcut Menu Types (to be used with oSA, oSB, oSC and oSD)  (coming soon)
 |bit rate      |7|ISO min    |14|wind noise    |23|trail length     |30|
 
 
-HERO11 UX modes:
+HERO11/12 UX modes:
 - **mE** - mode Easy
 - **mPR** - mode Pro
 
@@ -256,7 +256,7 @@ HERO11 UX modes:
 Custom Mode: <input type="text" id="tryit" value=""><br>
 
 
-updated: Aug 15, 2023
+updated: Sept 13, 2023
 
 [Learn more](..) on QR Control
 

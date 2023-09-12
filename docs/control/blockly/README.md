@@ -99,10 +99,10 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
 
 Stuff here
 
-**Compatibility:** Labs enabled HHERO11 & MAX 
+**Compatibility:** Labs enabled HERO11, HERO12 & MAX 
         
 ## ver 0.1
-updated: March 30, 2023
+updated: Sept 13, 2023
 
 [More features](..) for Labs enabled cameras
 
