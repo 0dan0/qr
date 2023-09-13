@@ -14,6 +14,7 @@ Only the more recent releases are documented below. This a general list of Labs 
 - Adding mS for selecting Standard (switch Log or HDR off)
 - Adding oX2 for selecting Max Lens Mod 2.0
 - Adding l1, l2, l3 for selecting, trails length short, long and infinite.
+- Enhanced support for the new Blockly visual scripting tool [https://gopro.github.io/labs/build/](https://gopro.github.io/labs/build/)
 
 
 ## HERO11 Black 

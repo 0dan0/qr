@@ -24,9 +24,9 @@ and as a mobile app:<br>
 ### Capture Triggers 
 * Use the image sensor for [**Motion Detection**](./motion), capturing only scenes with motion
 * Capture using [**IMU Motion Triggers**](./imutrigger) for detecting camera movement
-* **HERO7-11/MAX** - Start capture only when traveling fast with [**GPS Speed Triggers**](./speedtrigger) 
 * **HERO7-12/MAX** - Use the [**USB Power Trigger**](./usb) to start and stop the camera (pseudo dash-cam mode)
 * **HERO9-12/Bones** - Start capture using [**Sound Pressure Level Trigger**](./spltrigger)
+* **HERO7-11/MAX** - Start capture only when traveling fast with [**GPS Speed Triggers**](./speedtrigger) 
 
 ### Extended Time-lapse Features 
 * Start a 24-hour long time-lapse or greater with [**Extra Long Time-lapses**](./longtimelapse)
