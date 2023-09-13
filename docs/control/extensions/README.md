@@ -25,38 +25,27 @@ Some particular 4CCs will also change camera behavior and/or enable features. He
 
 
 
-### **HERO12/11/Mini cameras** - Extensions in the latest Labs firmware (Jan/Mar '23)
+### **HERO12/11/Mini cameras**
 
 - **WIDE=1** This offers a color gamut like setting white balance to Native (wider gamut), while enabling auto whitebalance, or user controlled whitebalance. With WIDE off (0 - the default), the camera saturates color to the Rec709 gamut (basically sRGB), so some extreme real-world color saturations are clipped by the gamut. With WIDE=1, the gamut is sensor native, not Rec709, not Rec2020, just what the sensor sees.
 <br>![WIDE.jpg](WIDE.jpg)
 - **WBLK=1** This is an auto lock for balance, it auto white balances until the capture starts. The feature was added for scuba users, as fixed white balance are computed for above water, and while the auto works great in dive scenarios, some prefer a fix white balance per clip.
 - **MTRX=a,b,c,d,e,f,g,h,i** This is the RGB to YUV matrix, new ways to mess up your video. e.g. For an B/W effect in camera try oMMTRX=50,175,25,0,0,0,0,0,0<br>
 ![MTRX.jpg](MTRX.jpg)<br>
-- **GCMP=1** (Mini only for now) Disables gyro compensated exposure. This is users not concerned about Hypersmooth stabilization, and would prefer the auto exposure to use a longer shutter, rather than more sensor gain.  Longer shutters are worse for stabilization, so the HERO11 is smart, as will shorted the shutter if it detects the camera's movement.  GCMP=1 disables this feature.
-- **64BT=32000** <span style="color:steelblue">**ENHANCED**</span> HERO11 cameras default to 12GB chapters when using 64GB card (or larger media), but you can use the 64BT command to specify even larger chapters like 32GB or even 64GB. There has been very limited testing, so experiment first before committing to super large chapters. 
-- **PRXY=4** <span style="color:steelblue">**ENHANCED**</span> DaVinci style proxies folder. Normally a camera will encode a LRV (Low Res Video) for every MP4 using this standard directory structure:<br>
+- **GCMP=1** Disables gyro compensated exposure. This is users not concerned about Hypersmooth stabilization, and would prefer the auto exposure to use a longer shutter, rather than more sensor gain.  Longer shutters are worse for stabilization, so the HERO11 is smart, as will shorted the shutter if it detects the camera's movement.  GCMP=1 disables this feature.
+- **64BT=32000** HERO11/12 cameras default to 12GB chapters when using 64GB card (or larger media), but you can use the 64BT command to specify even larger chapters like 32GB or even 64GB. There has been very limited testing, so experiment first before committing to super large chapters. 
+- **PRXY=x** Normally a camera will encode a LRV (Low Res Video) for every MP4, this extension stores LRVs as Proxy files. 1 - moves LRVs as Adobe Premiere Pro™ style, 2 - moves THMs, 3 moves both into the proxies folder, 4 - uses DaVinci Resolve™ style proxies folder. 
+When PRXY=1 is enabled, you get. Use Premiere Pro’s Attach Proxies function, greatly speeding up a professional workflows.
 &nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GX013784.MP4`<br>
-&nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GL013784.LRV`<br>
 &nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GX013785.MP4`<br>
-&nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GL013785.LRV`<br>
+&nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/Proxies/GX013784_Proxy.MP4`<br>
+&nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/Proxies/GX013785_Proxy.MP4`<br>
 When PRXY=4 is enabled, the LRV files will be created with name naming that is ready for DaVinci Resolve, greatly speeding up a professional workflows. The new folder structure is:<br>
 &nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GX013784.MP4`<br>
 &nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GX013785.MP4`<br>
 &nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/Proxy/GX013784.MP4`<br>
 &nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/Proxy/GX013785.MP4`<br>
 Note: When this feature is enabled, the lack of LRVs will mean the Quik App will not be able to preview video on the camera. However, this will not prevent the full resolution transfers, or on camera playback.
-
-Note: the scripting has had a significant update in the March '23 firmware. See section [Assignments, Variables and Math](../actions)
-
-### **HERO12/11/10/Mini cameras** - Extensions added in Dec'22 firmware
-
-- **AUDS=1** display the approximate audio levels in dB SPL.
-- **EVBS=x** Global EV comp bias for all video modes that also works with Live-Stream and web-cam, and can be changed during capture if QRDR=1 is set. As this is global offset, it will add to EV comp settings with your presets.  So if EVBS=-1 and a preset has EV set to -0.5, the effective EV will be -1.5.
-- **FRNT=1** For front screen equipped cameras, display most LCD Labs message on the front screen. Practicular useful for FPV useful not using the touchscreen.  e.g.  !MFRNT=1!MEXPS=1 will display the ISO and shutter speed on the front LCD.
-- **PRXY=x** <span style="color:steelblue">**ENHANCED**</span> This is an enhancement so that more extra files can be moved to the proxies folder. 1- moves LRVs, 2 - moves THMs, 3 moves both into the proxies folder.
-
-### **HERO12/11 and Mini cameras** - Extensions added in Nov '22 firmware
-
 - **GUID=aspect,aspect,...** - Displays an on-scene shooting guide for different aspect ratios, independent from the camera's current video mode. 
 Up to 8 guides supported at once. e.g. GUID=1.777 will enable a 16:9 guide. GUID=2.35,0.5625 will add guides for Cinemascope and 9:16 social.
 <br>![GUID.jpg](GUID.jpg)
@@ -82,6 +71,29 @@ Increasing the logbase will enhance the shadows, but will also reveal noise redu
 You can back-off the noise reduction to restore shadow details, with the downside being a noiser image (protentially requiring noise reduction in post.)  
 Also a noiser image will need a higher-bitrate to store the additional information (so BITR, NR01 and LOGB are all related.) 
 - **BYPS=1** - Bypass common pop-ups, such as resetting the time and date. Remember to set time and date if you remove the battery.
+
+Note: the scripting has had a significant update in the March '23 firmware. See section [Assignments, Variables and Math](../actions)
+
+### **HERO10/11/12 and Bones cameras** - Advanced features
+
+- **24HZ=1** - enable film standard 24.0 frame, rather than the default broadcast standard 23.976.  The existing 24p mode(s) will have the new frame rate when this is enabled, all other video modes are unaffected. 
+- **AUDS=1** display the approximate audio levels in dB SPL.
+- **BITH=3** - set the compression in Mb/s for the H264 encodes. Normally this would be for LRVs at around 4Mb/s. No guaranteed capture reliability using this feature. Input range in Mb/s from 1 to 100. 
+- **BITR=120** - set the compression in Mb/s for the Protune High Bitrate setting (HEVC only). Normally this would be around 100Mb/s, however higher (or lower) rates may be achieved with newer SD Cards. No guaranteed capture reliability using this feature. Input range in Mb/s from 2 to 200. 
+- **DAMP=0.1 to 1000** - Control over the auto-exposure damping. When moving a camera through dramatically changing lighting, like biking through a forest, in and out of sunlight, or flying a drone through a short tunnel, the exposure will adjust automatically, correctly in most scenarios, but sometimes not optimal for some rapidly changing light levels. The camera's auto-exposure currently takes about one second to adjust from sunlight to indoor conditions, but if you are flying a drone through indoors for only a few seconds, the camera would over-expose on exit. In this scenario using an exposure lock might be preferable, maintaining an outdoor exposure throwout, but exposure lock is risky for shooting under variable lighting conditions. Changing the damping might be what you need. Setting the DAMP=1 is the default, so setting to 10 would slow the camera's exposure adjustments 10X. Now shooting into dark for moment will not cause much over-exposure (if any).  Setting DAMP=60 will take a minute for exposure changes. Setting DAMP lower than 1, like 0.2, would make it adjust faster. There is no perfect setting, this is just more control.
+- **DAUD=1** - Disable audio, all video created video files will have no audio. Application: high bit-rate drones video. (not supported on HERO12)
+- **DLRV=1** - Disable LRV, all videos will have an MP4 only. This is not good idea for Quik uses, as the LRV video helps in video preview. Note: There is currently a bug in this feature (HERO10 as requires a restart after two captures.) (not supported on H12)
+- **EVBS=x** Global EV comp bias for all video modes that also works with Live-Stream and web-cam, and can be changed during capture if QRDR=1 is set. As this is global offset, it will add to EV comp settings with your presets.  So if EVBS=-1 and a preset has EV set to -0.5, the effective EV will be -1.5.
+- **FRNT=1** For front screen equipped cameras, display most LCD Labs message on the front screen. Practicular useful for FPV useful not using the touchscreen.  e.g.  !MFRNT=1!MEXPS=1 will display the ISO and shutter speed on the front LCD.
+- **TONE=0,1,2 or 3** - Tone-mapping controls. Tone-mapping is the in-camera contrast control, dynamically adjusting the video to look good under a range of lighting conditions. 
+HERO10 adds LTM - Local Tone-Mapping, enabling you to see details in leaves and grass textures, way better than all previous GoPro's. HERO9 and earlier, used GTM, Global 
+Tone-Mapping which adjusts the contrast curve for the image automatically. If you wanted to do these in post, you could use Protune Flat, where all in-camera tone-mapping is 
+disabled and a log curve is applied (do not use these control with Flat, can be weird results.) For a more developed Rec709 video, by shooting GoPro Color or Natural modes, 
+but you wanted to do your own tone-mapping in post--you can now do that.  Note: HERO11 is a tad odd with TONE=3, as it tends to under-expose. Always experiment before using an feature.
+  - **TONE=0** - using the cameras default  
+  - **TONE=1** - use GTM only
+  - **TONE=2** - use GTM+LTM
+  - **TONE=3** - disable all tone-mapping
 
 ### Miscellaneous controls for most Labs cameras. 
 
@@ -120,7 +132,7 @@ Also a noiser image will need a higher-bitrate to store the additional informati
 <!-- - **DECR="password"** - Decrypt existing encrypted files. <span style="color:red">If the passwords do not match,</span> the data is doubly encrypted, <span style="color:red">there is no recovery of the data. **Be careful**.</span> With the correct password, all files are decrypted on camera. The onto camera process is slow, and the entire encrypted file must be read and rewritten, expect a similar processing time to the capture length. If low battery is an issue, provide the camera external power before decryption.-->
 
 
-### **HERO8/9/10/11/12 and Bones cameras** - Extensions latest Labs firmware
+### **HERO8/9/10/11/12 and Bones cameras** - Miscellaneous Extensions
 
 - **HSTO=x** - minutes - controlling the length of the Hindsight timeout, changing from the default for 15 minutes. e.g. !MHSTO=60 for a 60 minute Hindsight timeout.
 - **SPED=x** - SD Card Speed Test. 'x' is the number of runs, each run is around 10 seconds.  Data rates should have minimums above 120Mb/s is you want to reliably capture the high bitrate modes. 
@@ -136,23 +148,6 @@ Also a noiser image will need a higher-bitrate to store the additional informati
 - **MUTE=mask** - Mute one or more channels of audio (microphones). For HERO9 cameras, there are four channels, although three microphones. The mask is binary mask for channels 4321. e.g. oMMUTE=15 mute all channels (15 = 1111B), oMMUTE=8 mute the fourth channel (8 = 1000B), oMMUTE=7 mutes the first 3 channels (7 = 0111B).
 - **SOLO=channel** - Use only one channel of audio. e.g. oMSOLO=1 use only channel 1, oMSOLO=4 only use the fourth channel.
 
-### **HERO10/11/12 and Bones cameras** - Advanced features
-
-- **24HZ=1** - enable film standard 24.0 frame, rather than the default broadcast standard 23.976.  The existing 24p mode(s) will have the new frame rate when this is enabled, all other video modes are unaffected. 
-- **BITH=3** - set the compression in Mb/s for the H264 encodes. Normally this would be for LRVs at around 4Mb/s. No guaranteed capture reliability using this feature. Input range in Mb/s from 1 to 100. 
-- **BITR=120** - set the compression in Mb/s for the Protune High Bitrate setting (HEVC only). Normally this would be around 100Mb/s, however higher (or lower) rates may be achieved with newer SD Cards. No guaranteed capture reliability using this feature. Input range in Mb/s from 2 to 200. 
-- **DAMP=0.1 to 1000** - Control over the auto-exposure damping. When moving a camera through dramatically changing lighting, like biking through a forest, in and out of sunlight, or flying a drone through a short tunnel, the exposure will adjust automatically, correctly in most scenarios, but sometimes not optimal for some rapidly changing light levels. The camera's auto-exposure currently takes about one second to adjust from sunlight to indoor conditions, but if you are flying a drone through indoors for only a few seconds, the camera would over-expose on exit. In this scenario using an exposure lock might be preferable, maintaining an outdoor exposure throwout, but exposure lock is risky for shooting under variable lighting conditions. Changing the damping might be what you need. Setting the DAMP=1 is the default, so setting to 10 would slow the camera's exposure adjustments 10X. Now shooting into dark for moment will not cause much over-exposure (if any).  Setting DAMP=60 will take a minute for exposure changes. Setting DAMP lower than 1, like 0.2, would make it adjust faster. There is no perfect setting, this is just more control.
-- **DAUD=1** - Disable audio, all video created video files will have no audio. Application: high bit-rate drones video. (not on H12)
-- **DLRV=1** - Disable LRV, all videos will have an MP4 only. This is not good idea for Quik uses, as the LRV video helps in video preview. Note: There is currently a bug in this feature (HERO!0, fixed in HERO11+Mini), as requires a restart after two captures. (not on H12)
-- **TONE=0,1,2 or 3** - Tone-mapping controls. Tone-mapping is the in-camera contrast control, dynamically adjusting the video to look good under a range of lighting conditions. 
-HERO10 adds LTM - Local Tone-Mapping, enabling you to see details in leaves and grass textures, way better than all previous GoPro's. HERO9 and earlier, used GTM, Global 
-Tone-Mapping which adjusts the contrast curve for the image automatically. If you wanted to do these in post, you could use Protune Flat, where all in-camera tone-mapping is 
-disabled and a log curve is applied (do not use these control with Flat, can be weird results.) For a more developed Rec709 video, by shooting GoPro Color or Natural modes, 
-but you wanted to do your own tone-mapping in post--you can now do that.  Note: HERO11 is a tad odd with TONE=3, as it tends to under-expose. Always experiment before using an feature.
-  - **TONE=0** - using the cameras default  
-  - **TONE=1** - use GTM only
-  - **TONE=2** - use GTM+LTM
-  - **TONE=3** - disable all tone-mapping
   
   
 
@@ -160,17 +155,7 @@ but you wanted to do your own tone-mapping in post--you can now do that.  Note: 
 
 - **BERS=1** - Bypass ERS compensation. Do not use unless you have stablization disabled, and know why you want ERS off. Not common.
 - **IWFR=1** - Increased Write FRequency to support for higher precision file recoveries (this is also defaulted on with !MBITR=x bitrate changes). If you have ever had a big crash that ejects the battery, you may have noticed the file recovery will miss 5-15 seconds of your video. Missing even the lead up to the great moment. This hack increases the rate in which video data is flushed to the SD Card, improving the recoverability for footage. With this enabled, battery ejects will not lose more than 1-2 seconds of footage.  Great for FPV users. 
-- **PRXY=1** - Store LRV files as Adobe Premiere Pro™ style proxy files. Normally a camera will encode a LRV (Low Res Video) for every MP4 using this standard directory structure:<br>
-&nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GX013784.MP4`<br>
-&nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GL013784.LRV`<br>
-&nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GX013785.MP4`<br>
-&nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GL013785.LRV`<br>
-When Proxies are enabled, the LRV files will be created with name naming that is ready for Premiere Pro's **Attach Proxies** function, greatly speeding up a professional workflows. The new folder structure is:<br>
-&nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GX013784.MP4`<br>
-&nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/GX013785.MP4`<br>
-&nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/Proxies/GX013784_Proxy.MP4`<br>
-&nbsp;&nbsp;&nbsp;&nbsp; `DCIM/100GOPRO/Proxies/GX013785_Proxy.MP4`<br>
-Note: When this feature is enabled, the lack of LRVs will mean the Quik App will not be able to preview video on the camera. However, this will not prevent the full resolution transfers, or on camera playback.
+
 - **TUSB=1** - Trust USB power.  Some USB power sources may report less than they are capable. This modification assumes the USB Power source is 2A minimum, and disables the testing. This can help with some USB power sources that the camera can reject, but are otherwise sufficient to run all camera operations. If you use TUSB with an inadequate power source, expect capture failures.  
 
 
