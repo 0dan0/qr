@@ -323,7 +323,7 @@ var file;
 					{
 						var num = (bytes[i+8+k*4]*16777216);
 						num += (bytes[i+8+k*4+1]<<16) + (bytes[i+8+k*4+2]<<8) + (bytes[i+8+k*4+3]<<0);						
-						if(num > 2147483647) num = 4294967296 - num; // signed numbers
+						if(num > 2147483647) num -= 4294967296; // signed numbers
 						if(k > 0) dat += ", ";
 						dat += num.toString();
 					}
@@ -334,7 +334,7 @@ var file;
 					for(k=0; k<repeat; k++)
 					{
 						var num = (bytes[i+8+k*2+0]<<8) + (bytes[i+8+k*2+1]<<0);
-						if(num > 32767) num = 32768 - num; // signed numbers
+						if(num > 32767) num -= 65536; // signed numbers
 						if(k > 0) dat += ", ";
 						dat += num.toString();
 					}
@@ -345,7 +345,7 @@ var file;
 					for(k=0; k<repeat; k++)
 					{
 						var num = (bytes[i+8+k]);
-						if(num > 127) num = 128 - num; // signed numbers
+						if(num > 127) num -= 256; // signed numbers
 						if(k > 0) dat += ", ";
 						dat += num.toString();
 					}
