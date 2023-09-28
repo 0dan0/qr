@@ -28,27 +28,27 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="m6" name="mode" value="mV1"> <label for="m6">HDR<sup>12</sup></label>&nbsp;&nbsp;
   <input type="radio" id="m7" name="mode" value="mV2"> <label for="m7">Log<sup>12</sup></label><br>
   &nbsp;&nbsp;**Presets 10/11:**
-  <input type="radio" id="m5" name="mode" value="mV0"> <label for="m5">Standard<sup>10/11</sup></label>&nbsp;&nbsp;
-  <input type="radio" id="m6" name="mode" value="mV1"> <label for="m6">Activity<sup>10/11</sup></label>&nbsp;&nbsp;
-  <input type="radio" id="m7" name="mode" value="mV2"> <label for="m7">Cinematic<sup>10/11</sup></label>&nbsp;&nbsp;
-  <input type="radio" id="m8" name="mode" value="mV4"> <label for="m8">SloMo<sup>10/11</sup></label>&nbsp;&nbsp;
-  <input type="radio" id="m9" name="mode" value="mV3"> <label for="m9">Full Frame<sup>11</sup></label><br>
+  <input type="radio" id="m5" name="mode" value="mV0"> <label for="m8">Standard<sup>10/11</sup></label>&nbsp;&nbsp;
+  <input type="radio" id="m6" name="mode" value="mV1"> <label for="m9">Activity<sup>10/11</sup></label>&nbsp;&nbsp;
+  <input type="radio" id="m7" name="mode" value="mV2"> <label for="m10">Cinematic<sup>10/11</sup></label>&nbsp;&nbsp;
+  <input type="radio" id="m8" name="mode" value="mV4"> <label for="m11">SloMo<sup>10/11</sup></label>&nbsp;&nbsp;
+  <input type="radio" id="m9" name="mode" value="mV3"> <label for="m12">Full Frame<sup>11</sup></label><br>
   &nbsp;&nbsp;**VideoTL-Modes:** 
-  <input type="radio" id="m10" name="mode" value="mTW"> <label for="m10">TimeWarp</label>&nbsp;&nbsp;
-  <input type="radio" id="m11" name="mode" value="mT"> <label  for="m11">Timelapse</label>&nbsp;&nbsp;
-  <input type="radio" id="m12" name="mode" value="mNL"> <label for="m12">Nightlapse</label><br>
+  <input type="radio" id="m10" name="mode" value="mTW"> <label for="m13">TimeWarp</label>&nbsp;&nbsp;
+  <input type="radio" id="m11" name="mode" value="mT"> <label  for="m14">Timelapse</label>&nbsp;&nbsp;
+  <input type="radio" id="m12" name="mode" value="mNL"> <label for="m15">Nightlapse</label><br>
   &nbsp;&nbsp;**Computational Modes:**
-  <input type="radio" id="m13" name="mode" value="mST"> <label for="m13">Star Trails<sup>11</sup></label>&nbsp;&nbsp;
-  <input type="radio" id="m14" name="mode" value="mLP"> <label for="m14">Light Painting<sup>11</sup></label>&nbsp;&nbsp;
-  <input type="radio" id="m15" name="mode" value="mLT"> <label for="m15">Vehicle Lights<sup>11</sup></label><br>
+  <input type="radio" id="m13" name="mode" value="mST"> <label for="m16">Star Trails<sup>11</sup></label>&nbsp;&nbsp;
+  <input type="radio" id="m14" name="mode" value="mLP"> <label for="m17">Light Painting<sup>11</sup></label>&nbsp;&nbsp;
+  <input type="radio" id="m15" name="mode" value="mLT"> <label for="m18">Vehicle Lights<sup>11</sup></label><br>
   &nbsp;&nbsp;**Photo-Modes:** 
-  <input type="radio" id="m16" name="mode" value="mP">  <label for="m16">Photo</label>&nbsp;&nbsp;
-  <input type="radio" id="m17" name="mode" value="mPB"> <label for="m17">Burst</label>&nbsp;&nbsp;
-  <input type="radio" id="m18" name="mode" value="mL">  <label for="m18">Live Burst<sup>10</sup></label>&nbsp;&nbsp;
-  <input type="radio" id="m19" name="mode" value="mPN"> <label for="m19">Night</label>&nbsp;&nbsp;
-  <input type="radio" id="m20" name="mode" value="mTP"> <label for="m20">Timelapse</label>&nbsp;&nbsp;
-  <input type="radio" id="m21" name="mode" value="mNP"> <label for="m21">Nightlapse</label>&nbsp;&nbsp;
-  <input type="radio" id="m22" name="mode" value="" checked> <label for="m22">not set</label>&nbsp;&nbsp;<br>
+  <input type="radio" id="m16" name="mode" value="mP">  <label for="m19">Photo</label>&nbsp;&nbsp;
+  <input type="radio" id="m17" name="mode" value="mPB"> <label for="m20">Burst</label>&nbsp;&nbsp;
+  <input type="radio" id="m18" name="mode" value="mL">  <label for="m21">Live Burst<sup>10</sup></label>&nbsp;&nbsp;
+  <input type="radio" id="m19" name="mode" value="mPN"> <label for="m22">Night</label>&nbsp;&nbsp;
+  <input type="radio" id="m20" name="mode" value="mTP"> <label for="m22">Timelapse</label>&nbsp;&nbsp;
+  <input type="radio" id="m21" name="mode" value="mNP"> <label for="m23">Nightlapse</label>&nbsp;&nbsp;
+  <input type="radio" id="m22" name="mode" value="" checked> <label for="m24">not set</label>&nbsp;&nbsp;<br>
 
 <div id="noteMODE" style="font-size:13px;">
 <b>Time/Night-Lapse modes:</b> The camera defaults to having presets for only one time-lapse mode and one night-lapse mode, yet both modes have two configurations (video or photo.) For all QR Code mode commands to work, a preset is needed for every mode you wish to use. e.g. If you only have a preset for night-lapse video (NLV), the QR command for NLV will work, but will not for night-lapse photo (NLP). To solve this, create a new preset for NLP, and both video and photo night-lapse commands will work.<br><br>
