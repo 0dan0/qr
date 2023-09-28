@@ -1625,7 +1625,7 @@ function dcmd(cmd, id) {
 	}
 	else
 	{
-		for (i = 1; i < 22; i++) { 
+		for (i = 1; i < 40; i++) { 
 			var newid = id+i;
 			if(document.getElementById(newid) !== null)
 			{
