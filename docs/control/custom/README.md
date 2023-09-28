@@ -24,9 +24,9 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="m3" name="mode" value="mVE"> <label for="m3">Endurance<sup>10/11</sup></label>&nbsp;&nbsp;
   <input type="radio" id="m4" name="mode" value="mVS"> <label for="m4">Stationary<sup>10</sup></label><br>
   &nbsp;&nbsp;**HERO12 Video Modes:**
-  <input type="radio" id="m5" name="mode" value="mV0"> <label for="m5">Standard<sup>12</sup></label>&nbsp;&nbsp;
-  <input type="radio" id="m6" name="mode" value="mV1"> <label for="m6">HDR<sup>12</sup></label>&nbsp;&nbsp;
-  <input type="radio" id="m7" name="mode" value="mV2"> <label for="m7">Log<sup>12</sup></label><br>
+  <input type="radio" id="m5" name="mode" value="mS"> <label for="m5">Standard<sup>12</sup></label>&nbsp;&nbsp;
+  <input type="radio" id="m6" name="mode" value="mH"> <label for="m6">HDR<sup>12</sup></label>&nbsp;&nbsp;
+  <input type="radio" id="m7" name="mode" value="mL"> <label for="m7">Log<sup>12</sup></label><br>
   &nbsp;&nbsp;**Presets 10/11:**
   <input type="radio" id="m8" name="mode" value="mV0"> <label for="m8">Standard<sup>10/11</sup></label>&nbsp;&nbsp;
   <input type="radio" id="m9" name="mode" value="mV1"> <label for="m9">Activity<sup>10/11</sup></label>&nbsp;&nbsp;
