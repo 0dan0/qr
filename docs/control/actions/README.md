@@ -145,23 +145,23 @@ The start will happen if the condition is true, but the print message occurs whe
 > &nbsp;&nbsp;&nbsp;    print <courier>"Hello World"</courier> <br>
 > }
 
-These can be stacked too, e.g. **\<08:45!S+"Hello World"+!60E** is equivalent to
+These can be stacked too, e.g. **\<08:45!S+<courier>"Hello World"</courier>+!60E** is equivalent to
 
 > if(current_time < 8:45) <br>
 > {<br>
 > &nbsp;&nbsp;&nbsp;    Start <br>
-> &nbsp;&nbsp;&nbsp;    print "Hello World" <br>
+> &nbsp;&nbsp;&nbsp;    print <courier>"Hello World"</courier> <br>
 > &nbsp;&nbsp;&nbsp;    After 60 seconds End the capture <br>
 > }
 
 Conditions support **else** statements using the **~** character after the last 'true' command
 
-**\<08:45!S+"Hello World"+!60E~!08:44N!R** is equivalent to
+**\<08:45!S+<courier>"Hello World"</courier>+!60E~!08:44N!R** is equivalent to
 
 > if(current_time < 8:45) <br>
 > {<br>
 > &nbsp;&nbsp;&nbsp;    Start <br>
-> &nbsp;&nbsp;&nbsp;    print "Hello World" <br>
+> &nbsp;&nbsp;&nbsp;    print <courier>"Hello World"</courier> <br>
 > &nbsp;&nbsp;&nbsp;    After 60 seconds End the capture <br>
 > }<br>
 > else<br>
@@ -177,14 +177,14 @@ Conditionals themselves can be stacked like **\>09:15<10:00!S** is equivalent to
 > &nbsp;&nbsp;&nbsp; if(current_time <= 10:00) <br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Start<br>
 	
-However the else can only be applied to the last condition. **\>09:15<10:00!S+"Hello World"+!60E~!09:30N!R** is equivalent to
+However the else can only be applied to the last condition. **\>09:15<10:00!S+<courier>"Hello World"</courier>+!60E~!09:30N!R** is equivalent to
 
 > if(current_time >= 9:15) <br>
 > {<br>
 > &nbsp;&nbsp;&nbsp;	if(current_time <= 10:00) <br>
 > &nbsp;&nbsp;&nbsp;	{<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		Start<br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		print "Hello World"<br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		print <courier>"Hello World"</courier><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		After 60 seconds End the capture<br>
 > &nbsp;&nbsp;&nbsp;	}<br>
 > &nbsp;&nbsp;&nbsp;	else<br>
@@ -266,7 +266,7 @@ Say you want use a GoPro as a crude light meter, and report the output as an [ex
 
 EV = logbase2 (f-number^2/(time x gain_above_base_iso))  is the formula for EV<br>
 
-As a QR command: **=E6.25=Gi=G&#42;0.01=E/G=E&#42;s=E#2"Exposure value $E"!R**<br>
+As a QR command: **=E6.25=Gi=G&#42;0.01=E/G=E&#42;s=E#2<courier>"Exposure value $E"</courier>!R**<br>
 
 Command steps explained:
 > E=6.25<br>
