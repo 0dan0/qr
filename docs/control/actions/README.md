@@ -14,6 +14,8 @@
             margin: 0px;
             display: inline-block;
         }
+		
+		courier { style="font-family:'Courier New'" }
 </style>     
 
 * **!**time**S** - Start at exactly **time** if in hh:mm form, or after n seconds. 
@@ -63,13 +65,13 @@
 
 ## Storing metadata (Permanent, survives power off)
 
-* **!M**fourcc**"string"**
+* **!M**fourcc<courier>**"string"**</courier>
 * **!M**fourcc**=Number metadata**
 
 Example for display the owner’s name
-**!MOWNR="Joe Bloggs"**
+**!MOWNR=<courier>"Joe Bloggs"</courier>**
 
-Note: All strings must use " (ASCII 34) and not the ” (148) character.  
+Note: All strings must use <courier>"</courier> (ASCII 34) and not the <courier>”</courier> (148) character.  
 
 All tags between **OWNA** and **OWNZ** will be displayed and stored in **GoPro-owner.txt**.
 
