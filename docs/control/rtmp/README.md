@@ -60,10 +60,10 @@ Select your Resolution:
   <input type="radio" id="rs3" name="rs" value="L"><label for="1080p">1080p </label>
 
 Store a high quality copy on camera:
- <input type="checkbox" id="cp" value="t" checked><label for="cp">1080p Copy</label><br>
+ <input type="checkbox" id="cp" value="t" checked><label for="cp"> 1080p Copy</label><br>
  
 HERO12 users enable this:
- <input type="checkbox" id="h12" value="t"><label for="h12">Using HERO12</label><br>
+ <input type="checkbox" id="h12" value="t"><label for="h12"> Using HERO12</label><br>
 
 <center>
 <div id="qrcode3"></div>
