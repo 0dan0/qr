@@ -15,7 +15,7 @@
 ## Prerequisites for Live-streaming (HERO8/9/10/11 & 12)
 
 1. **Pair with the GoPro mobile app once.** Live-streaming won't work with an out-of-box or factory-reset camera, without connecting with the App first. 
-On HERO12 it seems you have to enable auto upload once. You can immediately disable it was enabled.
+On HERO12 it seems you have to enable auto upload once. You can immediately disable it once enabled, if the feature is not needed.
 2. Storing WiFi credentials on the camera, for the network you intend to stream over (e.g. your home WiFi or mobile access point.) 
 3. Storing the RMTP URL address that you intend to stream to (e.g using a service like Twitch.)
 
