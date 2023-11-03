@@ -119,7 +119,7 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="f5" name="fov" value="fH"> <label for="f5">Linear+HL </label>&nbsp;&nbsp;
   <input type="radio" id="f6" name="fov" value="fV"> <label for="f6">Hyperview<sup>11/12</sup> </label><br>
   Max Lens Mod:  <input type="radio" id="f7" name="fov" value="oX1fW"> <label for="f7">Enable Wide </label>&nbsp;&nbsp;
-  <input type="radio" id="f8" name="fov" value="oX1fX"> <label for="f8">Enable Superview </label>&nbsp;&nbsp;
+  <input type="radio" id="f8" name="fov" value="oX1fX"> <label for="f8">Enable Superview </label>&nbsp;&nbsp;<br>
   Max Lens Mod 2.0:  <input type="radio" id="f9" name="fov" value="oX2fW"> <label for="f9">Enable Wide </label>&nbsp;&nbsp;
   <input type="radio" id="f10" name="fov" value="oX2fX"> <label for="f10">Enable Superview </label>&nbsp;&nbsp;
   <input type="radio" id="f11" name="fov" value="oX2fV"> <label for="f11">Enable Hyperview </label>&nbsp;&nbsp;<br>
