@@ -583,7 +583,7 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
         
 [More features](..) for Labs enabled cameras
 
-updated: Movember 2, 2023
+updated: November 2, 2023
 
 <script>
 var clipcopy = "";
