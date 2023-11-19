@@ -57,8 +57,8 @@ the number relates to how often the record time or shooting mode is displayed (v
 - **HSTP=x,z,size** - Used with HIST=1, this sets the size (40-100) and position (x,y as 1-100) of the histogram. 
 A negative x-value will place the histograme on the front screen. e.g. oMHSTP=1,83,67 or oMHSTP=-3,55,87.
 <br>![HSTPfront.jpg](HSTPfront.jpg)
-- **LEVL=size** - Add a spirit level to the rear LCD, where the size can be 1-9. e.g. oMLEVL=6
-<br>![LEVL.jpg](LEVL.jpg)
+- **LEVL=size** - Add a spirit level to the rear LCD, where the size can be 1-9. e.g. oMLEVL=6. Color was added for HERO12.
+<br>![LEVLnew.jpg](LEVLnew.jpg)
 - **LOGB=logbase,offset** - Super experimental, alter the log encoding for more dynamic range, or for a closer match with other camera's log curves. 
 i.e design your own flat profile. Ideal for use with 10-bit, and the existing flat color setting.  
 e.g. oMLOGB=400 for a little push in dynamic range.  

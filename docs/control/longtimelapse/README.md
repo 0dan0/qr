@@ -22,7 +22,7 @@ Example Time-lapses tested:
 
 As the camera is off between frames, it is also possible to periodically change the battery for extremely long time-laspes without interrupting the time-lapse in progress. Simply replace the battery, power on the camera, the time-lapse will automatically continue.
 
-HERO12 Users: Due to improved reliability, effeciency and Enduro battery, HERO12 can achieve ~60% greater capture times. A test requesting for 24 hours capture, 3.6 minute interval, a HERO12 captured 627 images over nearly 38 hours.
+HERO12 Users: Due to improved reliability, effeciency and Enduro battery, HERO12 can achieve ~40% greater capture times. A test requesting for 24 hours capture, 3.6 minute interval, a HERO12 captured 627 images over nearly 38 hours.
 
 ## Time-lapse Calculator
 
