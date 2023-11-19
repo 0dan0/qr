@@ -169,7 +169,7 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
 
 <br> 
 
-updated: Nov 2, 2023<br>
+updated: Nov 19, 2023<br>
 
 [Learn more](..) on QR Control
 
