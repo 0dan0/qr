@@ -120,9 +120,9 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="f6" name="fov" value="fV"> <label for="f6">Hyperview<sup>11/12</sup> </label><br>
   Max Lens Mod:  <input type="radio" id="f7" name="fov" value="oX1fW"> <label for="f7">Enable Wide </label>&nbsp;&nbsp;
   <input type="radio" id="f8" name="fov" value="oX1fX"> <label for="f8">Enable Superview </label>&nbsp;&nbsp;<br>
-  Max Lens Mod 2.0:  <input type="radio" id="f9" name="fov" value="oX2fW"> <label for="f9">Enable Wide </label>&nbsp;&nbsp;
-  <input type="radio" id="f10" name="fov" value="oX2fX"> <label for="f10">Enable Superview </label>&nbsp;&nbsp;
-  <input type="radio" id="f11" name="fov" value="oX2fV"> <label for="f11">Enable Hyperview </label>&nbsp;&nbsp;<br>
+  Max Lens Mod 2.0:  <input type="radio" id="f9" name="fov" value="oX2fW"> <label for="f9">Enable Wide<sup>12</sup> </label>&nbsp;&nbsp;
+  <input type="radio" id="f10" name="fov" value="oX2fX"> <label for="f10">Enable MSV<sup>12</sup> </label>&nbsp;&nbsp;
+  <input type="radio" id="f11" name="fov" value="oX2fY"> <label for="f11">Enable MHV<sup>12</sup> </label>&nbsp;&nbsp;<br>
   <input type="radio" id="f12" name="fov" value="oX0"> <label for="f12">Disable MLM</label>&nbsp;&nbsp;
   <input type="radio" id="f13" name="fov" value="" checked> <label for="f13">not set</label><br><br>
  </div>
@@ -285,6 +285,11 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="audt3" name="audt" value="aW"> <label for="audt3">On</label>&nbsp;&nbsp;
   <input type="radio" id="audt4" name="audt" value="" checked> <label for="audt4"> not set</label><br><br>
 </div>
+<input type="checkbox" id="np" value=""> <label for="sm">HERO12: Custom Named Presets<sup>12</sup></label><br>
+<div id="named">
+   <div id="ICONS">
+      <img src="https://gopro.github.io/labs/control/custom/icons.png" alt="ICONS"> 
+   </div>
 <input type="checkbox" id="sm" value="oSM"> <label for="sm">Spot Metering<sup>10-12</sup></label><br>
 <div id="spotMeter">
    <div id="LCD">
@@ -583,7 +588,7 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
         
 [More features](..) for Labs enabled cameras
 
-updated: November 2, 2023
+updated: November 20, 2023
 
 <script>
 var clipcopy = "";
