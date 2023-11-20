@@ -895,15 +895,14 @@ function startTime() {
 			
 			if(icon_num < 0) icon_num = 0;
 			if(icon_num > 18) icon_num = 18;
-			
-	
-			if(document.getElementById("newpres") !== null)
-			{
-				newpresent = "oMPRES=\"" + icon_num + ",\"" + document.getElementById("newpres").value + "\"";
-			}
-			else
-				newpresent = "";
 		});
+		
+		if(document.getElementById("newpres") !== null)
+		{
+			newpresent = "oMPRES=\"" + icon_num + "," + document.getElementById("newpres").value + "\"";
+		}
+		else
+			newpresent = "";
 
 		dset("namedPresets", document.getElementById("np").checked);	
 	}
