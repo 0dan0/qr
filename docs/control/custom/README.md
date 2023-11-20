@@ -289,6 +289,7 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
 <div id="namedPresets">
    <div id="ICONS">
       <img src="https://gopro.github.io/labs/control/custom/icons.png" alt="ICONS"> 
+	  New Presets Name: <input type="text" id="newpres" value="Labs-">
    </div>
 <input type="checkbox" id="sm" value="oSM"> <label for="sm">Spot Metering<sup>10-12</sup></label><br>
 <div id="spotMeter">
@@ -892,6 +893,12 @@ function startTime() {
 			
 			if(icon_num < 0) icon_num = 0;
 			if(icon_num > 18) icon_num = 18;
+			
+	
+			if(document.getElementById("newpres") !== null)
+			{
+				cmd = cmd + "oMPRES=\"" + icon_num + ",\"" + document.getElementById("newpres").value + "\"";
+			}
 		});
 
 		dset("namedPresets", document.getElementById("np").checked);	
