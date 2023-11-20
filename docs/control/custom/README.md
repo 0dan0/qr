@@ -286,7 +286,7 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="audt4" name="audt" value="" checked> <label for="audt4"> not set</label><br><br>
 </div>
 <input type="checkbox" id="np" value=""> <label for="sm">HERO12: Custom Named Presets<sup>12</sup></label><br>
-<div id="named">
+<div id="namedPresets">
    <div id="ICONS">
       <img src="https://gopro.github.io/labs/control/custom/icons.png" alt="ICONS"> 
    </div>
@@ -681,6 +681,7 @@ function startTime() {
 	dset("settingsPhotoRAW", false);
 	dset("settingsPT", false);
 	dset("settingsPTR", false);
+	dset("namedPresets", false);
 	dset("spotMeter", false);
 	dset("settingsBurst", false);
 	dset("settingsTimewarp", false);
@@ -879,6 +880,21 @@ function startTime() {
 		dset("noteMODE", true);
 		break;
 		
+	}
+	
+	if(document.getElementById("np") !== null)
+	{
+		document.getElementById("ICONS").addEventListener('click', function (event) 
+		{
+			bounds=this.getBoundingClientRect();
+			
+			icon_num = Math.trunc(event.offsetX/70) + 6 * Math.trunc(event.offsetY/70);
+			
+			if(icon_num < 0) icon_num = 0;
+			if(icon_num > 18) icon_num = 18;
+		});
+
+		dset("namedPresets", document.getElementById("np").checked);	
 	}
 	
 	if(document.getElementById("sm") !== null)
