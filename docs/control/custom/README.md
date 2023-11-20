@@ -606,7 +606,7 @@ var i;
 var spot_x = 50
 var spot_y = 50;
 var id = 0;
-
+var icon_num = 0;
 
 function id5() {  // 5 characters, so up to 17-bit ID
   return ([1111]+1).replace(/1/g, c =>
