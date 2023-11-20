@@ -609,6 +609,7 @@ var spot_x = 50
 var spot_y = 50;
 var id = 0;
 var icon_num = 0;
+var newpresent = "";
 
 function id5() {  // 5 characters, so up to 17-bit ID
   return ([1111]+1).replace(/1/g, c =>
@@ -898,8 +899,10 @@ function startTime() {
 	
 			if(document.getElementById("newpres") !== null)
 			{
-				cmd = cmd + "oMPRES=\"" + icon_num + ",\"" + document.getElementById("newpres").value + "\"";
+				newpresent = "oMPRES=\"" + icon_num + ",\"" + document.getElementById("newpres").value + "\"";
 			}
+			else
+				newpresent = "";
 		});
 
 		dset("namedPresets", document.getElementById("np").checked);	
@@ -1032,6 +1035,8 @@ function startTime() {
 			cmd = dcmd(cmd,"nightexp");
 			break;
 	}
+	
+	cmd = cmd + newpresent;
 	
 	if(checkedmode <= 18)
 	{
