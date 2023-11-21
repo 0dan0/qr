@@ -911,7 +911,7 @@ function startTime() {
 		
 		if(document.getElementById("newpres") !== null)
 		{
-			newpresent = "oMPRES=\"" + icon_num + "," + document.getElementById("newpres").value + "\"";
+			newpresent = "oMPRES=\"" + icon_num + "," + document.getElementById("newpres").value.substring(0,16) + "\"";
 		}
 		else
 			newpresent = "";
