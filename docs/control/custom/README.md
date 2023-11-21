@@ -285,7 +285,7 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="audt3" name="audt" value="aW"> <label for="audt3">On</label>&nbsp;&nbsp;
   <input type="radio" id="audt4" name="audt" value="" checked> <label for="audt4"> not set</label><br><br>
 </div>
-<input type="checkbox" id="np" value=""> <label for="sm">HERO12: Custom Named Presets<sup>12</sup></label><br>
+<input type="checkbox" id="np" value=""> <label for="np">Custom Named Presets<sup>12</sup></label><br>
 <div id="namedPresets">
    <div id="ICONS">
 	  &nbsp;&nbsp;&nbsp;&nbsp;Click to select the preferred icon:<br>
