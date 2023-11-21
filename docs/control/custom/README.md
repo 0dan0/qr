@@ -289,7 +289,7 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
 <div id="namedPresets">
    <div id="ICONS">
 	  &nbsp;&nbsp;&nbsp;&nbsp;Click to select the preferred icon:<br>
-	  &nbsp;&nbsp;&nbsp;&nbsp;<div id="ICONS_IMG">
+	  <div id="ICONS_IMG">
 		<img src="https://gopro.github.io/labs/control/custom/icons.png" alt="ICONS_IMG"> <br>
       </div>
 	  &nbsp;&nbsp;&nbsp;&nbsp;Preset's new name: <input type="text" id="newpres" value="Labs-">
