@@ -1036,7 +1036,14 @@ function startTime() {
 			break;
 	}
 	
-	cmd = cmd + newpresent;
+	
+	if(document.getElementById("np") !== null)
+	{
+		if(document.getElementById("np").checked === true)
+		{
+			cmd = cmd + newpresent;
+		}
+	}	
 	
 	if(checkedmode <= 18)
 	{
