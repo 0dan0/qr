@@ -289,7 +289,9 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
 <div id="namedPresets">
    <div id="ICONS">
 	  Click to select the preferred icon:<br>
-      <img src="https://gopro.github.io/labs/control/custom/icons.png" alt="ICONS"> <br>
+	  <div id="ICONS_IMG">
+		<img src="https://gopro.github.io/labs/control/custom/icons.png" alt="ICONS_IMG"> <br>
+      </div>
 	  Preset's new name: <input type="text" id="newpres" value="Labs-">
    </div>
 </div>
@@ -888,7 +890,7 @@ function startTime() {
 	
 	if(document.getElementById("np") !== null)
 	{
-		document.getElementById("ICONS").addEventListener('click', function (event) 
+		document.getElementById("ICONS_IMG").addEventListener('click', function (event) 
 		{
 			bounds=this.getBoundingClientRect();
 			
