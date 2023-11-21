@@ -613,6 +613,7 @@ var spot_x = 50
 var spot_y = 50;
 var id = 0;
 var icon_num = 0;
+var last_icon_num = 0;
 var newpresent = "";
 
 function id5() {  // 5 characters, so up to 17-bit ID
@@ -899,6 +900,8 @@ function startTime() {
 			
 			if(icon_num < 0) icon_num = 0;
 			if(icon_num > 18) icon_num = 18;
+			
+			last_icon_num = icon_num;
 		});
 		
 		if(document.getElementById("pdel") !== null)
@@ -906,6 +909,10 @@ function startTime() {
 			if(document.getElementById("pdel").checked === true)
 			{
 				icon_num = -1;
+			}
+			else
+			{
+				icon_num = last_icon_num;
 			}
 		}		
 		
