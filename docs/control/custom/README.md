@@ -288,11 +288,11 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
 <input type="checkbox" id="np" value=""> <label for="sm">HERO12: Custom Named Presets<sup>12</sup></label><br>
 <div id="namedPresets">
    <div id="ICONS">
-	  Click to select the preferred icon:<br>
-	  <div id="ICONS_IMG">
+	  &nbsp;&nbsp;&nbsp;&nbsp;Click to select the preferred icon:<br>
+	  &nbsp;&nbsp;&nbsp;&nbsp;<div id="ICONS_IMG">
 		<img src="https://gopro.github.io/labs/control/custom/icons.png" alt="ICONS_IMG"> <br>
       </div>
-	  Preset's new name: <input type="text" id="newpres" value="Labs-">
+	  &nbsp;&nbsp;&nbsp;&nbsp;Preset's new name: <input type="text" id="newpres" value="Labs-">
    </div>
 </div>
 <input type="checkbox" id="sm" value="oSM"> <label for="sm">Spot Metering<sup>10-12</sup></label><br>
