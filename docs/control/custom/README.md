@@ -292,7 +292,8 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
 	  <div id="ICONS_IMG">
 		<img src="https://gopro.github.io/labs/control/custom/icons.png" alt="ICONS_IMG"> <br>
       </div>
-	  &nbsp;&nbsp;&nbsp;&nbsp;Preset's new name: <input type="text" id="newpres" value="Labs-">
+	  &nbsp;&nbsp;&nbsp;&nbsp;Preset name: <input type="text" id="newpres" value="Labs-"><br>
+	  &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="pdel" value=""> <label for="pdel">delete custom preset</label><br>
    </div>
 </div>
 <input type="checkbox" id="sm" value="oSM"> <label for="sm">Spot Metering<sup>10-12</sup></label><br>
@@ -899,6 +900,14 @@ function startTime() {
 			if(icon_num < 0) icon_num = 0;
 			if(icon_num > 18) icon_num = 18;
 		});
+		
+		if(document.getElementById("pdel") !== null)
+		{
+			if(document.getElementById("pdel").checked === true)
+			{
+				icon_num = -1;
+			}
+		}		
 		
 		if(document.getElementById("newpres") !== null)
 		{
