@@ -1,4 +1,4 @@
-# Altered File Naming via QR Code
+# Altered File Naming via QR Code 
 
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
