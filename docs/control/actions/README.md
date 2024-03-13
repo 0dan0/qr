@@ -64,15 +64,12 @@
 * **!17:00W!GLC** - start Live-streaming 1080p at 5pm, saving a local copy
 
 ## Storing metadata (Permanent, survives power off)
-
 ### Old style (before March, '24)
-* **!M**fourcc**<courier>"string"</courier>**
+* **!M**fourcc**=<courier>"string"</courier>**
 * **!M**fourcc**=Number metadata**
-
 ### New style (after March, '24)
-* **\***fourcc**<courier>"string"</courier>**
+* **\***fourcc**=<courier>"string"</courier>**
 * **\***fourcc**=Number metadata**
-
 
 Example for display the owner’s name
 **\*OWNR=<courier>"Joe Bloggs"</courier>**
@@ -89,11 +86,9 @@ Any four character code can be used for store other information. You can also st
 * **\*UNIT=-1723** - metadata UNIT will be -1723 
 
 ## Storing metadata (Temporarily, until power off)<br>
-
 ### Old style (before March, '24)
 * **oM**fourcc**&#61;<courier>"string"</courier>**  
 * **oM**fourcc**=Number metadata**
-
 ### New style (after March, '24)
 * **$**fourcc**&#61;<courier>"string"</courier>**  
 * **$**fourcc**=Number metadata**
