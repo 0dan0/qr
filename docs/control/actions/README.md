@@ -296,7 +296,7 @@ Command steps explained:
 
 Custom Mode: <input type="text" id="tryit" value=""><br>
 
-updated: MArch 14, 2024
+updated: March 14, 2024
 
 [BACK](..)
 

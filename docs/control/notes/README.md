@@ -65,22 +65,27 @@ Only the more recent releases are documented below. This a general list of Labs 
 ## HERO11 Black 
 
 ### 2.30.70 - Mar 14, 2024
-- Added *wxyz, permanent storage, is the simplified version of !Mwxyz
-- Added $wxyz, temporary storage, is the simplified version of oMwxyz
-- Added support for macros, or crude scripting subroutines.This expands the potential complexity for QR scripting, as the entire script is no longer limited to 255 characters. It would be possible to run scripts nearing ~1.2KB, 
-so no QR ports of DOOM yet. 😉 Note: recursion is supported, macros can call other macros, and can call themselves.
- . Subroutines are saved in string FourCCs. e.g. ```!MSUBA="mVr4p60'60p'!S!2E!1N"```   Note: Use single quotes of text within double quotes.
- . Subroutines are launched ```^SUBA```  e.g. ```>19:30^NIGH~^DAYS``` (if(time>19:30) Night(); else Day(); ).
-- Added support testing current camera mode, system variable 'v' will have the mode.
-   e.g. Video=12, TLV=13, Looping Video=15, Photo=16, Night Photo=18, Burst Photo=19, etc.
-   Display the current mode with with this command:  ```"mode $v"!R``` or fast/cleaner ```oMPMSG="mode $v"!R```
+- Added *wxyz, permanent storage, is the simplified version of !Mwxyz, e.g. *BITR=160
+- Added $wxyz, temporary storage, is the simplified version of oMwxyz, e.g. $WIDE=1$NR01=1
+- Added support for macros, or crude scripting subroutines. This expands the potential complexity for QR scripting, as the entire script is no longer limited to 255 characters. It would be possible to run scripts nearing ~1.2KB. 
+Note: recursion is supported, macros can call other macros, and can call themselves.
+  * Subroutines are saved in string FourCCs. e.g. ```*SUBA="mVr4p60'60p'!S!2E!1N"```   Note: Use single quotes of text within double quotes.
+  * Subroutines are launched ```^SUBA```  e.g. ```>19:30^NIGH~^DAYS``` (if(time>19:30) Night(); else Day(); ).
+- Added support testing current camera mode, system variable 'v' will have the mode like follows.
+  * video=12
+  * TLV=13
+  * Looping Video=15
+  * Photo=16
+  * Night Photo=18
+  * Burst Photo=19, etc.<br>
+Display the current mode with with this command:  ```"mode $v"!R``` or fast/cleaner ```oMPMSG="mode $v"!R```
 - Added precise variable testing with '=='. Previously only < for less_than and > for greater_than_equal were supported.
    e.g. command:   ```>10:10<11:00"do thing between 10:10 and 10:59"```
    now you can do: ```==10:10"do thing only at 10:10"```
    useful for mode testing: ```==v12"video mode, do thing only on video mode"```
-- Added GRAB=x screen grab x-frames, !F (grab now) and !F3 (grab next 3 Labs overlays) - frame grab the UI. Useful for education and bug reporting
+- Added $GRAB=x screen grab x-frames, !F (grab now) and !F3 (grab next 3 Labs overlays) - frame grab the UI. Useful for education and bug reporting
 - Added font color for script messaging. e.g. try this QR Code "\1H\2e\3l\4l\5o \6W\7o\8r\1l\2d"
-- Added STDL=x - Start Delay (default 2000ms, wait before any other commands.) oMSTDL=100 for less wait. Experimental scripting performance.
+- Added $STDL=x - Start Delay (default 2000ms, wait before any other commands.) oMSTDL=100 for less wait. Experimental scripting performance.
 - Improved the font rendering (higher res fonts)
 - Improved upload reliability with an optional maximum transfer time (timeout). e.g. !U3 <- upload now, for up to 3 minutes.
 - Improved processing speed for looping scripts about 10-15x faster.
