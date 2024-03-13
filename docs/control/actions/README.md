@@ -65,11 +65,11 @@
 
 ## Storing metadata (Permanent, survives power off)
 
+### Old style (before March, '24)
 * **!M**fourcc**<courier>"string"</courier>**
 * **!M**fourcc**=Number metadata**
 
-### New style March, '24
-
+### New style (after March, '24)
 * **\***fourcc**<courier>"string"</courier>**
 * **\***fourcc**=Number metadata**
 
@@ -84,17 +84,17 @@ All tags between **OWNA** and **OWNZ** will be displayed and stored in **GoPro-o
 All tags between **OWNa** and **OWNz** will be only stored in the **GoPro-owner.txt**
 
 Any four character code can be used for store other information. You can also store numeric data examples: 
-* **!MCAMR=53** - metadata CAMR will be 53 
-* **!MABCD=45.234** - metadata ABCD will be floating point 45.234
-* **!MUNIT=-1723** - metadata UNIT will be -1723 
+* **\*CAMR=53** - metadata CAMR will be 53 
+* **\*ABCD=45.234** - metadata ABCD will be floating point 45.234
+* **\*UNIT=-1723** - metadata UNIT will be -1723 
 
 ## Storing metadata (Temporarily, until power off)<br>
 
+### Old style (before March, '24)
 * **oM**fourcc**&#61;<courier>"string"</courier>**  
 * **oM**fourcc**=Number metadata**
 
-### New style March, '24
-
+### New style (after March, '24)
 * **$**fourcc**&#61;<courier>"string"</courier>**  
 * **$**fourcc**=Number metadata**
 
@@ -258,8 +258,8 @@ So if thought the above is crazy, it gets weirder.
 * **=B$BITR**  load the contents of the BITR (bitrate) hack into variable B, otherwise store zero.  So you can test if a feature is enabled.
 * **=Tt:W** load the day of the week into variable T
 * **=Di** load the current ISO value into variable D
-* **oMEVBS=E**  store the current into EV Bias hack, so you can make a variable mess with your exposure (potentially mid capture.)
-* **!MVarC=C**  permanently store the current variable C into metadata field VarC, so this can be read back on next boot.  
+* **$EVBS=E**  store the current into EV Bias hack, so you can make a variable mess with your exposure (potentially mid capture.)
+* **\*VarC=C**  permanently store the current variable C into metadata field VarC, so this can be read back on next boot.  
 * **!$AR**  delay an action (like !R) with a variable amount of time, e.g. this will loop forever, doubling the sleep time with each interaction **=A$VARA<A1=A1=A*2!MVARA=A!$AR**
 
 ### Why Add Math to QR codes
