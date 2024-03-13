@@ -4,7 +4,22 @@ Only the more recent releases are documented below. This a general list of Labs 
 
 ## HERO12 Black 
 
-### 1.40.70 - Dec 14, 2023
+### 2.10.70 - Feb 8, 2024
+- Fixed ```x++``` and ```x--``` EV up and down controls (handy for scuba)
+- Enhancing processing speed for looping scripts about 10-15x faster.
+   example code print to the loop speed: ```=Sl=Tt:Q=S/T=Ll=L%9<L1oMPMSG="loops $S/s"!R```
+- Added support testing current camera mode, system variable 'v' will have the mode.
+   e.g. Video=12, TLV=13, Looping Video=15, Photo=16, Night Photo=18, Burst Photo=19, etc.
+   Display the current mode with with this command:  ```"mode $v"!R``` or fast/cleaner ```oMPMSG="mode $v"!R```
+- Added precise variable testing with '=='. Previously only < for less_than and > for greater_than_equal were supported.
+   e.g. command:   ```>10:10<11:00"do thing between 10:10 and 10:59"```
+   now you can do: ```==10:10"do thing only at 10:10"```
+   useful for mode testing: ```==v12"video mode, do thing only on video mode"```
+   
+ Known Issue: 24HZ=1 for 24.0 video, has conflict with Autoboost (captures will fail.)  Either turn off autoboost (standard HS works) or shoot 23.976.
+   
+
+### 2.00.70 - Dec 14, 2023
 - Added FEAT - Display the Labs feature you have active, without have to reboot the camera. e.g. oMFEAT=4 <- display for 4 seconds.
 - Added creating, naming and sharing presets oMPRES="1,MyPreset" 0-18 for icon selection, -1 for delete 
 - Added FONT=1 Select the old fonts (if you only want the dot matrix font)
@@ -48,6 +63,29 @@ Only the more recent releases are documented below. This a general list of Labs 
 
 
 ## HERO11 Black 
+
+### 2.30.70 - Mar 14, 2024
+- Added *wxyz, permanent storage, is the simplified version of !Mwxyz
+- Added $wxyz, temporary storage, is the simplified version of oMwxyz
+- Added support for macros, or crude scripting subroutines.This expands the potential complexity for QR scripting, as the entire script is no longer limited to 255 characters. It would be possible to run scripts nearing ~1.2KB, 
+so no QR ports of DOOM yet. 😉 Note: recursion is supported, macros can call other macros, and can call themselves.
+ . Subroutines are saved in string FourCCs. e.g. ```!MSUBA="mVr4p60'60p'!S!2E!1N"```   Note: Use single quotes of text within double quotes.
+ . Subroutines are launched ```^SUBA```  e.g. ```>19:30^NIGH~^DAYS``` (if(time>19:30) Night(); else Day(); ).
+- Added support testing current camera mode, system variable 'v' will have the mode.
+   e.g. Video=12, TLV=13, Looping Video=15, Photo=16, Night Photo=18, Burst Photo=19, etc.
+   Display the current mode with with this command:  ```"mode $v"!R``` or fast/cleaner ```oMPMSG="mode $v"!R```
+- Added precise variable testing with '=='. Previously only < for less_than and > for greater_than_equal were supported.
+   e.g. command:   ```>10:10<11:00"do thing between 10:10 and 10:59"```
+   now you can do: ```==10:10"do thing only at 10:10"```
+   useful for mode testing: ```==v12"video mode, do thing only on video mode"```
+- Added GRAB=x screen grab x-frames, !F (grab now) and !F3 (grab next 3 Labs overlays) - frame grab the UI. Useful for education and bug reporting
+- Added font color for script messaging. e.g. try this QR Code "\1H\2e\3l\4l\5o \6W\7o\8r\1l\2d"
+- Added STDL=x - Start Delay (default 2000ms, wait before any other commands.) oMSTDL=100 for less wait. Experimental scripting performance.
+- Improved the font rendering (higher res fonts)
+- Improved upload reliability with an optional maximum transfer time (timeout). e.g. !U3 <- upload now, for up to 3 minutes.
+- Improved processing speed for looping scripts about 10-15x faster.
+- Fixed ```x++``` and ```x--``` EV up and down controls (handy for scuba)
+- minor Labs bug fixes
 
 
 ### 2.20.70 - Nov 2, 2023
@@ -408,6 +446,6 @@ Only the more recent releases are documented below. This a general list of Labs 
 
 
 
-updated: Dec 14, 2023
+updated: Mar 14, 2024
 
 [Learn more](..) on QR Control

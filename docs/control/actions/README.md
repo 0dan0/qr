@@ -68,8 +68,14 @@
 * **!M**fourcc**<courier>"string"</courier>**
 * **!M**fourcc**=Number metadata**
 
+### New style March, '24
+
+* **\***fourcc**<courier>"string"</courier>**
+* **\***fourcc**=Number metadata**
+
+
 Example for display the owner’s name
-**!MOWNR=<courier>"Joe Bloggs"</courier>**
+**\*OWNR=<courier>"Joe Bloggs"</courier>**
 
 Note: All strings must use <courier>"</courier> (ASCII 34) and not the <courier>”</courier> (148) character.  
 
@@ -83,16 +89,14 @@ Any four character code can be used for store other information. You can also st
 * **!MUNIT=-1723** - metadata UNIT will be -1723 
 
 ## Storing metadata (Temporarily, until power off)<br>
-<br>
-(All cameras and Older Labs)<br>
-<br>
+
 * **oM**fourcc**&#61;<courier>"string"</courier>**  
 * **oM**fourcc**=Number metadata**
-<br>
-(Alternative H11 v2.1)<br>
-<br>
-* **#M**fourcc**&#61;<courier>"string"</courier>**  
-* **#M**fourcc**=Number metadata**
+
+### New style March, '24
+
+* **$**fourcc**&#61;<courier>"string"</courier>**  
+* **$**fourcc**=Number metadata**
 
 ## Reset Actions ##
 
@@ -244,8 +248,8 @@ Now math can be used to modify your variables.
 * **=F^0.5** raised to a power F = sqrt(F)
 * **=B%10** modulus  B = B % 10 
 * **=G#2** Log base N  G = log(G)/log(2) 
-* **=J&6** and  J = (float)((int)J & 6) 
-* **=K&#124;3** or  K = (float)((int)K &#124; 3) 
+* **=J&6** Bitwise AND like  J = (float)((int)J & 6) 
+* **=K&#124;3** Bitwise OR K = (float)((int)K &#124; 3) 
 
 There should be a prize if some can come up with a practical use for all of these ;)
 
@@ -292,7 +296,7 @@ Command steps explained:
 
 Custom Mode: <input type="text" id="tryit" value=""><br>
 
-updated: October 1, 2023
+updated: MArch 14, 2024
 
 [BACK](..)
 
