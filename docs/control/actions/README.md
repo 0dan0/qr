@@ -69,7 +69,7 @@
 * **!M**fourcc**=Number metadata**
 ### New style (after March, '24)
 * **\***fourcc**=<courier>"string"</courier>**
-* **\***fourcc**=Number metadata**
+* **\***fourcc**=Number metadata** 
 
 Example for display the owner’s name
 **\*OWNR=<courier>"Joe Bloggs"</courier>**
