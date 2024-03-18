@@ -57,7 +57,7 @@ the number relates to how often the record time or shooting mode is displayed (v
 - **HSTP=x,z,size** - Used with HIST=1, this sets the size (40-100) and position (x,y as 1-100) of the histogram. 
 A negative x-value will place the histograme on the front screen. e.g. oMHSTP=1,83,67 or oMHSTP=-3,55,87.
 <br>![HSTPfront.jpg](HSTPfront.jpg)
-- **LEVL=size** - Add a spirit level to the rear LCD, where the size can be 1-9. e.g. oMLEVL=6. Color was added for HERO12.
+- **LEVL=size** - Add a spirit level to the rear LCD, where the size can be 1-9. e.g. oMLEVL=6. Color for the spirit level line was added for HERO11 and HERO12. LEVL has three colors with no controls. White - nothing is level. Yellow - the horizon is level. Green - the horizon and pitch is level
 <br>![LEVLnew.jpg](LEVLnew.jpg)
 - **LOGB=logbase,offset** - Super experimental, alter the log encoding for more dynamic range, or for a closer match with other camera's log curves. 
 i.e design your own flat profile. Ideal for use with 10-bit, and the existing flat color setting.  
@@ -122,6 +122,23 @@ but you wanted to do your own tone-mapping in post--you can now do that.  Note: 
 - **WAKE=2** - (HERO8/10/11/12 only) Same as WAKE=1, except it will ignore any pending actions, and wake of any power addition. This is useful with combined with a boot command. 
 	
 ### **HERO12/11/10/9 & 8** - Overlay extensions
+Old GP1 camera support overlays in video and video time-lapse modes. Overlays are not supported in Photo mode.
+
+#### GP2 limitations - Video Modes
+- Resolution: 1080 Frame Rates: 24, 30, 60, 120 Aspect Ratios: 16:9 
+- Resolution: 2.7K Frame Rates: 60 Aspect Ratios: 16:9 
+- Resolution: 4K Frame Rates: 24, 30 Aspect Ratios: 16:9, 4:3, 8:7
+- Resolution: 5.3K (not supported)
+
+#### GP2 limitations - Time-lapse Modes
+Only Time Warp preset is supported.
+- Resolution: 1080 Aspect Ratios: 16:9  
+- Resolution: 2.7K Aspect Ratios: 4:3 
+- Resolution: 4K Aspect Ratios: 16:9, 4:3 
+- Resolution: 5.3K (not supported)
+
+#### Overlay Commands
+
 - **BRNT=0.5** - The overlays or burn-in display time in seconds. e.g. BRNT=0.016 will display the logo or text overlays only on the first frame (1/60th of a second.) 
 - **BRNX=x,y** - This is an upgrade to BRNO (Burn-ins Offset), allowing you to offset the burn-ins with X,Y pixel coordinates. e.g. BRNX=120,40
 - **CBAR=1** - enable a small 75% saturated color bars for video tools evaluation (HERO10/11/12 limitation: only works 4Kp30 or lower res/fps.)
