@@ -218,10 +218,25 @@ function timeLoop()
 	var secs10 =  fsecs * 10;
 	var secs = Math.trunc(secs10) / 10;
 
+	var type = dcmd("","type"); 
+	if(type == "1")
+	{
+		cmd = "\"Type1\"" + "!" + stxt + "N" + cmd + "!S!" + caplen*60 + "E";
+	} 
+	else if(type == "2")
+	{
+		cmd = "\"Type2\"" + "!" + stxt + "N" + cmd + "!S!" + caplen*60 + "E";
+	} 
+	else if(type == "3")
+	{
+		cmd = "\"Type3\"" + "!" + stxt + "N" + cmd + "!S!" + caplen*60 + "E";
+	}
+	else	
+	{
+		cmd = "\"Type4\"" + "!" + stxt + "N" + cmd + "!S!" + caplen*60 + "E";
+	}
 
-	cmd = dcmd("\"TYPE-\"","type"); 
-	
-	cmd = cmd + "!" + stxt + "N" + cmd + "!S!" + caplen*60 + "E";
+		
 	
 	cmd = cmd + "!1R";
   }
