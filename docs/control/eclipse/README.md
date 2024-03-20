@@ -81,11 +81,11 @@ creating two separate video timelapses.
 
 Find 2024 eclipse times [**for your location**](https://nso.edu/for-public/eclipse-map-2024/)
 
-<div id="eTYPE">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Capture Type:</b>&nbsp;&nbsp;<br>
-  <input type="radio" id="type1" name="type" value="1" > <label for="Type 1">Type 1</label>&nbsp;&nbsp;<br>
-  <input type="radio" id="type2" name="type" value="2" > <label for="Type 2">Type 2</label>&nbsp;&nbsp;<br>
-  <input type="radio" id="type2" name="type" value="3" > <label for="Type 3">Type 3</label>&nbsp;&nbsp;<br>
-  <input type="radio" id="type3" name="type" value="4" checked> <label for="Type 4">Type 4</label><
+<div id="eTYPE"><b>Capture Type:</b><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type1" name="type" value="1" > <label for="Type 1">Type 1</label><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type2" name="type" value="2" > <label for="Type 2">Type 2</label><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type2" name="type" value="3" > <label for="Type 3">Type 3</label><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type3" name="type" value="4" checked> <label for="Type 4">Type 4</label>
 </div>
 
 Totality Start Time: <input type="range" style="width: 600px;" id="tlstrt" name="tlstrt" min="1" max="480" value="200"><label for="tlstrt"></label> <b id="starttext"></b>
