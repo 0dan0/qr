@@ -230,7 +230,7 @@ function timeLoop()
   if(changed === true)
   {
 	document.getElementById("qrtext").innerHTML = cmd;
-	clipcopy = "https://gopro.github.io/labs/control/set/?cmd=" + cmd + "&title=Daily%20Timelapse%20and%20Upload";
+	clipcopy = "https://gopro.github.io/labs/control/set/?cmd=" + cmd + "&title=Eclipse%20Timelapse";
 	document.getElementById("urltext").innerHTML = clipcopy;
 	changed = false;
   }
