@@ -216,11 +216,11 @@ function timeLoop()
 	var type = dcmd("","type"); 
 	if(type == "1")
 	{
-		startmins -= 15*60;
+		startmins -= 15;
 		starthourstime = Math.trunc(startmins / 60);
 		startminstime = startmins - starthourstime * 60;	
 		
-		endmins += 15*60;
+		endmins += 15;
 		endhourstime = Math.trunc(endmins / 60);
 		endminstime = endmins - endhourstime * 60;
 		
@@ -231,11 +231,11 @@ function timeLoop()
 	} 
 	else if(type == "2")
 	{
-		startmins -= 60*60;
+		startmins -= 60;
 		starthourstime = Math.trunc(startmins / 60);
 		startminstime = startmins - starthourstime * 60;	
 		
-		endmins += 60*60;
+		endmins += 60;
 		endhourstime = Math.trunc(endmins / 60);
 		endminstime = endmins - endhourstime * 60;
 		
@@ -246,11 +246,11 @@ function timeLoop()
 	} 
 	else if(type == "3")
 	{
-		startmins -= 2*60;
+		startmins -= 2;
 		starthourstime = Math.trunc(startmins / 60);
 		startminstime = startmins - starthourstime * 60;	
 		
-		endmins += 2*60;
+		endmins += 2;
 		endhourstime = Math.trunc(endmins / 60);
 		endminstime = endmins - endhourstime * 60;
 		
@@ -261,11 +261,11 @@ function timeLoop()
 	}
 	else	
 	{
-		startmins -= 60*60;
+		startmins -= 60;
 		starthourstime = Math.trunc(startmins / 60);
 		startminstime = startmins - starthourstime * 60;	
 		
-		endmins += 15*60;
+		endmins += 15;
 		endhourstime = Math.trunc(endmins / 60);
 		endminstime = endmins - endhourstime * 60;
 		
