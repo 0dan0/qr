@@ -276,9 +276,6 @@ function setupButtons() {
     document.getElementById("copyBtn").onclick = function() { 
         copyTextToClipboard(clipcopy);
 	};
-    document.getElementById("copyImg").onclick = function() { 
-        copyImageToClipboard();
-	};
 }
 
 makeQR();
