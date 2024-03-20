@@ -54,7 +54,7 @@ It is tricky to capture both the massive drop in light, and the drama of totalit
 editing and blending the results in post.
 
 #### Type 1 - Capture mostly optimized for the totality
-Night Lapse ISO 100, 4s interval, Shutter Auto. If you started 15 minutes before totality and stopped 15 minutes after, the result is a ~17 second timelapse, witg 2 seconds in totality (if a 4-minute totality.)  
+Night Lapse ISO 100, 4s interval, Shutter Auto. If you started 15 minutes before totality and stopped 15 minutes after, the result is a ~17 second timelapse, with 2 seconds in totality (if a 4-minute totality.)  
 
 #### Type 2 - Capture optimized for the drop in brightness
 Timelapse ISO 100, 10s interval, but limiting the shutter to 1/30th of a second (a creative choice, my best guess.) At 1/30, the last 5-6 stops of the eclipse will be more dramatically show the 
