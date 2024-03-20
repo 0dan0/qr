@@ -205,8 +205,8 @@ function timeLoop()
 	var endhourstime;
 	var endminstime;
 		
-	var stxt;
-	var etxt;
+	var stxt = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
+	var etxt = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 
 	var type = dcmd("","type"); 
 	if(type == "1")
@@ -219,10 +219,10 @@ function timeLoop()
 		endhourstime = Math.trunc(endmins / 60);
 		endminstime = endmins - endhourstime * 60;
 		
-		stxt = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
-		etxt = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
+		var stime = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
+		var etime = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 	
-		cmd = "\"Type1\"" + "!" + stxt + "N" + "!S!" + etxt + "E";
+		cmd = "\"Type1\"" + "!" + stime + "N" + "!S!" + etime + "E";
 	} 
 	else if(type == "2")
 	{
@@ -234,10 +234,10 @@ function timeLoop()
 		endhourstime = Math.trunc(endmins / 60);
 		endminstime = endmins - endhourstime * 60;
 		
-		stxt = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
-		etxt = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
+		var stime = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
+		var etime = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 	
-		cmd = "\"Type2\"" + "!" + stxt + "N" + "!S!" + etxt + "E";
+		cmd = "\"Type2\"" + "!" + stime + "N" + "!S!" + etime + "E";
 	} 
 	else if(type == "3")
 	{
@@ -249,10 +249,10 @@ function timeLoop()
 		endhourstime = Math.trunc(endmins / 60);
 		endminstime = endmins - endhourstime * 60;
 		
-		stxt = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
-		etxt = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
+		var stime = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
+		var etime = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 	
-		cmd = "\"Type3\"" + "!" + stxt + "N" + "!S!" + etxt + "E";
+		cmd = "\"Type3\"" + "!" + stime + "N" + "!S!" + etime + "E";
 	}
 	else	
 	{
@@ -264,10 +264,10 @@ function timeLoop()
 		endhourstime = Math.trunc(endmins / 60);
 		endminstime = endmins - endhourstime * 60;
 		
-		stxt = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
-		etxt = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
+		var stime = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
+		var etime = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 	
-		cmd = "\"Type4\"" + "!" + stxt + "N" + "!S!" + etxt + "E";
+		cmd = "\"Type4\"" + "!" + stime + "N" + "!S!" + etime + "E";
 	}
 	
 	document.getElementById("starttext").innerHTML = stxt;
