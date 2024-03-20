@@ -81,7 +81,7 @@ creating two separate video timelapses.
 
 Find 2024 eclipse times [**for your location**](https://nso.edu/for-public/eclipse-map-2024/)
 
-<div id="eTYPE">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Sensor:</b>&nbsp;&nbsp;
+<div id="eTYPE">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Capture Type:</b>&nbsp;&nbsp;<br>
   <input type="radio" id="type1" name="type" value="1" > <label for="Type 1">Type 1</label>&nbsp;&nbsp;<br>
   <input type="radio" id="type2" name="type" value="2" > <label for="Type 2">Type 2</label>&nbsp;&nbsp;<br>
   <input type="radio" id="type2" name="type" value="3" > <label for="Type 3">Type 3</label>&nbsp;&nbsp;<br>
@@ -235,8 +235,6 @@ function timeLoop()
 	{
 		cmd = "\"Type4\"" + "!" + stxt + "N" + cmd + "!S!" + caplen*60 + "E";
 	}
-
-		
 	
 	cmd = cmd + "!1R";
   }
