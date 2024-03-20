@@ -249,7 +249,7 @@ function timeLoop()
 	
 		cmd = "\"Type2\"" + "!" + stime + "N" + "mTp.10r5tb1w55i1M1sMoMEXPX=30!S!" + etime + "EoMEXPX=0";
 		
-		playlen = (endmins - startmins)*60/4/30;
+		playlen = (endmins - startmins)*60/10/30;
 	} 
 	else if(type == "3")
 	{
@@ -266,7 +266,7 @@ function timeLoop()
 	
 		cmd = "\"Type3\"" + "!" + stime + "N" + "mNLpeAr5tb1w55i8M1sMoMEXPX=1!S!" + etime + "EoMEXPX=0";
 		
-		playlen = (endmins - startmins)*60/4/30;
+		playlen = ((endmins - startmins - caplen)*60*3 + caplen)/30;
 	}
 	else	
 	{
@@ -288,7 +288,7 @@ function timeLoop()
 	
 		cmd = "\"Type4\"" + "!" + stime + "N" + "mNLp.10r5tb1w55i1M1sMoMEXPX=30!S!" + etime1 + "EoMEXPX=1peAi8M1sMoMEXPX=1!S!" + etime2 + "EoMEXPX=0";
 		
-		playlen = (endmins - startmins)*60/4/30;
+		playlen = ((60)*60/10 + (15)*60*3 + caplen)/30;
 	}
 	
 	document.getElementById("starttext").innerHTML = stxt;
