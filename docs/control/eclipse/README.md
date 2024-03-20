@@ -14,7 +14,15 @@
 </style>
 
 
-Shooting a solar eclipse is tricky, but a very worthwhile experience, so let's preconfigure your GoPro so you can enjoy the rare event live and after with a cool timelapse capture. The first tricky issue is the sheer change in dynamic range from full sun to when it's fully covered by the moon, 
+Shooting a solar eclipse is tricky, but a very worthwhile experience, so let's preconfigure your GoPro so you can enjoy the rare event live and after with a cool timelapse capture. 
+
+## TL;DR
+
+There is an automatic time lapse calculator and generator at the bottom of this page, designed to get the most from your Solar Eclipse.
+
+## The Geeky Details
+
+The first tricky issue when shooting a solar eclipse is the sheer change in dynamic range from full sun to when it's fully covered by the moon, 
 the light level can vary up to 12 stops. 12 stops, the light halving in brightness 12 times, would be the difference in shooting with 1/1000 shutter to a 4 second exposure. 
 This example data was from a solar eclipse measured in Australia in 2023 (thanks to Matt Parker's data from [**Stand-up Maths**](https://youtu.be/IuUMxNfDfFY?si=iytXca2frHqOakOB&t=945) - the whole video is a worth watch.)
 
