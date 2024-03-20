@@ -199,44 +199,80 @@ function timeLoop()
 	if(endmins >= 1440)
 		endmins -= 1440;
 		
-	var starthourstime = Math.trunc(startmins / 60);
-	var startminstime = startmins - starthourstime * 60;	
+	var starthourstime;
+	var startminstime;
 	
-	var endhourstime = Math.trunc(endmins / 60);
-	var endminstime = endmins - endhourstime * 60;
+	var endhourstime;
+	var endminstime;
 		
-	var stxt = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
-	var etxt = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
+	var stxt;
+	var etxt;
 	
 	document.getElementById("starttext").innerHTML = stxt;
 	document.getElementById("endtext").innerHTML = etxt;
 	document.getElementById("lentext").innerHTML = caplen;
-	
-	var spftxt = dval("fpslapse");
-	var spf = spftxt.slice(2);
-	var fsecs = ((caplen*60) / parseInt(spf)) / 30;	
-	var secs10 =  fsecs * 10;
-	var secs = Math.trunc(secs10) / 10;
 
 	var type = dcmd("","type"); 
 	if(type == "1")
 	{
-		cmd = "\"Type1\"" + "!" + stxt + "N" + "!S!" + caplen*60 + "E";
+		startmins -= 15*60;
+		starthourstime = Math.trunc(startmins / 60);
+		startminstime = startmins - starthourstime * 60;	
+		
+		endmins += 15*60;
+		endhourstime = Math.trunc(endmins / 60);
+		endminstime = endmins - endhourstime * 60;
+		
+		stxt = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
+		etxt = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
+	
+		cmd = "\"Type1\"" + "!" + stxt + "N" + "!S!" + etxt + "E";
 	} 
 	else if(type == "2")
 	{
-		cmd = "\"Type2\"" + "!" + stxt + "N" + "!S!" + caplen*60 + "E";
+		startmins -= 60*60;
+		starthourstime = Math.trunc(startmins / 60);
+		startminstime = startmins - starthourstime * 60;	
+		
+		endmins += 60*60;
+		endhourstime = Math.trunc(endmins / 60);
+		endminstime = endmins - endhourstime * 60;
+		
+		stxt = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
+		etxt = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
+	
+		cmd = "\"Type2\"" + "!" + stxt + "N" + "!S!" + etxt + "E";
 	} 
 	else if(type == "3")
 	{
-		cmd = "\"Type3\"" + "!" + stxt + "N" + "!S!" + caplen*60 + "E";
+		startmins -= 2*60;
+		starthourstime = Math.trunc(startmins / 60);
+		startminstime = startmins - starthourstime * 60;	
+		
+		endmins += 2*60;
+		endhourstime = Math.trunc(endmins / 60);
+		endminstime = endmins - endhourstime * 60;
+		
+		stxt = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
+		etxt = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
+	
+		cmd = "\"Type3\"" + "!" + stxt + "N" + "!S!" + etxt + "E";
 	}
 	else	
 	{
-		cmd = "\"Type4\"" + "!" + stxt + "N" +  "!S!" + caplen*60 + "E";
-	}
+		startmins -= 60*60;
+		starthourstime = Math.trunc(startmins / 60);
+		startminstime = startmins - starthourstime * 60;	
+		
+		endmins += 15*60;
+		endhourstime = Math.trunc(endmins / 60);
+		endminstime = endmins - endhourstime * 60;
+		
+		stxt = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
+		etxt = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 	
-	cmd = cmd + "!1R";
+		cmd = "\"Type4\"" + "!" + stxt + "N" + "!S!" + etxt + "E";
+	}
   }
   
   qrcode.clear(); 
