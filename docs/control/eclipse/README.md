@@ -84,7 +84,7 @@ Totality Length: <input type="range" style="width: 300px;" id="tlend" name="tlen
   <center>
   <div id="qrcode"></div><br>
   <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em><br>
-  <b><font color="#005CAC">Daily Timelapse and Upload</font></b>
+  <b><font color="#005CAC">Eclipse Timelapse</font></b>
   </center>
 </div>
 <br>
