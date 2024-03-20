@@ -317,7 +317,7 @@ function timeLoop()
 		var stime = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
 		var etime2 = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 	
-		cmd = "\"Type4\"" + "!" + stime + "N" + "mNLp.10" + res + "tb1w55i1M1sMoMEXPX=30!S!" + etime1 + "EoMEXPX=1peAi8M1sMoMEXPX=1!S!" + etime2 + "EoMEXPX=0";
+		cmd = "\"Type4\"" + "!" + stime + "N" + "mNLp.10" + res + "tb1w55i1M1sMoMEXPX=30!S!" + etime1 + "EpeAi8M1sMoMEXPX=1!S!" + etime2 + "EoMEXPX=0";
 		
 		playlen = ((t2len)*60/10 + (t3len)*60*3 + caplen)/30;
 	}
