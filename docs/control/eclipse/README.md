@@ -104,6 +104,8 @@ Totality Start Time: <input type="range" style="width: 600px;" id="tlstrt" name=
 Totality Length: <input type="range" style="width: 300px;" id="tlend" name="tlend" min="1" max="5" value="4"><label for="tlend"></label> <b id="lentext"></b> minutes &nbsp;&nbsp; Totality End Time: <b id="endtext"> seconds</b>
 
 Estimated Timelapse Playback Length: <b id="tllen"></b>
+
+Forum to [**discuss the best settings**](https://github.com/gopro/labs/discussions/823), and to share your resulting videos.
  
 <div id="qrcode_txt" style="width: 360px">
   <center>
@@ -118,7 +120,7 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
       
 **Compatibility:** Labs enabled HERO11 and HERO12 (likely some support with older Labs enoubled cameras, please test.) 
 
-updated: March 19, 2024
+updated: March 20, 2024
 
 [More features](..) for Labs enabled cameras
 
