@@ -39,6 +39,8 @@ so that the light drop is more visibly dramatic.
 
 ## GoPro Labs Firmware
 
+Brand new to Labs? Get the firmare and info on [**Labs installation**](https://gopro.github.io/labs)
+
 ### Extension - EXPS
 Things to try with GoPro Labs. ```oMEXPS=1``` this will display ISO and shutter for your current shooting mode. Test with time-lapse or night-lapse, recording to see the exposure 
 for different light levels. Practice well before the eclipse. This feature requires the latest Labs firmware on HERO12 and HERO11 to view exposure during a timelapse 
