@@ -16,7 +16,7 @@
 
 Shooting a solar eclipse is tricky. The first issue is the sheer change in dynamic range from full sun to when it's fully covered by the moon, 
 the light level can vary up to 12 stops. 12 stops, the light halving in brightness 12 times, would be the difference in shooting with 1/1000 shutter to a 4 second exposure. 
-This example data was from a solar eclipse measured in Australia in 2023 (thanks to Matt Parker's data from https://youtu.be/IuUMxNfDfFY?si=iytXca2frHqOakOB&t=933 - the whole video is a worth watch.)
+This example data was from a solar eclipse measured in Australia in 2023 (thanks to Matt Parker's data from [**Stand-up Maths**](https://youtu.be/IuUMxNfDfFY?si=iytXca2frHqOakOB&t=933) - the whole video is a worth watch.)
 
 ![stops.png](stops.png)
 
@@ -63,10 +63,10 @@ before the totality, run until 2+ minutes after. Auto shutter with Auto interval
 giving you more frames in the totality. When it is bright, this is ~3fps, when it is dark Labs firmware can limit the exposure time to 1fps. If you have 4 minutes of totality, 
 this 8-minute timelapse will result in ~32s playback time, with 4 seconds in the totality. Optional, you could limit the exposure to half a second for up to 8 seconds in totality.
 
-For those who want to experiment further, Labs firmware allows you to script the camera, so that certain modes or actions can be performed at particular moments. 
+4) For those who want to experiment further, Labs firmware allows you to script the camera, so that certain modes or actions can be performed at particular moments. 
 The problem is we haven’t had a prior eclipse to practice on.  An example of script would be to run type 2) capture until the totality, then switch to type 3), automatically. 
 
-## Time-lapse Capture Time
+## Eclipse Time-lapse QR Code
 
 Totality Start Time: <input type="range" style="width: 300px;" id="tlstrt" name="tlstrt" min="1" max="143" value="48"><label for="tlstrt"></label> <b id="starttext"></b>
 
