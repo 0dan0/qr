@@ -74,7 +74,7 @@ The problem is we haven’t had a prior eclipse to practice on.  An example of s
 
 ## Eclipse Time-lapse QR Code
 
-[**Find 2024 eclipse times for your location**](https://nso.edu/for-public/eclipse-map-2024/)
+Find 2024 eclipse times [**for your location**](https://nso.edu/for-public/eclipse-map-2024/)
 
 Totality Start Time: <input type="range" style="width: 600px;" id="tlstrt" name="tlstrt" min="1" max="480" value="200"><label for="tlstrt"></label> <b id="starttext"></b>
 
@@ -184,7 +184,6 @@ function timeLoop()
 	var startmins = start + 600;
 	var caplen = parseInt(document.getElementById("tlend").value);
 	caplen = Math.trunc(caplen*caplen/1420);
-	if(caplen < 1) caplen = 1;
 	var endmins = startmins + caplen;
 	if(endmins >= 1440)
 		endmins -= 1440;
