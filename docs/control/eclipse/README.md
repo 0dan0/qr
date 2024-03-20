@@ -90,7 +90,9 @@ Find 2024 eclipse times [**for your location**](https://nso.edu/for-public/eclip
 
 Totality Start Time: <input type="range" style="width: 600px;" id="tlstrt" name="tlstrt" min="1" max="480" value="200"><label for="tlstrt"></label> <b id="starttext"></b>
 
-Totality Length: <input type="range" style="width: 300px;" id="tlend" name="tlend" min="1" max="5" value="4"><label for="tlend"></label> <b id="lentext"></b> minutes &nbsp;&nbsp; Totality End Time: <b id="endtext"></b>
+Totality Length: <input type="range" style="width: 300px;" id="tlend" name="tlend" min="1" max="5" value="4"><label for="tlend"></label> <b id="lentext"></b> minutes &nbsp;&nbsp; Totality End Time: <b id="endtext"> seconds</b>
+
+Estimated Timelapse Playback Length: <b id="tllen"></b>
  
 <div id="qrcode_txt" style="width: 360px">
   <center>
@@ -196,6 +198,7 @@ function timeLoop()
 	var startmins = start + 600;
 	var caplen = parseInt(document.getElementById("tlend").value);
 	var endmins = startmins + caplen;
+	var playlen = 0;
 	if(endmins >= 1440)
 		endmins -= 1440;
 		
@@ -227,7 +230,9 @@ function timeLoop()
 		var stime = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
 		var etime = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 	
-		cmd = "\"Type1\"" + "!" + stime + "N" + "!S!" + etime + "E";
+		cmd = "\"Type1\"" + "!" + stime + "N" + "mNLp.4eAr5tb1w55i1M1sM!S!" + etime + "E";
+		
+		playlen = (endmins - startmins)*60/4/30;
 	} 
 	else if(type == "2")
 	{
@@ -242,7 +247,9 @@ function timeLoop()
 		var stime = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
 		var etime = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 	
-		cmd = "\"Type2\"" + "!" + stime + "N" + "!S!" + etime + "E";
+		cmd = "\"Type2\"" + "!" + stime + "N" + "mTp.10r5tb1w55i1M1sMoMEXPX=30!S!" + etime + "EoMEXPX=0";
+		
+		playlen = (endmins - startmins)*60/4/30;
 	} 
 	else if(type == "3")
 	{
@@ -257,10 +264,17 @@ function timeLoop()
 		var stime = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
 		var etime = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 	
-		cmd = "\"Type3\"" + "!" + stime + "N" + "!S!" + etime + "E";
+		cmd = "\"Type3\"" + "!" + stime + "N" + "mNLpeAr5tb1w55i8M1sMoMEXPX=1!S!" + etime + "EoMEXPX=0";
+		
+		playlen = (endmins - startmins)*60/4/30;
 	}
 	else	
 	{
+		starthourstime = Math.trunc(startmins / 60);
+		startminstime = startmins - starthourstime * 60;	
+		
+		var etime1 = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
+		
 		startmins -= 60;
 		starthourstime = Math.trunc(startmins / 60);
 		startminstime = startmins - starthourstime * 60;	
@@ -270,14 +284,17 @@ function timeLoop()
 		endminstime = endmins - endhourstime * 60;
 		
 		var stime = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
-		var etime = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
+		var etime2 = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 	
-		cmd = "\"Type4\"" + "!" + stime + "N" + "!S!" + etime + "E";
+		cmd = "\"Type4\"" + "!" + stime + "N" + "mNLp.10r5tb1w55i1M1sMoMEXPX=30!S!" + etime1 + "EoMEXPX=1peAi8M1sMoMEXPX=1!S!" + etime2 + "EoMEXPX=0";
+		
+		playlen = (endmins - startmins)*60/4/30;
 	}
 	
 	document.getElementById("starttext").innerHTML = stxt;
 	document.getElementById("endtext").innerHTML = etxt;
 	document.getElementById("lentext").innerHTML = caplen;
+	document.getElementById("tllen").innerHTML = playlen;
   }
   
   qrcode.clear(); 
