@@ -78,12 +78,7 @@ The problem is we haven’t had a prior eclipse to practice on.  An example of s
 
 Totality Start Time: <input type="range" style="width: 600px;" id="tlstrt" name="tlstrt" min="1" max="480" value="200"><label for="tlstrt"></label> <b id="starttext"></b>
 
-Totality Length: <input type="range" style="width: 300px;" id="tlend" name="tlend" min="1" max="5" value="4"><label for="tlend"></label> <b id="lentext"></b> minutes &nbsp;&nbsp; End Time: <b id="endtext"></b>
-
-<input type="checkbox" id="upld" name="upld"> 
-<label for="upld">Upload at the end of each capture</label><br>
-
-Daily playback length (at 30fps): <b id="length"></b> seconds
+Totality Length: <input type="range" style="width: 300px;" id="tlend" name="tlend" min="1" max="5" value="4"><label for="tlend"></label> <b id="lentext"></b> minutes &nbsp;&nbsp; Totality End Time: <b id="endtext"></b>
  
 <div id="qrcode_txt" style="width: 360px">
   <center>
@@ -96,7 +91,7 @@ Daily playback length (at 30fps): <b id="length"></b> seconds
 Share this QR Code as a URL: <small id="urltext"></small><br>
 <button id="copyBtn">Copy URL to Clipboard</button>
       
-**Compatibility:** Labs enabled HERO11 and HERO12 (some support with older Labs cameras, please test.) 
+**Compatibility:** Labs enabled HERO11 and HERO12 (likely some support with older Labs enoubled cameras, please test.) 
 
 updated: March 19, 2024
 
@@ -213,12 +208,6 @@ function timeLoop()
 	var secs10 =  fsecs * 10;
 	var secs = Math.trunc(secs10) / 10;
 
-	if(spf == "")
-		document.getElementById("length").innerHTML = "unknown";
-	else
-		document.getElementById("length").innerHTML = secs;
-		
-	
 
 	cmd = "";
 	cmd = dcmd(cmd,"nltlv");
@@ -227,13 +216,6 @@ function timeLoop()
 	
 	cmd = "!" + stxt + "N" + cmd + "!S!" + caplen*60 + "E";
 	
-	if(document.getElementById("upld") !== null)
-	{
-		if(document.getElementById("upld").checked === true)
-		{
-			cmd = cmd + "!U";
-		}
-	}
 	cmd = cmd + "!1R";
   }
   
