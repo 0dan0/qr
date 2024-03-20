@@ -90,19 +90,13 @@ Daily playback length (at 30fps): <b id="length"></b> seconds
   <b><font color="#005CAC">Daily Timelapse and Upload</font></b>
   </center>
 </div>
-<button id="copyImg">Copy Image to Clipboard</button>
-<br>
 <br>
 Share this QR Code as a URL: <small id="urltext"></small><br>
 <button id="copyBtn">Copy URL to Clipboard</button>
       
-## Solutions for extra long captures
+**Compatibility:** Labs enabled HERO11 and HERO12 (some support with older Labs cameras, please test.) 
 
-A/C powering the camera via USB is the best. With continuous power supplied, remove the internal battery (charging can reset the wake timer), and the camera should run for a very long time (only SD card storage limitations.) You might be tempted to use a Lithium Ion USB powerbank, however they typically do not work well. They are designed to quickly recharge a smartphone, and when they think power is no longer needed, they shut-off. A select few USB battery sources include an "always on feature" designed for time-lapse projects. Example:[voltaicsystems.com/v50](https://voltaicsystems.com/v50/) This one can even solar recharge the battery at the same time. The second option is add a USB keep alive device that prevents your USB power bank from shutting down. Examples: from [sotabeams.co.uk](https://www.sotabeams.co.uk/usb-battery-pack-keep-alive-load/) and from [tindie.com](https://www.tindie.com/products/overz/smart-power-bank-keep-alive/)
-	
-**Compatibility:** Labs enabled HERO8, HERO9, HERO10, HERO11, HERO12 and BONES 
-
-updated: Sept 13, 2023
+updated: March 19, 2024
 
 [More features](..) for Labs enabled cameras
 
