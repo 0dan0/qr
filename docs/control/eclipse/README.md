@@ -82,12 +82,9 @@ creating two separate video timelapses.
 Find 2024 eclipse times [**for your location**](https://nso.edu/for-public/eclipse-map-2024/)
 
 <div id="eTYPE"><b>Capture Type:</b><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type1" name="type" value="1" checked> <label for="type1">Type 1 - 4s Night Lapse</label><br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;starting <input type="range" style="width: 300px;" id="t1len" name="t1len" min="10" max="120" value="15"><label for="t1len"></label> <b id="type1len"></b> minutes before<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type2" name="type" value="2" > <label for="type2">Type 2 - 10s Time Lapse, exposure limited</label><br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;starting <input type="range" style="width: 300px;" id="t2len" name="t2len" min="10" max="120" value="60"><label for="t2len"></label> <b id="type2len"></b> minutes before<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type3" name="type" value="3" > <label for="type3">Type 3 - Super optimized 1-3fps Night Lapse</label><br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;starting <input type="range" style="width: 300px;" id="t3len" name="t3len" min="2" max="10" value="120"><label for="t3len"></label> <b id="type3len"></b> minutes before<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type1" name="type" value="1" checked> <label for="type1">Type 1 - 4s Night Lapse</label> starting <input type="range" style="width: 100px;" id="t1len" name="t1len" min="10" max="120" value="15"><label for="t1len"></label> <b id="type1len"></b> minutes before<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type2" name="type" value="2" > <label for="type2">Type 2 - 10s Time Lapse, exposure limited</label> starting <input type="range" style="width: 100px;" id="t2len" name="t2len" min="10" max="120" value="60"><label for="t2len"></label> <b id="type2len"></b> minutes before<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type3" name="type" value="3" > <label for="type3">Type 3 - Super optimized 1-3fps Night Lapse</label> starting <input type="range" style="width: 100px;" id="t3len" name="t3len" min="2" max="10" value="120"><label for="t3len"></label> <b id="type3len"></b> minutes before<br>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type4" name="type" value="4" > <label for="type4">Type 4 - Experimental - switching between type 2 and 3</label>
 </div>
 
@@ -198,8 +195,8 @@ function timeLoop()
   if(document.getElementById("tlstrt") !== null)
   {
 	var t1len = parseInt(document.getElementById("t1len").value);
-	var t2len = parseInt(document.getElementById("t1len").value);
-	var t3len = parseInt(document.getElementById("t1len").value);
+	var t2len = parseInt(document.getElementById("t2len").value);
+	var t3len = parseInt(document.getElementById("t3len").value);
 	
 	var start = parseInt(document.getElementById("tlstrt").value);
 	var startmins = start;
