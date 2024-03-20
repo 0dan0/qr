@@ -200,10 +200,15 @@ function timeLoop()
 		endmins -= 1440;
 		
 	var starthourstime;
-	var startminstime;
-	
+	var startminstime;	
 	var endhourstime;
 	var endminstime;
+		
+	starthourstime = Math.trunc(startmins / 60);
+	startminstime = startmins - starthourstime * 60;	
+	
+	endhourstime = Math.trunc(endmins / 60);
+	endminstime = endmins - endhourstime * 60;
 		
 	var stxt = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
 	var etxt = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
