@@ -86,6 +86,18 @@ Find 2024 eclipse times [**for your location**](https://nso.edu/for-public/eclip
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type4" name="stype" value="4"><label for="type4"><b>Type 4</b> - Experimental switching between type 2 and 3 at totality (two automatic captures)</label><br>
 </div>
 
+
+<div id="eRES"><b>Capture Resolution:</b><br>&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;<input type="radio" id="res1" name="sres" value="" checked><label for="res1"><b>current setting</b> </label>
+  &nbsp;&nbsp;<input type="radio" id="res2" name="sres" value="r4"><label for="res2"><b>4K 16:9</b>
+  &nbsp;&nbsp;<input type="radio" id="res3" name="sres" value="r4T"><label for="res3"><b>4K 4:3 (H11)</b>
+  &nbsp;&nbsp;<input type="radio" id="res4" name="sres" value="r4X"><label for="res4"><b>4K 8:7 (H12)</b>
+  &nbsp;&nbsp;<input type="radio" id="res5" name="sres" value="r5"><label for="res5"><b>5K 16:9</b>
+  &nbsp;&nbsp;<input type="radio" id="res6" name="sres" value="r5T"><label for="res6"><b>5K 4:3 (H11)</b>
+  &nbsp;&nbsp;<input type="radio" id="res7" name="sres" value="r5X"><label for="res7"><b>5K 8:7 (H12)</b>
+</div>
+
+
 Totality Start Time: <input type="range" style="width: 600px;" id="tlstrt" name="tlstrt" min="720" max="1080" value="780"><label for="tlstrt"></label> <b id="starttext"></b>
 
 Totality Length: <input type="range" style="width: 300px;" id="tlend" name="tlend" min="1" max="5" value="4"><label for="tlend"></label> <b id="lentext"></b> minutes &nbsp;&nbsp; Totality End Time: <b id="endtext"> seconds</b>
@@ -218,7 +230,9 @@ function timeLoop()
 	var stxt = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
 	var etxt = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 
-	var type = dcmd("","type"); 
+	var type = dcmd("","stype"); 
+	var res = dcmd("","sres"); 
+	
 	if(type == "1")
 	{
 		startmins -= t1len;
@@ -232,7 +246,7 @@ function timeLoop()
 		var stime = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
 		var etime = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 	
-		cmd = "\"Type1\"" + "!" + stime + "N" + "mNLp.4eAr5tb1w55i1M1sM!S!" + etime + "E";
+		cmd = "\"Type1\"" + "!" + stime + "N" + "mNLp.4eA" + res + "tb1w55i1M1sM!S!" + etime + "E";
 		
 		playlen = (endmins - startmins)*60/4/30;
 	} 
@@ -249,7 +263,7 @@ function timeLoop()
 		var stime = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
 		var etime = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 	
-		cmd = "\"Type2\"" + "!" + stime + "N" + "mTp.10r5tb1w55i1M1sMoMEXPX=30!S!" + etime + "EoMEXPX=0";
+		cmd = "\"Type2\"" + "!" + stime + "N" + "mTp.10" + res + "tb1w55i1M1sMoMEXPX=30!S!" + etime + "EoMEXPX=0";
 		
 		playlen = (endmins - startmins)*60/10/30;
 	} 
@@ -266,7 +280,7 @@ function timeLoop()
 		var stime = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
 		var etime = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 	
-		cmd = "\"Type3\"" + "!" + stime + "N" + "mNLpeAr5tb1w55i8M1sMoMEXPX=1!S!" + etime + "EoMEXPX=0";
+		cmd = "\"Type3\"" + "!" + stime + "N" + "mNLpeA" + res + "tb1w55i8M1sMoMEXPX=1!S!" + etime + "EoMEXPX=0";
 		
 		playlen = ((endmins - startmins - caplen)*60*3 + caplen)/30;
 	}
@@ -288,7 +302,7 @@ function timeLoop()
 		var stime = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
 		var etime2 = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 	
-		cmd = "\"Type4\"" + "!" + stime + "N" + "mNLp.10r5tb1w55i1M1sMoMEXPX=30!S!" + etime1 + "EoMEXPX=1peAi8M1sMoMEXPX=1!S!" + etime2 + "EoMEXPX=0";
+		cmd = "\"Type4\"" + "!" + stime + "N" + "mNLp.10" + res + "tb1w55i1M1sMoMEXPX=30!S!" + etime1 + "EoMEXPX=1peAi8M1sMoMEXPX=1!S!" + etime2 + "EoMEXPX=0";
 		
 		playlen = ((t2len)*60/10 + (t3len)*60*3 + caplen)/30;
 	}
