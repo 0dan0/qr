@@ -53,10 +53,12 @@ Fitting nicely within Night Lapse with a 4-second interval, with an Auto shutter
 It is tricky to capture both the massive drop in light, and the drama of totality, in a single timelapse capture. If possible, this is best achieved with multiple cameras, 
 editing and blending the results in post.
 
-1)	Capture mostly optimized for the totality – Night Lapse ISO 100, 4s interval, Shutter Auto and starting about 15 minutes before the totality, running until 15 minutes after. 
+#### Type 1 - Capture mostly optimized for the totality
+Night Lapse ISO 100, 4s interval, Shutter Auto and starting about 15 minutes before the totality, running until 15 minutes after. 
 Resulting in a ~17 second timelapse, 2 seconds in totality (if a 4-minute totality.)  
 
-2)	Capture optimized for the drop in brightness - Timelapse ISO 100, 10s interval, starting an hour before totality. Limiting the shutter to say 1/30th of a second 
+#### Type 2 - Capture optimized for the drop in brightness
+Timelapse ISO 100, 10s interval, starting an hour before totality. Limiting the shutter to say 1/30th of a second 
 (this is your creative choice.) At 1/30, the last 5-6 stops of teh eclipse will be more dramatically show the light impact upon the landscape. Resulting in a ~25 second timelapse, ~1 second in totality.
 
 Note: Timelapse stock (not Night Lapse) is limited to a maximum of 1/8 second exposures, combined with ISO maximum of 100, this is a good option without Labs firmware. 
@@ -64,13 +66,16 @@ This is what I used in 2017. However, the now only the last 3-4 stops will show 
 and with a 10s interval, you will only get about six frames of the light drop in the timelapse (quarter second at playback speed.)  Using the 1/30th limit, the estimated 
 length of the light drop-off will double in the final timelapse.  
 
-3)	Super optimized for the totality, pointing at the sun - Night Lapse ISO Max 800, Auto interval, Shutter Auto, Labs shutter limited to 1s, and starting about 2 minutes 
+#### Type 3 - Super optimized for the totality
+Night Lapse ISO Max 800, Auto interval, Shutter Auto, Labs shutter limited to 1s, and starting about 2 minutes 
 before the totality, run until 2+ minutes after. Auto shutter with Auto interval is a special mode in Night Lapse, in this mode it will take frames as fast as possible, 
 giving you more frames in the totality. When it is bright, this is ~3fps, when it is dark Labs firmware can limit the exposure time to 1fps. If you have 4 minutes of totality, 
 this 8-minute timelapse will result in ~32s playback time, with 4 seconds in the totality. Optional, you could limit the exposure to half a second for up to 8 seconds in totality.
 
-4) For those who want to experiment further, Labs firmware allows you to script the camera, so that certain modes or actions can be performed at particular moments. 
-The problem is we haven’t had a prior eclipse to practice on.  An example of script would be to run type 2) capture until the totality, then switch to type 3), automatically. 
+#### Type 4 - Combining 2 & 3
+For those who want to experiment further, Labs firmware allows you to script the camera, so that certain modes or actions can be performed at particular moments. 
+The problem is we haven’t had a prior eclipse to practice on. The very experimental script would be to run type 2) capture until the totality, then switch to type 3), automatically 
+creating two separate video timelapses. 
 
 ## Eclipse Time-lapse QR Code
 
