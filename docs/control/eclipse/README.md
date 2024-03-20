@@ -221,19 +221,19 @@ function timeLoop()
 	var type = dcmd("","type"); 
 	if(type == "1")
 	{
-		cmd = "\"Type1\"" + "!" + stxt + "N" + cmd + "!S!" + caplen*60 + "E";
+		cmd = "\"Type1\"" + "!" + stxt + "N" + "!S!" + caplen*60 + "E";
 	} 
 	else if(type == "2")
 	{
-		cmd = "\"Type2\"" + "!" + stxt + "N" + cmd + "!S!" + caplen*60 + "E";
+		cmd = "\"Type2\"" + "!" + stxt + "N" + "!S!" + caplen*60 + "E";
 	} 
 	else if(type == "3")
 	{
-		cmd = "\"Type3\"" + "!" + stxt + "N" + cmd + "!S!" + caplen*60 + "E";
+		cmd = "\"Type3\"" + "!" + stxt + "N" + "!S!" + caplen*60 + "E";
 	}
 	else	
 	{
-		cmd = "\"Type4\"" + "!" + stxt + "N" + cmd + "!S!" + caplen*60 + "E";
+		cmd = "\"Type4\"" + "!" + stxt + "N" +  "!S!" + caplen*60 + "E";
 	}
 	
 	cmd = cmd + "!1R";
