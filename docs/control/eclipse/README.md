@@ -89,7 +89,6 @@ Setup A thru D options:
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type3" name="type" value="3"><label for="type3"><b>Type 3</b> - Super optimized 1-3fps Night Lapse</label> starting <input type="range" style="width: 100px;" id="t3len" name="t3len" min="2"  max="10"  value="2" ><label for="t3len"></label> <b id="type3len"></b> minutes before<br>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type4" name="type" value="4"><label for="type4"><b>Type 4</b> - Experimental switching between type 2 and 3 at totality (two automatic captures)</label><br>
 </div>
-<br>
 <div id="eRES"><b>B - Capture Resolution:</b><br>&nbsp;&nbsp;&nbsp;&nbsp;
   &nbsp;&nbsp;<input type="radio" id="res1" name="res" value="" checked><label for="res1">current</label>
   &nbsp;&nbsp;<input type="radio" id="res2" name="res" value="r4"><label for="res2"> 4K 16:9</label>
@@ -99,10 +98,7 @@ Setup A thru D options:
   &nbsp;&nbsp;<input type="radio" id="res6" name="res" value="r5T"><label for="res6">5K 4:3 (H11)</label>
   &nbsp;&nbsp;<input type="radio" id="res7" name="res" value="r5X"><label for="res7">5K 8:7 (H12)</label>
 </div>
-
-
 <b>C - Totality Start Time:</b> <input type="range" style="width: 600px;" id="tlstrt" name="tlstrt" min="720" max="1080" value="780"><label for="tlstrt"></label> <b id="starttext"></b>
-
 <b>D - Totality Length:</b> <input type="range" style="width: 300px;" id="tlend" name="tlend" min="1" max="5" value="4"><label for="tlend"></label> <b id="lentext"></b> minutes &nbsp;&nbsp; Totality End Time: <b id="endtext"> seconds</b>
 
 Estimated Timelapse Playback Length: <b id="tllen"></b> seconds
