@@ -23,11 +23,15 @@ This example data was from a solar eclipse measured in Australia in 2023 (thanks
 The light levels change very slowly initially, but incredibly rapidly as the totality approaches. The first 90 minutes, the light drops only 3-4 stops, you will notice the light 
 feels odd after 90 minutes, but your camera will have compensated so much to make it mostly unnoticeable. We can improve on the default camera behavior using Labs firmware.
 
+## GoPro Night Lapse
 A stock GoPro has a great night-lapse feature designed for day to night to day transitions, keeping a good exposure throughout, yet this exposure logic is not ideal for a solar 
-eclipse before and after the totality (it is fine during totality.) The time-lapse modes on GoPro don’t have an exposure lock option, but with a potential 12-stop change, locking the 
+eclipse before and after the totality (it is fine during totality.) None of the time-lapse modes on GoPro have an exposure lock option, but with a potential 12-stop change, locking the 
 shutter 1/1000 and ISO at 100 (or exposing correctly at C1) will result in a mostly black image at C2. So we still need some of the autoexposure goodness, but with some constraints 
 so that the light drop is more visibly dramatic.  
 
+## GoPro Labs Firmware
+
+### Extension - EXPS
 Things to try with GoPro Labs. ```oMEXPS=1``` this will display ISO and shutter for your current shooting mode. Test with time-lapse or night-lapse, recording to see the exposure 
 for different light levels. Practice well before the eclipse. This feature requires the latest Labs firmware on HERO12 and HERO11 to view exposure during a timelapse 
 (it works only in video modes on older releases.)  
@@ -36,7 +40,9 @@ for different light levels. Practice well before the eclipse. This feature requi
 
 Note: The exposure settings for preview can be different than when recording, so experiment while capturing a timelapse.  
 
-Once you see the shutter behavior with Labs extension above, we can now consider setting an upper limit to the shutter with oMEXPX=<your maximum shutter time>.  
+
+### Extension - EXPX
+Once you see the shutter behavior with Labs extension above, we can now consider setting an upper limit to the shutter with ```oMEXPX=<your maximum shutter time>```.  
 Below are extracted frames from two simultaneous Night Lapse captures of the sunset, one with the shutter limited to 1/50th of a second.
 
 ![NightCompare.png](NightCompare.png)
