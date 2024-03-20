@@ -74,9 +74,9 @@ The problem is we haven’t had a prior eclipse to practice on.  An example of s
 
 ## Eclipse Time-lapse QR Code
 
-Totality Start Time: <input type="range" style="width: 300px;" id="tlstrt" name="tlstrt" min="1" max="720" value="48"><label for="tlstrt"></label> <b id="starttext"></b>
+Totality Start Time: <input type="range" style="width: 600px;" id="tlstrt" name="tlstrt" min="1" max="720" value="48"><label for="tlstrt"></label> <b id="starttext"></b>
 
-Totality Length: <input type="range" style="width: 360px;" id="tlend" name="tlend" min="1" max="5" value="4"><label for="tlend"></label> <b id="lentext"></b> minutes &nbsp;&nbsp; End Time: <b id="endtext"></b>
+Totality Length: <input type="range" style="width: 300px;" id="tlend" name="tlend" min="1" max="5" value="4"><label for="tlend"></label> <b id="lentext"></b> minutes &nbsp;&nbsp; End Time: <b id="endtext"></b>
 
 <input type="checkbox" id="upld" name="upld"> 
 <label for="upld">Upload at the end of each capture</label><br>
