@@ -105,6 +105,10 @@ Estimated Timelapse Playback Length: <b id="tllen"></b> seconds
 
 Forum to [**discuss the best settings**](https://github.com/gopro/labs/discussions/823), and to share your resulting videos.
  
+<div id="opDT">
+<input type="checkbox" id="dt" value="oT"> <label for="dt">Set date + time automatically</label> Note: do save a QR Code image with this enabled. This is designed to for live QR Codes not printed or saved to camera rolls.<br>
+</div>
+
 <div id="qrcode_txt" style="width: 360px">
   <center>
   <div id="qrcode"></div><br>
@@ -307,6 +311,32 @@ function timeLoop()
 		
 		playlen = ((t2len)*60/10 + (t3len)*60*3 + caplen)/30;
 	}
+	
+	
+	var dt = document.getElementById("dt").checked;
+	if(dt === true)
+	{
+	  var today;
+	  var yy,mm,dd,h,m,s;
+	  
+	  today = new Date();
+	  yy = today.getFullYear() - 2000;
+	  mm = today.getMonth() + 1;
+	  dd = today.getDate();
+	  h = today.getHours();
+	  m = today.getMinutes();
+	  s = today.getSeconds();
+	  ms = today.getMilliseconds();
+	  yy = padTime(yy);
+	  mm = padTime(mm);
+	  dd = padTime(dd);
+	  h = padTime(h);
+	  m = padTime(m);
+	  s = padTime(s);
+  
+	  cmd = "oT" + yy + mm + dd + h + m + s + cmd;
+	}
+	
 	
 	playlen = Math.trunc(playlen*10)/10;
 	
