@@ -14,7 +14,7 @@
 </style>
 
 
-Shooting a solar eclipse is tricky. The first issue is the sheer change in dynamic range from full sun to when it's fully covered by the moon, 
+Shooting a solar eclipse is tricky, but a very worthwhile experience, so let's preconfigure your GoPro so you can enjoy the rare event live and after with a cool timelapse capture. The first tricky issue is the sheer change in dynamic range from full sun to when it's fully covered by the moon, 
 the light level can vary up to 12 stops. 12 stops, the light halving in brightness 12 times, would be the difference in shooting with 1/1000 shutter to a 4 second exposure. 
 This example data was from a solar eclipse measured in Australia in 2023 (thanks to Matt Parker's data from [**Stand-up Maths**](https://youtu.be/IuUMxNfDfFY?si=iytXca2frHqOakOB&t=945) - the whole video is a worth watch.)
 
@@ -107,7 +107,7 @@ Forum to [**discuss the best settings**](https://github.com/gopro/labs/discussio
  
 <div id="opDT">
 <input type="checkbox" id="dt" value="oT" checked> <label for="dt">Set date + time automatically</label> <br>
-<small>Note: do save a QR Code image with this enabled. This is designed to for live QR Codes not printed or saved to camera rolls.</small>
+<small>Note: do save a QR Code image with this enabled. This is designed to for live QR Codes, not printed or saved to camera rolls.</small>
 </div>
 
 <div id="qrcode_txt" style="width: 360px">
