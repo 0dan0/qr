@@ -77,6 +77,8 @@ creating two separate video timelapses.
 
 ## Eclipse Time-lapse QR Code
 
+Set up an automatic action via QR Code, so can ready your camera well advance, and it will automatic turn on and record with your desired time and settings.<br>
+<br>
 Find 2024 eclipse times [**for your location**](https://nso.edu/for-public/eclipse-map-2024/)
 
 <div id="eTYPE"><b>Select Capture Type:</b><br>
