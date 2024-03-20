@@ -183,7 +183,6 @@ function timeLoop()
 	var start = parseInt(document.getElementById("tlstrt").value);
 	var startmins = start + 600;
 	var caplen = parseInt(document.getElementById("tlend").value);
-	caplen = Math.trunc(caplen*caplen/1420);
 	var endmins = startmins + caplen;
 	if(endmins >= 1440)
 		endmins -= 1440;
