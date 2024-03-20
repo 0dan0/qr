@@ -261,7 +261,7 @@ function timeLoop()
 		var stime = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
 		var etime = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 	
-		cmd = "\"Type1\"" + "!" + stime + "N" + "mNLp.4eA" + res + "tb1w55i1M1sM!S!" + etime + "E";
+		cmd = "\"Eclipse TL\nType1\"" + "!" + stime + "N" + "mNLp.4eA" + res + "tb1w55i1M1sM!S!" + etime + "E";
 		
 		playlen = (endmins - startmins)*60/4/30;
 	} 
@@ -278,7 +278,7 @@ function timeLoop()
 		var stime = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
 		var etime = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 	
-		cmd = "\"Type2\"" + "!" + stime + "N" + "mTp.10" + res + "tb1w55i1M1sMoMEXPX=30!S!" + etime + "EoMEXPX=0";
+		cmd = "\"Eclipse TL\nType2\"" + "!" + stime + "N" + "mTp.10" + res + "tb1w55i1M1sMoMEXPX=30!S!" + etime + "EoMEXPX=0";
 		
 		playlen = (endmins - startmins)*60/10/30;
 	} 
@@ -295,7 +295,7 @@ function timeLoop()
 		var stime = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
 		var etime = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 	
-		cmd = "\"Type3\"" + "!" + stime + "N" + "mNLpeA" + res + "tb1w55i8M1sMoMEXPX=1!S!" + etime + "EoMEXPX=0";
+		cmd = "\"Eclipse TL\nType3\"" + "!" + stime + "N" + "mNLpeA" + res + "tb1w55i8M1sMoMEXPX=1!S!" + etime + "EoMEXPX=0";
 		
 		playlen = ((endmins - startmins - caplen)*60*3 + caplen)/30;
 	}
@@ -317,7 +317,7 @@ function timeLoop()
 		var stime = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
 		var etime2 = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 	
-		cmd = "\"Type4\"" + "!" + stime + "N" + "mNLp.10" + res + "tb1w55i1M1sMoMEXPX=30!S!" + etime1 + "EpeAi8M1sMoMEXPX=1!S!" + etime2 + "EoMEXPX=0";
+		cmd = "\"Eclipse TL\nType4\"" + "!" + stime + "N" + "mNLp.10" + res + "tb1w55i1M1sMoMEXPX=30!S!" + etime1 + "EpeAi8M1sMoMEXPX=1!S!" + etime2 + "EoMEXPX=0";
 		
 		playlen = ((t2len)*60/10 + (t3len)*60*3 + caplen)/30;
 	}
