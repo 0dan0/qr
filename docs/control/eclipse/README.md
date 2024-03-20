@@ -82,10 +82,10 @@ creating two separate video timelapses.
 Find 2024 eclipse times [**for your location**](https://nso.edu/for-public/eclipse-map-2024/)
 
 <div id="eTYPE"><b>Capture Type:</b><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type1" name="type" value="1" > <label for="Type 1">type1 - 4s Night Lapse starting 15 minutes before totality</label><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type2" name="type" value="2" > <label for="Type 2">type2 - 10s Time Lapse, exposure limited, starting 1 hour before totality</label><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type3" name="type" value="3" > <label for="Type 3">type3 - Super optimized 1-3fps Night Lapse, start 2 minutes before totality</label><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type4" name="type" value="4" checked> <label for="type4">Type 4 - Experimental - switching between type 2 and 3</label>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type1" name="type" value="1" > <label for="type1">Type 1 - 4s Night Lapse starting 15 minutes before totality</label><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type2" name="type" value="2" > <label for="type2">Type 2 - 10s Time Lapse, exposure limited, starting 1 hour before totality</label><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type3" name="type" value="3" > <label for="type3">Type 3 - Super optimized 1-3fps Night Lapse, start 2 minutes before totality</label><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type4" name="type" value="4" > <label for="type4">Type 4 - Experimental - switching between type 2 and 3</label>
 </div>
 
 Totality Start Time: <input type="range" style="width: 600px;" id="tlstrt" name="tlstrt" min="1" max="480" value="200"><label for="tlstrt"></label> <b id="starttext"></b>
