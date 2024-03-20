@@ -85,16 +85,16 @@ Find 2024 eclipse times [**for your location**](https://nso.edu/for-public/eclip
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type3" name="stype" value="3"><label for="type3"><b>Type 3</b> - Super optimized 1-3fps Night Lapse</label> starting <input type="range" style="width: 100px;" id="t3len" name="t3len" min="2"  max="10"  value="2" ><label for="t3len"></label> <b id="type3len"></b> minutes before<br>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type4" name="stype" value="4"><label for="type4"><b>Type 4</b> - Experimental switching between type 2 and 3 at totality (two automatic captures)</label><br>
 </div>
-
+<br>
 
 <div id="eRES"><b>Capture Resolution:</b><br>&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="res1" name="sres" value="" checked><label for="res1"><b>current setting</b> </label>
-  &nbsp;&nbsp;<input type="radio" id="res2" name="sres" value="r4"><label for="res2"><b>4K 16:9</b>
-  &nbsp;&nbsp;<input type="radio" id="res3" name="sres" value="r4T"><label for="res3"><b>4K 4:3 (H11)</b>
-  &nbsp;&nbsp;<input type="radio" id="res4" name="sres" value="r4X"><label for="res4"><b>4K 8:7 (H12)</b>
-  &nbsp;&nbsp;<input type="radio" id="res5" name="sres" value="r5"><label for="res5"><b>5K 16:9</b>
-  &nbsp;&nbsp;<input type="radio" id="res6" name="sres" value="r5T"><label for="res6"><b>5K 4:3 (H11)</b>
-  &nbsp;&nbsp;<input type="radio" id="res7" name="sres" value="r5X"><label for="res7"><b>5K 8:7 (H12)</b>
+  &nbsp;&nbsp;<input type="radio" id="res1" name="sres" value="" checked><label for="res1">not set</label>
+  &nbsp;&nbsp;<input type="radio" id="res2" name="sres" value="r4"><label for="res2"> 4K 16:9</label>
+  &nbsp;&nbsp;<input type="radio" id="res3" name="sres" value="r4T"><label for="res3">4K 4:3 (H11)</label>
+  &nbsp;&nbsp;<input type="radio" id="res4" name="sres" value="r4X"><label for="res4">4K 8:7 (H12)</label>
+  &nbsp;&nbsp;<input type="radio" id="res5" name="sres" value="r5"><label for="res5"> 5K 16:9</label>
+  &nbsp;&nbsp;<input type="radio" id="res6" name="sres" value="r5T"><label for="res6">5K 4:3 (H11)</label>
+  &nbsp;&nbsp;<input type="radio" id="res7" name="sres" value="r5X"><label for="res7">5K 8:7 (H12)</label>
 </div>
 
 
