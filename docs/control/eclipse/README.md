@@ -98,8 +98,8 @@ Setup A thru D options:
   &nbsp;&nbsp;<input type="radio" id="res6" name="res" value="r5T"><label for="res6">5K 4:3 (H11)</label>
   &nbsp;&nbsp;<input type="radio" id="res7" name="res" value="r5X"><label for="res7">5K 8:7 (H12)</label>
 </div>
-<b>C - Totality Start:</b> <input type="range" style="width: 540px;" id="tlstrt" name="tlstrt" min="720" max="1080" value="780"><label for="tlstrt"></label> <b id="starttext"></b>
-<b>D - Totality Length:</b> <input type="range" style="width: 300px;" id="tlend" name="tlend" min="1" max="5" value="4"><label for="tlend"></label> <b id="lentext"></b> minutes &nbsp;&nbsp; Totality End Time: <b id="endtext"> seconds</b>
+<div><b>C - Totality Start:</b> <input type="range" style="width: 540px;" id="tlstrt" name="tlstrt" min="720" max="1080" value="780"><label for="tlstrt"></label> <b id="starttext"></b></div>
+<div><b>D - Totality Length:</b> <input type="range" style="width: 300px;" id="tlend" name="tlend" min="1" max="5" value="4"><label for="tlend"></label> <b id="lentext"></b> minutes &nbsp;&nbsp; Totality End Time: <b id="endtext"> seconds</b></div>
 
 Estimated Timelapse Playback Length: <b id="tllen"></b> seconds
 
