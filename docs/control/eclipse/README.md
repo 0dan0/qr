@@ -106,7 +106,7 @@ Estimated Timelapse Playback Length: <b id="tllen"></b> seconds
 Forum to [**discuss the best settings**](https://github.com/gopro/labs/discussions/823), and to share your resulting videos.
  
 <div id="opDT">
-<input type="checkbox" id="dt" value="oT"> <label for="dt">Set date + time automatically</label> Note: do save a QR Code image with this enabled. This is designed to for live QR Codes not printed or saved to camera rolls.<br>
+<input type="checkbox" id="dt" value="oT" checked> <label for="dt">Set date + time automatically</label> Note: do save a QR Code image with this enabled. This is designed to for live QR Codes not printed or saved to camera rolls.<br>
 </div>
 
 <div id="qrcode_txt" style="width: 360px">
