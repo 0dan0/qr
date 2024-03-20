@@ -54,12 +54,11 @@ It is tricky to capture both the massive drop in light, and the drama of totalit
 editing and blending the results in post.
 
 #### Type 1 - Capture mostly optimized for the totality
-Night Lapse ISO 100, 4s interval, Shutter Auto and starting about 15 minutes before the totality, running until 15 minutes after. 
-Resulting in a ~17 second timelapse, 2 seconds in totality (if a 4-minute totality.)  
+Night Lapse ISO 100, 4s interval, Shutter Auto. If you started 15 minutes before totality and stopped 15 minutes after, the result is a ~17 second timelapse, witg 2 seconds in totality (if a 4-minute totality.)  
 
 #### Type 2 - Capture optimized for the drop in brightness
-Timelapse ISO 100, 10s interval, starting an hour before totality. Limiting the shutter to say 1/30th of a second 
-(this is your creative choice.) At 1/30, the last 5-6 stops of teh eclipse will be more dramatically show the light impact upon the landscape. Resulting in a ~25 second timelapse, ~1 second in totality.
+Timelapse ISO 100, 10s interval, but limiting the shutter to 1/30th of a second (a creative choice, my best guess.) At 1/30, the last 5-6 stops of the eclipse will be more dramatically show the 
+light impact upon the landscape. Capturing one hour before and after totality, the result is a ~25 second timelapse, ~1 second in totality.
 
 Note: Timelapse stock (not Night Lapse) is limited to a maximum of 1/8 second exposures, combined with ISO maximum of 100, this is a good option without Labs firmware. 
 This is what I used in 2017. However, the now only the last 3-4 stops will show a dramatic light change, and this is in the last minute before and after totality, 
@@ -67,10 +66,9 @@ and with a 10s interval, you will only get about six frames of the light drop in
 length of the light drop-off will double in the final timelapse.  
 
 #### Type 3 - Super optimized for the totality
-Night Lapse ISO Max 800, Auto interval, Shutter Auto, Labs shutter limited to 1s, and starting about 2 minutes 
-before the totality, run until 2+ minutes after. Auto shutter with Auto interval is a special mode in Night Lapse, in this mode it will take frames as fast as possible, 
-giving you more frames in the totality. When it is bright, this is ~3fps, when it is dark Labs firmware can limit the exposure time to 1fps. If you have 4 minutes of totality, 
-this 8-minute timelapse will result in ~32s playback time, with 4 seconds in the totality. Optional, you could limit the exposure to half a second for up to 8 seconds in totality.
+Night Lapse ISO Max 800, Auto interval, Shutter Auto, Labs shutter limited to 1s. Auto shutter with Auto interval is a special mode in Night Lapse, in this mode it will take frames as fast as possible, 
+giving you more frames in the totality. When it is bright, this is ~3fps, when it is dark Labs firmware can limit the exposure time to 1fps. If you have 4 minutes of totality, and only 2 minutes before and after,  
+this 8-minute timelapse will result in ~32s playback time, with 4 seconds in the totality in playback. Optional, you could limit the exposure to half a second for up to 8 seconds in totality.
 
 #### Type 4 - Combining 2 & 3
 For those who want to experiment further, Labs firmware allows you to script the camera, so that certain modes or actions can be performed at particular moments. 
@@ -82,10 +80,10 @@ creating two separate video timelapses.
 Find 2024 eclipse times [**for your location**](https://nso.edu/for-public/eclipse-map-2024/)
 
 <div id="eTYPE"><b>Capture Type:</b><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type1" name="type" value="1" checked> <label for="type1">Type 1 - 4s Night Lapse</label> starting <input type="range" style="width: 100px;" id="t1len" name="t1len" min="10" max="120" value="15"><label for="t1len"></label> <b id="type1len"></b> minutes before<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type2" name="type" value="2" > <label for="type2">Type 2 - 10s Time Lapse, exposure limited</label> starting <input type="range" style="width: 100px;" id="t2len" name="t2len" min="10" max="120" value="60"><label for="t2len"></label> <b id="type2len"></b> minutes before<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type3" name="type" value="3" > <label for="type3">Type 3 - Super optimized 1-3fps Night Lapse</label> starting <input type="range" style="width: 100px;" id="t3len" name="t3len" min="2" max="10" value="120"><label for="t3len"></label> <b id="type3len"></b> minutes before<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type4" name="type" value="4" > <label for="type4">Type 4 - Experimental - switching between type 2 and 3 at totality
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type1" name="type" value="1" checked> <label for="type1"><b>Type 1</b> - 4s Night Lapse</label> starting <input type="range" style="width: 100px;" id="t1len" name="t1len" min="10" max="120" value="15"><label for="t1len"></label> <b id="type1len"></b> minutes before<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type2" name="type" value="2" > <label for="type2">       <b>Type 2</b> - 10s Time Lapse, exposure limited</label> starting <input type="range" style="width: 100px;" id="t2len" name="t2len" min="10" max="120" value="60"><label for="t2len"></label> <b id="type2len"></b> minutes before<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type3" name="type" value="3" > <label for="type3">       <b>Type 3</b> - Super optimized 1-3fps Night Lapse</label> starting <input type="range" style="width: 100px;" id="t3len" name="t3len" min="2" max="10" value="120"><label for="t3len"></label> <b id="type3len"></b> minutes before<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type4" name="type" value="4" > <label for="type4">       <b>Type 4</b> - Experimental - switching between type 2 and 3 at totality<br>
 </div>
 
 Totality Start Time: <input type="range" style="width: 600px;" id="tlstrt" name="tlstrt" min="720" max="1080" value="780"><label for="tlstrt"></label> <b id="starttext"></b>
