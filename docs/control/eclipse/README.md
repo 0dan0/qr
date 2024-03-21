@@ -324,7 +324,7 @@ function timeLoop()
 		starthourstime = Math.trunc(startmins / 60);
 		startminstime = startmins - starthourstime * 60;	
 		
-		var etime1 = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
+		var etime1 = t2len * 60 + secondsOffset;
 		
 		startmins -= t2len;
 		starthourstime = Math.trunc(startmins / 60);
@@ -339,21 +339,8 @@ function timeLoop()
 	
 		cmd = "\"Eclipse TL\nType4\"" + "!" + stime + "N" + "mNLp.10" + res + "tb1w55i1M1sMoMEXPX=30";
 		
-		if(secondsOffset === 0)
-			cmd = cmd + "!S!" + etime1 + "EpeAi8M1sMoMEXPX=1!S!" + etime2 + "EoMEXPX=0";
-		else
-		{
-			while(secondsOffset > 9)
-			{
-				cmd = cmd + "!9N";
-				secondsOffset -= 9;
-			}
-			if(secondsOffset > 0)
-				cmd = cmd + "!" + secondsOffset + "N";
-			
-			cmd = cmd + "!S!" + etime1 + "EpeAi8M1sMoMEXPX=1!S!" + etime2 + "EoMEXPX=0";
-		}
-		
+		cmd = cmd + "!S!" + etime1 + "EpeAi8M1sMoMEXPX=1!S!" + etime2 + "EoMEXPX=0";
+				
 		playlen = ((t2len)*60/10 + (t3len)*60*3 + caplen)/30;
 	}
 	
