@@ -89,24 +89,25 @@ creating two separate video timelapses.
 
 Set up an automatic action via QR Code, so you can ready your camera well in advance, and it will automatically turn on and record with your desired time and settings.<br>
 <br>
-Find 2024 eclipse times [**for your location**](https://nso.edu/for-public/eclipse-map-2024/)
+Find 2024 eclipse times [**for your location**](https://science.nasa.gov/eclipses/future-eclipses/eclipse-2024/where-when/)
 
 Setup A thru D options:
 
 <div id="eTYPE"><b>A - Select Capture Type:</b><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type1" name="type" value="1" checked><label for="type1"><b>Type 1</b> - Easy - 4s Night Lapse</label>             starting <input type="range" style="width: 100px;" id="t1len" name="t1len" min="10" max="120" value="15"><label for="t1len"></label> <b id="type1len"></b> minutes before<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type2" name="type" value="2"><label for="type2"><b>Type 2</b> - Cool - 10s Time Lapse, exposure limited</label>   starting <input type="range" style="width: 100px;" id="t2len" name="t2len" min="10" max="120" value="60"><label for="t2len"></label> <b id="type2len"></b> minutes before<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type3" name="type" value="3"><label for="type3"><b>Type 3</b> - Very Cool - Super optimized 1-3fps Night Lapse</label> starting <input type="range" style="width: 100px;" id="t3len" name="t3len" min="2"  max="10"  value="2" ><label for="t3len"></label> <b id="type3len"></b> minutes before<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type4" name="type" value="4"><label for="type4"><b>Type 4</b> - Experimental - Switching between type 2 and 3 at totality (two automatic captures)</label><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type1" name="type" value="1" checked><label for="type1"><b>Type 1</b> - Easy</label><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4s Night Lapse, starting <input type="range" style="width: 100px;" id="t1len" name="t1len" min="10" max="120" value="15"><label for="t1len"></label> <b id="type1len"></b> minutes before<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type2" name="type" value="2"><label for="type2"><b>Type 2</b> - Cool - 10s Time Lapse, exposure limited</label>   starting <input type="range" style="width: 100px;" id="t2len" name="t2len" min="10" max="120" value="60"><label for="t2len"></label> <b id="type2len"></b> minutes before<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type3" name="type" value="3"><label for="type3"><b>Type 3</b> - Very Cool - Super optimized 1-3fps Night Lapse</label> starting <input type="range" style="width: 100px;" id="t3len" name="t3len" min="2"  max="10"  value="2" ><label for="t3len"></label> <b id="type3len"></b> minutes before<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type4" name="type" value="4"><label for="type4"><b>Type 4</b> - Experimental - Switching between type 2 and 3 at totality (two automatic captures)</label><br>
 </div>
-<div id="eRES"><b>B - Capture Resolution:</b><br>&nbsp;&nbsp;&nbsp;&nbsp;
+<div id="eRES"><b>B - Capture Resolution:</b><br>&nbsp;&nbsp;
   &nbsp;&nbsp;<input type="radio" id="res1" name="res" value="" checked><label for="res1">current</label>
   &nbsp;&nbsp;<input type="radio" id="res2" name="res" value="r4"><label for="res2"> 4K 16:9</label>
-  &nbsp;&nbsp;<input type="radio" id="res3" name="res" value="r4T"><label for="res3">4K 4:3 (H11)</label>
-  &nbsp;&nbsp;<input type="radio" id="res4" name="res" value="r4X"><label for="res4">4K 8:7 (H12)</label>
+  &nbsp;&nbsp;<input type="radio" id="res3" name="res" value="r4T"><label for="res3">4K 4:3</label><sub>H11</sub>
+  &nbsp;&nbsp;<input type="radio" id="res4" name="res" value="r4X"><label for="res4">4K 8:7</label><sub>H12</sub>
   &nbsp;&nbsp;<input type="radio" id="res5" name="res" value="r5"><label for="res5"> 5K 16:9</label>
-  &nbsp;&nbsp;<input type="radio" id="res6" name="res" value="r5T"><label for="res6">5K 4:3 (H11)</label>
-  &nbsp;&nbsp;<input type="radio" id="res7" name="res" value="r5X"><label for="res7">5K 8:7 (H12)</label>
+  &nbsp;&nbsp;<input type="radio" id="res6" name="res" value="r5T"><label for="res6">5K 4:3</label><sub>H11</sub>
+  &nbsp;&nbsp;<input type="radio" id="res7" name="res" value="r5X"><label for="res7">5K 8:7</label><sub>H12</sub>
 </div>
 <div><b>C - Totality Start:</b> <input type="range" style="width: 540px;" id="tlstrt" name="tlstrt" min="720" max="1080" value="780"><label for="tlstrt"></label> <b id="starttext"></b></div>
 <div><b>D - Totality Length:</b> <input type="range" style="width: 300px;" id="tlend" name="tlend" min="1" max="5" value="4"><label for="tlend"></label> <b id="lentext"></b> minutes &nbsp;&nbsp; Totality End Time: <b id="endtext"> seconds</b></div>
