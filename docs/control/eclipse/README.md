@@ -343,8 +343,15 @@ function timeLoop()
 			cmd = cmd + "!S!" + etime1 + "EpeAi8M1sMoMEXPX=1!S!" + etime2 + "EoMEXPX=0";
 		else
 		{
-		    cmd = "$WAIT=\"=St:S=S-A'count$S'>S0!X!R\"" + cmd;
-			cmd = cmd + "=A" + secondsOffset + "^WAIT!S!" + etime1 + "EpeAi8M1sMoMEXPX=1!S!" + etime2 + "EoMEXPX=0";
+			while(secondsOffset > 9)
+			{
+				cmd = cmd + "!9N";
+				secondsOffset -= 9;
+			}
+			if(secondsOffset > 0)
+				cmd = cmd + "!" + secondsOffset + "N";
+			
+			cmd = cmd + "!S!" + etime1 + "EpeAi8M1sMoMEXPX=1!S!" + etime2 + "EoMEXPX=0";
 		}
 		
 		playlen = ((t2len)*60/10 + (t3len)*60*3 + caplen)/30;
