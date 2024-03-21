@@ -324,7 +324,7 @@ function timeLoop()
 		starthourstime = Math.trunc(startmins / 60);
 		startminstime = startmins - starthourstime * 60;	
 		
-		var etime1 = t2len * 60 + Math.trunc(secondsOffset);
+		var etime1 = t2len * 60 + Math.trunc(secondsOffset) - 2;
 		
 		startmins -= t2len;
 		starthourstime = Math.trunc(startmins / 60);
