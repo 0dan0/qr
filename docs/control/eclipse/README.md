@@ -248,6 +248,7 @@ function timeLoop()
 	var startminstime;	
 	var endhourstime;
 	var endminstime;
+	var secondsOffset = 0;
 		
 	starthourstime = Math.trunc(startmins / 60);
 	startminstime = startmins - starthourstime * 60;	
@@ -260,6 +261,12 @@ function timeLoop()
 
 	var type = dcmd("","type"); 
 	var res = dcmd("","res"); 
+	
+	if(document.getElementById("addsec") !== null)
+	{
+		secondsOffset = document.getElementById("addsec").value;
+	}
+	
 	
 	if(type == "1")
 	{
@@ -330,7 +337,15 @@ function timeLoop()
 		var stime = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
 		var etime2 = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 	
-		cmd = "\"Eclipse TL\nType4\"" + "!" + stime + "N" + "mNLp.10" + res + "tb1w55i1M1sMoMEXPX=30!S!" + etime1 + "EpeAi8M1sMoMEXPX=1!S!" + etime2 + "EoMEXPX=0";
+		cmd = "\"Eclipse TL\nType4\"" + "!" + stime + "N" + "mNLp.10" + res + "tb1w55i1M1sMoMEXPX=30";
+		
+		if(secondsOffset === 0)
+			cmd = cmd + "!S!" + etime1 + "EpeAi8M1sMoMEXPX=1!S!" + etime2 + "EoMEXPX=0";
+		else
+		{
+		    cmd = "$WAIT=\"=St:S=S-A'count$S'>S0!X!R\"" + cmd;
+			cmd = cmd + "=A" + secondsOffset + "^WAIT!S!" + etime1 + "EpeAi8M1sMoMEXPX=1!S!" + etime2 + "EoMEXPX=0";
+		}
 		
 		playlen = ((t2len)*60/10 + (t3len)*60*3 + caplen)/30;
 	}
