@@ -111,7 +111,7 @@ Setup A thru D options:
   &nbsp;&nbsp;<input type="radio" id="res6" name="res" value="r5T"><label for="res6">5K 4:3</label><sub>H11</sub>
   &nbsp;&nbsp;<input type="radio" id="res7" name="res" value="r5X"><label for="res7">5K 8:7</label><sub>H12</sub>
 </div>
-<div><b>C - Totality Start:</b> <input type="range" style="width: 480px;" id="tlstrt" name="tlstrt" min="720" max="1080" value="780"><label for="tlstrt"></label> <b id="starttext"></b>:<input type="text" id="addsec" value="" style="width:45px"></div>
+<div><b>C - Totality Start:</b> <input type="range" style="width: 480px;" id="tlstrt" name="tlstrt" min="720" max="1080" value="780"><label for="tlstrt"></label> <b id="starttext">:</b><input type="text" id="addsec" value="" style="width:45px"></div>
 <div><b>D - Totality Length:</b> <input type="range" style="width: 300px;" id="tlend" name="tlend" min="1" max="5" value="4"><label for="tlend"></label> <b id="lentext"></b> minutes &nbsp;&nbsp; Totality End Time: <b id="endtext"> seconds</b></div>
 
 Estimated Timelapse Playback Length: <b id="tllen"></b> seconds
@@ -120,7 +120,7 @@ Forum to [**discuss the best settings**](https://github.com/gopro/labs/discussio
  
 <div id="opDT">
 <input type="checkbox" id="dt" value="oT" checked> <label for="dt">Set date + time automatically</label> <br>
-<small>Note: do save a QR Code image with this enabled. This is designed to for live QR Codes, not printed or saved to camera rolls.</small>
+<small>Note: don't save a QR Code image with this enabled. This is designed to for live QR Codes, not printed or saved to camera rolls.</small>
 </div>
 
 <div id="qrcode_txt" style="width: 360px">
