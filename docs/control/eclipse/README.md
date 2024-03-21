@@ -103,7 +103,7 @@ Setup A thru D options:
   &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type4" name="type" value="4"><label for="type4"><b> Type 4</b> - Experimental - Switching between type 2 and 3 at totality (two automatic captures)</label><br>
 </div>
 <div id="eRES"><b>B - Capture Resolution:</b><br>&nbsp;&nbsp;
-  &nbsp;&nbsp;<input type="radio" id="res1" name="res" value="" checked><label for="res1">current</label>
+  &nbsp;&nbsp;<input type="radio" id="res1" name="res" value="" checked><label for="res1"> current</label>
   &nbsp;&nbsp;<input type="radio" id="res2" name="res" value="r4"><label for="res2"> 4K 16:9</label>
   &nbsp;&nbsp;<input type="radio" id="res3" name="res" value="r4T"><label for="res3">4K 4:3</label><sub>H11</sub>
   &nbsp;&nbsp;<input type="radio" id="res4" name="res" value="r4X"><label for="res4">4K 8:7</label><sub>H12</sub>
