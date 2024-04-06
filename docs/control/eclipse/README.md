@@ -111,7 +111,7 @@ Setup A thru D options:
   &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type3" name="type" value="3"><label for="type3"><b> Type 3</b> - Very Cool, Totality optimized</label><br>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~0.5s interval, add <input type="range" style="width: 100px;" id="t3len" name="t3len" min="2"  max="10"  value="2" ><label for="t3len"></label> <b id="type3len"></b> mins before and after totality<br>
   &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type4" name="type" value="4"><label for="type4"><b> Type 4</b> - Experimental - Switching between type 2 and 3 at totality (two automatic captures)</label><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="ex" checked> <label for="ex">Extend with a third timelapse until battery end.</label> <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="ex"> <label for="ex">Extend with a third timelapse until battery end.</label> <br>
 
 </div>
 <div id="eRES"><b>B - Capture Resolution:</b><br>&nbsp;&nbsp;
