@@ -357,7 +357,7 @@ function timeLoop()
 		var ex = document.getElementById("ex").checked;
 		if(ex === true)
 		{
-			cmd = cmd + "!1NmTp.5" + res + "tb1w55i1M1sM!S";
+			cmd = cmd + "!1NmTp.5" + res + "b1w55i1M1sM!S";
 		}
 				
 		playlen = ((t2len)*60/10 + (t3len)*60*3 + caplen)/30;
