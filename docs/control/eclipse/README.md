@@ -298,7 +298,7 @@ function timeLoop()
 		
 		playlen = (endmins - startmins)*60/4/30;
 		
-		title = title + "Nightlapse " + stime + " to " + etime;
+		title = "Eclipse Nightlapse " + stime + " to " + etime;
 	} 
 	else if(type == "2")
 	{
@@ -317,7 +317,7 @@ function timeLoop()
 		
 		playlen = (endmins - startmins)*60/10/30;
 		
-		title = title + "Timelapse " + stime + " to " + etime;
+		title = "Eclipse Timelapse " + stime + " to " + etime;
 	} 
 	else if(type == "3")
 	{
@@ -336,7 +336,7 @@ function timeLoop()
 		
 		playlen = ((endmins - startmins - caplen)*60*3 + caplen)/30;
 		
-		title = title + "Totality-lapse " + stime + " to " + etime;
+		title = "Eclipse Totality-lapse " + stime + " to " + etime;
 	}
 	else	
 	{
@@ -360,7 +360,7 @@ function timeLoop()
 		
 		cmd = cmd + "!S!" + etime1 + "E!1NpeAi8M1sMoMEXPX=1!S!" + etime2 + "EoMEXPX=0";
 		
-		title = title + "Nightlapse " + stime + " to " + etime2;		
+		title = "Eclipse Nightlapse " + stime + " to " + etime2;		
 		
 		var ex = document.getElementById("ex").checked;
 		if(ex === true)
