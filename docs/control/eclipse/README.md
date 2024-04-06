@@ -139,7 +139,7 @@ Forum to [**discuss the best settings**](https://github.com/gopro/labs/discussio
   <center>
   <div id="qrcode"></div><br>
   <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em><br>
-  <b><font color="#005CAC">Eclipse Timelapse</font></b>
+  <b><font color="#005CAC"><em id="qrtitle"></em></font></b>
   </center>
 </div>
 <br>
@@ -156,6 +156,7 @@ updated: April 6, 2024
 var once = true;
 var qrcode;
 var cmd = "mPdP!60SQ!1R";
+var title = "Eclipse ";
 var clipcopy = "";
 var lasttimecmd = "";
 var changed = false;
@@ -296,6 +297,8 @@ function timeLoop()
 		cmd = "mPR\"Eclipse TL\nType1\"" + "!" + stime + "N" + "mNLp.4eA" + res + "tb1w55i1M1sM!S!" + etime + "E";
 		
 		playlen = (endmins - startmins)*60/4/30;
+		
+		title = title + "Nightlapse " + stime + " to " + etime;
 	} 
 	else if(type == "2")
 	{
@@ -313,6 +316,8 @@ function timeLoop()
 		cmd = "mPR\"Eclipse TL\nType2\"" + "!" + stime + "N" + "mTp.10" + res + "tb1w55i1M1sMoMEXPX=30!S!" + etime + "EoMEXPX=0";
 		
 		playlen = (endmins - startmins)*60/10/30;
+		
+		title = title + "Timelapse " + stime + " to " + etime;
 	} 
 	else if(type == "3")
 	{
@@ -330,6 +335,8 @@ function timeLoop()
 		cmd = "mPR\"Eclipse TL\nType3\"" + "!" + stime + "N" + "mNLpeA" + res + "tb1w55i8M1sMoMEXPX=1!S!" + etime + "EoMEXPX=0";
 		
 		playlen = ((endmins - startmins - caplen)*60*3 + caplen)/30;
+		
+		title = title + "Totality-lapse " + stime + " to " + etime;
 	}
 	else	
 	{
@@ -353,11 +360,14 @@ function timeLoop()
 		
 		cmd = cmd + "!S!" + etime1 + "E!1NpeAi8M1sMoMEXPX=1!S!" + etime2 + "EoMEXPX=0";
 		
+		title = title + "Nightlapse " + stime + " to " + etime2;		
 		
 		var ex = document.getElementById("ex").checked;
 		if(ex === true)
 		{
 			cmd = cmd + "!1NmTp.5" + res + "b1w55i1M1sM!S";
+			
+			title = title + "Nightlapse " + stime + " to " + etime2 + " timelapse continues";
 		}
 				
 		playlen = ((t2len)*60/10 + (t3len)*60*3 + caplen)/30;
@@ -415,6 +425,7 @@ function timeLoop()
   if(changed === true)
   {
 	document.getElementById("qrtext").innerHTML = cmd;
+	document.getElementById("qrtitle").innerHTML = title;
 	clipcopy = "https://gopro.github.io/labs/control/set/?cmd=" + cmd + "&title=Eclipse%20Timelapse";
 	document.getElementById("urltext").innerHTML = clipcopy;
 	changed = false;
