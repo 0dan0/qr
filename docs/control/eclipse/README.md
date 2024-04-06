@@ -367,7 +367,7 @@ function timeLoop()
 		{
 			cmd = cmd + "!1NmTp.5" + res + "b1w55i1M1sM!S";
 			
-			title = title + "Nightlapse " + stime + " to " + etime2 + " timelapse continues";
+			title = title + " timelapse continues";
 		}
 				
 		playlen = ((t2len)*60/10 + (t3len)*60*3 + caplen)/30;
