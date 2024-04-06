@@ -86,6 +86,15 @@ For those who want to experiment further, Labs firmware allows you to script the
 The problem is we haven’t had a prior eclipse to practice these extensions on. The very experimental script would be to run type 2) capture until the first second of totality, then switch to type 3), automatically 
 creating two separate video timelapses. 
 
+## Troubleshooting and Advance Configurations
+All of Labs features use the Pro Mode on your Black addition camera. In Pro Mode you can change a lot of settings, but to keep these scripts from getting too complex, 
+some assumptions have been made that the settings are close to the system defaults. The script below assume your camera has time-lapse Video and 
+night-lapse Video presets. Camera in default configurations have these modes, however the presets can be changed to Photo time-lapse and Photo night-lapse. 
+If you have changed these, either manually change them back to Video type or do a factory reset on the camera, then reenable Pro Mode. 
+
+None of the scripts will change the default color look or EV settings. So if unchanged the timelapse captures will be Color Natural at EV 0.0, which is perfectly fine.  
+However if you intend to apply some color correction, setting Color Flat and EV to -0.5 is recommended. Set these properties within the time-lapse and night-lapse Video presets.
+
 ## Eclipse Time-lapse QR Code
 
 Set up an automatic action via QR Code, so you can ready your camera well in advance, and it will automatically turn on and record with your desired time and settings.<br>
@@ -102,6 +111,8 @@ Setup A thru D options:
   &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type3" name="type" value="3"><label for="type3"><b> Type 3</b> - Very Cool, Totality optimized</label><br>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~0.5s interval, add <input type="range" style="width: 100px;" id="t3len" name="t3len" min="2"  max="10"  value="2" ><label for="t3len"></label> <b id="type3len"></b> mins before and after totality<br>
   &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="type4" name="type" value="4"><label for="type4"><b> Type 4</b> - Experimental - Switching between type 2 and 3 at totality (two automatic captures)</label><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="ex" checked> <label for="ex">Extend with a third timelapse until battery end.</label> <br>
+
 </div>
 <div id="eRES"><b>B - Capture Resolution:</b><br>&nbsp;&nbsp;
   &nbsp;&nbsp;<input type="radio" id="res1" name="res" value="" checked><label for="res1"> current</label>
@@ -137,7 +148,7 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
       
 **Compatibility:** Labs enabled HERO11 and HERO12 (likely some support with older Labs enoubled cameras, please test.) 
 
-updated: April 4, 2024
+updated: April 6, 2024
 
 [More features](..) for Labs enabled cameras
 
@@ -282,7 +293,7 @@ function timeLoop()
 		var stime = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
 		var etime = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 	
-		cmd = "\"Eclipse TL\nType1\"" + "!" + stime + "N" + "mNLp.4eA" + res + "tb1w55i1M1sM!S!" + etime + "E";
+		cmd = "mPR\"Eclipse TL\nType1\"" + "!" + stime + "N" + "mNLp.4eA" + res + "tb1w55i1M1sM!S!" + etime + "E";
 		
 		playlen = (endmins - startmins)*60/4/30;
 	} 
@@ -299,7 +310,7 @@ function timeLoop()
 		var stime = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
 		var etime = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 	
-		cmd = "\"Eclipse TL\nType2\"" + "!" + stime + "N" + "mTp.10" + res + "tb1w55i1M1sMoMEXPX=30!S!" + etime + "EoMEXPX=0";
+		cmd = "mPR\"Eclipse TL\nType2\"" + "!" + stime + "N" + "mTp.10" + res + "tb1w55i1M1sMoMEXPX=30!S!" + etime + "EoMEXPX=0";
 		
 		playlen = (endmins - startmins)*60/10/30;
 	} 
@@ -316,7 +327,7 @@ function timeLoop()
 		var stime = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
 		var etime = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 	
-		cmd = "\"Eclipse TL\nType3\"" + "!" + stime + "N" + "mNLpeA" + res + "tb1w55i8M1sMoMEXPX=1!S!" + etime + "EoMEXPX=0";
+		cmd = "mPR\"Eclipse TL\nType3\"" + "!" + stime + "N" + "mNLpeA" + res + "tb1w55i8M1sMoMEXPX=1!S!" + etime + "EoMEXPX=0";
 		
 		playlen = ((endmins - startmins - caplen)*60*3 + caplen)/30;
 	}
@@ -325,7 +336,7 @@ function timeLoop()
 		starthourstime = Math.trunc(startmins / 60);
 		startminstime = startmins - starthourstime * 60;	
 		
-		var etime1 = t2len * 60 + Math.trunc(secondsOffset) - 2;
+		var etime1 = t2len * 60 + Math.trunc(secondsOffset) + 10; // End one TLV frame in totality
 		
 		startmins -= t2len;
 		starthourstime = Math.trunc(startmins / 60);
@@ -338,9 +349,16 @@ function timeLoop()
 		var stime = pad(starthourstime, 2) + ":" + pad(startminstime, 2);
 		var etime2 = pad(endhourstime, 2) + ":" + pad(endminstime, 2);
 	
-		cmd = "\"Eclipse TL\nType4\"" + "!" + stime + "N" + "mNLp.10" + res + "tb1w55i1M1sMoMEXPX=30";
+		cmd = "mPR\"Eclipse TL\nType4\"" + "!" + stime + "N" + "mNLp.10" + res + "tb1w55i1M1sMoMEXPX=30";
 		
 		cmd = cmd + "!S!" + etime1 + "E!1NpeAi8M1sMoMEXPX=1!S!" + etime2 + "EoMEXPX=0";
+		
+		
+		var ex = document.getElementById("ex").checked;
+		if(ex === true)
+		{
+			cmd = cmd + "!1NmTp.5" + res + "tb1w55i1M1sM!S";
+		}
 				
 		playlen = ((t2len)*60/10 + (t3len)*60*3 + caplen)/30;
 	}
