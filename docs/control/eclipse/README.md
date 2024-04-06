@@ -144,9 +144,10 @@ Forum to [**discuss the best settings**](https://github.com/gopro/labs/discussio
 </div>
 <br>
 Share this QR Code as a URL: <small id="urltext"></small><br>
-<button id="copyBtn">Copy URL to Clipboard</button>
+<button id="copyBtn">Copy URL to Clipboard</button>>
+<button id="copyImg">Copy Image to Clipboard</button>
       
-**Compatibility:** Labs enabled HERO11 and HERO12 (likely some support with older Labs enoubled cameras, please test.) 
+**Compatibility:** Labs enabled HERO11 and HERO12 (likely some support with older Labs enabled cameras, please test.) 
 
 updated: April 6, 2024
 
@@ -453,6 +454,9 @@ async function copyTextToClipboard(text) {
 function setupButtons() {	
     document.getElementById("copyBtn").onclick = function() { 
         copyTextToClipboard(clipcopy);
+	};
+    document.getElementById("copyImg").onclick = function() { 
+        copyImageToClipboard();
 	};
 }
 
