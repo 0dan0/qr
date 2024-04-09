@@ -94,7 +94,7 @@ Totality exposure of Type 2<br>
 Totality exposure of Type 3<br>
 ![Type3-Totality.jpg](Type3-Totality.jpg) ![Type3Type2TotalityFrame.jpg](Type3TotalityFrame.jpg)<br>
 
-<video width="480" height="270" controls>
+<video width="504" height="284" controls>
   <source src="https://0dan0.github.io/qr/control/eclipse/Type4-1080-30fps.mp4" type="video/mp4">
 </video>
 
