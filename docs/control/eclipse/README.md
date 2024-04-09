@@ -87,11 +87,14 @@ The problem is we haven’t had a prior eclipse to practice these extensions on.
 creating two separate video timelapses. 
 
 #### 2024 Example of Type 4 (starting at Type 2 and ending in Type 3.)
-Example from user Scotty MacPherson shooting with HERO11 running Labs v2.30.70.
-Totality exposure of Type 2 - ![Type2-Totality.jpg](Type2-Totality.jpg) ![Type2Type2TotalityFrame.jpg](Type2TotalityFrame.jpg)<br>
-Totality exposure of Type 3 - ![Type3-Totality.jpg](Type3-Totality.jpg) ![Type3Type2TotalityFrame.jpg](Type3TotalityFrame.jpg)<br>
+Example from user Scotty MacPherson shooting with HERO11 running Labs v2.30.70.<br>
+Totality exposure of Type 2<br>
+![Type2-Totality.jpg](Type2-Totality.jpg) ![Type2Type2TotalityFrame.jpg](Type2TotalityFrame.jpg)<br>
 
-<video width="960" height="540" controls>
+Totality exposure of Type 3<br>
+![Type3-Totality.jpg](Type3-Totality.jpg) ![Type3Type2TotalityFrame.jpg](Type3TotalityFrame.jpg)<br>
+
+<video width="480" height="270" controls>
   <source src="https://0dan0.github.io/qr/control/eclipse/Type4-1080-30fps.mp4" type="video/mp4">
 </video>
 
