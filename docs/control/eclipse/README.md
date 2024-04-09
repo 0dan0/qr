@@ -88,9 +88,9 @@ creating two separate video timelapses.
 
 #### 2024 Example of Type 4 (starting at Type 2 and ending in Type 3.)
 Example from user Scotty MacPherson shooting with HERO11 running Labs v2.30.70.
-![Type4-User-Scotty MacPherson-2024-Alexandria Bay,NY-1080-30fps.mp4](Type4-User-ScottyMacPherson-2024-AlexandriaBay,NY-1080-30fps.mp4)<br>
-Totality exposure of Type 2 - ![Type2-Totality.jpg](Type2-Totality.jpg) ![Type2-Totality.jpg](Type2-Type2TotalityFrame.jpg)<br>
-Totality exposure of Type 3 - ![Type3-Totality.jpg](Type3-Totality.jpg) ![Type3-Totality.jpg](Type3-Type2TotalityFrame.jpg)<br>
+![Type4-User-ScottyMacPherson-2024-AlexandriaBay,NY-1080-30fps.mp4](Type4-User-ScottyMacPherson-2024-AlexandriaBay,NY-1080-30fps.mp4)<br>
+Totality exposure of Type 2 - ![Type2-Totality.jpg](Type2-Totality.jpg) ![Type2Type2TotalityFrame.jpg](Type2TotalityFrame.jpg)<br>
+Totality exposure of Type 3 - ![Type3-Totality.jpg](Type3-Totality.jpg) ![Type3Type2TotalityFrame.jpg](Type3TotalityFrame.jpg)<br>
 
 
 ## Troubleshooting and Advance Configurations
