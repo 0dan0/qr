@@ -90,10 +90,8 @@ creating two separate video timelapses.
 Example from user Scotty MacPherson shooting with HERO11 running Labs v2.30.70.<br>
 Totality exposure of Type 2<br>
 ![Type2-Totality.jpg](Type2-Totality.jpg) ![Type2Type2TotalityFrame.jpg](Type2TotalityFrame.jpg)<br>
-
 Totality exposure of Type 3<br>
 ![Type3-Totality.jpg](Type3-Totality.jpg) ![Type3Type2TotalityFrame.jpg](Type3TotalityFrame.jpg)<br>
-
 <video width="504" height="284" controls>
   <source src="https://0dan0.github.io/qr/control/eclipse/Type4-1080-30fps.mp4" type="video/mp4">
 </video>
@@ -164,7 +162,7 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
       
 **Compatibility:** Labs enabled HERO11 and HERO12 (likely some support with older Labs enabled cameras, please test.) 
 
-updated: April 6, 2024
+updated: April 9, 2024
 
 [More features](..) for Labs enabled cameras
 
