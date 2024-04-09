@@ -86,6 +86,13 @@ For those who want to experiment further, Labs firmware allows you to script the
 The problem is we haven’t had a prior eclipse to practice these extensions on. The very experimental script would be to run type 2) capture until the first second of totality, then switch to type 3), automatically 
 creating two separate video timelapses. 
 
+#### 2024 Example of Type 4 (starting at Type 2 and ending in Type 3.)
+Example from user Scotty MacPherson shooting with HERO11 running Labs v2.30.70.
+![Type4-User-Scotty MacPherson-2024-Alexandria Bay,NY-1080-30fps.mp4](Type4-User-ScottyMacPherson-2024-AlexandriaBay,NY-1080-30fps.mp4)<br>
+Totality exposure of Type 2 - ![Type2-Totality.jpg](Type2-Totality.jpg) ![Type2-Totality.jpg](Type2-Type2TotalityFrame.jpg)<br>
+Totality exposure of Type 3 - ![Type3-Totality.jpg](Type3-Totality.jpg) ![Type3-Totality.jpg](Type3-Type2TotalityFrame.jpg)<br>
+
+
 ## Troubleshooting and Advance Configurations
 All of Labs features use the Pro Mode on your Black addition camera. In Pro Mode you can change a lot of settings, but to keep these scripts from getting too complex, 
 some assumptions have been made that the settings are close to the system defaults. The script below assume your camera has time-lapse Video and 
