@@ -90,7 +90,7 @@ creating two separate video timelapses.
 Example from user Scotty MacPherson shooting with HERO11 running Labs v2.30.70.
 Totality exposure of Type 2 - ![Type2-Totality.jpg](Type2-Totality.jpg) ![Type2Type2TotalityFrame.jpg](Type2TotalityFrame.jpg)<br>
 Totality exposure of Type 3 - ![Type3-Totality.jpg](Type3-Totality.jpg) ![Type3Type2TotalityFrame.jpg](Type3TotalityFrame.jpg)<br>
-See full video ![https://0dan0.github.io/qr/control/eclipse/Type4-1080-30fps.mp4](https://0dan0.github.io/qr/control/eclipse/Type4-1080-30fps.mp4)
+See ![full video](https://0dan0.github.io/qr/control/eclipse/Type4-1080-30fps.mp4)
 
 ## Troubleshooting and Advance Configurations
 All of Labs features use the Pro Mode on your Black addition camera. In Pro Mode you can change a lot of settings, but to keep these scripts from getting too complex, 
