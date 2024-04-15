@@ -66,11 +66,11 @@
 ## Storing metadata (Permanent, survives power off)
 ### Old style (firmware released before March, '24)
 * **!M**fourcc**=<courier>"string"</courier>**
-* **!M**fourcc**=Number metadata (comma separated)**
+* **!M**fourcc**=Number metadata** (comma separated)
 
 ### New style (after March, '24)
 * **\***fourcc**=<courier>"string"</courier>**
-* **\***fourcc**=Number metadata (comma separated)** 
+* **\***fourcc**=Number metadata**  (comma separated)
 
 Example for display the owner’s name
 **\*OWNR=<courier>"Joe Bloggs"</courier>**
@@ -90,11 +90,11 @@ Any four character code can be used for store other information. You can also st
 ## Storing metadata (Temporarily, until power off)<br>
 ### Old style (firmware released before March, '24)
 * **oM**fourcc**&#61;<courier>"string"</courier>**  
-* **oM**fourcc**=Number metadata**
+* **oM**fourcc**=Number metadata** (comma separated)
 
 ### New style (after March, '24)
 * **$**fourcc**&#61;<courier>"string"</courier>**  
-* **$**fourcc**=Number metadata**
+* **$**fourcc**=Number metadata** (comma separated)
 
 
 ## Macro support (since March, '24)
@@ -104,7 +104,8 @@ Any four character code can be used for store other information. You can also st
 Example: This macro calculates the Light Value and stores the result in variable **E**<br>
 **\*LVAL="=<courier>Ii=Ss=I/100=S/I=E6.25=E*S=E#2"</courier>** 
 
-<courier>^LVAL"Current LV $E"</courier>
+In a separate QR Code will call LVAL and display the result
+**<courier>^LVAL"Current LV $E"</courier>**
 
 ## Reset Actions ##
 
