@@ -102,7 +102,7 @@ Any four character code can be used for store other information. You can also st
 * **\***fourcc**&#61;<courier>"custom Labs commands"</courier>**  (permanent)
 
 Example: This macro calculates the Light Value and stores the result in variable **E**<br>
-**\*LVAL=**=<courier>"=Ii=Ss=I/100=S/I=E6.25=E*S=E#2"</courier>
+**\*LVAL=**<courier>"=Ii=Ss=I/100=S/I=E6.25=E*S=E#2"</courier>
 
 In a separate QR Code will call LVAL and display the result<br>
 **^LVAL**<courier>"Current LV $E"</courier>
