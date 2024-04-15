@@ -85,7 +85,7 @@ Any four character code can be used for store other information. You can also st
 * **\*CAMR=53** - metadata CAMR will be 53 
 * **\*ABCD=45.234** - metadata ABCD will be floating point 45.234
 * **\*UNIT=-1723** - metadata UNIT will be -1723 
-* **\*LLTZ=32.707,-117.1576,-7 - set camera location (GPS off) with Latt/Long/TimeZone 
+* **\*LLTZ=32.707,-117.1576,-7** - set camera location (GPS off) with Latt/Long/TimeZone 
 
 ## Storing metadata (Temporarily, until power off)<br>
 ### Old style (firmware released before March, '24)
@@ -102,10 +102,10 @@ Any four character code can be used for store other information. You can also st
 * **\***fourcc**&#61;<courier>"custom Labs commands"</courier>**  (permanent)
 
 Example: This macro calculates the Light Value and stores the result in variable **E**<br>
-**\*LVAL="=<courier>Ii=Ss=I/100=S/I=E6.25=E*S=E#2"</courier>** 
+**\*LVAL=**=<courier>"=Ii=Ss=I/100=S/I=E6.25=E*S=E#2"</courier>
 
 In a separate QR Code will call LVAL and display the result<br>
-**^LVAL**<courier>"Current LV $E"</courier>**
+**^LVAL**<courier>"Current LV $E"</courier>
 
 ## Reset Actions ##
 
