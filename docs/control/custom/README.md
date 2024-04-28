@@ -1638,7 +1638,11 @@ function startTime() {
 	if(document.getElementById("addcmd") !== null)
 	{
 		let unicodeInput = document.getElementById("addcmd").value;
-		let asciiOutput = unicodeInput.map(cp => unicodeToAscii(cp)).join('');
+
+		// Convert input string to an array of code points
+		let codePoints = Array.from(unicodeInput);
+
+		let asciiOutput = codePoints.map(cp => unicodeToAscii(cp)).join('');
 		cmd = cmd + asciiOutput;
 	}
 	
