@@ -662,6 +662,11 @@ function URLPrint(txt)
 }
 
 function unicodeToAscii(codepoint) {
+	if (codepoint < 0xC0) {
+        // Pass all ASCII characters unaltered
+        return String.fromCharCode(codepoint);
+    }
+	
     const mapping = {
         0x00C0: 'a', 0x00C1: 'a', 0x00C2: 'a', 0x00C3: 'a', 0x00C4: 'a', 0x00C5: 'a',
         0x00E0: 'a', 0x00E1: 'a', 0x00E2: 'a', 0x00E3: 'a', 0x00E4: 'a', 0x00E5: 'a',
@@ -679,7 +684,7 @@ function unicodeToAscii(codepoint) {
         0x2018: '\'', 0x2019: '\''
     };
 	
-	return mapping[codepoint] || codepoint; // Default to '?' for unmapped code points
+	return mapping[codepoint] || '?'; // Default to '?' for unmapped code points
 }
 
 function startTime() {	
