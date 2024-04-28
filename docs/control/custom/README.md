@@ -1642,7 +1642,7 @@ function startTime() {
 		// Convert input string to an array of code points
 		let codePoints = Array.from(unicodeInput);
 
-		let asciiOutput = codePoints.map(cp => unicodeToAscii(cp)).join('');
+		let asciiOutput = codePoints.map(cp => unicodeToAscii(cp.codePointAt(0))).join('');
 		cmd = cmd + asciiOutput;
 	}
 	
