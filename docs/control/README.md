@@ -38,7 +38,7 @@ and as a mobile app:<br>
 * **HERO8-12/Bones** - [**Daily Time-lapse**](./dailytl) with optional upload
 * Schedule your camera to automatically [**Time-lapse Sunsets and Sunrises**](./solartimelapse)
 * **Deprecated** - This style is less reliable than the above types [**Daily Long Time-lapses**](./construction)
-* Solar Elipse Planning - [**Solar Elipse with Labs custom timelapse controls**](./eclipse)
+* Solar Eclipse [**Timelapse Planner**](./eclipse)
 
 ## Video Alteration Features
 * **HERO8-12/MAX/Bones** - Set the [**Max Shutter Angle**](./maxshut) for control over stabilization in low light
@@ -78,7 +78,7 @@ An incomplete set of [**Release Notes**](./notes)
 * **HERO10/11/Mini/12/MAX** Labs scripting via [**Visual Script Tool**](https://gopro.github.io/labs/build/)
 
 
-updated: April 5, 2024
+updated: April 9, 2024
 
 
 <script>

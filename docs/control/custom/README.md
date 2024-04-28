@@ -594,7 +594,7 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
         
 [More features](..) for Labs enabled cameras
 
-updated: November 20, 2023
+updated: April 28, 2024
 
 <script>
 var clipcopy = "";
@@ -659,6 +659,27 @@ function URLPrint(txt)
 	var txt2 = txt.replaceAll("+", "%2B");
 	var newtxt = txt2.replaceAll("#", "%23");
 	return newtxt;
+}
+
+function unicodeToAscii(codepoint) {
+    const mapping = {
+        0x00C0: 'a', 0x00C1: 'a', 0x00C2: 'a', 0x00C3: 'a', 0x00C4: 'a', 0x00C5: 'a',
+        0x00E0: 'a', 0x00E1: 'a', 0x00E2: 'a', 0x00E3: 'a', 0x00E4: 'a', 0x00E5: 'a',
+        0x00C8: 'e', 0x00C9: 'e', 0x00CA: 'e', 0x00CB: 'e',
+        0x00E8: 'e', 0x00E9: 'e', 0x00EA: 'e', 0x00EB: 'e',
+        0x00CC: 'i', 0x00CD: 'i', 0x00CE: 'i', 0x00CF: 'i',
+        0x00EC: 'i', 0x00ED: 'i', 0x00EE: 'i', 0x00EF: 'i',
+        0x00D2: 'o', 0x00D3: 'o', 0x00D4: 'o', 0x00D5: 'o', 0x00D6: 'o', 0x00D8: 'o',
+        0x00F2: 'o', 0x00F3: 'o', 0x00F4: 'o', 0x00F5: 'o', 0x00F6: 'o', 0x00F8: 'o',
+        0x00D9: 'u', 0x00DA: 'u', 0x00DB: 'u', 0x00DC: 'u',
+        0x00F9: 'u', 0x00FA: 'u', 0x00FB: 'u', 0x00FC: 'u',
+        0x00C7: 'c', 0x00E7: 'c',
+        0x00D1: 'n', 0x00F1: 'n',
+        0x201C: '"', 0x201D: '"',
+        0x2018: '\'', 0x2019: '\''
+    };
+
+    return mapping[codepoint] || '?'; // Default to '?' for unmapped code points
 }
 
 function startTime() {	
@@ -1616,7 +1637,9 @@ function startTime() {
 	
 	if(document.getElementById("addcmd") !== null)
 	{
-		cmd = cmd + document.getElementById("addcmd").value;
+		let unicodeInput = document.getElementById("addcmd").value;
+		let asciiOutput = unicodeInput.map(cp => unicodeToAscii(cp)).join('');
+		cmd = cmd + asciiOutput;
 	}
 	
 	
