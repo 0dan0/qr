@@ -678,8 +678,11 @@ function unicodeToAscii(codepoint) {
         0x201C: '"', 0x201D: '"',
         0x2018: '\'', 0x2019: '\''
     };
-
-    return mapping[codepoint] || '?'; // Default to '?' for unmapped code points
+	
+	if(codepoint >= 0x00c0)
+		return mapping[codepoint] || '?'; // Default to '?' for unmapped code points
+	else
+		return codepoint; 
 }
 
 function startTime() {	
