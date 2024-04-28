@@ -679,7 +679,7 @@ function unicodeToAscii(codepoint) {
         0x2018: '\'', 0x2019: '\''
     };
 	
-	return mapping[codepoint] || (codepoint & 0xff); 
+	return mapping[codepoint] || codepoint; // Default to '?' for unmapped code points
 }
 
 function startTime() {	
