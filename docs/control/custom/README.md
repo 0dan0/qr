@@ -1185,8 +1185,8 @@ function startTime() {
 	{
 		var eis_set = "";
 		var fov_set = "";
-		dcmd(eis_set,"eis");
-		dcmd(fov_set,"f");
+		eis_set = dcmd(eis_set,"eis");
+		fov_set = dcmd(fov_set,"f");
 		
 		if(eis_set.length > 0 && fov_set.length > 0)
 		{	
