@@ -13,20 +13,23 @@
         }
 </style>
 
-## Metadata Features
+## Extensiona and Metadata Features
 
-These new features are stored in your camera's metadata, this metadata is helpful for detemining what features are used per clip.
+All camera extensions are stored in your camera's metadata, this metadata is helpful for detemining what features are used per clip.
 The metadata, and the features it enables, can be [extracted with this page](../metadata).
 
-All metadata QR commands are written in the form oM**wxzy**=value(s) or !M**wxzy**=value(s) -- where the four character code (4CC) 
-**wxzy** is under your control, along with the data it stores. The **!M** version will permanently store the metadata, and the **oM** 
-will store it for only this power-on session. Metadata is available to flag your files for special uses, or just to label the [camera owner](../owner). 
-Some particular 4CCs will also change camera behavior and/or enable features. Here is a list of additional metadata driven controls: 
+All metadata QR commands are written in the form <b>$wxzy</b>=value(s) or <b>*wxzy</b>=value(s) -- where the four character code (4CC) 
+**wxzy** is under your control, along with the data it stores. All camera support the **!M** version will permanently store the metadata, and the **oM** 
+will store it for only this power-on session. HERO10 or newer support the simplified <b>*</b> and <b>$</b> notation for permanent and temporary storage. 
+Camera Metadata is available to flag your files for special uses, or just to label the [camera owner](../owner). 
+Some particular 4CCs will also change camera behavior and/or enable features. 
+
+Here is a list of additional metadata driven camera extensions: 
 
 
 ### **HERO12 cameras**
 
-- **PRES=x,name - Added creating, naming and sharing presets where x 0-18 for icon selection (-1 for delete), and 'name' is your named preset. e.g, QR Command **oMPRES="14,Scuba"**
+- **PRES=x,name** - Added creating, naming and sharing presets where x 0-18 for icon selection (-1 for delete), and 'name' is your named preset. e.g, QR Command **oMPRES="14,Scuba"**
 
 
 ### **HERO12/11/Mini cameras**
