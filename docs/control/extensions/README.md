@@ -19,8 +19,8 @@ All camera extensions are stored in your camera's metadata, this metadata is hel
 The metadata, and the features it enables, can be [extracted with this page](../metadata).
 
 All metadata QR commands are written in the form <b>$wxzy</b>=value(s) or <b>*wxzy</b>=value(s) -- where the four character code (4CC) 
-**wxzy** is under your control, along with the data it stores. All camera support the **!M** version will permanently store the metadata, and the **oM** 
-will store it for only this power-on session. HERO10 or newer support the simplified <b>*</b> and <b>$</b> notation for permanent and temporary storage. 
+**wxzy** is under your control, along with the data it stores. All camera support the <b>!Mwxzy=</b> version will permanently store the metadata, and the **oMwxzy=** 
+will store it for only this power-on session. HERO10 or newer support the simplified <b>*wxzy=</b> and <b>$wxzy=</b> notation for permanent and temporary storage. 
 Camera Metadata is available to flag your files for special uses, or just to label the [camera owner](../owner). 
 Some particular 4CCs will also change camera behavior and/or enable features. 
 
@@ -132,7 +132,7 @@ but you wanted to do your own tone-mapping in post--you can now do that.  Note: 
 - **WAKE=2** - (HERO8/10/11/12 only) Same as WAKE=1, except it will ignore any pending actions, and wake of any power addition. This is useful with combined with a boot command. 
 	
 ### **HERO12/11/10/9 & 8** - Overlay extensions
-Old GP1 camera support overlays in video and video time-lapse modes. Overlays are not supported in Photo mode.
+Older GP1 based cameras support overlays in video and video time-lapse modes. Overlays are not supported in Photo mode.
 
 #### GP2 limitations - Video Modes
 - Resolution: 1080 Frame Rates: 24, 30, 60, 120 Aspect Ratios: 16:9 
