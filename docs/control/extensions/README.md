@@ -13,7 +13,7 @@
         }
 </style>
 
-## Extensiona and Metadata Features
+## Extensions and Metadata Features
 
 All camera extensions are stored in your camera's metadata, this metadata is helpful for detemining what features are used per clip.
 The metadata, and the features it enables, can be [extracted with this page](../metadata).
