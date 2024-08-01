@@ -131,13 +131,13 @@ function timeLoop()
 		//*WAKE=2*BOOT="!Lbt"!SAVEbt=<u0!X<r0!S>u0=At:B<u0>r0=Bt:B+=B-A>B9>r0!E+!1N+!1O<r0!X!R10
 		
 		cmd = "*WAKE=2*BOOT=\"!Lbt\"!SAVEbt="
-		cmd = cmd + "&lt;u0!X"
-		cmd = cmd + "&lt;r0!S";
-		cmd = cmd + "&gt;u0=At:B";
-		cmd = cmd + "&lt;u0&gt;r0=Bt:B+=B-A"
-		cmd = cmd + "&gt;B" + endsecs;
-		cmd = cmd + "&gt;r0!E+!1N+!1O";
-		cmd = cmd + "&lt;r0!X!R" + offset;		
+		cmd = cmd + "<u0!X"
+		cmd = cmd + "<r0!S";
+		cmd = cmd + ">u0=At:B";
+		cmd = cmd + "<u0>r0=Bt:B+=B-A"
+		cmd = cmd + ">B" + endsecs;
+		cmd = cmd + ">r0!E+!1N+!1O";
+		cmd = cmd + "<r0!X!R" + offset;		
       }
     }
   }
