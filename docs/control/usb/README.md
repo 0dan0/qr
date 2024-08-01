@@ -19,7 +19,12 @@ End capture after <input type="range" style="width: 200px;" id="tlendsec" name="
 
 **Note:** A battery is required, as the camera needs close captured video when power is removed. Unfortunately this means your battery will eventually discharge, so it is best to have a spare battery if you intended to used this feature as a dedicated dash-cam.  
 
-<input type="checkbox" id="enablenew" name="enablenew" checked> 
+<div id="newer">
+Once scanned, power off the camera. Now the camera will start with USB power, end capture and shutdown with USB power off. You can temporarily cancel any capture with the shutter button, power on with USB power, full manual camera control is restored. To fully cancel the script scan *WAKE=0*BOOT=0.   
+</div>
+
+<input 
+type="checkbox" id="enablenew" name="enablenew" checked> 
 <label for="enablenew">Enable for newer Cameras: MAX, HERO10, 11, 11Mini & 12</label><br>
 
 <div id="qrcode_txt" style="width: 360px">
@@ -35,8 +40,7 @@ End capture after <input type="range" style="width: 200px;" id="tlendsec" name="
 Share this QR Code as a URL: <small id="urltext"></small><br>
 <button id="copyBtn">Copy URL to Clipboard</button>
         
-**Compatibility:** Labs enabled HERO7 (limited), HERO8, HERO9, HERO10, HERO11, HERO12 and MAX 
-        
+**Compatibility:** Labs enabled HERO7 (limited), HERO8, HERO9, HERO10, HERO11, HERO12 and MAX         
 
 updated: July 31, 2024
 
@@ -49,6 +53,20 @@ var cmd = "oC15dTmNLeA";
 var clipcopy = "";
 var lasttimecmd = "";
 var changed = true;
+
+function dset(label, on) {
+		var settings = document.getElementById(label);
+		if(on === true)
+		{
+			if (settings.style.display === 'none') 
+				settings.style.display = 'block';
+		}
+		else
+		{
+			settings.style.display = 'none';
+		}
+}
+
 
 function dcmd(cmd, id) {
     var x;
@@ -128,6 +146,7 @@ function timeLoop()
 		if(endsecs>=10) offset++;
 		if(endsecs>=100) offset++;
 		
+		dset(newer,true);
 		//*WAKE=2*BOOT="!Lbt"!SAVEbt=<u0!X<r0!S>u0=At:B<u0>r0=Bt:B+=B-A>B9>r0!E+!1N+!1O<r0!X!R10
 		
 		cmd = "*WAKE=2*BOOT=\"!Lbt\"!SAVEbt=";
@@ -139,6 +158,10 @@ function timeLoop()
 		cmd = cmd + ">r0!E+!1N+!1O";
 		cmd = cmd + "<r0!X!R" + offset;		
       }
+	  else
+	  {
+	  	dset(newer,false);
+	  }
     }
   }
   
