@@ -126,6 +126,7 @@ function timeLoop()
 		
 	var endsecs = parseInt(document.getElementById("tlendsec").value);	
 	endsecs *= 5;
+	if(endsecs == 0) endsecs = 1;
 	document.getElementById("secsendtext").innerHTML = endsecs;	
 	
 	if(secs > 0)
