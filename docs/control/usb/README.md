@@ -153,7 +153,7 @@ function timeLoop()
 	
   if(changed === true)
   {
-	document.getElementById("qrtext").innerHTML = cmd;
+	document.getElementById("qrtext").innerHTML = cmd.replace(/</g, '&lt;');
 	clipcopy = "https://gopro.github.io/labs/control/set/?cmd=" + encodeURIComponent(cmd) + "&title=USB%20Power%20Trigger";
 	document.getElementById("urltext").innerHTML = clipcopy;
 	changed = false;
