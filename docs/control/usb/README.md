@@ -151,10 +151,6 @@ function timeLoop()
 		}
 		else
 		{
-			var offset = 10;
-			if(endsecs>=10) offset++;
-			if(endsecs>=100) offset++;
-			
 			//*WAKE=2*BOOT="!Lbt"!SAVEbt=<u0!X<r0!S>u0=At:B<u0>r0=Bt:B+=B-A>B9>r0!E+!1N+!1O<r0!X!R10
 			
 			cmd = "*WAKE=2*BOOT=\"!Lbt\"!SAVEbt=";
@@ -164,7 +160,7 @@ function timeLoop()
 			cmd = cmd + "<u0>r0=Bt:B+=B-A"
 			cmd = cmd + ">B" + endsecs;
 			cmd = cmd + ">r0!E+!1N+!1O";
-			cmd = cmd + "<r0!X!R" + offset;		
+			cmd = cmd + "<r0!X!R10";
 		}
       }
 	  else
