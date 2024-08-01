@@ -27,7 +27,6 @@ Once scanned, power off the camera. Now the camera will start with USB power, en
 <br>
 <input type="checkbox" id="usefast" name="usefast"> 
 <label for="usefast">Enable a faster Labs boot.</label><br>  
-<br>
 <input type="checkbox" id="disablenew" name="disablenew"> 
 <label for="disablenew">Disable the USB trigger.</label><br>   
 </div>
