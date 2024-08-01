@@ -44,7 +44,7 @@ Once scanned, power off the camera. Now the camera will start with USB power, en
 Share this QR Code as a URL: <small id="urltext"></small><br>
 <button id="copyBtn">Copy URL to Clipboard</button>
         
-**Compatibility:** Labs enabled HERO7 (limited), HERO8, HERO9, HERO10, HERO11, HERO12 and MAX         
+**Compatibility:** Labs enabled HERO7 (limited), HERO8, HERO9, HERO10, HERO11, 11Mini, HERO12 and MAX         
 
 updated: August 1, 2024
 
