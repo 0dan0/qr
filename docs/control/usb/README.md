@@ -23,8 +23,8 @@ End capture after <input type="range" style="width: 200px;" id="tlendsec" name="
 <label for="enablenew">Enable for newer Cameras: MAX, HERO10, 11, 11Mini & 12</label><br>
 
 <div id="newer">
-Once scanned, power off the camera. Now the camera will start with USB power, end capture and shutdown with USB power off. You can temporarily cancel any capture with the shutter button, power on with USB power, full manual camera control is restored.
-
+Once scanned, power off the camera. Now the camera will start with USB power, end capture and shutdown with USB power off. You can temporarily cancel any capture with the shutter button, power on with USB power, full manual camera control is restored.<br>
+<br>
 <input type="checkbox" id="disablenew" name="disablenew" checked> 
 <label for="disablenew">Disable the USB trigger</label><br>   
 </div>
