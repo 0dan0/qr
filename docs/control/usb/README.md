@@ -124,15 +124,15 @@ function timeLoop()
     {
       if(document.getElementById("enablenew").checked === true)
       {
-		var offset = 41;
-		if(endsecs>=10) offset=42;
-		if(endsecs>=100) offset=43;
+		var offset = 25;
+		if(endsecs>=10) offset=26;
+		if(endsecs>=100) offset=27;
 		cmd = "*WAKE=2*BOOT=\"!Lbt\"!SAVEbt="
 		cmd = cmd + "&lt;u0!X=At:B=C0";
-		cmd = cmd + "&gt;u0&lt;r0!C8+!S+" + "Dashcam";
+		cmd = cmd + "&gt;u0&lt;r0!C8+!S+";
 		cmd = cmd + "&gt;u0=At:B+=C0&lt;u0&gt;r0=Bt:B+=CB+=C-A+"
 		cmd = cmd + "wait $Cs&gt;C" + endsecs;
-		cmd = cmd + "&gt;r0!E+!1N+!1O&lt;r0" + "Exit Dashcam" + "+!X!R" + offset;
+		cmd = cmd + "&gt;r0!E+!1N+!1O&lt;r0+!X!R" + offset;
       }
     }
   }
