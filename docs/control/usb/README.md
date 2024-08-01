@@ -128,11 +128,11 @@ function timeLoop()
 		if(endsecs>=10) offset=42;
 		if(endsecs>=100) offset=43;
 		cmd = "*WAKE=2*BOOT=\"!Lbt\"!SAVEbt="
-		cmd = cmd + &lt + "u0!X=At:B=C0";
-		cmd = cmd + &gt + "u0" + &lt + "r0!C8+!S+" + "Dashcam";
-		cmd = cmd + &gt + "u0=At:B+=C0" + &lt + "u0" + &gt + "r0=Bt:B+=CB+=C-A+"
-		cmd = cmd + "wait $Cs" + &gt + "C" + endsecs;
-		cmd = cmd + &gt + "r0!E+!1N+!1O" + &lt + "r0" + "Exit Dashcam" + "+!X!R" + offset;
+		cmd = cmd + "&ltu0!X=At:B=C0";
+		cmd = cmd + "&gtu0&ltr0!C8+!S+" + "Dashcam";
+		cmd = cmd + "&gtu0=At:B+=C0&ltu0&gtr0=Bt:B+=CB+=C-A+"
+		cmd = cmd + "wait $Cs&gtC" + endsecs;
+		cmd = cmd + "&gtr0!E+!1N+!1O&ltr0" + "Exit Dashcam" + "+!X!R" + offset;
       }
     }
   }
