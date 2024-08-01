@@ -154,8 +154,8 @@ function timeLoop()
   if(changed === true)
   {
 	document.getElementById("qrtext").innerHTML = cmd;
-	clipcopy = "https://gopro.github.io/labs/control/set/?cmd=" + cmd + "&title=USB%20Power%20Trigger";
-	document.getElementById("urltext").innerHTML = encodeURIComponent(clipcopy);
+	clipcopy = "https://gopro.github.io/labs/control/set/?cmd=" + encodeURIComponent(cmd) + "&title=USB%20Power%20Trigger";
+	document.getElementById("urltext").innerHTML = clipcopy;
 	changed = false;
   }
 	
