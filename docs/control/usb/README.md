@@ -120,6 +120,9 @@ function timeLoop()
     
 	cmd = cmd + "!R";
 	
+	
+	var urltxt = cmd;
+	
     if(document.getElementById("enablenew") !== null)
     {
       if(document.getElementById("enablenew").checked === true)
@@ -130,14 +133,22 @@ function timeLoop()
 		
 		//*WAKE=2*BOOT="!Lbt"!SAVEbt=<u0!X<r0!S>u0=At:B<u0>r0=Bt:B+=B-A>B9>r0!E+!1N+!1O<r0!X!R10
 		
-		cmd = "*WAKE=2*BOOT=\"!Lbt\"!SAVEbt="
-		cmd = cmd + "<u0!X"
+		urltxt = cmd = "*WAKE=2*BOOT=\"!Lbt\"!SAVEbt=";
+		cmd = cmd + "<u0!X";
 		cmd = cmd + "<r0!S";
 		cmd = cmd + ">u0=At:B";
 		cmd = cmd + "<u0>r0=Bt:B+=B-A"
 		cmd = cmd + ">B" + endsecs;
 		cmd = cmd + ">r0!E+!1N+!1O";
 		cmd = cmd + "<r0!X!R" + offset;		
+		
+		urltxt = urltxt + "%3Cu0!X";
+		urltxt = urltxt + "%3Cr0!S";
+		urltxt = urltxt + "%3Eu0=At:B";
+		urltxt = urltxt + "%3Cu0%3Er0=Bt:B%2B=B-A"
+		urltxt = urltxt + "%3EB" + endsecs;
+		urltxt = urltxt + "%3Er0!E%2B!1N%2B!1O";
+		urltxt = urltxt + "%3Cr0!X!R" + offset;	
       }
     }
   }
@@ -154,7 +165,7 @@ function timeLoop()
   if(changed === true)
   {
 	document.getElementById("qrtext").innerHTML = cmd;
-	clipcopy = "https://gopro.github.io/labs/control/set/?cmd=" + cmd + "&title=USB%20Power%20Trigger";
+	clipcopy = "https://gopro.github.io/labs/control/set/?cmd=" + urltxt + "&title=USB%20Power%20Trigger";
 	document.getElementById("urltext").innerHTML = clipcopy;
 	changed = false;
   }
