@@ -19,8 +19,8 @@ End capture after <input type="range" style="width: 200px;" id="tlendsec" name="
 
 **Note:** A battery is required, as the camera needs close captured video when power is removed. Unfortunately this means your battery will eventually discharge, so it is best to have a spare battery if you intended to used this feature as a dedicated dash-cam.  
 
-<input type="checkbox" id="enable" name="enable" checked> 
-<label for="enable">Enable for newer Cameras: MAX, HERO10, 11, 11Mini & 12</label><br>
+<input type="checkbox" id="enablenew" name="enablenew" checked> 
+<label for="enablenew">Enable for newer Cameras: MAX, HERO10, 11, 11Mini & 12</label><br>
 
 <div id="qrcode_txt" style="width: 360px">
  <center>
@@ -120,15 +120,14 @@ function timeLoop()
     
 	cmd = cmd + "!R";
 	
-    if(document.getElementById("enable") !== null)
+    if(document.getElementById("enablenew") !== null)
     {
-      if(document.getElementById("enable").checked === true)
+      if(document.getElementById("enablenew").checked === true)
       {
 		var offset = 41;
 		if(endsecs>=10) offset=42;
 		if(endsecs>=100) offset=43;
-		
-		cmd = "*WAKE=2*BOOT=\"!Lbt\"!SAVEbt=<u0!X=At:B=C0>u0<r0!C8+!S+"Dashcam">u0=At:B+=C0<u0>r0=Bt:B+=CB+=C-A+\"wait $Cs\">C"+endsecs+">r0!E+!1N+!1O<r0\"Exit Dashcam\"+!X!R"+offset;
+		cmd = "*WAKE=2*BOOT=\"!Lbt\"!SAVEbt=<u0!X=At:B=C0>u0<r0!C8+!S+"Dashcam">u0=At:B+=C0<u0>r0=Bt:B+=CB+=C-A+\"wait $Cs\">C" + endsecs + ">r0!E+!1N+!1O<r0\"Exit Dashcam\"+!X!R" + offset;
       }
     }
   }
