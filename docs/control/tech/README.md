@@ -329,7 +329,7 @@ Any four character code can be used for store other information. You can also st
 * **$**fourcc**&#61;<courier>"string"</courier>**  
 * **$**fourcc**=Number metadata** (comma separated)
 
-#### Metadata extraction
+### Metadata extraction
 All metadata in stored in a GPMF format with the MP4, 360 or JPG files, this is an open source, so if it free to integrated within any third party tool. 
 The above global metadata can be extracted with this [**demo web tool**](../metadata)
 
@@ -404,7 +404,7 @@ The above global metadata can be extracted with this [**demo web tool**](../meta
 * **WIDE** H11-12: A wide gamut color profile, this supports all in-camera white balancing. Like using white balance Native, without as much post color work. Input Data: 1-enable WIDE gamut, 0-disable",
 
 
-### Macro support (since March, '24)
+## Macro support (since March, '24)
 Added support for macros, or crude scripting subroutines. This expands the potential complexity for QR scripting, as the entire script is no longer limited to 255 characters. 
 It would be possible to run scripts nearing ~1.2KB. Note: recursion is supported, macros can call other macros, and can call themselves.
 
