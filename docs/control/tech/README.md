@@ -331,7 +331,7 @@ Any four character code can be used for store other information. You can also st
 
 #### Metadata extraction
 All metadata in stored in a GPMF format with the MP4, 360 or JPG files, this is an open source, so if it free to integrated within any third party tool. 
-The above global metadata can be extracted with this demo web tool https://gopro.github.io/labs/control/metadata/
+The above global metadata can be extracted with this [**demo web tool**](../metadata)
 
 ### Some Four Character Codes are reserved for feature extensions
 * **24HZ** 10-12: enable film standard 24.0 frame, rather than the default broadcast standard 23.976. The existing 24p mode(s) will have the new frame rate when this is enabled, all other video modes are unaffected. Input Data: 1-enable, 0-disable",
