@@ -595,7 +595,7 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
         
 [More features](..) for Labs enabled cameras
 
-updated: August 19, 2024
+updated: August 21, 2024
 
 <script>
 var clipcopy = "";
@@ -930,7 +930,7 @@ function startTime() {
 			icon_num = Math.trunc(event.offsetX/70) + 6 * Math.trunc(event.offsetY/70);
 			
 			if(icon_num < 0) icon_num = 0;
-			if(icon_num > 31) icon_num = 31;
+			if(icon_num > 32) icon_num = 32;
 			
 			last_icon_num = icon_num;
 		});
@@ -954,7 +954,7 @@ function startTime() {
 		else
 			newpresent = "";
 
-		dset("namedPresets", document.getElementById("np").checked);	
+		dset("namedPresets", document.getElementById("np").checked);
 	}
 	
 	if(document.getElementById("sm") !== null)
@@ -1090,7 +1090,8 @@ function startTime() {
 	{
 		if(document.getElementById("np").checked === true)
 		{
-			cmd = cmd + newpresent;
+			cmd = cmd + newpresent;	
+			cmd = dcmd(cmd,"m");  // set mode
 		}
 	}	
 	
