@@ -51,7 +51,7 @@ GoPro QR code generator for basic [camera settings](https://gopro.github.io/labs
 
 
 
-| Feature                                                                                     | HERO13 | H12 | H11/Mini | H10/Bones | H9 | H8 | H7 | MAX |
+| Feature                                                                                     | H13 | H12 | H11/M11 | H10/🦴 | H9 | H8 | H7 | MAX |
 |---------------------------------------------------------------------------------------------|--------|--------|----------|-----------|----|----|----|-----|
 | [24.0Hz capture vs 23.976](https://gopro.github.io/labs/control/extensions)                 | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ |
 | [NLE proxies](https://gopro.github.io/labs/control/proxies)                                 | ✔️ | ✔️ | ✔️ | Some/❌ | ❌ | ❌ | ❌ | ❌ |
