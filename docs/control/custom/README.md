@@ -67,8 +67,10 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="r9"  name="res" value="r4S"  > <label for="r9">4k 1:1<sup>13</sup> </label>&nbsp;&nbsp;
   <input type="radio" id="r10"  name="res" value="r5"   > <label for="r10">5k </label>&nbsp;&nbsp;
   <input type="radio" id="r11" name="res" value="r5T"  > <label for="r11">5k 4:3<sup>11</sup> </label>&nbsp;&nbsp;
-  <input type="radio" id="r12" name="res" value="r5X"  > <label for="r12">5k 8:7<sup>11-13</sup> </label>&nbsp;&nbsp;
-  <input type="radio" id="r13" name="res" value="" checked> <label for="r13">not set</label><br><br>
+  <input type="radio" id="r12" name="res" value="r5X"  > <label for="r12">5k 8:7<sup>11-13</sup> </label><br>
+  <input type="radio" id="r13" name="res" value="r1V"  > <label for="r13">HD Vertical<sup>13</sup> </label>&nbsp;&nbsp;
+  <input type="radio" id="r14" name="res" value="r4V"  > <label for="r14">4k Vertical<sup>13</sup> </label>&nbsp;&nbsp;
+  <input type="radio" id="r15" name="res" value="" checked> <label for="r15">not set</label><br><br>
 </div>
 
 <div id="settingsRESTLV">
