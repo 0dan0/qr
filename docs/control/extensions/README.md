@@ -30,8 +30,8 @@ Here is a list of additional metadata driven camera extensions:
 
 - **DIST=x** - Time-Lapse Video Distance, x is a GPS travel distance between exposures, rather than time for an in-camera computed timelapse. When x=1 10m will be used.
 - **DIVE=1** - optimizing the Hypersmooth stabilization for underwater. It might be no surprise, but HyperSmooth is designed for the camera operation above the water's surface, 
-underwater there is typically less camera shake, and HS is still 70% effective at removing shaking. So most users did not notice. The hack adapts HS to use the refractive index (RI)
-of water (defaults to 1.335, good for fresh and command salt water), to remove closer to 100% of unwanted shack. Note: if you know your area's RI is significantly different, 
+underwater there is typically less camera shake, and HS is still 70% effective at removing shake. The hack adapts HS to use the refractive index (RI)
+of water (defaults to 1.335, good for fresh and command salt water), to remove closer to 100% of unwanted shake. Note: if you know your area's RI is significantly different, 
 use DIVE=r, where r can be 1.3 to 1.45 is supported.
 - **WARM=x** - WARM maybe useful with DIVE, so you can improve the red respond for deeper dives. x range -50 to 100. Reducing or increasing red signal only.
 - **COOL=x** - COOL maybe useful with DIVE, so you can decrease the blue respond for deeper dives. x range -50 to 100. Reducing or increasing blue signal only.
