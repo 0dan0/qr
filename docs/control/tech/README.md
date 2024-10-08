@@ -57,7 +57,7 @@ used between commands.
 Resolutions are also in the format rX(Y) - where X is the first character of the resolution, and the optional Y is aspect ratio, T - Tall 4:3, X - eXtreme 8:7, nothing is 16:9
  * **r1** or **r10** or **r1080**  - 1920x1080
  * **r1T** or **r14** or **r1440**  - 1920x1440
- * **r1V*  - 1080x1920 HD Vertical Video (H13)
+ * **r1V** - 1080x1920 HD Vertical Video (H13)
  * **r2** or **r27** - for 2.7K 16x9
  * **r2T** or **r27T** - for 2.7K Tall the 4x3 mode
  * **r3** - 3K 360° for GoPro MAX
@@ -65,7 +65,7 @@ Resolutions are also in the format rX(Y) - where X is the first character of the
  * **r4T** - 4k Tall, the 4:3 mode
  * **r4X** - 4k eXtreme, the 8:7 mode (H11-13)
  * **r4S** - 4k Square, the 1:1 mode using Ultra Wide (H13)
- * **r4V*  - 2160x3840 4K Vertical Video (H13)
+ * **r4V** - 2160x3840 4K Vertical Video (H13)
  * **r5** - 5.3k for HERO and 5.6K 360° for GoPro MAX
  * **r5T** - 5k Tall, the 4:3 mode (H10)
  * **r5X** - 5k eXtreme, the 8:7 mode (H11-13)
@@ -538,7 +538,7 @@ The command language is kept simple, so it doesn't maintain a stack on the condi
 New conditional commands for 2023. Now \>xValue and/or \<xValue and/or ==xValue can be used to test camera states, where 'x' is the camera state to test, and Value the amount to test against:<br>
 * **a** accelerationValue - **\>aValue**CMD if(acceleration \> Value) then CMD, units in Gs
 * **b** batteryLevel - **\>bValue**CMD if(battery \> Value) then CMD, units in percentage
-* **b:T** batteryTemperature - **\>bValue**CMD if(battery \> Value) then CMD, units in degrees C
+* **b:T** batteryTemperature<sup>H13</sup> - **\>bValue**CMD if(battery \> Value) then CMD, units in degrees C
 * **c** coordDistance - **\>cDist**CMD  then CMD, units in meters, compare distance from initial GPS location
 * **c:X** coord[A-Z]Distance - **\>c:XDist**CMD There are up to 26 pre-stored GPS locations oMFRMA=latt,long thru oMFRMZ. If nothing is store in FRMx, it will initialize with the current location. Reset a location with $FRMx=0,0 it will reinit with the current location.
 * **d** GPS DOP - **\<dValue**CMD - if(DOP \< Value) then CMD, units in 100x DOP. GPS location precision.
@@ -553,7 +553,7 @@ New conditional commands for 2023. Now \>xValue and/or \<xValue and/or ==xValue 
 * **n** network Connect - if false it returns -1, otherwise it returns the string length of the SSID
 * **n:L** networkLivestreaming - if false it returns -1, 1.0 if currently livestreaming
 * **p** soundpressureValue - **\>pValue**CMD if(spl \> Value) CMD, numbers are in dB
-* **p:T** processorTempValue - **\>pValue**CMD if(processorTemp \> Value) then CMD, units in degrees C
+* **p:T** processorTempValue<sup>H13</sup> - **\>pValue**CMD if(processorTemp \> Value) then CMD, units in degrees C
 * **r** recording - **\>r0**CMD1~CMD2 if(Recording > 0) then CMD1 else CMD2 
 * **r:C** remote Connected - **\>r:C0**CMD1~CMD2 if(RC_Connected) then CMD1 else CMD2 
 * **r:A** remote App Connected - **\>r:A0**CMD1~CMD2 if(App_Connected) then CMD1 else CMD2 
@@ -621,6 +621,6 @@ Command steps explained:
 > repeat<br>
  
 
-updated: August 25, 2024
+updated: October 5, 2024
 
 [Learn more](..) on QR Control

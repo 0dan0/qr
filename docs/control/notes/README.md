@@ -5,6 +5,11 @@ Only the more recent releases are documented below. This a general list of Labs 
 
 ## HERO13 Black 
 
+### 1.12.70 - September 24, 2024
+- Added command oX10 to select Auto Detect for lens mods.
+- Fixed LOGB with offsets less than -100, now LOGB=200,-128 works as intended.
+- Fixed crash with creating presets through the menus.  If instability presists, reset the presets.
+
 ### 1.10.70 - September 10, 2024
 - Added STOP=x for Stop Motion where is x the number for frame to store per shutter press. Works great with the remote. Mode button ends capture.  
 - Added ONIO=x Onion percentage used for Stop Motion where is x the precentage of transparency of the onion skin.  
@@ -19,16 +24,11 @@ Only the more recent releases are documented below. This a general list of Labs 
     Path is saved by day into MISC/GPS-yy-mm-dd.gpmf file. GPSL=1 logs everything, GPSL=x will only log movement great than x meter from the last stored location. 
 - Added custom Labs setting within Preset names. e.g. ```*DIVE=1*BITR=160``` (standard formatting) or ```DIVE 24HZ``` or ```24HZ,DIVE,NR01``` (space or comma delimited). 
 For advanced Labs users, preset names can call macros. Warning: don't put permanent settings or actions with presets, could brick your camera.
-  * Safe example 1: 
+  * Safe example: 
   * ```*OVLY="$BURN='(0,20)[BRHH:MM:SSaa mm-dd-yyyy ]'"```   <- Enable overlay macro
   * ```*OVLy="$BURN=''"```   <- Disable overlay macro, required to disable when leaving/deselecting a preset
   * ```$PRES="0,OVLY"``` <- Now this OVLY preset will enable overlays for that preset alone.
   * as one cmd: ```*OVLY="$BURN='(0,20)[BRHH:MM:SSaa mm-dd-yyyy ]'"*OVLy="$BURN=''"$PRES="0,OVLY"```
-  * Safe example 2: 
-  * ```*DVMD="$DIVE=1$PMSG='Dive Mode'!R7"```  <- Enabled and display Dive Mode on the LCD
-  * ```*DVMd="$DIVE=0$PMSG=''"``` <- disable dive mode
-  * ```$PRES="0,DVMD"``` <- Now this DVMD preset will enable Dive mode, and display that on the LCD automatically.
-  * as one cmd: ```*DVMD="$DIVE=1$PMSG='Dive Mode'!R7"*DVMd="$DIVE=0$PMSG=''"$PRES="0,DVMD"```
 - Added !A for appending frames for a new controlled video timelapse.  Stop motion, GPS interval Lapse etc.
 - Added !C to Clear last GSP distance so command like this are simplier >c10!C+!A!R //(if distance > 10m) Clear()+Append() repeat;
 - Added support for !R-x relative gotos. e.g. "Hello"!N!R-2 keep back 2 character before !R.
