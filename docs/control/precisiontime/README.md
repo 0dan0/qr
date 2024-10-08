@@ -336,7 +336,7 @@ function timeLoop()
   dd = today.getDate();
   h = today.getHours();
   m = today.getMinutes();
-  s = today.getSeconds() + Math.trunc(Math.random()*10));
+  s = today.getSeconds() + Math.trunc(Math.random()*10);
   if(s > 59) s = 0;
   ms = today.getMilliseconds();
   yy = padTime(yy);
