@@ -66,7 +66,7 @@ else
 	dset("title_div", false);
 }
 
-let hastime = cmd.search(/oT/);
+let hastime = cmd.search(/oT2/);
 if(hastime >= 0)
 	dset("copyshow", false);   // don't what user printing or sharing code with wrong date and time
 else	
@@ -85,7 +85,6 @@ function updateTime()
 {
 	let position = cmd.search(/oT2/);
 	
-	cmdnotime = cmd;
 	if(position >= 0)
 	{
 		var src_cmd = cmd;
@@ -113,13 +112,11 @@ function updateTime()
 		if(letter == '.')
 		{
 			newtimetxt = newtimetxt + "." + ms;
-			cmd = src_cmd.slice(0,position+2) + newtimetxt + src_cmd.slice(position+17);
-			//cmdnotime = src_cmd.slice(0,position) + src_cmd.slice(position+17);
+			cmd = "dot" + position + src_cmd.slice(0,position+2) + newtimetxt + src_cmd.slice(position+17);
 		}
 		else
 		{
-			cmd = src_cmd.slice(0,position+2) + newtimetxt + src_cmd.slice(position+14);
-			//cmdnotime = src_cmd.slice(0,position) + src_cmd.slice(position+14);
+			cmd = "sec" + position + src_cmd.slice(0,position+2) + newtimetxt + src_cmd.slice(position+14);
 		}
 	}
 	
