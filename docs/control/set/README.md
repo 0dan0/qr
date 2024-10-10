@@ -85,6 +85,11 @@ function padTime(i) {
   if (i < 10) {i = "0" + i;}  // add zero in front of numbers < 10
   return i;
 }
+function padTime1000(i) {
+  if (i >= 10 && i < 100) {i = "0" + i;}  // add zero in front of numbers < 100
+  else if (i < 10) {i = "00" + i;}  // add zero in front of numbers < 10
+  return i;
+}
 
 function updateTime()
 {
@@ -116,12 +121,12 @@ function updateTime()
 		let letter = src_cmd.charAt(position+14);
 		if(letter == '.')
 		{
-			newtimetxt = newtimetxt + "." + ms;
-			cmd = "dot" + position + src_cmd.slice(0,position+2) + newtimetxt + src_cmd.slice(position+17);
+			newtimetxt = newtimetxt + "." + padTime1000(ms);
+			cmd = src_cmd.slice(0,position+2) + newtimetxt + src_cmd.slice(position+17);
 		}
 		else
 		{
-			cmd = "sec" + position + src_cmd.slice(0,position+2) + newtimetxt + src_cmd.slice(position+14);
+			cmd = src_cmd.slice(0,position+2) + newtimetxt + src_cmd.slice(position+14);
 		}
 	}
 	
