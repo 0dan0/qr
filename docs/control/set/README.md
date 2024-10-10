@@ -168,7 +168,7 @@ function timeLoop()
   qrcode.clear(); 
   qrcode.makeCode(cmd);
 	
-  var t = setTimeout(timeLoop, 100);
+  var t = setTimeout(timeLoop, 77);
 }
 
 function checkTime(i) {
