@@ -661,8 +661,9 @@ function HTMLPrint(txt)
 function URLPrint(txt)
 {
 	var txt2 = txt.replaceAll("+", "%2B");
-	var newtxt = txt2.replaceAll("#", "%23");
-	return newtxt;
+	var txt3 = txt2.replaceAll("#", "%23");
+	var txt4 = txt3.replaceAll("%", "%25");
+	return txt4;
 }
 
 function unicodeToAscii(codepoint) {
