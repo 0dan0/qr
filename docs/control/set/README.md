@@ -104,8 +104,7 @@ function updateTime()
 		h = checkTime(h);
 		m = checkTime(m);
 		s = checkTime(s);
-		ms = Math.floor(ms / 10); // hundredths
-		ms = checkTime(ms);
+		ms = padTime1000(ms);
 		
 		var newtimetxt = yy.toString() + mm.toString() + dd.toString() + h.toString() + m.toString() + s.toString();
 		let letter = src_cmd.charAt(position+14);
@@ -158,12 +157,18 @@ function timeLoop()
   qrcode.clear(); 
   qrcode.makeCode(cmd);
 	
-  var t = setTimeout(timeLoop, 100);
+  var t = setTimeout(timeLoop, 50);
 }
 
 function checkTime(i) {
     if (i < 10) {i = "0" + i;}  // add zero in front of numbers < 10
     return i;
+}
+
+function padTime1000(i) {
+  if (i >= 10 && i < 100) {i = "0" + i;}  // add zero in front of numbers < 100
+  else if (i < 10) {i = "00" + i;}  // add zero in front of numbers < 10
+  return i;
 }
 
 function myReloadFunction() {
