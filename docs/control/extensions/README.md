@@ -221,7 +221,7 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
 
 <br> 
 
-updated: August 4, 2024<br>
+updated: October 10, 2024<br>
 
 [Learn more](..) on QR Control
 
