@@ -81,23 +81,13 @@ function HTMLPrint(txt)
 }
 
 
-function padTime(i) {
-  if (i < 10) {i = "0" + i;}  // add zero in front of numbers < 10
-  return i;
-}
-function padTime1000(i) {
-  if (i >= 10 && i < 100) {i = "0" + i;}  // add zero in front of numbers < 100
-  else if (i < 10) {i = "00" + i;}  // add zero in front of numbers < 10
-  return i;
-}
-
 function updateTime()
 {
 	let position = cmd.search("oT2");
 	
 	if(position >= 0)
 	{
-		var src_cmd = cmd;
+		var newcmd;
 		var today = new Date();
 		
 		var	yy = today.getFullYear() - 2000;
@@ -117,17 +107,19 @@ function updateTime()
 		ms = Math.floor(ms / 10); // hundredths
 		ms = checkTime(ms);
 			
-		var newtimetxt = padTime(yy) + padTime(mm) + padTime(dd) + padTime(h) + padTime(m) + padTime(s);
+		var newtimetxt = yy + mm + dd + h + m + s;
 		let letter = src_cmd.charAt(position+14);
 		if(letter == '.')
 		{
-			newtimetxt = newtimetxt + "." + padTime1000(ms);
-			cmd = src_cmd.slice(0,position+2) + newtimetxt + src_cmd.slice(position+17);
+			newtimetxt = newtimetxt + "." + ms;
+			newcmd = cmd.slice(0,position+2) + newtimetxt + cmd.slice(position+17);
 		}
 		else
 		{
-			cmd = src_cmd.slice(0,position+2) + newtimetxt + src_cmd.slice(position+14);
+			newcmd = cmd.slice(0,position+2) + newtimetxt + cmd.slice(position+14);
 		}
+		
+		cmd = newcmd;
 	}
 	
 	document.getElementById("qrtext").innerHTML = HTMLPrint(cmd);
@@ -168,7 +160,7 @@ function timeLoop()
   qrcode.clear(); 
   qrcode.makeCode(cmd);
 	
-  var t = setTimeout(timeLoop, 77);
+  var t = setTimeout(timeLoop, 100);
 }
 
 function checkTime(i) {
