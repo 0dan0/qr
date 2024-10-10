@@ -87,7 +87,7 @@ function updateTime()
 	
 	if(position >= 0)
 	{
-		var newcmd;
+		var src_cmd = cmd;
 		var today = new Date();
 		
 		var	yy = today.getFullYear() - 2000;
@@ -106,20 +106,18 @@ function updateTime()
 		s = checkTime(s);
 		ms = Math.floor(ms / 10); // hundredths
 		ms = checkTime(ms);
-			
-		var newtimetxt = yy + mm + dd + h + m + s;
+		
+		var newtimetxt = yy.toString() + mm.toString() + dd.toString() + h.toString() + m.toString() + s.toString();
 		let letter = src_cmd.charAt(position+14);
 		if(letter == '.')
 		{
-			newtimetxt = newtimetxt + "." + ms;
-			newcmd = cmd.slice(0,position+2) + newtimetxt + cmd.slice(position+17);
+			newtimetxt = newtimetxt + "." + ms.toString();
+			cmd = src_cmd.slice(0,position+2) + newtimetxt + src_cmd.slice(position+17);
 		}
 		else
 		{
-			newcmd = cmd.slice(0,position+2) + newtimetxt + cmd.slice(position+14);
+			cmd = src_cmd.slice(0,position+2) + newtimetxt + src_cmd.slice(position+14);
 		}
-		
-		cmd = newcmd;
 	}
 	
 	document.getElementById("qrtext").innerHTML = HTMLPrint(cmd);
