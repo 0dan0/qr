@@ -83,7 +83,7 @@ function HTMLPrint(txt)
 
 function updateTime()
 {
-	let position = cmd.search(/oT2/);
+	let position = cmd.search("oT2");
 	
 	if(position >= 0)
 	{
