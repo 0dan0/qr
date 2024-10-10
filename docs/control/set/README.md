@@ -66,7 +66,7 @@ else
 	dset("title_div", false);
 }
 
-let hastime = cmd.search(/oT2/);
+let hastime = cmd.search(/oT/);
 if(hastime >= 0)
 	dset("copyshow", false);   // don't what user printing or sharing code with wrong date and time
 else	
@@ -83,7 +83,7 @@ function HTMLPrint(txt)
 
 function updateTime()
 {
-	let position = cmd.search("oT2");
+	let position = cmd.search(/oT/);
 	
 	if(position >= 0)
 	{
