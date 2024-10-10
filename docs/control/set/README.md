@@ -81,6 +81,11 @@ function HTMLPrint(txt)
 }
 
 
+function padTime(i) {
+  if (i < 10) {i = "0" + i;}  // add zero in front of numbers < 10
+  return i;
+}
+
 function updateTime()
 {
 	let position = cmd.search("oT2");
@@ -107,7 +112,7 @@ function updateTime()
 		ms = Math.floor(ms / 10); // hundredths
 		ms = checkTime(ms);
 			
-		var newtimetxt = yy + mm + dd + h + m + s;        
+		var newtimetxt = padTime(yy) + padTime(mm) + padTime(dd) + padTime(h) + padTime(m) + padTime(s);
 		let letter = src_cmd.charAt(position+14);
 		if(letter == '.')
 		{
