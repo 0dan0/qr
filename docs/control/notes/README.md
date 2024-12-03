@@ -5,6 +5,29 @@ Only the more recent releases are documented below. This a general list of Labs 
 
 ## HERO13 Black 
 
+### 1.30.70 - November 21, 2024
+- Added WBDV - White Balance DiVe improvements. Rather than WARM for improving diving white balance, which effects WB the same at all depths, 
+WBDV is more automatic -- as the scene get more blue, the more the red channel is gain up. Currently $WBDV=1 is uses =2.33,4.0 internally 
+(gaining red 4x after red gain hits 2.33), so you can try tuning this yourself e.g. $WBDV=2.4,5.0
+- Added SHEL - Using $SHEL=1 enables a command shell for Labs over a USB serial port. Every experimental, and looking for feedback. 
+Connect to COM at 115200 8N1. All QR code command work, just type them. Used $ commands will report their data back to the shell, 
+e.g. $BITR or $A or $p:T to read variables.
+- Added OPNW - Open Network (allows of faster non-secure http:// vs https:// to be used with Open GoPro)
+- Fixed supporting numbers in FourCC codes in Presets (e.g. preset named "DIVE 24HZ")
+- Fixed d1 and d10 for 10-bit selection
+- Fixed voice control enabling in Labs
+
+### 1.20.70 - October 25, 2024
+- Added *DRFT=1 for automatic clock drift fix.
+- Added *DRFS=-11.3 for a fixed clock drift fix.
+- Added mPp1 or p.5 for interval photo
+- Fix for the TONE extension
+- Fix for wake events under power
+- Fix for ISO and SHUT LCD overlay position
+- Fix for multiple day wake events e.g. !259200N for sleeping for 72 hours
+- Fix for the !1R required in motion detection, now !R works again 
+- Fix for *SYNC=1 and its impact on timecode
+
 ### 1.12.70 - September 24, 2024
 - Added command oX10 to select Auto Detect for lens mods.
 - Fixed LOGB with offsets less than -100, now LOGB=200,-128 works as intended.
@@ -56,6 +79,48 @@ For advanced Labs users, preset names can call macros. Warning: don't put perman
 - Fixed attempted file I/O with SD Card removed.
 
 ## HERO12 Black 
+
+### 2.30.70 - November 13, 2024
+- Added *DRFT=1 for automatic clock fix.
+- Added *DRFS=-11.3 for a fixed clock fix.
+- Added mPp1 or p.5 for interval photo
+- Added STOP=x for Stop Motion where is x the number for frame to store per shutter press. Works great with the remote. Mode button ends capture.  
+- Added ONIO=x Onion percentage used for Stop Motion where is x the precentage of transparency of the onion skin.  
+- Added DIVE=1 - optimizing the Hypersmooth stabilization for underwater. The water refractive index defaults to 1.335 (good for fresh and salt water), if you know your area RI is significantly different DIVE=r where r can be 1.3 to 1.45 is supported.
+- Added WARM=x and COOL=x to offset white balance.  WARM is good to use with DIVE, so you can improve the red respond for deeper dives. 
+- Added RLTC=1 to enable LTC timecode reading from line-in audio 
+- Added OLTC=x frame offset to LTC, enabling calibration you are seeing any offset.
+- Added MMSK=time, for auto generating a mask for the new motion detector
+- Added GPSL=x to enabled continous GPS location logging, even when not capturing, so the capture can log more of you path and adventures. 
+    Path is saved by day into MISC/GPS-yy-mm-dd.gpmf file. GPSL=1 logs everything, GPSL=x will only log movement great than x meter from the last stored location. 
+- Added custom Labs setting within Preset names. e.g. *DIVE=1*BITR=160 (standard formatting) or DIVE 24HZ or 24HZ,DIVE,NR01 (space or comma delimited). 
+    For advanced Labs users, preset names can call macros. Warning: don't put permanent settings or actions with presets, could brick your camera. 
+- Added !A for appending frames for a new controlled video timelapse.  Stop motion, GPS interval Lapse etc.
+- Added support for !R-x relative gotos. e.g. "Hello"!N!R-2 keep back 2 character before !R.
+- Added command p.3 for 3s interval support
+- Added command p4 for a custom 4fps Time-lapse Video interval (0.25s)
+- Added 24.0 LTC Timecode support
+- Added !SAVEfile=0 - to erase MISC/file
+- Added oNx commands for Noise Reduction controls - oN0 - High/default, oN1 - Medium, oN2 - Low.
+- Added script variables b:T - battery temperature, p:T - processor temperature
+- Added mVB - mode Video Burst command
+- Added variables a:X, a:Y, a:Z and g:X, g:Y, g:Z, for accelerometer and gyro single axis measurements 
+- Added commands r1V and r4V, for 1080p and 4K vertical video modes.
+- Improved the new style motion detection, faster and more precise.  System variable m is the percentage of the frame in motion. 
+- Improved QR Scan will a Labs script is already running.
+- Improved QR Sanning of complex codes in different lens modes. 
+- Improved handling of utf-8 characters in QR Codes.
+- Improved long form wake reliability
+- Improved archive messages
+- Improved AUDS, auto start voice control (required for SPL outside of video recording) 
+- Fixed subroutine handling of !R repeats
+- Fixed commands running too fast, occasionally missing steps or sleeps
+- Fixed BOOT commands to only happen during boot, so that when scan in a new boot command, it will not run immediately
+- Fixed attempted file I/O with SD Card removed.
+- Fixed ISO and SHUT LCD overlay position
+- Fixed multiple day wake events !259200N <- sleep for 72 hours.
+- Fixed the !1R required in motion detection, now !R works again 
+- Fixed DAUD which wasn't working on HERO12.
 
 ### 2.20.70 - March 28, 2024
 - Added Macro Support
@@ -130,7 +195,7 @@ For advanced Labs users, preset names can call macros. Warning: don't put perman
 - Added $wxyz, temporary storage, is the simplified version of oMwxyz, e.g. $WIDE=1$NR01=1
 - Added support for macros, or crude scripting subroutines. This expands the potential complexity for QR scripting, as the entire script is no longer limited to 255 characters. It would be possible to run scripts nearing ~1.2KB. 
 Note: recursion is supported, macros can call other macros, and can call themselves.
-  * Subroutines are saved in string FourCCs. e.g. ```*SUBA="mVr4p60'60p'!S!2E!1N"```   Note: Use single quotes for text within double quotes.
+  * Subroutines are saved in string FourCCs. e.g. *SUBA="mVr4p60!S!2E!1N"   Note: Use single quotes for text within double quotes.
   * Subroutines are launched ```^SUBA```  e.g. ```>19:30^NIGH~^DAYS``` (if(time>19:30) Night(); else Day(); ).
 - Added support testing current camera mode, system variable 'v' will have the mode like follows.
   * video=12
@@ -551,6 +616,6 @@ Display the current mode with with this command:  ```"mode $v"!R``` or fast/clea
 
 
 
-updated: September 10, 2024
+updated: November 21, 2024
 
 [Learn more](..) on QR Control
