@@ -5,7 +5,7 @@
 All QR Codes are simple text strings, alphanumeric characters to describe settings and actions for your GoPro camera. It is fairly easy to learn, 
 so you can create you own custom commands. Here is an example command to set video at 4K 60fps with some Protune customization: **mVr4p60x-.5cFw55**. 
 Breaking-down how that command works, firstly all GoPro QR settings commands are separated with lowercase characters, so this command is interpreted 
-in these groups mV r4 p60 x-.5 cF w55. This is what each command group means:
+in these groups mV, r4, p60, x-.5, cF and then w55. No space or other delimiters are used. This is what each command group means:
 
 * **mV** - is shorthand for mode Video - this is the same a swiping the camera to use video mode.
 * **r4** - set resolution to 4K (16:9), r4T (for 4K 4:3) and r4X (for HERO11-13s 8:7) 
@@ -16,7 +16,7 @@ in these groups mV r4 p60 x-.5 cF w55. This is what each command group means:
   
 Any of these can be used on their own, or in a different order, however the order can have meaning. If the camera was currently in a photo mode, 
 and you set the Protunes settings first, then switched to video, any Protune changes would be to the photo preset, the video will have whatever Protune 
-settings you had previously. The individual commands within a QR code are performed in order, just like you would when using the touchscreen.
+settings you had previously. The individual commands within a QR code are performed in order, just like you would when change settings using the camera menus and touchscreen.
 
 ## Option Commands
 
@@ -45,13 +45,13 @@ used between commands.
  * **mLT** - mode Vehicle Lights (HERO11-13 only)
  
 <b>\* Video Looping:</b> You need to create this preset on camera, before this command will select it.<br>
-<b>\*\* Time/Night-Lapse modes:</b> The camera defaults to having presets for only one time-lapse mode and one night-lapse mode, yet both modes have two configurations (video or photo.) For all QR Code mode commands to work, a preset is needed for every mode you wish to use. e.g. If you only have a preset for night-lapse video (NLV), the QR command for NLV will work, but will not for night-lapse photo (NLP). To solve this, create a new preset for NLP, and both video and photo night-lapse commands will work.
+<b>\*\* Time/Night-Lapse modes:</b> The camera defaults to having presets for only one time-lapse mode and one night-lapse mode, yet both modes have two configurations (video or photo.) For all QR Code mode commands to work, a preset is needed for every mode you wish to use. e.g. If you only have a preset for night-lapse video (NLV), the QR command for NLV will work, but will not for night-lapse photo (NLP). To solve this, create a new preset for NLP, and both video and photo night-lapse commands will work. Not all modes are available on every camera. 
  
 ### Defaults modes (on power up): 
- * **dL** - last used mode
- * **dV** - last used Video mode
- * **dP** - last used Photo mode
- * **dT** - last used Timelapse mode
+ * **dL** - last used mode, the camera will boot up to last mode used before shutdown
+ * **dV** - last used Video mode, the camera will boot into video mode
+ * **dP** - last used Photo mode, the camera will boot into photo mode
+ * **dT** - last used Timelapse mode, the camera will boot into Timelapse mode, like TimeWarp or Night Lapse etc.
   
 ### Resolutions: 
 Resolutions are also in the format rX(Y) - where X is the first character of the resolution, and the optional Y is aspect ratio, T - Tall 4:3, X - eXtreme 8:7, nothing is 16:9
@@ -87,7 +87,14 @@ Resolutions are also in the format rX(Y) - where X is the first character of the
  * **p1** (1s interval)
  * **p.2** (2s interval) 
  * **p.5** (5s interval) 
- * **p.10** through **p.3600** (10s to 60m interval)
+ * **p.10** (10s interval) 
+ * **p.30** (30s interval) 
+ * **p.60** (1 min interval) 
+ * **p.120** (2 min interval) 
+ * **p.300** (5 min interval) 
+ * **p.1800** (30 min interval) 
+ * **p.3600** (1 hour interval) 
+ * (only supports existing frame rates, so p.1234 will be ignored.)
 
 ### Lens - FOV: 
  * **fN** - Narrow (older models)
@@ -146,14 +153,17 @@ Resolutions are also in the format rX(Y) - where X is the first character of the
 (All cameras and Older Labs):<br>
  * **i1M1** - 100 ISO Max & Min
  * **i2M1** - 200 ISO Max with 100 ISO Min
+ * **i4M1** - 400 ISO Max with 100 ISO Min
+ * **i8M1** - 800 ISO Max with 100 ISO Min
+ * **i16M2** - 1600 ISO Max with 200 ISO Min
+ * **i16M4** - 1600 ISO Max with 400 ISO Min
  * **i16M8** - 1600 ISO Max with 800 ISO Min
  * **i32M1**  - 3200 ISO Mac with 100 ISO Min
  * **i64M16** - 6400 ISO Mac with 1600 ISO Min
  * **i1S180** - 100 ISO Max with a 180 degree shutter angle
  * **i16S22** - 1600 ISO Max with a 22 degree shutter angle
  * **i1S0** - 100 ISO Max with an **Automatic** shutter angle<br>
-
-Note: Angles between 22 and 1 degrees are supported. Experiment for higher shutter speeds. You will need a good amount of light and/or a higher ISO.
+Note: Angles between 22 and 1 degrees are supported. Experiment for higher shutter speeds. You will need a good amount of light and/or a higher ISO.  Only ISOs of 100, 200, 400, 800, 1600, 3200 and 6400 are support (although not all modes support the full range.)
 
 ### EV Compensation: 
  * **x0** - EV 0 default
@@ -176,11 +186,14 @@ Note: Angles between 22 and 1 degrees are supported. Experiment for higher shutt
  
 ### Night Photo exposure time: 
  * **eA** - Auto exposure
- * **e2** - 2 second shutter
- * **…** 
- * **e30** - 30 second shutter
+ * **e2** - 2s shutter
+ * **e5** - 5s shutter
+ * **e10** - 10s shutter
+ * **e15** - 15s shutter
+ * **e20** - 20s shutter 
+ * **e30** - 30s shutter
 
-### GoPro MAX Shooting Modes
+### GoPro MAX/360 Shooting Modes
  * **mH** - mode Hero
  * **mHF** - mode Hero Front
  * **mHR** - mode Hero Rear
@@ -340,11 +353,11 @@ All metadata in stored in a GPMF format with the MP4, 360 or JPG files, this is 
 The above global metadata can be extracted with this [**demo web tool**](../metadata)
 
 ### Some Four Character Codes are reserved for feature extensions
-* **24HZ** 10-13: enable film standard 24.0 frame, rather than the default broadcast standard 23.976. The existing 24p mode(s) will have the new frame rate when this is enabled, all other video modes are unaffected. Input Data: 1-enable, 0-disable",
-* **64BT** H8-10/MAX: 12GB Chapter sizes on HERO8/9/10 and MAX cameras (default on H11.) Note: Will not be active for QuickCaptures. Input Data: 1-enable, 0-disable WARNING: Larger chapters will not playback on camera or support USB transfers, but are compatible with desktop tools. Permanent required.",
-* **ARCH** H8-13/MAX: Archive mode: an ultra simplified video camera mode for novices documenting critical events, where you don’t want the camera mode modified. Either button will start and stop video capture. Input Data: 1-enable, 0-disable WARNING: only removable via the disable command. Permanent required.",
-* **AUDS** H10-13: Audio Level: displays the current estimate of the sound pressure level in dB. Input Data: 1-enable, 0-disable.",
-* **BASE** H8-10/MAX: Base file name change, adding to beginning of the filename. Input: H10-13 supports wildcards within [ ]: like [yyyy-mm-dd] or [HH-MM-SS]  e.g. A-[yyyymmddHHMMSS] WARNING: GoPro App and cloud will not support renamed files.",
+* **24HZ** 10-13: enable film standard 24.0 frame, rather than the default broadcast standard 23.976. The existing 24p mode(s) will have the new frame rate when this is enabled, all other video modes are unaffected. Input Data: 1-enable, 0-disable. e.g. `*24HZ=1`",
+* **64BT** H8-10/MAX: 12GB Chapter sizes on HERO8/9/10 and MAX cameras (default on H11 onward.) Note: Will not be active for QuickCaptures. Input Data: 1-enable, 0-disable WARNING: Larger chapters will not playback on camera or support USB transfers, but are compatible with desktop tools. Permanent required. e.g. `*64BT=1`",
+* **ARCH** H8-13/MAX: Archive mode: an ultra simplified video camera mode for novices documenting critical events, where you don’t want the camera mode modified. Either button will start and stop video capture. Input Data: 1-enable, 0-disable WARNING: only removable via the disable command. Permanent required. e.g. `*ARCH=1`",
+* **AUDS** H10-13: Audio Level: displays the current estimate of the sound pressure level in dB. Input Data: 1-enable, 0-disable. e.g. `*AUDS=1`",
+* **BASE** H8-10/MAX: Base file name change, adding to beginning of the filename. Input: H10-13 supports wildcards within [ ]: like [yyyy-mm-dd] or [HH-MM-SS]  e.g. A-[yyyymmddHHMMSS] WARNING: GoPro App and cloud will not support renamed files. e.g. `*BASE=\"CamA-[yy-mm-dd]\"`",
 * **BERS** H10-13: Bypass ERS compensation, extremely rare usecases. Input Data: 0-display, 1-enable, 2-enable only with EIS off",
 * **BIAS** H9 only (new cameras use EVBS): Bias is like EV Compensation, but it can only be used after recording has began. It is a hack designed to tweak exposure during a livestream or webcam session. Input Data: Number of stops between -6 and 6, supports half stops like 3.5.",
 * **BITR** H10-13: set the compression in Mb/s for the Protune High Bitrate setting. Normally this would be around 100Mb/s, however higher (or lower) rates may be achieved with newer SD Cards.Input Data: MB/s from 2 to 200.",
@@ -395,7 +408,7 @@ The above global metadata can be extracted with this [**demo web tool**](../meta
 * **PMSG** H11-13: Message to display during a Labs looping script, so you know the camera is running something custom. Input Data: Any label less than 20 characters, or empty to disable.",
 * **PRES** H12-13: Create a new preset with custom name and icon. Input Data: Icon number 0 thru 15, preset name up to 15 characters",
 * **PRXY** H10-13: Store LRV files as NLE ready proxies. Normally a camera will encode an LRV (Low Res Video) for every MP4, with this enabled LRVs are made MP4s within a subfolder. Input Data: 1-move LRVs, 2-move THMs, 3-both, (v2.1) 4-No _Proxy name. 0-disable",
-* **QRDR** Detect QR Codes while recording. Used for changing a video burn-in message in the middle of a live-stream. This also allows you to end a capture via a QR Code (command: !E).  Input Data: 1-enable, 0-disable",
+* **QRDR** Detect QR Codes while recording and during Quik previews. Used for changing a video burn-in message in the middle of a live-stream. This also allows you to end a capture via a QR Code (command: !E).  Input Data: 1-enable, 0-disable",
 * **RLTC** Read LTC timecode from audio inputsInput Data: 1-Enable, 0-Disable.",
 * **RTMP** RTMP Address to livestream to. Combined with JOIN Metadata, use !W!GLC to start a 1080p livestream. Input Data: String of the RTMP URL, e.g. rtmp://live.twitch.tv/app/live_1234567. Permanent required.",
 * **SHMX** H8-9 & MAX: Photo shutter maximum exposure time: this is similar Maximum Shutter Angle (EXPT), except it applies to Photos. e.g. SHMX=1000 would set 1/1000th of a second as the longest shutter time. Input Data: 30-2000.",
@@ -557,7 +570,7 @@ New conditional commands for 2023. Now \>xValue and/or \<xValue and/or ==xValue 
 * **p:T** processorTempValue<sup>H13</sup> - **\>pValue**CMD if(processorTemp \> Value) then CMD, units in degrees C
 * **r** recording - **\>r0**CMD1~CMD2 if(Recording > 0) then CMD1 else CMD2 
 * **r:C** remote Connected - **\>r:C0**CMD1~CMD2 if(RC_Connected) then CMD1 else CMD2 
-* **r:A** remote App Connected - **\>r:A0**CMD1~CMD2 if(App_Connected) then CMD1 else CMD2 
+* **r:A** remote App Connected with Live Preview - **\>r:A0**CMD1~CMD2 if(App_Connected) then CMD1 else CMD2 
 * **s** shutterValue - **\>sValue**CMD - testing shutter, where 1/Value is used for shutter speed
 * **t:X** timedate - **\>t:XValue**CMD - where X Y-Year M-Month D-Day H-Hour N-miNute S-second W-day_of_the_Week B-seconds_since_Boot Q-seconds_since_Qrcode R-recording_time W-day_of_week
 * **u** USB power - **\>u0**CMD1~CMD2 if(power is on USB) then CMD1 else CMD2
@@ -622,6 +635,6 @@ Command steps explained:
 > repeat<br>
  
 
-updated: November 5, 2024
+updated: December 8, 2024
 
 [Learn more](..) on QR Control
