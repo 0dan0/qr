@@ -3,16 +3,16 @@
 ## Setting Commands
 
 All QR Codes are simple text strings, alphanumeric characters to describe settings and actions for your GoPro camera. It is fairly easy to learn, 
-so you can create you own custom commands. Here is an example command to set video at 4K 60fps with some Protune customization: **mVr4p60x-.5cFw55**. 
+so you can create you own custom commands. Here is an example command to set video at 4K 60fps with some Protune customization: `mVr4p60x-.5cFw55`. 
 Breaking-down how that command works, firstly all GoPro QR settings commands are separated with lowercase characters, so this command is interpreted 
 in these groups mV, r4, p60, x-.5, cF and then w55. No space or other delimiters are used. This is what each command group means:
 
-* **mV** - is shorthand for mode Video - this is the same a swiping the camera to use video mode.
-* **r4** - set resolution to 4K (16:9), r4T (for 4K 4:3) and r4X (for HERO11-13s 8:7) 
-* **p60** - set the frame rate to 60 fps 
-* **x-.5** - exposure compensation is set to -0.5
-* **cF** - color Flat
-* **w55** - white balance to 5500K
+* `mV` - is shorthand for mode Video - this is the same a swiping the camera to use video mode.
+* `r4` - set resolution to 4K (16:9), r4T (for 4K 4:3) and r4X (for HERO11-13s 8:7) 
+* `p60` - set the frame rate to 60 fps 
+* `x-.5` - exposure compensation is set to -0.5
+* `cF` - color Flat
+* `w55` - white balance to 5500K
   
 Any of these can be used on their own, or in a different order, however the order can have meaning. If the camera was currently in a photo mode, 
 and you set the Protunes settings first, then switched to video, any Protune changes would be to the photo preset, the video will have whatever Protune 
@@ -21,253 +21,311 @@ settings you had previously. The individual commands within a QR code are perfor
 ## Option Commands
 
 Just like settings, these alter camera options, not the settings used in a preset. Examples like beep volume and screen brightness. It turns out there are a lot of these. 
-While each setting command is a single lowercase character, it can be followed by a number of either uppercase or numbers for the parameters. Option commands, starting with **o** 
-can stack many parameter in one command. This is a single options command **oV1B4D2** which translates to Volume - 10%, Brightness 40%, and LEDs rear only. The same command can be 
-written as **oV1oB4oD2**, three separate option commands, but as storage in a QR code is limited so options can be stacked for more efficiency, this is also why spaces are not 
+While each setting command is a single lowercase character, it can be followed by a number of either uppercase or numbers for the parameters. Option commands, starting with `o` 
+can stack many parameter in one command. This is a single options command `oV1B4D2` which translates to Volume - 10%, Brightness 40%, and LEDs rear only. The same command can be 
+written as `oV1oB4oD2`, three separate option commands, but as storage in a QR code is limited so options can be stacked for more efficiency, this is also why spaces are not 
 used between commands.
 
 ## The Full List of Settings and Option Commands
 
 ### Mode commands: 
- * **mV** - mode Video
- * **mVL** - mode Video Looping (\*)
- * **mP** - mode Photo
- * **mT** - mode Timelapse video (\*\*)
- * **mTP** - mode Timelapse Photo (\*\*)
- * **mTW** - mode TimeWarp
- * **mPB** - mode Photo Burst 
- * **mPN** - mode Photo Night
- * **mNL** - mode Night-Lapse Video (\*\*)
- * **mNP** - mode Night-Lapse Photo (\*\*)
- * **mL** - mode Live-Burst Photo (HERO10 only)
- * **mST** - mode Star Trails (HERO11-13 only)
- * **mLP** - mode Light Painting (HERO11-13 only)
- * **mLT** - mode Vehicle Lights (HERO11-13 only)
+ * `mV` - mode Video
+ * `mVL` - mode Video Looping (\*)
+ * `mP` - mode Photo
+ * `mT` - mode Timelapse video (\*\*)
+ * `mTP` - mode Timelapse Photo (\*\*)
+ * `mTW` - mode TimeWarp
+ * `mPB` - mode Photo Burst 
+ * `mPN` - mode Photo Night
+ * `mNL` - mode Night-Lapse Video (\*\*)
+ * `mNP` - mode Night-Lapse Photo (\*\*)
+ * `mL` - mode Live-Burst Photo (HERO10 only)
+ * `mST` - mode Star Trails (HERO11-13 only)
+ * `mLP` - mode Light Painting (HERO11-13 only)
+ * `mLT` - mode Vehicle Lights (HERO11-13 only)
  
 <b>\* Video Looping:</b> You need to create this preset on camera, before this command will select it.<br>
 <b>\*\* Time/Night-Lapse modes:</b> The camera defaults to having presets for only one time-lapse mode and one night-lapse mode, yet both modes have two configurations (video or photo.) For all QR Code mode commands to work, a preset is needed for every mode you wish to use. e.g. If you only have a preset for night-lapse video (NLV), the QR command for NLV will work, but will not for night-lapse photo (NLP). To solve this, create a new preset for NLP, and both video and photo night-lapse commands will work. Not all modes are available on every camera. 
  
 ### Defaults modes (on power up): 
- * **dL** - last used mode, the camera will boot up to last mode used before shutdown
- * **dV** - last used Video mode, the camera will boot into video mode
- * **dP** - last used Photo mode, the camera will boot into photo mode
- * **dT** - last used Timelapse mode, the camera will boot into Timelapse mode, like TimeWarp or Night Lapse etc.
+ * `dL` - last used mode, the camera will boot up to last mode used before shutdown
+ * `dV` - last used Video mode, the camera will boot into video mode
+ * `dP` - last used Photo mode, the camera will boot into photo mode
+ * `dT` - last used Timelapse mode, the camera will boot into Timelapse mode, like TimeWarp or Night Lapse etc.
   
 ### Resolutions: 
 Resolutions are also in the format rX(Y) - where X is the first character of the resolution, and the optional Y is aspect ratio, T - Tall 4:3, X - eXtreme 8:7, nothing is 16:9
- * **r1** or **r10** or **r1080**  - 1920x1080
- * **r1T** or **r14** or **r1440**  - 1920x1440
- * **r1V** - 1080x1920 HD Vertical Video (H13)
- * **r2** or **r27** - for 2.7K 16x9
- * **r2T** or **r27T** - for 2.7K Tall the 4x3 mode
- * **r3** - 3K 360° for GoPro MAX
- * **r4** - 4k 16x9
- * **r4T** - 4k Tall, the 4:3 mode
- * **r4X** - 4k eXtreme, the 8:7 mode (H11-13)
- * **r4S** - 4k Square, the 1:1 mode using Ultra Wide (H13)
- * **r4V** - 2160x3840 4K Vertical Video (H13)
- * **r5** - 5.3k for HERO and 5.6K 360° for GoPro MAX
- * **r5T** - 5k Tall, the 4:3 mode (H10)
- * **r5X** - 5k eXtreme, the 8:7 mode (H11-13)
+ * `r1` or `r10` or `r1080`  - 1920x1080
+ * `r1T` or `r14` or `r1440`  - 1920x1440
+ * `r1V` - 1080x1920 HD Vertical Video (H13)
+ * `r2` or `r27` - for 2.7K 16x9
+ * `r2T` or `r27T` - for 2.7K Tall the 4x3 mode
+ * `r3` - 3K 360° for GoPro MAX
+ * `r4` - 4k 16x9
+ * `r4T` - 4k Tall, the 4:3 mode
+ * `r4X` - 4k eXtreme, the 8:7 mode (H11-13)
+ * `r4S` - 4k Square, the 1:1 mode using Ultra Wide (H13)
+ * `r4V` - 2160x3840 4K Vertical Video (H13)
+ * `r5` - 5.3k for HERO and 5.6K 360° for GoPro MAX
+ * `r5T` - 5k Tall, the 4:3 mode (H10)
+ * `r5X` - 5k eXtreme, the 8:7 mode (H11-13)
  
 ### Frame rates: 
- * **p24** - 24 fps
- * **p25** - 25 fps
- * **p30** - 30 fps
- * **p50** - 50 fps
- * **p60** - 60 fps
- * **p100** - 100 fps
- * **p120** - 120 fps
- * **p200** - 200 fps
- * **p240** - 240 fps
+ * `p24` - 24 fps
+ * `p25` - 25 fps
+ * `p30` - 30 fps
+ * `p50` - 50 fps
+ * `p60` - 60 fps
+ * `p100` - 100 fps
+ * `p120` - 120 fps
+ * `p200` - 200 fps
+ * `p240` - 240 fps
  * (only supports existing frame rates, so p65 or p1000 will be ignored.)
   
 ### Timelapse and NightLapse frame rates: 
- * **p2** (0.5s or 2Hz/2p capture)
- * **p1** (1s interval)
- * **p.2** (2s interval) 
- * **p.5** (5s interval) 
- * **p.10** (10s interval) 
- * **p.30** (30s interval) 
- * **p.60** (1 min interval) 
- * **p.120** (2 min interval) 
- * **p.300** (5 min interval) 
- * **p.1800** (30 min interval) 
- * **p.3600** (1 hour interval) 
+ * `p2` (0.5s or 2Hz/2p capture)
+ * `p1` (1s interval)
+ * `p.2` (2s interval) 
+ * `p.5` (5s interval) 
+ * `p.10` (10s interval) 
+ * `p.30` (30s interval) 
+ * `p.60` (1 min interval) 
+ * `p.120` (2 min interval) 
+ * `p.300` (5 min interval) 
+ * `p.1800` (30 min interval) 
+ * `p.3600` (1 hour interval) 
  * (only supports existing frame rates, so p.1234 will be ignored.)
 
 ### Lens - FOV: 
- * **fN** - Narrow (older models)
- * **fM** - Medium (older models)
- * **fW** - Wide
- * **fL** - Linear
- * **fS** - Superview 
- * **fV** - HyperView (H11-13)
- * **fH** - Horizonal Level + Linear (H9-13)
- * **fX** - SuperMax Wide (Max Lens Mod)
+ * `fN` - Narrow (older models)
+ * `fM` - Medium (older models)
+ * `fW` - Wide
+ * `fL` - Linear
+ * `fS` - Superview 
+ * `fV` - HyperView (H11-13)
+ * `fH` - Horizonal Level + Linear (H9-13)
+ * `fX` - SuperMax Wide (Max Lens Mod)
  
 ### Audio (Raw controls): 
- * **aL** - Low Processing
- * **aM** - Medium Processing
- * **aH** - High Processing
+ * `aL` - Low Processing
+ * `aM` - Medium Processing
+ * `aH` - High Processing
 
 ### Bitrate: 
- * **b0** - Standard Bitrate
- * **b1** - High Bitrate
+ * `b0` - Standard Bitrate
+ * `b1` - High Bitrate
 
 ### Color: 
- * **cF** - Color Flat
- * **cG** - Color Vibrant (old GoPro Color)
- * **cN** - Color Natural (H10-13)
+ * `cF` - Color Flat
+ * `cG` - Color Vibrant (old GoPro Color)
+ * `cN` - Color Natural (H10-13)
 
 ### Depth (H11/12 only): 
- * **d0** or **d8** - 8-bit color
- * **d1** or **d10** - 10-bit color
+ * `d0` or `d8` - 8-bit color
+ * `d1` or `d10` - 10-bit color
 
 ### EIS (Hypersmooth control): 
- * **e0** - Off     
- * **e1** or just **e* - On
- * **e2** - High
- * **e3** - Boost
- * **e4** - Auto 
+ * `e0` - Off     
+ * `e1` or just `e` - On
+ * `e2` - High
+ * `e3` - Boost
+ * `e4` - Auto 
  
 ### Exposure Lock: 
- * **eL0** - Off     
- * **eL1** - On
- * **eL2 - eL9** -  Lock after 2 to 9 seconds.
+ * `eL0` - Off     
+ * `eL1` - On
+ * `eL2` to `eL9` -  Lock after 2 to 9 seconds.
 
 ### Hindsight (Video modes H9-13): 
- * **hS0** - Off     
- * **hS1** - On 15s window
- * **hS2** - On 30s window
- * **hS5** - Experimental Labs H11-13 - 5s window
+ * `hS0` - Off     
+ * `hS1` - On 15s window
+ * `hS2` - On 30s window
+ * `hS5` - Experimental Labs H11-13 - 5s window
 
-### White Balance: 
- * **wA** - Auto White Balance
- * **w23** - 2300K White balance
- * **w28**, **w32**, **w40**, **w45**  - 2800K, 3200K, 4000K, 4500K
- * **w50**, **w55**, **w60**, **w65**  - 5000K, 5500K, 6000K, 6500K
- * **wN** - Native White Balance (sensor raw)
+### White Balance (only this WB settings): 
+ * `wA` - Auto White Balance
+ * `w23` - 2300K White balance
+ * `w28` - 2800K 
+ * `w32` - 3200K 
+ * `w40` - 4000K 
+ * `w45` - 4500K 
+ * `w50` - 5000K 
+ * `w55` - 5500K 
+ * `w60` - 6000K 
+ * `w65` - 6500K 
+ * `wN` - Native White Balance
 
 ### ISO Minimum and Maximum (set to together with format i(max)M(min)):
 (All cameras and Older Labs):<br>
- * **i1M1** - 100 ISO Max & Min
- * **i2M1** - 200 ISO Max with 100 ISO Min
- * **i4M1** - 400 ISO Max with 100 ISO Min
- * **i8M1** - 800 ISO Max with 100 ISO Min
- * **i16M2** - 1600 ISO Max with 200 ISO Min
- * **i16M4** - 1600 ISO Max with 400 ISO Min
- * **i16M8** - 1600 ISO Max with 800 ISO Min
- * **i32M1**  - 3200 ISO Mac with 100 ISO Min
- * **i64M16** - 6400 ISO Mac with 1600 ISO Min
- * **i1S180** - 100 ISO Max with a 180 degree shutter angle
- * **i16S22** - 1600 ISO Max with a 22 degree shutter angle
- * **i1S0** - 100 ISO Max with an **Automatic** shutter angle<br>
+ * `i1M1` - 100 ISO Max & Min
+ * `i2M1` - 200 ISO Max with 100 ISO Min
+ * `i4M1` - 400 ISO Max with 100 ISO Min
+ * `i8M1` - 800 ISO Max with 100 ISO Min
+ * `i16M2` - 1600 ISO Max with 200 ISO Min
+ * `i16M4` - 1600 ISO Max with 400 ISO Min
+ * `i16M8` - 1600 ISO Max with 800 ISO Min
+ * `i32M1`  - 3200 ISO Mac with 100 ISO Min
+ * `i64M16` - 6400 ISO Mac with 1600 ISO Min
+ * `i1S180` - 100 ISO Max with a 180 degree shutter angle
+ * `i16S22` - 1600 ISO Max with a 22 degree shutter angle
+ * `i1S0` - 100 ISO Max with an **Automatic** shutter angle<br>
 Note: Angles between 22 and 1 degrees are supported. Experiment for higher shutter speeds. You will need a good amount of light and/or a higher ISO.  Only ISOs of 100, 200, 400, 800, 1600, 3200 and 6400 are support (although not all modes support the full range.)
 
 ### EV Compensation: 
- * **x0** - EV 0 default
- * **x-.5** - EV -0.5
- * **x.5** - EV +0.5
- * **x-1** - EV -1.0
- * **x1** - EV +1.0
- * **x-1.5** - EV -1.5
- * **x1.5** - EV +1.5
- * **x-2** - EV -2.0 
- * **x2** - EV +2.0<br>
+ * `x0` - EV 0 default
+ * `x-.5` - EV -0.5
+ * `x.5` - EV +0.5
+ * `x-1` - EV -1.0
+ * `x1` - EV +1.0
+ * `x-1.5` - EV -1.5
+ * `x1.5` - EV +1.5
+ * `x-2` - EV -2.0 
+ * `x2` - EV +2.0<br>
  on some cameras models you can extend this to +/-6 EV (beyond the range the camera menu supports).
- * **x-5** - EV -5.0
- * **x3** - EV +3.0
+ * `x-5` - EV -5.0
+ * `x3` - EV +3.0
  
 ### Sharpness: 
- * **sL** - Low
- * **sM** - Medium
- * **sH** - High
+ * `sL` - Low
+ * `sM` - Medium
+ * `sH` - High
  
 ### Night Photo exposure time: 
- * **eA** - Auto exposure
- * **e2** - 2s shutter
- * **e5** - 5s shutter
- * **e10** - 10s shutter
- * **e15** - 15s shutter
- * **e20** - 20s shutter 
- * **e30** - 30s shutter
+ * `eA` - Auto exposure
+ * `e2` - 2s shutter
+ * `e5` - 5s shutter
+ * `e10` - 10s shutter
+ * `e15` - 15s shutter
+ * `e20` - 20s shutter 
+ * `e30` - 30s shutter
 
 ### GoPro MAX/360 Shooting Modes
- * **mH** - mode Hero
- * **mHF** - mode Hero Front
- * **mHR** - mode Hero Rear
- * **m3** - mode 360°
- * **m3F** - mode 360° front on LCD
- * **m3R** - mode 360° rear on LCD
- * **mF** - mode monitor Front lens
- * **mR** - mode monitor Rear lens
-
-### Feature with off and on commands:
- * GPS Active: **g0** or **gO** - off, **g** or **g1** - on 
- * Quick Capture: **q0** or **qO** - off, **q** or **q1** - on 
- * Voice Commands: **v0** or **vO** - off, **v** or **v1** - on
-
-### Option (‘o’) commands:
- * Brightness of the LCDs - **oB0** … **oB9** - (100%)
- * Camera Auto Off - **oC0** - Never, **oC1** - 1min, **oC5** - 5min, **oC15** - 15min, **oC30** - 30min
- * LCDs off now - **oDO**
- * LED control - **oD0** - all off, **oD2** - some on, **oD4** - all on
- * Extern Audio options - **oE1** - Standard Mic, **oE2** - Standard+ Mic, **oE3** - Powered Mic, **oE4** - Powered+ Mic, **oE5** - Line In (HERO10-13)
- * Front Screen control - **oFxy** - (see list below)
- * GPS Options (HERO11 v2.1) - **oG0** - off, **oG1** - on
- * Language - **oL**x - **0** English USA, **01** English UK, **02** English Aus, **03** English India, **1** German, **2** French, **3** Italian, **4** Spanish, **5** Chinese, **6** Japanese, **7** Korean, **8** Portuaguese, **9** Russian, **91** Swedish
- * Noise Reduction control (HERO13) - **oN0** High/Default (less noise/detail),  **oN1** Medium,  **oN2** Low (more noise/detail),  
- * Quick Capture (HERO11 v2.1) - **oQ0** - off, **oQ1** - on
- * Rotation, Camera Orientation - **oR0** - Auto, **oR1** - Up, **oR2** - Down, **oR2** - Left, **oR3** - Right
- * Screen Auto Off - **oS0** - Never, **oS1** - 1min ... **oS3** - 3min
- * Shortcut Menu on LCD - **oSA**x - Upper Left, **oSB**x - Lower Left, **oSC**x - Upper Right, **oSD**x - Lower Right, **oSR** - reset. Where x is in the list below.
- * Time and date - **oT**yymmddhhmmss.sss
- * Time, daylight savings - **oTD1** for daylight savings on or **oTD0** for off
- * Timezone (H11-13) - **oTZ-7** or **oTZ-420** e.g. -7 hour or -420 minutes timezone offset
- * Volume of Beeps - **oV0** - Mute, **oV1** ... **oV9** (min through max.)
- * Volume Control - **oVC0** - off, **oVC1** - on
- * WiFi Connection - **oW0** - off, **oW1** - on
- * Max Lens Mod -  **oX0** - disabled, **oX1** - MLM original enabled, **oX2** - MLM 2.0 enanled
- * Denoise - **oN0** - High/default, **oN1** - Medium, **oN2** - Low.
-
-### GoPro HERO9-13 Front Screen option commands
- * **oF0 or oFO** - turn the front LCD off
- * **oFU** - UI interface mode info only
- * **oFF** - Full image (image is letterboxed)
- * **oFC** - Cropped image (filling the front LCD)
- * **oFN** - Never turn off
- * **oFM** - Match rear screen on/off behavior
- * **oF1** - turn off after 1 minute
- * **oF2** - turn off after 2 minutes
- * **oF3** - turn off after 3 minutes
- * **oF5** - turn off after 5 minutes
+ * `mH` - mode Hero
+ * `mHF` - mode Hero Front
+ * `mHR` - mode Hero Rear
+ * `m3` - mode 360°
+ * `m3F` - mode 360° front on LCD
+ * `m3R` - mode 360° rear on LCD
+ * `mF` - mode monitor Front lens
+ * `mR` - mode monitor Rear lens
  
-### Shortcut Menu Types (to be used with oSA, oSB, oSC and oSD)
- * **oSAx** - Top Left Shortcut x is from the table below 
- * **oSBx** - Bottom Left Shortcut x is from the table below 
- * **oSCx** - Top Right Shortcut x is from the table below 
- * **oSDx** - Bottom Right Shortcut x is from the table below 
+### GPS Active ###:
+ - `g0` or `gO`: GPS off
+ - `g1` or `g`: GPS on
+ 
+### Quick Capture ###:
+ - `q0` or `qO` : off
+ - `q1` or `q1` : on
+ 
+### Voice Commands ###: 
+ - `v0` or `vO`: off
+ - `v1` or `v1`: on
+ 
+### Option (‘o’) commands:
+#### Brightness of the LCDs ####: 
+ - `oB0`: LCD brightness 0%
+ - `oB1`: LCD 10%
+ - `oB4`: LCD 40%
+ - `oB7`: LCD 70%
+ - `oB9`: LCD 100%
+#### Camera Auto Off Timer to preserve battery ####:
+ - `oC0`: Never auto off
+ - `oC1`: 1 min auto off
+ - `oC5`: 5 min auto off
+ - `oC15`: 15 min auto off
+ - `oC30`: 30 min auto off
+#### Turn all the LCD screens off ####:
+ - `oDO`: turn the LCDS off now
+#### LED tally lights to show when the camera is recording ####:
+ - `oD0`: all LEDs off
+ - `oD2`: some LEDs on
+ - `oD4`: all LEDs on
+#### Protune Noise Reduction control (HERO13 only) ####:
+ - `oN0`: High
+ - `oN1`: Medium 
+ - `oN2`: Low
+#### Rotation, Camera Orientation ####:
+ - `oR0`: Auto orientation 
+ - `oR1`: Up 
+ - `oR2`: Down
+ - `oR2`: Left
+ - `oR3`: Right 
+#### Screen Auto Off ####:
+ - `oS0`: LCD screens never timeout
+ - `oS1`: 1 min timeout
+ - `oS3`: 3 min timeout
+#### Volume of Beeps ####:
+ - `oV0`: Muted
+ - `oV1`: 10% volume
+ - `oV3`: 30% volume
+ - `oV7`: 70% volume
+ - `oV9`: maximum volume
+#### Wireless/WiFi Connections ####:
+ - `oW0`: Wireless off 
+ - `oW1`: Wireless on
+#### Front LCD controls ####:
+ - `oF0` front LCD off
+ - `oFU` UI info only
+ - `oFF` Full image
+ - `oFC` Cropped image
+ - `oFN` Never turn off
+ - `oFM` Match rear screen
+ - `oF1` off in 1 minute
+ - `oF2` off in 2 mins
+ - `oF3` off in 3 mins
+ - `oF5` off in 5 mins
+#### External Audio options (via Media Mod) ####:
+ - `oE1` - Standard Mic
+ - `oE2` - Standard+ Mic
+ - `oE3` - Powered Mic
+ - `oE4` - Powered+ Mic
+ - `oE5` - Line In (HERO10-13)
+#### Language ####:
+ - `oL0` - English USA
+ - `oL01` - English UK
+ - `oL02` - English Aus
+ - `oL03` - English India
+ - `oL1` - German
+ - `oL2` - French
+ - `oL3` - Italian
+ - `oL4` - Spanish
+ - `oL5` - Chinese
+ - `oL6` - Japanese
+ - `oL7` - Korean
+ - `oL8` - Portuaguese
+ - `oL9` - Russian
+ - `oL91` - Swedish
+#### Time and date ####:
+ **oT**yymmddhhmmss.sss for precision date and time e.g. `oT241208174033.556` for 2024 December 8, at 5:40:33.556pm 
+ - `oTD1` for daylight savings on 
+ - `oTD0` for daylight savings off
+ - `oTZ-7` or `oTZ-420` e.g. -7 hour or -420 minutes timezone offset
+ - `oTZ6` or `oTZ360` e.g. 6 hour or 360 minutes timezone offset
+ #### Shortcut Menu Types (to be used with oSA, oSB, oSC and oSD) ####:
+ * **oSAx** - Top Left Shortcut x is from the table below e.g. `oSA1` zoom is the top left
+ * **oSBx** - Bottom Left Shortcut x is from the table below  `oSB5` ISO is the bottom left
+ * **oSCx** - Top Right Shortcut x is from the table below  `oSC27` Hindsight is the top right
+ * **oSDx** - Bottom Right Shortcut x is from the table below  `oSD6` shutter is the bottom right
 
-| Feature      | value  | Feature      | value  |Feature      | value  |Feature      | value  |
-|--------------|--------|--------------|--------|-------------|--------|-------------|--------|
-|clear shortcut|0|burst rate |8 |ISO max       |15|horizon control  |24|
-|zoom          |1|duration   |9 |mic type      |16|speed ramp       |25|
-|fov           |2|color      |10|raw audio     |18|scheduled capture|26|
-|slowmo        |3|EV comp    |11|sharpness     |19|hindsight        |27|
-|white balance |5|hypersmooth|12|timer         |20|10-bit           |28|
-|shutter       |6|interval   |13|timewarp speed|21|nightphoto       |29|
-|bit rate      |7|ISO min    |14|wind noise    |23|trail length     |30|
+| Feature          | Feature        |Feature            |Feature               |
+|------------------|----------------|-------------------|----------------------|
+|0 - clear shortcut|8  - burst rate |15 - ISO max       |24 - horizon control  |
+|1 - zoom          |9  - duration   |16 - mic type      |25 - speed ramp       |
+|2 - fov           |10 - color      |18 - raw audio     |26 - scheduled capture|
+|3 - slowmo        |11 - EV comp    |19 - sharpness     |27 - hindsight        |
+|5 - white balance |12 - hypersmooth|20 - timer         |28 - 10-bit           |
+|6 - shutter       |13 - interval   |21 - timewarp speed|29 - nightphoto       |
+|7 - bit rate      |14 - ISO min    |23 - wind noise    |30 - trail length     |
 
 ### HERO11-13 UX modes: (limited, best to use the camera menu)
-- **mE** - mode Easy
-- **mPR** - mode Pro
+- `mE` - mode Easy
+- `mPR` - mode Pro
 
 
 ## Action and Conditional Commands
-Now you know how to set up your camera with QR commands, the fun really begins with Actions and Conditionals. Actions are starting **!S** or ending a capture **!E**, manual upload **!U**, 
-beginning a live stream **!G**. As these actions are typically just pressing a button or camera menu, these actions can be enhanced based on time. e.g. **!08:00S**, which will sleep 
-the camera until 8am, and then start capture (in the camera's default mode.) We can also do an conditional capture based on time. e.g. **>06:00<19:00mV~mNL!S** with this command, if the 
+Now you know how to set up your camera with QR commands, the fun really begins with Actions and Conditionals. Actions are starting `!S` or ending a capture `!E`, manual upload `!U`, 
+beginning a live stream `!G`. As these actions are typically just pressing a button or camera menu, these actions can be enhanced based on time. e.g. `!08:00S`, which will sleep 
+the camera until 8am, and then start capture (in the camera's default mode.) We can also do an conditional capture based on time. e.g. `>06:00<19:00mV~mNL!S` with this command, if the 
 time is greater than 6am and less than 7pm, set mode Video, else set mode NightLaspe, then start.  You can start pre-programming actions with QR codes.
 
 ### The Full List of Actions
@@ -304,16 +362,16 @@ time is greater than 6am and less than 7pm, set mode Video, else set mode NightL
 * **!**time**SDs-tDdHh** - Speed Pressure Level Trigger, 's' and 't' values are in dB.
 
 ### examples:
-* **!S** - start now  
-* **!07:00S** - start at precisely 7am  
-* **!300SQ** - start in approximately 300 seconds.  
-* **!60E** - end after 60 seconds (End commands are not used for photos.)
-* **!2R** - repeat after 2 seconds
-* **!s-01:00S** - start one hour before sunset
-* **!nS** - start at true noon.
-* **!s1200E** - end 1200 seconds after sunset
-* **!r-600S** - start 600 seconds before sunrise
-* **!17:00W!GLC** - start Live-streaming 1080p at 5pm, saving a local copy
+* `!S` - start now  
+* `!07:00S` - start at precisely 7am  
+* `!300SQ` - start in approximately 300 seconds.  
+* `!60E` - end after 60 seconds (End commands are not used for photos.)
+* `!2R` - repeat after 2 seconds
+* `!s-01:00S` - start one hour before sunset
+* `!nS` - start at true noon.
+* `!s1200E` - end 1200 seconds after sunset
+* `!r-600S` - start 600 seconds before sunrise
+* `!17:00W!GLC` - start Live-streaming 1080p at 5pm, saving a local copy
 
 ### Storing metadata (Permanent, survives power off)
 #### Old style (firmware released before March, '24)
@@ -325,7 +383,7 @@ time is greater than 6am and less than 7pm, set mode Video, else set mode NightL
 * **\***fourcc**=Number metadata**  (comma separated)
 
 #### Example for display the owner’s name
-**\*OWNR=<courier>"Joe Bloggs"</courier>**
+* `*OWNR="Joe Bloggs"`
 
 Note: All strings must use <courier>"</courier> (ASCII 34) and not the <courier>”</courier> (148) character.  
 
@@ -334,10 +392,10 @@ All tags between **OWNA** and **OWNZ** will be displayed and stored in **GoPro-o
 All tags between **OWNa** and **OWNz** will be only stored in the **GoPro-owner.txt**
 
 Any four character code can be used for store other information. You can also store numeric data examples: 
-* **\*CAMR=53** - metadata CAMR will be 53 
-* **\*ABCD=45.234** - metadata ABCD will be floating point 45.234
-* **\*UNIT=-1723** - metadata UNIT will be -1723 
-* **\*LLTZ=32.707,-117.1576,-7** - set camera location (GPS off) with Latt/Long/TimeZone 
+* `*CAMR=53` - metadata CAMR will be 53 
+* `*ABCD=45.234` - metadata ABCD will be floating point 45.234
+* `*UNIT=-1723` - metadata UNIT will be -1723 
+* `*LLTZ=32.707,-117.1576,-7` - set camera location (GPS off) with Latt/Long/TimeZone 
 
 ### Storing metadata (Temporarily, until power off)<br>
 #### Old style (firmware released before March, '24)
