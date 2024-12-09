@@ -610,16 +610,16 @@ However the else can only be applied to the last condition. `>09:15<10:00!S+"Hel
 
 The command language is kept simple, so it doesn't maintain a stack on the conditional nesting. 
 
-### Conditionals Based on Camera Status (HERO11-13)
+### Conditionals Based on Camera Status (HERO10 or newer)
 
-New conditional commands for 2023. Now \>xValue and/or \<xValue and/or ==xValue can be used to test camera states, where 'x' is the camera state to test, and Value the amount to test against:<br>
-* **a** accelerationValue - **\>aValue**CMD if(acceleration \> Value) then CMD, units in Gs
-* **b** batteryLevel - **\>bValue**CMD if(battery \> Value) then CMD, units in percentage
-* **b:T** batteryTemperature<sup>H13</sup> - **\>bValue**CMD if(battery \> Value) then CMD, units in degrees C
-* **c** coordDistance - **\>cDist**CMD  then CMD, units in meters, compare distance from initial GPS location
+Now \>xValue and/or \<xValue and/or ==xValue can be used to test camera states, where 'x' is the camera state to test, and Value the amount to test against:<br>
+* **a** accelerationValue - **\>aValue**CMD if(acceleration \> Value) then CMD, units in Gs  e.g. `>a0.5"half g"`
+* **b** batteryLevel - **\>bValue**CMD if(battery \> Value) then CMD, units in percentage  e.g. `<b10"Battery less than 10%"`
+* **b:T** batteryTemperature<sup>H13</sup> - **\>bValue**CMD if(battery \> Value) then CMD, units in degrees C  e.g. `>b:T70"Battery Hot"`
+* **c** coordDistance - **\>cDist**CMD  then CMD, units in meters, compare distance from initial GPS location  e.g. `>c10"moved 10m"`
 * **c:X** coord[A-Z]Distance - **\>c:XDist**CMD There are up to 26 pre-stored GPS locations oMFRMA=latt,long thru oMFRMZ. If nothing is store in FRMx, it will initialize with the current location. Reset a location with $FRMx=0,0 it will reinit with the current location.
-* **d** GPS DOP - **\<dValue**CMD - if(DOP \< Value) then CMD, units in 100x DOP. GPS location precision.
-* **e** random - **\<eValue**CMD \<e50 - 50% true \<e90 - 90% true.
+* **d** GPS DOP - **\<dValue**CMD - if(DOP \< Value) then CMD, units in 100x DOP. GPS location precision.   e.g. `<d500"GPS precision high"`
+* **e** random - **\<eValue**CMD \<e50 - 50% true \<e90 - 90% true.    e.g. `<e50"Heads"~"Tails"`
 * **g** gyroValue - **\>gValue**CMD if(gryo \> Value) CMD, numbers are in degrees per second.
 * **h** heightValue - **\>hValue**CMD if(height \> Value) CMD, numbers are in meters above sealevel.
 * **i** isoValue - **\>iValue**CMD - testing ISO where ISO ranges from 100 to 6400
