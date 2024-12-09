@@ -496,55 +496,54 @@ Macros are saved in string FourCCs:
 * **\***fourcc**&#61;<courier>"custom Labs commands"</courier>**  (permanent)
 
 Example: This macro calculates the Light Value and stores the result in variable **E**<br>
-**\*LVAL=**<courier>"=Ii=Ss=I/100=S/I=E6.25=E*S=E#2"</courier>
+`LVAL="=Ii=Ss=I/100=S/I=E6.25=E*S=E#2"`
 
  e.g. `*SUBA="mVr4p60'60p'!S!2E!1N"` Note: Use single quotes for text within double quotes.
 
 In a separate QR Code will call LVAL and display the result<br>
-**^LVAL**<courier>"Current LV $E"</courier>
+`^LVAL"Current LV $E"`
 
 Note: for Macros that print output use single quotes for text within.
-**\*DPLV=**<courier>"^LVAL'current LV $E'"</courier>
-
+`DPLV="^LVAL'current LV $E'"`
 
 ## Reset Actions ##
 
-* **!RESET!1OR** - erase all your permanent metadata (anything that used !Mxxxx command.) Then Reboot. (requires user confirmation.)
-* **!FORMAT**<sup>H10-13</sup> - for SD formatting via QR Code (requires user confirmation.)
-* **!FRESET**<sup>H10-13</sup> - Factory reset, erase everything, except QR code metadata (requires user confirmation.)
-* **!PRESET**<sup>H10-13</sup> - Presets reset, restore the default presets (requires user confirmation.)
-* **!WRESET**<sup>H10-13</sup> - WiFi Credentials reset, erase all your BLE and WiFi configurations (requires user confirmation.)
+* `!RESET!1OR` - erase all your permanent metadata (anything that used !Mxxxx command.) Then Reboot. (requires user confirmation.)
+* `!FORMAT` <sup>H10-13</sup> for SD formatting via QR Code (requires user confirmation.)
+* `!FRESET` <sup>H10-13</sup> Factory reset, erase everything, except QR code metadata (requires user confirmation.)
+* `!PRESET` <sup>H10-13</sup> Presets reset, restore the default presets (requires user confirmation.)
+* `!WRESET` <sup>H10-13</sup> WiFi Credentials reset, erase all your BLE and WiFi configurations (requires user confirmation.)
 
 ## Scripting
 
 The geek factor is highest in this section.  This is close to a Turing-complete language, you can get many interesting capture control jobs done.  There are save and load commands, additive metadata and clock time conditionals
 
-* **!SAVEname=script**  e.g. !SAVEdaily=dPmP!12:00S!Ldaily - a save script called ‘daily’ that repeatedly shots one photo every day at noon. 
-* **!Lname**  e.g. !LnightLapse - load and run a script called nightLapse
-* **<courier>"any text"</courier>** e.g. mV<courier>"Video Mode"</courier>!S!5E!4NmP<courier>"Photo Mode"</courier>!S!5R - this will display <courier>"Video Mode"<courier> and <courier>"Photo Mode"</courier> when switch to those modes.  
+* **!SAVEname=script**  e.g. `!SAVEdaily=dPmP!12:00S!Ldaily` - a save script called ‘daily’ that repeatedly shots one photo every day at noon. 
+* **!Lname**  e.g. `!LnightLapse` - load and run a script called nightLapse
+* **<courier>"any text"</courier>** e.g. `mV"Video Mode"!S!5E!4NmP"Photo Mode"!S!5R` - this will display <courier>"Video Mode"<courier> and <courier>"Photo Mode"</courier> when switch to those modes.  
 
 ### Conditionals Based on Time
 
 **\<** , **>** and **==** characters are used to indicate a conditional: less than, greater than equal, and equal (**==** Since March 2024 firmware)
 
-**\<08:45!S** is equivalent to 
+`<08:45!S` is equivalent to 
 
 > if(current_time < 8:45) <br>
 > &nbsp;&nbsp;&nbsp;   Start
 
-**>18:30!R** is equivalent to 
+`>18:30!R` is equivalent to 
 
 > if(current_time >= 18:30) <br>
 > &nbsp;&nbsp;&nbsp;  Repeat
 
-**==10:10!R** is equivalent to
+`==10:10!R` is equivalent to
 > if(current_time == 10:10) <br>
 > &nbsp;&nbsp;&nbsp;  Repeat
 
 
 The if condition defaults to effecting only the one command after the condition
 
-**\<08:45!S<courier>"Hello World"</courier>** is equivalent to:
+`<08:45!S"Hello World"` is equivalent to:
 
 > if(current_time < 8:45) <br>
 > &nbsp;&nbsp;&nbsp;   Start<br>
@@ -552,7 +551,7 @@ The if condition defaults to effecting only the one command after the condition
 	
 The start will happen if the condition is true, but the print message occurs whether true or false.  To make the print also part of the true state you can use **+** between the joined commands.
 
-**\<08:45!S+<courier>"Hello World"</courier>** is equivalent to
+`<08:45!S+"Hello World"` is equivalent to
 
 > if(current_time < 8:45) <br>
 > {<br>
@@ -560,7 +559,7 @@ The start will happen if the condition is true, but the print message occurs whe
 > &nbsp;&nbsp;&nbsp;    print <courier>"Hello World"</courier> <br>
 > }
 
-These can be stacked too, e.g. **\<08:45!S+<courier>"Hello World"</courier>+!60E** is equivalent to
+These can be stacked too, e.g. `<08:45!S+"Hello World"+!60E` is equivalent to
 
 > if(current_time < 8:45) <br>
 > {<br>
@@ -571,7 +570,7 @@ These can be stacked too, e.g. **\<08:45!S+<courier>"Hello World"</courier>+!60E
 
 Conditions support **else** statements using the **~** character after the last 'true' command
 
-**\<08:45!S+<courier>"Hello World"</courier>+!60E~!08:44N!R** is equivalent to
+`<08:45!S+"Hello World"+!60E~!08:44N!R` is equivalent to
 
 > if(current_time < 8:45) <br>
 > {<br>
@@ -586,13 +585,13 @@ Conditions support **else** statements using the **~** character after the last 
 > Repeat
 
 
-Conditionals themselves can be stacked like **\>09:15<10:00!S** is equivalent to 
+Conditionals themselves can be stacked like `>09:15<10:00!S` is equivalent to 
 
 > if(current_time >= 9:15) <br>
 > &nbsp;&nbsp;&nbsp; if(current_time <= 10:00) <br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Start<br>
 	
-However the else can only be applied to the last condition. **\>09:15<10:00!S+<courier>"Hello World"</courier>+!60E~!09:30N!R** is equivalent to
+However the else can only be applied to the last condition. `>09:15<10:00!S+"Hello World"+!60E~!09:30N!R` is equivalent to
 
 > if(current_time >= 9:15) <br>
 > {<br>
@@ -650,33 +649,33 @@ As 'a' to 'z' and system system fields, 'A' to 'Z' are the variable can contain 
 and can be tested with the '<' and '>' conditionals. To make them non-zero, they can be assign with and '=' command. Just like with conditions and action, 
 the '=' character is the command delimiter and comes first.  
 
-**=A5**  is the command variable A = 5.
+`=A5`  is the command variable A = 5.
 
-**=P3.14159265** assigns Pi to variable P.  
+`=P3.14159265` assigns Pi to variable P.  
 
 Now math can be used to modify your variables.
 
-* **=A+1.4** adds in form A = A + 1.4
-* **=D-2** subtraction D = D - 2  (note: assignments of negative numbers aren't support, but subtracting is. So **=D0=D-2** would initialize D to be -2, although =D0 is unnecessary as all variable are initialize to zero at boot.)
-* **=A*P** multiply A = A * P
-* **=E&#47;7** divide E = E &#47; 7
-* **=H^A** raised to a power H = H ^ A
-* **=F^0.5** raised to a power F = sqrt(F)
-* **=B%10** modulus  B = B % 10 
-* **=G#2** Log base N  G = log(G)/log(2) 
-* **=J&6** Bitwise AND like  J = (float)((int)J & 6) 
-* **=K&#124;3** Bitwise OR K = (float)((int)K &#124; 3) 
+* `=A+1.4` adds in form A = A + 1.4
+* `=D-2` subtraction D = D - 2  (note: assignments of negative numbers aren't support, but subtracting is. So `=D0=D-2` would initialize D to be -2, although =D0 is unnecessary as all variable are initialize to zero at boot.)
+* `=A*P` multiply A = A * P
+* `=E&#47;7` divide E = E &#47; 7
+* `=H^A` raised to a power H = H ^ A
+* `=F^0.5` raised to a power F = sqrt(F)
+* `=B%10` modulus  B = B % 10 
+* `=G#2` Log base N  G = log(G)/log(2) 
+* `=J&6` Bitwise AND like  J = (float)((int)J & 6) 
+* `=K&#124;3` Bitwise OR K = (float)((int)K &#124; 3) 
 
 There should be a prize if some can come up with a practical use for all of these ;)
 
 So if thought the above is crazy, it gets weirder.
 
-* **=B$BITR**  load the contents of the BITR (bitrate) hack into variable B, otherwise store zero.  So you can test if a feature is enabled.
-* **=Tt:W** load the day of the week into variable T
-* **=Di** load the current ISO value into variable D
-* **$EVBS=E**  store the current into EV Bias hack, so you can make a variable mess with your exposure (potentially mid capture.)
-* **\*VarC=C**  permanently store the current variable C into metadata field VarC, so this can be read back on next boot.  
-* **!$AR**  delay an action (like !R) with a variable amount of time, e.g. this will loop forever, doubling the sleep time with each interaction **=A$VARA<A1=A1=A*2!MVARA=A!$AR**
+* `=B$BITR`  load the contents of the BITR (bitrate) hack into variable B, otherwise store zero.  So you can test if a feature is enabled.
+* `=Tt:W` load the day of the week into variable T
+* `=Di` load the current ISO value into variable D
+* `$EVBS=E`  store the current into EV Bias hack, so you can make a variable mess with your exposure (potentially mid capture.)
+* `*VarC=C`  permanently store the current variable C into metadata field VarC, so this can be read back on next boot.  
+* `!$AR`  delay an action (like !R) with a variable amount of time, e.g. this will loop forever, doubling the sleep time with each interaction ** * `=A$VARA<A1=A1=A*2!MVARA=A!$AR`
 
 ### Why Add Math to QR codes
 
@@ -686,7 +685,7 @@ Say you want use a GoPro as a crude light meter, and report the output as an [ex
 
 EV = logbase2 (f-number^2/(time x gain_above_base_iso))  is the formula for EV<br>
 
-As a QR command: **=E6.25=Gi=G&#42;0.01=E/G=E&#42;s=E#2<courier>"Exposure value $E"</courier>!R**<br>
+As a QR command: `=E6.25=Gi=G*0.01=E/G=E*s=E#2"Exposure value $E"!R`<br>
 
 Command steps explained:
 > E=6.25<br>
