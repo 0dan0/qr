@@ -199,7 +199,7 @@ Note: Angles between 22 and 1 degrees are supported. Experiment for higher shutt
  * `e20` - 20s shutter 
  * `e30` - 30s shutter
 
-### GoPro MAX/360 Shooting Modes
+### GoPro MAX/360 Shooting Modes:
  * `mH` - mode Hero
  * `mHF` - mode Hero Front
  * `mHR` - mode Hero Rear
@@ -209,61 +209,61 @@ Note: Angles between 22 and 1 degrees are supported. Experiment for higher shutt
  * `mF` - mode monitor Front lens
  * `mR` - mode monitor Rear lens
  
-### GPS Active ###:
+### GPS Active:
  - `g0` or `gO`: GPS off
  - `g1` or `g`: GPS on
  
-### Quick Capture ###:
+### Quick Capture:
  - `q0` or `qO` : off
  - `q1` or `q1` : on
  
-### Voice Commands ###: 
+### Voice Commands:
  - `v0` or `vO`: off
  - `v1` or `v1`: on
  
 ### Option (‘o’) commands:
-#### Brightness of the LCDs ####: 
+#### Brightness of the LCDs: 
  - `oB0`: LCD brightness 0%
  - `oB1`: LCD 10%
  - `oB4`: LCD 40%
  - `oB7`: LCD 70%
  - `oB9`: LCD 100%
-#### Camera Auto Off Timer to preserve battery ####:
+#### Camera Auto Off Timer to preserve battery:
  - `oC0`: Never auto off
  - `oC1`: 1 min auto off
  - `oC5`: 5 min auto off
  - `oC15`: 15 min auto off
  - `oC30`: 30 min auto off
-#### Turn all the LCD screens off ####:
+#### Turn all the LCD screens off:
  - `oDO`: turn the LCDS off now
-#### LED tally lights to show when the camera is recording ####:
+#### LED tally lights to show when the camera is recording:
  - `oD0`: all LEDs off
  - `oD2`: some LEDs on
  - `oD4`: all LEDs on
-#### Protune Noise Reduction control (HERO13 only) ####:
+#### Protune Noise Reduction control (HERO13 only):
  - `oN0`: High
  - `oN1`: Medium 
  - `oN2`: Low
-#### Rotation, Camera Orientation ####:
+#### Rotation, Camera Orientation:
  - `oR0`: Auto orientation 
  - `oR1`: Up 
  - `oR2`: Down
  - `oR2`: Left
  - `oR3`: Right 
-#### Screen Auto Off ####:
+#### Screen Auto Off:
  - `oS0`: LCD screens never timeout
  - `oS1`: 1 min timeout
  - `oS3`: 3 min timeout
-#### Volume of Beeps ####:
+#### Volume of Beeps:
  - `oV0`: Muted
  - `oV1`: 10% volume
  - `oV3`: 30% volume
  - `oV7`: 70% volume
  - `oV9`: maximum volume
-#### Wireless/WiFi Connections ####:
+#### Wireless/WiFi Connections:
  - `oW0`: Wireless off 
  - `oW1`: Wireless on
-#### Front LCD controls ####:
+#### Front LCD controls:
  - `oF0` front LCD off
  - `oFU` UI info only
  - `oFF` Full image
@@ -274,13 +274,13 @@ Note: Angles between 22 and 1 degrees are supported. Experiment for higher shutt
  - `oF2` off in 2 mins
  - `oF3` off in 3 mins
  - `oF5` off in 5 mins
-#### External Audio options (via Media Mod) ####:
+#### External Audio options (via Media Mod):
  - `oE1` - Standard Mic
  - `oE2` - Standard+ Mic
  - `oE3` - Powered Mic
  - `oE4` - Powered+ Mic
  - `oE5` - Line In (HERO10-13)
-#### Language ####:
+#### Language:
  - `oL0` - English USA
  - `oL01` - English UK
  - `oL02` - English Aus
@@ -295,19 +295,19 @@ Note: Angles between 22 and 1 degrees are supported. Experiment for higher shutt
  - `oL8` - Portuaguese
  - `oL9` - Russian
  - `oL91` - Swedish
-#### Time and date ####:
+#### Time and date:
  **oT**yymmddhhmmss.sss for precision date and time e.g. `oT241208174033.556` for 2024 December 8, at 5:40:33.556pm 
  - `oTD1` for daylight savings on 
  - `oTD0` for daylight savings off
  - `oTZ-7` or `oTZ-420` e.g. -7 hour or -420 minutes timezone offset
  - `oTZ6` or `oTZ360` e.g. 6 hour or 360 minutes timezone offset
- #### Shortcut Menu Types (to be used with oSA, oSB, oSC and oSD) ####:
+ Shortcut Menu Types (to be used with oSA, oSB, oSC and oSD):
  * **oSAx** - Top Left Shortcut x is from the table below e.g. `oSA1` zoom is the top left
  * **oSBx** - Bottom Left Shortcut x is from the table below  `oSB5` ISO is the bottom left
  * **oSCx** - Top Right Shortcut x is from the table below  `oSC27` Hindsight is the top right
  * **oSDx** - Bottom Right Shortcut x is from the table below  `oSD6` shutter is the bottom right
 
-| Feature          | Feature        |Feature            |Feature               |
+| Shortcut Menu Feature                                                        |
 |------------------|----------------|-------------------|----------------------|
 |0 - clear shortcut|8  - burst rate |15 - ISO max       |24 - horizon control  |
 |1 - zoom          |9  - duration   |16 - mic type      |25 - speed ramp       |
