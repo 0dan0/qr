@@ -674,8 +674,8 @@ So if thought the above is crazy, it gets weirder.
 * `=Tt:W` load the day of the week into variable T
 * `=Di` load the current ISO value into variable D
 * `$EVBS=E`  store the current into EV Bias hack, so you can make a variable mess with your exposure (potentially mid capture.)
-* `*VarC=C`  permanently store the current variable C into metadata field VarC, so this can be read back on next boot.  
-* `!$AR`  delay an action (like !R) with a variable amount of time, e.g. this will loop forever, doubling the sleep time with each interaction ** * `=A$VARA<A1=A1=A*2!MVARA=A!$AR`
+* `*VARC=C`  permanently store the current variable C into metadata field VarC, so this can be read back on next boot.  
+* `!$AR`  delay an action (like !R) with a variable amount of time, e.g. `=A$VARA<A1=A1=A*2*VARA=A!$AR` this will loop forever, doubling the sleep time with each interation
 
 ### Why Add Math to QR codes
 
