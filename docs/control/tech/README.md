@@ -658,13 +658,13 @@ Now math can be used to modify your variables.
 * `=A+1.4` adds in form A = A + 1.4
 * `=D-2` subtraction D = D - 2  (note: assignments of negative numbers aren't support, but subtracting is. So `=D0=D-2` would initialize D to be -2, although =D0 is unnecessary as all variable are initialize to zero at boot.)
 * `=A*P` multiply A = A * P
-* `=E&#47;7` divide E = E &#47; 7
+* `=E/7` divide E = E &#47; 7
 * `=H^A` raised to a power H = H ^ A
 * `=F^0.5` raised to a power F = sqrt(F)
 * `=B%10` modulus  B = B % 10 
 * `=G#2` Log base N  G = log(G)/log(2) 
 * `=J&6` Bitwise AND like  J = (float)((int)J & 6) 
-* `=K&#124;3` Bitwise OR K = (float)((int)K &#124; 3) 
+* `=K|3` Bitwise OR K = (float)((int)K &#124; 3) 
 
 There should be a prize if some can come up with a practical use for all of these ;)
 
