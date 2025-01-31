@@ -5,6 +5,13 @@ Only the more recent releases are documented below. This a general list of Labs 
 
 ## HERO13 Black 
 
+### 1.30.72 - December 13, 2024
+- Added variable $f to determine how full the SD Card is. Returns -1 if the SD card is ejected, or storage remaining in GBytes. Use $f:U for storage used in GBytes. e.g. `$PMSG="$f GB"!R`
+- Added support for printing the contents of fourCCs directly `"bitrate $BITR"` and `"Owner $OWNR"` are now supported.
+- Fixed range time conditional in form >time<time(TRUE)~(FALSE) the else wasn't be processed.
+- Fixed for scripts Photo follow by a sleep.
+- Fixed WBDV red channel clipping (overflow).
+
 ### 1.30.70 - November 21, 2024
 - Added WBDV - White Balance DiVe improvements. Rather than WARM for improving diving white balance, which effects WB the same at all depths, 
 WBDV is more automatic -- as the scene get more blue, the more the red channel is gain up. Currently $WBDV=1 is uses =2.33,4.0 internally 
@@ -34,9 +41,9 @@ e.g. $BITR or $A or $p:T to read variables.
 - Fixed crash with creating presets through the menus.  If instability presists, reset the presets.
 
 ### 1.10.70 - September 10, 2024
-- Added STOP=x for Stop Motion where is x the number for frame to store per shutter press. Works great with the remote. Mode button ends capture.  
+- Added STOP=x A Stop Motion extension where is x the number for frames to store per shutter press. This modify timelapse video. It is recommend to make a stop motion preset with this command ```mT$PRES="0,STOP"mTr5Xp4``` Works great with the remote. Mode button ends capture. 
 - Added ONIO=x Onion percentage used for Stop Motion where is x the precentage of transparency of the onion skin.  
-- Added DIST=x Time-Lapse Video Distance, x is a GPS travel distance, rather than time for an in-camera computed timelapse. When x=1 10m will be used.   
+- Added DIST=x Time-Lapse Video Distance, x is a GPS travel distance between exposures in meters, rather than time for an in-camera computed timelapse. So $DIST=5 will set a 5 meter interval for TLV. One exception is when x=1, 10 meters will be used, 1 meter is too noisy (GPS errors.) So this feature is good for 2 meters of larger. For shorter distances or a higher speed, you the new TLV sample rate for 4Hz (p4), for the best distance precision. e.g. mTr5Xp4$DIST=5
 - Added DIVE=1 - optimizing the Hypersmooth stabilization for underwater. The water refractive index defaults to 1.335 (good for fresh and command salt water), if you know your area RI is significantly different DIVE=r where r can be 1.3 to 1.45 is supported.
 - Added WARM=x and COOL=x to offset white balance.  WARM is good to use with DIVE, so you can improve the red respond for deeper dives. 
 - Added RLTC=1 to enable LTC timecode reading from line-in audio 
@@ -80,11 +87,23 @@ For advanced Labs users, preset names can call macros. Warning: don't put perman
 
 ## HERO12 Black 
 
+### 2.32.70 - December 12, 2024
+- Added variable $f to determine how full the SD Card is. Returns -1 if the SD card is ejected, or storage remaining in GBytes. Use $f:U for storage used in GBytes. e.g. `$PMSG="$f GB"!R`
+- Added support for printing the contents of fourCCs directly `"bitrate $BITR"` and `"Owner $OWNR"` are now supported.
+- Added SHEL - Using $SHEL=1 enables a command shell for Labs over a USB serial port. Every experimental, and looking for feedback. 
+Connect to COM at 115200 8N1. All QR code command work, just type them. Used $ commands will report their data back to the shell, 
+e.g. $BITR or $A or $p:T to read variables.
+- Fixed range time conditional in form >time<time(TRUE)~(FALSE) the else wasn't be processed.
+- Fixed for scripts Photo follow by a sleep.
+- Fixed WBDV red channel clipping (overflow).
+- Fixed voice control enabling in Labs
+
+
 ### 2.30.70 - November 13, 2024
 - Added *DRFT=1 for automatic clock fix.
 - Added *DRFS=-11.3 for a fixed clock fix.
 - Added mPp1 or p.5 for interval photo
-- Added STOP=x for Stop Motion where is x the number for frame to store per shutter press. Works great with the remote. Mode button ends capture.  
+- Added STOP=x A Stop Motion extension where is x the number for frames to store per shutter press. This modify timelapse video. It is recommend to make a stop motion preset with this command ```mT$PRES="0,STOP"mTr5Xp4``` Works great with the remote. Mode button ends capture. 
 - Added ONIO=x Onion percentage used for Stop Motion where is x the precentage of transparency of the onion skin.  
 - Added DIVE=1 - optimizing the Hypersmooth stabilization for underwater. The water refractive index defaults to 1.335 (good for fresh and salt water), if you know your area RI is significantly different DIVE=r where r can be 1.3 to 1.45 is supported.
 - Added WARM=x and COOL=x to offset white balance.  WARM is good to use with DIVE, so you can improve the red respond for deeper dives. 
@@ -147,7 +166,7 @@ For advanced Labs users, preset names can call macros. Warning: don't put perman
 
 ### 2.00.70 - Dec 14, 2023
 - Added FEAT - Display the Labs feature you have active, without have to reboot the camera. e.g. oMFEAT=4 <- display for 4 seconds.
-- Added creating, naming and sharing presets oMPRES="1,MyPreset" 0-18 for icon selection, -1 for delete 
+- Added creating, naming and sharing presets oMPRES="1,MyPreset" 0-22 for icon selection, -1 for delete 
 - Added FONT=1 Select the old fonts (if you only want the dot matrix font)
 - Added GRAB=x screen grab x-frames, !F (grab now) and !F3 (grab next 3 Labs overlays) - frame grab the UI.  Useful for education and bug reporting
 - Added font color for script messaging. e.g. try this QR Code ```"\1H\2e\3l\4l\5o \6W\7o\8r\1l\2d" ```
@@ -188,7 +207,14 @@ For advanced Labs users, preset names can call macros. Warning: don't put perman
 - Enhanced support for the new Blockly visual scripting tool [https://gopro.github.io/labs/build/](https://gopro.github.io/labs/build/)
 
 
-## HERO11 Black 
+## HERO11 Black
+
+
+### 2.32.70 - Jan 21, 2025
+- Added variable $f to determine how full the SD Card is. Returns -1 if the SD card is ejected, or storage remaining in GBytes. Use $f:U for storage used in GBytes. e.g. `$PMSG="$f GB"!R`
+- Added support for printing the contents of permanent fourCCs directly `"bitrate $BITR"` and `"Owner $OWNR"` are now supported.
+- general labs scripting bug fixes.
+
 
 ### 2.30.70 - Mar 14, 2024
 - Added *wxyz, permanent storage, is the simplified version of !Mwxyz, e.g. *BITR=160
@@ -616,6 +642,6 @@ Display the current mode with with this command:  ```"mode $v"!R``` or fast/clea
 
 
 
-updated: November 21, 2024
+updated: January 25, 2025
 
 [Learn more](..) on QR Control
