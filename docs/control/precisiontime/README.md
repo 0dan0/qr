@@ -147,7 +147,11 @@ function makeQR() {
   if(once === true)
   {
   	id = getMachineId();  // 5 character 10-base, so up to 17-bit ID
-	freshrate = Math.trunc(getRefreshRate() / 2) * 2;
+	
+	var rate = getRefreshRate();
+	if(rate < 30) freshrate = 30;
+	else if(rate < 240) freshrate = 240;
+	else freshrate = Math.trunc(rate * 0.5 + 0.5) * 2;
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
       text : "oT0",
