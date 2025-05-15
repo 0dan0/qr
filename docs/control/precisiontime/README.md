@@ -45,6 +45,36 @@ var id = 0;
 var freshrate = 60;
 
 
+/**
+ * Measure the current display refresh rate.
+ * @param {number} sampleCount – number of frames to time (= 10 recommended).
+ * @returns {Promise<number>}  – estimated refresh rate in Hz.
+ */
+function getRefreshRate(sampleCount = 120) {
+  return new Promise(resolve => {
+    const times = new Array(sampleCount);
+    let i = 0;
+
+    function step(t) {
+      if (i > 0) times[i - 1] = t;         // store the time *after* the first frame
+      if (i < sampleCount) {
+        i++;
+        requestAnimationFrame(step);
+      } else {
+        // ?t between successive rAFs
+        const deltas = times.slice(1).map((t, idx) => t - times[idx]);
+        // Filter out obvious outliers caused by tab-switching / throttling
+        const median  = deltas.sort((a, b) => a - b)[Math.floor(deltas.length / 2)];
+        const rateHz  = 1000 / median;
+        resolve(Math.round(rateHz * 100) / 100); // round to 0.01 Hz
+      }
+    }
+
+    requestAnimationFrame(step);
+  });
+}
+
+
 function id5() {  // 5 characters, so up to 17-bit ID
   return ([1111]+1).replace(/1/g, c =>
     (c ^ crypto.getRandomValues(new Uint8Array(1))[0] % 10 >> c / 4).toString()
@@ -123,6 +153,7 @@ function makeQR() {
   if(once === true)
   {
   	id = getMachineId();  // 5 character 10-base, so up to 17-bit ID
+	freshrate = getRefreshRate();
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
       text : "oT0",
@@ -330,7 +361,6 @@ for(j=0;j<1000;j++)
 
 alert("done");
 */   
-
 
 function timeLoop()
 {
