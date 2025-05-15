@@ -17,7 +17,7 @@
 
 **Daylight Saving Time** <input type="checkbox" id="tdid" name="tdid"> <label for="tdid">Active</label><br>
 
-**Refresh rate** <input type="range" id="rate" name="rate" min="1" max="240" value="60" style="width: 300px;"><label for="rate"></label>&nbsp;&nbsp;<b id="ratetext"></b>
+**Refresh rate** <input type="range" id="rte" name="rte" min="1" max="240" value="60" style="width: 239px;"><label for="rte"></label>&nbsp;&nbsp;<b id="rtetext"></b> Hz
 
 Simply point your Labs enabled camera at this animated QR Code, to set your date and time very accurately to local time. This is particularly useful for multi-camera shoots, as it helps synchronize the timecode between cameras. As the camera's internal clock will drift slowly over time, use this QR Code just before your multi-camera shoot for the best synchronization. 
 
@@ -105,10 +105,10 @@ function setTZ() {
 	document.getElementById("tzmin").innerHTML = -m;	
   }
   
-  if(document.getElementById("rate") !== null)
+  if(document.getElementById("rte") !== null)
   {
-	document.getElementById("rate").value = freshrate;	
-	document.getElementById("ratetext").innerHTML = freshrate;	
+	document.getElementById("rte").value = freshrate;	
+	document.getElementById("rtetext").innerHTML = freshrate;	
   }
   
   if(document.getElementById("tdid") !== null)
@@ -373,10 +373,10 @@ function timeLoop()
 		tz = tz/60;  // only need hours when precise.
   }
   
-  if(document.getElementById("rate") !== null)
+  if(document.getElementById("rte") !== null)
   {
-	freshrate = parseInt(document.getElementById("rate").value);	
-	document.getElementById("tztext").innerHTML = freshrate;	
+	freshrate = parseInt(document.getElementById("rte").value);	
+	document.getElementById("rtetext").innerHTML = freshrate;	
   }
 
   var td = 0;
