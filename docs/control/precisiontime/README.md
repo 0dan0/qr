@@ -45,11 +45,6 @@ var id = 0;
 var freshrate = 60;
 
 
-/**
- * Measure the current display refresh rate.
- * @param {number} sampleCount – number of frames to time (= 10 recommended).
- * @returns {Promise<number>}  – estimated refresh rate in Hz.
- */
 function getRefreshRate(sampleCount = 120) {
   return new Promise(resolve => {
     const times = new Array(sampleCount);
@@ -73,7 +68,6 @@ function getRefreshRate(sampleCount = 120) {
     requestAnimationFrame(step);
   });
 }
-
 
 function id5() {  // 5 characters, so up to 17-bit ID
   return ([1111]+1).replace(/1/g, c =>
