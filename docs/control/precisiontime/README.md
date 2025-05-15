@@ -45,7 +45,7 @@ var id = 0;
 var freshrate = 60;
 
 
-function getRefreshRate(sampleCount = 120) {
+function getRefreshRate(sampleCount = 60) {
   return new Promise(resolve => {
     const times = new Array(sampleCount);
     let i = 0;
@@ -60,7 +60,7 @@ function getRefreshRate(sampleCount = 120) {
         const deltas = times.slice(1).map((t, idx) => t - times[idx]);
         // Filter out obvious outliers caused by tab-switching / throttling
         const median  = deltas.sort((a, b) => a - b)[Math.floor(deltas.length / 2)];
-        const rateHz  = 1000 / median;
+        const rateHz  = 2 * (Math.trunc(((1000 / median)/2)+0.5));
         resolve(Math.round(rateHz * 100) / 100); // round to 0.01 Hz
       }
     }
