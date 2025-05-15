@@ -33,7 +33,7 @@ QR Command: <b id="qrtext"></b>
 
 **Compatibility:** Labs enabled HERO5 Session, HERO7-13, MAX and BONES 
         
-updated: September 10, 2024
+updated: May 15, 2025
 
 [Learn more](..) back to QR Controls
 
@@ -67,6 +67,7 @@ function getRefreshRate(sampleCount = 120) {
     requestAnimationFrame(step);
   });
 }
+
 
 function id5() {  // 5 characters, so up to 17-bit ID
   return ([1111]+1).replace(/1/g, c =>
@@ -146,7 +147,7 @@ function makeQR() {
   if(once === true)
   {
   	id = getMachineId();  // 5 character 10-base, so up to 17-bit ID
-	freshrate = getRefreshRate();
+	freshrate = Math.trunc(getRefreshRate() / 2) * 2;
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
       text : "oT0",
