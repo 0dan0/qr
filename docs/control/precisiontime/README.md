@@ -61,7 +61,7 @@ function getRefreshRate(sampleCount = 120) {
         i++;
         requestAnimationFrame(step);
       } else {
-        // ?t between successive rAFs
+        // Delta between successive rAFs
         const deltas = times.slice(1).map((t, idx) => t - times[idx]);
         // Filter out obvious outliers caused by tab-switching / throttling
         const median  = deltas.sort((a, b) => a - b)[Math.floor(deltas.length / 2)];
