@@ -404,12 +404,12 @@ function timeLoop()
   var df60 = nonDropframeToDropframeFast(tc60, 60);
  
   document.getElementById("tctext24").innerHTML = tc24;  
- //document.getElementById("tctext25").innerHTML = tc25;  
- //document.getElementById("tctext30").innerHTML = tc30;  
- //document.getElementById("dftext30").innerHTML = df30;  
- //document.getElementById("tctext50").innerHTML = tc50;  
- //document.getElementById("tctext60").innerHTML = tc60;
- //document.getElementById("dftext60").innerHTML = df60;
+  document.getElementById("tctext25").innerHTML = tc25;  
+  document.getElementById("tctext30").innerHTML = tc30;  
+  document.getElementById("dftext30").innerHTML = df30;  
+  document.getElementById("tctext50").innerHTML = tc50;  
+  document.getElementById("tctext60").innerHTML = tc60;
+  document.getElementById("dftext60").innerHTML = df60;
   
   var tdelta = tnow - tlast;
   if(starttime == 0)
