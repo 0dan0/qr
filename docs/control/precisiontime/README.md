@@ -347,8 +347,9 @@ function timeLoop()
   mm = padTime(mm);
   dd = padTime(dd);
   
+  var tnow = performance.now() / 1000;
+  
   var tmilli = (ms/1000) + s + (m * 60) + (h * 60 * 60);
-  var tnow = tmilli;
   tmilli /= 1.001; //29.97 vs 30.0
   var fixtmilli = tmilli;
   
@@ -439,6 +440,7 @@ function timeLoop()
   tlast = tnow;
   
   requestAnimationFrame(timeLoop);
+  
   //var t;
   //if(fps > 60) 
   //   t = setTimeout(timeLoop, 10);
