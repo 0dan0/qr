@@ -143,14 +143,17 @@ function renderQRToCanvas(data) {
 	  else
 	    qrCtx.fillStyle = qr.isDark(row, col) ? "#000" : "#fff";
 	 
-      qrCtx.fillRect((col+1) * tileSize, (row+3) * tileSize, tileSize, tileSize);
+      qrCtx.fillRect((col+2) * tileSize, (row+2) * tileSize, tileSize, tileSize);
     }
   }
   
   frame_num++;
   qrCtx.fillStyle = frame_num & 1 ? "#000" : "#fff";
-  for (let col = 0; col < count; col++)
-	qrCtx.fillRect(col * tileSize, 0, tileSize, tileSize);
+  for (let col = 0; col < count+4; col++)
+  {
+	qrCtx.fillRect(0, col * tileSize, 0, tileSize, tileSize);
+	qrCtx.fillRect((count+1)*tileSize, col * tileSize, 0, tileSize, tileSize);
+  }
 }
 
 
