@@ -20,7 +20,6 @@
 Simply point your Labs enabled camera at this animated QR Code, to set your date and time very accurately to local time. This is particularly useful for multi-camera shoots, as it helps synchronize the timecode between cameras. As the camera's internal clock will drift slowly over time, use this QR Code just before your multi-camera shoot for the best synchronization. 
 
 <center>
-<br>
 <canvas id="qr-canvas" width="360" height="360" style="image-rendering: pixelated;"></canvas>
 <br>
 TC 24: <b id="tctext24"></b><br>
