@@ -430,7 +430,11 @@ function timeLoop()
     starttime += (tnow - starttime)/2;
   }
    
-  var t = setTimeout(timeLoop, 10);
+  var t;
+  if(fps > 50) 
+     t = setTimeout(timeLoop, 10);
+  else
+     t = setTimeout(timeLoop, 2);
 }
 
 function myReloadFunction() {
