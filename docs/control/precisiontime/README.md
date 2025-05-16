@@ -326,6 +326,7 @@ alert("done");
 
 var starttime = 0;
 var updates = 0;
+var fps = "1";
 
 function timeLoop()
 {
@@ -408,7 +409,6 @@ function timeLoop()
   document.getElementById("tctext60").innerHTML = tc60;
   document.getElementById("dftext60").innerHTML = df60;
    
-  var fps = "1";
   if(starttime == 0)
   {
     updates = 0;
@@ -418,10 +418,17 @@ function timeLoop()
   {
     updates = updates + 1;
     var secs = (ms/1000) + s + (m * 60) + (h * 60 * 60);
-    fps = updates / (secs - starttime);
+	if(updates > 5)
+		fps = updates / (secs - starttime);
   }
   
   document.getElementById("fpstext").innerHTML = fps;
+   
+  if(updates > 1000)
+  {
+	updates = 0;
+	starttime = 0;
+  }
    
   var t = setTimeout(timeLoop, 10);
 }
