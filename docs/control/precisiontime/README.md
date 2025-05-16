@@ -379,13 +379,13 @@ function step()
   if(starttime == 0)
   {
     steps = 0;
-	starttime = h * 3600 + m * 60 + s + ms/1000;
+	starttime = (ms/1000) + s + (m * 60) + (h * 60 * 60);
   }
   else
   {
-    steps++;
-	var secs = h * 3600 + m * 60 + s + ms/1000;
-	fps = (secs - starttime)/step + " fps";
+    steps = steps + 1;
+	var secs = (ms/1000) + s + (m * 60) + (h * 60 * 60);
+	fps = "Fps:" + (secs - starttime)/step;
   }
   
   yy = padTime(yy);
