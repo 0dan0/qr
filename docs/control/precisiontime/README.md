@@ -385,7 +385,7 @@ function step()
   {
     steps = steps + 1;
 	var secs = (ms/1000) + s + (m * 60) + (h * 60 * 60);
-	fps = "Fps:" + (secs - starttime)/steps;
+	fps = steps / (secs - starttime) + "fps";
   }
   
   yy = padTime(yy);
