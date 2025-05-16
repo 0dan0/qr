@@ -120,6 +120,7 @@ function makeQR() {
   qrCtx = qrCanvas.getContext("2d");
 }
 
+var frame_num = 0;
 function renderQRToCanvas(data) {
   const qr = qrcode(0, 'M');  // Type number auto
   qr.addData(data);
@@ -127,7 +128,7 @@ function renderQRToCanvas(data) {
 
   const count = qr.getModuleCount();
   const size = qrCanvas.width;
-  const tileSize = Math.floor(size / (count+2));
+  const tileSize = Math.floor(size / (count+4));
   
   var stone_size = 7;
   qrCtx.clearRect(0, 0, size, size);
@@ -142,9 +143,14 @@ function renderQRToCanvas(data) {
 	  else
 	    qrCtx.fillStyle = qr.isDark(row, col) ? "#000" : "#fff";
 	 
-      qrCtx.fillRect((col+1) * tileSize, (row+1) * tileSize, tileSize, tileSize);
+      qrCtx.fillRect((col+1) * tileSize, (row+3) * tileSize, tileSize, tileSize);
     }
   }
+  
+  frame_num++;
+  qrCtx.fillStyle = frame_num & 1 ? "#000" : "#fff";
+  for (let col = 0; col < count; col++) {
+	qrCtx.fillRect(col * tileSize, 0, tileSize, tileSize);
 }
 
 
