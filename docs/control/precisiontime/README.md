@@ -442,7 +442,7 @@ function timeLoop()
   if(fps > 60) 
      t = setTimeout(timeLoop, 10);
   else
-     t = setTimeout(timeLoop, 1);
+     t = setTimeout(timeLoop, 0);
 }
 
 function myReloadFunction() {
