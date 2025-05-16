@@ -1,7 +1,7 @@
 # Precision Date and Time (Local)
 
 <script src="../../jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/qrcode-generator/qrcode.js"></script>
+<script src="../../qrcode_canvas.js"></script>
 <style>
         #qrcode{
             width: 100%;
