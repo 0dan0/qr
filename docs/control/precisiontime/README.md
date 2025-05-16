@@ -424,17 +424,17 @@ function timeLoop()
   
   document.getElementById("fpstext").innerHTML = Math.trunc(fps*100)/100;
    
-  if(updates > 200)
+  if(updates > 100)
   {
-    updates = 100;
+    updates = 50;
     starttime += (tnow - starttime)/2;
   }
    
   var t;
-  if(fps > 50) 
+  if(fps > 60) 
      t = setTimeout(timeLoop, 10);
   else
-     t = setTimeout(timeLoop, 2);
+     t = setTimeout(timeLoop, 1);
 }
 
 function myReloadFunction() {
