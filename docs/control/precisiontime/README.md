@@ -1,23 +1,15 @@
 # Precision Date and Time (Local)
 
 <script src="../../jquery.min.js"></script>
-<script src="../../qrcodeborder.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator/qrcode.js"></script>
 <style>
-        #qrcode * {
-		  position: absolute !important;
-		  top: 0; left: 0;
-		}
-		#qrcode {
-		  width: 360px;
-		  height: 360px;
-		  position: relative;
-		  overflow: hidden;
-		}
+        #qrcode{
+            width: 100%;
+        }
         div{
             width: 100%;
             display: inline-block;
         }
-		
 </style>
 
 
@@ -28,7 +20,7 @@
 Simply point your Labs enabled camera at this animated QR Code, to set your date and time very accurately to local time. This is particularly useful for multi-camera shoots, as it helps synchronize the timecode between cameras. As the camera's internal clock will drift slowly over time, use this QR Code just before your multi-camera shoot for the best synchronization. 
 
 <center>
-<div id="qrcode"></div><br>
+<canvas id="qr-canvas" width="360" height="360" style="image-rendering: pixelated;"></canvas>
 TC 24: <b id="tctext24"></b><br>
 TC 25: <b id="tctext25"></b><br>
 NDF 30: <b id="tctext30"></b>   DF 30: <b id="dftext30"></b><br>
@@ -120,7 +112,33 @@ function setTZ() {
   }
 }
 
-function makeQR() {	
+let qrCanvas, qrCtx;
+
+function makeQR() {
+  qrCanvas = document.getElementById("qr-canvas");
+  qrCtx = qrCanvas.getContext("2d");
+}
+
+function renderQRToCanvas(data) {
+  const qr = qrcode(0, 'M');  // Type number auto
+  qr.addData(data);
+  qr.make();
+
+  const count = qr.getModuleCount();
+  const size = qrCanvas.width;
+  const tileSize = size / count;
+
+  qrCtx.clearRect(0, 0, size, size);
+  for (let row = 0; row < count; row++) {
+    for (let col = 0; col < count; col++) {
+      qrCtx.fillStyle = qr.isDark(row, col) ? "#000" : "#fff";
+      qrCtx.fillRect(col * tileSize, row * tileSize, tileSize, tileSize);
+    }
+  }
+}
+
+
+function makeQROld() {	
   if(once === true)
   {
   	id = getMachineId();  // 5 character 10-base, so up to 17-bit ID
@@ -368,8 +386,11 @@ function timeLoop()
   }
 
   cmd = "oT" + yy + mm + dd + h + m + s + "." + ms + "oTD" + td + "oTZ" + tz + "oTI" + id;
-  qrcode.clear(); 
-  qrcode.makeCode(cmd);
+  
+  renderQRToCanvas(cmd);
+  //qrcode.clear(); 
+  //qrcode.makeCode(cmd);
+  
   setText("qrtext", cmd);
   
   var tc25 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 25 / 1000));
