@@ -129,10 +129,13 @@ function renderQRToCanvas(data) {
   const size = qrCanvas.width;
   const tileSize = Math.floor(size / (count+2));
   
+  var stone_size = 7;
   qrCtx.clearRect(0, 0, size, size);
   for (let row = 0; row < count; row++) {
     for (let col = 0; col < count; col++) {
       qrCtx.fillStyle = qr.isDark(row, col) ? "#000" : "#fff";
+	  if(row < stone_size && col < stone_size)
+		qrCtx.fillStyle = "#007";
       qrCtx.fillRect((col+1) * tileSize, (row+1) * tileSize, tileSize, tileSize);
     }
   }
