@@ -357,7 +357,10 @@ for(j=0;j<1000;j++)
 alert("done");
 */   
 
-function timeLoop()
+var starttime = 0;
+var steps = 0;
+
+function step() 
 {
   var today;
   var yy,mm,dd,h,m,s;
@@ -371,6 +374,20 @@ function timeLoop()
   m = today.getMinutes();
   s = today.getSeconds();
   ms = today.getMilliseconds();
+  
+  var fps = "1";
+  if(starttime == 0)
+  {
+    steps = 0;
+	starttime = h * 3600 + m * 60 + s + ms/1000;
+  }
+  else
+  {
+    steps++;
+	var secs = h * 3600 + m * 60 + s + ms/1000;
+	fps = (secs - starttime)/step + " fps";
+  }
+  
   yy = padTime(yy);
   mm = padTime(mm);
   dd = padTime(dd);
@@ -429,22 +446,27 @@ function timeLoop()
   m = padTime(m);
   s = padTime(s);
    
-  var tc24 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 24 / 1000));
+  //var tc24 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 24 / 1000));
   var tc30 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 30 / 1000));
   var tc60 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 60 / 1000));
  
   var df30 = nonDropframeToDropframeFast(tc30, 30);
   var df60 = nonDropframeToDropframeFast(tc60, 60);
  
-  document.getElementById("tctext24").innerHTML = tc24;  
+  document.getElementById("tctext24").innerHTML = fps;//tc24;  
   document.getElementById("tctext25").innerHTML = tc25;  
   document.getElementById("tctext30").innerHTML = tc30;  
   document.getElementById("dftext30").innerHTML = df30;  
   document.getElementById("tctext50").innerHTML = tc50;  
   document.getElementById("tctext60").innerHTML = tc60;
   document.getElementById("dftext60").innerHTML = df60;
-   
-  var t = setTimeout(timeLoop, Math.trunc(1000/freshrate));
+}
+
+
+function timeLoop()
+{
+  requestAnimationFrame(step);
+  var t = setTimeout(timeLoop,1);
 }
 
 function myReloadFunction() {
