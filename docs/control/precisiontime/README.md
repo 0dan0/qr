@@ -325,6 +325,7 @@ alert("done");
 */   
 
 var starttime = 0;
+var updates = 0;
 
 function timeLoop()
 {
@@ -410,14 +411,14 @@ function timeLoop()
   var fps = "1";
   if(starttime == 0)
   {
-    steps = 0;
+    updates = 0;
     starttime = (ms/1000) + s + (m * 60) + (h * 60 * 60);
   }
   else
   {
-    steps = steps + 1;
+    updates = updates + 1;
     var secs = (ms/1000) + s + (m * 60) + (h * 60 * 60);
-    fps = steps / (secs - starttime);
+    fps = updates / (secs - starttime);
   }
   
   document.getElementById("fpstext").innerHTML = fps;
