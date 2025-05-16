@@ -436,8 +436,8 @@ function step()
 
 function timeLoop()
 {
- while(1)
-   requestAnimationFrame(step);
+  requestAnimationFrame(step);
+  var t = setTimeout(timeLoop,2);
 }
 
 function myReloadFunction() {
