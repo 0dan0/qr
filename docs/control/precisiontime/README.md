@@ -135,7 +135,9 @@ function renderQRToCanvas(data) {
     for (let col = 0; col < count; col++) {
       if(row < stone_size && col < stone_size)
 		qrCtx.fillStyle = qr.isDark(row, col) ? "#007" : "#fff";
-	  else if(row > count-stone_size && col < stone_size)
+	  else if(row >= count-stone_size && col < stone_size)
+		qrCtx.fillStyle = qr.isDark(row, col) ? "#007" : "#fff";
+	  else if(col >= count-stone_size && row < stone_size)
 		qrCtx.fillStyle = qr.isDark(row, col) ? "#007" : "#fff";
 	  else
 	    qrCtx.fillStyle = qr.isDark(row, col) ? "#000" : "#fff";
