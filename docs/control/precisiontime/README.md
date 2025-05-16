@@ -27,8 +27,8 @@ NDF 30: <b id="tctext30"></b>   DF 30: <b id="dftext30"></b><br>
 TC 50: <b id="tctext50"></b><br>
 NDF 60: <b id="tctext60"></b>   DF 60: <b id="dftext60"></b><br>
 </center>
-QR Command: <b id="qrtext"></b>
-fps: <b id="fpstext"> Hz</b>
+QR Command: <b id="qrtext"></b><br>
+fps: <b id="fpstext"> Hz<br>
 
 **Compatibility:** Labs enabled HERO5 Session, HERO7-13, MAX and BONES 
 		
@@ -347,6 +347,7 @@ function timeLoop()
   dd = padTime(dd);
   
   var tmilli = (ms/1000) + s + (m * 60) + (h * 60 * 60);
+  var tnow = tmilli;
   tmilli /= 1.001; //29.97 vs 30.0
   var fixtmilli = tmilli;
   
@@ -412,22 +413,21 @@ function timeLoop()
   if(starttime == 0)
   {
     updates = 0;
-    starttime = (ms/1000) + s + (m * 60) + (h * 60 * 60);
+    starttime = tnow;
   }
   else
   {
     updates = updates + 1;
-    var secs = (ms/1000) + s + (m * 60) + (h * 60 * 60);
-	if(updates > 5)
-		fps = updates / (secs - starttime);
+    if(updates > 5)
+      fps = updates / (tnow - starttime);
   }
   
   document.getElementById("fpstext").innerHTML = fps;
    
   if(updates > 1000)
   {
-	updates = 0;
-	starttime = 0;
+    updates = 0;
+    starttime = 0;
   }
    
   var t = setTimeout(timeLoop, 10);
