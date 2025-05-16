@@ -465,7 +465,7 @@ function newtime()
 
 function timeLoop()
 {
-  newtime();
+  requestAnimationFrame(newtime);
   var t = setTimeout(timeLoop,1);
 }
 
