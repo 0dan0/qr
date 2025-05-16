@@ -149,11 +149,8 @@ function renderQRToCanvas(data) {
   
   frame_num++;
   qrCtx.fillStyle = frame_num & 1 ? "#000" : "#fff";
-  for (let col = 0; col < count+4; col++)
-  {
-	qrCtx.fillRect(0, col * tileSize, 0, tileSize, tileSize);
-	qrCtx.fillRect((count+1)*tileSize, col * tileSize, 0, tileSize, tileSize);
-  }
+  qrCtx.fillRect(0, 0, tileSize, tileSize*(count+4));
+  qrCtx.fillRect(tileSize*(count+3), 0, tileSize, tileSize*(count+4));
 }
 
 
