@@ -417,9 +417,9 @@ function timeLoop()
   {
     steps = steps + 1;
     var secs = (ms/1000) + s + (m * 60) + (h * 60 * 60);
-    fps = steps / (secs - starttime)";
+    fps = steps / (secs - starttime);
   }
-   
+  
   document.getElementById("fpstext").innerHTML = fps;
    
   var t = setTimeout(timeLoop, 10);
