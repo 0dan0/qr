@@ -434,14 +434,14 @@ function timeLoop()
       fps = updates / (tnow - starttime);
   }
   
-  setText("fpstext", Math.trunc(fps*100)/100);
+  setText("fpstext", Math.trunc(fps*10)/10);
    
-  if(updates > 100)
+  if(updates > 400)
   {
-    updates = 50;
+    updates = 200;
     starttime += (tnow - starttime)/2;
   }
-  if(tdelta > 1 && tlast > 0)
+  if(tdelta > 0.2 && tlast > 0)
   {
     updates = 0;
 	starttime = tnow;
