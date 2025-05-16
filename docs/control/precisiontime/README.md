@@ -133,9 +133,13 @@ function renderQRToCanvas(data) {
   qrCtx.clearRect(0, 0, size, size);
   for (let row = 0; row < count; row++) {
     for (let col = 0; col < count; col++) {
-      qrCtx.fillStyle = qr.isDark(row, col) ? "#000" : "#fff";
-	  if(row < stone_size && col < stone_size)
-		qrCtx.fillStyle = "#007";
+      if(row < stone_size && col < stone_size)
+		qrCtx.fillStyle = qr.isDark(row, col) ? "#007" : "#fff";
+	  else if(row > count-stone_size && col < stone_size)
+		qrCtx.fillStyle = qr.isDark(row, col) ? "#007" : "#fff";
+	  else
+	    qrCtx.fillStyle = qr.isDark(row, col) ? "#000" : "#fff";
+	 
       qrCtx.fillRect((col+1) * tileSize, (row+1) * tileSize, tileSize, tileSize);
     }
   }
