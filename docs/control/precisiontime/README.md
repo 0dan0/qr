@@ -17,8 +17,6 @@
 
 **Daylight Saving Time** <input type="checkbox" id="tdid" name="tdid"> <label for="tdid">Active</label><br>
 
-**Refresh rate** <input type="range" id="rte" name="rte" min="2" max="240" value="60" style="width: 238px;"><label for="rte"></label>&nbsp;&nbsp;<b id="rtetext"></b> Hz
-
 Simply point your Labs enabled camera at this animated QR Code, to set your date and time very accurately to local time. This is particularly useful for multi-camera shoots, as it helps synchronize the timecode between cameras. As the camera's internal clock will drift slowly over time, use this QR Code just before your multi-camera shoot for the best synchronization. 
 
 <center>
@@ -42,33 +40,6 @@ var once = true;
 var qrcode;
 var cmd = "";
 var id = 0;
-var freshrate = 60;
-
-/*
-function getRefreshRate(sampleCount = 120) {
-  return new Promise(resolve => {
-    const times = new Array(sampleCount);
-    let i = 0;
-
-    function step(t) {
-      if (i > 0) times[i - 1] = t;         // store the time *after* the first frame
-      if (i < sampleCount) {
-        i++;
-        requestAnimationFrame(step);
-      } else {
-        // Delta between successive rAFs
-        const deltas = times.slice(1).map((t, idx) => t - times[idx]);
-        // Filter out obvious outliers caused by tab-switching / throttling
-        const median  = deltas.sort((a, b) => a - b)[Math.floor(deltas.length / 2)];
-        const rateHz  = 1000 / median;
-        resolve(2*Math.round(rateHz/2)); // round to 2 Hz
-      }
-    }
-
-    requestAnimationFrame(step);
-  });
-}
-*/
 
 function id5() {  // 5 characters, so up to 17-bit ID
   return ([1111]+1).replace(/1/g, c =>
@@ -465,8 +436,8 @@ function step()
 
 function timeLoop()
 {
-  requestAnimationFrame(step);
-  var t = setTimeout(timeLoop,1);
+ while(1)
+   requestAnimationFrame(step);
 }
 
 function myReloadFunction() {
