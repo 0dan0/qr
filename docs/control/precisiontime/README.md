@@ -3,13 +3,21 @@
 <script src="../../jquery.min.js"></script>
 <script src="../../qrcodeborder.js"></script>
 <style>
-        #qrcode{
-            width: 100%;
-        }
+        #qrcode * {
+		  position: absolute !important;
+		  top: 0; left: 0;
+		}
+		#qrcode {
+		  width: 360px;
+		  height: 360px;
+		  position: relative;
+		  overflow: hidden;
+		}
         div{
             width: 100%;
             display: inline-block;
         }
+		
 </style>
 
 
@@ -119,8 +127,8 @@ function makeQR() {
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
       text : "oT0",
-      width : 180,
-      height : 180,
+      width : 360,
+      height : 360,
       correctLevel : QRCode.CorrectLevel.M
     });
     once = false;
