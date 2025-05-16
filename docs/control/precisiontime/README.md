@@ -128,13 +128,13 @@ function renderQRToCanvas(data) {
 
   const count = qr.getModuleCount();
   const size = qrCanvas.width;
-  const tileSize = size / count+2;
+  const tileSize = size / (count+2);
 
   qrCtx.clearRect(0, 0, size, size);
   for (let row = 0; row < count; row++) {
     for (let col = 0; col < count; col++) {
       qrCtx.fillStyle = qr.isDark(row, col) ? "#000" : "#fff";
-      qrCtx.fillRect((col+1) * tileSize, (row+1) * tileSize, tileSize+1, tileSize+1);
+      qrCtx.fillRect((col+1) * tileSize, (row+1) * tileSize, tileSize, tileSize);
     }
   }
 }
