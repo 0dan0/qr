@@ -384,12 +384,12 @@ function timeLoop()
   var df60 = nonDropframeToDropframeFast(tc60, 60);
  
   setText("tctext24", tc24);
-  setText("tctext24", tc25);
-  setText("tctext24", tc30);
-  setText("tctext24", df30);
-  setText("tctext24", tc50);
-  setText("tctext24", tc60);
-  setText("tctext24", df60);
+  setText("tctext25", tc25);
+  setText("tctext30", tc30);
+  setText("dftext30", df30);
+  setText("tctext50", tc50);
+  setText("tctext60", tc60);
+  setText("dftext60", df60);
   
   var tdelta = tnow - tlast;
   if(starttime == 0)
