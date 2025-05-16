@@ -44,6 +44,7 @@ var cmd = "";
 var id = 0;
 var freshrate = 60;
 
+/*
 function getRefreshRate(sampleCount = 120) {
   return new Promise(resolve => {
     const times = new Array(sampleCount);
@@ -67,7 +68,7 @@ function getRefreshRate(sampleCount = 120) {
     requestAnimationFrame(step);
   });
 }
-
+*/
 
 function id5() {  // 5 characters, so up to 17-bit ID
   return ([1111]+1).replace(/1/g, c =>
@@ -147,13 +148,7 @@ function makeQR() {
   if(once === true)
   {
   	id = getMachineId();  // 5 character 10-base, so up to 17-bit ID
-	
-	var rate = getRefreshRate();
-	if(rate < 30) freshrate = 30;
-	else if(rate < 240) freshrate = 240;
-	else freshrate = Math.round(rate * 0.5) * 2;
-	if(freshrate == 121) freshrate = 120;
-	
+		
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
       text : "oT0",
