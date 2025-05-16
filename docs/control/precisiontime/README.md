@@ -33,7 +33,7 @@ fps: <b id="fpstext"> Hz<br>
 
 **Compatibility:** Labs enabled HERO5 Session, HERO7-13, MAX and BONES 
 		
-updated: September 10, 2024
+updated: May 16, 2025
 
 [Learn more](..) back to QR Controls
 
@@ -127,8 +127,8 @@ function renderQRToCanvas(data) {
 
   const count = qr.getModuleCount();
   const size = qrCanvas.width;
-  const tileSize = size / (count+2);
-
+  const tileSize = Math.floor(size / (count+2));
+  
   qrCtx.clearRect(0, 0, size, size);
   for (let row = 0; row < count; row++) {
     for (let col = 0; col < count; col++) {
