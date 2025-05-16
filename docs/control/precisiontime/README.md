@@ -119,8 +119,8 @@ function makeQR() {
     qrcode = new QRCode(document.getElementById("qrcode"), 
     {
       text : "oT0",
-      width : 360,
-      height : 360,
+      width : 180,
+      height : 180,
       correctLevel : QRCode.CorrectLevel.M
     });
     once = false;
