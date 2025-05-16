@@ -297,32 +297,12 @@ function nonDropframeToDropframeFast(timecode, fps) {
 	return dropframeTimecode;
 }
 
-/*
-var j,h=0,m=0,s=0,f=0;
-for(j=0;j<1000;j++)
-{
-    h = Math.trunc(Math.random()*24);
-    m = Math.trunc(Math.random()*60);
-    s = Math.trunc(Math.random()*60);
-    f = Math.trunc(Math.random()*60);
-    tc = padTime(h)+":"+padTime(m)+":"+padTime(s)+":"+padTime(f);
-    S = nonDropframeToDropframe(tc,60);
-    F = nonDropframeToDropframeFast(tc,60);
-    
-    //if(0 === j)
-    //{
-    //  alert(tc);
-    //}
-    
-    if(0 !== S.localeCompare(F))
-    {
-        alert(S + "!=" + F);
-        exit();
-    }
+function setText(id, value) {
+  const el = document.getElementById(id);
+  if (el && el.innerHTML !== value)
+    el.innerHTML = value;
 }
 
-alert("done");
-*/   
 
 var starttime = 0;
 var updates = 0;
@@ -356,7 +336,6 @@ function timeLoop()
   h = padTime(h);
   m = padTime(m);
   s = padTime(s);
-  //ms = Math.floor(ms / 10); // hundredths
   ms = padTime1000(ms);
   
   if(document.getElementById("tzid") !== null)
@@ -383,7 +362,7 @@ function timeLoop()
   cmd = "oT" + yy + mm + dd + h + m + s + "." + ms + "oTD" + td + "oTZ" + tz + "oTI" + id;
   qrcode.clear(); 
   qrcode.makeCode(cmd);
-  document.getElementById("qrtext").innerHTML = cmd;
+  setText("qrtext", cmd);
   
   var tc25 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 25 / 1000));
   var tc50 = h + ":" + m + ":" + s + ":" + padTime(Math.trunc(ms * 50 / 1000));
@@ -404,13 +383,13 @@ function timeLoop()
   var df30 = nonDropframeToDropframeFast(tc30, 30);
   var df60 = nonDropframeToDropframeFast(tc60, 60);
  
-  document.getElementById("tctext24").innerHTML = tc24;  
-  document.getElementById("tctext25").innerHTML = tc25;  
-  document.getElementById("tctext30").innerHTML = tc30;  
-  document.getElementById("dftext30").innerHTML = df30;  
-  document.getElementById("tctext50").innerHTML = tc50;  
-  document.getElementById("tctext60").innerHTML = tc60;
-  document.getElementById("dftext60").innerHTML = df60;
+  setText("tctext24", tc24);
+  setText("tctext24", tc25);
+  setText("tctext24", tc30);
+  setText("tctext24", df30);
+  setText("tctext24", tc50);
+  setText("tctext24", tc60);
+  setText("tctext24", df60);
   
   var tdelta = tnow - tlast;
   if(starttime == 0)
@@ -425,7 +404,7 @@ function timeLoop()
       fps = updates / (tnow - starttime);
   }
   
-  document.getElementById("fpstext").innerHTML = Math.trunc(fps*100)/100;
+  setText("fpstext", Math.trunc(fps*100)/100);
    
   if(updates > 100)
   {
@@ -440,12 +419,6 @@ function timeLoop()
   tlast = tnow;
   
   requestAnimationFrame(timeLoop);
-  
-  //var t;
-  //if(fps > 60) 
-  //   t = setTimeout(timeLoop, 10);
-  //else
-  //   t = setTimeout(timeLoop, 0);
 }
 
 function myReloadFunction() {
