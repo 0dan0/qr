@@ -422,12 +422,12 @@ function timeLoop()
       fps = updates / (tnow - starttime);
   }
   
-  document.getElementById("fpstext").innerHTML = fps;
+  document.getElementById("fpstext").innerHTML = Math.trunc(fps*100)/100;
    
-  if(updates > 1000)
+  if(updates > 200)
   {
-    updates = 0;
-    starttime = 0;
+    updates = 100;
+    starttime += (tnow - starttime)/2;
   }
    
   var t = setTimeout(timeLoop, 10);
