@@ -137,22 +137,18 @@ function renderQRToCanvas(data) {
       if(row < stone_size && col < stone_size)
 	  {
 		qrCtx.fillStyle = qr.isDark(row, col) ? "#007" : "#fff";
-		qrCtx.fillStyle = qr.isDark(row, col+count) ? "#007" : "#fff";
 	  }
 	  else if(row >= count-stone_size && col < stone_size)
 	  {
 		qrCtx.fillStyle = qr.isDark(row, col) ? "#007" : "#fff";
-		qrCtx.fillStyle = qr.isDark(row, col+count) ? "#007" : "#fff";
 	  }
 	  else if(col >= count-stone_size && row < stone_size)
 	  {
 	    qrCtx.fillStyle = qr.isDark(row, col) ? "#007" : "#fff";
-	    qrCtx.fillStyle = qr.isDark(row, col+count) ? "#007" : "#fff";
 	  }
 	  else
 	  {
 	    qrCtx.fillStyle = qr.isDark(row, col) ? "#000" : "#fff";
-	    qrCtx.fillStyle = qr.isDark(row, col+count) ? "#000" : "#fff";
 	  }
       qrCtx.fillRect((col+2) * tileSize, (row+2) * tileSize, tileSize, tileSize);
       qrCtx.fillRect((col+count+2) * tileSize, (row+2) * tileSize, tileSize, tileSize);
