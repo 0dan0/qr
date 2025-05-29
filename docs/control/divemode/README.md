@@ -70,7 +70,7 @@ Auto exposure might result in these behaviors (shooting 24p) <br>
 
 **Compatibility:** Labs enabled HERO7-13, MAX and BONES 
         
-updated: September 10, 2024
+updated: May 29, 2025
 
 [More features](..) for Labs enabled cameras
 
