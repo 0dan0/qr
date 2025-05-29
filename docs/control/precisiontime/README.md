@@ -151,7 +151,7 @@ function renderQRToCanvas(data) {
 	    qrCtx.fillStyle = qr.isDark(row, col) ? "#000" : "#fff";
 	  }
       qrCtx.fillRect((col+2) * tileSize, (row+2) * tileSize, tileSize, tileSize);
-      qrCtx.fillRect((col+count+2) * tileSize, (row+2) * tileSize, tileSize, tileSize);
+      qrCtx.fillRect((col+2) * tileSize, (row+2+count) * tileSize, tileSize, tileSize);
     }
   }
   
