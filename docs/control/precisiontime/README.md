@@ -131,19 +131,31 @@ function renderQRToCanvas(data) {
   const tileSize = Math.floor(size / (count+4));
   
   var stone_size = 7;
-  qrCtx.clearRect(0, 0, size, size);
+  qrCtx.clearRect(0, 0, size, size*2);
   for (let row = 0; row < count; row++) {
     for (let col = 0; col < count; col++) {
       if(row < stone_size && col < stone_size)
+	  {
 		qrCtx.fillStyle = qr.isDark(row, col) ? "#007" : "#fff";
+		qrCtx.fillStyle = qr.isDark(row, col+count) ? "#007" : "#fff";
+	  }
 	  else if(row >= count-stone_size && col < stone_size)
+	  {
 		qrCtx.fillStyle = qr.isDark(row, col) ? "#007" : "#fff";
+		qrCtx.fillStyle = qr.isDark(row, col+count) ? "#007" : "#fff";
+	  }
 	  else if(col >= count-stone_size && row < stone_size)
-		qrCtx.fillStyle = qr.isDark(row, col) ? "#007" : "#fff";
+	  {
+	    qrCtx.fillStyle = qr.isDark(row, col) ? "#007" : "#fff";
+	    qrCtx.fillStyle = qr.isDark(row, col+count) ? "#007" : "#fff";
+	  }
 	  else
+	  {
 	    qrCtx.fillStyle = qr.isDark(row, col) ? "#000" : "#fff";
-	 
+	    qrCtx.fillStyle = qr.isDark(row, col+count) ? "#000" : "#fff";
+	  }
       qrCtx.fillRect((col+2) * tileSize, (row+2) * tileSize, tileSize, tileSize);
+      qrCtx.fillRect((col+count+2) * tileSize, (row+2) * tileSize, tileSize, tileSize);
     }
   }
   
