@@ -17,9 +17,11 @@ Corrects Hypersmooth stabalization so that is it optimized for underwater, impro
 
 ## Dive Mode controls
  
+<input type="checkbox" id="divemd" name="divemd" checked><label for="divemd">Enable dive mode</label><br>
 <input type="checkbox" id="wblock" name="wblock" checked><label for="wblock">White Balance lock upon capture start</label><br>
 <input type="checkbox" id="wgamut" name="wgamut" checked><label for="wgamut">Wide Gmaut (same a GPLog) for all video modes</label><br>
 <input type="checkbox" id="preset" name="preset" checked><label for="preset">Make this as a new preset</label><br>
+<input type="checkbox" id="permanent" name="permanent" checked><label for="permanent">If not a present make this permanent</label><br>
 
 <div id="qrcode_txt" style="width: 360px">
  <center>
@@ -40,7 +42,11 @@ Dive mode optimizes the Hypersmooth stabilization for underwater. It might be no
 underwater there is typically less camera shake, and HS is still 70% effective at removing shake. This hack adapts HS to use the refractive index (RI) of water 
 (defaults to 1.335, good for fresh and command salt water), to remove closer to 100% of unwanted shake.<br>
 
-The option for white balance lock, it auto white balances until the capture starts. This is useful as white balance can change greating when diving, this make post correction more straight forward.
+The option for the wider gamut offers a color gamut like setting white balance to Native (wider gamut), while enabling auto whitebalance, or user controlled whitebalance. With WIDE off (0 - the default), 
+the camera saturates color to the Rec709 gamut (basically sRGB), so some extreme real-world color saturations are clipped by the gamut. With WIDE=1, the gamut is sensor native, not Rec709, not Rec2020, 
+just what the sensor sees.<br>
+
+The option for white balance lock, it auto white balances until the capture starts. This is useful as white balance can change greating when diving, this make post correction more straight forward.<br>
 
 **Compatibility:** Labs enabled HERO12-13
         
@@ -142,7 +148,34 @@ function timeLoop()
 		}
 	}
 	else
-	{
+	{ 
+  	  if(document.getElementById("permanent").checked === false)
+	  {
+		if(document.getElementById("wblock").checked === true)
+		{
+			if(document.getElementById("wgamut").checked === true)
+			{
+				cmd = "mV*DIVE=1*WBLK=1*WIDE=1";
+			}
+			else
+			{
+				cmd = "mV*DIVE=1*WBLK=1";
+			}
+		}
+		else
+		{
+			if(document.getElementById("wgamut").checked === true)
+			{
+				cmd = "mV*DIVE=1*WIDE=1";
+			}
+			else
+			{
+				cmd = "mV*DIVE=1";
+			}
+		}
+	  }
+	  else
+	  {
 		if(document.getElementById("wblock").checked === true)
 		{
 			if(document.getElementById("wgamut").checked === true)
@@ -165,8 +198,21 @@ function timeLoop()
 				cmd = "mV$DIVE=1";
 			}
 		}
+	  }
+	}
+    if(document.getElementById("divemd").checked === false)
+	{ 
+		if(document.getElementById("permanent").checked === false)
+		{
+			cmd = "*DIVE=0*WBLK=0*WIDE=0";
+		}
+		else
+		{
+			cmd = "$DIVE=0$WBLK=0$WIDE=0";
+		}
 	}
   }
+  
   
   renderQRToCanvas(cmd);
   
