@@ -28,7 +28,7 @@ and as a mobile app:<br>
 
 ## Forum Discussions and Feedback 
 * For GoPro Labs discussions, feature requests, and help: [**Labs Discussion on GitHub**](https://github.com/gopro/labs/discussions)
-* For obmissions or errors within these Pages: [**GitHib Labs Issues**](https://github.com/gopro/labs/issues)
+* For obmissions or errors within these Pages: [**GitHub Labs Issues**](https://github.com/gopro/labs/issues)
 
 ## The Many Features of Labs
 
@@ -84,7 +84,7 @@ An incomplete set of [**Release Notes**](./notes)
 * **HERO10-13/MAX** Labs scripting via [**Visual Script Tool**](https://gopro.github.io/labs/build/)
 * New [ChatBot for GoPro Labs commands](https://bit.ly/chat_gp_labs)
 
-updated: December 10, 2024
+updated: May 29, 2025
 
 
 <script>
