@@ -151,14 +151,14 @@ function renderQRToCanvas(data) {
 	    qrCtx.fillStyle = qr.isDark(row, col) ? "#000" : "#fff";
 	  }
       qrCtx.fillRect((col+2) * tileSize, (row+2) * tileSize, tileSize, tileSize);
-      qrCtx.fillRect((col+2) * tileSize, (row+2+count) * tileSize, tileSize, tileSize);
+      qrCtx.fillRect((col+2) * tileSize, (row+2+count+2) * tileSize, tileSize, tileSize);
     }
   }
   
   frame_num++;
   qrCtx.fillStyle = frame_num & 1 ? "#000" : "#fff";
-  qrCtx.fillRect(0, 0, tileSize, tileSize*(count+4));
-  qrCtx.fillRect(tileSize*(count+3), 0, tileSize, tileSize*(count+4));
+  qrCtx.fillRect(0, 0, tileSize, tileSize*(count*2+4));
+  qrCtx.fillRect(tileSize*(count+3), 0, tileSize, tileSize*(count*2+4));
 }
 
 
