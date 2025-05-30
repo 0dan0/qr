@@ -142,7 +142,7 @@ function timeLoop()
   {
 	if(document.getElementById("preset").checked === true)
 	{
-		cmd = "mT$PRES=\"18,STOP\"mT!1N" + mode + "p4";
+		cmd = "mT$PRES=\"18,STOP\"mT!N" + mode + "p4";
 	}
 	else
 	{ 
