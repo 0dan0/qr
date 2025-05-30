@@ -22,6 +22,7 @@ A Stop Motion extension where only a single frames is stored per shutter press. 
 <input type="checkbox" id="permanent" name="permanent"><label for="permanent">If not a present, make this permanent setting (risky)</label><br>
 <input type="checkbox" id="tall" name="tall"><label for="tall">Use 8:7 (not 16:9)</label><br>
 <input type="checkbox" id="use5K" name="use5K"><label for="use5K">Use 5.3K (not 4K)</label><br>
+<input type="checkbox" id="linear" name="linear"><label for="linear">Use Linear (not Wide)</label><br>
 
 <div id="qrcode_txt" style="width: 360px">
  <center>
@@ -126,13 +127,22 @@ function timeLoop()
 	{
 		mode = mode + "X";
 	}
+	
+	if(document.getElementById("linear").checked === true)
+	{
+		mode = mode + "fL";
+	}
+	else
+	{
+		mode = mode + "fW";
+	}
   }
 
   if(document.getElementById("preset") !== null)
   {
 	if(document.getElementById("preset").checked === true)
 	{
-		cmd = "mT$PRES=\"18,STOP\"mT" + mode + "p4";
+		cmd = "mT$PRES=\"18,STOP\"mT!1N" + mode + "p4";
 	}
 	else
 	{ 
