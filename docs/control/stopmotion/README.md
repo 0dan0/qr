@@ -18,10 +18,10 @@ A Stop Motion extension where only a single frames is stored per shutter press. 
 ## Stop Motion controls
  
 <input type="checkbox" id="stopmt" name="stopmt" checked><label for="stopmt">Enable Stop Motion</label><br>
-<input type="checkbox" id="preset" name="preset" checked><label for="preset">Make this as a new preset</label><br>
+<input type="checkbox" id="preset" name="preset" checked><label for="preset">Make this as a new preset (best)</label><br>
 <input type="checkbox" id="permanent" name="permanent"><label for="permanent">If not a present, make this permanent setting (risky)</label><br>
-<input type="checkbox" id="tall" name="tall" checked><label for="tall">Use 8:7 (not 16:9)</label><br>
-<input type="checkbox" id="use4K" name="use4K" checked><label for="use4K">Use 4K (not 5.3K)</label><br>
+<input type="checkbox" id="tall" name="tall"><label for="tall">Use 8:7 (not 16:9)</label><br>
+<input type="checkbox" id="use5K" name="use5K"><label for="use5K">Use 5.3K (not 4K)</label><br>
 
 <div id="qrcode_txt" style="width: 360px">
  <center>
@@ -113,13 +113,13 @@ function timeLoop()
 
   if(document.getElementById("preset") !== null)
   {
-	if(document.getElementById("use4K").checked === true)
+	if(document.getElementById("use5K").checked === true)
 	{
-		mode = "r4";
+		mode = "r5";
 	}
 	else
 	{
-		mode = "r5"
+		mode = "r4"
 	}
 	
 	if(document.getElementById("tall").checked === true)
@@ -132,7 +132,7 @@ function timeLoop()
   {
 	if(document.getElementById("preset").checked === true)
 	{
-		cmd = "mT$PRES=\"0,STOP\"mT" + mode + "p4";
+		cmd = "mT$PRES=\"18,STOP\"mT" + mode + "p4";
 	}
 	else
 	{ 
