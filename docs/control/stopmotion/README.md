@@ -38,6 +38,11 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
 <button id="copyBtn">Copy URL to Clipboard</button>
 
         
+![StopMotionPreset.jpg](StopMotionPreset.jpg)
+
+Your new Preset will look like this.  The "???" is normal, as the frame rate is undefined, controlled by your shutter presses.
+
+
 **Compatibility:** Labs enabled HERO12-13
         
 updated: May 30, 2025
