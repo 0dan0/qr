@@ -158,20 +158,8 @@ function renderQRToCanvas(data) {
   
   frame_num++;
   qrCtx.fillStyle = frame_num & 1 ? "#000" : "#fff";
-  qrCtx.fillRect(0, 0, 4, tileSize*((count+2)*3));
-  //qrCtx.fillRect(tileSize*(count+3), 0, tileSize, tileSize*((count+2)*3));
-  
-  qrCtx.fillStyle = frame_num & 2 ? "#000" : "#fff";
-  qrCtx.fillRect(4, 0, 4, tileSize*((count+2)*3));
-  //qrCtx.fillRect(tileSize*(count+3), 0, tileSize, tileSize*((count+2)*3));
-  
-  qrCtx.fillStyle = frame_num & 4 ? "#000" : "#fff";
-  qrCtx.fillRect(8, 0, 4, tileSize*((count+2)*3));
-  //qrCtx.fillRect(tileSize*(count+3), 0, tileSize, tileSize*((count+2)*3));
-  
-  qrCtx.fillStyle = frame_num & 8 ? "#000" : "#fff";
-  qrCtx.fillRect(12, 0, 4, tileSize*((count+2)*3));
-  //qrCtx.fillRect(tileSize*(count+3), 0, tileSize, tileSize*((count+2)*3));
+  qrCtx.fillRect(0, 0, tileSize, tileSize*((count+2)*3));
+  qrCtx.fillRect(tileSize*(count+3), 0, tileSize, tileSize*((count+2)*3));
 }
 
 
