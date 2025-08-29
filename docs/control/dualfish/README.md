@@ -1,3 +1,5 @@
+# Dual Fisheye → 360° Maximum Effective Resolution
+
 <style>
   body { font: 14px/1.45 system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 24px; max-width: 880px; }
   h1 { font-size: 20px; margin: 0 0 12px; }
@@ -13,8 +15,6 @@
   .preset-btn { padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background: #f8f8f8; cursor: pointer; }
   .preset-btn.active { border-color: #4a7; background: #e9fff1; }
 </style>
-
-# Dual Fisheye → 360° Maximum Effective Resolution
 
 <p>
   The maximum effective resolution of the 360° image is calculated by measuring the 180° line (diameter) of active pixels. The region of active pixels can be measured by looking at objects at large distances, but visible in both fisheye lenses.
