@@ -67,7 +67,6 @@ Note: All text box support **\n** for a new line.
 **GPS On or Off** <br>
  
   &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="gps" name="gps"> <label for="gps">Using GPS</label><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="gps" name="gps"> <label for="gps">Using HERO11/13/etc</label><br>
 
 
 <div id="qrcode_txt" style="width: 360px">

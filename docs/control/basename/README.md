@@ -18,9 +18,8 @@ Your GoPro will typically name your files something like GOPR3606.JPG and GH0136
 **WARNING:** On camera playback, USB transfer, the GoPro Quik app and GoPro cloud services will not support these renamed files. This is for direct SD card tranfers only. In addition, the camera's automatic file repair will not know to repair these files (see Manual File Recovery below), so only use this feature if you aren't putting cameras in extreme danger (where power could be randomly disconnected.) 
 
 Your base filename here: <input type="text" id="addname" value=""> (only a-z, A-Z, 0-9, and +-_(),.)<br> 
-Up to eight characters. e.g. "CAMERA06"<br> 
 
-**HERO10-13 - Only:** You can added date and time to the filename (Note: make sure your clock is set correctly).  The date and time shortcuts must be within the **[ ]** characters, these are the wildcards:
+**HERO10-13:** You can added date and time to the filename (Note: make sure your clock is set correctly).  The date and time shortcuts must be within the **[ ]** characters, these are the wildcards:
  - **yyyy** - Year in format: 2021
  - **yy** - Year in to digit format: 21
  - **mm** - Month
@@ -28,13 +27,18 @@ Up to eight characters. e.g. "CAMERA06"<br>
  - **HH** - Hour
  - **MM** - Minute
  - **SS** - Second
- 
+
 Formatting examples: 
  - CamA-[yyyymmddHHMMSS]-
  - [yy-mm-dd_HH.MM.SS]-
 
-Note: Unfortunately filenames can't contain common date/time delimiters, only +-_(),. allowed.
+Notes: 
+ - filenames can't contain common date/time delimiters, only +-_(),. allowed
+ - Basename length extensions are 28 characters or less
 
+**Older Labs camera:**
+ - Only up to eight characters supported. e.g. "CAMERA06"<br> 
+ 
 <br>
 Your filenames will be in the format: <b id="newnameMP4">nameGH013607.MP4</b> and <b id="newnameJPG">nameGOPR3607.JPEG</b><br>
 
@@ -83,7 +87,7 @@ So you have a corrupted/unclosed GoPro file. You crashed your drone, and the bat
 
 **Compatibility:** Labs enabled HERO8, HERO9, HERO10, HERO11, HERO12, HERO13, MAX and BONES 
         
-updated: September 10, 2024
+updated: June 14, 2025
 
 [More features](..) for Labs enabled cameras
 
@@ -127,6 +131,7 @@ function filter(txt)
 	desired = desired.replace(/[^a-zA-Z0-9-_+(){},.]/gi, '');
 	desired = desired.replace('{', '\[');
 	desired = desired.replace('}', ']');
+	desired = desired.length > 28 ? desired.slice(0, 28) : desired;
 	return desired;
 }
 

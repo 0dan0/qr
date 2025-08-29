@@ -24,7 +24,7 @@ Just like settings, these alter camera options, not the settings used in a prese
 While each setting command is a single lowercase character, it can be followed by a number of either uppercase or numbers for the parameters. Option commands, starting with `o` 
 can stack many parameter in one command. This is a single options command `oV1B4D2` which translates to Volume - 10%, Brightness 40%, and LEDs rear only. The same command can be 
 written as `oV1oB4oD2`, three separate option commands, but as storage in a QR code is limited so options can be stacked for more efficiency, this is also why spaces are not 
-used between commands.
+used between commands. The only places for using spaces is within quotes, like for preset names or printing messages to the screen.
 
 ## The Full List of Settings and Option Commands
 
@@ -321,6 +321,12 @@ Note: Angles between 22 and 1 degrees are supported. Experiment for higher shutt
 - `mE` - mode Easy
 - `mPR` - mode Pro
 
+### Print Messages ###
+Anything within quotes that is not being store in an FourCC metadata field will be printed to the screen for one second.
+- "Hello World" - prints the Hello World message.
+- "Set Video\nMode"mV - prints Set Video Mode over two lines, and set the mode to video with the `mV` command.
+- "Current mode $v" - $v is one of the system variable (see below), v display the camera current mode.
+- "Temperature\n $p:T C" - $p:T system variable for processor Temperature (see below), prints text "Temperature" on a new line value of the temp in C.
 
 ## Action and Conditional Commands
 Now you know how to set up your camera with QR commands, the fun really begins with Actions and Conditionals. Actions are starting `!S` or ending a capture `!E`, manual upload `!U`, 
@@ -337,13 +343,14 @@ time is greater than 6am and less than 7pm, set mode Video, else set mode NightL
 * **!**time**Fx** - Frame Grab (LCD) at <time> - 'x' grab next x Labs messages. e.g. `!F` frame grab now or !F3 frame grab teh next 3 Labs events
 * **!**time**G(S or M or L)(C)** - Start Live-streaming, e.g. `!GS` - start at 480p, `!GM` - start at 720p, `!GL` - 1080p, optional `C` for capture a local file like `!GLC`
 * **!**time**N** - No Action until exact <time>, useful if you just need a pause. e.g. `!11:30N` - Pause (Sleep) until 11:30am or `!90N` - Sleep for 90s.
-* **!**time**NQ** - No Action until at approximately <time>. e.g. `!09:50NQ` - Pause (Sleep) until approximately 9:50am or `!180NQ` - Sleep for approx 180s.
-* **!**time**O** - Off, shutdown the camera. e.g. `!O` Off now or `!5O` Off in 5 seconds
+* **!**time**NQ** - No Action until at approximately <time> (more power efficient). e.g. `!09:50NQ` - Pause (Sleep) until approximately 9:50am or `!180NQ` - Sleep for approx 180s.
+* **!**time**O** - Off, shutdown the camera. e.g. `!O` Off now or `!5O` Off in 5 seconds. Never use this in a script (talking to you ChatGPT) if you script is repeating, as this stops everything. 
 * **!**time**OR** - shutdown and restart the camera. e.g. `!OR` Off and restart now or `!2O` Off in 2 seconds, then restart
 * **!**time**R** - Repeat the whole command. e.g. `!1R` repeat the whole command in 1 second or `!08:00R` repeat at 8am.
+* **!**time**RQ** - Repeat Quickly at approximately <time> (more power efficient). e.g. `!08:00RQ` repeat the whole command at approximately 8am.
 * **!**time**Rx** - <sup>H11-13</sup> Repeat the command starting at position x (i.e. a goto command). e.g. `!R5` repeat start at command character 5. 
 * **!**time**S** - Start at exactly <time> if in hh:mm form, or after n seconds. e.g. `!20:00S` - Start at 8pm or `!5S` Start in 5 seconds.
-* **!**time**SQ** - Start Quickly at approximately <time> if in hh:mm form, or after n seconds. e.g. `!18:00SQ` - Start at approx 6pm or `!60SQ` Start in 60 seconds approximately.
+* **!**time**SQ** - Start Quickly at approximately <time> if in hh:mm form, or after n seconds. !timeSQ commands are a bit more power efficient than !timeS. e.g. `!18:00SQ` - Start at approx 6pm or `!60SQ` Start in 60 seconds approximately.
 * **!**time**TR** - <sup>H11-13</sup>  `!TR`- switch active TimeWarp to Realtime (or slow motion)
 * **!**time**TN** - <sup>H11-13</sup>  `!TN` - switch active TimeWarp to Normal (speed-up timelapse mode)
 * **!**time**U** - `!U` Attempt a network contention and Upload now <sup>9/10/11/12/13</sup>.
@@ -363,27 +370,32 @@ time is greater than 6am and less than 7pm, set mode Video, else set mode NightL
 
 ### more examples:
 * `!S` - start now  
-* `!07:00S` - start at precisely 7am  
-* `!300SQ` - start in approximately 300 seconds.  
+* `!07:00S` - start at precisely 7am, the camera will shutdown and sleep until 7am.  
+* `!300SQ` - start in approximately 300 seconds, it will shutdown and sleep for ~300s.  
+* `!N` - short pause around 500ms.  
+* `!2N` - pause for seconds 2s.
+* `!20N` - pause for seconds 20s. Any pause for greater than 9 seconds will shutdown and sleep the camera.  
 * `!60E` - end after 60 seconds (End commands are not used for photos.)
 * `!2R` - repeat after 2 seconds
-* `!s-01:00S` - start one hour before sunset
+* `!s-01:00S` - start one hour before sunset, the camera will shutdown and sleep until one hour before sunset.  
 * `!nS` - start at true noon.
 * `!s1200E` - end 1200 seconds after sunset
 * `!r-600S` - start 600 seconds before sunrise
 * `!17:00W!GLC` - start Live-streaming 1080p at 5pm, saving a local copy
 
 ### Storing metadata (Permanent, survives power off)
-#### Old style (old cameras up to HERO9)
+#### Old style (old cameras up to HERO9, supported by all models)
 * **!M**fourcc**=<courier>"string"</courier>**
 * **!M**fourcc**=Number metadata** (comma separated)
 
-#### New style (HERO10 onward)
+#### New style (support HERO10 onward)
 * **\***fourcc**=<courier>"string"</courier>**
 * **\***fourcc**=Number metadata**  (comma separated)
 
 #### Example for display the owner’s name
-* `*OWNR="Joe Bloggs"`
+* `*OWNR="Joe Bloggs"`  - Within the quotes spaces are allowed.
+* `*OWNR="Jill Bloggs\n(555)-252-5555"`  - the addition of "\n" allows for a new line.
+* `*OWNS="Jill and Joes\n(555)-252-5555\njandj@yahoo.com"`  - multi-line example
 
 Note: All strings must use <courier>"</courier> (ASCII 34) and not the <courier>”</courier> (148) character.  
 
@@ -417,31 +429,33 @@ All metadata in stored in a GPMF format with the MP4, 360 or JPG files, this is 
 The above global metadata can be extracted with this [**demo web tool**](../metadata)
 
 ### Some Four Character Codes are reserved for feature extensions
-* **24HZ** 10-13: enable film standard 24.0 frame, rather than the default broadcast standard 23.976. The existing 24p mode(s) will have the new frame rate when this is enabled, all other video modes are unaffected. Input Data: 1-enable, 0-disable. e.g. `*24HZ=1`
-* **64BT** H8-10/MAX: 12GB Chapter sizes on HERO8/9/10 and MAX cameras (default on H11 onward.) Note: Will not be active for QuickCaptures. Input Data: 1-enable, 0-disable WARNING: Larger chapters will not playback on camera or support USB transfers, but are compatible with desktop tools. Permanent required. e.g. `*64BT=1` for older cameras. For HERO11 or newer try `*64BT=64000` for 64GB chapters.
-* **ARCH** H8-13/MAX: Archive mode: an ultra simplified video camera mode for novices documenting critical events, where you don’t want the camera mode modified. Either button will start and stop video capture. Input Data: 1-enable, 0-disable WARNING: only removable via the disable command. Permanent required. e.g. `*ARCH=1`
+* **24HZ** H10-13: enable film standard 24.0 frame, rather than the default broadcast standard 23.976. The existing 24p mode(s) will have the new frame rate when this is enabled, all other video modes are unaffected. Input Data: 1-enable, 0-disable. e.g. `*24HZ=1`
+* **64BT** H8-10: 12GB Chapter sizes on HERO8/9/10 and MAX cameras (default on H11 onward.) Note: Will not be active for QuickCaptures. Input Data: 1-enable, 0-disable WARNING: Larger chapters will not playback on camera or support USB transfers, but are compatible with desktop tools. Permanent required. e.g. `!M64BT=1`
+* **64BT** H11-13: These camera default to 12GB Chapter sizes, but support larger. Note: Will not be active for QuickCaptures. Input Data: x-size in MBs, 0-disable. Permanent required. e.g. `*64BT=64000` for 64GB chapters.
+* **ARCH** H8-13: Archive mode: an ultra simplified video camera mode for novices documenting critical events, where you don’t want the camera mode modified. Either button will start and stop video capture. Input Data: 1-enable, 0-disable WARNING: only removable via the disable command. Permanent required. e.g. `*ARCH=1`
 * **AUDS** H10-13: Audio Level: displays the current estimate of the sound pressure level in dB. Input Data: 1-enable, 0-disable. e.g. `$AUDS=1`
-* **BASE** H8-10/MAX: Base file name change, adding to beginning of the filename. Input: H10-13 supports wildcards within [ ]: like [yyyy-mm-dd] or [HH-MM-SS]  e.g. A-[yyyymmddHHMMSS] WARNING: GoPro App and cloud will not support renamed files. e.g. `*BASE="CamA-[yy-mm-dd]"`
+* **BASE** H8-13: Base file name change, adding to beginning of the filename. Input: H10-13 supports wildcards within [ ]: like [yyyy-mm-dd] or [HH-MM-SS]  e.g. A-[yyyymmddHHMMSS] WARNING: GoPro App and cloud will not support renamed files. e.g. `*BASE="CamA-[yy-mm-dd]"`
 * **BERS** H10-13: Bypass ERS compensation, extremely rare usecases. Input Data: 0-display, 1-enable, 2-enable only with EIS off e.g. `*BERS=2`
 * **BIAS** H9 only (new cameras use EVBS): Bias is like EV Compensation, but it can only be used after recording has began. It is a hack designed to tweak exposure during a livestream or webcam session. Input Data: Number of stops between -6 and 6, supports half stops like 3.5.
 * **BITR** H10-13: set the compression in Mb/s for the Protune High Bitrate setting. Normally this would be around 100Mb/s, however higher (or lower) rates may be achieved with newer SD Cards.Input Data: MB/s from 2 to 200. e.g. `*BITR=180`
 * **BITH** H10-12: set the compression for LRVs in Mb/s. Normally this would be around 4Mb/s, however higher (or lower) rates may be achieved with newer SD Cards. Input Data: MB/s from 1 to 100. 
 * **BITL** H11-13: controlling the livestream maximum bitrate (up to 8Mbit/s). Input Data: MB/s from 1 to 8.
-* **BOOT** Boot command can be dangerous, but a safe way to use them is to store the script on the SD Card. So the boot command would be `*BOOT="!Lbt"` which attempts to load a file bt from the MISC folder of the SD card. So creating boot command should always use the formatting `*BOOT="!Lbt"!SAVEbt="your script"` e.g. `*BOOT="!Lbt"!SAVEbt=!12:00NmP!S!1R`
-* **BURN** H8-13/MAX: Add date, time and other burn-in text to your video. Input Format (0,height)[yyyy-mm-dd HH:MM:SSaa] examples:   (0,30)Local Time: [HH:MMaa]   (0,26)Local Time: [HH:MM:SSAA]   (0,40)©[yyyy]\ XYZ Inc.   (0,24)Shoot Date [yy/mm/dd]
-* **BRNP** H8-13/MAX: The burn-in position for overlays or LOGO display. Input Data (select 1 of 8): TL, TC, TR, ML,BL, BC, and BR\nT-Top B-Bottom C-Center L-Left and R-Right.
-* **BRNT** H8-13/MAX: The overlays or LOGO display time in seconds. e.g. BRNT=0.016 will display the logo or text overlays only on the first frame. Input Data: 0 is unlimited, or 0.01 to 3600 seconds.
-* **BRNX** H8-13/MAX: Offset the overlays or LOGO display with X,Y pixel coordinates. Input Data: x,y pixel coordinates.e.g. 120,40
+* **BOOT** H7-13: Boot command can be dangerous, but a safe way to use them is to store the script on the SD Card. So the boot command would be `*BOOT="!Lbt"` which attempts to load a file bt from the MISC folder of the SD card. So creating boot command should always use the formatting `*BOOT="!Lbt"!SAVEbt="your script"` e.g. `*BOOT="!Lbt"!SAVEbt=!12:00NmP!S!1R`
+* **BURN** H8-13: Add date, time and other burn-in text to your video. Input Format (0,height)[yyyy-mm-dd HH:MM:SSaa] examples:   (0,30)Local Time: [HH:MMaa]   (0,26)Local Time: [HH:MM:SSAA]   (0,40)©[yyyy]\ XYZ Inc.   (0,24)Shoot Date [yy/mm/dd]
+* **BRNP** H8-13: The burn-in position for overlays or LOGO display. Input Data (select 1 of 8): TL, TC, TR, ML,BL, BC, and BR\nT-Top B-Bottom C-Center L-Left and R-Right.
+* **BRNT** H8-13: The overlays or LOGO display time in seconds. e.g. BRNT=0.016 will display the logo or text overlays only on the first frame. Input Data: 0 is unlimited, or 0.01 to 3600 seconds.
+* **BRNX** H8-13: Offset the overlays or LOGO display with X,Y pixel coordinates. Input Data: x,y pixel coordinates.e.g. 120,40
 * **BYPS** H11-13: Bypass common pop-ups, such as resetting the time and date. Remember to set time and date if you remove the battery. Input Data: 1 to bypass, 0 for normal notifications. e.g. `*BYPS=1`
 * **CBAR** H9-13: enable a small 75% saturated color bars for video tools evaluation. Most cameras limit overlays to 4K30, 2.7Kp60 or lower. Input Data: 1 to enable, 0 to disable
 * **COOL** H12-13: offset white balance for the blue channel. $COOL=40 will add 40% more gain to the blue channel.
 * **DAMP** H10-13: Control over the auto-exposure damping. Setting the DAMP to 1 is the default, setting to 10 would slow the camera’s exposure adjustments 10X.Input Data: 0.1 to 10000. e.g. `$DAMP=10`
 * **DAUD** H10-13: Disable Audio in video captures, all MP4 files will have no audio track. Application: high bit-rate drones video.Input Data: 1 to disable audio, 0 to re-enable
-* **DIST** H13: Time-Lapse Video Distance, x is a GPS travel distance between exposures in meters, rather than time for an in-camera computed timelapse. So `$DIST=5` will set a 5 meter interval for TLV. One exception is when x=1, 10 meters will be used, 1 meter is too noisy (GPS errors.) So this feature is good for 2 meters of larger. For shorter distances or a higher speed, you the new TLV sample rate for 4Hz (p4), for the best distance precision. e.g. `mTr5Xp4$DIST=5`
+* **DBGL** H8-13: Enables more debug logging. Labs saves it logs to the SD card under MISC/qrlog.txt. Using this extension increases the details and logged events. e.g. To see more logging from boot up use `*DBGL=1`
+* **DIST** H13 only: Time-Lapse Video Distance, x is a GPS travel distance between exposures in meters, rather than time for an in-camera computed timelapse. So `$DIST=5` will set a 5 meter interval for TLV. One exception is when x=1, 10 meters will be used, 1 meter is too noisy (GPS errors.) So this feature is good for 2 meters of larger. For shorter distances or a higher speed, you the new TLV sample rate for 4Hz (p4), for the best distance precision. e.g. `mTr5Xp4$DIST=5`
 * **DIVE** H12-13: Optimizing the Hypersmooth stabilization for underwater. It might be no surprise, but HyperSmooth is designed for the camera operation above the water's surface, underwater there is typically less camera shake, and HS is still 70% effective at removing shake. The hack adapts HS to use the refractive index (RI) of water (defaults to 1.335, good for fresh and command salt water), to remove closer to 100% of unwanted shake. Note: if you know your area's RI is significantly different, use DIVE=r, where r can be 1.3 to 1.45 is supported. e.g. `$DIVE=1` for most underwater captures. To create a dive preset use `mV$PRES="14,DIVE"mV`
 * **DLRV** H10-11: Disable LRV file creation. Application: high bit-rate drones video. Input Data: 1 to disable LRVs, 0 to re-enable. e.g. `*DLRV=1` to permanently disable LRV files.
-* **DSPC** Labs text display contrast:  Set the background opacity for Labs text on the LCD. Input Data: Number from 0-transparent to 6-completely opaque.
-* **DSPL** Labs text display length: How long to display each Labs message, like owner information (OWNR). The default is 1 second. Input Data: Number from 1-9 seconds or 10-9999 milliseconds.
+* **DSPC** H7-13: Labs text display contrast. Set the background opacity for Labs text on the LCD. Input Data: Number from 0-transparent to 6-completely opaque.
+* **DSPL** H7-13: Labs text display length. How long to display each Labs message, like owner information (OWNR). The default is 1 second. Input Data: Number from 1-9 seconds or 10-9999 milliseconds.
 * **ENCR** H9 only: Experimental media encryption, using a password to prevent playback by non-authorized users. As the QR Code with the password is not encrypted, do not print or save the QR code image.Enable by using password between 4 and 16 characters. Disable with an empty password.
 * **DECR** H9 only: Decryption of media encryption with ENCR.  Warning: If the passwords do not match, the data is doubly encrypted, there is no recovery of the data. Be careful. This operation is slow, USB power or have a full battery.Input a matching password
 * **EVBS** H10-13: This is an EV compensation value that works with webcam and livestreaming, it can be changed live (with QRDR=1) and it is global, adding the any existing EV control in your presets.Input Data: range -4 to 4.
@@ -449,41 +463,41 @@ The above global metadata can be extracted with this [**demo web tool**](../meta
 * **EXPS** H11-13: Video exposure values: ISO and Shutter speed, rendered to the LCD. Handy for those using ND Filters. Input Data: 1 to enable, 0 to disable. 
 * **EXPX** H10-13: Max Shutter speed (shortest exposure time), 1/x format. EXPX is a good control to set the look for stabilization in lower light. Input Data: 24 to 8000, representing 1/24 and 1/8000s, 0 to disable. e.g. `$EXPX=120`
 * **EXPN** H10-13: Min Shutter speed (longest exposure time), 1/x format. EXPN is a good to ensure you have motion blur, you may need ND filters. Input Data: 24 to 8000, representing 1/24 and 1/8000s, 0 to disable.  e.g. `$EXPN=240`
-* **EXPT** Video Exposure Control through Maximum Shutter Angle for video modes. Can improve stabilization in low light. Input Data: Number 0 through 5 stops.  0-360° (camera default), 1-180°, 2-90°, 3-45°, 4-22.5° etc.
-* **FAST** Faster and fewer Labs notifications on boot. Input Data: 1-enable, 0-disable. e.g. `*FAST=1`
-* **FEAT** H10-13/MAX: Displays Labs enabled Features for x seconds. Input Data: x-seconds.  e.g. `$FEAT=4`
+* **EXPT** H7-13: Video Exposure Control through Maximum Shutter Angle for video modes. Can improve stabilization in low light. Input Data: Number 0 through 5 stops.  0-360° (camera default), 1-180°, 2-90°, 3-45°, 4-22.5° etc.
+* **FAST** H10-13: Faster and fewer Labs notifications on boot. Input Data: 1-enable, 0-disable. e.g. `*FAST=1`
+* **FEAT** H10-13: Displays Labs enabled Features for x seconds. Input Data: x-seconds.  e.g. `$FEAT=4`
 * **GAIN** H9-13: Digitally gain up the audio. e.g. \$GAIN=12, increase audio by 12dB. Will likely reduce the dynamic range.Input Data: 0-48 in dB.
 * **GCMP** H11-13: Disable Gryo Compensated Exposure.  When GoPro camera modes, it normally uses a faster shutter for improved stabilization, this control disables this feature.Input Data: 1 to disable gyro comp, 0 - default
 * **GPSL** H13 only: enable continous GPS location logging, even when not capturing, so the capture can log more of you path and adventures, simply have the camera on. Path is saved by day into MISC/GPS-yy-mm-dd.gpmf file. GPSL=1 logs everything, GPSL=x will only log movement great than x meters from the last stored location. e.g. $GPSL=10 to log evert meters.
 * **GUID** H11-13: On screen guides lines for output aspect ratios. e.g. \$GUID=2.35, set shooting guides for cinescope. Input Data: List of aspect ratios (up to 8) as real numbers, so 16:9 is 1.778 and 9:16 is 0.5625.  e.g. `$GUID=1.778,0.5625`
 * **GUIC** H11-13: Color/brightness of guides lines. Input Data: List of guide brightness (up to 8).  e.g. `$GUIC=10,255`
-* **HDMI** Media Mod users can change the output default from Gallery, to clean monitoring with no overlays, or monitoring live video with On Screen Display overlays. Input Data: 0-Galley, 1-Clean Video, 2-Video+OSD e.g. `*HDMI=1`
-* **HIST** Enable a histogram with with a range of contrast options. Input Data: Number 1 to 11 enables the histogram with contrast 1 through 11, 0 will disable it. e.g. `$HIST=5`
+* **HDMI** H8-13: Media Mod users can change the output default from Gallery, to clean monitoring with no overlays, or monitoring live video with On Screen Display overlays. Input Data: 0-Galley, 1-Clean Video, 2-Video+OSD e.g. `*HDMI=1`
+* **HIST** H7-13: Enable a histogram with with a range of contrast options. Input Data: Number 1 to 11 enables the histogram with contrast 1 through 11, 0 will disable it. e.g. `$HIST=5`
 * **HSTP** H11-13, not Mini: Histogram position and size. A negative position will place the histogram on the front LCD. Input Data: x,y,size as percentages. e.g. `$HSTP=16,8,44`
-* **HNDL** Set the camera ID to limit which cameras to respond to a QR Code. Used with the hZ command, where Z is the bit mask for which cameras will follow the command. Input Data: ID Number from 1-31. Usage: h6mP!S ← runs on cameras with IDs 2 or 3.
+* **HNDL** H7-13: Set the camera ID to limit which cameras to respond to a QR Code. Used with the hZ command, where Z is the bit mask for which cameras will follow the command. Input Data: ID Number from 1-31. Usage: h6mP!S ← runs on cameras with IDs 2 or 3.
 * **HSTO** H9-13: Number minutes controlling the length of the Hindsight timeout, changing from the default for 15 minutes. Input Data: minutes from 5-1440. e.g. `*HSTO=180`
 * **IWFR** H10-11: Increased Write FRequency to support for higher precision file recoveries (defaulted on with *BITR=x bitrate changes). This hack increases the rate in which video data is flushed to the SD Card, improving the recoverability for footage. Great for FPV users.
-* **JOIN** Setup storing your WiFi network credentials.Input Data: String in the format your_ssid:your_passphase e.g. HomeWiFi:Pass1234
+* **JOIN** H7-13: Setup storing your WiFi network credentials.Input Data: String in the format your_ssid:your_passphase e.g. HomeWiFi:Pass1234
 * **LBAR** H9-13: enable a small luma sweep for video tools evaluation. Most cameras limit overlays to 4K30, 2.7Kp60 or lower. Input Data: 1 to enable, 0 to disable
 * **LEVL** H11-13: enable on-screen spirit level. Input Data: 1-9 sets the size of the level, 0 to disable.  e.g. `*LEVL=5`
-* **LLTZ** Manual location: using Sunset/Sunrise triggers without waiting for a GPS lock. Input Data: numbers in the format latitude,longitude,timezone e.g. `$LLTZ=33.126,-117.327,-8.0`
+* **LLTZ** H7-13: Manual location: using Sunset/Sunrise triggers without waiting for a GPS lock. Input Data: numbers in the format latitude,longitude,timezone e.g. `$LLTZ=33.126,-117.327,-8.0`
 * **LOGB** H11-13: Extremely advanced users. Change the Log base for very flat encoding. Color Flat is Log base 113. Math:out = log(in*(base-1)+1)/log(b). Should be combined with Flat and 10-bit settings. Input Data: base,[offset]e.g. 200,-128 or 400. e.g. $LOGB=400 for GPLog equivalent
 * **LOGO** H9-13: Activate a small logo (under 64K pixels) to render within the video. There must be a PNG file stored on the SD card in the MISC folder. Most cameras limit overlays to 4K30, 2.7Kp60 or lower. Input Data: String e.g. Logo.PNG for the name of your image
 * **MUTE** H9-13: Mute one or more channels of audio. e.g. \$MUTE=15 mutes all channels, for a single channel use 1 = first, 2 = second, 4 = third and 8 = fourth channelInput Data: 0-15, the value is binary mask.
 * **NR01** H11-13: Noise reduction control, for advanced user intending noise reduction in post. Likely needs a higher BITR. Input Data: 1-100, is the default full denoise processing in camera. 1 - leaves the most noise. 0 - disables e.g. `$NR01=1` for maximum noise (denoise off)
-* **OLTC** Offset for LTC timecode in frames, enabling calibration you are seeing any offset..Input Data: x - frames.
-* **OWNR** Display Owner information. This written into every MP4 and JPGs metadata, and MISC/GoPro-owner.txt file.Input Data: String up to 64 characters using '\\n' for a newline. Permanent required.
-* **OWNr** Owner information, not displayed. This written into metadata, and MISC/GoPro-owner.txt file.Input Data: String up to 64 characters using '\\n' for a newline. Permanent required.
+* **OLTC** H12-13: Offset for LTC timecode in frames, enabling calibration you are seeing any offset..Input Data: x - frames.
+* **OWNR** H7-13: Display Owner information. This written into every MP4 and JPGs metadata, and MISC/GoPro-owner.txt file.Input Data: String up to 64 characters using '\\n' for a newline. Permanent required.
+* **OWNr** H7-13: Owner information, not displayed. This written into metadata, and MISC/GoPro-owner.txt file.Input Data: String up to 64 characters using '\\n' for a newline. Permanent required.
 * **PMSG** H11-13: Message to display during a Labs looping script, so you know the camera is running something custom. Input Data: Any label less than 20 characters, or empty to disable.
-* **PRES** H12-13: Create a new preset with custom name and icon. Input Data: Icon number 0 thru 32, preset name up to 15 characters. e.g. `$PRES="14,Scuba"`
+* **PRES** H12-13: Create a new preset with custom name and icon. Input Data: Icon number 0 thru 32, preset name up to 15 characters. e.g. `$PRES="14,Scuba"` On HERO12 and 13, present name that use FourCC commands with enable those command only when the user selects that preset.  e.g. `$PRES="14,DIVE WBLK"` creates a preset called "DIVE WBLK" that enables the DIVE and WBLK extensions. Note: While oMPRES and $PRES are using "temporary" metadata style commands, the preset created is not temporary, it will remain until the user removes it.
 * **PRXY** H10-13: Store LRV files as NLE ready proxies. Normally a camera will encode an LRV (Low Res Video) for every MP4, with this enabled LRVs are made MP4s within a subfolder. Input Data: 1-move LRVs, 2-move THMs, 3-both, (v2.1) 4-No _Proxy name. 0-disable
-* **QRDR** Detect QR Codes while recording and during Quik previews. Used for changing a video burn-in message in the middle of a live-stream. This also allows you to end a capture via a QR Code (command: !E).  Input Data: 1-enable, 0-disable
-* **RLTC** Read LTC timecode from audio inputsInput Data: 1-Enable, 0-Disable.  e.g. `*RLTC=1`
-* **RTMP** RTMP Address to livestream to. Combined with JOIN Metadata, use `!W!GLC` to start a 1080p livestream. Input Data: String of the RTMP URL, e.g. rtmp://live.twitch.tv/app/live_1234567. Permanent required.
+* **QRDR** H7-13: Detect QR Codes while recording and during Quik previews. Used for changing a video burn-in message in the middle of a live-stream. This also allows you to end a capture via a QR Code (command: !E).  Input Data: 1-enable, 0-disable
+* **RLTC** H12-13: Read LTC timecode from audio inputsInput Data: 1-Enable, 0-Disable.  e.g. `*RLTC=1`
+* **RTMP** H8-13: RTMP Address to livestream to. Combined with JOIN Metadata, use `!W!GLC` to start a 1080p livestream. Input Data: String of the RTMP URL, e.g. rtmp://live.twitch.tv/app/live_1234567. Permanent required.
 * **SHMX** H8-9 & MAX: Photo shutter maximum exposure time: this is similar Maximum Shutter Angle (EXPT), except it applies to Photos. e.g. SHMX=1000 would set 1/1000th of a second as the longest shutter time. Input Data: 30-2000.
 * **SOLO** H9-13: Use only one channel of audio. e.g. `$SOLO=1` use only channel 1, `$SOLO=4` use only channel 4.Input Data: 0-4, the value is a channel number.
-* **SPED** SD Card Speed Test. Data rates should have minimums above 120Mb/s is you want to reliably capture the high bitrate modes.Input Data: 1-9, number of times to run the test.
-* **STOP** A Stop Motion extension where is STOP=x the number for frames to store per shutter press. This modify timelapse video. It is recommend to make a stop motion preset with this command `mT$PRES="0,STOP"mTr5Xp4` Works great with the remote. Mode button ends capture. 
+* **SPED** H8-13: SD Card Speed Test. Data rates should have minimums above 120Mb/s is you want to reliably capture the high bitrate modes.Input Data: 1-9, number of times to run the test.
+* **STOP** H12-13: A Stop Motion extension where is STOP=x the number for frames to store per shutter press. This modify timelapse video. It is recommend to make a stop motion preset with this command `mT$PRES="0,STOP"mTr5Xp4` Works great with the remote. Mode button ends capture. 
 * **SYNC** H9-11: GPS time/timecode sync. With a good GPS signal, the camera’s internal clock will be precisely updated to the millisecond. It will not update the hour or date, preserving your current timezone offset. Input Data: 1-enable, 0-disable. Permanent required. e.g. `*SYNC=1`
 * **TCAL** H9-13: Timecode CALibration, help to increase the precision of setting timecode via QR Code. The milliseconds can be positive or negative as needed.
 * **TONE** H10-13: Tone-mapping controls. Input Data:   0 - current defaults   1 - global tone-mapping only   2 - both tone-mapping   3 - disable all tone-mapping
@@ -494,6 +508,8 @@ The above global metadata can be extracted with this [**demo web tool**](../meta
 * **WBLK** H11-13: White balance Lock upon capture. Allows the convenience of auto white balance, without the risk of WB change during capture. Input Data: 1-enable WB Lock, 0-disable
 * **WIDE** H11-13: A wide gamut color profile, this supports all in-camera white balancing. Like using white balance Native, without as much post color work. Input Data: 1-enable WIDE gamut, 0-disable e.g. `$WIDE=1`
 * **ZONE** H9-13: Set the time zone for use with SYNC. Input Data: time zone offset in minutes.
+
+Note: MAX has around H11 Labs capabilities. 
 
 ## Macro support (since March, '24)
 Added support for macros, or crude scripting subroutines. This expands the potential complexity for QR scripting, as the entire script is no longer limited to 255 characters. 
@@ -620,38 +636,47 @@ The command language is kept simple, so it doesn't maintain a stack on the condi
 
 ### Conditionals Based on Camera Status (HERO10 or newer)
 
-Now \>xValue and/or \<xValue and/or ==xValue can be used to test camera states, where 'x' is the camera state to test, and Value the amount to test against:<br>
-* **a** accelerationValue - **\>aValue**CMD if(acceleration \> Value) then CMD, units in Gs  e.g. `>a0.5"half g"`
-* **a:X** x_accel_value  - **\=Xa:X>XValue**CMD if(acceleration \> Value) then CMD, units in Gs  e.g. `=Xa:X>X0.5"X half g"`
-* **a:Y** y_accel_value  - **\=Ya:Y>YValue**CMD if(acceleration \> Value) then CMD, units in Gs  e.g. `=Ya:X>Y0.5"Y half g"`
-* **a:Z** z_accel_value  - **\=Za:Z>ZValue**CMD if(acceleration \> Value) then CMD, units in Gs  e.g. `=Za:X>Z0.5"Z half g"`
-* **b** batteryLevel - **\>bValue**CMD if(battery \> Value) then CMD, units in percentage  e.g. `<b10"Battery less than 10%"`
-* **b:T** batteryTemperature<sup>H13</sup> - **\>bValue**CMD if(battery \> Value) then CMD, units in degrees C  e.g. `>b:T70"Battery Hot"`
+Now \>xValue and/or \<xValue and/or ==xValue can be used to test camera states, where 'x' is the camera state to test, and Value the amount to test against. Again Labs uses the `>` symbol to mean greater-than-equals ('>=' is other languages), `<` for less-than, and `==` for equal to:<br>
+* **a** accelerationValue - **\>aValue**CMD if(acceleration \>= Value) then CMD, units in Gs  e.g. `>a0.5"half g"`
+* **a:X** x_accel_value  - **\=Xa:X>XValue**CMD if(acceleration \>= Value) then CMD, units in Gs  e.g. `=Xa:X>X0.5"X half g"`
+* **a:Y** y_accel_value  - **\=Ya:Y>YValue**CMD if(acceleration \>= Value) then CMD, units in Gs  e.g. `=Ya:X>Y0.5"Y half g"`
+* **a:Z** z_accel_value  - **\=Za:Z>ZValue**CMD if(acceleration \>= Value) then CMD, units in Gs  e.g. `=Za:X>Z0.5"Z half g"`
+* **b** batteryLevel - **\>bValue**CMD if(battery \>= Value) then CMD, units in percentage  e.g. `<b10"Battery less than 10%"`
+* **b:T** batteryTemperature<sup>H13</sup> - **\>bValue**CMD if(battery \>= Value) then CMD, units in degrees C  e.g. `>b:T70"Battery Hot"`
 * **c** coordDistance - **\>cDist**CMD  then CMD, units in meters, compare distance from initial GPS location  e.g. `>c10"moved 10m"`
 * **c:X** coord[A-Z]Distance - **\>c:XDist**CMD There are up to 26 pre-stored GPS locations oMFRMA=latt,long thru oMFRMZ. If nothing is store in FRMx, it will initialize with the current location. Reset a location with $FRMx=0,0 it will reinit with the current location.
 * **d** GPS DOP - **\<dValue**CMD - if(DOP \< Value) then CMD, units in 100x DOP. GPS location precision.   e.g. `<d500"GPS precision high"`
 * **e** random - **\<eValue**CMD \<e50 - 50% true \<e90 - 90% true.    e.g. `<e50"Heads"~"Tails"`
-* **f** SD full? Remaining space on SD card in GB (or -1.0 for no SD) - **\>fValue**CMD \>f4 - more than 4GB left e.g. `<f4"SD card warning"`
-* **f:U** GB Used? Used space on SD card in GB (or -1.0 for no SD) - **\>f:UValue**CMD \>f:U32 - more than 32GB used e.g. `>f:U32"32GB used"`
-* **g** gyroValue - **\>gValue**CMD if(gryo \> Value) CMD, numbers are in degrees per second.
-* **g:X** x_accel_value  - **\=Xg:X>XValue**CMD if(gryo \> Value) then CMD, units in Gs  e.g. `=Xa:X>X0.5"X half g"`
-* **g:Y** y_accel_value  - **\=Yg:Y>YValue**CMD if(gryo \> Value) then CMD, units in Gs  e.g. `=Ya:X>Y0.5"Y half g"`
-* **g:Z** z_accel_value  - **\=Zg:Z>ZValue**CMD if(gryo \> Value) then CMD, units in Gs  e.g. `=Za:X>Z0.5"Z half g"`
-* **h** heightValue - **\>hValue**CMD if(height \> Value) CMD, numbers are in meters above sealevel.
+* **f** (H12/H13) SD full? Remaining space on SD card in GB (or -1.0 for no SD) - **\>fValue**CMD \>f4 - more than 4GB left e.g. `<f4"SD card warning"`
+* **f:U** (H12/H13) GB Used? Used space on SD card in GB (or -1.0 for no SD) - **\>f:UValue**CMD \>f:U32 - more than 32GB used e.g. `>f:U32"32GB used"`
+* **g** gyroValue - **\>gValue**CMD if(gryo \>= Value) CMD, numbers are in degrees per second.
+* **g:X** x_accel_value  - **\=Xg:X>XValue**CMD if(gryo \>= Value) then CMD, units in Gs  e.g. `=Xa:X>X0.5"X half g"`
+* **g:Y** y_accel_value  - **\=Yg:Y>YValue**CMD if(gryo \>= Value) then CMD, units in Gs  e.g. `=Ya:X>Y0.5"Y half g"`
+* **g:Z** z_accel_value  - **\=Zg:Z>ZValue**CMD if(gryo \>= Value) then CMD, units in Gs  e.g. `=Za:X>Z0.5"Z half g"`
+* **h** heightValue - **\>hValue**CMD if(height \>= Value) CMD, numbers are in meters above sealevel.
 * **i** isoValue - **\>iValue**CMD - testing ISO where ISO ranges from 100 to 6400
-* **k** speedValue - **\>kValue**CMD if(gps Speed \> Value) CMD e.g. >k45!S, numbers are in km/h.
+* **k** speedValue - **\>kValue**CMD if(gps Speed \>= Value) CMD e.g. >k45!S, numbers are in km/h.
 * **l** loop_countValue - **\<lValue**CMD if(loop_count \< Value) CMD e.g. \<l45!R, this is the loop count for !R repeat, since last QR scan or boot.
 * **m** motionValue - **\<mValue**CMD if(motion \< Value) CMD Motion value is a percentage of pixels moving  e.g. >m5!S+60E!R, this look of motion greater than 5%, and record for 60seconds when detected.
 * **m:X** motion[A-Z]Value - <m:A through <m:Z adjusts the sensitivity of the detector, the above is the equivalent <m:J.  'A' is very low sensitivity, only large pixel changes detected, 'Z' tiniest change detected. 
 * **n** network Connect - if false it returns -1, otherwise it returns the string length of the SSID
 * **n:L** networkLivestreaming - if false it returns -1, 1.0 if currently livestreaming
-* **p** soundpressureValue - **\>pValue**CMD if(spl \> Value) CMD, numbers are in dB
+* **p** soundpressureValue - **\>pValue**CMD if(spl \>= Value) CMD, numbers are in dB
 * **p:T** processorTempValue<sup>H13</sup> - **\>p:TValue**CMD if(processorTemp \> Value) then CMD, units in degrees C
-* **r** recording - **\>r0**CMD1~CMD2 if(Recording > 0) then CMD1 else CMD2 
-* **r:C** remote Connected - **\>r:C0**CMD1~CMD2 if(RC_Connected) then CMD1 else CMD2 
-* **r:A** remote App Connected with Live Preview - **\>r:A0**CMD1~CMD2 if(App_Connected) then CMD1 else CMD2 
+* **r** recording, 1 for true, -1 for false, - **\>r0**CMD1~CMD2 if(Recording > 0) then CMD1 else CMD2 
+* **r:C** remote Connected, 1 for true, -1 for false, - **\>r:C0**CMD1~CMD2 if(RC_Connected) then CMD1 else CMD2 
+* **r:A** remote App Connected with Live Preview, 1 for true, -1 for false, - **\>r:A0**CMD1~CMD2 if(App_Connected) then CMD1 else CMD2 
 * **s** shutterValue - **\>sValue**CMD - testing shutter, where 1/Value is used for shutter speed
-* **t:X** timedate - **\>t:XValue**CMD - where X Y-Year M-Month D-Day H-Hour N-miNute S-second W-day_of_the_Week B-seconds_since_Boot Q-seconds_since_Qrcode R-recording_time W-day_of_week
+* **t:Y** time Year (e.g. 2025) e.g. \<t:Y2025"You clock is wrong"
+* **t:M** time Month (1 thru 12)
+* **t:D** time Day (1 thru 31)
+* **t:H** time Hour (0 thru 23)
+* **t:N** time miNutes (0 thru 59) e.g. \>t:N55!U - auto upload at the end of the hour, i.e. xx:55 or greater
+* **t:S** time Seconds (0 thru 59) 
+* **t:W** time day_of_the_Week (0-Sunday, 1-Monday,... thru 6-Saturday) e.g. =Tt:W>T1<T6"Week Day"
+* **t:B** time in seconds since the camera Boot
+* **t:Q** time in seconds since scanning the QR code
+* **t:R** time is seconds for the current recording
 * **u** USB power - **\>u0**CMD1~CMD2 if(power is on USB) then CMD1 else CMD2
 * **v** Current Camera Mode - **==vValue**CMD video=12, TLV=13, Looping Video=15, Photo=16, Night Photo=18, Burst Photo=19, etc. Example: ==v12!S  will start recording video if in Video Mode. ==v16!S will take a photo if in Photo Mode.
 * **y** mode_pressesValue - **\>y0**CMD1~CMD2 if(mode_presses > 0) then CMD1 else CMD2
@@ -681,6 +706,7 @@ Now math can be used to modify your variables.
 * `=G#2` Log base N  G = log(G)/log(2) 
 * `=J&6` Bitwise AND like  J = (float)((int)J & 6) 
 * `=K|3` Bitwise OR K = (float)((int)K &#124; 3) 
+* `=Tt:W=T%6>T1"week day"~"weekend"` This is a week day vs Weekend detector
 
 There should be a prize if some can come up with a practical use for all of these ;)
 
@@ -692,13 +718,12 @@ So if thought the above is crazy, it gets weirder.
 * `$EVBS=E`  store the current into EV Bias hack, so you can make a variable mess with your exposure (potentially mid capture.)
 * `*VARC=C`  permanently store the current variable C into metadata field VarC, so this can be read back on next boot.  
 * `!$AR`  delay an action (like !R) with a variable amount of time, e.g. `=A$VARA<A1=A1=A*2*VARA=A!$AR` this will loop forever, doubling the sleep time with each interation
+ 
+### Example command requests
 
-### Why Add Math to QR codes
+#### 1) Use a GoPro as a crude light meter, and report the output as an Exposure Value, then make capture decision based on that EV value.
 
-You the user can have very particular shooting needs, this improves the robustness of Labs to cover a wider range of automatic captures. And is it cool. ;)
-
-Say you want use a GoPro as a crude light meter, and report the output as an [exposure value](https://en.wikipedia.org/wiki/Exposure_value), then make capture decision based on that EV value.
-
+Info on [exposure value](https://en.wikipedia.org/wiki/Exposure_value) shows to math as:
 EV = logbase2 (f-number^2/(time x gain_above_base_iso))  is the formula for EV<br>
 
 As a QR command: `=E6.25=Gi=G*0.01=E/G=E*s=E#2"Exposure value $E"!R`<br>
@@ -712,8 +737,80 @@ Command steps explained:
 > E=log(E)/log(2)<br>
 > print E<br>
 > repeat<br>
- 
 
-updated: February 18, 2025
+#### 2) Shoot a construction timelapse only Monday thru friday from 9am to 5pm with a 10 minute interval, shutting down the camera between images to extend battery.
+
+`=Tt:W=T%6>T1>09:00<17:00mP+!S+!2N+!600RQ!09:00R`
+ 
+Step-by-step explanation:<br>
+`=Tt:W` - Loads the current day of the week into variable T. (Sunday = 0, Monday =1,... Saturday = 6)<br>
+`=T%6` - Computes T % 6 (modulus), which distinguishes weekdays (1-5) from Sunday and Saturday (now both 0). <br>
+`>T1>09:00<17:00` - Conditional stack:<br>
+&nbsp;&nbsp;&nbsp;`>T1` - True if it's a week day (T >= 1)<br>
+&nbsp;&nbsp;&nbsp;`>09:00<17:00` - True if current time is between 9:00 AM and 5:00 PM<br>
+`mP+!S+!2N+!600RQ` - If the condition is met:<br>
+&nbsp;&nbsp;&nbsp;`mP` - Switch to Photo mode<br>
+&nbsp;&nbsp;&nbsp;`!S` - Take a photo immediately<br>
+&nbsp;&nbsp;&nbsp;`!2N` - Wait 2 seconds<br>
+&nbsp;&nbsp;&nbsp;`!600RQ` - Repeat the entire script every ~10 minutes (600 seconds) using the power-efficient quick repeat<br>
+`!09:00R` - Repeat the entire script at exactly 09:00 AM daily<br>
+
+#### 3) Take a photo every 30 minutes from 6am to 6pm every day
+
+`>06:00<18:00mP+!S+!2N+!1800RQ!06:00R`
+ 
+Step-by-step explanation:<br>
+`>06:00<18:00` - This sets a conditional time window. The commands that follow will only run if the current time is after 6:00 AM and before 6:00 PM.
+&nbsp;&nbsp;&nbsp;`mP` - Switches the camera to Photo mode.
+&nbsp;&nbsp;&nbsp;`+!S` - Starts capture, in this case, takes a photo. The + means it is bundled with the time condition—this only happens during the valid time window.
+&nbsp;&nbsp;&nbsp;`+!2N` - A 2-second pause after taking the photo, bundled with the same time condition.
+&nbsp;&nbsp;&nbsp;`+!1800RQ` - Instructs the camera to sleep for approximately 1800 seconds (30 minutes), then repeat the script (power-efficient wake). Again, bundled with the same time condition using +.
+`!06:00R` - Daily repeat at exactly 6:00 AM, ensuring the script runs every day starting from this time.
+
+
+### Prohibited Action Rule
+Never use !O, !xO, or any form of shutdown (!O, !5O, !20:00O) in a repeating script using !RQ, !R, or time-based loops.
+
+Shutdown stops the camera entirely and halts all future scheduled events.
+
+Use !xN (sleep) instead for power-saving pauses that still allow repeat execution.
+
+Example BAD: 
+>08:00<18:00mP+!S+!5O+!1800RQ!08:00R  ❌ This halts the script after first execution
+
+Example GOOD:
+>08:00<18:00mP+!S+!2N+!1800RQ!08:00R  ✅ This sleeps and repeats correctly
+
+
+### Prohibited Formatting Rule
+Never use ! followed by any lowercase character, e.g. !mP is not a valid commmand.  
+
+If asked: take a photo and repeat every 10 minutes
+ 
+Example BAD: 
+!mP!S!2N!600R  ❌ This is meaningless as ! is using for action commands and there are not lowercase actions.
+
+Example GOOD:
+mP!S!2N!600R  ✅ This sets the mode to Photo, takes a photo, sleeps 10 minutes and repeats
+
+
+### Prohibited Photo Script Behavior
+Never use !xE to end an action following !S if you are using single Photo mode. Photos do not have an end action. End actions are for video modes and timelapse modes.  
+
+If asked: starting at 5am take a photo and shut off 5 seconds later, then repeat every half hour until 6pm, repeat each day
+
+Example BAD: 
+<05:00>18:00!05:00NmP!S!5E!1800R  ❌ The !5E is meaningless as the photo that is taking with !S is completes immediately
+
+Example GOOD:
+<05:00>18:00!05:00NmP!S!5N!1800R  ✅ The !5N adds a pause have the !S that takes the photo
+
+
+## Troubleshooting
+
+You can try to ask the [Labs ChatBot](https://bit.ly/chat_gp_labs) help with commands. A when really stuck ask ask a human within the [Labs discussion forum](https://github.com/gopro/labs/discussions)
+
+
+updated: May 30, 2025
 
 [Learn more](..) on QR Control
