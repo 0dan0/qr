@@ -1,9 +1,7 @@
 # Dual Fisheye → 360° Maximum Effective Resolution
 
 <style>
-  body { font: 14px/1.45 system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 24px; max-width: 880px; }
   h1 { font-size: 20px; margin: 0 0 12px; }
-  p  { margin: 6px 0 14px; }
   label { display: block; margin: 10px 0 4px; }
   input, select { padding: 8px; width: 220px; }
   .num { font-variant-numeric: tabular-nums; }
