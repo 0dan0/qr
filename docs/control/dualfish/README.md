@@ -12,7 +12,6 @@
   .preset-btn.active { border-color: #4a7; background: #e9fff1; }
 </style>
 
-<h1>Dual Fisheye → 360° Maximum Effective Resolution</h1>
 <p>
   The maximum effective resolution of the 360° image is calculated by measuring the 180° line (diameter) of active pixels. The region of active pixels can be measured by looking at objects at large distances, but visible in both fisheye lenses.
   These distant objects indicate how much resolution is in the sphere and how much is used as overlap (for stitching) between the lenses. Overlap pixels are a must for stitching, but do not contribute to final output resolution.<br>
