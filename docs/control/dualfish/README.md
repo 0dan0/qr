@@ -7,32 +7,40 @@
   .num { font-variant-numeric: tabular-nums; }
   small { color: #666; }
   code { background: #f2f2f2; padding: 1px 4px; border-radius: 4px; }
-  .presets { margin: 14px 0 4px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .presets { margin: 14px 0 4px; display: flex; gap: 10px; flex-wrap: wrap; display: none; }
   .preset-btn { padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background: #f8f8f8; cursor: pointer; }
   .preset-btn.active { border-color: #4a7; background: #e9fff1; }
 </style>
 
+<h1>Dual Fisheye → 360° Maximum Effective Resolution</h1>
 <p>
   The maximum effective resolution of the 360° image is calculated by measuring the 180° line (diameter) of active pixels. The region of active pixels can be measured by looking at objects at large distances, but visible in both fisheye lenses.
-  These distant objects, indicate how much resolution is in the sphere and how much is used as overlap (for stitching) between the lenses. Overlap pixels are a must for stitching, but do not contribute to final output resolution.<br>
+  These distant objects indicate how much resolution is in the sphere and how much is used as overlap (for stitching) between the lenses. Overlap pixels are a must for stitching, but do not contribute to final output resolution.<br>
   Measure any dual fisheye camera system using this <a href="https://gopro.com/en/us/news/beyond-counting-pixels--defining-resolution-in-spherical">technique.</a><br>
   <small>size180 = min(width, height) × (180 / FOV). Then ERP = (2×size180) × (size180) and EAC face = size180 / 2.</small>
 </p>
 
-<div class="presets">
-  <button id="preset-xam" class="preset-btn" type="button" title="3880×3880 at 91%">Cam1</button>
-  <button id="preset-lam" class="preset-btn" type="button" title="3840×3840 at 91%">Cam2</button>
-  <button id="preset-bam" class="preset-btn" type="button" title="3840×3840 at 93%">Cam3</button>
+<div id="presetbuttons" class="presets">
+  Camera Presets: 
+  <button id="preset-xam" class="preset-btn" type="button" title="cam1">Camera 1</button>
+  <button id="preset-lam" class="preset-btn" type="button" title="cam2">Camera 2</button>
+  <button id="preset-bam" class="preset-btn" type="button" title="cam3">Camera 3</button>
 </div>
 
+<div id="secrets">
+	<input type="password" id="password" placeholder="Password">
+	<button onclick="unlock()">Unlock</button>
+	<div id="error"></div>
+</div>
+  
 <div>
   <div>
-    Fisheye width and height (px): <input type="range" style="width: 200px;vertical-align: middle;" id="vsize" name="vsize" min="1920" max="3880" value="3880" step="8">
-    <input id="w" type="number" style="width: 100px;" min="1920" max="3880" value="3880" step="8">
+    Fisheye width and height (px): <input type="range" style="width: 200px;vertical-align: middle;" id="vsize" name="vsize" min="1920" max="4400" value="3840" step="8">
+    <input id="w" type="number" style="width: 100px;" min="1920" max="4400" value="3840" step="8">
   </div>
   <div>
-    Percentage active pixels (% of total diameter):  <input type="range" style="width: 200px;vertical-align: middle;" id="pcrop" name="pcrop" min="70" max="100" value="91" step="0.2">
-    <input id="crop" type="number" style="width: 100px;" value="91" min="70" max="100" step="0.2">
+    Percentage active pixels (% of total diameter):  <input type="range" style="width: 200px;vertical-align: middle;" id="pcrop" name="pcrop" min="70" max="100" value="90" step="0.2">
+    <input id="crop" type="number" style="width: 100px;" value="90" min="70" max="100" step="0.2">
   </div>
 
   <br>
@@ -43,13 +51,22 @@
 
 <div class="out" id="out"></div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
 <script>
 function roundTo(x, mult) { return Math.round(x / mult) * mult; }
 function fmt(x, d=2) { return Number.isFinite(x) ? x.toFixed(d) : '—'; }
 
 var last_w = 0;
 var last_crop = 0;
-var max_res = 3880;
+
+var cam1 = 95.0;
+var cam2 = 93.0;
+var cam3 = 94.0;
+
+var max_res = 4400;
+var cam1_res = 3840;
+
+var show_eac = 0;
 
 function setInputs(w, crop) {
   const wEl = document.getElementById('w');
@@ -71,9 +88,9 @@ function markActivePreset() {
   const crop = Number(document.getElementById('crop').value);
 
   const presets = [
-    { id: 'preset-xam', w: max_res, crop: 91.0 },
-    { id: 'preset-lam', w: 3840, crop: 92.0 },
-    { id: 'preset-bam', w: 3840, crop: 93.0 },
+    { id: 'preset-xam', w: cam1_res, crop: cam1},
+    { id: 'preset-lam', w: 3840, crop: cam2 },
+    { id: 'preset-bam', w: 3840, crop: cam3 },
   ];
 
   presets.forEach(p => {
@@ -84,9 +101,9 @@ function markActivePreset() {
 }
 
 function setPreset(name) {
-  if (name === 'XAM') setInputs(max_res, 91.0);
-  else if (name === 'LAM') setInputs(3840, 92.0);
-  else if (name === 'BAM') setInputs(3840, 93.0);
+  if (name === 'XAM') { show_eac = 1; setInputs(cam1_res, cam1); }
+  else if (name === 'LAM') { show_eac = 0; setInputs(3840, cam2); }
+  else if (name === 'BAM') { show_eac = 0; setInputs(3840, cam3); }
   last_w = 0;
   last_crop = 0;
   calc();
@@ -280,42 +297,102 @@ function calc() {
   var src = w + " x " + h;
   drawText(ctx, src, 50*scale+cw*(1-edge_scale), 15*scale+ch*(1-edge_scale), 16*scale, 0);
   drawText(ctx, src, -50*scale+cw*edge_scale, 15*scale+ch*(1-edge_scale), 16*scale, 0);
+ 
+	var group1 = `
+		<p><strong>Inputs</strong>: width=${w}, height=${h}, crop=${crop}%</p>
 
-  out.innerHTML = `
-    <p><strong>Inputs</strong>: width=${w}, height=${h}, crop=${crop}%</p>
+		<p><strong>180° dimensions:</strong><br>
+		  180° Fisheye Size: <b class="num">${size180_rm}</b> × <b class="num">${size180_rm}</b>
+		</p>
 
-    <p><strong>180° dimensions:</strong><br>
-      180° Fisheye Size: <b class="num">${size180_rm}</b> × <b class="num">${size180_rm}</b>
-    </p>
-
-    <p><strong>ERP that matches this sampling</strong> (W × H = 2×size180 × size180)<br>
-      ERP Full Size: <b class="num">${eacF_rm*4}</b> × <b class="num">${eacF_rm*2}</b><br>
-      Maximum marketing resolution for the sphere: <b class="num">${erpK_rm}K</b><br>
-    </p>
-
-    <strong>GoPro MAX/MAX2 cameras use EAC 360° format</strong><br>
-      EAC Face Size: <b class="num">${eacF_rm}</b> × <b class="num">${eacF_rm}</b><br>
-      EAC Full Size 3x2: <b class="num">${eacF_rm*3}</b> × <b class="num">${eacF_rm*2}</b><br>
-      EAC Full Size 3x2 + blending overlap : <b class="num">${eacF_rm*3+ eacF_overlap}</b> × <b class="num">${eacF_rm*2}</b>
-    </p>
+		<p><strong>ERP that matches this sampling</strong> (W × H = 2×size180 × size180)<br>
+		  ERP Full Size: <b class="num">${eacF_rm*4}</b> × <b class="num">${eacF_rm*2}</b><br>
+		  Maximum marketing resolution for the sphere: <b class="num">${erpK_rm}K</b><br>
+		</p>
+		`;
 	
-	<p>
-	<small>Terms: <br>
-	<b>ERP</b> (Equirectangular Projection) - ERP is a flat‑image format for 360° images that maps the sphere onto a rectangle with a 2:1 aspect ratio. Because of the way the math works, the top and bottom poles are stretched, just like on most world maps.<br>
-	<b>EAC</b> (Equiangular Cubemap) - EAC is 360° format that stores the image as six square faces of a cube, just like a traditional cubemap use in video gaming, but each face is laid out so that every pixel covers exactly the same angular width and height. This “equal‑angle” layout keeps distortion low at the poles and gives a more uniform resolution across the whole sphere, which is why it’s more efficient for 360° video storage.<br>
-	<br>
-	Assumptions: <br>
-	Resolution calculations are for perfectly ideal fisheye lenses. 
-	In practice, real lens have distortion curves, which add or subtract resolution for different parts of the image. 
-	However, the average resolution for the sphere can not exceed the maximum resolution calculated here.<br>
-	<br>
-	GoPro, HERO, MAX and their respective logos are trademarks or registered trademarks of GoPro, Inc. in the United States and other countries. Other trademarks are the property of their respective owners.
-	</small>
-	</p>
-  `;
+	var group2 = `
+		<div id="eac"><strong>GoPro MAX/MAX2 cameras use EAC 360° format</strong><br>
+		  EAC Face Size: <b class="num">${eacF_rm}</b> × <b class="num">${eacF_rm}</b><br>
+		  EAC Full Size 3x2: <b class="num">${eacF_rm*3}</b> × <b class="num">${eacF_rm*2}</b><br>
+		  EAC Full Size 3x2 + blending overlap : <b class="num">${eacF_rm*3+ eacF_overlap}</b> × <b class="num">${eacF_rm*2}</b>
+		</p></div>
+	`;
+
+	var group3 = `<p>
+		<small>Terms: <br>
+		<b>ERP</b> (Equirectangular Projection) - ERP is a flat‑image format for 360° images that maps the sphere onto a rectangle with a 2:1 aspect ratio. Because of the way the math works, the top and bottom poles are stretched, just like on most world maps.<br>	
+		`;
+	var group4 = `<b>EAC</b> (Equiangular Cubemap) - EAC is 360° format that stores the image as six square faces of a cube, just like a traditional cubemap use in video gaming, but each face is laid out so that every pixel covers exactly the same angular width and height. This “equal‑angle” layout keeps distortion low at the poles and gives a more uniform resolution across the whole sphere, which is why it’s more efficient for 360° video storage.<br>
+		`;
+	
+	var group5 = `<br>
+		Assumptions: <br>
+		Resolution calculations are for perfectly ideal fisheye lenses. 
+		In practice, real lens have distortion curves, which add or subtract resolution for different parts of the image. 
+		However, the average resolution for the sphere can not exceed the maximum resolution calculated here.<br>
+		<br>
+		GoPro, HERO, MAX and their respective logos are trademarks or registered trademarks of GoPro, Inc. in the United States and other countries. Other trademarks are the property of their respective owners.
+		</small>
+		</p>
+	  `;
+	  
+    if(show_eac)
+    {
+		out.innerHTML = group1 + group2 + group3 + group4 + group5;
+	} 
+	else
+	{
+		out.innerHTML = group1 + group3 + group5;
+	}
 
   markActivePreset();
 }
+
+const ciphertext = "U2FsdGVkX18Xv+4p6Lt2Lx8hjaj2YYvrLiShf+eZ47lAmAieRDxCz0RDNU4qPUWGdVxb9VFXuqBLBdRvFddPXffGpl+us6f//y06xF+TPEt8BwOG9krb2Olg2dBVhUfP";
+
+function parseCSV(input) {
+  return input.split(",").map(item => item.trim());
+}
+
+function parseCSVwithNumbers(input) {
+  return input.split(",").map(item => {
+    item = item.trim();
+    return isNaN(item) ? item : Number(item);
+  });
+}
+
+function unlock() {
+  const pw = document.getElementById('password').value;
+  try {
+	const bytes = CryptoJS.AES.decrypt(ciphertext, pw);
+	const plaintext = bytes.toString(CryptoJS.enc.Utf8);
+	if (!plaintext) 
+	{
+		throw new Error("Wrong password");
+	}
+	
+	let parsed = parseCSVwithNumbers(plaintext);
+	max_res = cam1_res = parsed[0];
+	cam1 = parsed[1];
+	cam2 = parsed[2];
+	cam3 = parsed[3];
+	
+	document.getElementById('preset-xam').innerText = parsed[4];
+	document.getElementById('preset-lam').innerText = parsed[5];
+	document.getElementById('preset-bam').innerText = parsed[6];
+	
+	setPreset("XAM");
+	
+	document.getElementById("secrets").style.display = "none";
+	document.getElementById("presetbuttons").style.display = "block";
+	document.getElementById("eac").style.display = "block";
+  } catch (e) {
+	//document.getElementById('error').innerText = CryptoJS.AES.encrypt("This is the secret message!", "password").toString();
+	document.getElementById('error').innerText = "Invalid password. Try again.";
+  }
+}
+
 
 let frameCount = 0;
 function animate() {
