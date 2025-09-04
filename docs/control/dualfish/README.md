@@ -49,6 +49,7 @@ function fmt(x, d=2) { return Number.isFinite(x) ? x.toFixed(d) : '—'; }
 
 var last_w = 0;
 var last_crop = 0;
+var max_res = 3880;
 
 function setInputs(w, crop) {
   const wEl = document.getElementById('w');
@@ -70,7 +71,7 @@ function markActivePreset() {
   const crop = Number(document.getElementById('crop').value);
 
   const presets = [
-    { id: 'preset-xam', w: 3880, crop: 91.0 },
+    { id: 'preset-xam', w: max_res, crop: 91.0 },
     { id: 'preset-lam', w: 3840, crop: 92.0 },
     { id: 'preset-bam', w: 3840, crop: 93.0 },
   ];
@@ -83,7 +84,7 @@ function markActivePreset() {
 }
 
 function setPreset(name) {
-  if (name === 'XAM') setInputs(3880, 91.0);
+  if (name === 'XAM') setInputs(max_res, 91.0);
   else if (name === 'LAM') setInputs(3840, 92.0);
   else if (name === 'BAM') setInputs(3840, 93.0);
   last_w = 0;
@@ -163,7 +164,7 @@ function calc() {
 
   if (w == last_w) {
     w = Number(document.getElementById('w').value);
-    if (w >= 2880 && w <= 3880) {
+    if (w >= 2880 && w <= max_res) {
       document.getElementById('vsize').value = w;
       last_w = w;
     }
@@ -193,7 +194,7 @@ function calc() {
   }
 
   const crp = crop / 100;
-  const scale = w/3880;
+  const scale = w/max_res;
   const edge_scale = 1-0.5*(1-scale);
   const base = Math.min(w, h);
   const size180_raw = base * crp;
@@ -265,6 +266,9 @@ function calc() {
   drawText(ctx, "180° Active Pixels", cx1, cy-14*scale, 30*scale, 0);
   drawText(ctx, "180° Active Pixels", cx2, cy-14*scale, 30*scale, 0);
   
+  drawText(ctx, "Front", cx1, cy-54*scale, 24*scale, 0);
+  drawText(ctx, "Back", cx2, cy-54*scale, 24*scale, 0);
+  
   var respix = erpH_rm + "px";
   drawText(ctx, respix, cx1, cy+15*scale, 18*scale, 0);
   drawText(ctx, respix, cx2, cy+15*scale, 18*scale, 0);
@@ -289,17 +293,23 @@ function calc() {
       Maximum marketing resolution for the sphere: <b class="num">${erpK_rm}K</b><br>
     </p>
 
-    <p><strong>EAC face size</strong> (F = size180 / 2, ERP = 4F × 2F)<br>
+    <strong>GoPro MAX/MAX2 cameras use EAC 360° format</strong><br>
       EAC Face Size: <b class="num">${eacF_rm}</b> × <b class="num">${eacF_rm}</b><br>
       EAC Full Size 3x2: <b class="num">${eacF_rm*3}</b> × <b class="num">${eacF_rm*2}</b><br>
-      EAC Full Size 3x2 + blending overlap (Final GoPro media) : <b class="num">${eacF_rm*3+ eacF_overlap}</b> × <b class="num">${eacF_rm*2}</b>
+      EAC Full Size 3x2 + blending overlap : <b class="num">${eacF_rm*3+ eacF_overlap}</b> × <b class="num">${eacF_rm*2}</b>
     </p>
 	
 	<p>
-	<small>Assumptions: Resolution calculations are for perfectly ideal fisheye lenses. 
+	<small>Terms: <br>
+	<b>ERP</b> (Equirectangular Projection) - ERP is a flat‑image format for 360° images that maps the sphere onto a rectangle with a 2:1 aspect ratio. Because of the way the math works, the top and bottom poles are stretched, just like on most world maps.<br>
+	<b>EAC</b> (Equiangular Cubemap) - EAC is 360° format that stores the image as six square faces of a cube, just like a traditional cubemap use in video gaming, but each face is laid out so that every pixel covers exactly the same angular width and height. This “equal‑angle” layout keeps distortion low at the poles and gives a more uniform resolution across the whole sphere, which is why it’s more efficient for 360° video storage.<br>
+	<br>
+	Assumptions: <br>
+	Resolution calculations are for perfectly ideal fisheye lenses. 
 	In practice, real lens have distortion curves, which add or subtract resolution for different parts of the image. 
 	However, the average resolution for the sphere can not exceed the maximum resolution calculated here.<br>
 	<br>
+	GoPro, HERO, MAX and their respective logos are trademarks or registered trademarks of GoPro, Inc. in the United States and other countries. Other trademarks are the property of their respective owners.
 	</small>
 	</p>
   `;
