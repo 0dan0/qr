@@ -337,7 +337,7 @@ async function tonemap_filmic(hdr, exposure=1.0) {
 }
 
 function drawToCanvas(ldr, canvas) {
-  canvas.width = ldr.w; canvas.height = ldr.h;
+  //canvas.width = ldr.w; canvas.height = ldr.h;
   const ctx = canvas.getContext('2d', { willReadFrequently: true }); // perf hint
   ctx.putImageData(new ImageData(ldr.data, ldr.w, ldr.h), 0, 0);
 }
