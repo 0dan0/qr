@@ -6,7 +6,6 @@
     <input id="files" type="file" accept="image/jpeg" multiple />
     <button id="run">Merge HDR</button>
     <button id="saveHdr" disabled>Download .HDR</button>
-    <button id="saveJpg" disabled>Download Preview JPG</button>
   </div>
   <div class="row">
     <label>Preview exposure: <input id="previewExp" type="number" step="0.1" value="2.0" title="Photographic exposure for preview"></label>
@@ -16,14 +15,14 @@
 <fieldset>
   <legend>Progress</legend>
   <div id="stage">Idle</div>
-  <progress id="overall" value="0" max="100"></progress>
+  <progress id="overall" value="0" max="100" width="800"></progress>
   <div class="muted" style="margin-top:6px;">Per-file</div>
-  <progress id="perfile" value="0" max="100"></progress>
+  <progress id="perfile" value="0" max="100" width="800"></progress>
 </fieldset>
 
 <fieldset>
   <legend>Preview (tone-mapped)</legend>
-  <canvas id="preview"></canvas>
+  <canvas id="preview" width="800" height="400"></canvas>
 </fieldset>
 
 <fieldset>
@@ -530,7 +529,6 @@ async function loadAndPreprocess(files) {
 $('#run').addEventListener('click', async () => {
   try {
     $('#saveHdr').disabled = true;
-    $('#saveJpg').disabled = true;
     logEl.textContent = '';
     setOverall(0); setPerFile(0);
 
@@ -578,18 +576,6 @@ $('#run').addEventListener('click', async () => {
         logLine(`HDR save failed: ${e.message||e}`, 'err');
       }
     };
-    $('#saveJpg').disabled = false;
-    $('#saveJpg').onclick = () => {
-      try {
-        const a = document.createElement('a');
-        a.href = $('#preview').toDataURL('image/jpeg', 0.95);
-        a.download = 'preview.jpg';
-        a.click();
-        logLine('Preview JPG downloaded.', 'ok');
-      } catch (e) {
-        logLine(`JPG save failed: ${e.message||e}`, 'err');
-      }
-    };
 
     setStage('Done');
     setOverall(100);
@@ -602,5 +588,3 @@ $('#run').addEventListener('click', async () => {
   }
 });
 </script>
-</body>
-</html>
