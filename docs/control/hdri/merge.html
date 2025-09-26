@@ -361,10 +361,41 @@ async function tonemap_filmic(hdr, exposure=1.0) {
   return { w, h, data: out };
 }
 
-function drawToCanvas(ldr, canvas) {
-  canvas.width = ldr.w; canvas.height = ldr.h;
-  const ctx = canvas.getContext('2d', { willReadFrequently: true }); // perf hint
-  ctx.putImageData(new ImageData(ldr.data, ldr.w, ldr.h), 0, 0);
+//function drawToCanvas(ldr, canvas) {
+//  canvas.width = ldr.w; canvas.height = ldr.h;
+//  const ctx = canvas.getContext('2d', { willReadFrequently: true }); // perf hint
+//  ctx.putImageData(new ImageData(ldr.data, ldr.w, ldr.h), 0, 0);
+//}
+function drawToCanvas(ldr, canvas, targetW = 800, targetH = 400, mode = 'contain') {
+  // 1) paint the RGBA into a temp canvas at native size
+  const srcC = document.createElement('canvas');
+  srcC.width = ldr.w; srcC.height = ldr.h;
+  const srcCtx = srcC.getContext('2d', { willReadFrequently: true });
+  srcCtx.putImageData(new ImageData(ldr.data, ldr.w, ldr.h), 0, 0);
+
+  // 2) set preview canvas to fixed size
+  canvas.width = targetW;
+  canvas.height = targetH;
+
+  const ctx = canvas.getContext('2d', { willReadFrequently: true });
+  ctx.imageSmoothingEnabled = true;         // better downscale
+  ctx.imageSmoothingQuality = 'high';       // ask for HQ filters
+
+  if (mode === 'stretch') {
+    // Fill exactly 800x400 (may distort aspect)
+    ctx.clearRect(0, 0, targetW, targetH);
+    ctx.drawImage(srcC, 0, 0, targetW, targetH);
+  } else {
+    // 'contain' => preserve aspect ratio, letterbox
+    const scale = Math.min(targetW / ldr.w, targetH / ldr.h);
+    const drawW = Math.max(1, Math.floor(ldr.w * scale));
+    const drawH = Math.max(1, Math.floor(ldr.h * scale));
+    const offX = Math.floor((targetW - drawW) / 2);
+    const offY = Math.floor((targetH - drawH) / 2);
+
+    ctx.clearRect(0, 0, targetW, targetH);
+    ctx.drawImage(srcC, 0, 0, ldr.w, ldr.h, offX, offY, drawW, drawH);
+  }
 }
 
 /* ===================== Radiance .HDR (RGBE) encoder ===================== */
