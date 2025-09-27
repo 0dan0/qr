@@ -8,7 +8,7 @@
     <button id="saveHdr" disabled>Download .HDR</button>
   </div>
   <div class="row">
-    <label>Preview exposure: <input id="previewExp" type="number" step="0.1" value="2.0" title="Photographic exposure for preview"></label>
+    <label>Preview exposure: <input id="previewExp" type="number" step="0.1" value="2.0" title="Photographic exposure for preview" style="width: 100px;"></label>
   </div>
 </fieldset>
 
