@@ -16,7 +16,7 @@
   <legend>Progress</legend>
   <div id="stage">Idle</div>
   <progress id="overall" value="0" max="100" style="width: 800px;"></progress>
-  <div class="muted" style="margin-top:6px;">Per-file</div>
+  <div class="muted" style="margin-top:6px;">Per-stage</div>
   <progress id="perfile" value="0" max="100" style="width: 800px;"></progress>
 </fieldset>
 
@@ -56,7 +56,7 @@ function setOverall(pct) { $('#overall').value = Math.max(0, Math.min(100, pct))
 function setPerFile(pct) { $('#perfile').value = Math.max(0, Math.min(100, pct)); }
 function nextFrame() { return new Promise(r => requestAnimationFrame(() => r())); }
 
-/* ===================== sRGB → Linear (true EOTF) ===================== */
+/* ===================== sRGB 2.2 → Linear ===================== */
 function srgbToLinear_u8(imgData) {
   const { data, width, height } = imgData;
   const out = new Float32Array(width * height * 3);
@@ -67,6 +67,22 @@ function srgbToLinear_u8(imgData) {
     const r = Math.pow(sr, 2.2);
     const g = Math.pow(sg, 2.2);
     const b = Math.pow(sb, 2.2);
+    out[j] = r; out[j+1] = g; out[j+2] = b;
+  }
+  return out;
+}
+
+/* ===================== GoPro Flat (log 113) → Linear ===================== */
+function goProFlatToLinear_u8(imgData) {
+  const { data, width, height } = imgData;
+  const out = new Float32Array(width * height * 3);
+  for (let i = 0, j = 0; i < data.length; i += 4, j += 3) {
+    const sr = data[i]   / 255;
+    const sg = data[i+1] / 255;
+    const sb = data[i+2] / 255;
+    const r = (Math.pow(113.0,sr)-1.0)/112.0;
+    const g = (Math.pow(113.0,sg)-1.0)/112.0;
+    const b = (Math.pow(113.0,sb)-1.0)/112.0;
     out[j] = r; out[j+1] = g; out[j+2] = b;
   }
   return out;
@@ -221,7 +237,7 @@ function gaussianBlurROI(floatLinearRGB, pitch, x1, y1, x2, y2, ksize) {
 
 
 /* ===================== Merge radiance (linear) ===================== */
-function wellExposedWeight(rgb, mid=0.5, sigma=0.225) {
+function wellExposedWeight(rgb, mid=0.5, sigma=0.1225) {
   const m = (rgb[0]+rgb[1]+rgb[2])/3;
   return Math.exp(-((m-mid)*(m-mid)) / (2*sigma*sigma));
 }
@@ -325,7 +341,7 @@ async function tonemap_filmic(hdr, exposure=1.0) {
 }
 
 //function drawToCanvas(ldr, canvas) {
-//  //canvas.width = ldr.w; canvas.height = ldr.h;
+//  canvas.width = ldr.w; canvas.height = ldr.h;
 //  const ctx = canvas.getContext('2d', { willReadFrequently: true }); // perf hint
 //  ctx.putImageData(new ImageData(ldr.data, ldr.w, ldr.h), 0, 0);
 //}
@@ -360,6 +376,121 @@ function drawToCanvas(ldr, canvas, targetW = 800, targetH = 400, mode = 'contain
     ctx.drawImage(srcC, 0, 0, ldr.w, ldr.h, offX, offY, drawW, drawH);
   }
 }
+
+function encodeRadianceHDR_RGBE_RLE(hdr) {
+  const { w, h, data } = hdr;
+
+  // --- header ---
+  const header = [
+    "#?RADIANCE",
+    "FORMAT=32-bit_rle_rgbe",
+    "", // blank line
+    `-Y ${h} +X ${w}\n`
+  ].join("\n");
+  const headerBytes = new TextEncoder().encode(header);
+
+  // helper: RGB->RGBE (float32 -> 4x uint8)
+  function toRGBE(r, g, b) {
+    const maxc = Math.max(r, g, b);
+    if (maxc < 1e-32) return [0, 0, 0, 0];
+    const e = Math.ceil(Math.log2(maxc));
+    const scale = Math.pow(2, e) / 256;
+    return [
+      Math.min(255, Math.round(r / scale)),
+      Math.min(255, Math.round(g / scale)),
+      Math.min(255, Math.round(b / scale)),
+      e + 128
+    ];
+  }
+
+  // If width unsupported by RLE, write old style (flat RGBE)
+  if (w < 8 || w > 0x7fff) {
+    const flat = new Uint8Array(w * h * 4);
+    for (let i = 0, p = 0; i < w * h; i++, p += 3) {
+      const [R, G, B, E] = toRGBE(data[p], data[p + 1], data[p + 2]);
+      const q = i * 4;
+      flat[q] = R; flat[q + 1] = G; flat[q + 2] = B; flat[q + 3] = E;
+    }
+    return new Blob([headerBytes, flat], { type: "image/vnd.radiance" });
+  }
+
+  // --- RLE output builder ---
+  const out = [];
+  const pushByte = (b) => out.push(b & 0xff);
+  const pushBytes = (arr) => { for (let i = 0; i < arr.length; i++) pushByte(arr[i]); };
+
+  // write one channel (Uint8 array of length w) using Radiance RLE
+  function writeRLEChannel(line) {
+    let x = 0;
+    while (x < w) {
+      // Try to find a run at x
+      let runLen = 1;
+      const maxRun = Math.min(w - x, 127);
+      const val = line[x];
+
+      while (runLen < maxRun && line[x + runLen] === val) runLen++;
+
+      if (runLen >= 4) {
+        // Write run packet
+        pushByte(128 + runLen);
+        pushByte(val);
+        x += runLen;
+      } else {
+        // Write literal packet up to 128 or until a future run (>=4) is about to start
+        let start = x;
+        let count = 0;
+        const maxLit = Math.min(w - x, 128);
+
+        while (count < maxLit) {
+          // Look ahead to see if a run starts here; if so, stop literals
+          if (count >= 1) {
+            let lookRun = 1;
+            const maxLook = Math.min(w - (x + count), 127);
+            const lookVal = line[x + count];
+            while (lookRun < maxLook && line[x + count + lookRun] === lookVal) lookRun++;
+            if (lookRun >= 4) break; // stop before run
+          }
+          count++;
+        }
+        pushByte(count);
+        for (let i = 0; i < count; i++) pushByte(line[start + i]);
+        x += count;
+      }
+    }
+  }
+
+  // --- encode scanlines ---
+  for (let y = 0; y < h; y++) {
+    // scanline header: 0x02 0x02 width_hi width_lo
+    pushByte(0x02);
+    pushByte(0x02);
+    pushByte((w >> 8) & 0xff);
+    pushByte(w & 0xff);
+
+    // Prepare per-channel arrays for this scanline
+    const R = new Uint8Array(w);
+    const G = new Uint8Array(w);
+    const B = new Uint8Array(w);
+    const E = new Uint8Array(w);
+
+    let p = y * w * 3;
+    for (let x = 0; x < w; x++, p += 3) {
+      const [r8, g8, b8, e8] = toRGBE(data[p], data[p + 1], data[p + 2]);
+      R[x] = r8; G[x] = g8; B[x] = b8; E[x] = e8;
+    }
+
+    // Write 4 channels (R, G, B, E), each RLE-compressed
+    writeRLEChannel(R);
+    writeRLEChannel(G);
+    writeRLEChannel(B);
+    writeRLEChannel(E);
+	
+    setPerFile((y/h)*100);
+  }
+
+  return new Blob([headerBytes, new Uint8Array(out)], { type: "image/vnd.radiance" });
+}
+
 
 /* ===================== Radiance .HDR (RGBE) encoder ===================== */
 function encodeRadianceHDR_RGBE(hdr) {
@@ -424,6 +555,9 @@ async function loadAndPreprocess(files) {
   const idx = exposures.map((t,i)=>[t,i]).sort((a,b)=>a[0]-b[0]).map(x=>x[1]);
   const sortedExpos = idx.map(i=>exposures[i]);
   const sortedBmps  = idx.map(i=>bitmaps[i]);
+  
+  const shortestFileName = files[idx[0]].name;  // name of shortest exposure file
+  const baseName = shortestFileName.replace(/\.[^.]+$/, ''); // strip extension
 
   // common size = first image
   const w = sortedBmps[0].width, h = sortedBmps[0].height;
@@ -440,6 +574,8 @@ async function loadAndPreprocess(files) {
 
     // sRGB → linear (float)
     let lin = srgbToLinear_u8(imgData);
+    // Log113 (Flat) → linear (float)
+    //let lin = goProFlatToLinear_u8(imgData);
     let t = sortedExpos[i];
 
     // ---------- Short-exposure logic (ported from Python) ----------
@@ -541,7 +677,7 @@ async function loadAndPreprocess(files) {
     await nextFrame();
   }
 
-  return { linearImages, sortedExpos: expandedTimes, w, h };
+  return { linearImages, sortedExpos: expandedTimes, w, h, baseName };
 }
 
 /* ===================== UI run ===================== */
@@ -558,8 +694,8 @@ $('#run').addEventListener('click', async () => {
 
     setStage('Reading EXIF + decoding images…');
     setOverall(5);
-    const { linearImages, sortedExpos, w, h } = await loadAndPreprocess(files);
-
+    const { linearImages, sortedExpos, w, h, baseName } = await loadAndPreprocess(files);
+  
     setStage('Merging to HDR (radiance)…');
     setOverall(35);
 	setPerFile(0);
@@ -568,7 +704,7 @@ $('#run').addEventListener('click', async () => {
     await nextFrame();
 
     setStage('Normalizing white to ~1.0…');
-    setOverall(60);
+    setOverall(75);
     const white = normalizeWhitePercentile(hdr, WHITE_PCT);
     logLine(`White percentile (${WHITE_PCT}%): ${white.toFixed(6)}`, 'ok');
     await nextFrame();
@@ -584,10 +720,11 @@ $('#run').addEventListener('click', async () => {
     $('#saveHdr').disabled = false;
     $('#saveHdr').onclick = () => {
       try {
-        const blob = encodeRadianceHDR_RGBE(hdr);
+        //const blob = encodeRadianceHDR_RGBE(hdr)
+        const blob = encodeRadianceHDR_RGBE_RLE(hdr);
         const a = document.createElement('a');
         a.href = URL.createObjectURL(blob);
-        a.download = 'merged.hdr';
+        a.download = baseName + '.hdr';   // <— use shortest exposure basename
         a.click();
         URL.revokeObjectURL(a.href);
         logLine('HDR downloaded.', 'ok');
