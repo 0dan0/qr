@@ -847,13 +847,7 @@ function startTime() {
 		if( x === true)
 			checkedmode = i;
 	}
-
 	
-  <input type="radio" id="max1" name="max" value="M"> <label for="max1">360</label>&nbsp;&nbsp;
-  <input type="radio" id="max2" name="max" value="HF"> <label for="max2">Single Lens front</label>&nbsp;&nbsp;
-  <input type="radio" id="max3" name="max" value="HR"> <label for="max3">Single Lens rear</label>&nbsp;&nbsp;
-  <input type="radio" id="max4" name="max" value=""> <label for="max4">not set</label><br><br>
-  
 	//m1 mV 
 	//m2 mL
 	//m3 mS
