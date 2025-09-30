@@ -542,16 +542,10 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
 <br>
 <br>
 <button onclick="myReloadFunction()">Reset page</button>
-
-Feedback: <small id="feedbacktext"></small><br>
-
-**Compatibility:** Labs enabled [HERO5 Session](../session5), HERO7-13, MAX and Bones 
-
-**HERO10 Note:** LCD must be on for the QR Code scanning to be active.<br>
         
 [More features](..) for Labs enabled cameras
 
-updated: October 10, 2024
+updated: September 30, 2025
 
 <script>
 var clipcopy = "";
