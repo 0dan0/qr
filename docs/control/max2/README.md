@@ -23,7 +23,7 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="max1" name="max" value="M"> <label for="max1">360</label>&nbsp;&nbsp;
   <input type="radio" id="max2" name="max" value="HF"> <label for="max2">Single Lens front</label>&nbsp;&nbsp;
   <input type="radio" id="max3" name="max" value="HR"> <label for="max3">Single Lens rear</label>&nbsp;&nbsp;
-  <input type="radio" id="max4" name="max" value=""> <label for="max4">not set</label><br><br>
+  <input type="radio" id="max4" name="max" value=""> <label for="max4">not set</label><br>
   
   &nbsp;&nbsp;**Video Modes:** 
   <input type="radio" id="m1" name="mode" value="mV"> <label  for="m1">Video </label>&nbsp;&nbsp;
@@ -39,8 +39,11 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   &nbsp;&nbsp;**Photo Modes:** 
   <input type="radio" id="m10" name="mode" value="mP">  <label for="m10">Photo</label>&nbsp;&nbsp;
   <input type="radio" id="m11" name="mode" value="mPB"> <label for="m11">Burst</label>&nbsp;&nbsp;
-  <input type="radio" id="m12" name="mode" value="mPN"> <label for="m12">Night</label>&nbsp;&nbsp;
-  <input type="radio" id="m13" name="mode" value="" checked> <label for="m13">not set</label><br>
+  <input type="radio" id="m12" name="mode" value="mPN"> <label for="m12">Night</label><br>
+  &nbsp;&nbsp;**TimeLapse:** 
+  <input type="radio" id="m13" name="mode" value="mTP"> <label for="m13">Photo</label>&nbsp;&nbsp;
+  <input type="radio" id="m14" name="mode" value="mNP"> <label for="m14">NightLapse</label>
+  <input type="radio" id="m15" name="mode" value="" checked> <label for="m15">not set</label><br>
 
 <div id="noteMODE" style="font-size:13px;">
 <b>Time/Night-Lapse modes:</b> The camera defaults to having presets for only one time-lapse mode and one night-lapse mode, yet both modes have two configurations (video or photo.) For all QR Code mode commands to work, a preset is needed for every mode you wish to use. e.g. If you only have a preset for night-lapse video (NLV), the QR command for NLV will work, but will not for night-lapse photo (NLP). To solve this, create a new preset for NLP, and both video and photo night-lapse commands will work.<br><br>
@@ -697,29 +700,6 @@ function validateGoProLabsCommand(command) {
     return "Valid GoPro Labs Command.";
 }
 
-// Example Usage
-const command1 = "!02:40S";   // Valid absolute time
-const command2 = "!65S";      // Valid absolute seconds
-const command3 = "!s-3600S";  // Valid relative to sunset
-const command4 = "!r-180S";   // Valid relative to sunrise
-const command5 = "!s300E";    // Valid end relative to sunset
-const command6 = "!r-60E";    // Valid end relative to sunrise
-const invalidCommand1 = "!2:49S";    // Invalid single-digit hour
-const invalidCommand2 = "!s123X";    // Invalid action after relative time
-const invalidCommand3 = "!-65S";     // Invalid negative absolute time
-
-console.log(validateGoProLabsCommand(command1)); // Valid
-console.log(validateGoProLabsCommand(command2)); // Valid
-console.log(validateGoProLabsCommand(command3)); // Valid
-console.log(validateGoProLabsCommand(command4)); // Valid
-console.log(validateGoProLabsCommand(command5)); // Valid
-console.log(validateGoProLabsCommand(command6)); // Valid
-console.log(validateGoProLabsCommand(invalidCommand1)); // Invalid
-console.log(validateGoProLabsCommand(invalidCommand2)); // Invalid
-console.log(validateGoProLabsCommand(invalidCommand3)); // Invalid
-
-
-
 
 
 function id5() {  // 5 characters, so up to 17-bit ID
@@ -861,7 +841,7 @@ function startTime() {
 	var checkedmode = 0;
 	var x;
 	
-	for (i = 1; i < 13; i++) { 
+	for (i = 1; i < 15; i++) { 
 		var mode = "m"+i;
 		x = document.getElementById(mode).checked;
 		if( x === true)
@@ -886,6 +866,8 @@ function startTime() {
 	//m10 mP
 	//m11 mPB
 	//m12 mPN
+	//m13 mTP
+	//m14 mNP
 	
 	switch(checkedmode)
 	{
@@ -969,6 +951,25 @@ function startTime() {
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
 		dset("settingsPhotoRAW", true);
+		break;
+		
+		case 13: //TLP
+		dset("settingsTimelapse", true);	
+		dset("settingsPT", true);
+		dset("settingsTLVFOV", true);
+		dset("settingsPhotoRAW", true);
+		dset("settingsDuration", true);
+		dset("noteMODE", true);
+		break;
+		
+		case 14: //NLP
+		dset("settingsNightlapse", true);	
+		dset("settingsNightexposure", true);	
+		dset("settingsPT", true);
+		dset("settingsTLVFOV", true);
+		dset("settingsPhotoRAW", true);
+		dset("settingsDuration", true);
+		dset("noteMODE", true);
 		break;
 		
 	}
