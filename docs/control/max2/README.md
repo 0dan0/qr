@@ -37,7 +37,7 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="m8" name="mode" value="mLP"> <label for="m8">Light Painting</label>&nbsp;&nbsp;
   <input type="radio" id="m9" name="mode" value="mLT"> <label for="m9">Vehicle Lights</label><br>
   &nbsp;&nbsp;**Photo Modes:** 
-  <input type="radio" id="m10" name="mode" value="mP">  <label for="m10">Photo</label>&nbsp;&nbsp;\
+  <input type="radio" id="m10" name="mode" value="mP">  <label for="m10">Photo</label>&nbsp;&nbsp;
   <input type="radio" id="m11" name="mode" value="mPB"> <label for="m11">Burst</label>&nbsp;&nbsp;
   <input type="radio" id="m12" name="mode" value="mPN"> <label for="m12">Night</label>&nbsp;&nbsp;
   <input type="radio" id="m13" name="mode" value="" checked> <label for="m13">not set</label><br>
@@ -867,51 +867,32 @@ function startTime() {
 		if( x === true)
 			checkedmode = i;
 	}
+
 	
+  <input type="radio" id="max1" name="max" value="M"> <label for="max1">360</label>&nbsp;&nbsp;
+  <input type="radio" id="max2" name="max" value="HF"> <label for="max2">Single Lens front</label>&nbsp;&nbsp;
+  <input type="radio" id="max3" name="max" value="HR"> <label for="max3">Single Lens rear</label>&nbsp;&nbsp;
+  <input type="radio" id="max4" name="max" value=""> <label for="max4">not set</label><br><br>
+  
 	//m1 mV 
-	//m2 mVP
-	//m3 mVE
-	//m4 mVS
-	
-	//m5 mS 
-	//m6 mH 
-	//m7 mL 
-	
-	//m8 mV0
-	//m9 mV1
-	//m10 mV2
-	//m11 mV3
-	//m12 mV4
-	//m13 mTW
-	//m14 mT 
-	//m15 mNL
-	//m16 mST
-	//m17 mLP
-	//m18 mLT
-	//m19 mP 
-	//m20 mPB
-	//m21 mL
-	//m22 mPN
-	//m23 mTP
-	//m24 mNP
+	//m2 mL
+	//m3 mS
+	//m4 mTW
+	//m5 mT
+	//m6 mNL
+	//m7 mST
+	//m8 mLP
+	//m9 mLT
+	//m10 mP
+	//m11 mPB
+	//m12 mPN
 	
 	switch(checkedmode)
 	{
 		default:
-		case 1: //Video		
-		case 2: //mVP
-		case 3: //mVE
-		case 4: //mVS
-		
-		case 5: //mS
-		case 6: //mH
-		case 7: //mL
-		
-		case 8 : //mV0
-		case 9 : //mV1
-		case 10: //mV2
-		case 11: //mV3
-		case 12: //mV4
+		case 1: //mV		
+		case 2: //mL
+		case 3: //mS
 		dset("settingsRES", true);
 		dset("settingsFPS", true);
 		dset("settingsFOV", true);
@@ -922,7 +903,7 @@ function startTime() {
 		dset("settingsAUDT",true);
 		break;
 		
-		case 13: //TimeWarp Video
+		case 4: //mTW
 		dset("settingsTimewarp", true);		
 		dset("settingsDuration", true);
 		dset("settingsRESTLV", true);
@@ -930,7 +911,7 @@ function startTime() {
 		dset("settingsPT", true);
 		break;		
 		
-		case 14: //Timelapse Video
+		case 5: //Timelapse Video
 		dset("settingsTimelapse", true);	
 		dset("settingsDuration", true);	
 		dset("settingsRESTLV", true);
@@ -939,7 +920,7 @@ function startTime() {
 		dset("noteMODE", true);
 		break;		
 		
-		case 15: //NL Video
+		case 6: //NL Video
 		dset("settingsNightlapse", true);	
 		dset("settingsNightexposure", true);
 		dset("settingsDuration", true);		
@@ -949,66 +930,45 @@ function startTime() {
 		dset("noteMODE", true);
 		break;
 		
-		
-		case 16: //Stars
+		case 7: //Stars
 		dset("settingsTimelapse", true);	
 		dset("settingsDuration", true);	
 		dset("settingsCOMPTLV", true);
 		dset("settingsPT", true);
 		break;	
 		
-		case 17: //Painting
+		case 8: //Painting
 		dset("settingsTimelapse", true);	
 		dset("settingsDuration", true);	
 		dset("settingsCOMPTLV", true);
 		dset("settingsPT", true);
 		break;		
 		
-		case 18: //Cars
+		case 9: //Cars
 		dset("settingsTimelapse", true);	
 		dset("settingsDuration", true);	
 		dset("settingsCOMPTLV", true);
 		dset("settingsPT", true);
 		break;		
 	
-		case 19: //Photo
-		case 20: //Photo
+		case 10: //Photo
 		dset("settingsPT", true);
 		dset("settingsPFOV", true);
 		dset("settingsPhotoRAW", true);
 		break;
 		
-		case 21: //Burst
+		case 11: //Burst
 		dset("settingsBurst", true);
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
 		dset("settingsPhotoRAW", true);
 		break;
 				
-		case 22: //Night
+		case 12: //Night
 		dset("settingsNightexposure", true);
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
 		dset("settingsPhotoRAW", true);
-		break;
-		
-		case 23: //TLP
-		dset("settingsTimelapse", true);	
-		dset("settingsPT", true);
-		dset("settingsTLVFOV", true);
-		dset("settingsPhotoRAW", true);
-		dset("settingsDuration", true);
-		dset("noteMODE", true);
-		break;
-		
-		case 24: //NLP
-		dset("settingsNightlapse", true);	
-		dset("settingsNightexposure", true);	
-		dset("settingsPT", true);
-		dset("settingsTLVFOV", true);
-		dset("settingsPhotoRAW", true);
-		dset("settingsDuration", true);
-		dset("noteMODE", true);
 		break;
 		
 	}
