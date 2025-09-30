@@ -1102,7 +1102,7 @@ function startTime() {
 	
 	cmd = dcmd(cmd,"m");  // set mode
 		
-	if(checkmode < 7)
+	if(checkedmode < 7)
 	{
 		cmd = dcmd(cmd, "max");
 	}
