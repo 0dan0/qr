@@ -18,29 +18,28 @@ Many features of this page are also available as a mobile app.<br>
 Install from: [![google play](../google-play-small.png)](https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
 [![apple app store](../apple-store-small.png)](https://apps.apple.com/us/app/gopro-app/id1518134202)
 
-<b>Camera Mode:</b>&nbsp;&nbsp; 
-
+  &nbsp;&nbsp;**Camera Mode:**&nbsp;&nbsp; 
   <input type="radio" id="max1" name="max" value="M"> <label for="max1">360</label>&nbsp;&nbsp;
   <input type="radio" id="max2" name="max" value="HF"> <label for="max2">Single Lens front</label>&nbsp;&nbsp;
   <input type="radio" id="max3" name="max" value="HR"> <label for="max3">Single Lens rear</label>&nbsp;&nbsp;
   <input type="radio" id="max4" name="max" value=""> <label for="max4">not set</label><br>
   
-  &nbsp;&nbsp;**Video Modes:** 
+  &nbsp;&nbsp;**Video Modes:**&nbsp;&nbsp; 
   <input type="radio" id="m1" name="mode" value="mV"> <label  for="m1">Video </label>&nbsp;&nbsp;
   <input type="radio" id="m2" name="mode" value="mL"> <label  for="m2">Log</label>&nbsp;&nbsp;
   <input type="radio" id="m3" name="mode" value="mS"> <label  for="m3">Std</label>&nbsp;&nbsp;
   <input type="radio" id="m4" name="mode" value="mTW"> <label for="m4">TimeWarp</label>&nbsp;&nbsp;
   <input type="radio" id="m5" name="mode" value="mT"> <label  for="m5">TimeLapse</label>&nbsp;&nbsp;
   <input type="radio" id="m6" name="mode" value="mNL"> <label for="m6">NightLapse</label><br>
-  &nbsp;&nbsp;**Computational:**
+  &nbsp;&nbsp;**Computational:**&nbsp;&nbsp; 
   <input type="radio" id="m7" name="mode" value="mST"> <label for="m7">Star Trails</label>&nbsp;&nbsp;
   <input type="radio" id="m8" name="mode" value="mLP"> <label for="m8">Light Painting</label>&nbsp;&nbsp;
   <input type="radio" id="m9" name="mode" value="mLT"> <label for="m9">Vehicle Lights</label><br>
-  &nbsp;&nbsp;**Photo Modes:** 
+  &nbsp;&nbsp;**Photo Modes:**&nbsp;&nbsp; 
   <input type="radio" id="m10" name="mode" value="mP">  <label for="m10">Photo</label>&nbsp;&nbsp;
   <input type="radio" id="m11" name="mode" value="mPB"> <label for="m11">Burst</label>&nbsp;&nbsp;
   <input type="radio" id="m12" name="mode" value="mPN"> <label for="m12">Night</label><br>
-  &nbsp;&nbsp;**TimeLapse:** 
+  &nbsp;&nbsp;**TimeLapse:**&nbsp;&nbsp; 
   <input type="radio" id="m13" name="mode" value="mTP"> <label for="m13">Photo</label>&nbsp;&nbsp;
   <input type="radio" id="m14" name="mode" value="mNP"> <label for="m14">NightLapse</label>
   <input type="radio" id="m15" name="mode" value="" checked> <label for="m15">not set</label><br>
@@ -1103,35 +1102,51 @@ function startTime() {
 	
 	cmd = dcmd(cmd,"m");  // set mode
 		
+	if(checkmode < 7)
+	{
+		cmd = dcmd(cmd, "max");
+	}
+	//m1 mV 
+	//m2 mL
+	//m3 mS
+	//m4 mTW
+	//m5 mT
+	//m6 mNL
+	//m7 mST
+	//m8 mLP
+	//m9 mLT
+	//m10 mP
+	//m11 mPB
+	//m12 mPN
+	//m13 mTP
+	//m14 mNP
+	
 	switch(checkedmode)
 	{
-		case 13: //TWarp
+		case 4: //TWarp
 			cmd = dcmd(cmd,"fpswarp");
 			break;
-		case 14: //TLV
+		case 5: //TLV
 			cmd = dcmd(cmd,"fpslapse");
 			break;
-		case 15: //NLV	
+		case 6: //NLV	
 			cmd = dcmd(cmd,"fpsnight");
 			cmd = dcmd(cmd,"nightexp");
 			break;
-		case 20: //Burst 
+		case 11: //Burst 
 			cmd = dcmd(cmd,"b");
 			break;	
-		case 21: //Live Burst 
-			break;	
-		case 22: //Night
+		case 12: //Night
 			cmd = dcmd(cmd,"nightexp");
 			break;
-		case 23: //TLP
+		case 13: //TLP
 			cmd = dcmd(cmd,"fpslapse");
 			break;
-		case 24: //NLP	
+		case 14: //NLP	
 			cmd = dcmd(cmd,"fpsnight");
 			cmd = dcmd(cmd,"nightexp");
 			break;
 	}
-	
 	
 	if(document.getElementById("np") !== null)
 	{
