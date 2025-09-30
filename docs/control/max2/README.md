@@ -204,7 +204,7 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
 </div>
 
 <div id="settingsHindsight">
-<b>Hindsight<sup>9-13</sup>:</b>&nbsp;&nbsp;
+<b>Hindsight:</b>&nbsp;&nbsp;
 	<input type="radio" id="hind1" name="hind" value="hS0"> <label for="hind1">Off</label>&nbsp;&nbsp;&nbsp;
 	<input type="radio" id="hind2" name="hind" value="hS1"> <label for="hind2">15s</label>&nbsp;&nbsp;&nbsp;
 	<input type="radio" id="hind3" name="hind" value="hS2"> <label for="hind3">30s</label>&nbsp;&nbsp;&nbsp;
@@ -212,7 +212,7 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
 </div>
 
 <div id="settingsDuration">
-<b>Duration<sup>9-13</sup>:</b>&nbsp;&nbsp;
+<b>Duration:</b>&nbsp;&nbsp;
 	<input type="radio" id="dur1" name="dur" value="dR0"> <label for="dur1">Off</label>&nbsp;&nbsp;
 	<input type="radio" id="dur2" name="dur" value="dR15"> <label for="dur2">15s</label>&nbsp;&nbsp;
 	<input type="radio" id="dur3" name="dur" value="dR30"> <label for="dur3">30s</label>&nbsp;&nbsp;
@@ -251,7 +251,7 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
 	  &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="pdel" value=""> <label for="pdel">delete custom preset</label><br>
    </div>
 </div>
-<input type="checkbox" id="sm" value="oSM"> <label for="sm">Spot Metering<sup>10-13</sup></label><br>
+<input type="checkbox" id="sm" value="oSM"> <label for="sm">Spot Metering</label><br>
 <div id="spotMeter">
    <div id="LCD">
       <img src="https://gopro.github.io/labs/control/custom/RearCamera.png" alt="LCD"> 
@@ -280,7 +280,7 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
 </div>
 <div id="ptCOLOR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Protune Color:</b>&nbsp;&nbsp;
   <input type="radio" id="ptc1" name="ptc" value="cG"> <label for="ptc1">Vibrant</label>&nbsp;&nbsp;
-  <input type="radio" id="ptc2" name="ptc" value="cN"> <label for="ptc2">Natural<sup>10-13</sup></label>&nbsp;&nbsp;
+  <input type="radio" id="ptc2" name="ptc" value="cN"> <label for="ptc2">Natural</label>&nbsp;&nbsp;
   <input type="radio" id="ptc3" name="ptc" value="cF"> <label for="ptc3">Flat</label>&nbsp;&nbsp;
   <input type="radio" id="ptc4" name="ptc" value="" checked> <label for="ptc4">not set</label>
 </div>
