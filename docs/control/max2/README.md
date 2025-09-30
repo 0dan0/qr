@@ -20,8 +20,8 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
 
   &nbsp;&nbsp;**Camera Mode:**&nbsp;&nbsp; 
   <input type="radio" id="max1" name="max" value="M"> <label for="max1">360</label>&nbsp;&nbsp;
-  <input type="radio" id="max2" name="max" value="HF"> <label for="max2">Single Lens front</label>&nbsp;&nbsp;
-  <input type="radio" id="max3" name="max" value="HR"> <label for="max3">Single Lens rear</label>&nbsp;&nbsp;
+  <input type="radio" id="max2" name="max" value="HF"> <label for="max2">Front Only</label>&nbsp;&nbsp;
+  <input type="radio" id="max3" name="max" value="HR"> <label for="max3">Rear Only</label>&nbsp;&nbsp;
   <input type="radio" id="max4" name="max" value=""> <label for="max4">not set</label><br>
   
   &nbsp;&nbsp;**Video Modes:**&nbsp;&nbsp; 
@@ -50,45 +50,27 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
 
 <div id="settingsRES">
 <b>Video Resolution:</b>&nbsp;&nbsp;
-  <input type="radio" id="r1"  name="res" value="r8"> <label for="r1">8k </label>&nbsp;&nbsp;
-  <input type="radio" id="r3"  name="res" value="mVMr4"> <label for="r3">4k 360</label>&nbsp;&nbsp;
-  <input type="radio" id="r4"  name="res" value="r27T" > <label for="r4">2.7k 4:3</label>&nbsp;&nbsp;
-  <input type="radio" id="r5"  name="res" value="r3"   > <label for="r5">3k 360°</label><br>
-  <input type="radio" id="r6"  name="res" value="r4"   > <label for="r6">4k </label>&nbsp;&nbsp;
-  <input type="radio" id="r7"  name="res" value="r4T"  > <label for="r7">4k 4:3</label>&nbsp;&nbsp;
-  <input type="radio" id="r8"  name="res" value="r4X"  > <label for="r8">4k 8:7<sup>11-13</sup> </label>&nbsp;&nbsp;
-  <input type="radio" id="r9"  name="res" value="r4S"  > <label for="r9">4k 1:1<sup>13</sup> </label>&nbsp;&nbsp;
-  <input type="radio" id="r10"  name="res" value="r5"   > <label for="r10">5k </label>&nbsp;&nbsp;
-  <input type="radio" id="r11" name="res" value="r5T"  > <label for="r11">5k 4:3<sup>11</sup> </label>&nbsp;&nbsp;
-  <input type="radio" id="r12" name="res" value="r5X"  > <label for="r12">5k 8:7<sup>11-13</sup> </label><br>
-  <input type="radio" id="r13" name="res" value="r1V"  > <label for="r13">HD Vertical<sup>13</sup> </label>&nbsp;&nbsp;
-  <input type="radio" id="r14" name="res" value="r4V"  > <label for="r14">4k Vertical<sup>13</sup> </label>&nbsp;&nbsp;
-  <input type="radio" id="r15" name="res" value="" checked> <label for="r15">not set</label><br><br>
+  <input type="radio" id="r1"  name="res" value="r8"> <label for="r1">8k 360</label>&nbsp;&nbsp;
+  <input type="radio" id="r2"  name="res" value="r5"> <label for="r2">5.6k 360</label>&nbsp;&nbsp;
+  <input type="radio" id="r3"  name="res" value="r4"> <label for="r3">4k 16:9</label>&nbsp;&nbsp;
+  <input type="radio" id="r4" name="res" value="r4T"> <label for="r4">4k 4:3</label>&nbsp;&nbsp;
+  <input type="radio" id="r5" name="res" value="r1V"> <label for="r5">HD 9:16</label>&nbsp;&nbsp;
+  <input type="radio" id="r6" name="res" value="r4V"> <label for="r6">4k 9:16</label>&nbsp;&nbsp;
+  <input type="radio" id="r7" name="res" value="" checked> <label for="r7">not set</label><br><br>
 </div>
 
 <div id="settingsRESTLV">
 <b>Video Resolution:</b>&nbsp;&nbsp;
-  <input type="radio" id="rt1" name="restlv" value="r1080"> <label for="rt1">1080p </label>&nbsp;&nbsp;
-  <input type="radio" id="rt2" name="restlv" value="r27" >  <label for="rt2">2.7k </label>&nbsp;&nbsp;
-  <input type="radio" id="rt3" name="restlv" value="r27T" > <label for="rt3">2.7k 4:3 </label>&nbsp;&nbsp;
-  <input type="radio" id="rt4" name="restlv" value="r4"   > <label for="rt4">4k </label>&nbsp;&nbsp;
-  <input type="radio" id="rt5" name="restlv" value="r4T"  > <label for="rt5">4k 4:3<sup>10/11</sup> </label>&nbsp;&nbsp;
-  <input type="radio" id="rt6" name="restlv" value="r4X"  > <label for="rt6">4k 8:7<sup>12-13</sup> </label><br>
-  <input type="radio" id="rt7" name="restlv" value="r5"   > <label for="rt7">5k<sup>11-13</sup> </label>&nbsp;&nbsp;
-  <input type="radio" id="rt8" name="restlv" value="r5T"  > <label for="rt8">5k 4:3<sup>11</sup> </label>&nbsp;&nbsp;
-  <input type="radio" id="rt9" name="restlv" value="r5X"  > <label for="rt9">5k 8:7<sup>12-13</sup> </label>&nbsp;&nbsp;
-  <input type="radio" id="rt10" name="restlv" value="" checked> <label for="rt10">not set</label><br><br>
+  <input type="radio" id="rt1" name="restlv" value="r8"> <label for="rt1">8k 360</label>&nbsp;&nbsp;
+  <input type="radio" id="rt2" name="restlv" value="r5"> <label for="rt2">5.6k 360</label>&nbsp;&nbsp;
+  <input type="radio" id="rt3" name="restlv" value="" checked> <label for="rt3">not set</label><br><br>
  </div>
  
 <div id="settingsCOMPTLV">
 <b>Video Resolution:</b>&nbsp;&nbsp;
-  <input type="radio" id="crt1" name="comptlv" value="r4"   > <label for="crt1">4k </label>&nbsp;&nbsp;
-  <input type="radio" id="crt2" name="comptlv" value="r4T"  > <label for="crt2">4k 4:3<sup>11</sup> </label>&nbsp;&nbsp;
-  <input type="radio" id="crt3" name="comptlv" value="r4X"  > <label for="crt3">4k 8:7<sup>12-13</sup> </label><br>
-  <input type="radio" id="crt4" name="comptlv" value="r5"   > <label for="crt4">5k </label>&nbsp;&nbsp;
-  <input type="radio" id="crt5" name="comptlv" value="r5T"  > <label for="crt5">5k 4:3<sup>11</sup> </label>&nbsp;&nbsp;
-  <input type="radio" id="crt6" name="comptlv" value="r5X"  > <label for="crt6">5k 8:7<sup>12-13</sup> </label>&nbsp;&nbsp;
-  <input type="radio" id="crt7" name="comptlv" value="" checked> <label for="crt7">not set</label><br><br>
+  <input type="radio" id="crt1" name="comptlv" value="r8"  > <label for="crt1">8k </label>&nbsp;&nbsp;
+  <input type="radio" id="crt2" name="comptlv" value="r5"  > <label for="crt2">5.6k</label>
+  <input type="radio" id="crt3" name="comptlv" value="" checked> <label for="crt3">not set</label><br><br>
  </div>
  
 <div id="settingsFPS">
@@ -98,11 +80,9 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="p3" name="fps" value="p30">  <label for="p3">30 </label>&nbsp;&nbsp;
   <input type="radio" id="p4" name="fps" value="p50">  <label for="p4">50 </label>&nbsp;&nbsp;
   <input type="radio" id="p5" name="fps" value="p60">  <label for="p5">60 </label>&nbsp;&nbsp;
-  <input type="radio" id="p6" name="fps" value="p100"> <label for="p6">100 </label>&nbsp;&nbsp;
-  <input type="radio" id="p7" name="fps" value="p120"> <label for="p7">120 </label>&nbsp;&nbsp;
-  <input type="radio" id="p8" name="fps" value="p200"> <label for="p8">200 </label>&nbsp;&nbsp;
-  <input type="radio" id="p9" name="fps" value="p240"> <label for="p9">240 </label>&nbsp;&nbsp;
-  <input type="radio" id="p10" name="fps" value="" checked> <label for="p10">not set</label><br><br>
+  <input type="radio" id="p6" name="fps" value="p100"> <label for="p6">90 </label>&nbsp;&nbsp;
+  <input type="radio" id="p7" name="fps" value="p100"> <label for="p7">100 </label>&nbsp;&nbsp;
+  <input type="radio" id="p8" name="fps" value="" checked> <label for="p8">not set</label><br><br>
 </div>
 
 
@@ -110,66 +90,43 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
 <b>Hypersmooth:</b>&nbsp;&nbsp;
 	<input type="radio" id="eis1" name="eis" value="e0"> <label for="eis1">Off</label>&nbsp;&nbsp;&nbsp;
 	<input type="radio" id="eis2" name="eis" value="e1"> <label for="eis2">On</label>&nbsp;&nbsp;&nbsp;
-	<input type="radio" id="eis3" name="eis" value="e2"> <label for="eis3">High</label>&nbsp;&nbsp;&nbsp;
-	<input type="radio" id="eis4" name="eis" value="e3"> <label for="eis4">Boost</label>&nbsp;&nbsp;&nbsp;
-	<input type="radio" id="eis5" name="eis" value="e4"> <label for="eis5">Auto<sup>11</sup></label>&nbsp;&nbsp;&nbsp;
-	<input type="radio" id="eis6" name="eis" value="" checked> <label for="eis6">not set</label><br><br>
+	<input type="radio" id="eis3" name="eis" value="e4"> <label for="eis5">Auto Boost </label>&nbsp;&nbsp;&nbsp;
+	<input type="radio" id="eis4" name="eis" value="" checked> <label for="eis4">not set</label><br><br>
 </div>
 
 <div id="settingsFOV">
 <b>Lens:</b>
-  <input type="radio" id="f1" name="fov" value="fW"> <label for="f1">Wide </label>&nbsp;&nbsp;
- <!-- <input type="radio" id="f2" name="fov" value="fM"> <label for="f2">Medium </label>&nbsp;&nbsp; -->
-  <input type="radio" id="f2" name="fov" value="fN"> <label for="f2">Narrow </label>&nbsp;&nbsp;
-  <input type="radio" id="f3" name="fov" value="fL"> <label for="f3">Linear </label>&nbsp;&nbsp;
-  <input type="radio" id="f4" name="fov" value="fS"> <label for="f4">Superview </label>&nbsp;&nbsp;
-  <input type="radio" id="f5" name="fov" value="fH"> <label for="f5">Linear+HL </label>&nbsp;&nbsp;
-  <input type="radio" id="f6" name="fov" value="fV"> <label for="f6">Hyperview<sup>11/12</sup> </label><br>
-  Max Lens Mod:  <input type="radio" id="f7" name="fov" value="oX1fW"> <label for="f7">Enable Wide </label>&nbsp;&nbsp;
-  <input type="radio" id="f8" name="fov" value="oX1fX"> <label for="f8">Enable Superview </label>&nbsp;&nbsp;<br>
-  Max Lens Mod 2.0:  <input type="radio" id="f9" name="fov" value="oX2fW"> <label for="f9">Enable Wide<sup>12</sup> </label>&nbsp;&nbsp;
-  <input type="radio" id="f10" name="fov" value="oX2fX"> <label for="f10">Enable MSV<sup>12-13</sup> </label>&nbsp;&nbsp;
-  <input type="radio" id="f11" name="fov" value="oX2fY"> <label for="f11">Enable MHV<sup>12-13</sup> </label>&nbsp;&nbsp;<br>
-  <input type="radio" id="f12" name="fov" value="oX0"> <label for="f12">Disable MLM</label>&nbsp;&nbsp;
-  <input type="radio" id="f13" name="fov" value="" checked> <label for="f13">not set</label><br><br>
+  <input type="radio" id="f1" name="fov" value="fL"> <label for="f1">Linear </label>&nbsp;&nbsp;
+  <input type="radio" id="f2" name="fov" value="fW"> <label for="f2">Wide </label>&nbsp;&nbsp;
+  <input type="radio" id="f3" name="fov" value="fX"> <label for="f3">UltraWide </label>&nbsp;&nbsp;
+  <input type="radio" id="f4" name="fov" value="" checked> <label for="f4">not set</label><br><br>
  </div>
  
 <div id="settingsPFOV">
 <b>Lens:</b>
-  <input type="radio" id="pf1" name="pfov" value="fW"> <label for="pf1">Wide </label>&nbsp;&nbsp;
-  <input type="radio" id="pf2" name="pfov" value="fL"> <label for="pf2">Linear </label>&nbsp;&nbsp;
-  <input type="radio" id="pf3" name="pfov" value="fN"> <label for="pf3">Narrow </label><br>
-  Max Lens Mod:  <input type="radio" id="pf4" name="pfov" value="oX1fW"> <label for="pf4">Enable Wide </label>&nbsp;&nbsp;
-  <input type="radio" id="pf5" name="pfov" value="oX1fX"> <label for="pf5">Enable Superview </label>&nbsp;&nbsp;
-  <input type="radio" id="pf6" name="pfov" value="oX0"> <label for="pf6">Disable MLM</label>&nbsp;&nbsp;
-  <input type="radio" id="pf7" name="pfov" value="" checked> <label for="pf7">not set</label><br><br>
+  <input type="radio" id="pf1" name="pfov" value="fL"> <label for="pf1">Linear</label>&nbsp;&nbsp;
+  <input type="radio" id="pf2" name="pfov" value="fW"> <label for="pf2">Wide</label>&nbsp;&nbsp;
+  <input type="radio" id="pf3" name="pfov" value="fX"> <label for="pf3">UltraWide</label>&nbsp;&nbsp;
+  <input type="radio" id="pf4" name="pfov" value="" checked> <label for="pf4">not set</label><br><br>
  </div>
   
  
 <div id="settingsTLVFOV">
 <b>Lens:</b>
-  <input type="radio" id="tlvf1" name="tlvfov" value="fW"> <label for="tlvf1">Wide </label>&nbsp;&nbsp;
-  <input type="radio" id="tlvf2" name="tlvfov" value="fL"> <label for="tlvf2">Linear </label>&nbsp;&nbsp;
-  <input type="radio" id="tlvf3" name="tlvfov" value="fN"> <label for="tlvf3">Narrow </label>&nbsp;&nbsp;  
+  <input type="radio" id="tlvf1" name="tlvfov" value="fL"> <label for="tlvf1">Linear</label>&nbsp;&nbsp;
+  <input type="radio" id="tlvf2" name="tlvfov" value="fW"> <label for="tlvf2">Wide</label>&nbsp;&nbsp;
+  <input type="radio" id="tlvf3" name="tlvfov" value="fX"> <label for="tlvf3">UltraWide</label>&nbsp;&nbsp;  
   <input type="radio" id="tlvf4" name="tlvfov" value="" checked> <label for="tlvf4">not set</label><br><br>
  </div>
   
 <div id="settingsTWFOV">
 <b>Lens:</b>
-  <input type="radio" id="twf1" name="twfov" value="fW"> <label for="twf1">Wide </label>&nbsp;&nbsp;
-  <input type="radio" id="twf2" name="twfov" value="fL"> <label for="twf2">Linear </label>&nbsp;&nbsp;
-  <input type="radio" id="twf3" name="twfov" value="fH"> <label for="twf3">Linear+HL </label>&nbsp;&nbsp;
-  <input type="radio" id="twf4" name="twfov" value="fN"> <label for="twf4">Narrow </label>&nbsp;&nbsp;  <br>
-  Max Lens Mod:  <input type="radio" id="twf5" name="twfov" value="oX1fW"> <label for="twf5">Enable Wide </label>&nbsp;&nbsp;
-  <input type="radio" id="twf6" name="twfov" value="oX1fX"> <label for="twf6">Enable Superview </label>&nbsp;&nbsp;
-  <input type="radio" id="twf7" name="twfov" value="oX0"> <label for="twf7">Disable MLM</label>&nbsp;&nbsp;
-  <input type="radio" id="twf8" name="twfov" value="" checked> <label for="twf8">not set</label><br><br>
+  <input type="radio" id="twf1" name="twfov" value="fL"> <label for="twf1">Linear</label>&nbsp;&nbsp;
+  <input type="radio" id="twf2" name="twfov" value="fW"> <label for="twf2">Wide</label>&nbsp;&nbsp;
+  <input type="radio" id="twf3" name="twfov" value="fX"> <label for="twf3">UltraWide</label>&nbsp;&nbsp;
+  <input type="radio" id="twf4" name="twfov" value="fM"> <label for="twf4">MaxHyperView</label>&nbsp;&nbsp;
+  <input type="radio" id="twf5" name="twfov" value="" checked> <label for="twf5">not set</label><br><br>
  </div>
- 
- 
-<div id="settingsZoom">
- <b>Zoom:</b> <input type="range" id="zoom" name="zoom" min="0" max="10" value="0"><label for="zoom"></label>&nbsp;&nbsp;<b id="zoomtext"></b><br><br>
-</div>
 
 <div id="settingsBurst">
 <b>Burst Style:</b>&nbsp;&nbsp;
@@ -786,7 +743,6 @@ function startTime() {
 	dset("settingsPFOV", false);
 	dset("settingsTLVFOV", false);
 	dset("settingsTWFOV", false);
-	dset("settingsZoom", false);
 	dset("settingsRESTLV", false);
 	dset("settingsCOMPTLV", false);
 	dset("settingsVideo", false);
@@ -1183,65 +1139,18 @@ function startTime() {
 		if(checkedmode == 13) //TWarp
 		{
 			cmd = dcmd(cmd,"twf"); //fov		
-		
-			if(	(document.getElementById("twf1").checked === true) || //Wide
-				(document.getElementById("twf2").checked === true) /* || //Linear
-				(document.getElementById("twf3").checked === true) */ ) //Linear+HL
-			{
-				dset("settingsZoom", true);
-					
-				var zoom = parseInt(document.getElementById("zoom").value);
-				zoom *= 10;
-				document.getElementById("zoomtext").innerHTML = zoom+"%";	
-				if(zoom == 100) zoom = 99;	
-				
-				cmd = cmd + zoom; //fov
-			}
 		}
 		else if(checkedmode == 19) //Photo
 		{
 			cmd = dcmd(cmd,"pf"); //fov		
-		
-			if(	(document.getElementById("pf1").checked === true) || //Wide
-				(document.getElementById("pf2").checked === true) ) //Linear
-			{
-				dset("settingsZoom", true);			
-					
-				var zoom = parseInt(document.getElementById("zoom").value);
-				zoom *= 10;
-				document.getElementById("zoomtext").innerHTML = zoom+"%";	
-				if(zoom == 100) zoom = 99;	
-				
-				cmd = cmd + zoom; //fov
-			}
 		}
 		else if(checkedmode == 20) //Live Burst
 		{
-			dset("settingsZoom", true);
-					
-			var zoom = parseInt(document.getElementById("zoom").value);
-			zoom *= 10;
-			document.getElementById("zoomtext").innerHTML = zoom+"%";	
-			if(zoom == 100) zoom = 99;	
-			
-			cmd = cmd + "fW" + zoom; //fov
+			cmd = cmd + "fW"; //fov
 		}
 		else //Everything else
 		{
 			cmd = dcmd(cmd,"tlvf"); //fov		
-		
-			if(	(document.getElementById("tlvf1").checked === true) || //Wide
-				(document.getElementById("tlvf2").checked === true) ) //Linear
-			{
-				dset("settingsZoom", true);			
-					
-				var zoom = parseInt(document.getElementById("zoom").value);
-				zoom *= 10;
-				document.getElementById("zoomtext").innerHTML = zoom+"%";	
-				if(zoom == 100) zoom = 99;	
-				
-				cmd = cmd + zoom; //fov
-			}
 		}
 	}
 	else
@@ -1261,24 +1170,6 @@ function startTime() {
 		{
 			cmd = dcmd(cmd,"eis"); //eis
 			cmd = dcmd(cmd,"f"); //fov
-		}
-		
-		if(	(document.getElementById("f1").checked === true) || //Wide
-			(document.getElementById("f3").checked === true)/* || //Linear
-			(document.getElementById("f5").checked === true)*/ ) //Linear+HL
-		{
-			dset("settingsZoom", true);			
-			
-			var zoom = parseInt(document.getElementById("zoom").value);
-			zoom *= 10;
-			document.getElementById("zoomtext").innerHTML = zoom+"%";	
-			if(zoom == 100) zoom = 99;	
-			
-			cmd = cmd + zoom; //fov
-		}
-		else
-		{
-			dset("settingsZoom", false);
 		}
 	}
 	
