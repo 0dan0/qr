@@ -26,8 +26,8 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   
   &nbsp;&nbsp;**Video Modes:**&nbsp;&nbsp; 
   <input type="radio" id="m1" name="mode" value="mV"> <label  for="m1">Video </label>&nbsp;&nbsp;
-  <input type="radio" id="m2" name="mode" value="mL"> <label  for="m2">Log</label>&nbsp;&nbsp;
-  <input type="radio" id="m3" name="mode" value="mS"> <label  for="m3">Std</label>&nbsp;&nbsp;
+  <input type="radio" id="m2" name="mode" value="mVL"> <label  for="m2">Log</label>&nbsp;&nbsp;
+  <input type="radio" id="m3" name="mode" value="mVS"> <label  for="m3">Std</label>&nbsp;&nbsp;
   <input type="radio" id="m4" name="mode" value="mTW"> <label for="m4">TimeWarp</label>&nbsp;&nbsp;
   <input type="radio" id="m5" name="mode" value="mT"> <label  for="m5">TimeLapse</label>&nbsp;&nbsp;
   <input type="radio" id="m6" name="mode" value="mNL"> <label for="m6">NightLapse</label><br>
