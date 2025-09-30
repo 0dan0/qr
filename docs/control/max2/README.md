@@ -99,7 +99,9 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="f1" name="fov" value="fL"> <label for="f1">Linear </label>&nbsp;&nbsp;
   <input type="radio" id="f2" name="fov" value="fW"> <label for="f2">Wide </label>&nbsp;&nbsp;
   <input type="radio" id="f3" name="fov" value="fX"> <label for="f3">UltraWide </label>&nbsp;&nbsp;
-  <input type="radio" id="f4" name="fov" value="" checked> <label for="f4">not set</label><br><br>
+  <input type="radio" id="f4" name="fov" value="fX"> <label for="f4">MaxSuperview </label>&nbsp;&nbsp;
+  <input type="radio" id="f5" name="fov" value="fX"> <label for="f5">MaxHyperView </label>&nbsp;&nbsp;
+  <input type="radio" id="f6" name="fov" value="" checked> <label for="f">not set</label><br><br>
  </div>
  
 <div id="settingsPFOV">
@@ -238,7 +240,7 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="audt3" name="audt" value="aW"> <label for="audt3">On</label>&nbsp;&nbsp;
   <input type="radio" id="audt4" name="audt" value="" checked> <label for="audt4"> not set</label><br><br>
 </div>
-<input type="checkbox" id="np" value=""> <label for="np">Custom Named Presets<sup>12-13</sup></label><br>
+<input type="checkbox" id="np" value=""> <label for="np">Custom Named Presets</label><br>
 <div id="namedPresets">
    <div id="ICONS">
 	  &nbsp;&nbsp;&nbsp;&nbsp;Click to select the preferred icon:<br>
@@ -283,8 +285,8 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="ptc4" name="ptc" value="" checked> <label for="ptc4">not set</label>
 </div>
 <div id="ptDEPTH">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Color Depth:</b>&nbsp;&nbsp;
-  <input type="radio" id="ptd1" name="ptd" value="d0"> <label for="ptd1">8-bit<sup>11</sup></label>&nbsp;&nbsp;
-  <input type="radio" id="ptd2" name="ptd" value="d1"> <label for="ptd2">10-bit<sup>11</sup></label>&nbsp;&nbsp;
+  <input type="radio" id="ptd1" name="ptd" value="d0"> <label for="ptd1">8-bit</label>&nbsp;&nbsp;
+  <input type="radio" id="ptd2" name="ptd" value="d1"> <label for="ptd2">10-bit</label>&nbsp;&nbsp;
   <input type="radio" id="ptd3" name="ptd" value="" checked> <label for="ptd3">not set</label>
 </div>
 <div id="ptBITRATE">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Bit rate:</b>&nbsp;&nbsp;
