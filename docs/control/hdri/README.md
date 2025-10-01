@@ -1,7 +1,7 @@
 # HDRI Merge (optimized for GoPro MAX2)
 
-Create HDRI with this two QR codes: [![macroQR](macroQR.png)] 
-[![presetQR](presetQR.png)]
+Create HDRI with this two QR codes: ![macroQR](./macroQR.png)
+![presetQR](./presetQR.png)
 
 <fieldset>
   <legend>Inputs</legend>
