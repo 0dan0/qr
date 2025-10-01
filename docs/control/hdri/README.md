@@ -1,7 +1,6 @@
 # HDRI Merge (optimized for GoPro MAX2)
 
-Create HDRI with this two QR codes: ![macroQR](./macroQR.png)
-![presetQR](./presetQR.png)
+Create HDRI with this two QR codes:
 
 <fieldset>
   <legend>Inputs</legend>
@@ -35,6 +34,7 @@ Create HDRI with this two QR codes: ![macroQR](./macroQR.png)
   <pre id="log" aria-live="polite"></pre>
 </fieldset>
 
+<!--
 <script src="https://cdn.jsdelivr.net/npm/exifr@7.1.3/dist/lite.umd.js"></script>
 <script>
 /* ===================== Config & constants ===================== */
@@ -1989,3 +1989,5 @@ $('#runQuarter').addEventListener('click', async () => {
   await runPipeline(0.25);  // half res
 });
 </script>
+
+!-->
