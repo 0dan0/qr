@@ -5,6 +5,70 @@ Only the more recent releases are documented below. This a general list of Labs 
 
 ## HERO13 Black 
 
+### 2.04.70 - August 25, 2025
+- Added oS5 - 5 minute rear screen timeout (to match in menu control)
+- Added oS10 - 10 minute rear screen timeout
+- Added oS15 - 15 minute rear screen timeout
+- Added oS30 - 30 minute rear screen timeout
+- Added *BFLK=1 to bypass deflicker controls, to allow for continuous shutter speeds from 1/fps
+- Added *EXPS=2 for ISO/SHUT within the capture screen during capture (reducing flicker of the ISO display.) Older *EXPS=1 still works the same. 
+- Added *ALLI=1 for ALL Integer frame rates: 24.0, 25.0, 30.0, 50.0, 60.0, 100.0, 120.0, 200.0, 240.0 
+- Added $COHN=1 to initize credientials (once) for remote camera connections and control
+- Added $SHPS=x to show the password/credientials for x seconds (also stored in MISC/qrlog.txt)
+- Added $ADDR=x to display the current IP ADDR for x seconds (also stored in MISC/qrlog.txt)
+- Improved Quik connection detection (particularly with *FAST=1 enabled.)
+- Improved for a more consistent display of floating point variables (float point always uses 5 characters if it can.) 
+- Improved render speed and quality for the LEVL control
+- Improved handling on GUID and LEVL rendering in extreme modes like 4Kp120 SuperView 10-bit 
+- Improved silencing messages from extensions in preset names
+- Improved *WBLK=x where 1 locks WB immediately, or after x seconds (2-99) or 100-9999 milliseconds.
+- Improved *WAKE=1 is now the same as *WAKE=2, the old (very rare) use of 1 is now *WAKE=3
+- Increased support for QR Codes with up to 400 characters
+- Fixed !W joining a network as established by *JOIN="SSID:password"
+- Fixed voice activation being disabled randomly in Labs
+- Fixed support for "24HZ" in the preset name
+
+New timing commands (updated Sept 7th, 2025):
+There is a new interval time representation. Previously sleep alarms were absolute times, e.g. !10:00N or just pauses relative to now: e.g. !600N. 
+But users have been requesting photos on the hour or similar, which was harder to do as commands like !3600N would drift a few seconds with each call.
+e.g. commands like !60R - sleeps for ~60 seconds, but this will drift over time, 10:00:00, 10:01:04, 10:02:07...<br>
+Now you can use:<br>
+!00;01R sleeps until the next clock minute, no drift: 10:00:00, 10:01:00, 10:02:00...<br>
+!00;05R sleeps until the next clock 5 minute: so 10:00, 10:05, 10:10, 10:15...<br>
+!01;00R sleeps until the next hour so 10:00, 11:00, 12:00...<br>
+<br>
+A daily command to shoot precisely hourly between 8am and 6pm simplifies to:<br>
+!01;00NmP!S!1N>18:00!08:00R!R<br>
+<br>
+This was added for a second reason, as with no drift, you now know when your camera might be busy (for cameras in remote places.) 
+This supports a more significant change: the ability to use Quik and Labs scripts at the same time. Previously any sleep command would shutdown BLE and 
+all wireless services, while this does help with power/battery life, the second reason it would prevent Quik breaking a running script. 
+Now Labs is aware is was woken via BLE, and the behavior now supports a Quik connection, control and data off load, then the script will 
+continue when you press camera off from within Quik. If you are using the new clock relative sleeps, Quik download time will not likely 
+mess up your interval on your timelapses.<br>
+
+If you want the older behavior, use *NBLE=1 to set No BLE for Labs scripting. The best power option.
+
+Other release note changes (to experiment with):
+Added command !Q or !Qx to wait for Quik connection and control, defaults to 30seconds, e.g. !Q60 would be 60seconds
+Added system variable r:Q - connected with the Quik app
+Added system variable r:B - remote connect with any BLE device, Remote or Quik
+Added system variable r:H - connected with the BT Headphone/Microphone
+Added system variable w - wake reason, so you can branch code based on the reason the camera started. Common values:
+-  1 - camera reset 
+-  2 - power button
+-  3 - quikcapture
+-  6 - wake alarm
+-  9 - BLE Wake
+-  10 - USB power wake
+
+Added to this massive release, Labs commands over Open GoPro WiFi links is now supported.
+Just a teaser (this work with user credentials from COHN, SHPS, ADDR):
+Example: WiFi calls to Labs:
+ curl -k 'https://gopro:xxxxxxxxxxx@192.168.x.xxx/gopro/qrcode?labs=1&code=r5p24'
+ curl -k -G --data-urlencode 'code="Hello World"' 'https://gopro:xxxxxxxxxxx@192.168.x.xxx/gopro/qrcode?labs=1'
+
+
 ### 2.02.70 - March 27, 2025
 - Added commands to enable and disable the touch screen (tE and tD). These will be usefil in script to prevent an accidental screen touch setting the wrong mode. 
 - Added $EXPL=1, for exposure lock upon capture, just like the existing $WBLK=1 for white balance lock. 
