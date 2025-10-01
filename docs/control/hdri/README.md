@@ -34,6 +34,7 @@ Create HDRI with this two QR codes:
   <pre id="log" aria-live="polite"></pre>
 </fieldset>
 
+<script src="https://cdn.jsdelivr.net/npm/exifr@7.1.3/dist/lite.umd.js"></script>
 
 <script>
 /* ===================== Config & constants ===================== */
