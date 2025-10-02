@@ -315,6 +315,36 @@ function monochromeAbove(hdr, thr=1.0) {
   }
 }
 
+/* ===================== Filmic tone map with dithering ===================== */
+async function tonemap_filmic(hdr, exposure=1.0) {
+  const {w,h,data} = hdr;
+  const out = new Uint8ClampedArray(w*h*4);
+  //const A=0.22, B=0.30, C=0.10, D=0.20, E=0.01, F=0.30, W=11.2;  // too contrasty
+  const A=0.2, B=0.30, C=0.10, D=0.05, E=0.0, F=0.10, W=20;  // lower contrast
+  const whiteScale = ((W*(A*W+C*B)+D*E)/(W*(A*W+B)+D*F)) - (E/F);
+  function rnd(i){ let x = i ^ (i>>>17); x ^= x<<13; x ^= x>>>7; x ^= x>>>17; return ((x>>>8)&0xFF)/255; }
+
+  for (let p=0,q=0,i=0; p<data.length; p+=3, q+=4, i++) {
+    let r = data[p  ] * exposure;
+    let g = data[p+1] * exposure;
+    let b = data[p+2] * exposure;
+    const fr = ((r*(A*r+C*B)+D*E)/(r*(A*r+B)+D*F)) - (E/F);
+    const fg = ((g*(A*g+C*B)+D*E)/(g*(A*g+B)+D*F)) - (E/F);
+    const fb = ((b*(A*b+C*B)+D*E)/(b*(A*b+B)+D*F)) - (E/F);
+    let rr = Math.min(1, Math.max(0, fr/whiteScale));
+    let gg = Math.min(1, Math.max(0, fg/whiteScale));
+    let bb = Math.min(1, Math.max(0, fb/whiteScale));
+    const d = (rnd(i)-0.5) / 255;
+    rr = Math.min(1, Math.max(0, rr + d));
+    gg = Math.min(1, Math.max(0, gg + d));
+    bb = Math.min(1, Math.max(0, bb + d));
+    out[q  ] = (rr*255)|0;
+    out[q+1] = (gg*255)|0;
+    out[q+2] = (bb*255)|0;
+    out[q+3] = 255;
+  }
+  return { w, h, data: out };
+}
 
 
 </script>
