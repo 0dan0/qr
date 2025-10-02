@@ -782,16 +782,16 @@ async function runPipeline(scale) {
 
         //const blob = encodeRadianceHDR_RGBE(hdr)
         //const blob = encodeRadianceHDR_RGBE_RLE(hdr);
-		const blob = await encodeRadianceHDR_RGBE_RLE_Async(
-		  hdr,
-		  pct => setPerFile(pct)  // progress bar
-		);
-	
-        const a = document.createElement('a');
-        a.href = URL.createObjectURL(blob);
-        a.download = baseName + '.hdr';   // <— use shortest exposure basename
-        a.click();
-        URL.revokeObjectURL(a.href);
+		//const blob = await encodeRadianceHDR_RGBE_RLE_Async(
+		//  hdr,
+		//  pct => setPerFile(pct)  // progress bar
+		//);
+		//
+        //const a = document.createElement('a');
+        //a.href = URL.createObjectURL(blob);
+        //a.download = baseName + '.hdr';   // <— use shortest exposure basename
+        //a.click();
+        //URL.revokeObjectURL(a.href);
         logLine('HDR downloaded.', 'ok');
       } catch (e) {
         logLine(`HDR save failed: ${e.message||e}`, 'err');
