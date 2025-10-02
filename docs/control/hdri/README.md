@@ -896,7 +896,7 @@ async function runPipeline(scale) {
         
         const a = document.createElement('a');
         a.href = URL.createObjectURL(blob);
-        a.download = baseName + '.hdr';   // <— use shortest exposure basename
+        a.download = baseName + name_extension + '.hdr';   // <— use shortest exposure basename
         a.click();
         URL.revokeObjectURL(a.href);
 
