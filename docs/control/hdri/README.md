@@ -384,4 +384,191 @@ function drawToCanvas(ldr, canvas, targetW = 800, targetH = 400, mode = 'contain
 }
 
 
+
+
+
+
+
+
+
+/**
+ * Load JPGs, read EXIF shutter times, sort by exposure, optionally scale,
+ * convert to linear, apply short-sun logic (ROI blur + synthetic pushes),
+ * and return arrays ready for HDR merge.
+ *
+ * @param {File[]} files
+ * @param {number} scale   // 1.0 = full, 0.5 = half, etc.
+ * @returns {Promise<{linearImages:Array<{w:number,h:number,data:Float32Array}>,sortedExpos:number[],sortedExif:Object[],w:number,h:number,baseName:string}>}
+ */
+async function loadAndPreprocess(files, scale = 1.0) {
+  // ---- NEW: parameter sanity for scale ----
+  scale = Math.max(0.05, Math.min(2.0, Number(scale) || 1.0));
+
+  const bitmaps = [];
+  const exposures = [];
+  const exifList = [];
+  setPerFile(0);
+
+  // Decode + EXIF ----------------------------------------
+  for (let i = 0; i < files.length; i++) {
+    const f = files[i];
+    try {
+      const exif = await exifr.parse(f).catch(() => null);
+      exifList.push(exif || {});
+
+      // Shutter time (seconds)
+      let t = null;
+      if (exif) {
+        if (typeof exif.ExposureTime === 'number') t = exif.ExposureTime;
+        else if (typeof exif.ShutterSpeedValue === 'number') t = Math.pow(2, -exif.ShutterSpeedValue);
+      }
+      if (!t) throw new Error("Missing ExposureTime/ShutterSpeedValue");
+      exposures.push(t);
+
+      const bmp = await createImageBitmap(f);
+      bitmaps.push(bmp);
+
+      logLine(`Loaded: ${f.name} (t=${t})`, 'ok');
+    } catch (e) {
+      logLine(`Error reading ${f.name}: ${e.message || e}`, 'err');
+    }
+    setPerFile(((i + 1) / files.length) * 100);
+    await nextFrame();
+  }
+  if (!bitmaps.length) throw new Error("No valid images decoded.");
+
+  // Sort by exposure (ascending: shortest first) --------
+  const idx = exposures.map((t, i) => [t, i]).sort((a, b) => a[0] - b[0]).map(x => x[1]);
+  const sortedExpos = idx.map(i => exposures[i]);
+  const sortedExif  = idx.map(i => exifList[i]);
+  const sortedBmps  = idx.map(i => bitmaps[i]);
+
+  const shortestFileName = files[idx[0]].name;
+  const baseName = shortestFileName.replace(/\.[^.]+$/, '');
+
+  // ---- NEW: target output size with scale factor -------
+  const nativeW = sortedBmps[0].width;
+  const nativeH = sortedBmps[0].height;
+  const w = Math.max(1, Math.floor(nativeW * scale));
+  const h = Math.max(1, Math.floor(nativeH * scale));
+
+  // Work canvas at target resolution ---------------------
+  const c = document.createElement('canvas');
+  c.width = w; c.height = h;
+  const ctx = c.getContext('2d', { willReadFrequently: true });
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = 'high';
+
+  const linearImages = [];
+  const expandedTimes = [];
+
+  // Process each bracket --------------------------------
+  for (let i = 0; i < sortedBmps.length; i++) {
+    ctx.clearRect(0, 0, w, h);
+
+    // ---- NEW: scaled draw to target resolution ----
+    const bmp = sortedBmps[i];
+    ctx.drawImage(bmp, 0, 0, bmp.width, bmp.height, 0, 0, w, h);
+
+    const imgData = ctx.getImageData(0, 0, w, h);
+
+    // sRGB → linear (your existing function)
+    let lin = srgbToLinear_u8(imgData);
+
+    let t = sortedExpos[i];
+
+    // ---------- Short-exposure "sun" logic (unchanged behavior, now at scaled size) ----------
+    if (t < SHORT_EXPOSURE_T) {
+      // A) base push
+      linearImages.push({ w, h, data: lin.slice(0) });
+      expandedTimes.push(t);
+      logLine(`Short exposure base push: t=${t}`, 'muted');
+
+      // Detect clipped sun on a blurred copy (first pass blur)
+      let blurForSun = gaussianBlurFloatRGB(lin, w, h, SUN_BLUR1);
+      let clippedCount = 0;
+      for (let p = 0; p < blurForSun.length; p++) if (blurForSun[p] > CLIPPED_THRESH) clippedCount++;
+      // Scale count to approx native 7680×3840 reference if you use that heuristic
+      clippedCount *= (7680 * 3840 * 3 / blurForSun.length);
+      const hasClippedSun = clippedCount > CLIPPED_COUNT && clippedCount < CLIPPED_COUNT * 10;
+      logLine(`Sun clipped? ${hasClippedSun} (count=${Math.round(clippedCount)})`, hasClippedSun ? 'warn' : 'muted');
+
+      if (hasClippedSun) {
+        // Find bbox of bright region
+        let minx = w, maxx = 0, miny = h, maxy = 0;
+        for (let yy = 0; yy < h; yy++) {
+          for (let xx = 0; xx < w; xx++) {
+            const p = (yy * w + xx) * 3;
+            const r = lin[p], g = lin[p + 1], b = lin[p + 2];
+            if (r > CLIPPED_THRESH || g > CLIPPED_THRESH || b > CLIPPED_THRESH) {
+              if (minx > xx) minx = xx;
+              if (maxx < xx) maxx = xx;
+              if (miny > yy) miny = yy;
+              if (maxy < yy) maxy = yy;
+            }
+          }
+        }
+        // pad ROI a bit; clamp to image
+        minx = Math.max(0, minx - 64);
+        miny = Math.max(0, miny - 64);
+        maxx = Math.min(w - 1, maxx + 64);
+        maxy = Math.min(h - 1, maxy + 64);
+
+        // First soften (ROI blur; x2/y2 exclusive → pass max+1)
+        gaussianBlurROI(lin, w, minx, miny, maxx + 1, maxy + 1, SUN_BLUR1);
+
+        // Spike core & desaturate > 0.99 (prevent color fringing)
+        for (let yy = miny; yy <= maxy; yy++) {
+          for (let xx = minx; xx <= maxx; xx++) {
+            const p = (yy * w + xx) * 3;
+            const r = lin[p], g = lin[p + 1], b = lin[p + 2];
+            if (r > 0.99 || g > 0.99 || b > 0.99) lin[p] = lin[p + 1] = lin[p + 2] = 800.0;
+          }
+        }
+
+        logLine(`Sun ROI @ ${minx},${miny} → ${maxx},${maxy}`, 'muted');
+
+        // A: soften again, push with same t
+        gaussianBlurROI(lin, w, minx, miny, maxx + 1, maxy + 1, SUN_BLUR1);
+        linearImages.push({ w, h, data: lin.slice(0) });
+        expandedTimes.push(t);
+
+        // B: heavier blur & *multiply by 16*, then t/=16  (synthetic shorter exposure)
+        gaussianBlurROI(lin, w, minx, miny, maxx + 1, maxy + 1, SUN_BLUR2);
+        for (let p = 0; p < lin.length; p++) lin[p] *= 16.0;
+        t /= 16.0;
+        linearImages.push({ w, h, data: lin.slice(0) });
+        expandedTimes.push(t);
+        logLine(`Synthetic B push: t=${t}`, 'muted');
+
+        // C: heavier blur, ×1.0, then t/=16
+        gaussianBlurROI(lin, w, minx, miny, maxx + 1, maxy + 1, SUN_BLUR2);
+        // (no intensity scale)
+        t /= 16.0;
+        linearImages.push({ w, h, data: lin.slice(0) });
+        expandedTimes.push(t);
+        logLine(`Synthetic C push: t=${t}`, 'muted');
+
+        // D: heavier blur, ×0.25, then t/=16
+        gaussianBlurROI(lin, w, minx, miny, maxx + 1, maxy + 1, SUN_BLUR2);
+        for (let p = 0; p < lin.length; p++) lin[p] *= 0.25;
+        t /= 16.0;
+        linearImages.push({ w, h, data: lin.slice(0) });
+        expandedTimes.push(t);
+        logLine(`Synthetic D push: t=${t}`, 'muted');
+      }
+      // else: only base push already added
+    } else {
+      // Normal exposure
+      linearImages.push({ w, h, data: lin.slice(0) });
+      expandedTimes.push(t);
+    }
+
+    setPerFile(((i + 1) / sortedBmps.length) * 100);
+    await nextFrame();
+  }
+
+  return { linearImages, sortedExpos: expandedTimes, sortedExif, w, h, baseName };
+}
+
 </script>
