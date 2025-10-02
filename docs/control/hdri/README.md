@@ -392,11 +392,10 @@ function drawToCanvas(ldr, canvas, targetW = 800, targetH = 400, mode = 'contain
  * @param {{yieldMs?:number, signal?:AbortSignal}=} opts
  * @returns {Promise<Blob>}
  */
-async function encodeRadianceHDR_RGBE_RLE_Async(hdr, onProgress, opts = {}) 
+async function encodeRadianceHDR_RGBE_RLE_Async(hdr, onProgress) 
 {
   const { w, h, data } = hdr;
-  const yieldMs = opts.yieldMs ?? 16;
-  const signal = opts.signal;
+  const yieldMs = 500;
 
   const header = [
     "#?RADIANCE",
@@ -798,8 +797,7 @@ async function runPipeline(scale) {
         //const blob = encodeRadianceHDR_RGBE_RLE(hdr);
 		const blob = await encodeRadianceHDR_RGBE_RLE_Async(
 		  hdr,
-		  pct => setPerFile(pct),            // progress bar
-		  { yieldMs: 500, signal: controller.signal }
+		  pct => setPerFile(pct)  // progress bar
 		);
 	
         const a = document.createElement('a');
