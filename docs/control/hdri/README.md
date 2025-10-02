@@ -389,6 +389,116 @@ async function encodeRadianceHDR_RGBE(hdr)
 {
   const { w, h, data } = hdr;
   const yieldMs = 500;
+    const header = [
+    "#?RADIANCE",
+    "FORMAT=32-bit_rle_rgbe",
+    "",
+    `-Y ${h} +X ${w}\n`
+  ].join("\n");
+  const headerBytes = new TextEncoder().encode(header);
+
+  // RGB -> RGBE
+  function toRGBE(r,g,b) {
+    const maxc = Math.max(r,g,b);
+    if (maxc < 1e-32) return [0,0,0,0];
+    const e = Math.ceil(Math.log2(maxc));
+    const scale = Math.pow(2, e) / 256;
+    return [
+      Math.min(255, Math.round(r/scale)),
+      Math.min(255, Math.round(g/scale)),
+      Math.min(255, Math.round(b/scale)),
+      e + 128
+    ];
+  }
+
+  // Write one channel with Radiance RLE
+  function encodeRLEChannel(line /* Uint8Array of length w */) {
+    const out = [];
+    let x = 0;
+    while (x < w) {
+      // try run
+      let runLen = 1;
+      const maxRun = Math.min(w - x, 127);
+      const val = line[x];
+      while (runLen < maxRun && line[x + runLen] === val) runLen++;
+      if (runLen >= 4) {
+        out.push(128 + runLen, val);
+        x += runLen;
+      } else {
+        // literal packet, avoid swallowing a future run
+        const start = x;
+        let count = 0;
+        const maxLit = Math.min(w - x, 128);
+        while (count < maxLit) {
+          if (count >= 1) {
+            let lookRun = 1;
+            const maxLook = Math.min(w - (x + count), 127);
+            const lookVal = line[x + count];
+            while (lookRun < maxLook && line[x + count + lookRun] === lookVal) lookRun++;
+            if (lookRun >= 4) break;
+          }
+          count++;
+        }
+        out.push(count);
+        for (let i = 0; i < count; i++) out.push(line[start + i]);
+        x += count;
+      }
+    }
+    return Uint8Array.from(out);
+  }
+
+  // Fallback to old flat RGBE when width not supported
+  if (w < 8 || w > 0x7fff) {
+    const flat = new Uint8Array(w*h*4);
+    for (let i=0,p=0;i<w*h;i++,p+=3) {
+      const [R,G,B,E] = toRGBE(data[p], data[p+1], data[p+2]);
+      const q = i*4; flat[q]=R; flat[q+1]=G; flat[q+2]=B; flat[q+3]=E;
+    }
+    if (onProgress) onProgress(100);
+    return new Blob([headerBytes, flat], { type: "image/vnd.radiance" });
+  }
+
+  // Build output in chunks to avoid one giant growable array
+  const chunks = [headerBytes];
+  let lastYield = performance.now();
+
+  for (let y = 0; y < h; y++) {
+    if (signal?.aborted) throw new DOMException("Encoding aborted", "AbortError");
+
+    // Scanline header: 0x02 0x02 w_hi w_lo
+    const scanHdr = new Uint8Array([0x02, 0x02, (w >> 8) & 0xff, w & 0xff]);
+
+    // Prepare channel buffers
+    const R = new Uint8Array(w);
+    const G = new Uint8Array(w);
+    const B = new Uint8Array(w);
+    const E = new Uint8Array(w);
+
+    let p = y * w * 3;
+    for (let x = 0; x < w; x++, p += 3) {
+      const [r8,g8,b8,e8] = toRGBE(data[p], data[p+1], data[p+2]);
+      R[x] = r8; G[x] = g8; B[x] = b8; E[x] = e8;
+    }
+
+    // Encode four channels
+    const rleR = encodeRLEChannel(R);
+    const rleG = encodeRLEChannel(G);
+    const rleB = encodeRLEChannel(B);
+    const rleE = encodeRLEChannel(E);
+
+    // Concatenate this scanline: hdr + R + G + B + E
+    const line = new Uint8Array(scanHdr.length + rleR.length + rleG.length + rleB.length + rleE.length);
+    let o = 0;
+    line.set(scanHdr, o); o += scanHdr.length;
+    line.set(rleR, o);    o += rleR.length;
+    line.set(rleG, o);    o += rleG.length;
+    line.set(rleB, o);    o += rleB.length;
+    line.set(rleE, o);
+
+    chunks.push(line);
+  }
+
+  return new Blob(chunks, { type: "image/vnd.radiance" });
 }
 
 
@@ -768,23 +878,17 @@ async function runPipeline(scale) {
     $('#saveHdr').disabled = false;
     $('#saveHdr').onclick = async () => {
       try {
-	  
-		// Optional: allow cancel
-		const controller = new AbortController();
-		// Expose cancel somewhere: controller.abort();
 
-        //const blob = encodeRadianceHDR_RGBE(hdr)
-        //const blob = encodeRadianceHDR_RGBE_RLE(hdr);
-		//const blob = await encodeRadianceHDR_RGBE_RLE_Async(
-		//  hdr,
-		//  pct => setPerFile(pct)  // progress bar
-		//);
-		//
-        //const a = document.createElement('a');
-        //a.href = URL.createObjectURL(blob);
-        //a.download = baseName + '.hdr';   // <— use shortest exposure basename
-        //a.click();
-        //URL.revokeObjectURL(a.href);
+        const blob = await encodeRadianceHDR(
+          hdr
+        );
+        
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = baseName + '.hdr';   // <— use shortest exposure basename
+        a.click();
+        URL.revokeObjectURL(a.href);
+
         logLine('HDR downloaded.', 'ok');
       } catch (e) {
         logLine(`HDR save failed: ${e.message||e}`, 'err');
