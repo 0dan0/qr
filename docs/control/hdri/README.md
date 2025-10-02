@@ -45,6 +45,7 @@ const SUN_BLUR1    = 15;
 const SUN_BLUR2    = 31;
 const CLIPPED_THRESH = 0.99;    // test threshold in linear (post-blur)
 const CLIPPED_COUNT  = 1000;    // number of clipped pixels to consider "has clipped sun"
+let name_extension = "";
 
 /* ===================== Helpers / UI ===================== */
 const $ = sel => document.querySelector(sel);
@@ -918,14 +919,17 @@ async function runPipeline(scale) {
 
 
 $('#run').addEventListener('click', async () => {
+  name_extension  = "-8K";
   await runPipeline(1.0);  // full res
 });
 
 $('#runHalf').addEventListener('click', async () => {
+  name_extension  = "-4K";
   await runPipeline(0.5);  // half res
 });
 
 $('#runQuarter').addEventListener('click', async () => {
+  name_extension  = "-2K";
   await runPipeline(0.25);  // half res
 });
 
