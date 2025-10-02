@@ -385,7 +385,7 @@ function drawToCanvas(ldr, canvas, targetW = 800, targetH = 400, mode = 'contain
 
 
 
-async function encodeRadianceHDR_RGBE(hdr) 
+async function encodeRadianceHDR_RGBE(hdr, onProgress) 
 {
   const { w, h, data } = hdr;
   const yieldMs = 500;
@@ -496,6 +496,15 @@ async function encodeRadianceHDR_RGBE(hdr)
     line.set(rleE, o);
 
     chunks.push(line);
+  }
+  
+  
+  // Progress + cooperative yield
+  if (onProgress) onProgress(((y + 1) / h) * 100);
+  const now = performance.now();
+  if (now - lastYield > yieldMs) {
+    lastYield = now;
+    await new Promise(r => requestAnimationFrame(r));
   }
 
   return new Blob(chunks, { type: "image/vnd.radiance" });
@@ -880,7 +889,8 @@ async function runPipeline(scale) {
       try {
 
         const blob = await encodeRadianceHDR_RGBE(
-          hdr
+          hdr,
+          pct => setPerFile(pct)    // progress bar
         );
         
         const a = document.createElement('a');
