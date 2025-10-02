@@ -406,56 +406,6 @@ async function encodeRadianceHDR_RGBE_RLE_Async(hdr, onProgress, opts = {})
   ].join("\n");
   const headerBytes = new TextEncoder().encode(header);
 
-  // RGB -> RGBE
-  function toRGBE(r,g,b) {
-    const maxc = Math.max(r,g,b);
-    if (maxc < 1e-32) return [0,0,0,0];
-    const e = Math.ceil(Math.log2(maxc));
-    const scale = Math.pow(2, e) / 256;
-    return [
-      Math.min(255, Math.round(r/scale)),
-      Math.min(255, Math.round(g/scale)),
-      Math.min(255, Math.round(b/scale)),
-      e + 128
-    ];
-  }
-
-  // Write one channel with Radiance RLE
-  function encodeRLEChannel(line /* Uint8Array of length w */) {
-    const out = [];
-    let x = 0;
-    while (x < w) {
-      // try run
-      let runLen = 1;
-      const maxRun = Math.min(w - x, 127);
-      const val = line[x];
-      while (runLen < maxRun && line[x + runLen] === val) runLen++;
-      if (runLen >= 4) {
-        out.push(128 + runLen, val);
-        x += runLen;
-      } else {
-        // literal packet, avoid swallowing a future run
-        const start = x;
-        let count = 0;
-        const maxLit = Math.min(w - x, 128);
-        while (count < maxLit) {
-          if (count >= 1) {
-            let lookRun = 1;
-            const maxLook = Math.min(w - (x + count), 127);
-            const lookVal = line[x + count];
-            while (lookRun < maxLook && line[x + count + lookRun] === lookVal) lookRun++;
-            if (lookRun >= 4) break;
-          }
-          count++;
-        }
-        out.push(count);
-        for (let i = 0; i < count; i++) out.push(line[start + i]);
-        x += count;
-      }
-    }
-    return Uint8Array.from(out);
-  }
-
   // Build output in chunks to avoid one giant growable array
   const chunks = [headerBytes];
 
