@@ -5,7 +5,7 @@ Create HDRI with this two QR codes:
 <fieldset>
   <legend>Inputs</legend>
   <div class="row">
-    <input id="files" type="file" accept="image/jpeg" multiple />
+    <input id="files" type="file" accept="image/jpeg" multiple /><br>
     <button id="run">Merge HDR</button>
     <button id="runHalf">HDR (½ Res)</button>
     <button id="runQuarter">HDR (¼ Res)</button>
