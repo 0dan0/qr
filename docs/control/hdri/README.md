@@ -396,19 +396,6 @@ async function encodeRadianceHDR_RGBE_RLE_Async(hdr, onProgress)
 {
   const { w, h, data } = hdr;
   const yieldMs = 500;
-
-  const header = [
-    "#?RADIANCE",
-    "FORMAT=32-bit_rle_rgbe",
-    "",
-    `-Y ${h} +X ${w}\n`
-  ].join("\n");
-  const headerBytes = new TextEncoder().encode(header);
-
-  // Build output in chunks to avoid one giant growable array
-  const chunks = [headerBytes];
-
-  return new Blob(chunks, { type: "image/vnd.radiance" });
 }
 
 
