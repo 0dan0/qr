@@ -456,65 +456,8 @@ async function encodeRadianceHDR_RGBE_RLE_Async(hdr, onProgress, opts = {})
     return Uint8Array.from(out);
   }
 
-  // Fallback to old flat RGBE when width not supported
-  if (w < 8 || w > 0x7fff) {
-    const flat = new Uint8Array(w*h*4);
-    for (let i=0,p=0;i<w*h;i++,p+=3) 
-    {
-      const [R,G,B,E] = toRGBE(data[p], data[p+1], data[p+2]);
-      const q = i*4; flat[q]=R; flat[q+1]=G; flat[q+2]=B; flat[q+3]=E;
-    }
-    if (onProgress) onProgress(100);
-    return new Blob([headerBytes, flat], { type: "image/vnd.radiance" });
-  }
-
   // Build output in chunks to avoid one giant growable array
   const chunks = [headerBytes];
-  let lastYield = performance.now();
-
-  for (let y = 0; y < h; y++) {
-    if (signal?.aborted) throw new DOMException("Encoding aborted", "AbortError");
-
-    // Scanline header: 0x02 0x02 w_hi w_lo
-    const scanHdr = new Uint8Array([0x02, 0x02, (w >> 8) & 0xff, w & 0xff]);
-
-    // Prepare channel buffers
-    const R = new Uint8Array(w);
-    const G = new Uint8Array(w);
-    const B = new Uint8Array(w);
-    const E = new Uint8Array(w);
-
-    let p = y * w * 3;
-    for (let x = 0; x < w; x++, p += 3) {
-      const [r8,g8,b8,e8] = toRGBE(data[p], data[p+1], data[p+2]);
-      R[x] = r8; G[x] = g8; B[x] = b8; E[x] = e8;
-    }
-
-    // Encode four channels
-    const rleR = encodeRLEChannel(R);
-    const rleG = encodeRLEChannel(G);
-    const rleB = encodeRLEChannel(B);
-    const rleE = encodeRLEChannel(E);
-
-    // Concatenate this scanline: hdr + R + G + B + E
-    const line = new Uint8Array(scanHdr.length + rleR.length + rleG.length + rleB.length + rleE.length);
-    let o = 0;
-    line.set(scanHdr, o); o += scanHdr.length;
-    line.set(rleR, o);    o += rleR.length;
-    line.set(rleG, o);    o += rleG.length;
-    line.set(rleB, o);    o += rleB.length;
-    line.set(rleE, o);
-
-    chunks.push(line);
-
-    // Progress + cooperative yield
-    if (onProgress) onProgress(((y + 1) / h) * 100);
-    const now = performance.now();
-    if (now - lastYield > yieldMs) {
-      lastYield = now;
-      await new Promise(r => requestAnimationFrame(r));
-    }
-  }
 
   return new Blob(chunks, { type: "image/vnd.radiance" });
 }
