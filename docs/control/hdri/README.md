@@ -495,17 +495,18 @@ async function encodeRadianceHDR_RGBE(hdr, onProgress)
     line.set(rleE, o);
 
     chunks.push(line);
-  }
-  
-  
-  // Progress + cooperative yield
-  if (onProgress) onProgress(((y + 1) / h) * 100);
-  const now = performance.now();
-  if (now - lastYield > yieldMs) {
-    lastYield = now;
-    await new Promise(r => requestAnimationFrame(r));
-  }
 
+    // Progress + cooperative yield
+    const now = performance.now();
+    if (now - lastYield > yieldMs) {
+      if (onProgress) onProgress(((y + 1) / h) * 100);
+      lastYield = now;
+      await new Promise(r => requestAnimationFrame(r));
+    }
+
+  }
+  
+  
   return new Blob(chunks, { type: "image/vnd.radiance" });
 }
 
