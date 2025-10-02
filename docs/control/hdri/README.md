@@ -462,9 +462,8 @@ async function encodeRadianceHDR_RGBE(hdr, onProgress)
   const chunks = [headerBytes];
   let lastYield = performance.now();
 
-  for (let y = 0; y < h; y++) {
-    if (signal?.aborted) throw new DOMException("Encoding aborted", "AbortError");
-
+  for (let y = 0; y < h; y++) 
+  {
     // Scanline header: 0x02 0x02 w_hi w_lo
     const scanHdr = new Uint8Array([0x02, 0x02, (w >> 8) & 0xff, w & 0xff]);
 
