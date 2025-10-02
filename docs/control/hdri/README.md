@@ -879,7 +879,7 @@ async function runPipeline(scale) {
     $('#saveHdr').onclick = async () => {
       try {
 
-        const blob = await encodeRadianceHDR(
+        const blob = await encodeRadianceHDR_RGBE(
           hdr
         );
         
