@@ -384,18 +384,55 @@ function drawToCanvas(ldr, canvas, targetW = 800, targetH = 400, mode = 'contain
 }
 
 
-
 /**
- * Async Radiance .HDR (RGBE) encoder with scanline RLE, progress + yielding.
+ * Async Radiance .HDR (RGBE) encoder with scanline RLE and progress/yielding.
+ * SSR/MDX safe: no hard deps on DOM globals (rAF, performance, Blob, TextEncoder).
+ *
  * @param {{w:number,h:number,data:Float32Array}} hdr  // linear RGB
  * @param {(pct:number)=>void=} onProgress            // 0..100
- * @param {{yieldMs?:number, signal?:AbortSignal}=} opts
- * @returns {Promise<Blob>}
+ * @param {{yieldMs?:number, signal?:AbortSignal, returnType?:'blob'|'uint8'}=} opts
+ * @returns {Promise<Blob|Uint8Array>}  Blob in browsers; Uint8Array if Blob is unavailable or returnType:'uint8'
  */
-async function encodeRadianceHDR_RGBE_RLE_Async(hdr, onProgress, opts = {}) {
+export async function encodeRadianceHDR_RGBE_RLE_Async(hdr, onProgress, opts = {}) {
   const { w, h, data } = hdr;
-  const yieldMs = opts.yieldMs ?? 16;
-  const signal = opts.signal;
+  const yieldMs   = opts.yieldMs ?? 16;
+  const signal    = opts.signal;
+  const returnType= opts.returnType || 'blob';
+
+  // --- Portable timing/yield ---
+  const hasPerf = typeof globalThis !== 'undefined' && typeof globalThis.performance !== 'undefined';
+  const now     = hasPerf ? () => globalThis.performance.now() : () => Date.now();
+  const yieldNext = () =>
+    new Promise(r => (typeof globalThis !== 'undefined' && typeof globalThis.requestAnimationFrame === 'function')
+      ? globalThis.requestAnimationFrame(() => r())
+      : setTimeout(r, 0));
+
+  // --- TextEncoder polyfill ---
+  const enc = (str) => {
+    if (typeof globalThis !== 'undefined' && typeof globalThis.TextEncoder === 'function') {
+      return new globalThis.TextEncoder().encode(str);
+    }
+    // Node fallback
+    if (typeof Buffer !== 'undefined') return Uint8Array.from(Buffer.from(str, 'utf8'));
+    // Tiny fallback
+    const u = new Uint8Array(str.length);
+    for (let i=0;i<str.length;i++) u[i] = str.charCodeAt(i) & 0xff;
+    return u;
+  };
+
+  // --- Blob factory (may be absent in SSR/older Node) ---
+  const makeBlob = (parts, type) => {
+    if (returnType === 'uint8' || typeof globalThis === 'undefined' || typeof globalThis.Blob !== 'function') {
+      // concat into a single Uint8Array
+      let total = 0;
+      for (const p of parts) total += p.length;
+      const out = new Uint8Array(total);
+      let o = 0;
+      for (const p of parts) { out.set(p, o); o += p.length; }
+      return out;
+    }
+    return new globalThis.Blob(parts, { type });
+  };
 
   const header = [
     "#?RADIANCE",
@@ -403,7 +440,7 @@ async function encodeRadianceHDR_RGBE_RLE_Async(hdr, onProgress, opts = {}) {
     "",
     `-Y ${h} +X ${w}\n`
   ].join("\n");
-  const headerBytes = new TextEncoder().encode(header);
+  const headerBytes = enc(header);
 
   // RGB -> RGBE
   function toRGBE(r,g,b) {
@@ -419,12 +456,12 @@ async function encodeRadianceHDR_RGBE_RLE_Async(hdr, onProgress, opts = {}) {
     ];
   }
 
-  // Write one channel with Radiance RLE
-  function encodeRLEChannel(line /* Uint8Array of length w */) {
+  // Radiance RLE per-channel
+  function encodeRLEChannel(line /* Uint8Array length w */) {
     const out = [];
     let x = 0;
     while (x < w) {
-      // try run
+      // run
       let runLen = 1;
       const maxRun = Math.min(w - x, 127);
       const val = line[x];
@@ -433,7 +470,7 @@ async function encodeRadianceHDR_RGBE_RLE_Async(hdr, onProgress, opts = {}) {
         out.push(128 + runLen, val);
         x += runLen;
       } else {
-        // literal packet, avoid swallowing a future run
+        // literal (don’t swallow future runs)
         const start = x;
         let count = 0;
         const maxLit = Math.min(w - x, 128);
@@ -455,28 +492,33 @@ async function encodeRadianceHDR_RGBE_RLE_Async(hdr, onProgress, opts = {}) {
     return Uint8Array.from(out);
   }
 
-  // Fallback to old flat RGBE when width not supported
+  // Flat RGBE fallback (w < 8 or w > 0x7fff)
   if (w < 8 || w > 0x7fff) {
     const flat = new Uint8Array(w*h*4);
     for (let i=0,p=0;i<w*h;i++,p+=3) {
       const [R,G,B,E] = toRGBE(data[p], data[p+1], data[p+2]);
       const q = i*4; flat[q]=R; flat[q+1]=G; flat[q+2]=B; flat[q+3]=E;
     }
-    if (onProgress) onProgress(100);
-    return new Blob([headerBytes, flat], { type: "image/vnd.radiance" });
+    onProgress?.(100);
+    return makeBlob([headerBytes, flat], "image/vnd.radiance");
   }
 
-  // Build output in chunks to avoid one giant growable array
+  // Chunked output
   const chunks = [headerBytes];
-  let lastYield = performance.now();
+  let lastYield = now();
 
   for (let y = 0; y < h; y++) {
-    if (signal?.aborted) throw new DOMException("Encoding aborted", "AbortError");
+    if (signal && signal.aborted) {
+      // DOMException may not exist in SSR: throw Error instead
+      const err = new Error("Encoding aborted");
+      err.name = "AbortError";
+      throw err;
+    }
 
-    // Scanline header: 0x02 0x02 w_hi w_lo
+    // scanline header: 0x02 0x02 w_hi w_lo
     const scanHdr = new Uint8Array([0x02, 0x02, (w >> 8) & 0xff, w & 0xff]);
 
-    // Prepare channel buffers
+    // channels
     const R = new Uint8Array(w);
     const G = new Uint8Array(w);
     const B = new Uint8Array(w);
@@ -488,13 +530,11 @@ async function encodeRadianceHDR_RGBE_RLE_Async(hdr, onProgress, opts = {}) {
       R[x] = r8; G[x] = g8; B[x] = b8; E[x] = e8;
     }
 
-    // Encode four channels
     const rleR = encodeRLEChannel(R);
     const rleG = encodeRLEChannel(G);
     const rleB = encodeRLEChannel(B);
     const rleE = encodeRLEChannel(E);
 
-    // Concatenate this scanline: hdr + R + G + B + E
     const line = new Uint8Array(scanHdr.length + rleR.length + rleG.length + rleB.length + rleE.length);
     let o = 0;
     line.set(scanHdr, o); o += scanHdr.length;
@@ -505,16 +545,16 @@ async function encodeRadianceHDR_RGBE_RLE_Async(hdr, onProgress, opts = {}) {
 
     chunks.push(line);
 
-    // Progress + cooperative yield
-    if (onProgress) onProgress(((y + 1) / h) * 100);
-    const now = performance.now();
-    if (now - lastYield > yieldMs) {
-      lastYield = now;
-      await new Promise(r => requestAnimationFrame(r));
+    // progress + cooperative yield
+    onProgress?.(((y + 1) / h) * 100);
+    const t = now();
+    if (t - lastYield > yieldMs) {
+      lastYield = t;
+      await yieldNext();
     }
   }
 
-  return new Blob(chunks, { type: "image/vnd.radiance" });
+  return makeBlob(chunks, "image/vnd.radiance");
 }
 
 
