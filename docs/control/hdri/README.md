@@ -385,6 +385,14 @@ function drawToCanvas(ldr, canvas, targetW = 800, targetH = 400, mode = 'contain
 
 
 
+async function encodeRadianceHDR_RGBE(hdr) 
+{
+  const { w, h, data } = hdr;
+  const yieldMs = 500;
+}
+
+
+
 
 
 
