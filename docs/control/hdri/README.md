@@ -690,6 +690,125 @@ function removeShadowSpecklesHDR(hdr, o = {}) {
   return fixed;
 }
 
+async function runPipeline(scale) {
+  try {
+    $('#saveHdr').disabled = true;
+    logEl.textContent = '';
+    setOverall(0); setPerFile(0);
+
+    const files = Array.from($('#files').files || []);
+    if (!files.length) { logLine("Please select JPG files first.", 'warn'); return; }
+
+    const previewExposure = parseFloat($('#previewExp').value || '2.0');
+
+    setStage('Reading EXIF + decoding images…');
+    setOverall(5);
+    const { linearImages, sortedExpos, w, h, baseName } = await loadAndPreprocess(files, scale);
+  
+    setStage('Merging to HDR (radiance)…');
+    setOverall(35);
+	setPerFile(0);
+    const hdr = await mergeRadiance_linear(linearImages, sortedExpos);
+    setPerFile(100);
+    await nextFrame();
+	
+
+    setStage('Normalizing white to ~1.0…');
+    setOverall(75);
+    const white = normalizeWhitePercentile(hdr, WHITE_PCT);
+    logLine(`White percentile (${WHITE_PCT}%): ${white.toFixed(6)}`, 'ok');
+    await nextFrame();
+	
+	let fixed = removeShadowSpecklesHDR(hdr, {
+	  shadowCut: 0.10, // treat below ~10% as "shadow" in scene-linear
+	  rel: 0.25,
+	  madK: 6.0,
+	  madFloorFrac: 0.03,
+	  allowCluster: true,
+	  soft: 1.2,
+	  pct: 0.95
+	});
+	logLine(`Speckle attenuated: ${fixed} px`, fixed ? 'ok' : 'muted');
+    await nextFrame();
+
+	//const nFixed = removeHDRSpeckles(hdr, {
+	//  factor: 3.0,   // try 2.5–4.0
+	//  abs: 0.15,     // guard for mid/bright regions
+	//  pct: 0.5,     // neighborhood high percentile
+	//  soft: 1.0,     // also cap to 1.2×median
+	//  requirePeak: true
+	//});
+	//logLine(`Speckle removed: ${nFixed}`, 'ok');
+	//const n1 = removeHDRSpeckles(hdr, {
+	//  factor: 3.0, abs: 0.15, soft: 1.0, pct: 0.5, requirePeak: true
+	//});
+	//const n2 = removeHDRSpeckles3x3(hdr, {
+	//  factor: 3.0, abs: 0.15, soft: 1.0, ringPct: 0.5
+	//});
+	//
+	//const n3 = removeHDRSpeckles5x5(hdr,   { 
+	//  factor: 3.0, abs: 0.15, soft: 1.0, ringPct:0.5, maxAspect:2.0 
+	//});
+	//logLine(`Speckle removed: ${n} ${n2} ${n3} `, 'ok');
+
+    setStage('Tone-mapping…');
+    setOverall(85);
+    const ldr = await tonemap_filmic(hdr, previewExposure);
+    drawToCanvas(ldr, $('#preview'));
+    await nextFrame();
+
+    setStage('Preparing downloads…');
+    setOverall(92);
+    $('#saveHdr').disabled = false;
+    $('#saveHdr').onclick = async () => {
+      try {
+	  
+		// Optional: allow cancel
+		const controller = new AbortController();
+		// Expose cancel somewhere: controller.abort();
+
+        //const blob = encodeRadianceHDR_RGBE(hdr)
+        //const blob = encodeRadianceHDR_RGBE_RLE(hdr);
+		const blob = await encodeRadianceHDR_RGBE_RLE_Async(
+		  hdr,
+		  pct => setPerFile(pct),            // progress bar
+		  { yieldMs: 500, signal: controller.signal }
+		);
+	
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = baseName + '.hdr';   // <— use shortest exposure basename
+        a.click();
+        URL.revokeObjectURL(a.href);
+        logLine('HDR downloaded.', 'ok');
+      } catch (e) {
+        logLine(`HDR save failed: ${e.message||e}`, 'err');
+      }
+    };
+
+    setStage('Done');
+    setOverall(100);
+    logLine('✅ Merge complete.', 'ok');
+  } catch (err) {
+    setStage('Error');
+    setOverall(100);
+    logLine(`❌ ${err.message || err}`, 'err');
+    console.error(err);
+  }
+}
+
+
+$('#run').addEventListener('click', async () => {
+  await runPipeline(1.0);  // full res
+});
+
+$('#runHalf').addEventListener('click', async () => {
+  await runPipeline(0.5);  // half res
+});
+
+$('#runQuarter').addEventListener('click', async () => {
+  await runPipeline(0.25);  // half res
+});
 
 
 </script>
