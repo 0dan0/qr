@@ -385,21 +385,6 @@ function drawToCanvas(ldr, canvas, targetW = 800, targetH = 400, mode = 'contain
 
 
 
-/**
- * Async Radiance .HDR (RGBE) encoder with scanline RLE, progress + yielding.
- * @param {{w:number,h:number,data:Float32Array}} hdr  // linear RGB
- * @param {(pct:number)=>void=} onProgress            // 0..100
- * @param {{yieldMs?:number, signal?:AbortSignal}=} opts
- * @returns {Promise<Blob>}
- */
-async function encodeRadianceHDR_RGBE_RLE_Async(hdr, onProgress) 
-{
-  const { w, h, data } = hdr;
-  const yieldMs = 500;
-}
-
-
-
 
 
 
