@@ -571,4 +571,125 @@ async function loadAndPreprocess(files, scale = 1.0) {
   return { linearImages, sortedExpos: expandedTimes, sortedExif, w, h, baseName };
 }
 
+
+/**
+ * Suppress bright speckles in *shadows* (HDR, linear RGB, in place).
+ * - Operates only where local 3x3 median luminance < shadowCut.
+ * - Triggers if center is a strong *relative* outlier vs median + MAD.
+ * - Optionally joins tiny 3x3 clusters; skips long lines.
+ *
+ * @param {{w:number,h:number,data:Float32Array}} hdr
+ * @param {object} [o]
+ * @param {number} [o.shadowCut=0.10]   // only process neighborhoods with median Y < this
+ * @param {number} [o.rel=2.5]          // Yc > median * rel (relative contrast)
+ * @param {number} [o.madK=6.0]         // Yc - median > madK * MAD (robust diff)
+ * @param {number} [o.madFloorFrac=0.03]// MAD floor as fraction of median (noise floor)
+ * @param {boolean}[o.allowCluster=true]// allow small 3x3 blobs (not lines)
+ * @param {number} [o.soft=1.2]         // clamp target <= soft * median
+ * @param {number} [o.pct=0.95]         // clamp target <= pct-neighbor (robust high)
+ * @returns {number} count of pixels attenuated
+ */
+function removeShadowSpecklesHDR(hdr, o = {}) {
+  const { w, h, data } = hdr;
+  const shadowCut   = o.shadowCut   ?? 0.10;
+  const rel         = o.rel         ?? 2.5;
+  const madK        = o.madK        ?? 6.0;
+  const madFloorFrac= o.madFloorFrac?? 0.03;
+  const allowCluster= o.allowCluster?? true;
+  const soft        = o.soft        ?? 1.2;
+  const pct         = o.pct         ?? 0.95;
+  const eps = 1e-8;
+
+  // Luminance buffer
+  const N = w*h;
+  const Y = new Float32Array(N);
+  for (let i=0, p=0; i<data.length; i+=3, p++) {
+    Y[p] = 0.2126*data[i] + 0.7152*data[i+1] + 0.0722*data[i+2];
+  }
+
+  // small helpers
+  function sort8(a){ for(let i=1;i<8;i++){ let v=a[i],j=i-1; while(j>=0&&a[j]>v){a[j+1]=a[j]; j--; } a[j+1]=v; } return a; }
+  function median8(vals){ const s=sort8(vals.slice()); return 0.5*(s[3]+s[4]); }
+  function perc8(vals,p){ const s=sort8(vals.slice()); const idx=Math.min(7,Math.max(0,Math.round(p*7))); return s[idx]; }
+
+  // track visited cluster pixels to avoid over-adjustment
+  const visited = new Uint8Array(N);
+  let fixed = 0;
+
+  // skip 1px border
+  for (let y=1; y<h-1; y++) {
+    for (let x=1; x<w-1; x++) {
+      const idx = y*w + x;
+      if (visited[idx]) continue;
+
+      // gather 3x3 neighbors (excluding center) for baseline
+      const nb = new Float32Array(8);
+      let k=0;
+      for (let dy=-1; dy<=1; dy++) {
+        for (let dx=-1; dx<=1; dx++) {
+          if (!dx && !dy) continue;
+          nb[k++] = Y[(y+dy)*w + (x+dx)];
+        }
+      }
+      const med = median8(nb);
+      if (med >= shadowCut) continue; // only operate in shadows
+
+      // robust noise (MAD) with floor proportional to median (accounts for photon noise)
+      const dev = new Float32Array(8);
+      for (let i=0;i<8;i++) dev[i] = Math.abs(nb[i] - med);
+      const MAD = median8(dev);
+      const madFloor = Math.max(med * madFloorFrac, 1e-6);
+      const sigmaR = Math.max(MAD * 1.4826, madFloor); // ≈ robust std
+
+      const Yc = Y[idx];
+
+      // trigger purely on *relative* + robust absolute (in shadow scale)
+      if (!(Yc > med * rel && (Yc - med) > madK * sigmaR)) continue;
+
+      // optionally grow a 3x3 *compact* blob (not lines)
+      let mask = [[x,y]];
+      if (allowCluster) {
+        for (let dy=-1; dy<=1; dy++) {
+          for (let dx=-1; dx<=1; dx++) {
+            if (!dx && !dy) continue;
+            const xx=x+dx, yy=y+dy, j=yy*w+xx;
+            const Yn = Y[j];
+            if (Yn > med * rel && (Yn - med) > madK * sigmaR) mask.push([xx,yy]);
+          }
+        }
+        // reject line-like clusters (1xK or Kx1 with K>=2)
+        let minx=x, maxx=x, miny=y, maxy=y;
+        for (const [xx,yy] of mask){ if(xx<minx)minx=xx; if(xx>maxx)maxx=xx; if(yy<miny)miny=yy; if(yy>maxy)maxy=yy; }
+        const ww = maxx-minx+1, hh = maxy-miny+1;
+        const isLine = (ww===1 && hh>=2) || (hh===1 && ww>=2);
+        if (isLine) mask = [[x,y]]; // fall back to single-pixel fix
+      }
+
+      // robust target: cap to high-percentile of neighbors and soft*median
+      const hi = perc8(nb, pct);
+      const targetY = Math.min(hi, med * soft);
+
+      // attenuate selected pixels (only if they’re above target), preserve chroma
+      for (const [xx,yy] of mask) {
+        const j = yy*w + xx;
+        if (visited[j]) continue;
+        const curY = Y[j];
+        if (curY > targetY) {
+          const s = Math.max(0, (targetY || eps) / (curY || eps));
+          const q = j*3;
+          data[q  ] *= s;
+          data[q+1] *= s;
+          data[q+2] *= s;
+          Y[j] = targetY;
+          fixed++;
+        }
+        visited[j] = 1;
+      }
+    }
+  }
+  return fixed;
+}
+
+
+
 </script>
