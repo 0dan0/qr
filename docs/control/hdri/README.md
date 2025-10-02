@@ -45,7 +45,6 @@ const SUN_BLUR1    = 15;
 const SUN_BLUR2    = 31;
 const CLIPPED_THRESH = 0.99;    // test threshold in linear (post-blur)
 const CLIPPED_COUNT  = 1000;    // number of clipped pixels to consider "has clipped sun"
-let name_extension = "";
 
 /* ===================== Helpers / UI ===================== */
 const $ = sel => document.querySelector(sel);
@@ -837,7 +836,6 @@ async function runPipeline(scale) {
     const hdr = await mergeRadiance_linear(linearImages, sortedExpos);
     setPerFile(100);
     await nextFrame();
-	
 
     setStage('Normalizing white to ~1.0…');
     setOverall(75);
@@ -857,26 +855,6 @@ async function runPipeline(scale) {
 	logLine(`Speckle attenuated: ${fixed} px`, fixed ? 'ok' : 'muted');
     await nextFrame();
 
-	//const nFixed = removeHDRSpeckles(hdr, {
-	//  factor: 3.0,   // try 2.5–4.0
-	//  abs: 0.15,     // guard for mid/bright regions
-	//  pct: 0.5,     // neighborhood high percentile
-	//  soft: 1.0,     // also cap to 1.2×median
-	//  requirePeak: true
-	//});
-	//logLine(`Speckle removed: ${nFixed}`, 'ok');
-	//const n1 = removeHDRSpeckles(hdr, {
-	//  factor: 3.0, abs: 0.15, soft: 1.0, pct: 0.5, requirePeak: true
-	//});
-	//const n2 = removeHDRSpeckles3x3(hdr, {
-	//  factor: 3.0, abs: 0.15, soft: 1.0, ringPct: 0.5
-	//});
-	//
-	//const n3 = removeHDRSpeckles5x5(hdr,   { 
-	//  factor: 3.0, abs: 0.15, soft: 1.0, ringPct:0.5, maxAspect:2.0 
-	//});
-	//logLine(`Speckle removed: ${n} ${n2} ${n3} `, 'ok');
-
     setStage('Tone-mapping…');
     setOverall(85);
     const ldr = await tonemap_filmic(hdr, previewExposure);
@@ -893,6 +871,14 @@ async function runPipeline(scale) {
           hdr,
           pct => setPerFile(pct)    // progress bar
         );
+        
+        let name_extension = "";
+        if(scale < 0.3)
+             name_extension  = "-2K";
+        else if(scale < 0.6)
+             name_extension  = "-4K";
+        else
+             name_extension  = "-8K";
         
         const a = document.createElement('a');
         a.href = URL.createObjectURL(blob);
@@ -919,17 +905,14 @@ async function runPipeline(scale) {
 
 
 $('#run').addEventListener('click', async () => {
-  name_extension  = "-8K";
   await runPipeline(1.0);  // full res
 });
 
 $('#runHalf').addEventListener('click', async () => {
-  name_extension  = "-4K";
   await runPipeline(0.5);  // half res
 });
 
 $('#runQuarter').addEventListener('click', async () => {
-  name_extension  = "-2K";
   await runPipeline(0.25);  // half res
 });
 
