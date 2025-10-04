@@ -35,15 +35,14 @@ Create HDRI with this two QR codes:
 </fieldset>
 
 <script src="https://cdn.jsdelivr.net/npm/exifr@7.1.3/dist/lite.umd.js"></script>
-
 <script>
 /* ===================== Config & constants ===================== */
 const KSIZE        = 9;         // Gaussian blur kernel (odd) in float
 const WHITE_PCT    = 99.0;      // robust white normalization percentile
 const SHORT_EXPOSURE_T = 2e-5;  // 0.00002s threshold for "very short" exposure (Python parity)
 const SUN_BLUR1    = 15;
-const SUN_BLUR2    = 31;
-const CLIPPED_THRESH = 0.99;    // test threshold in linear (post-blur)
+const SUN_BLUR_LARGE = 63;
+const CLIPPED_THRESH = 0.9;    // test threshold in linear (post-blur)
 const CLIPPED_COUNT  = 1000;    // number of clipped pixels to consider "has clipped sun"
 
 /* ===================== Helpers / UI ===================== */
@@ -77,6 +76,7 @@ function srgbToLinear_u8(imgData) {
   return out;
 }
 
+/* ===================== GoPro Flat (log 113) → Linear ===================== */
 function goProFlatToLinear_u8(imgData) {
   const { data, width, height } = imgData;
   const out = new Float32Array(width * height * 3);
@@ -534,6 +534,10 @@ async function loadAndPreprocess(files, scale = 1.0) {
   const exifList = [];
   setPerFile(0);
 
+  let shift = 0;
+  if(scale <= 0.5) shift++; 
+  if(scale <= 0.25) shift++;
+
   // Decode + EXIF ----------------------------------------
   for (let i = 0; i < files.length; i++) {
     const f = files[i];
@@ -603,28 +607,27 @@ async function loadAndPreprocess(files, scale = 1.0) {
     let t = sortedExpos[i];
 
     // ---------- Short-exposure "sun" logic (unchanged behavior, now at scaled size) ----------
-    if (t < SHORT_EXPOSURE_T) {
-      // A) base push
-      linearImages.push({ w, h, data: lin.slice(0) });
-      expandedTimes.push(t);
-      logLine(`Short exposure base push: t=${t}`, 'muted');
-
+    if (t < SHORT_EXPOSURE_T) 
+	{
       // Detect clipped sun on a blurred copy (first pass blur)
-      let blurForSun = gaussianBlurFloatRGB(lin, w, h, SUN_BLUR1);
+      let blurForSun = gaussianBlurFloatRGB(lin, w, h, SUN_BLUR_LARGE>>shift);
       let clippedCount = 0;
       for (let p = 0; p < blurForSun.length; p++) if (blurForSun[p] > CLIPPED_THRESH) clippedCount++;
       // Scale count to approx native 7680×3840 reference if you use that heuristic
-      clippedCount *= (7680 * 3840 * 3 / blurForSun.length);
-      const hasClippedSun = clippedCount > CLIPPED_COUNT && clippedCount < CLIPPED_COUNT * 10;
+      clippedCount /= (scale*scale);
+      const hasClippedSun = clippedCount > CLIPPED_COUNT;
       logLine(`Sun clipped? ${hasClippedSun} (count=${Math.round(clippedCount)})`, hasClippedSun ? 'warn' : 'muted');
-
-      if (hasClippedSun) {
+	  setPerFile(5);
+	  await nextFrame();
+		
+      if (hasClippedSun) 
+      {
         // Find bbox of bright region
         let minx = w, maxx = 0, miny = h, maxy = 0;
         for (let yy = 0; yy < h; yy++) {
           for (let xx = 0; xx < w; xx++) {
             const p = (yy * w + xx) * 3;
-            const r = lin[p], g = lin[p + 1], b = lin[p + 2];
+            const r = blurForSun[p], g = blurForSun[p + 1], b = blurForSun[p + 2];
             if (r > CLIPPED_THRESH || g > CLIPPED_THRESH || b > CLIPPED_THRESH) {
               if (minx > xx) minx = xx;
               if (maxx < xx) maxx = xx;
@@ -633,56 +636,90 @@ async function loadAndPreprocess(files, scale = 1.0) {
             }
           }
         }
+		let sun_x = (maxx+minx)/2;
+		let sun_y = (maxy+miny)/2;
+		//console.log("near minx maxx: ", minx, maxx);
+		//console.log("near miny maxy: ", miny, maxy);
         // pad ROI a bit; clamp to image
-        minx = Math.max(0, minx - 64);
-        miny = Math.max(0, miny - 64);
-        maxx = Math.min(w - 1, maxx + 64);
-        maxy = Math.min(h - 1, maxy + 64);
+        minx = Math.max(0, minx - 64*scale);
+        miny = Math.max(0, miny - 64*scale);
+        maxx = Math.min(w - 1, maxx + 64*scale);
+        maxy = Math.min(h - 1, maxy + 64*scale);
 
         // First soften (ROI blur; x2/y2 exclusive → pass max+1)
-        gaussianBlurROI(lin, w, minx, miny, maxx + 1, maxy + 1, SUN_BLUR1);
-
-        // Spike core & desaturate > 0.99 (prevent color fringing)
-        for (let yy = miny; yy <= maxy; yy++) {
-          for (let xx = minx; xx <= maxx; xx++) {
-            const p = (yy * w + xx) * 3;
-            const r = lin[p], g = lin[p + 1], b = lin[p + 2];
-            if (r > 0.99 || g > 0.99 || b > 0.99) lin[p] = lin[p + 1] = lin[p + 2] = 800.0;
+        gaussianBlurROI(lin, w, minx, miny, maxx, maxy, SUN_BLUR1>>shift);
+		setPerFile(15);
+		await nextFrame();
+	  
+		let sun_diameter = 0.53 * w / 360.0; //0.53 degrees average 
+		let sun_radius_squared = sun_diameter*0.5*sun_diameter*0.5;
+		let count = 0;
+		let count2 = 0;
+		//console.log("sun_diameter: ", sun_diameter);
+		//console.log("sun_x sun_y: ", sun_x, sun_y);
+		//console.log("minx maxx: ", minx, maxx);
+		//console.log("miny maxy: ", miny, maxy);
+		for (let yy = miny; yy <= maxy; yy++) 
+		{
+          for (let xx = minx; xx <= maxx; xx++) 
+		  {
+			const p = (yy * w + xx) * 3;
+			const r = lin[p], g = lin[p + 1], b = lin[p + 2];
+			if (r > CLIPPED_THRESH || g > CLIPPED_THRESH || b > CLIPPED_THRESH)
+			{
+				const radius_squared = ((yy-sun_y)*(yy-sun_y) + (xx-sun_x)*(xx-sun_x));
+				let alpha = (sun_radius_squared - radius_squared)/scale;
+				
+				if(alpha > 1.0) alpha = 1.0;
+				else if(alpha < 0.0) alpha = 0.0;
+				lin[p] += lin[p]*3200.0*alpha;
+				lin[p + 1] += lin[p + 1]*3200.0*alpha;
+				lin[p + 2] += lin[p + 2]*3200.0*alpha;
+				
+				if(alpha > 0.0) count++;
+				count2++;
+			}
           }
         }
-
-        logLine(`Sun ROI @ ${minx},${miny} → ${maxx},${maxy}`, 'muted');
-
-        // A: soften again, push with same t
-        gaussianBlurROI(lin, w, minx, miny, maxx + 1, maxy + 1, SUN_BLUR1);
+		
+        //gaussianBlurROI(lin, w, minx, miny, maxx, maxy, SUN_BLUR1>>shift);
         linearImages.push({ w, h, data: lin.slice(0) });
         expandedTimes.push(t);
+		setPerFile(25);
+		await nextFrame();
 
-        // B: heavier blur & *multiply by 16*, then t/=16  (synthetic shorter exposure)
-        gaussianBlurROI(lin, w, minx, miny, maxx + 1, maxy + 1, SUN_BLUR2);
-        for (let p = 0; p < lin.length; p++) lin[p] *= 16.0;
+        gaussianBlurROI(lin, w, minx, miny, maxx, maxy, SUN_BLUR1>>shift);
+        for (let p = 0; p < lin.length; p++) lin[p] /= 16.0;
         t /= 16.0;
         linearImages.push({ w, h, data: lin.slice(0) });
         expandedTimes.push(t);
         logLine(`Synthetic B push: t=${t}`, 'muted');
+		setPerFile(50);
+		await nextFrame();
 
-        // C: heavier blur, ×1.0, then t/=16
-        gaussianBlurROI(lin, w, minx, miny, maxx + 1, maxy + 1, SUN_BLUR2);
-        // (no intensity scale)
+        gaussianBlurROI(lin, w, minx, miny, maxx, maxy, SUN_BLUR1>>shift);
+        for (let p = 0; p < lin.length; p++) lin[p] /= 16.0;
         t /= 16.0;
         linearImages.push({ w, h, data: lin.slice(0) });
         expandedTimes.push(t);
         logLine(`Synthetic C push: t=${t}`, 'muted');
+		setPerFile(75);
+		await nextFrame();
 
-        // D: heavier blur, ×0.25, then t/=16
-        gaussianBlurROI(lin, w, minx, miny, maxx + 1, maxy + 1, SUN_BLUR2);
-        for (let p = 0; p < lin.length; p++) lin[p] *= 0.25;
+        gaussianBlurROI(lin, w, minx, miny, maxx, maxy, SUN_BLUR1>>shift);
+        for (let p = 0; p < lin.length; p++) lin[p] /= 16.0;
         t /= 16.0;
         linearImages.push({ w, h, data: lin.slice(0) });
         expandedTimes.push(t);
         logLine(`Synthetic D push: t=${t}`, 'muted');
+		setPerFile(100);
+		await nextFrame();
       }
-      // else: only base push already added
+	  else
+	  {
+		linearImages.push({ w, h, data: lin.slice(0) });
+		expandedTimes.push(t);
+	  }
     } else {
       // Normal exposure
       linearImages.push({ w, h, data: lin.slice(0) });
