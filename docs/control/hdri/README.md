@@ -140,19 +140,7 @@ function gaussianBlurFloatRGB(floatRGB, w, h, ksize=5) {
 }
 
 
-/**
- * Fast approximate Gaussian blur for full image (RGB float, interleaved).
- * Uses 3 stacked box blurs (separable) to approximate a Gaussian with sigma ≈ (ksize-1)/6.
- *
- * @param {Float32Array} src     // length = w*h*3 (RGB interleaved), preserved
- * @param {number} w
- * @param {number} h
- * @param {number} ksize         // nominal kernel size (odd recommended)
- * @param {{inPlace?:boolean, downsample?:number}=} opts
- *   - inPlace: if true, blur back into src and also return src (default false)
- *   - downsample: optional speed boost (2 or 4). Downsample → blur → upsample
- * @returns {Float32Array}       // blurred image (src if inPlace=true)
- */
+#if 0
 function gaussianBlurFloatRGB_fastApprox(src, w, h, ksize, opts = {}) {
   // --- optional very fast path: downsample → blur → upsample ---
   const down = Math.max(1, Math.min(4, (opts.downsample|0) || 1));
@@ -276,8 +264,7 @@ function gaussianBlurFloatRGB_fastApprox(src, w, h, ksize, opts = {}) {
   function clamp(v, lo, hi){ return v < lo ? lo : (v > hi ? hi : v); }
 }
 
-/* ---------- Optional helpers for the downsampled fast path ---------- */
-
+// ---------- Optional helpers for the downsampled fast path ----------
 // Average-pooling downsample by integer factor (2 or 4 recommended)
 function boxDownsampleRGB(src, w, h, dst, wd, hd, factor) {
   const area = factor*factor;
@@ -327,7 +314,7 @@ function bilinearUpsampleRGB(src, sw, sh, dst, dw, dh) {
     }
   }
 }
-
+#endif
 
 /**
  * In-place separable Gaussian blur on a rectangular ROI of a Float32 RGB image.
@@ -799,8 +786,8 @@ async function loadAndPreprocess(files, scale = 1.0) {
     if (t < SHORT_EXPOSURE_T) 
 	{
       // Detect clipped sun on a blurred copy (first pass blur)
-      let blurForSun = gaussianBlurFloatRGB_fastApprox(lin, w, h, SUN_BLUR_LARGE>>shift);
-      //let blurForSun = gaussianBlurFloatRGB(lin, w, h, SUN_BLUR_LARGE>>shift);
+      //let blurForSun = gaussianBlurFloatRGB_fastApprox(lin, w, h, SUN_BLUR_LARGE>>shift);
+      let blurForSun = gaussianBlurFloatRGB(lin, w, h, SUN_BLUR_LARGE>>shift);
       let clippedCount = 0;
       for (let p = 0; p < blurForSun.length; p++) if (blurForSun[p] > CLIPPED_THRESH) clippedCount++;
       // Scale count to approx native 7680×3840 reference if you use that heuristic
@@ -842,13 +829,23 @@ async function loadAndPreprocess(files, scale = 1.0) {
 		await nextFrame();
 	  
 		let sun_diameter = 0.53 * w / 360.0; //0.53 degrees average 
-		let sun_radius_squared = sun_diameter*0.5*sun_diameter*0.5;
+		let erp_scale = 1.0;
+		if(sun_y < h/2)
+		{
+			let angle = (sun_y * 90.0) / (h*0.5);
+			if(angle < 5) angle = 5;
+			let radians = angle * 3.14159265 / 180.0;
+			erp_scale = Math.sin(radians);
+		}
+		let sun_radius_squared = sun_diameter*erp_scale*0.5*sun_diameter*0.5;
 		let count = 0;
 		let count2 = 0;
 		//console.log("sun_diameter: ", sun_diameter);
 		//console.log("sun_x sun_y: ", sun_x, sun_y);
 		//console.log("minx maxx: ", minx, maxx);
 		//console.log("miny maxy: ", miny, maxy);
+		
+		
 		for (let yy = miny; yy <= maxy; yy++) 
 		{
           for (let xx = minx; xx <= maxx; xx++) 
@@ -857,7 +854,7 @@ async function loadAndPreprocess(files, scale = 1.0) {
 			const r = lin[p], g = lin[p + 1], b = lin[p + 2];
 			if (r > CLIPPED_THRESH || g > CLIPPED_THRESH || b > CLIPPED_THRESH)
 			{
-				const radius_squared = ((yy-sun_y)*(yy-sun_y) + (xx-sun_x)*(xx-sun_x));
+				const radius_squared = ((yy-sun_y)*(yy-sun_y) + (xx-sun_x)*erp_scale*(xx-sun_x)*erp_scale);
 				let alpha = (sun_radius_squared - radius_squared)/scale;
 				
 				if(alpha > 1.0) alpha = 1.0;
