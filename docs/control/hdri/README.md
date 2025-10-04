@@ -513,8 +513,32 @@ async function encodeRadianceHDR_RGBE(hdr, onProgress)
 
 
 
-
-
+/**
+ * Apply a 3x3 color matrix to an interleaved Float32Array RGB image.
+ * 
+ * @param {Float32Array} lin - linear RGB data, length = w*h*3
+ * @param {...number} m - 9 numbers for 3x3 color matrix
+ * @example
+ * colorMatrix(lin,
+ *   1.693359, -0.60742,  -0.08594,
+ *  -0.18945,  1.521484, -0.33203,
+ *   0.046875, -0.67773,  1.630859);
+ */
+function colorMatrix(lin,
+  m00, m01, m02,
+  m10, m11, m12,
+  m20, m21, m22)
+{
+  const n = lin.length;
+  for (let i = 0; i < n; i += 3) {
+    const r = lin[i];
+    const g = lin[i + 1];
+    const b = lin[i + 2];
+    lin[i    ] = r*m00 + g*m01 + b*m02;
+    lin[i + 1] = r*m10 + g*m11 + b*m12;
+    lin[i + 2] = r*m20 + g*m21 + b*m22;
+  }
+}
 
 /**
  * Load JPGs, read EXIF shutter times, sort by exposure, optionally scale,
@@ -603,7 +627,12 @@ async function loadAndPreprocess(files, scale = 1.0) {
 
     // sRGB → linear (your existing function)
     let lin = srgbToLinear_u8(imgData);
-
+	colorMatrix(
+	  lin,
+	  1.693, -0.607, -0.086
+	 -0.189,  1.522, -0.333,
+	  0.047, -0.678,  1.631
+	);
     let t = sortedExpos[i];
 
     // ---------- Short-exposure "sun" logic (unchanged behavior, now at scaled size) ----------
