@@ -141,6 +141,195 @@ function gaussianBlurFloatRGB(floatRGB, w, h, ksize=5) {
 
 
 /**
+ * Fast approximate Gaussian blur for full image (RGB float, interleaved).
+ * Uses 3 stacked box blurs (separable) to approximate a Gaussian with sigma ≈ (ksize-1)/6.
+ *
+ * @param {Float32Array} src     // length = w*h*3 (RGB interleaved), preserved
+ * @param {number} w
+ * @param {number} h
+ * @param {number} ksize         // nominal kernel size (odd recommended)
+ * @param {{inPlace?:boolean, downsample?:number}=} opts
+ *   - inPlace: if true, blur back into src and also return src (default false)
+ *   - downsample: optional speed boost (2 or 4). Downsample → blur → upsample
+ * @returns {Float32Array}       // blurred image (src if inPlace=true)
+ */
+function gaussianBlurFloatRGB_fastApprox(src, w, h, ksize, opts = {}) {
+  // --- optional very fast path: downsample → blur → upsample ---
+  const down = Math.max(1, Math.min(4, (opts.downsample|0) || 1));
+  if (down > 1) {
+    const wd = Math.max(1, (w/down)|0), hd = Math.max(1, (h/down)|0);
+    const small = new Float32Array(wd*hd*3);
+    // box downsample (simple average of down×down block)
+    boxDownsampleRGB(src, w, h, small, wd, hd, down);
+    const blurredSmall = gaussianBlurFloatRGB_fastApprox(small, wd, hd, ksize, { inPlace:false });
+    const up = new Float32Array(w*h*3);
+    bilinearUpsampleRGB(blurredSmall, wd, hd, up, w, h);
+    if (opts.inPlace) { src.set(up); return src; }
+    return up;
+  }
+
+  // --- main 3× box approximation ---
+  ksize = Math.max(3, ksize|0);
+  if ((ksize & 1) === 0) ksize += 1;   // force odd
+  const sigma = (ksize - 1) / 6;       // Gaussian equivalent
+  const radii = boxesForGauss(sigma, 3); // [r1,r2,r3]
+  const total = w*h*3;
+
+  const bufA = new Float32Array(total); // intermediate
+  const bufB = new Float32Array(total); // intermediate / output
+
+  // copy src → bufA
+  bufA.set(src);
+
+  for (let pass=0; pass<3; pass++) {
+    const r = Math.max(1, radii[pass]);
+
+    // Horizontal pass: bufA → bufB
+    boxBlurH_RGB(bufA, bufB, w, h, r);
+
+    // Vertical pass: bufB → bufA (ping-pong)
+    boxBlurV_RGB(bufB, bufA, w, h, r);
+  }
+
+  if (opts.inPlace) { src.set(bufA); return src; }
+  return bufA;
+
+  // -------- helpers --------
+
+  function boxesForGauss(sigma, n) {
+    // Compute n box widths approximating Gaussian(sigma)
+    const ideal = Math.sqrt((12*sigma*sigma/n)+1); // ideal width
+    let wl = Math.floor(ideal);
+    if ((wl & 1) === 0) wl -= 1;
+    const wu = wl + 2;
+    const m = Math.round((12*sigma*sigma - n*wl*wl - 4*n*wl - 3*n)/(-4*wl - 4));
+    const sizes = Array.from({length:n}, (_,i)=> i < m ? wl : wu);
+    return sizes.map(s => (s-1)>>1); // radii
+  }
+
+  // Horizontal box blur (replicate at row edges)
+  function boxBlurH_RGB(src, dst, W, H, r) {
+    const norm = 1 / (2*r + 1);
+    for (let y=0; y<H; y++) {
+      // initialize sums at x=0
+      let sr=0, sg=0, sb=0;
+      for (let k=-r; k<=r; k++) {
+        const xx = clamp(0 + k, 0, W-1);
+        const p = (y*W + xx)*3;
+        sr += src[p]; sg += src[p+1]; sb += src[p+2];
+      }
+      let q = (y*W + 0)*3;
+      dst[q]   = sr * norm;
+      dst[q+1] = sg * norm;
+      dst[q+2] = sb * norm;
+
+      for (let x=1; x<W; x++) {
+        const addX = clamp(x + r, 0, W-1);
+        const subX = clamp(x - 1 - r, 0, W-1);
+        const pa = (y*W + addX)*3;
+        const ps = (y*W + subX)*3;
+        sr += src[pa]   - src[ps];
+        sg += src[pa+1] - src[ps+1];
+        sb += src[pa+2] - src[ps+2];
+
+        q = (y*W + x)*3;
+        dst[q]   = sr * norm;
+        dst[q+1] = sg * norm;
+        dst[q+2] = sb * norm;
+      }
+    }
+  }
+
+  // Vertical box blur (replicate at column edges)
+  function boxBlurV_RGB(src, dst, W, H, r) {
+    const norm = 1 / (2*r + 1);
+    for (let x=0; x<W; x++) {
+      // initialize sums at y=0
+      let sr=0, sg=0, sb=0;
+      for (let k=-r; k<=r; k++) {
+        const yy = clamp(0 + k, 0, H-1);
+        const p = (yy*W + x)*3;
+        sr += src[p]; sg += src[p+1]; sb += src[p+2];
+      }
+      let q = (0*W + x)*3;
+      dst[q]   = sr * norm;
+      dst[q+1] = sg * norm;
+      dst[q+2] = sb * norm;
+
+      for (let y=1; y<H; y++) {
+        const addY = clamp(y + r, 0, H-1);
+        const subY = clamp(y - 1 - r, 0, H-1);
+        const pa = (addY*W + x)*3;
+        const ps = (subY*W + x)*3;
+        sr += src[pa]   - src[ps];
+        sg += src[pa+1] - src[ps+1];
+        sb += src[pa+2] - src[ps+2];
+
+        q = (y*W + x)*3;
+        dst[q]   = sr * norm;
+        dst[q+1] = sg * norm;
+        dst[q+2] = sb * norm;
+      }
+    }
+  }
+
+  function clamp(v, lo, hi){ return v < lo ? lo : (v > hi ? hi : v); }
+}
+
+/* ---------- Optional helpers for the downsampled fast path ---------- */
+
+// Average-pooling downsample by integer factor (2 or 4 recommended)
+function boxDownsampleRGB(src, w, h, dst, wd, hd, factor) {
+  const area = factor*factor;
+  for (let yd=0; yd<hd; yd++) {
+    for (let xd=0; xd<wd; xd++) {
+      let sr=0, sg=0, sb=0;
+      const x0 = xd*factor, y0 = yd*factor;
+      for (let yy=0; yy<factor; yy++) {
+        const y = Math.min(h-1, y0+yy);
+        for (let xx=0; xx<factor; xx++) {
+          const x = Math.min(w-1, x0+xx);
+          const p = (y*w + x)*3;
+          sr += src[p]; sg += src[p+1]; sb += src[p+2];
+        }
+      }
+      const q = (yd*wd + xd)*3;
+      dst[q]   = sr/area;
+      dst[q+1] = sg/area;
+      dst[q+2] = sb/area;
+    }
+  }
+}
+
+// Bilinear upsample back to full res
+function bilinearUpsampleRGB(src, sw, sh, dst, dw, dh) {
+  for (let y=0; y<dh; y++) {
+    const v = (y*(sh-1))/(dh-1);
+    const y0 = Math.floor(v), y1 = Math.min(sh-1, y0+1);
+    const fy = v - y0;
+    for (let x=0; x<dw; x++) {
+      const u = (x*(sw-1))/(dw-1);
+      const x0 = Math.floor(u), x1 = Math.min(sw-1, x0+1);
+      const fx = u - x0;
+
+      const p00 = (y0*sw + x0)*3;
+      const p01 = (y0*sw + x1)*3;
+      const p10 = (y1*sw + x0)*3;
+      const p11 = (y1*sw + x1)*3;
+
+      const q = (y*dw + x)*3;
+
+      for (let c=0;c<3;c++){
+        const a = src[p00+c]*(1-fx) + src[p01+c]*fx;
+        const b = src[p10+c]*(1-fx) + src[p11+c]*fx;
+        dst[q+c] = a*(1-fy) + b*fy;
+      }
+    }
+  }
+}
+
+
+/**
  * In-place separable Gaussian blur on a rectangular ROI of a Float32 RGB image.
  *
  * @param {Float32Array} floatLinearRGB - Interleaved RGB (float) buffer, length = pitch * height * 3
@@ -610,7 +799,8 @@ async function loadAndPreprocess(files, scale = 1.0) {
     if (t < SHORT_EXPOSURE_T) 
 	{
       // Detect clipped sun on a blurred copy (first pass blur)
-      let blurForSun = gaussianBlurFloatRGB(lin, w, h, SUN_BLUR_LARGE>>shift);
+      let blurForSun = gaussianBlurFloatRGB_fastApprox(lin, w, h, SUN_BLUR_LARGE>>shift);
+      //let blurForSun = gaussianBlurFloatRGB(lin, w, h, SUN_BLUR_LARGE>>shift);
       let clippedCount = 0;
       for (let p = 0; p < blurForSun.length; p++) if (blurForSun[p] > CLIPPED_THRESH) clippedCount++;
       // Scale count to approx native 7680×3840 reference if you use that heuristic
