@@ -813,8 +813,8 @@ async function loadAndPreprocess(files, scale = 1.0) {
     if (t < SHORT_EXPOSURE_T) 
 	{
       // Detect clipped sun on a blurred copy (first pass blur)
-      //let blurForSun = gaussianBlurFloatRGB_fastApprox(lin, w, h, SUN_BLUR_LARGE>>shift);
-      let blurForSun = gaussianBlurFloatRGB(lin, w, h, SUN_BLUR_LARGE>>shift);
+      let blurForSun = gaussianBlurFloatRGB_fastApprox(lin, w, h, SUN_BLUR_LARGE>>shift);
+      //let blurForSun = gaussianBlurFloatRGB(lin, w, h, SUN_BLUR_LARGE>>shift);
       let clippedCount = 0;
       for (let p = 0; p < blurForSun.length; p++) if (blurForSun[p] > CLIPPED_THRESH) clippedCount++;
       // Scale count to approx native 7680×3840 reference if you use that heuristic
