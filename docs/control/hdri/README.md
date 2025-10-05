@@ -2,17 +2,21 @@
 
 Create HDRI with this two QR codes:
 
+First QR Code is a 
+
 <fieldset>
   <legend>Inputs</legend>
-  <div class="row">
+  <div class="row" style="margin-bottom: 5px;">
     <input id="files" type="file" accept="image/jpeg" multiple /><br>
-    <button id="run">Merge HDR</button>
-    <button id="runHalf">HDR (½ Res)</button>
-    <button id="runQuarter">HDR (¼ Res)</button>
-    <button id="saveHdr" disabled>Download .HDR</button>
+  </div>
+  <div class="row" style="margin-bottom: 5px;">
+    <button id="run" disabled>Merge HDR</button>
+    <button id="runHalf" disabled>HDR (½ Res)</button>
+    <button id="runQuarter" disabled>HDR (¼ Res)</button>
+    <button id="saveHdr" disabled style="margin-left: 20px;">Download .HDR</button>
   </div>
   <div class="row">
-    <label>Preview exposure: <input id="previewExp" type="number" step="0.1" value="2.0" title="Photographic exposure for preview" style="width: 100px;"></label>
+    <label>Preview exposure: <input id="previewExp" type="number" min="0.1" max="50" step="0.5" value="2.0" title="Photographic exposure for preview" style="width: 100px;"></label>
   </div>
 </fieldset>
 
@@ -871,8 +875,6 @@ async function loadAndPreprocess(files, scale = 1.0) {
 		//console.log("sun_x sun_y: ", sun_x, sun_y);
 		//console.log("minx maxx: ", minx, maxx);
 		//console.log("miny maxy: ", miny, maxy);
-		
-		
 		for (let yy = miny; yy <= maxy; yy++) 
 		{
           for (let xx = minx; xx <= maxx; xx++) 
@@ -1066,6 +1068,9 @@ function removeShadowSpecklesHDR(hdr, o = {}) {
   return fixed;
 }
 
+
+let last_hdr = 0;
+
 async function runPipeline(scale) {
   try {
     $('#saveHdr').disabled = true;
@@ -1108,7 +1113,8 @@ async function runPipeline(scale) {
 
     setStage('Tone-mapping…');
     setOverall(85);
-    const ldr = await tonemap_filmic(hdr, previewExposure);
+	last_hdr = hdr;
+    const ldr = await tonemap_filmic(last_hdr, previewExposure);
     drawToCanvas(ldr, $('#preview'));
     await nextFrame();
 
@@ -1155,6 +1161,79 @@ async function runPipeline(scale) {
 }
 
 
+
+async function runPreview() {
+  try {
+    if(last_hdr != 0)
+	{
+		setStage('Tone-mapping…');
+		const previewExposure = parseFloat($('#previewExp').value || '2.0');
+		const ldr = await tonemap_filmic(last_hdr, previewExposure);
+		drawToCanvas(ldr, $('#preview'));
+		await nextFrame();
+		setStage('Done');
+		await nextFrame();
+	}
+  } catch (err) {
+    setStage('Error');
+    setOverall(100);
+    logLine(`❌ ${err.message || err}`, 'err');
+    console.error(err);
+  }
+}
+
+function hasJpegs(input) {
+  try {
+	  const files = Array.from(input.files || []);
+	  // allow .jpg/.jpeg and MIME image/jpeg
+	  return files.some(f =>
+		f.type === 'image/jpeg' ||
+		/\.jpe?g$/i.test(f.name)
+	  );
+  } catch (err) {
+	return false;
+  }
+  return false;
+}
+
+function updateMergeButtons() {
+  const enabled = true;//hasJpegs($('files'));
+  if(document.getElementById('run') !== null)
+  {
+	  $('run').disabled = !enabled;
+	  $('runHalf').disabled = !enabled;
+	  $('runQuarter').disabled = !enabled;
+	  // if you also have a Save button that should stay disabled until merge:
+	  const save = document.getElementById('saveHdr');
+	  if (save) save.disabled = true;
+	}
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const filesInput = document.getElementById('files');
+  const runBtn = document.getElementById('run');
+  const runHalfBtn = document.getElementById('runHalf');
+  const runQuaterBtn = document.getElementById('runQuarter');
+
+  function hasJpegs(input) {
+    const files = Array.from(input.files || []);
+    return files.some(f =>
+      f.type === 'image/jpeg' || /\.jpe?g$/i.test(f.name)
+    );
+  }
+
+  function updateMergeButtons() {
+    const enabled = hasJpegs(filesInput);
+    runBtn.disabled = !enabled;
+    runHalfBtn.disabled = !enabled;
+    runQuaterBtn.disabled = !enabled;
+  }
+
+  filesInput.addEventListener('change', updateMergeButtons);
+  updateMergeButtons(); // initialize
+});
+
+
 $('#run').addEventListener('click', async () => {
   await runPipeline(1.0);  // full res
 });
@@ -1167,5 +1246,8 @@ $('#runQuarter').addEventListener('click', async () => {
   await runPipeline(0.25);  // half res
 });
 
+$('#previewExp').addEventListener('change', async () => {
+  await runPreview(); 
+});
 
 </script>
