@@ -1,15 +1,24 @@
 # HDRI Merge (optimized for GoPro MAX2)
 
-## Create HDRI with this two QR codes
+## Create HDRI easiler with these two QR codes
 
-<b>First QR Code</b> is a GoPro Labs macro that will taking nine exposures, 2.0 stops apart. This is only storing the macros, does not run it yet.<br>
+<b>First QR Code</b> is a GoPro Labs macro that will taking nine exposures, 2.0 stops apart. This is only storing the macros, does not run it yet. The script will name the files Hab_GS01xzwy.JPG, this to help you find the exposure groups on the SD card, however the renamed files will not show in playback or in Quik. The HDRI script is designed for laptop/desktop usage.<br>
 <img src="https://gopro.github.io/labs/control/hdri/macroQR.png" alt="Macro"><br>
 <br>
 <b>Second QR Code</b> makes a preset called "HDRI" from the above macro.<br>
 <img src="https://gopro.github.io/labs/control/hdri/presetQR.png" alt="Preset"><br>
 <br>
-After scanning these too QR Code, to run HDRI mode, select the new HDRI preset from the photo menu.  The camera will say "Labs processing", as it waiting for a shutter press to run the none exposure macro.
 
+## Using HDRI Preset
+
+After scanning the above two QR Codes, to run HDRI mode, select the new HDRI preset from the photo menu. 
+The camera will say "Labs processing", as it waiting for a shutter press to run the nine exposures. 
+Shutter press can be via Quik, any compatible BLE remote, or the physical button. The camera should be stationary, 
+as the nine exposures will take about 33 seconds. 
+
+# Merge your Bracketed Exposures
+
+Press "Choose Files" below to select your files to compute a single HDRI.  Then press Merge HDR (8K) for the ½ or ¼ Res merge for a fast preview.  Any complete, click on Download .HDR.
 
 <fieldset>
   <legend>Inputs</legend>
