@@ -34,7 +34,7 @@ Press "Choose Files" below to select your files to compute a single HDRI.
 Then press Merge HDR (8K) for the ½ or ¼ Res merge for a faster preview.  
 Once complete, click on Download .HDR.<br>
 <br>
-Looking for a free web tool to view and test your .HDR file, try https://wkjarosz.github.io/hdrview/<br>
+Looking for a free web tool to view and test your .HDR file, try <a href="https://wkjarosz.github.io/hdrview/">HDRview</a><br>
 
 
 <fieldset>
