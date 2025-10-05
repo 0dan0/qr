@@ -1,6 +1,6 @@
 # HDRI Merge (optimized for GoPro MAX2)
 
-## Create HDRI easiler with these two QR codes
+## Configure Your MAX2 to Create HDRIs Easily 
 
 <b>First QR Code</b> is a GoPro Labs macro that will taking nine exposures, 2.0 stops apart. This is only storing the macros, does not run it yet. The script will name the files Hab_GS01xzwy.JPG, this to help you find the exposure groups on the SD card, however the renamed files will not show in playback or in Quik. The HDRI script is designed for laptop/desktop usage.<br>
 <img src="https://gopro.github.io/labs/control/hdri/macroQR.png" alt="Macro"><br>
