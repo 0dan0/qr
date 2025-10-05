@@ -1,8 +1,15 @@
 # HDRI Merge (optimized for GoPro MAX2)
 
-Create HDRI with this two QR codes:
+## Create HDRI with this two QR codes
 
-First QR Code is a 
+<b>First QR Code</b> is a GoPro Labs macro that will taking nine exposures, 2.0 stops apart. This is only storing the macros, does not run it yet.<br>
+<img src="https://gopro.github.io/labs/control/hdri/macroQR.png" alt="Macro"><br>
+<br>
+<b>Second QR Code</b> makes a preset called "HDRI" from the above macro.<br>
+<img src="https://gopro.github.io/labs/control/hdri/presetQR.png" alt="Preset"><br>
+<br>
+After scanning these too QR Code, to run HDRI mode, select the new HDRI preset from the photo menu.  The camera will say "Labs processing", as it waiting for a shutter press to run the none exposure macro.
+
 
 <fieldset>
   <legend>Inputs</legend>
@@ -16,7 +23,7 @@ First QR Code is a
     <button id="saveHdr" disabled style="margin-left: 20px;">Download .HDR</button>
   </div>
   <div class="row">
-    <label>Preview exposure: <input id="previewExp" type="number" min="0.1" max="50" step="0.5" value="2.0" title="Photographic exposure for preview" style="width: 100px;"></label>
+    <label>Preview EV: <input id="previewExp" type="number" min="-10" max="10" step="0.5" value="1.0" title="Exposure for preview" style="width: 100px;"></label>
   </div>
 </fieldset>
 
@@ -494,13 +501,15 @@ function monochromeAbove(hdr, thr=1.0) {
 }
 
 /* ===================== Filmic tone map with dithering ===================== */
-async function tonemap_filmic(hdr, exposure=1.0) {
+async function tonemap_filmic(hdr, ev=1.0) {
   const {w,h,data} = hdr;
   const out = new Uint8ClampedArray(w*h*4);
   //const A=0.22, B=0.30, C=0.10, D=0.20, E=0.01, F=0.30, W=11.2;  // too contrasty
   const A=0.2, B=0.30, C=0.10, D=0.05, E=0.0, F=0.10, W=20;  // lower contrast
   const whiteScale = ((W*(A*W+C*B)+D*E)/(W*(A*W+B)+D*F)) - (E/F);
   function rnd(i){ let x = i ^ (i>>>17); x ^= x<<13; x ^= x>>>7; x ^= x>>>17; return ((x>>>8)&0xFF)/255; }
+
+  const exposure = Math.pow(2.0, ev);
 
   for (let p=0,q=0,i=0; p<data.length; p+=3, q+=4, i++) {
     let r = data[p  ] * exposure;
