@@ -1,8 +1,18 @@
 # HDRI Merge (optimized for GoPro MAX2)
 
+<b>Why:</b> 360° HDRIs capture the full lighting environment in every direction, making them ideal for 
+realistic image-based lighting in 3D rendering, VFX, and virtual production. By mapping an 
+HDRI onto a sphere or dome, artists can recreate the natural reflections, colors, and brightness 
+of real locations, perfect for matching CGI elements to live-action footage or achieving 
+photorealistic lighting in visualizations and games.
+
 ## Configure Your MAX2 to Create HDRIs Easily 
 
-<b>First QR Code</b> is a GoPro Labs macro that will taking nine exposures, 2.0 stops apart. This is only storing the macros, does not run it yet. The script will name the files Hab_GS01xzwy.JPG, this to help you find the exposure groups on the SD card, however the renamed files will not show in playback or in Quik. The HDRI script is designed for laptop/desktop usage.<br>
+<b>First QR Code</b> is a GoPro Labs macro that will taking nine exposures, 2.0 stops apart. 
+This is only storing the macro, does not run it yet. The script will name the files 
+<b>H</b>ab<b>_GS01</b>xzwy.<b>JPG</b>, this to help you find the exposure groups on the SD card, 
+however the renamed files will not show in camera playback or in Quik. The HDRI script is 
+designed for laptop/desktop workflows.<br>
 <img src="https://gopro.github.io/labs/control/hdri/macroQR.png" alt="Macro"><br>
 <br>
 <b>Second QR Code</b> makes a preset called "HDRI" from the above macro.<br>
@@ -14,11 +24,17 @@
 After scanning the above two QR Codes, to run HDRI mode, select the new HDRI preset from the photo menu. 
 The camera will say "Labs processing", as it waiting for a shutter press to run the nine exposures. 
 Shutter press can be via Quik, any compatible BLE remote, or the physical button. The camera should be stationary, 
-as the nine exposures will take about 33 seconds. 
+as the nine exposures will take about 33 seconds. <br>
+WARNING: While the HDRI preset is selected, the camera will remain on, no auto shutdown. 
+You can manual power off, or go to any other preset for returned normal camera functionality.
 
 # Merge your Bracketed Exposures
 
-Press "Choose Files" below to select your files to compute a single HDRI.  Then press Merge HDR (8K) for the ½ or ¼ Res merge for a fast preview.  Any complete, click on Download .HDR.
+Press "Choose Files" below to select your files to compute a single HDRI.  
+Then press Merge HDR (8K) for the ½ or ¼ Res merge for a faster preview.  
+Once complete, click on Download .HDR.<br>
+<br>
+
 
 <fieldset>
   <legend>Inputs</legend>
