@@ -1401,7 +1401,7 @@ async function updateQRs()
 	{
 		if(document.getElementById("moon").checked === true)
 		{
-			cmd = String.raw`*HDRI="!Z1=Ct:ScFi1x0=Bz!N==zB!R17$BASE='H$C_'$GAMA=2.2=A81920!N<A0.1=A0.11$EXPQ=A!N!S=A/4>A0.05!R55$EXPQ=0=C+1!R14"`;
+			cmd = String.raw`*HDRI="!Z1=Ct:ScFi1x0=Bz!N==zB!R17$BASE='H$C_'$GAMA=2.2=A81920!N<A0.1=A0.1$EXPQ=A!N!S=A/4>A0.05!R55$EXPQ=0=C+1!R14"`;
 			//!Z1=Ct:ScFi1x0=Bz!N==zB!R17$BASE='H$C_'$GAMA=2.2=A81920!N<A0.1=A0.11$EXPQ=A!N!S=A/4>A0.05!R55$EXPQ=0=C+1!R14
 		} else {
 			cmd = String.raw`*HDRI="!Z1=Ct:ScFi1x0=Bz!N==zB!R17$BASE='H$C_'$GAMA=2.2=A81920!N$EXPQ=A!N!S=A/4>A2!R55$EXPQ=0=C+1!R14"`;
@@ -1412,7 +1412,7 @@ async function updateQRs()
 	{
 		if(document.getElementById("moon").checked === true)
 		{
-			cmd = String.raw`*HDRI="!Z1cFi1x0=Bz!N==zB!R12$GAMA=2.2=A81920!N<A0.1=A0.11$EXPQ=A!N!S=A/4>A0.05!R38$EXPQ=0!R9"`;
+			cmd = String.raw`*HDRI="!Z1cFi1x0=Bz!N==zB!R12$GAMA=2.2=A81920!N<A0.1=A0.1$EXPQ=A!N!S=A/4>A0.05!R38$EXPQ=0!R9"`;
 			//!Z1cFi1x0=Bz!N==zB!R12$GAMA=2.2=A81920!N<A0.1=A0.11$EXPQ=A!N!S=A/4>A0.05!R38$EXPQ=0!R9
 		} else {
 			cmd = String.raw`*HDRI="!Z1cFi1x0=Bz!N==zB!R12$GAMA=2.2=A81920!N$EXPQ=A!N!S=A/4>A2!R38$EXPQ=0!R9"`;
