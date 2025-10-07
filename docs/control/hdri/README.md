@@ -1381,7 +1381,7 @@ function makeQR()
       text : cmd,
       width : 540,
       height : 540,
-      correctLevel : QRCode.CorrectLevel.L
+      correctLevel : QRCode.CorrectLevel.M
     });
 	
 	document.getElementById("qrtext").textContent  = cmd;
