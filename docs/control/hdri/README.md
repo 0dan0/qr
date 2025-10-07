@@ -21,9 +21,13 @@ photorealistic lighting in visualizations and games.
 
 ## Configure Your MAX2 to Create HDRIs Easily 
 
-<b>First QR Code</b> is a GoPro Labs macro that will taking nine exposures, 2.0 stops apart. 
-This is only storing the macro, does not run it yet. The script will name the files 
-<b>H</b>ab<b>_GS01</b>xzwy.<b>JPG</b>, this to help you find the exposure groups on the SD card, 
+<b>First QR Code</b> is a GoPro Labs macro that will taking up to 11 exposures, 2.0 stops apart. 
+Optimize for moonlit nights (<input type="checkbox" id="moon" name="moon">very low light), 
+this will add longer exposures, which are otherwise useless for lit-interiors or daylight. 
+This is only storing the macro, does not run it yet. The script will optionally name the files 
+<b>H</b>ab<b>_GS01</b>xzwy.<b>JPG</b> 
+(<input type="checkbox" id="lname" name="lname" checked>Enable Name Change), 
+to help you find the exposure groups on the SD card, 
 however the renamed files will not show in camera playback or in Quik. The HDRI script is 
 designed for laptop/desktop workflows.<br>
 
@@ -1380,7 +1384,7 @@ function makeQR()
       correctLevel : QRCode.CorrectLevel.L
     });
 	
-	document.getElementById("qrtext").innerHTML = cmd;
+	document.getElementById("qrtext").textContent  = cmd;
 	
     qrcode2 = new QRCode(document.getElementById("qrcode2"), 
     {
@@ -1390,10 +1394,41 @@ function makeQR()
       correctLevel : QRCode.CorrectLevel.M
     });
 	
-	document.getElementById("qrtext2").innerHTML = cmd2;
+	document.getElementById("qrtext2").textContent  = cmd2;
 	
     once = false;
   }
+}
+
+async function updateQRs()
+{
+	if(document.getElementById("lname").checked === true)
+	{
+		if(document.getElementById("moon").checked === true)
+		{
+			cmd = String.raw`*HDRI="!Z1=Ct:ScFi1x0=Bz!N==zB!R17$BASE='H$C_'$GAMA=2.2=A81920!N<A0.1=A0.11$EXPQ=A!N!S=A/4>A0.05!R55$EXPQ=0=C+1!R14"`;
+			//!Z1=Ct:ScFi1x0=Bz!N==zB!R17$BASE='H$C_'$GAMA=2.2=A81920!N<A0.1=A0.11$EXPQ=A!N!S=A/4>A0.05!R55$EXPQ=0=C+1!R14
+		} else {
+			cmd = String.raw`*HDRI="!Z1=Ct:ScFi1x0=Bz!N==zB!R17$BASE='H$C_'$GAMA=2.2=A81920!N$EXPQ=A!N!S=A/4>A2!R55$EXPQ=0=C+1!R14"`;
+			//!Z1=Ct:ScFi1x0=S0.25=Bz!N==zB!R17$BASE='H$C_'$GAMA=2.2=A81920!N$EXPQ=A!N!S=A/4>A2!R55$EXPQ=0=C+1!R14
+		}
+	}
+	else
+	{
+		if(document.getElementById("moon").checked === true)
+		{
+			cmd = String.raw`*HDRI="!Z1cFi1x0=Bz!N==zB!R12$GAMA=2.2=A81920!N<A0.1=A0.11$EXPQ=A!N!S=A/4>A0.05!R38$EXPQ=0!R9"`;
+			//!Z1cFi1x0=Bz!N==zB!R12$GAMA=2.2=A81920!N<A0.1=A0.11$EXPQ=A!N!S=A/4>A0.05!R38$EXPQ=0!R9
+		} else {
+			cmd = String.raw`*HDRI="!Z1cFi1x0=Bz!N==zB!R12$GAMA=2.2=A81920!N$EXPQ=A!N!S=A/4>A2!R38$EXPQ=0!R9"`;
+			//!Z1cFi1x0=Bz!N==zB!R12$GAMA=2.2=A81920!N$EXPQ=A!N!S=A/4>A2!R38$EXPQ=0!R9
+		}
+	}
+	//console.log(cmd);
+	document.getElementById("qrtext").textContent = cmd;
+	
+	qrcode.clear(); 
+	qrcode.makeCode(cmd);
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -1435,6 +1470,13 @@ $('#runQuarter').addEventListener('click', async () => {
 
 $('#previewExp').addEventListener('change', async () => {
   await runPreview(); 
+});
+
+$('#lname').addEventListener('change', async () => {
+  await updateQRs(); 
+});
+$('#moon').addEventListener('change', async () => {
+  await updateQRs(); 
 });
 
 
