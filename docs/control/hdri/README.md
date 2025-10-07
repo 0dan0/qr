@@ -21,11 +21,10 @@ photorealistic lighting in visualizations and games.
 
 ## Configure Your MAX2 to Create HDRIs Easily 
 
-<b>First QR Code</b> is a GoPro Labs macro that will taking up to 11 exposures, 2.0 stops apart. 
-Optimize for moonlit nights (<input type="checkbox" id="moon" name="moon">very low light), 
-this will add longer exposures, which are otherwise useless for lit-interiors or daylight. 
-This is only storing the macro, does not run it yet. The script will optionally name the files 
-<b>H</b>ab<b>_GS01</b>xzwy.<b>JPG</b> 
+<b>First QR Code</b> is a GoPro Labs macro that will taking up to 11 exposures, 2.0 stops apart for very wide HDRIs. 
+Optionally optimize for moonlit nights (<input type="checkbox" id="moon" name="moon">very low light), 
+this will add even longer exposures, which are otherwise useless for lit-interiors or daylight (recommended off.) 
+The script will optionally name the files <b>H</b>ab<b>_GS01</b>xzwy.<b>JPG</b> 
 (<input type="checkbox" id="lname" name="lname" checked>Enable Name Change), 
 to help you find the exposure groups on the SD card, 
 however the renamed files will not show in camera playback or in Quik. The HDRI script is 
