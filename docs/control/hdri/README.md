@@ -1357,7 +1357,7 @@ function updateMergeButtons() {
 	}
 }
 
-let cmd = "*HDRI="!Z1=Ct:ScFi1x0=Bz!N==zB!R17$BASE='H$C_'$GAMA=2.2=A81920!N<A0.1=A0.11$EXPQ=A!N!S=A/4>A0.05!R55$EXPQ=0=C+1!R14";
+let cmd = "*HDRI=\"!Z1=Ct:ScFi1x0=Bz!N==zB!R17$BASE='H$C_'$GAMA=2.2=A81920!N<A0.1=A0.11$EXPQ=A!N!S=A/4>A0.05!R55$EXPQ=0=C+1!R14\"";
 
 function makeQR() 
 {
