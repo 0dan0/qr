@@ -1368,8 +1368,8 @@ function updateMergeButtons() {
 	}
 }
 
-let cmd = "*HDRI=\"!Z1=Ct:ScFi1x0=Bz!N==zB!R17$BASE='H$C_'$GAMA=2.2=A81920!N<A0.1=A0.11$EXPQ=A!N!S=A/4>A0.05!R55$EXPQ=0=C+1!R14\"";
-let cmd2 = "*HDRi=\"!Z0$EXPQ=0$GAMA=0$BASE=''\"mPN$PRES=\"16,HDRI\"";
+let cmd = String.raw`*HDRI="!Z1=Ct:ScFi1x0=Bz!N==zB!R17$BASE='H$C_'$GAMA=2.2=A81920!N$EXPQ=A!N!S=A/4>A2!R55$EXPQ=0=C+1!R14"`;
+let cmd2 = String.raw`*HDRi="!Z0$EXPQ=0$GAMA=0$BASE=''"mPN$PRES="16,HDRI"`;
 let once = true;
 
 function makeQR() 
