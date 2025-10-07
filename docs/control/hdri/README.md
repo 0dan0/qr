@@ -1,3 +1,16 @@
+<script src="../../jquery.min.js"></script>
+<script src="../../qrcodeborder.js"></script>
+<script src="../../html2canvas.min.js"></script>
+<style>
+        #qrcode{
+            width: 100%;
+        }
+        div{
+            width: 100%;
+            display: inline-block;
+        }
+</style>
+
 # HDRI Merge (optimized for GoPro MAX2)
 
 <b>Why:</b> 360° HDRIs capture the full lighting environment in every direction, making them ideal for 
@@ -13,7 +26,17 @@ This is only storing the macro, does not run it yet. The script will name the fi
 <b>H</b>ab<b>_GS01</b>xzwy.<b>JPG</b>, this to help you find the exposure groups on the SD card, 
 however the renamed files will not show in camera playback or in Quik. The HDRI script is 
 designed for laptop/desktop workflows.<br>
-<img src="https://gopro.github.io/labs/control/hdri/macroQR.png" alt="Macro"><br>
+
+<div id="qrcode_txt" style="width: 360px">
+  <center>
+  <div id="qrcode"></div><br>
+  <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em><br>
+  <b><font color="#005CAC">HDRI Macro v1.0<em id="status"></em></font></b>
+  </center>
+</div>
+
+<!-- <img src="https://gopro.github.io/labs/control/hdri/macroQR.png" alt="Macro"><br> -->
+
 <br>
 <b>Second QR Code</b> makes a preset called "HDRI" from the above macro.<br>
 <img src="https://gopro.github.io/labs/control/hdri/presetQR.png" alt="Preset"><br>
@@ -1334,6 +1357,23 @@ function updateMergeButtons() {
 	}
 }
 
+let cmd = "*HDRI="!Z1=Ct:ScFi1x0=Bz!N==zB!R17$BASE='H$C_'$GAMA=2.2=A81920!N<A0.1=A0.11$EXPQ=A!N!S=A/4>A0.05!R55$EXPQ=0=C+1!R14";
+
+function makeQR() 
+{
+  if(once === true)
+  {
+    qrcode = new QRCode(document.getElementById("qrcode"), 
+    {
+      text : cmd,
+      width : 360,
+      height : 360,
+      correctLevel : QRCode.CorrectLevel.M
+    });
+    once = false;
+  }
+}
+
 window.addEventListener('DOMContentLoaded', () => {
   const filesInput = document.getElementById('files');
   const runBtn = document.getElementById('run');
@@ -1374,5 +1414,8 @@ $('#runQuarter').addEventListener('click', async () => {
 $('#previewExp').addEventListener('change', async () => {
   await runPreview(); 
 });
+
+
+makeQR();
 
 </script>
