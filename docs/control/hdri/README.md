@@ -5,10 +5,6 @@
         #qrcode{
             width: 100%;
         }
-        div{
-            width: 100%;
-            display: inline-block;
-        }
 </style>
 
 # HDRI Merge (optimized for GoPro MAX2)
