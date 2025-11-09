@@ -84,7 +84,7 @@ You can manual power off, or go to any other preset for returned normal camera f
 
 <script>
 
-let cmd = String.raw`*BRKT="!Z1=Ct:ScFi1x0=Bz!N==zB!R17$BASE='B$C_'$GAMA=2.2x2!S!N'x0!S!N'x-2!S!N=C+1!R14"`;
+let cmd = String.raw`*BRKT="!Z1=Ct:ScFi1x0=Bz!N==zB!R17$BASE='B$C_'$GAMA=2.2x2!S!Nx0!S!Nx-2!S!N=C+1!R14"`;
 let cmd2 = String.raw`*BRKt="!Z0$GAMA=0$BASE=''"mPN$PRES="16,BRKT"`;
 let once = true;
 
@@ -123,24 +123,24 @@ async function updateQRs()
 	if(document.getElementById("lname").checked === true)
 		cmd = cmd + String.raw`$BASE='B$C_'`;
 	if(document.getElementById("ev4").checked === true)
-		cmd = cmd + String.raw`x4!S!N'`;
+		cmd = cmd + "x4!S!N";
 	if(document.getElementById("ev3").checked === true)
-		cmd = cmd + String.raw`x2!S!N'`;
+		cmd = cmd + "x2!S!N";
 	if(document.getElementById("ev2").checked === true)
-		cmd = cmd + String.raw`x2!S!N'`;
+		cmd = cmd + "x2!S!N";
 	if(document.getElementById("ev1").checked === true)
-		cmd = cmd + String.raw`x1!S!N'`;
+		cmd = cmd + "x1!S!N";
 	if(document.getElementById("ev0").checked === true)
-		cmd = cmd + String.raw`x0!S!N'`;
+		cmd = cmd + "x0!S!N";
 	if(document.getElementById("ev-1").checked === true)
-		cmd = cmd + String.raw`x-1!S!N'`;
+		cmd = cmd + "x-1!S!N";
 	if(document.getElementById("ev-2").checked === true)
-		cmd = cmd + String.raw`x-2!S!N'`;
+		cmd = cmd + "x-2!S!N";
 	if(document.getElementById("ev-3").checked === true)
-		cmd = cmd + String.raw`x-3!S!N'`;
+		cmd = cmd + "x-3!S!N";
 	if(document.getElementById("ev-4").checked === true)
-		cmd = cmd + String.raw`x-4!S!N'`;
-	cmd = cmd + String.raw`=C+1!R14`;
+		cmd = cmd + "x-4!S!N";
+	cmd = cmd + "=C+1!R14";
 	
 	document.getElementById("qrtext").textContent = cmd;
 	

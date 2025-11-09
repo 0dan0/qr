@@ -99,24 +99,24 @@ async function updateQRs()
 	if(document.getElementById("lname").checked === true)
 		cmd = cmd + String.raw`$BASE='B$C_'`;
 	if(document.getElementById("ev4").checked === true)
-		cmd = cmd + String.raw`x4!S!N'`;
+		cmd = cmd + "x4!S!N";
 	if(document.getElementById("ev3").checked === true)
-		cmd = cmd + String.raw`x2!S!N'`;
+		cmd = cmd + "x2!S!N";
 	if(document.getElementById("ev2").checked === true)
-		cmd = cmd + String.raw`x2!S!N'`;
+		cmd = cmd + "x2!S!N";
 	if(document.getElementById("ev1").checked === true)
-		cmd = cmd + String.raw`x1!S!N'`;
+		cmd = cmd + "x1!S!N";
 	if(document.getElementById("ev0").checked === true)
-		cmd = cmd + String.raw`x0!S!N'`;
+		cmd = cmd + "x0!S!N";
 	if(document.getElementById("ev-1").checked === true)
-		cmd = cmd + String.raw`x-1!S!N'`;
+		cmd = cmd + "x-1!S!N";
 	if(document.getElementById("ev-2").checked === true)
-		cmd = cmd + String.raw`x-2!S!N'`;
+		cmd = cmd + "x-2!S!N";
 	if(document.getElementById("ev-3").checked === true)
-		cmd = cmd + String.raw`x-3!S!N'`;
+		cmd = cmd + "x-3!S!N";
 	if(document.getElementById("ev-4").checked === true)
-		cmd = cmd + String.raw`x-4!S!N'`;
-	cmd = cmd + String.raw`=C+1!R14`;
+		cmd = cmd + "x-4!S!N";
+	cmd = cmd + "=C+1!R14";
 	
 	document.getElementById("qrtext").textContent = cmd;
 	
