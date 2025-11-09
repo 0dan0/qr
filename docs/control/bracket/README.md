@@ -50,6 +50,10 @@ however the renamed files will not show in camera playback or in Quik.<br>
 </div>
 <br>
 
+## On camera Setup (MAX2 users)
+
+Go to the Menu -> Preferences -> General, scroll down to 360 Photo Format, and select .JPG (rather than .36P).  
+
 ## Using BRKT Preset
 
 After scanning the above two QR Codes, to run BRKT mode, select the new BRKT preset from the photo menu. 
