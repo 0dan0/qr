@@ -19,7 +19,7 @@ Brand new to Labs? Get the firmware and info on [**Labs installation**](https://
 ## Configuration Commands for All Labs Enabled Cameras
 
 * Set camera modes with the Customizable QR Code Creator [**HERO Black Cameras**](./custom)<br>
-* and here optimized for [**GoPro MAX2**](../max2)<br>
+* and here optimized for [**GoPro MAX2**](./max2)<br>
 * and here optimized for [**GoPro HERO10 Bones**](../bones)<br>
 and as a mobile app:<br>
 [![google play](google-play-823.png)](https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
@@ -33,6 +33,9 @@ and as a mobile app:<br>
 * For obmissions or errors within these Pages: [**GitHub Labs Issues**](https://github.com/gopro/labs/issues)
 
 ## The Many Features of Labs
+
+### New Showcase feature: HDRIs for MAX2
+* Use MAX2 to shoot HDRIs (High Dynamic Range Image): [**HDRI Preset and generation**](./hdri)
 
 ### Camera Extensions
 * **All Labs cameras** - Dozens of camera enhancements: [**extensions**](./extensions) via QR Code
@@ -87,7 +90,7 @@ An incomplete set of [**Release Notes**](./notes)
 * **HERO10-13/MAX1-2** Labs scripting via [**Visual Script Tool**](https://gopro.github.io/labs/build/)
 * New [ChatBot for GoPro Labs commands](https://bit.ly/chat_gp_labs)
 
-updated: October 7, 2025
+updated: October 8, 2025
 
 
 <script>
