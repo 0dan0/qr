@@ -92,9 +92,10 @@ function makeQR()
   }
 }
 
+
 async function updateQRs()
 {
-	cmd = String.raw`*BRKT="!Z1=Ct:ScFi1x0=Bz!N==zB!R17"`;
+	cmd = String.raw`*BRKT="!Z1=Ct:ScFi1x0=Bz!N==zB!R17`;
 	
 	if(document.getElementById("lname").checked === true)
 		cmd = cmd + String.raw`$BASE='B$C_'`;
@@ -117,6 +118,7 @@ async function updateQRs()
 	if(document.getElementById("ev-4").checked === true)
 		cmd = cmd + "x-4!S!N";
 	cmd = cmd + "=C+1!R14";
+	cmd = cmd + String.raw`"`;
 	
 	document.getElementById("qrtext").textContent = cmd;
 	
