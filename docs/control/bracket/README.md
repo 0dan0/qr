@@ -60,7 +60,7 @@ You can manual power off, or go to any other preset for returned normal camera f
 
 <script>
 
-let cmd = String.raw`*BRKT="!Z1=Ct:ScFi1x0=Bz!N==zB!R17$BASE='B$C_'$GAMA=2.2x2!S!N'x0!S!N'x-2!S!N=C+1!R14"`;
+let cmd = String.raw`*BRKT="!Z1=Ct:ScFi1x0=Bz!N==zB!R17$BASE='B$C_'$GAMA=2.2x2!S!Nx0!S!Nx-2!S!N=C+1!R14"`;
 let cmd2 = String.raw`*BRKt="!Z0$GAMA=0$BASE=''"mPN$PRES="16,BRKT"`;
 let once = true;
 
