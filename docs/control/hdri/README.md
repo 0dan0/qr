@@ -29,6 +29,8 @@ to help you find the exposure groups on the SD card,
 however the renamed files will not show in camera playback or in Quik. The HDRI script is 
 designed for laptop/desktop workflows.<br>
 
+**Start Delay** <input type="range" style="width: 180px;" id="delay" name="delay" min="0" max="9" value="0"><label for="delay"></label>&nbsp;&nbsp;<b id="delaytext"></b> seconds<br>
+ 
 <div id="qrcode_txt" style="width: 540px">
   <center>
   <div id="qrcode" style="width: 540px"></div><br>
@@ -1404,14 +1406,27 @@ function makeQR()
 
 async function updateQRs()
 {
+	var delay = 0;
+	if(document.getElementById("delay") !== null)
+	{
+		delay = parseInt(document.getElementById("delay").value);
+		document.getElementById("delaytext").innerHTML = delay;
+	}
+	
 	if(document.getElementById("lname").checked === true)
 	{
 		if(document.getElementById("moon").checked === true)
 		{
-			cmd = String.raw`*HDRI="!Z1=CecFi1x0=Bz!N==zB!R-6$BASE='H$C_'$GAMA=2.2=A81920!N<A0.1=A0.1$EXPQ=A!N!S=A/4>A0.05!R-33$EXPQ=0=C+1=C%99!R-97"`;
+			if(delay > 0)
+				cmd = String.raw`*HDRI="!Z1=CecFi1x0=Bz!N==zB!R-6` + "!" + delay + "B" + String.raw`$BASE='H$C_'$GAMA=2.2=A81920!N<A0.1=A0.1$EXPQ=A!N!S=A/4>A0.05!R-33$EXPQ=0=C+1=C%99!R-100"`;
+			else
+				cmd = String.raw`*HDRI="!Z1=CecFi1x0=Bz!N==zB!R-6$BASE='H$C_'$GAMA=2.2=A81920!N<A0.1=A0.1$EXPQ=A!N!S=A/4>A0.05!R-33$EXPQ=0=C+1=C%99!R-97"`;
 			//!Z1=Ct:ScFi1x0=Bz!N==zB!R-6$BASE='H$C_'$GAMA=2.2=A81920!N<A0.1=A0.11$EXPQ=A!N!S=A/4>A0.05!R55$EXPQ=0=C+1=C%99!R-97
 		} else {
-			cmd = String.raw`*HDRI="!Z1=CecFi1x0=Bz!N==zB!R-6$BASE='H$C_'$GAMA=2.2=A81920!N$EXPQ=A!N!S=A/4>A2!R-20$EXPQ=0=C+1=C%99!R-84"`;
+			if(delay > 0)
+				cmd = String.raw`*HDRI="!Z1=CecFi1x0=Bz!N==zB!R-6` + "!" + delay + "B" + String.raw`$BASE='H$C_'$GAMA=2.2=A81920!N$EXPQ=A!N!S=A/4>A2!R-20$EXPQ=0=C+1=C%99!R-87"`;
+			else
+				cmd = String.raw`*HDRI="!Z1=CecFi1x0=Bz!N==zB!R-6$BASE='H$C_'$GAMA=2.2=A81920!N$EXPQ=A!N!S=A/4>A2!R-20$EXPQ=0=C+1=C%99!R-84"`;
 			//!Z1=Ct:ScFi1x0=S0.25=Bz!N==zB!R-6$BASE='H$C_'$GAMA=2.2=A81920!N$EXPQ=A!N!S=A/4>A2!R-20$EXPQ=0=C+1=C%99!R-84
 		}
 		
@@ -1421,10 +1436,17 @@ async function updateQRs()
 	{
 		if(document.getElementById("moon").checked === true)
 		{
-			cmd = String.raw`*HDRI="!Z1cFi1x0=Bz!N==zB!R-6$GAMA=2.2=A81920!N<A0.1=A0.1$EXPQ=A!N!S=A/4>A0.05!R-33$EXPQ=0!R-76"`;
+			if(delay > 0)
+				cmd = String.raw`*HDRI="!Z1cFi1x0=Bz!N==zB!R-6` + "!" + delay + "B" + String.raw`$GAMA=2.2=A81920!N<A0.1=A0.1$EXPQ=A!N!S=A/4>A0.05!R-33$EXPQ=0!R-76"`;
+			else
+				cmd = String.raw`*HDRI="!Z1cFi1x0=Bz!N==zB!R-6$GAMA=2.2=A81920!N<A0.1=A0.1$EXPQ=A!N!S=A/4>A0.05!R-33$EXPQ=0!R-76"`;
+
 			//!Z1cFi1x0=Bz!N==zB!R-6$GAMA=2.2=A81920!N<A0.1=A0.11$EXPQ=A!N!S=A/4>A0.05!R-33$EXPQ=0!R-76
 		} else {
-			cmd = String.raw`*HDRI="!Z1cFi1x0=Bz!N==zB!R-6$GAMA=2.2=A81920!N$EXPQ=A!N!S=A/4>A2!R-20$EXPQ=0!R-45"`;
+			if(delay > 0)
+				cmd = String.raw`*HDRI="!Z1cFi1x0=Bz!N==zB!R-6` + "!" + delay + "B" + String.raw`$GAMA=2.2=A81920!N$EXPQ=A!N!S=A/4>A2!R-20$EXPQ=0!R-51"`;
+			else
+				cmd = String.raw`*HDRI="!Z1cFi1x0=Bz!N==zB!R-6$GAMA=2.2=A81920!N$EXPQ=A!N!S=A/4>A2!R-20$EXPQ=0!R-48"`;
 			//!Z1cFi1x0=Bz!N==zB!R-6$GAMA=2.2=A81920!N$EXPQ=A!N!S=A/4>A2!R-20$EXPQ=0!R-45
 		}
 		
@@ -1485,6 +1507,10 @@ $('#lname').addEventListener('change', async () => {
   await updateQRs(); 
 });
 $('#moon').addEventListener('change', async () => {
+  await updateQRs(); 
+});
+
+$('#delay').addEventListener('input', async () => {
   await updateQRs(); 
 });
 
