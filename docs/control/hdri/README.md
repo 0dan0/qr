@@ -7,6 +7,7 @@
         }
 </style>
 
+
 # HDRI Merge (optimized for GoPro MAX2)
 
 <b>Why:</b> 360° HDRIs capture the full lighting environment in every direction, making them ideal for 
@@ -14,6 +15,8 @@ realistic image-based lighting in 3D rendering, VFX, and virtual production. By 
 HDRI onto a sphere or dome, artists can recreate the natural reflections, colors, and brightness 
 of real locations, perfect for matching CGI elements to live-action footage or achieving 
 photorealistic lighting in visualizations and games.
+
+[![Watch the video](./videoicon.jpg)](https://youtu.be/Q7apDnsnU-o)
 
 ## Configure Your MAX2 to Create HDRIs Easily 
 
@@ -30,7 +33,7 @@ designed for laptop/desktop workflows.<br>
   <center>
   <div id="qrcode" style="width: 540px"></div><br>
   <b><font color="#009FDF">GoProQR:</font></b> <em id="qrtext"></em><br>
-  <b><font color="#005CAC">HDRI Macro v1.0<em id="status"></em></font></b>
+  <b><font color="#005CAC">HDRI Macro v1.1<em id="status"></em></font></b>
   </center>
 </div>
 <br>
@@ -49,11 +52,15 @@ designed for laptop/desktop workflows.<br>
 <!-- <img src="https://gopro.github.io/labs/control/hdri/presetQR.png" alt="Preset"><br> -->
 <br>
 
+## On camera Setup
+
+Go to the Menu -> Preferences -> General, scroll down to 360 Photo Format, and select .JPG (rather than .36P).  
+
 ## Using HDRI Preset
 
 After scanning the above two QR Codes, to run HDRI mode, select the new HDRI preset from the photo menu. 
 The camera will say "Labs processing", as it waiting for a shutter press to run the nine exposures. 
-Shutter press can be via Quik, any compatible BLE remote, or the physical button. The camera should be stationary, 
+Shutter press via any compatible BLE remote, or the physical button (it will not work via Quik.) The camera should be stationary, 
 as the nine exposures will take about 33 seconds. <br>
 WARNING: While the HDRI preset is selected, the camera will remain on, no auto shutdown. 
 You can manual power off, or go to any other preset for returned normal camera functionality.
@@ -1363,8 +1370,8 @@ function updateMergeButtons() {
 	}
 }
 
-let cmd = String.raw`*HDRI="!Z1=Ct:ScFi1x0=Bz!N==zB!R17$BASE='H$C_'$GAMA=2.2=A81920!N$EXPQ=A!N!S=A/4>A2!R55$EXPQ=0=C+1!R14"`;
-let cmd2 = String.raw`*HDRi="!Z0$EXPQ=0$GAMA=0$BASE=''"mPN$PRES="16,HDRI"`;
+let cmd = " ";
+let cmd2 = " ";
 let once = true;
 
 function makeQR() 
@@ -1401,29 +1408,36 @@ async function updateQRs()
 	{
 		if(document.getElementById("moon").checked === true)
 		{
-			cmd = String.raw`*HDRI="!Z1=Ct:ScFi1x0=Bz!N==zB!R17$BASE='H$C_'$GAMA=2.2=A81920!N<A0.1=A0.1$EXPQ=A!N!S=A/4>A0.05!R55$EXPQ=0=C+1!R14"`;
-			//!Z1=Ct:ScFi1x0=Bz!N==zB!R17$BASE='H$C_'$GAMA=2.2=A81920!N<A0.1=A0.11$EXPQ=A!N!S=A/4>A0.05!R55$EXPQ=0=C+1!R14
+			cmd = String.raw`*HDRI="!Z1=CecFi1x0=Bz!N==zB!R-6$BASE='H$C_'$GAMA=2.2=A81920!N<A0.1=A0.1$EXPQ=A!N!S=A/4>A0.05!R-33$EXPQ=0=C+1=C%99!R-97"`;
+			//!Z1=Ct:ScFi1x0=Bz!N==zB!R-6$BASE='H$C_'$GAMA=2.2=A81920!N<A0.1=A0.11$EXPQ=A!N!S=A/4>A0.05!R55$EXPQ=0=C+1=C%99!R-97
 		} else {
-			cmd = String.raw`*HDRI="!Z1=Ct:ScFi1x0=Bz!N==zB!R17$BASE='H$C_'$GAMA=2.2=A81920!N$EXPQ=A!N!S=A/4>A2!R55$EXPQ=0=C+1!R14"`;
-			//!Z1=Ct:ScFi1x0=S0.25=Bz!N==zB!R17$BASE='H$C_'$GAMA=2.2=A81920!N$EXPQ=A!N!S=A/4>A2!R55$EXPQ=0=C+1!R14
+			cmd = String.raw`*HDRI="!Z1=CecFi1x0=Bz!N==zB!R-6$BASE='H$C_'$GAMA=2.2=A81920!N$EXPQ=A!N!S=A/4>A2!R-20$EXPQ=0=C+1=C%99!R-84"`;
+			//!Z1=Ct:ScFi1x0=S0.25=Bz!N==zB!R-6$BASE='H$C_'$GAMA=2.2=A81920!N$EXPQ=A!N!S=A/4>A2!R-20$EXPQ=0=C+1=C%99!R-84
 		}
+		
+		cmd2 = String.raw`*HDRi="!Z0$EXPQ=0$GAMA=0$BASE=''"mPN$PRES="16,HDRI"`;
 	}
 	else
 	{
 		if(document.getElementById("moon").checked === true)
 		{
-			cmd = String.raw`*HDRI="!Z1cFi1x0=Bz!N==zB!R12$GAMA=2.2=A81920!N<A0.1=A0.1$EXPQ=A!N!S=A/4>A0.05!R38$EXPQ=0!R9"`;
-			//!Z1cFi1x0=Bz!N==zB!R12$GAMA=2.2=A81920!N<A0.1=A0.11$EXPQ=A!N!S=A/4>A0.05!R38$EXPQ=0!R9
+			cmd = String.raw`*HDRI="!Z1cFi1x0=Bz!N==zB!R-6$GAMA=2.2=A81920!N<A0.1=A0.1$EXPQ=A!N!S=A/4>A0.05!R-33$EXPQ=0!R-76"`;
+			//!Z1cFi1x0=Bz!N==zB!R-6$GAMA=2.2=A81920!N<A0.1=A0.11$EXPQ=A!N!S=A/4>A0.05!R-33$EXPQ=0!R-76
 		} else {
-			cmd = String.raw`*HDRI="!Z1cFi1x0=Bz!N==zB!R12$GAMA=2.2=A81920!N$EXPQ=A!N!S=A/4>A2!R38$EXPQ=0!R9"`;
-			//!Z1cFi1x0=Bz!N==zB!R12$GAMA=2.2=A81920!N$EXPQ=A!N!S=A/4>A2!R38$EXPQ=0!R9
+			cmd = String.raw`*HDRI="!Z1cFi1x0=Bz!N==zB!R-6$GAMA=2.2=A81920!N$EXPQ=A!N!S=A/4>A2!R-20$EXPQ=0!R-45"`;
+			//!Z1cFi1x0=Bz!N==zB!R-6$GAMA=2.2=A81920!N$EXPQ=A!N!S=A/4>A2!R-20$EXPQ=0!R-45
 		}
+		
+		cmd2 = String.raw`*HDRi="!Z0$EXPQ=0$GAMA=0"mPN$PRES="16,HDRI"`;
 	}
 	//console.log(cmd);
 	document.getElementById("qrtext").textContent = cmd;
+	document.getElementById("qrtext2").textContent = cmd2;
 	
 	qrcode.clear(); 
 	qrcode.makeCode(cmd);
+	qrcode2.clear(); 
+	qrcode2.makeCode(cmd2);
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -1476,5 +1490,6 @@ $('#moon').addEventListener('change', async () => {
 
 
 makeQR();
+updateQRs();
 
 </script>
