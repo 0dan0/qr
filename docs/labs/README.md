@@ -67,7 +67,7 @@ There is a lot in Labs, this is the best page to start [Labs Camera Control](htt
 | [GPS time sync](https://gopro.github.io/labs/control/gpssync)                               | ? | ✔️ | ✔️ | ❌ | ✔️/❌ | ✔️/❌ | ✔️ | ❌ | ❌ | ❌ |
 | [Guidelines Display](https://gopro.github.io/labs/control/extensions) on rear LCD           | ✔️ | ✔️ | ✔️ | ✔️ | ✔️/❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | [HDMI display settings](https://gopro.github.io/labs/control/extensions)                    | ? | ❌️ | ✔️ | ✔️ | ✔️/❌ | ✔️ | ✔️ | ❌ | ❌ | ❌ |
-| [Hindsight Timeout Extension](https://gopro.github.io/labs/control/extensions)              | ? | ❌️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ |
+| [Hindsight Timeout Extension](https://gopro.github.io/labs/control/extensions)              | ✔️ | ❌️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ |
 | [Histogram](https://gopro.github.io/labs/control/extensions) (on display)                   | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ |
 | [Histogram Position/Size](https://gopro.github.io/labs/control/extensions) (either screen)  | ✔️ | ✔️ | ✔️ | ✔️ | ✔️/❌  | ❌ | ❌ | ❌ | ❌ | ❌ |
 | [I-Frame only HEVC Encoding](https://gopro.github.io/labs/control/extensions)               | ? | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
