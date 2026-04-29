@@ -71,7 +71,7 @@ There is a lot in Labs, this is the best page to start [Labs Camera Control](htt
 | [Histogram](https://gopro.github.io/labs/control/extensions) (on display)                   | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ |
 | [Histogram Position/Size](https://gopro.github.io/labs/control/extensions) (either screen)  | ✔️ | ✔️ | ✔️ | ✔️ | ✔️/❌  | ❌ | ❌ | ❌ | ❌ | ❌ |
 | [I-Frame only HEVC Encoding](https://gopro.github.io/labs/control/extensions)               | ? | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| [Large Chapter](https://gopro.github.io/labs/control/chapters) Support (12GB)               | ? | ✔️ | >12GB | >12GB | >12GB | ✔️ | ✔️ | ✔️ | ❌ | ✔️ |
+| [Large Chapter](https://gopro.github.io/labs/control/chapters) Support (12GB)               | ✔️ | ✔️ | >12GB | >12GB | >12GB | ✔️ | ✔️ | ✔️ | ❌ | ✔️ |
 | [Live Stream Initiation](https://gopro.github.io/labs/control/rtmp)                         | ? | ❌️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ |
 | [Low Light mode](https://gopro.github.io/labs/control/extensions)                           | std | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | [LRV Disable](https://gopro.github.io/labs/control/extensions)                              | ? | ❌️ | ❌ | ❌ | ✔️ | some | ❌ | ❌ | ❌ | ❌ |
