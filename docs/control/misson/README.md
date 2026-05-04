@@ -24,14 +24,14 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="m2" name="mode" value="mVN"> <label for="m2">Low Light</label>&nbsp;&nbsp;
   <input type="radio" id="m3" name="mode" value="mB">  <label for="m3">Burst Slowmo</label>&nbsp;&nbsp;
   <input type="radio" id="m4" name="mode" value="mL">  <label for="m4">Looping</label><br>
-  &nbsp;&nbsp;**TimeLapse-Modes:** 
+  &nbsp;&nbsp;**TimeLapse Modes:** 
   <input type="radio" id="m5" name="mode" value="mTW"> <label for="m5">TimeWarp (Motion)</label>&nbsp;&nbsp;
   <input type="radio" id="m6" name="mode" value="mT"> <label  for="m6">Timelapse (Stationary)</label><br>
   &nbsp;&nbsp;**Computational Modes:**
   <input type="radio" id="m7" name="mode" value="mST"> <label for="m7">Star Trails<sup>11</sup></label>&nbsp;&nbsp;
   <input type="radio" id="m8" name="mode" value="mLP"> <label for="m8">Light Painting<sup>11</sup></label>&nbsp;&nbsp;
   <input type="radio" id="m9" name="mode" value="mLT"> <label for="m9">Vehicle Lights<sup>11</sup></label><br>
-  &nbsp;&nbsp;**Photo-Modes:** 
+  &nbsp;&nbsp;**Photo Modes:** 
   <input type="radio" id="m10" name="mode" value="mP">  <label for="m10">Photo</label>&nbsp;&nbsp;
   <input type="radio" id="m11" name="mode" value="mPB"> <label for="m11">Burst</label><br><br>
 
@@ -108,7 +108,6 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="pf3" name="pfov" value="fS"> <label for="pf3">Superview </label>&nbsp;&nbsp;
   <input type="radio" id="pf4" name="pfov" value="" checked> <label for="pf4">not set</label><br><br>
  </div>
-  
  
 <div id="settingsTLVFOV">
 <b>Lens:</b>
@@ -116,14 +115,13 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="tlvf2" name="tlvfov" value="fL"> <label for="tlvf2">Linear </label>&nbsp;&nbsp;
   <input type="radio" id="tlvf3" name="tlvfov" value="" checked> <label for="tlvf3">not set</label><br><br>
  </div>
-  
+ 
 <div id="settingsTWFOV">
 <b>Lens:</b>
   <input type="radio" id="twf1" name="twfov" value="fW"> <label for="twf1">Wide </label>&nbsp;&nbsp;
   <input type="radio" id="twf2" name="twfov" value="fL"> <label for="twf2">Linear </label>&nbsp;&nbsp;
   <input type="radio" id="twf3" name="twfov" value="" checked> <label for="twf3">not set</label><br><br>
  </div>
- 
  
 <div id="settingsZoom">
  <b>Zoom:</b> <input type="range" id="zoom" name="zoom" min="0" max="10" value="0"><label for="zoom"></label>&nbsp;&nbsp;<b id="zoomtext"></b><br><br>
