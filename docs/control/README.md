@@ -14,7 +14,9 @@
 
 
 ## Get Labs Camera Firmware
-Brand new to Labs? Get the firmware and info on [**Labs installation**](https://gopro.github.io/labs)
+
+* Brand new to Labs? Get the firmware and info on [**Labs installation**](https://gopro.github.io/labs)
+* [**Discussion forum**](https://github.com/gopro/labs/discussions) if you need help, have Labs questions, or feature suggestions. 
 
 ## Configuration Commands for All Labs Enabled Cameras
 
@@ -28,14 +30,15 @@ and as a mobile app:<br>
 * <div id="qrcode">Set Local Time:</div>
 * Personalize your cameras with [**Owner Information**](./owner)
 
-## Forum Discussions and Feedback 
-* For GoPro Labs discussions, feature requests, and help: [**Labs Discussion on GitHub**](https://github.com/gopro/labs/discussions)
-* For obmissions or errors within these Pages: [**GitHub Labs Issues**](https://github.com/gopro/labs/issues)
-
 ## The Many Features of Labs
 
-### New Showcase feature: HDRIs for MAX2
+### New Showcase features: 
+
+#### HDRIs for MAX2
 * Use MAX2 to shoot HDRIs (High Dynamic Range Image): [**HDRI Preset and generation**](./hdri)
+
+#### Bracketed Photos MAX2/HERO13/HERO12
+* Use bracketing within a custom photo preset [**Add a Bracketing Preset**](./bracket)
 
 ### Camera Extensions
 * **All Labs cameras** - Dozens of camera enhancements: [**extensions**](./extensions) via QR Code
@@ -85,12 +88,15 @@ If we don't see feedback on features it may not get ported to the next camera. I
 ## Firmware Release Notes 
 An incomplete set of [**Release Notes**](./notes) 
 
+## Feedback 
+* For obmissions or errors within these Pages or the Labs firmware: [**GitHub Labs Issues**](https://github.com/gopro/labs/issues)
+
 ## Full Control, Commands Under The Hood 
 * Technical information on the [**Labs command language**](./tech)
 * **HERO10-13/MAX1-2** Labs scripting via [**Visual Script Tool**](https://gopro.github.io/labs/build/)
 * New [ChatBot for GoPro Labs commands](https://bit.ly/chat_gp_labs)
 
-updated: October 8, 2025
+updated: November 20, 2025
 
 
 <script>
