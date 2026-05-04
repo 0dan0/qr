@@ -28,12 +28,13 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="m5" name="mode" value="mTW"> <label for="m5">TimeWarp (Motion)</label>&nbsp;&nbsp;
   <input type="radio" id="m6" name="mode" value="mT"> <label  for="m6">Timelapse (Stationary)</label><br>
   &nbsp;&nbsp;**Computational Modes:**
-  <input type="radio" id="m7" name="mode" value="mST"> <label for="m7">Star Trails<sup>11</sup></label>&nbsp;&nbsp;
-  <input type="radio" id="m8" name="mode" value="mLP"> <label for="m8">Light Painting<sup>11</sup></label>&nbsp;&nbsp;
-  <input type="radio" id="m9" name="mode" value="mLT"> <label for="m9">Vehicle Lights<sup>11</sup></label><br>
+  <input type="radio" id="m7" name="mode" value="mST"> <label for="m7">Star Trails </label>&nbsp;&nbsp;
+  <input type="radio" id="m8" name="mode" value="mLP"> <label for="m8">Light Painting </label>&nbsp;&nbsp;
+  <input type="radio" id="m9" name="mode" value="mLT"> <label for="m9">Vehicle Lights </label><br>
   &nbsp;&nbsp;**Photo Modes:** 
   <input type="radio" id="m10" name="mode" value="mP">  <label for="m10">Photo</label>&nbsp;&nbsp;
-  <input type="radio" id="m11" name="mode" value="mPB"> <label for="m11">Burst</label><br><br>
+  <input type="radio" id="m11" name="mode" value="mPB"> <label for="m11">Burst</label>&nbsp;&nbsp;
+  <input type="radio" id="m12" name="mode" value="" checked> <label for="m12">not set</label><br><br>
 
 <div id="settingsRES">
 <b>Video Resolution:</b>&nbsp;&nbsp;
