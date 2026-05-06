@@ -1,18 +1,5 @@
 #  GoPro Mission One QR Code Creator
 
-<script src="../../jquery.min.js"></script>
-<script src="../../qrcodeborder.js"></script>
-<script src="../../html2canvas.min.js"></script>
-<style>
-        #qrcode{
-            width: 100%;
-        }
-        div{
-            width: 100%;
-            display: inline-block;
-        }
-</style>
-
 Create a custom camera mode, and even start a capture all through QR Codes. This is the fastest way to access many of the new GoPro Labs' firmware features. 
 Many features of this page are also available as a mobile app.<br>
 Install from: [![google play](../google-play-small.png)](https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
@@ -573,6 +560,7 @@ var icon_num = 0;
 var last_icon_num = 0;
 var newpresent = "";
 
+/*
 
 function validateGoProLabsCommand(command) {
     // Ensure the command is a single line with allowed characters
@@ -597,7 +585,7 @@ function validateGoProLabsCommand(command) {
 
     // Validate mode commands
     const modePattern = /(mV|mP|mT|mNL|mNP|mST|mLP|mLT|dL|dV|dP|dT)/;
-    if (!modePattern.test(command)) {
+    if (command.includes("m") && !modePattern.test(command)) {
         return "Invalid: Missing a valid mode command.";
     }
 
@@ -650,10 +638,10 @@ function validateGoProLabsCommand(command) {
     }
 
     // Validate order (Mode -> Resolution -> FrameRate -> Lens -> Actions)
-    const orderPattern = /^m[A-Z][a-z]*(r[1-5][A-Z]?)*(p[\d\.]+)*(f[WLSV])*(".*")*(![\d:]*[A-Z]+)+$/;
-    if (!orderPattern.test(command)) {
-        return "Invalid: Incorrect command sequence.";
-    }
+//    const orderPattern = /^m[A-Z][a-z]*(r[1-5][A-Z]?)*(p[\d\.]+)*(f[WLSV])*(".*")*(![\d:]*[A-Z]+)+$/;
+//    if (!orderPattern.test(command)) {
+//        return "Invalid: Incorrect command sequence.";
+//    }
 
     return "Valid GoPro Labs Command.";
 }
@@ -679,7 +667,7 @@ console.log(validateGoProLabsCommand(invalidCommand1)); // Invalid
 console.log(validateGoProLabsCommand(invalidCommand2)); // Invalid
 console.log(validateGoProLabsCommand(invalidCommand3)); // Invalid
 
-
+*/
 
 
 
@@ -773,7 +761,7 @@ function startTime() {
 	var timenotchecked;
 		
 	dset("settingsRES", false);
-	dset("noteMODE", false);
+	//dset("noteMODE", false);
 	dset("settingsFPS", false);
 	dset("settingsFOV", false);
 	dset("settingsPFOV", false);
@@ -833,57 +821,37 @@ function startTime() {
 	var checkedmode = 0;
 	var x;
 	
-	for (i = 1; i < 25; i++) { 
+	for (i = 1; i < 12; i++) { 
 		var mode = "m"+i;
 		x = document.getElementById(mode).checked;
 		if( x === true)
 			checkedmode = i;
 	}
 	
-	//m1 mV 
-	//m2 mVP
-	//m3 mVE
-	//m4 mVS
 	
-	//m5 mS 
-	//m6 mH 
-	//m7 mL 
-	
-	//m8 mV0
-	//m9 mV1
-	//m10 mV2
-	//m11 mV3
-	//m12 mV4
-	//m13 mTW
-	//m14 mT 
-	//m15 mNL
-	//m16 mST
-	//m17 mLP
-	//m18 mLT
-	//m19 mP 
-	//m20 mPB
-	//m21 mL
-	//m22 mPN
-	//m23 mTP
-	//m24 mNP
-	
+ //"m1"  mV
+ //"m2"  mVN
+ //"m3"  mB
+ //"m4"  mL
+		 
+ //"m5"  mTW
+ //"m6"  mT
+		 
+ //"m7"  mST
+ //"m8"  mLP
+ //"m9"  mLT
+		 
+ //"m10" mP
+ //"m11" mPB
+  
+  
 	switch(checkedmode)
 	{
 		default:
 		case 1: //Video		
-		case 2: //mVP
-		case 3: //mVE
-		case 4: //mVS
-		
-		case 5: //mS
-		case 6: //mH
-		case 7: //mL
-		
-		case 8 : //mV0
-		case 9 : //mV1
-		case 10: //mV2
-		case 11: //mV3
-		case 12: //mV4
+		case 2: //Video Night
+		case 3: //Burst SLowmo
+		case 4: //Loooping
 		dset("settingsRES", true);
 		dset("settingsFPS", true);
 		dset("settingsFOV", true);
@@ -894,7 +862,7 @@ function startTime() {
 		dset("settingsAUDT",true);
 		break;
 		
-		case 13: //TimeWarp Video
+		case 5: //TimeWarp Video
 		dset("settingsTimewarp", true);		
 		dset("settingsDuration", true);
 		dset("settingsRESTLV", true);
@@ -902,89 +870,47 @@ function startTime() {
 		dset("settingsPT", true);
 		break;		
 		
-		case 14: //Timelapse Video
+		case 6: //Timelapse Video
 		dset("settingsTimelapse", true);	
 		dset("settingsDuration", true);	
 		dset("settingsRESTLV", true);
 		dset("settingsTLVFOV", true);
 		dset("settingsPT", true);
-		dset("noteMODE", true);
-		break;		
-		
-		case 15: //NL Video
-		dset("settingsNightlapse", true);	
-		dset("settingsNightexposure", true);
-		dset("settingsDuration", true);		
-		dset("settingsRESTLV", true);
-		dset("settingsPT", true);
-		dset("settingsTLVFOV", true);
-		dset("noteMODE", true);
+		//dset("noteMODE", true);
 		break;
 		
-		
-		case 16: //Stars
+		case 7: //Stars
 		dset("settingsTimelapse", true);	
 		dset("settingsDuration", true);	
 		dset("settingsCOMPTLV", true);
 		dset("settingsPT", true);
 		break;	
 		
-		case 17: //Painting
+		case 8: //Painting
 		dset("settingsTimelapse", true);	
 		dset("settingsDuration", true);	
 		dset("settingsCOMPTLV", true);
 		dset("settingsPT", true);
 		break;		
 		
-		case 18: //Cars
+		case 9: //Cars
 		dset("settingsTimelapse", true);	
 		dset("settingsDuration", true);	
 		dset("settingsCOMPTLV", true);
 		dset("settingsPT", true);
 		break;		
 	
-		case 19: //Photo
+		case 10: //Photo
 		dset("settingsPT", true);
 		dset("settingsPFOV", true);
 		dset("settingsPhotoRAW", true);
 		break;
 		
-		case 20: //Burst
+		case 11: //Burst
 		dset("settingsBurst", true);
 		dset("settingsPT", true);
 		dset("settingsTLVFOV", true);
 		dset("settingsPhotoRAW", true);
-		break;
-		
-		case 21: //Burst Live
-		dset("settingsPT", true);
-		dset("settingsAUDT",true);
-		break;
-		
-		case 22: //Night
-		dset("settingsNightexposure", true);
-		dset("settingsPT", true);
-		dset("settingsTLVFOV", true);
-		dset("settingsPhotoRAW", true);
-		break;
-		
-		case 23: //TLP
-		dset("settingsTimelapse", true);	
-		dset("settingsPT", true);
-		dset("settingsTLVFOV", true);
-		dset("settingsPhotoRAW", true);
-		dset("settingsDuration", true);
-		dset("noteMODE", true);
-		break;
-		
-		case 24: //NLP
-		dset("settingsNightlapse", true);	
-		dset("settingsNightexposure", true);	
-		dset("settingsPT", true);
-		dset("settingsTLVFOV", true);
-		dset("settingsPhotoRAW", true);
-		dset("settingsDuration", true);
-		dset("noteMODE", true);
 		break;
 		
 	}
@@ -1767,7 +1693,7 @@ function startTime() {
 			document.getElementById("urltext").innerHTML = HTMLPrint(clipcopy);
 			lasttimecmd = cmd;
 			
-			document.getElementById("feedbacktext").innerHTML = validateGoProLabsCommand(cmd);
+			document.getElementById("feedbacktext").innerHTML = cmd;
 		}
 		
 		lastms = today.getTime();
@@ -1857,4 +1783,6 @@ makeQR();
 setupButtons();
 startTime();
 
+
 </script>
+
