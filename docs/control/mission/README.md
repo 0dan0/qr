@@ -349,8 +349,8 @@ Install from: [![google play](google-play-823.png)](https://play.google.com/stor
   <input type="radio" id="blur1" name="blur" value="bA">  <label for="blur1">Adaptive </label>&nbsp;&nbsp;
   <input type="radio" id="blur2" name="blur" value="bR"> <label for="blur2">Reduced </label>&nbsp;&nbsp;
   <input type="radio" id="blur3" name="blur" value="bX"> <label for="blur3">Cinematic Low </label>&nbsp;&nbsp;
-  <input type="radio" id="blur4" name="blur" value="bY"> <label for="blur4">Cinematic Med </label>&nbsp;&nbsp;
-  <input type="radio" id="blur5" name="blur" value="bC"> <label for="blur5">Cinematic High </label>&nbsp;&nbsp;
+  <input type="radio" id="blur4" name="blur" value="bY"> <label for="blur4">C.Medium </label>&nbsp;&nbsp;
+  <input type="radio" id="blur5" name="blur" value="bC"> <label for="blur5">C.High </label>&nbsp;&nbsp;
   <input type="radio" id="blur6" name="blur" value="" checked> <label for="blur6">not set</label><br>
 </div>
 <div id="ptEV">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>EV Compensation:</b>&nbsp;&nbsp;
