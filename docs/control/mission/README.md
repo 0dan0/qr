@@ -1,3 +1,15 @@
+<script src="../../jquery.min.js"></script>
+<script src="../../qrcodeborder.js"></script>
+<script src="../../html2canvas.min.js"></script>
+<style>
+        #qrcode{
+            width: 100%;
+        }
+        div{
+            width: 100%;
+            display: inline-block;
+        }
+</style>
 
 #  GoPro Mission One QR Code Creator
 
