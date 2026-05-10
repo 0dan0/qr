@@ -1,16 +1,17 @@
+
 #  GoPro Mission One QR Code Creator
 
 Create a custom camera mode, and even start a capture all through QR Codes. This is the fastest way to access many of the new GoPro Labs' firmware features. 
 Many features of this page are also available as a mobile app.<br>
-Install from: [![google play](../google-play-small.png)](https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
-[![apple app store](../apple-store-small.png)](https://apps.apple.com/us/app/gopro-app/id1518134202)
+Install from: [![google play](google-play-823.png)](https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
+[![apple app store](./apple-store-823.png)](https://apps.apple.com/us/app/gopro-app/id1518134202)<br>
 
 <b>Camera Mode:</b>&nbsp;&nbsp;
   &nbsp;&nbsp;**Video Modes:**
   <input type="radio" id="m1" name="mode" value="mV">  <label for="m1">Video </label>&nbsp;&nbsp;
   <input type="radio" id="m2" name="mode" value="mVN"> <label for="m2">Low Light</label>&nbsp;&nbsp;
-  <input type="radio" id="m3" name="mode" value="mB">  <label for="m3">Burst Slowmo</label>&nbsp;&nbsp;
-  <input type="radio" id="m4" name="mode" value="mL">  <label for="m4">Looping</label><br>
+  <input type="radio" id="m3" name="mode" value="mL">  <label for="m3">Looping</label>&nbsp;&nbsp;
+  <input type="radio" id="m4" name="mode" value="mB">  <label for="m4">Burst Slowmo</label><br>
   &nbsp;&nbsp;**TimeLapse Modes:** 
   <input type="radio" id="m5" name="mode" value="mTW"> <label for="m5">TimeWarp (Motion)</label>&nbsp;&nbsp;
   <input type="radio" id="m6" name="mode" value="mT"> <label  for="m6">Timelapse (Stationary)</label><br>
@@ -25,8 +26,8 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
 
 <div id="settingsRES">
 <b>Video Resolution:</b>&nbsp;&nbsp;
-  <input type="radio" id="r1" name="res" value="r1080"> <label for="r1">1080p </label>&nbsp;&nbsp;
-  <input type="radio" id="r2" name="res" value="r1440"> <label for="r2">1440p </label>&nbsp;&nbsp;
+  <input type="radio" id="r1" name="res" value="r1"> <label for="r1">1080p </label>&nbsp;&nbsp;
+  <input type="radio" id="r2" name="res" value="r14"> <label for="r2">1440p </label>&nbsp;&nbsp;
   <input type="radio" id="r3" name="res" value="r4"   > <label for="r3">4k </label>&nbsp;&nbsp;
   <input type="radio" id="r4" name="res" value="r4T"  > <label for="r4">4k 4:3</label>&nbsp;&nbsp;
   <input type="radio" id="r5" name="res" value="r8"   > <label for="r5">8k </label>&nbsp;&nbsp;
@@ -49,9 +50,9 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
 <div id="settingsCOMPTLV">
 <b>Video Resolution:</b>&nbsp;&nbsp;
   <input type="radio" id="crt1" name="comptlv" value="r4"   > <label for="crt1">4k </label>&nbsp;&nbsp;
-  <input type="radio" id="crt2" name="comptlv" value="r4T"  > <label for="crt2">4k 4:3<sup>11</sup> </label>&nbsp;&nbsp;
+  <input type="radio" id="crt2" name="comptlv" value="r4T"  > <label for="crt2">4k 4:3 </label>&nbsp;&nbsp;
   <input type="radio" id="crt3" name="comptlv" value="r8"   > <label for="crt3">8k </label>&nbsp;&nbsp;
-  <input type="radio" id="crt4" name="comptlv" value="r8T"  > <label for="crt4">8k 4:3<sup>11</sup> </label>&nbsp;&nbsp;
+  <input type="radio" id="crt4" name="comptlv" value="r8T"  > <label for="crt4">8k 4:3 </label>&nbsp;&nbsp;
   <input type="radio" id="crt5" name="comptlv" value="" checked> <label for="crt5">not set</label><br><br>
  </div>
  
@@ -61,16 +62,21 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="p2" name="fps" value="p25">  <label for="p2">25 </label>&nbsp;&nbsp;
   <input type="radio" id="p3" name="fps" value="p30">  <label for="p3">30 </label>&nbsp;&nbsp;
   <input type="radio" id="p4" name="fps" value="p50">  <label for="p4">50 </label>&nbsp;&nbsp;
-  <input type="radio" id="p5" name="fps" value="p60">  <label for="p5">60 </label>&nbsp;&nbsp;
+  <input type="radio" id="p5" name="fps" value="p60">  <label for="p5">60 </label>&nbsp;&nbsp;<br>
   <input type="radio" id="p6" name="fps" value="p100"> <label for="p6">100 </label>&nbsp;&nbsp;
   <input type="radio" id="p7" name="fps" value="p120"> <label for="p7">120 </label>&nbsp;&nbsp;
   <input type="radio" id="p8" name="fps" value="p200"> <label for="p8">200 </label>&nbsp;&nbsp;
   <input type="radio" id="p9" name="fps" value="p240"> <label for="p9">240 </label>&nbsp;&nbsp;
   <input type="radio" id="p10" name="fps" value="p400"> <label for="p10">400 </label>&nbsp;&nbsp;
   <input type="radio" id="p11" name="fps" value="p480"> <label for="p11">480 </label>&nbsp;&nbsp;
-  <input type="radio" id="p12" name="fps" value="p800"> <label for="p12">800 </label>&nbsp;&nbsp;
-  <input type="radio" id="p13" name="fps" value="p960"> <label for="p13">960 </label>&nbsp;&nbsp;
-  <input type="radio" id="p14" name="fps" value="" checked> <label for="p14">not set</label><br><br>
+  <input type="radio" id="p12" name="fps" value="" checked> <label for="p14">not set</label><br><br>
+</div>
+
+<div id="settingsBurstFPS">
+<b>FPS Burst Slowmo:</b>&nbsp;&nbsp;
+  <input type="radio" id="bp1" name="bfps" value="p800">  <label for="bp1">800 </label>&nbsp;&nbsp;
+  <input type="radio" id="bp2" name="bfps" value="p960">  <label for="bp2">960 </label>&nbsp;&nbsp;
+  <input type="radio" id="bp3" name="bfps" value="" checked> <label for="bp3">not set</label><br><br>
 </div>
 
 <div id="settingsVideo">
@@ -191,7 +197,7 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
 </div>
 
 <div id="settingsHindsight">
-<b>Hindsight<sup>9-13</sup>:</b>&nbsp;&nbsp;
+<b>Hindsight:</b>&nbsp;&nbsp;
 	<input type="radio" id="hind1" name="hind" value="hS0"> <label for="hind1">Off</label>&nbsp;&nbsp;&nbsp;
 	<input type="radio" id="hind2" name="hind" value="hS1"> <label for="hind2">15s</label>&nbsp;&nbsp;&nbsp;
 	<input type="radio" id="hind3" name="hind" value="hS2"> <label for="hind3">30s</label>&nbsp;&nbsp;&nbsp;
@@ -199,7 +205,7 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
 </div>
 
 <div id="settingsDuration">
-<b>Duration<sup>9-13</sup>:</b>&nbsp;&nbsp;
+<b>Duration:</b>&nbsp;&nbsp;
 	<input type="radio" id="dur1" name="dur" value="dR0"> <label for="dur1">Off</label>&nbsp;&nbsp;
 	<input type="radio" id="dur2" name="dur" value="dR15"> <label for="dur2">15s</label>&nbsp;&nbsp;
 	<input type="radio" id="dur3" name="dur" value="dR30"> <label for="dur3">30s</label>&nbsp;&nbsp;
@@ -227,7 +233,7 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="audt3" name="audt" value="aW"> <label for="audt3">On</label>&nbsp;&nbsp;
   <input type="radio" id="audt4" name="audt" value="" checked> <label for="audt4"> not set</label><br><br>
 </div>
-<input type="checkbox" id="np" value=""> <label for="np">Custom Named Presets<sup>12-13</sup></label><br>
+<input type="checkbox" id="np" value=""> <label for="np">Custom Named Presets</label><br>
 <div id="namedPresets">
    <div id="ICONS">
 	  &nbsp;&nbsp;&nbsp;&nbsp;Click to select the preferred icon:<br>
@@ -238,7 +244,7 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
 	  &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="pdel" value=""> <label for="pdel">delete custom preset</label><br>
    </div>
 </div>
-<input type="checkbox" id="sm" value="oSM"> <label for="sm">Spot Metering<sup>10-13</sup></label><br>
+<input type="checkbox" id="sm" value="oSM"> <label for="sm">Spot Metering</label><br>
 <div id="spotMeter">
    <div id="LCD">
       <img src="https://gopro.github.io/labs/control/custom/RearCamera.png" alt="LCD"> 
@@ -260,26 +266,92 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
 &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="sl" value="oSM0!2NoSL"> <label for="sl">Exposure Lock 3s after scan (to avoid locking on the QR Code)</label><br>
 </div>
 <div id="settingsPT">
-<input type="checkbox" id="pt" value="t"> <label for="pt">Protune Controls</label><br>
+<input type="checkbox" id="pt" value=""> <label for="pt">Protune Controls</label><br>
 </div>
 <div id="settingsPTR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Protune Reset:</b>&nbsp;&nbsp;
 <input type="checkbox" id="ptr" value="t0"> <label for="ptr"> </label><br>
 </div>
-<div id="ptCOLOR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Protune Color:</b>&nbsp;&nbsp;
-  <input type="radio" id="ptc1" name="ptc" value="cG"> <label for="ptc1">Vibrant</label>&nbsp;&nbsp;
-  <input type="radio" id="ptc2" name="ptc" value="cN"> <label for="ptc2">Natural<sup>10-13</sup></label>&nbsp;&nbsp;
-  <input type="radio" id="ptc3" name="ptc" value="cF"> <label for="ptc3">Flat</label>&nbsp;&nbsp;
-  <input type="radio" id="ptc4" name="ptc" value="" checked> <label for="ptc4">not set</label>
+<div id="ptTUNE">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Tuning:</b>&nbsp;&nbsp;
+  <input type="radio" id="tune1" name="tune" value="tB"> <label for="tune1">Balanced </label>&nbsp;&nbsp;
+  <input type="radio" id="tune2" name="tune" value="tF"> <label for="tune2">Face </label>&nbsp;&nbsp;
+  <input type="radio" id="tune3" name="tune" value="tS"> <label for="tune3">Sport</label>&nbsp;&nbsp;
+  <input type="radio" id="tune4" name="tune" value="tD"> <label for="tune4">Dive</label>&nbsp;&nbsp;
+  <input type="radio" id="tune5" name="tune" value="" checked> <label for="tune5">not set</label>
 </div>
 <div id="ptDEPTH">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Color Depth:</b>&nbsp;&nbsp;
-  <input type="radio" id="ptd1" name="ptd" value="d0"> <label for="ptd1">8-bit<sup>11</sup></label>&nbsp;&nbsp;
-  <input type="radio" id="ptd2" name="ptd" value="d1"> <label for="ptd2">10-bit<sup>11</sup></label>&nbsp;&nbsp;
+  <input type="radio" id="ptd1" name="ptd" value="d0"> <label for="ptd1">8-bit</label>&nbsp;&nbsp;
+  <input type="radio" id="ptd2" name="ptd" value="d1"> <label for="ptd2">10-bit</label>&nbsp;&nbsp;
   <input type="radio" id="ptd3" name="ptd" value="" checked> <label for="ptd3">not set</label>
 </div>
 <div id="ptBITRATE">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Bit rate:</b>&nbsp;&nbsp;
-  <input type="radio" id="br1" name="br" value="b0"> <label for="br1">Standard</label>&nbsp;&nbsp;
-  <input type="radio" id="br2" name="br" value="b1"> <label for="br2">High</label>&nbsp;&nbsp;
-  <input type="radio" id="br3" name="br" value="" checked> <label for="br3">not set</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  <input type="radio" id="br1" name="br" value="bS"> <label for="br1">Standard (~60Mbs)</label>&nbsp;&nbsp;
+  <input type="radio" id="br2" name="br" value="bH"> <label for="br2">High (~120Mbs)</label>&nbsp;&nbsp;
+  <input type="radio" id="br3" name="br" value="bM"> <label for="br3">Max (~240Mbs)</label>&nbsp;&nbsp;
+  <input type="radio" id="br4" name="br" value="" checked> <label for="br4">not set</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</div>
+<div id="ptHLG">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>HLG :</b>&nbsp;&nbsp;
+  <input type="radio" id="hlg1" name="hlg" value="hH1"> <label for="hlg1">HLG on</label>&nbsp;&nbsp;
+  <input type="radio" id="hlg2" name="hlg" value="hH0"> <label for="hlg2">HLG off</label>&nbsp;&nbsp;
+  <input type="radio" id="hlg3" name="hlg" value="" checked> <label for="hlg3">not set</label>
+</div>
+<div id="ptCOLOR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Protune Color:</b>&nbsp;&nbsp;
+  <input type="radio" id="ptc1" name="ptc" value="cG"> <label for="ptc1">Vibrant</label>&nbsp;&nbsp;
+  <input type="radio" id="ptc2" name="ptc" value="cN"> <label for="ptc2">Natural</label>&nbsp;&nbsp;
+  <input type="radio" id="ptc3" name="ptc" value="cC"> <label for="ptc3">Cinematic</label>&nbsp;&nbsp;
+  <input type="radio" id="ptc4" name="ptc" value="cF"> <label for="ptc4">Flat</label>&nbsp;&nbsp;
+  <input type="radio" id="ptc5" name="ptc" value="cL"> <label for="ptc5">GP-Log2</label>&nbsp;&nbsp;
+  <input type="radio" id="ptc6" name="ptc" value="" checked> <label for="ptc6">not set</label>
+</div>
+<div id="ptCOLORHLG">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Protune Color:</b>&nbsp;&nbsp;
+  <input type="radio" id="ptch1" name="ptch" value="cG"> <label for="ptch1">Vibrant</label>&nbsp;&nbsp;
+  <input type="radio" id="ptch2" name="ptch" value="cN"> <label for="ptch2">Natural</label>&nbsp;&nbsp;
+  <input type="radio" id="ptch3" name="ptch" value="cC"> <label for="ptch3">Cinematic</label>&nbsp;&nbsp;
+  <input type="radio" id="ptch4" name="ptch" value="" checked> <label for="ptch4">not set</label>
+</div>
+<div id="ptCOLOR8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Protune Color:</b>&nbsp;&nbsp;
+  <input type="radio" id="ptcb1" name="ptcb" value="cG"> <label for="ptcb1">Vibrant</label>&nbsp;&nbsp;
+  <input type="radio" id="ptcb2" name="ptcb" value="cN"> <label for="ptcb2">Natural</label>&nbsp;&nbsp;
+  <input type="radio" id="ptcb3" name="ptcb" value="cC"> <label for="ptcb3">Cinematic</label>&nbsp;&nbsp;
+  <input type="radio" id="ptcb4" name="ptcb" value="cF"> <label for="ptcb4">Flat</label>&nbsp;&nbsp;
+  <input type="radio" id="ptch5" name="ptcb" value="" checked> <label for="ptcb5">not set</label>
+</div>
+<div id="ptSHUT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Shutter Angle:</b>&nbsp;&nbsp;
+  <input type="radio" id="shut1" name="shut" value="s0"  > <label for="shut1">Auto</label>&nbsp;&nbsp;
+  <input type="radio" id="shut2" name="shut" value="s360"> <label for="shut2">360&deg; </label>&nbsp;&nbsp;
+  <input type="radio" id="shut3" name="shut" value="s180"> <label for="shut3">180&deg; </label>&nbsp;&nbsp;
+  <input type="radio" id="shut4" name="shut" value="s90" > <label for="shut4">90&deg; </label>&nbsp;&nbsp;
+  <input type="radio" id="shut5" name="shut" value="s45" > <label for="shut5">45&deg; </label>&nbsp;&nbsp;
+  <input type="radio" id="shut6" name="shut" value="s22" > <label for="shut6">22&deg; </label>&nbsp;&nbsp;
+  <input type="radio" id="shut7" name="shut" value="s10" > <label for="shut7">10&deg; </label>&nbsp;&nbsp;
+  <input type="radio" id="shut8" name="shut" value="s5" >  <label for="shut8">5&deg; </label>&nbsp;&nbsp;
+  <input type="radio" id="shut9" name="shut" value="s2" >  <label for="shut9">2&deg; </label>&nbsp;&nbsp;
+  <input type="radio" id="shut10" name="shut" value="" checked> <label for="shut10">not set</label>
+</div>
+<div id="ptSHUTMIN">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or <b>Shutter Angle Range:</b>&nbsp;&nbsp;
+  <input type="radio" id="shutmin1" name="shutmin" value="s180M"> <label for="shutmin1">up to 180&deg; </label>&nbsp;&nbsp;
+  <input type="radio" id="shutmin2" name="shutmin" value="s90M" > <label for="shutmin2">up to 90&deg; </label>&nbsp;&nbsp;
+  <input type="radio" id="shutmin3" name="shutmin" value="s45M" > <label for="shutmin3">up to 45&deg; </label>&nbsp;&nbsp;
+  <input type="radio" id="shutmin4" name="shutmin" value="" checked> <label for="shutmin4">not set</label><br>
+</div>
+<div id="ptBLUR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Motion Blur:</b>&nbsp;&nbsp;
+  <input type="radio" id="blur1" name="blur" value="bA">  <label for="blur1">Adaptive </label>&nbsp;&nbsp;
+  <input type="radio" id="blur2" name="blur" value="bR"> <label for="blur2">Reduced </label>&nbsp;&nbsp;
+  <input type="radio" id="blur3" name="blur" value="bX"> <label for="blur3">Cinematic Low </label>&nbsp;&nbsp;
+  <input type="radio" id="blur4" name="blur" value="bY"> <label for="blur4">Cinematic Med </label>&nbsp;&nbsp;
+  <input type="radio" id="blur5" name="blur" value="bC"> <label for="blur5">Cinematic High </label>&nbsp;&nbsp;
+  <input type="radio" id="blur6" name="blur" value="" checked> <label for="blur6">not set</label><br>
+</div>
+<div id="ptEV">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>EV Compensation:</b>&nbsp;&nbsp;
+  <input type="radio" id="ev1" name="ev" value="x0"   > <label for="ev1">0 </label>&nbsp;&nbsp;
+  <input type="radio" id="ev2" name="ev" value="x-.5" > <label for="ev2">-0.5 </label>&nbsp;&nbsp;
+  <input type="radio" id="ev3" name="ev" value="x-1"  > <label for="ev3">-1 </label>&nbsp;&nbsp;
+  <input type="radio" id="ev4" name="ev" value="x-1.5"> <label for="ev4">-1.5 </label>&nbsp;&nbsp;
+  <input type="radio" id="ev5" name="ev" value="x-2"  > <label for="ev5">-2 </label>&nbsp;&nbsp;
+  <input type="radio" id="ev6" name="ev" value="x.5"  > <label for="ev6">+0.5 </label>&nbsp;&nbsp;
+  <input type="radio" id="ev7" name="ev" value="x1"   > <label for="ev7">+1 </label>&nbsp;&nbsp;
+  <input type="radio" id="ev8" name="ev" value="x1.5" > <label for="ev8">+1.5 </label>&nbsp;&nbsp;
+  <input type="radio" id="ev9" name="ev" value="x2"   > <label for="ev9">+2</label>
+  <input type="radio" id="ev10" name="ev" value="" checked> <label for="ev10">not set</label>
 </div>
 <div id="ptWBAL">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>White Balance:</b>&nbsp;&nbsp;
   <input type="radio" id="wb1" name="wb" value="wA" checked> <label for="wb1">Auto </label>&nbsp;&nbsp;
@@ -287,7 +359,7 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="wb3" name="wb" value="w28" > <label for="wb3">2800K </label>&nbsp;&nbsp;
   <input type="radio" id="wb4" name="wb" value="w32" > <label for="wb4">3200K </label>&nbsp;&nbsp;
   <input type="radio" id="wb5" name="wb" value="w40" > <label for="wb5">4000K </label>&nbsp;&nbsp;
-  <input type="radio" id="wb6" name="wb" value="w45" > <label for="wb6">4500K </label>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="wb6" name="wb" value="w45" > <label for="wb6">4500K </label>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="radio" id="wb7" name="wb" value="w50" > <label for="wb7">5000K </label>&nbsp;&nbsp;
   <input type="radio" id="wb8" name="wb" value="w55" > <label for="wb8">5500K </label>&nbsp;&nbsp;
   <input type="radio" id="wb9" name="wb" value="w60"> <label for="wb9">6000K </label>&nbsp;&nbsp;
@@ -295,55 +367,39 @@ Install from: [![google play](../google-play-small.png)](https://play.google.com
   <input type="radio" id="wb11" name="wb" value="wN" > <label for="wb11">Native </label>&nbsp;&nbsp;
   <input type="radio" id="wb12" name="wb" value="" checked> <label for="wb12">not set</label>
  </div>
-<div id="ptIMIN">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ISO Min:</b>&nbsp;&nbsp;
-  <input type="radio" id="isomin1" name="isomin" value="M1" > <label for="isomin1">100 (def) </label>&nbsp;&nbsp;
-  <input type="radio" id="isomin2" name="isomin" value="M2" > <label for="isomin2">200 </label>&nbsp;&nbsp;
-  <input type="radio" id="isomin3" name="isomin" value="M4" > <label for="isomin3">400 </label>&nbsp;&nbsp;
-  <input type="radio" id="isomin4" name="isomin" value="M8" > <label for="isomin4">800 </label>&nbsp;&nbsp;
-  <input type="radio" id="isomin5" name="isomin" value="M16"> <label for="isomin5">1600 </label>&nbsp;&nbsp;
-  <input type="radio" id="isomin6" name="isomin" value="M32"> <label for="isomin6">3200 </label>&nbsp;&nbsp;
-  <input type="radio" id="isomin7" name="isomin" value="M64"> <label for="isomin7">6400 </label>&nbsp;&nbsp;
-  <input type="radio" id="isomin8" name="isomin" value="M1" checked> <label for="isomin8">not set</label>
+<div id="ptISOFIX">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ISO Fixed:</b>&nbsp;&nbsp;
+  <input type="radio" id="isofix1" name="isofix" value="i0" > <label for="isofix1">Auto </label>&nbsp;&nbsp;
+  <input type="radio" id="isofix2" name="isofix" value="i1M1" > <label for="isofix2">100 </label>&nbsp;&nbsp;
+  <input type="radio" id="isofix3" name="isofix" value="i2M2" > <label for="isofix3">200 </label>&nbsp;&nbsp;
+  <input type="radio" id="isofix4" name="isofix" value="i4M4" > <label for="isofix4">400 </label>&nbsp;&nbsp;
+  <input type="radio" id="isofix5" name="isofix" value="i8M8" > <label for="isofix5">800 </label>&nbsp;&nbsp;
+  <input type="radio" id="isofix6" name="isofix" value="i16M16"> <label for="isofix6">1600 </label>&nbsp;&nbsp;
+  <input type="radio" id="isofix7" name="isofix" value="i32M32"> <label for="isofix7">3200 </label>&nbsp;&nbsp;
+  <input type="radio" id="isofix8" name="isofix" value="i64M64"> <label for="isofix8">6400 </label>&nbsp;&nbsp;
+  <input type="radio" id="isofix9" name="isofix" value="" checked> <label for="isofix9">not set</label>
  </div>
-<div id="ptISO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ISO Max:</b>&nbsp;&nbsp;
-  <input type="radio" id="iso1" name="iso" value="i1" > <label for="iso1">100 </label>&nbsp;&nbsp;
-  <input type="radio" id="iso2" name="iso" value="i2" > <label for="iso2">200 </label>&nbsp;&nbsp;
-  <input type="radio" id="iso3" name="iso" value="i4" > <label for="iso3">400 </label>&nbsp;&nbsp;
-  <input type="radio" id="iso4" name="iso" value="i8" > <label for="iso4">800 </label>&nbsp;&nbsp;
-  <input type="radio" id="iso5" name="iso" value="i16"> <label for="iso5">1600 (def) </label>&nbsp;&nbsp;
-  <input type="radio" id="iso6" name="iso" value="i32"> <label for="iso6">3200 </label>&nbsp;&nbsp;
-  <input type="radio" id="iso7" name="iso" value="i64"> <label for="iso7">6400 </label>&nbsp;&nbsp;
-  <input type="radio" id="iso8" name="iso" value="i16" checked> <label for="iso8">not set</label>
+<div id="ptISORANGE">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or <b>ISO Range:</b>&nbsp;&nbsp;
+  <input type="radio" id="isor1" name="isor" value="i0" > <label for="isor1">Auto </label>&nbsp;&nbsp;
+  <input type="radio" id="isor2" name="isor" value="i1" > <label for="isor2">100 </label>&nbsp;&nbsp;
+  <input type="radio" id="isor3" name="isor" value="i2" > <label for="isor3">200 </label>&nbsp;&nbsp;
+  <input type="radio" id="isor4" name="isor" value="i4" > <label for="isor4">400 </label>&nbsp;&nbsp;
+  <input type="radio" id="isor5" name="isor" value="i8" > <label for="isor5">800 </label>&nbsp;&nbsp;
+  <input type="radio" id="isor6" name="isor" value="i16"> <label for="isor6">1600 </label>&nbsp;&nbsp;
+  <input type="radio" id="isor7" name="isor" value="i32"> <label for="isor7">3200 </label>&nbsp;&nbsp;
+  <input type="radio" id="isor8" name="isor" value="i64"> <label for="isor8">6400 </label>&nbsp;&nbsp;
+  <input type="radio" id="isor9" name="isor" value="" checked> <label for="isor9">not set</label>
  </div>
-<div id="ptSHUT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Lock Shutter:</b>&nbsp;&nbsp;
-  <input type="radio" id="shut1" name="shut" value="S360"> <label for="shut1">360&deg; </label>&nbsp;&nbsp;
-  <input type="radio" id="shut2" name="shut" value="S180"> <label for="shut2">180&deg; </label>&nbsp;&nbsp;
-  <input type="radio" id="shut3" name="shut" value="S90" > <label for="shut3">90&deg; </label>&nbsp;&nbsp;
-  <input type="radio" id="shut4" name="shut" value="S45" > <label for="shut4">45&deg; </label>&nbsp;&nbsp;
-  <input type="radio" id="shut5" name="shut" value="S22" > <label for="shut5">22&deg; </label>&nbsp;&nbsp;
-  <input type="radio" id="shut6" name="shut" value="S0"  > <label for="shut6">Auto</label>
-  <input type="radio" id="shut7" name="shut" value="" checked> <label for="shut7">not set</label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(extended beyond camera menu)
-  <input type="radio" id="shut8" name="shut" value="S10" > <label for="shut8">10&deg; </label>&nbsp;&nbsp;
-  <input type="radio" id="shut9" name="shut" value="S5" > <label for="shut9">5&deg; </label>&nbsp;&nbsp;
-  <input type="radio" id="shut10" name="shut" value="S2" > <label for="shut10">2&deg; </label>&nbsp;&nbsp;
-</div>
-<div id="ptEV">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>EV Compensation:</b>&nbsp;&nbsp;
-  <input type="radio" id="ev1" name="ev" value="x-2"  > <label for="ev1">-2 </label>&nbsp;&nbsp;
-  <input type="radio" id="ev2" name="ev" value="x-1.5"> <label for="ev2">-1.5 </label>&nbsp;&nbsp;
-  <input type="radio" id="ev3" name="ev" value="x-1"  > <label for="ev3">-1 </label>&nbsp;&nbsp;
-  <input type="radio" id="ev4" name="ev" value="x-.5" > <label for="ev4">-0.5 </label>&nbsp;&nbsp;
-  <input type="radio" id="ev5" name="ev" value="x0"   > <label for="ev5">0 </label>&nbsp;&nbsp;
-  <input type="radio" id="ev6" name="ev" value="x.5"  > <label for="ev6">+0.5 </label>&nbsp;&nbsp;
-  <input type="radio" id="ev7" name="ev" value="x1"   > <label for="ev7">+1 </label>&nbsp;&nbsp;
-  <input type="radio" id="ev8" name="ev" value="x1.5" > <label for="ev8">+1.5 </label>&nbsp;&nbsp;
-  <input type="radio" id="ev9" name="ev" value="x2"   > <label for="ev9">+2</label>
-  <input type="radio" id="ev10" name="ev" value="" checked> <label for="ev10">not set</label>
-</div>
 <div id="ptSHARP">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Sharpness:</b>&nbsp;&nbsp;
   <input type="radio" id="sharp1" name="sharp" value="sL"> <label for="sharp1">Low </label>&nbsp;&nbsp;
   <input type="radio" id="sharp2" name="sharp" value="sM"> <label for="sharp2">Medium </label>&nbsp;&nbsp;
   <input type="radio" id="sharp3" name="sharp" value="sH"> <label for="sharp3">High</label>&nbsp;&nbsp;
   <input type="radio" id="sharp4" name="sharp" value="" checked> <label for="sharp4">not set</label>
+</div>
+<div id="ptDENOISE">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Denoise:</b>&nbsp;&nbsp;
+  <input type="radio" id="denoise1" name="denoise" value="dL"> <label for="denoise1">Low </label>&nbsp;&nbsp;
+  <input type="radio" id="denoise2" name="denoise" value="dM"> <label for="denoise2">Medium </label>&nbsp;&nbsp;
+  <input type="radio" id="denoise3" name="denoise" value="dH"> <label for="denoise3">High</label>&nbsp;&nbsp;
+  <input type="radio" id="denoise4" name="denoise" value="" checked> <label for="denoise4">not set</label>
 </div>
 <div id="ptAUD">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>RAW Audio:</b>&nbsp;&nbsp;
   <input type="radio" id="aud1" name="aud" value="a"> <label for="aud1">Off </label>&nbsp;&nbsp;
@@ -771,6 +827,7 @@ function startTime() {
 	dset("settingsRESTLV", false);
 	dset("settingsCOMPTLV", false);
 	dset("settingsVideo", false);
+	dset("settingsBurstFPS", false);
 	dset("settingsHindsight", false);
 	dset("settingsDuration", false);
 	dset("settingsPhotoRAW", false);
@@ -785,16 +842,22 @@ function startTime() {
 	dset("settingsNightexposure", false);
 	dset("settingsAUDT",false);
 	
-	dset("ptCOLOR", false);
 	dset("ptDEPTH", false);
+	dset("ptHLG", false);
+	dset("ptCOLOR", false);
+	dset("ptCOLOR8", false);
+	dset("ptCOLORHLG", false);
 	dset("ptBITRATE", false);
 	dset("ptWBAL", false);
-	dset("ptISO",false);
-	dset("ptIMIN",false);
+	dset("ptISOFIX",false);
+	dset("ptISORANGE",false);
 	dset("ptSHUT",false);
-	dset("ptIMIN",false);
+	dset("ptSHUTMIN",false);
+	dset("ptBLUR",false);
 	dset("ptEV",false);
 	dset("ptSHARP",false);
+	dset("ptDENOISE",false);
+	dset("ptTUNE",false);
 	dset("ptAUD",false);
 		
 	dset("opGPS", false);
@@ -850,10 +913,19 @@ function startTime() {
 		default:
 		case 1: //Video		
 		case 2: //Video Night
-		case 3: //Burst SLowmo
-		case 4: //Loooping
+		case 3: //Loooping
 		dset("settingsRES", true);
 		dset("settingsFPS", true);
+		dset("settingsFOV", true);
+		dset("settingsVideo", true);
+		dset("settingsHindsight", true);
+		dset("settingsDuration", true);
+		dset("settingsPT", true);
+		dset("settingsAUDT",true);
+		break;
+		
+		case 4: //Burst SLowmo
+		dset("settingsBurstFPS", true);
 		dset("settingsFOV", true);
 		dset("settingsVideo", true);
 		dset("settingsHindsight", true);
@@ -980,39 +1052,58 @@ function startTime() {
 		
 		if(document.getElementById("pt").checked === true && document.getElementById("ptr").checked === false)
 		{
-			dset("ptCOLOR", true);
 			dset("ptDEPTH", true);
+			if(document.getElementById('ptd2').checked === true)
+			{
+				dset("ptHLG", true);
+				if(document.getElementById('hlg1').checked === true)
+					dset("ptCOLORHLG", true);
+				else
+					dset("ptCOLOR", true);
+			}
+			else
+			{
+				if(document.getElementById('ptd1').checked === true)
+					dset("ptCOLOR8", true);
+				else
+				{
+					dset("ptCOLOR", true);
+					dset("ptHLG", true);
+				}	
+			}
+			dset("ptBITRATE", true);
 			dset("ptWBAL", true);
-			dset("ptISO",true);
-			dset("ptIMIN",true);
+			dset("ptISOFIX",true);
+			dset("ptISORANGE",true);
 			dset("ptSHUT",true);
+			dset("ptSHUTMIN",true);
 
-			if(document.getElementById('iso8').checked === true)
+			if(document.getElementById('isofix9').checked === true && document.getElementById('isor9').checked === true)
 			{
 				//dset("ptSHUT",false);
 				dset("ptEV",true);
+				dset("ptBLUR",true);
 			}
 			else
 			{
 				//dset("ptSHUT",true);
 
-				if(document.getElementById('shut7').checked === true || document.getElementById('shut6').checked === true) 
+				if(document.getElementById('shut10').checked === true || document.getElementById('shut1').checked === true) 
 				{  // not shutter lock
 					dset("ptEV",true);
+					dset("ptBLUR",true);
 				}
 			}
 			
-			if(checkedmode >= 1 && checkedmode <= 12) //Video + audio modes
+			if(checkedmode >= 1 && checkedmode <= 4) //Video + audio modes
 			{
 				dset("ptAUD",true);
-			}
-			
-			if(checkedmode >= 1 && checkedmode <= 15) //Video modes
-			{
 				dset("ptBITRATE", true);
 			}
 				
 			dset("ptSHARP",true);
+			dset("ptDENOISE",true);
+			dset("ptTUNE",true);
 		}
 	}
 	
@@ -1049,34 +1140,22 @@ function startTime() {
 	}
 	
 	cmd = dcmd(cmd,"m");  // set mode
-		
+	
 	switch(checkedmode)
 	{
-		case 13: //TWarp
+		case 5: //TWarp
 			cmd = dcmd(cmd,"fpswarp");
 			break;
-		case 14: //TLV
-			cmd = dcmd(cmd,"fpslapse");
-			break;
-		case 15: //NLV	
+		//case 6: //TLV
+		//	cmd = dcmd(cmd,"fpslapse");
+		//	break;
+		case 6: //NLV	
 			cmd = dcmd(cmd,"fpsnight");
 			cmd = dcmd(cmd,"nightexp");
 			break;
-		case 20: //Burst 
+		case 11: //Burst 
 			cmd = dcmd(cmd,"b");
 			break;	
-		case 21: //Live Burst 
-			break;	
-		case 22: //Night
-			cmd = dcmd(cmd,"nightexp");
-			break;
-		case 23: //TLP
-			cmd = dcmd(cmd,"fpslapse");
-			break;
-		case 24: //NLP	
-			cmd = dcmd(cmd,"fpsnight");
-			cmd = dcmd(cmd,"nightexp");
-			break;
 	}
 	
 	
@@ -1088,14 +1167,14 @@ function startTime() {
 			cmd = dcmd(cmd,"m");  // set mode
 		}
 	}	
-	
-	if(checkedmode <= 18)
+			
+	if(checkedmode <= 10)
 	{
-		if(checkedmode == 13 || checkedmode == 14 || checkedmode == 15) // TLV/TWarp Res/NLV
+		if(checkedmode == 5 || checkedmode == 6) // TLV/TWarp Res/NLV
 		{
 			cmd = dcmd(cmd, "rt");
 		}
-		else if(checkedmode == 16 || checkedmode == 17 || checkedmode == 18) // COMP TLV
+		else if(checkedmode == 7 || checkedmode == 8 || checkedmode == 9) // COMP TLV
 		{
 			cmd = dcmd(cmd, "crt");
 		}
@@ -1105,14 +1184,18 @@ function startTime() {
 		}
 	}
 		
-	if(checkedmode <= 12) // video mode
+	if(checkedmode <= 5 && checkedmode != 4) // video mode
 	{
 		cmd = dcmd(cmd,"p"); //fps
 	}
-	
-	if(checkedmode > 12) // not video	
+	if(checkedmode == 4) // burst video mode
 	{
-		if(checkedmode == 13) //TWarp
+		cmd = dcmd(cmd,"bp"); //fps
+	}
+	
+	if(checkedmode > 9) // not video	
+	{
+		if(checkedmode == 5) //TWarp
 		{
 			cmd = dcmd(cmd,"twf"); //fov		
 		
@@ -1130,7 +1213,7 @@ function startTime() {
 				cmd = cmd + zoom; //fov
 			}
 		}
-		else if(checkedmode == 19) //Photo
+		else if(checkedmode == 10) //Photo
 		{
 			cmd = dcmd(cmd,"pf"); //fov		
 		
@@ -1146,17 +1229,6 @@ function startTime() {
 				
 				cmd = cmd + zoom; //fov
 			}
-		}
-		else if(checkedmode == 20) //Live Burst
-		{
-			dset("settingsZoom", true);
-					
-			var zoom = parseInt(document.getElementById("zoom").value);
-			zoom *= 10;
-			document.getElementById("zoomtext").innerHTML = zoom+"%";	
-			if(zoom == 100) zoom = 99;	
-			
-			cmd = cmd + "fW" + zoom; //fov
 		}
 		else //Everything else
 		{
@@ -1214,7 +1286,7 @@ function startTime() {
 		}
 	}
 	
-	if(checkedmode >= 19 && checkedmode <= 24) //RAW Photo modes
+	if(checkedmode >= 10 && checkedmode <= 11) //RAW Photo modes
 		cmd = dcmd(cmd,"raw"); //raw photo control
 		
 	if(document.getElementById("sm") !== null)
@@ -1241,10 +1313,6 @@ function startTime() {
 		if(document.getElementById("ptr").checked === true)
 		{
 			cmd = cmd + "t0"; //protune reset
-		}
-		else
-		{
-			cmd = cmd + "t"; //protune
 		}
 	}
 	
@@ -1289,64 +1357,39 @@ function startTime() {
 	{
 		if(document.getElementById("pt").checked === true && document.getElementById("ptr").checked === false)
 		{
+ 			cmd = dcmd(cmd,"ptd"); //depth
+			cmd = dcmd(cmd,"hlg"); //color hlg
 			cmd = dcmd(cmd,"ptc"); //color
-			cmd = dcmd(cmd,"ptd"); //depth
+			cmd = dcmd(cmd,"ptch"); //color hlg
+			cmd = dcmd(cmd,"ptcb"); //color 8-bit only
 			cmd = dcmd(cmd,"br"); //bitrate
 			cmd = dcmd(cmd,"wb"); //wb
 
-			if(document.getElementById('iso8').checked === false)
+			if(document.getElementById('isofix9').checked === false )
 			{
-				cmd = dcmd(cmd,"iso"); //iso max
-				if(document.getElementById('isomin8').checked === false)
-				{
-					let isomin = dcmd("","isomin"); //min
-					let isomax = dcmd("","iso");    //max
-				
-					var min = parseInt(isomin.substring(1));
-					var max = parseInt(isomax.substring(1));
-					
-					if(max < min)
-					{
-						if(max == 1) document.getElementById('isomin1').checked = true;
-						if(max == 2) document.getElementById('isomin2').checked = true;
-						if(max == 4) document.getElementById('isomin3').checked = true;
-						if(max == 8) document.getElementById('isomin4').checked = true;
-						if(max == 16) document.getElementById('isomin5').checked = true;
-						if(max == 32) document.getElementById('isomin6').checked = true;
-						cmd = cmd + "M" + max;    //set the min to match the max iso
-					}
-					else
-						cmd = dcmd(cmd,"isomin"); //add iso min
-						
-					if(document.getElementById('shut7').checked === false)
-					{
-						//cmd = dcmd(cmd,"iso"); //iso max
-						cmd = dcmd(cmd,"shut"); //shutter angle
-					}
-				}
-				else if(document.getElementById('shut7').checked === false)
-				{
-					cmd = dcmd(cmd,"shut"); //shutter angle
-				}
-			} 
-			else if(document.getElementById('isomin8').checked === false)
-			{
-				cmd = cmd + "i64"; //ADD fake ISO max
-				cmd = dcmd(cmd,"isomin");//iso min
-				if(document.getElementById('shut7').checked === false)
-				{
-					cmd = cmd + "i64"; //ADD fake max
-					cmd = dcmd(cmd,"shut"); //shutter angle
-				}
+				cmd = dcmd(cmd,"isofix"); //iso max
 			}
-			else if(document.getElementById('shut7').checked === false)
+			else
 			{
-				cmd = cmd + "i64"; //ADD fake ISO max
-				cmd = dcmd(cmd,"shut"); //shutter angle				
+				cmd = dcmd(cmd,"isor"); //iso max
 			}
-								
+			if(document.getElementById('shut10').checked === false)
+			{
+				cmd = dcmd(cmd,"shut"); //shutter angle
+			}
+			else if(document.getElementById('shutmin4').checked === false)
+			{
+				cmd = dcmd(cmd,"shutmin"); //shutter angle
+			}
+			else
+			{	
+				cmd = dcmd(cmd,"blur");//motion blur
+			}
+			
 			cmd = dcmd(cmd,"ev"); //ev
 			cmd = dcmd(cmd,"sharp"); //sharp
+			cmd = dcmd(cmd,"denoise"); //denoise
+			cmd = dcmd(cmd,"tune"); //tuning
 			cmd = dcmd(cmd,"aud"); //audio control
 			cmd = dcmd(cmd,"bit"); //bitrate control
 		}
@@ -1785,4 +1828,3 @@ startTime();
 
 
 </script>
-
