@@ -19,19 +19,19 @@ Install from: [![google play](google-play-823.png)](https://play.google.com/stor
 [![apple app store](./apple-store-823.png)](https://apps.apple.com/us/app/gopro-app/id1518134202)<br>
 
 <b>Camera Mode:</b>&nbsp;&nbsp;
-  &nbsp;&nbsp;**Video Modes:**
+  &nbsp;&nbsp;<b>Video Modes:</b>
   <input type="radio" id="m1" name="mode" value="mV">  <label for="m1">Video </label>&nbsp;&nbsp;
   <input type="radio" id="m2" name="mode" value="mVN"> <label for="m2">Low Light</label>&nbsp;&nbsp;
   <input type="radio" id="m3" name="mode" value="mL">  <label for="m3">Looping</label>&nbsp;&nbsp;
   <input type="radio" id="m4" name="mode" value="mB">  <label for="m4">Burst Slowmo</label><br>
-  &nbsp;&nbsp;**TimeLapse Modes:** 
+  &nbsp;&nbsp;<b>TimeLapse Modes:</b>
   <input type="radio" id="m5" name="mode" value="mTW"> <label for="m5">TimeWarp (Motion)</label>&nbsp;&nbsp;
   <input type="radio" id="m6" name="mode" value="mT"> <label  for="m6">Timelapse (Stationary)</label><br>
-  &nbsp;&nbsp;**Computational Modes:**
+  &nbsp;&nbsp;<b>Computational Modes:</b>
   <input type="radio" id="m7" name="mode" value="mST"> <label for="m7">Star Trails </label>&nbsp;&nbsp;
   <input type="radio" id="m8" name="mode" value="mLP"> <label for="m8">Light Painting </label>&nbsp;&nbsp;
   <input type="radio" id="m9" name="mode" value="mLT"> <label for="m9">Vehicle Lights </label><br>
-  &nbsp;&nbsp;**Photo Modes:** 
+  &nbsp;&nbsp;<b>Photo Modes:</b>
   <input type="radio" id="m10" name="mode" value="mP">  <label for="m10">Photo</label>&nbsp;&nbsp;
   <input type="radio" id="m11" name="mode" value="mPB"> <label for="m11">Burst</label>&nbsp;&nbsp;
   <input type="radio" id="m12" name="mode" value="" checked> <label for="m12">not set</label><br><br>
