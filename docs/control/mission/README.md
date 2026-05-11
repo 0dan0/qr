@@ -440,29 +440,14 @@ Install from: [![google play](google-play-823.png)](https://play.google.com/stor
   <input type="radio" id="qc2" name="qc" value="q1"> <label for="qc2">on </label>&nbsp;&nbsp;
   <input type="radio" id="qc3" name="qc" value="" checked> <label for="qc3">not set </label>
   </div>
-<div id="opDM">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Default Mode:</b>&nbsp;&nbsp;
-  <input type="radio" id="dm1" name="dm" value="dL">  <label for="dm1">Last Used</label>&nbsp;&nbsp;
-  <input type="radio" id="dm2" name="dm" value="dV">  <label for="dm2">Video</label>&nbsp;&nbsp;
-  <input type="radio" id="dm3" name="dm" value="dP">  <label for="dm3">Photo</label>&nbsp;&nbsp;
-  <input type="radio" id="dm4" name="dm" value="dT">  <label for="dm4">Timelapse</label>&nbsp;&nbsp;
-  <input type="radio" id="dm5" name="dm" value="" checked> <label for="dm5">not set</label>
-</div>
-<div id="opBV">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Beep Volume:</b>&nbsp;&nbsp; 
-  <input type="radio" id="bv1" name="bv" value="V0"> <label for="bv1">0% </label>&nbsp;&nbsp;
-  <input type="radio" id="bv2" name="bv" value="V1"> <label for="bv2">10% </label>&nbsp;&nbsp;
-  <input type="radio" id="bv3" name="bv" value="V4"> <label for="bv3">40% </label>&nbsp;&nbsp;
-  <input type="radio" id="bv4" name="bv" value="V7"> <label for="bv4">70% </label>&nbsp;&nbsp;
-  <input type="radio" id="bv5" name="bv" value="V8"> <label for="bv5">85% </label>&nbsp;&nbsp;
-  <input type="radio" id="bv6" name="bv" value="V9"> <label for="bv6">100% </label>&nbsp;&nbsp;
-  <input type="radio" id="bv7" name="bv" value="" checked> <label for="bv7">not set</label>
+<div id="opBV">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Beep Volume:</b>&nbsp;&nbsp;
+  <input type="checkbox" id="bvset" value=""> <label for="bvset">set</label>&nbsp;&nbsp;
+  <input type="range" id="bv" name="bv" min="0" max="9" step="1" value="9"><label for="bv"></label>&nbsp;&nbsp;<b id="bvtext">100%</b>
   </div>
   
 <div id="opDB">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Display Brightness:</b>&nbsp;&nbsp;
-  <input type="radio" id="db1" name="db" value="B1"> <label for="db1">10% </label>&nbsp;&nbsp;
-  <input type="radio" id="db2" name="db" value="B4"> <label for="db2">40% </label>&nbsp;&nbsp;
-  <input type="radio" id="db3" name="db" value="B7"> <label for="db3">70% </label>&nbsp;&nbsp;
-  <input type="radio" id="db4" name="db" value="B9"> <label for="db4">100% </label>&nbsp;&nbsp;
-  <input type="radio" id="db5" name="db" value="" checked> <label for="db5">not set</label>
+  <input type="checkbox" id="dbset" value=""> <label for="dbset">set</label>&nbsp;&nbsp;
+  <input type="range" id="db" name="db" min="0" max="9" step="1" value="9"><label for="db"></label>&nbsp;&nbsp;<b id="dbtext">100%</b>
   </div>
 <div id="opLO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>LEDs On:</b>&nbsp;&nbsp;
   <input type="radio" id="lo1" name="lo" value="D0"> <label for="lo1">All Off </label>&nbsp;&nbsp;
@@ -600,13 +585,11 @@ Share this QR Code as a URL: <small id="urltext"></small><br>
 
 Feedback: <small id="feedbacktext"></small><br>
 
-**Compatibility:** Labs enabled [HERO5 Session](../session5), HERO7-13, MAX and Bones 
-
-**HERO10 Note:** LCD must be on for the QR Code scanning to be active.<br>
+**Compatibility:** Labs enabled MISSION sersies<br>
         
 [More features](..) for Labs enabled cameras
 
-updated: May 9, 2026
+updated: May 10, 2026
 
 <script>
 var clipcopy = "";
@@ -875,7 +858,6 @@ function startTime() {
 	dset("opGPS", false);
 	dset("opVC", false);
 	dset("opQC", false);
-	dset("opDM", false);
 	dset("opBV", false);
 	dset("opDB", false);
 	dset("opLO", false);
@@ -1127,7 +1109,6 @@ function startTime() {
 			dset("opGPS", true);
 			dset("opVC", true);
 			dset("opQC", true);
-			dset("opDM", true);
 			dset("opBV", true);
 			dset("opDB", true);
 			dset("opLO", true);
@@ -1418,10 +1399,9 @@ function startTime() {
 			cmd = dcmd(cmd,"gps");
 			cmd = dcmd(cmd,"vc");
 			cmd = dcmd(cmd,"qc");
-			cmd = dcmd(cmd,"dm");
 			
-			opt = dcmd(addO, "bv"); if(opt != "o") { cmd = cmd + opt; addO = ""; }
-			opt = dcmd(addO, "db"); if(opt != "o") { cmd = cmd + opt; addO = ""; }
+			opt = dcmdBeepVolume(addO); if(opt != addO) { cmd = cmd + opt; addO = ""; }
+			opt = dcmdDisplayBrightness(addO); if(opt != addO) { cmd = cmd + opt; addO = ""; }
 			opt = dcmd(addO, "lo"); if(opt != "o") { cmd = cmd + opt; addO = ""; }
 			opt = dcmd(addO, "or"); if(opt != "o") { cmd = cmd + opt; addO = ""; }
 			opt = dcmd(addO, "ao"); if(opt != "o") { cmd = cmd + opt; addO = ""; }
@@ -1808,6 +1788,40 @@ function dcmd(cmd, id) {
 	return cmd;
 }
 
+function dcmdBeepVolume(cmd) {
+	if(document.getElementById("bv") !== null)
+	{
+		var bv = parseInt(document.getElementById("bv").value);
+		if(isNaN(bv)) bv = 9;
+		if(bv < 0) bv = 0;
+		if(bv > 9) bv = 9;
+
+		if(document.getElementById("bvtext") !== null)
+			document.getElementById("bvtext").innerHTML = Math.round((bv * 100) / 9) + "%";
+
+		if(document.getElementById("bvset") !== null && document.getElementById("bvset").checked === true)
+			cmd = cmd + "V" + bv;
+	}
+	return cmd;
+}
+
+function dcmdDisplayBrightness(cmd) {
+	if(document.getElementById("db") !== null)
+	{
+		var db = parseInt(document.getElementById("db").value);
+		if(isNaN(db)) db = 9;
+		if(db < 0) db = 0;
+		if(db > 9) db = 9;
+
+		if(document.getElementById("dbtext") !== null)
+			document.getElementById("dbtext").innerHTML = Math.round((db * 100) / 9) + "%";
+
+		if(document.getElementById("dbset") !== null && document.getElementById("dbset").checked === true)
+			cmd = cmd + "B" + db;
+	}
+	return cmd;
+}
+
 
 function myReloadFunction() {
     location.reload();
@@ -1837,6 +1851,7 @@ function setupButtons() {
 makeQR();
 setupButtons();
 startTime();
+
 
 
 </script>
