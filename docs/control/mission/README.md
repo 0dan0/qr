@@ -11,6 +11,7 @@
         }
 </style>
 
+
 #  GoPro Mission One QR Code Creator
 
 Create a custom camera mode, and even start a capture all through QR Codes. This is the fastest way to access many of the new GoPro Labs' firmware features. 
@@ -442,12 +443,12 @@ Install from: [![google play](google-play-823.png)](https://play.google.com/stor
   </div>
 <div id="opBV">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Beep Volume:</b>&nbsp;&nbsp;
   <input type="checkbox" id="bvset" value=""> <label for="bvset">set</label>&nbsp;&nbsp;
-  <input type="range" id="bv" name="bv" min="0" max="9" step="1" value="9"><label for="bv"></label>&nbsp;&nbsp;<b id="bvtext">100%</b>
+  <input type="range" id="bv" name="bv" min="0" max="9" step="1" value="9" oninput="document.getElementById('bvset').checked=true; dcmdBeepVolume('');" onchange="document.getElementById('bvset').checked=true; dcmdBeepVolume('');"><label for="bv"></label>&nbsp;&nbsp;<b id="bvtext">100%</b>
   </div>
   
 <div id="opDB">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Display Brightness:</b>&nbsp;&nbsp;
   <input type="checkbox" id="dbset" value=""> <label for="dbset">set</label>&nbsp;&nbsp;
-  <input type="range" id="db" name="db" min="0" max="9" step="1" value="9"><label for="db"></label>&nbsp;&nbsp;<b id="dbtext">100%</b>
+  <input type="range" id="db" name="db" min="0" max="9" step="1" value="9" oninput="document.getElementById('dbset').checked=true; dcmdDisplayBrightness('');" onchange="document.getElementById('dbset').checked=true; dcmdDisplayBrightness('');"><label for="db"></label>&nbsp;&nbsp;<b id="dbtext">100%</b>
   </div>
 <div id="opLO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>LEDs On:</b>&nbsp;&nbsp;
   <input type="radio" id="lo1" name="lo" value="D0"> <label for="lo1">All Off </label>&nbsp;&nbsp;
@@ -455,14 +456,14 @@ Install from: [![google play](google-play-823.png)](https://play.google.com/stor
   <input type="radio" id="lo3" name="lo" value="D4"> <label for="lo3">All On </label>&nbsp;&nbsp;
   <input type="radio" id="lo4" name="lo" value="" checked> <label for="lo4">not set</label>
   </div>
-<div id="opOR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Orientation Lock:</b>&nbsp;&nbsp; 
+<!-- <div id="opOR">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Orientation Lock:</b>&nbsp;&nbsp; 
   Landscape <input type="radio" id="or1" name="or" value="R1"> <label for="or1">↑</label>&nbsp;&nbsp;&nbsp;
   <input type="radio" id="or2" name="or" value="R2"> <label for="or2">↓</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   Portrait <input type="radio" id="or3" name="or" value="R3"> <label for="or3">←</label>&nbsp;&nbsp;&nbsp;
   <input type="radio" id="or4" name="or" value="R4"> <label for="or4">→</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="radio" id="or5" name="or" value="R0"> <label for="or5">Unlocked </label>&nbsp;&nbsp;
   <input type="radio" id="or6" name="or" value="" checked> <label for="or6">not set</label>
-  </div>
+  </div>  -->
 <div id="opAO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Camera Auto Off:</b>&nbsp;&nbsp; 
   <input type="radio" id="ao1" name="ao" value="C1"> <label for="ao1">1 mins </label>&nbsp;&nbsp;
   <input type="radio" id="ao2" name="ao" value="C5"> <label for="ao2">5 mins </label>&nbsp;&nbsp;
@@ -475,8 +476,9 @@ Install from: [![google play](google-play-823.png)](https://play.google.com/stor
   <input type="radio" id="so1" name="so" value="S1"> <label for="so1">1 mins </label>&nbsp;&nbsp;
   <input type="radio" id="so2" name="so" value="S2"> <label for="so2">2 mins </label>&nbsp;&nbsp;
   <input type="radio" id="so3" name="so" value="S3"> <label for="so3">3 mins </label>&nbsp;&nbsp;
-  <input type="radio" id="so4" name="so" value="S"> <label for="so4">Never </label>&nbsp;&nbsp;
-  <input type="radio" id="so5" name="so" value="" checked> <label for="so5">not set</label>
+  <input type="radio" id="so4" name="so" value="S5"> <label for="so4">5 mins </label>&nbsp;&nbsp;
+  <input type="radio" id="so5" name="so" value="S">  <label for="so5">Never </label>&nbsp;&nbsp;
+  <input type="radio" id="so6" name="so" value="" checked> <label for="so6">not set</label>
   </div>
 <div id="opWC">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>WiFi Connections:</b>&nbsp;&nbsp; 
   <input type="radio" id="wc1" name="wc" value="W0"> <label for="wc1">Off </label>&nbsp;&nbsp;
@@ -861,7 +863,7 @@ function startTime() {
 	dset("opBV", false);
 	dset("opDB", false);
 	dset("opLO", false);
-	dset("opOR", false);
+	//dset("opOR", false);
 	dset("opAO", false);
 	dset("opSO", false);
 	dset("opWC", false);
@@ -1112,7 +1114,7 @@ function startTime() {
 			dset("opBV", true);
 			dset("opDB", true);
 			dset("opLO", true);
-			dset("opOR", true);
+			//dset("opOR", true);
 			dset("opAO", true);
 			dset("opSO", true);
 			dset("opWC", true);
@@ -1403,7 +1405,7 @@ function startTime() {
 			opt = dcmdBeepVolume(addO); if(opt != addO) { cmd = cmd + opt; addO = ""; }
 			opt = dcmdDisplayBrightness(addO); if(opt != addO) { cmd = cmd + opt; addO = ""; }
 			opt = dcmd(addO, "lo"); if(opt != "o") { cmd = cmd + opt; addO = ""; }
-			opt = dcmd(addO, "or"); if(opt != "o") { cmd = cmd + opt; addO = ""; }
+			//opt = dcmd(addO, "or"); if(opt != "o") { cmd = cmd + opt; addO = ""; }
 			opt = dcmd(addO, "ao"); if(opt != "o") { cmd = cmd + opt; addO = ""; }
 			opt = dcmd(addO, "so"); if(opt != "o") { cmd = cmd + opt; addO = ""; }
 			opt = dcmd(addO, "wc"); if(opt != "o") { cmd = cmd + opt; addO = ""; }
@@ -1472,7 +1474,7 @@ function startTime() {
 			cmd = cmd + s;
 			if(timecode)
 			{			
-				cmd = cmd + "." + ms + "oTI" + id;
+				cmd = cmd + "." + ms;
 			}
 		}
 	
