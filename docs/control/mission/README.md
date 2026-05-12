@@ -52,12 +52,13 @@ Install from: [![google play](google-play-823.png)](https://play.google.com/stor
 
 <div id="settingsRESTLV">
 <b>Video Resolution:</b>&nbsp;&nbsp;
-  <input type="radio" id="rt1" name="restlv" value="r1">  <label for="rt1">1080p </label>&nbsp;&nbsp;
-  <input type="radio" id="rt2" name="restlv" value="r4">  <label for="rt2">4k </label>&nbsp;&nbsp;
-  <input type="radio" id="rt3" name="restlv" value="r4T"> <label for="rt3">4k 4:3</label>&nbsp;&nbsp;
-  <input type="radio" id="rt4" name="restlv" value="r8">  <label for="rt4">8k </label>&nbsp;&nbsp;
-  <input type="radio" id="rt5" name="restlv" value="r8T"> <label for="rt5">8k 4:3 </label>&nbsp;&nbsp;
-  <input type="radio" id="rt6" name="restlv" value="" checked> <label for="rt6">not set</label><br><br>
+  <input type="radio" id="rt1" name="restlv" value="r1">  <label for="rt1">HD </label>&nbsp;&nbsp;
+  <input type="radio" id="rt2" name="restlv" value="r1T"> <label for="rt2">HD </label>&nbsp;&nbsp;
+  <input type="radio" id="rt3" name="restlv" value="r4">  <label for="rt3">4k </label>&nbsp;&nbsp;
+  <input type="radio" id="rt4" name="restlv" value="r4T"> <label for="rt4">4k 4:3</label>&nbsp;&nbsp;
+  <input type="radio" id="rt5" name="restlv" value="r8">  <label for="rt5">8k </label>&nbsp;&nbsp;
+  <input type="radio" id="rt6" name="restlv" value="r8T"> <label for="rt6">8k 4:3 </label>&nbsp;&nbsp;
+  <input type="radio" id="rt7" name="restlv" value="" checked> <label for="rt7">not set</label><br><br>
  </div>
  
 <div id="settingsCOMPTLV">
@@ -1856,6 +1857,7 @@ function setupButtons() {
 makeQR();
 setupButtons();
 startTime();
+
 
 
 
