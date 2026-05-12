@@ -16,10 +16,10 @@
 
 Create a custom camera mode, and even start a capture all through QR Codes. This is the fastest way to access many of the new GoPro Labs' firmware features. 
 Many features of this page are also available as a mobile app.<br>
-Install from: [![google play](google-play-823.png)](https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
-[![apple app store](./apple-store-823.png)](https://apps.apple.com/us/app/gopro-app/id1518134202)<br>
+Install from: [![google play](https://gopro.github.io/labs/control/google-play-823.png)](https://play.google.com/store/apps/details?id=com.miscdata.qrcontrol)
+[![apple app store](https://gopro.github.io/labs/control/apple-store-823.png)](https://apps.apple.com/us/app/gopro-app/id1518134202)<br>
 
-<b>Camera Mode:</b>&nbsp;&nbsp;
+<b>Camera Mode:</b><br>
   &nbsp;&nbsp;<b>Video Modes:</b>
   <input type="radio" id="m1" name="mode" value="mV">  <label for="m1">Video </label>&nbsp;&nbsp;
   <input type="radio" id="m2" name="mode" value="mVN"> <label for="m2">Low Light</label>&nbsp;&nbsp;
@@ -132,7 +132,7 @@ Install from: [![google play](google-play-823.png)](https://play.google.com/stor
  </div>
  
 <div id="settingsZoom">
- <b>Zoom:</b> <input type="range" id="zoom" name="zoom" min="0" max="10" value="0"><label for="zoom"></label>&nbsp;&nbsp;<b id="zoomtext"></b><br><br>
+ <b>Zoom:</b> <input type="range" id="zoom" name="zoom" min="0" max="30" value="0"><label for="zoom"></label>&nbsp;&nbsp;<b id="zoomtext"></b><br><br>
 </div>
 
 <div id="settingsBurst">
@@ -592,7 +592,7 @@ Feedback: <small id="feedbacktext"></small><br>
         
 [More features](..) for Labs enabled cameras
 
-updated: May 10, 2026
+updated: May 12, 2026
 
 <script>
 var clipcopy = "";
@@ -1205,8 +1205,7 @@ function startTime() {
 				dset("settingsZoom", true);
 					
 				var zoom = parseInt(document.getElementById("zoom").value);
-				zoom *= 10;
-				document.getElementById("zoomtext").innerHTML = zoom+"%";	
+				document.getElementById("zoomtext").innerHTML = (zoom*3+30) / 30+"x";
 				if(zoom == 100) zoom = 99;	
 				
 				cmd = cmd + zoom; //fov
@@ -1222,8 +1221,7 @@ function startTime() {
 				dset("settingsZoom", true);			
 					
 				var zoom = parseInt(document.getElementById("zoom").value);
-				zoom *= 10;
-				document.getElementById("zoomtext").innerHTML = zoom+"%";	
+				document.getElementById("zoomtext").innerHTML = (zoom*3+30) / 30+"x";
 				if(zoom == 100) zoom = 99;	
 				
 				cmd = cmd + zoom; //fov
@@ -1239,8 +1237,7 @@ function startTime() {
 				dset("settingsZoom", true);			
 					
 				var zoom = parseInt(document.getElementById("zoom").value);
-				zoom *= 10;
-				document.getElementById("zoomtext").innerHTML = zoom+"%";	
+				document.getElementById("zoomtext").innerHTML = (zoom*3+30) / 30+"x";
 				if(zoom == 100) zoom = 99;	
 				
 				cmd = cmd + zoom; //fov
@@ -1267,15 +1264,14 @@ function startTime() {
 		}
 		
 		if(	(document.getElementById("f1").checked === true) || //Wide
-			(document.getElementById("f3").checked === true)/* || //Linear
-			(document.getElementById("f5").checked === true)*/ ) //Linear+HL
+			(document.getElementById("f2").checked === true) || //Linear
+			(document.getElementById("f3").checked === true))   //Superview
 		{
-			dset("settingsZoom", true);			
+			dset("settingsZoom", true);
 			
 			var zoom = parseInt(document.getElementById("zoom").value);
-			zoom *= 10;
-			document.getElementById("zoomtext").innerHTML = zoom+"%";	
-			if(zoom == 100) zoom = 99;	
+			document.getElementById("zoomtext").innerHTML = (zoom*3+30) / 30+"x";
+			if(zoom == 100) zoom = 99;
 			
 			cmd = cmd + zoom; //fov
 		}
@@ -1857,6 +1853,7 @@ function setupButtons() {
 makeQR();
 setupButtons();
 startTime();
+
 
 
 
