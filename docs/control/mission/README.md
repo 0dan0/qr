@@ -23,8 +23,8 @@ Install from: [![google play](google-play-823.png)](https://play.google.com/stor
   &nbsp;&nbsp;<b>Video Modes:</b>
   <input type="radio" id="m1" name="mode" value="mV">  <label for="m1">Video </label>&nbsp;&nbsp;
   <input type="radio" id="m2" name="mode" value="mVN"> <label for="m2">Low Light</label>&nbsp;&nbsp;
-  <input type="radio" id="m3" name="mode" value="mL">  <label for="m3">Looping</label>&nbsp;&nbsp;
-  <input type="radio" id="m4" name="mode" value="mB">  <label for="m4">Burst Slowmo</label><br>
+  <input type="radio" id="m3" name="mode" value="mVL">  <label for="m3">Looping</label>&nbsp;&nbsp;
+  <input type="radio" id="m4" name="mode" value="mVB">  <label for="m4">Burst Slowmo</label><br>
   &nbsp;&nbsp;<b>TimeLapse Modes:</b>
   <input type="radio" id="m5" name="mode" value="mTW"> <label for="m5">TimeWarp (Motion)</label>&nbsp;&nbsp;
   <input type="radio" id="m6" name="mode" value="mT"> <label  for="m6">Timelapse (Stationary)</label><br>
@@ -39,12 +39,12 @@ Install from: [![google play](google-play-823.png)](https://play.google.com/stor
 
 <div id="settingsRES">
 <b>Video Resolution:</b>&nbsp;&nbsp;
-  <input type="radio" id="r1" name="res" value="r1"> <label for="r1">1080p </label>&nbsp;&nbsp;
-  <input type="radio" id="r2" name="res" value="r14"> <label for="r2">1440p </label>&nbsp;&nbsp;
+  <input type="radio" id="r1" name="res" value="r1"> <label for="r1">HD </label>&nbsp;&nbsp;
+  <input type="radio" id="r2" name="res" value="r14"> <label for="r2">HD 4:3 </label>&nbsp;&nbsp;
   <input type="radio" id="r3" name="res" value="r4"   > <label for="r3">4k </label>&nbsp;&nbsp;
   <input type="radio" id="r4" name="res" value="r4T"  > <label for="r4">4k 4:3</label>&nbsp;&nbsp;
   <input type="radio" id="r5" name="res" value="r8"   > <label for="r5">8k </label>&nbsp;&nbsp;
-  <input type="radio" id="r6" name="res" value="r8T"  > <label for="r6">8k 4:3</label><br>
+  <input type="radio" id="r6" name="res" value="r8T"  > <label for="r6">8k 4:3</label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="radio" id="r7" name="res" value="r1V"  > <label for="r7">HD Vertical </label>&nbsp;&nbsp;
   <input type="radio" id="r8" name="res" value="r4V"  > <label for="r8">4k Vertical </label>&nbsp;&nbsp;
   <input type="radio" id="r9" name="res" value="" checked> <label for="r9">not set</label><br><br>
@@ -75,7 +75,7 @@ Install from: [![google play](google-play-823.png)](https://play.google.com/stor
   <input type="radio" id="p2" name="fps" value="p25">  <label for="p2">25 </label>&nbsp;&nbsp;
   <input type="radio" id="p3" name="fps" value="p30">  <label for="p3">30 </label>&nbsp;&nbsp;
   <input type="radio" id="p4" name="fps" value="p50">  <label for="p4">50 </label>&nbsp;&nbsp;
-  <input type="radio" id="p5" name="fps" value="p60">  <label for="p5">60 </label>&nbsp;&nbsp;<br>
+  <input type="radio" id="p5" name="fps" value="p60">  <label for="p5">60 </label>&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="radio" id="p6" name="fps" value="p100"> <label for="p6">100 </label>&nbsp;&nbsp;
   <input type="radio" id="p7" name="fps" value="p120"> <label for="p7">120 </label>&nbsp;&nbsp;
   <input type="radio" id="p8" name="fps" value="p200"> <label for="p8">200 </label>&nbsp;&nbsp;
@@ -225,7 +225,7 @@ Install from: [![google play](google-play-823.png)](https://play.google.com/stor
 	<input type="radio" id="dur4" name="dur" value="dR60"> <label for="dur4">1min</label>&nbsp;&nbsp;
 	<input type="radio" id="dur5" name="dur" value="dR300"> <label for="dur5">5min</label>&nbsp;&nbsp;
 	<input type="radio" id="dur6" name="dur" value="dR900"> <label for="dur6">15min</label>&nbsp;&nbsp;
-	<input type="radio" id="dur7" name="dur" value="dR1800"> <label for="dur7">30min</label><br>
+	<input type="radio" id="dur7" name="dur" value="dR1800"> <label for="dur7">30min</label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<input type="radio" id="dur8" name="dur" value="dR3600"> <label for="dur8">1hour</label>&nbsp;&nbsp;
 	<input type="radio" id="dur9" name="dur" value="dR7200"> <label for="dur9">2hour</label>&nbsp;&nbsp;
 	<input type="radio" id="dur10" name="dur" value="dR9999"> <label for="dur10">3hour</label>&nbsp;&nbsp;
@@ -992,6 +992,9 @@ function startTime() {
 			icon_num = Math.trunc(event.offsetX/70) + 6 * Math.trunc(event.offsetY/70);
 			
 			if(icon_num < 0) icon_num = 0;
+			
+			if(icon_num > 7 ) icon_num+=3;  // Icons 8,9,10 not on mission
+			if(icon_num > 25) icon_num++;  // Icon 26 not used on mission
 			if(icon_num > 32) icon_num = 32;
 			
 			last_icon_num = icon_num;
@@ -1853,6 +1856,7 @@ function setupButtons() {
 makeQR();
 setupButtons();
 startTime();
+
 
 
 
