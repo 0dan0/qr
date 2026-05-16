@@ -105,7 +105,7 @@ There is a lot in Labs, this is the best page to start [Labs Camera Control](htt
 | [USB power trust override](https://gopro.github.io/labs/control/extensions)                 | ⅓ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️/❌ | ❌ | ❌ | ❌ | ❌ |
 | [Visual Scripting Blockly](https://gopro.github.io/labs/build)                              | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️/❌ | ❌ | ❌ | ❌ | ✔️ |
 | [Wake on Power](https://gopro.github.io/labs/control/extensions)                            | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ✔️ | ❌ | ✔️ |
-| [Wider Color Gamut](https://gopro.github.io/labs/control/extensions)                        | ❌️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| [Wider Color Gamut](https://gopro.github.io/labs/control/extensions)                        | ✅️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | [White Balance Lock](https://gopro.github.io/labs/control/extensions)                       | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | [White Balance Warmer/Cooler](https://gopro.github.io/labs/control/extensions)              | ✔️ | ✔️ | ✔️ | ✔ | ❌️ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | [Zero to sixty timing](https://gopro.github.io/labs/control/extensions)                     | ❌️ | ✔️ | ✔️ | ❌ | ❌️ | ❌ | ❌ | ❌ | ❌ | ❌ |
