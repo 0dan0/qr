@@ -40,7 +40,7 @@ There is a lot in Labs, this is the best page to start [Labs Camera Control](htt
 
 - New [AI Chat Bot](https://bit.ly/chat_gp_labs) to help you create Labs scripts
 - Technical information on the [Labs command language](https://gopro.github.io/labs/control/tech)
-- [Visual Script Tool](https://gopro.github.io/labs/build/) HERO13/12/11/Mini/10/Max
+- [Visual Script Tool](https://gopro.github.io/labs/build/) M1P/M1/MAX2/H13/H12/H11/H11Mini/H10/Max
 
 ### Overview of Labs functionality and device compatibility: 
 
