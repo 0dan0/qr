@@ -52,31 +52,32 @@ There is a lot in Labs, this is the best page to start [Labs Camera Control](htt
 | [Altered File Naming](https://gopro.github.io/labs/control/basename)                        | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | [Archive Mode](https://gopro.github.io/labs/control/archive) (locked settings)              | ❌️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | [Audio Channels Gain/Solo/Mute](https://gopro.github.io/labs/control/extensions)            | ❌️ | ❌️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ |
-| [Audio Mute or Disable](https://gopro.github.io/labs/control/extensions)                    | ❌️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ |
+| [Audio Disable](https://gopro.github.io/labs/control/extensions)                            | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ |
 | [Bitrate Controls](https://gopro.github.io/labs/control/extensions)                         | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ✔️ |
 | [Boot Command](https://gopro.github.io/labs/control/extensions)                             | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ |
-| [Command Shell](https://gopro.github.io/labs/control/extensions)                            | ❌️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| [Distance-Lapse](https://gopro.github.io/labs/control/extensions)                           | ❓ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| [Dive Mode](https://gopro.github.io/labs/control/extensions)                                | 📍 | ❌️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| [Command Shell via USB Comms](https://gopro.github.io/labs/control/extensions)              | ❌️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| [Commands over Open GoPro WiFi links](https://gopro.github.io/labs/control/extensions)      | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| [Distance-Lapse](https://gopro.github.io/labs/control/extensions)                           | ❌️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| [Dive Mode](https://gopro.github.io/labs/control/extensions)                                | ✅ | ❌️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | [Exposure Display](https://gopro.github.io/labs/control/extensions) current ISO and shutter | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| [Exposure Damping](https://gopro.github.io/labs/control/extensions) control                 | ❓ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ |
+| [Exposure Damping](https://gopro.github.io/labs/control/extensions) control                 | ❌️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ |
 | [Exposure Curve](https://gopro.github.io/labs/control/extensions) custom log encoding       | ❌️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | [Exposure Min/Max Times](https://gopro.github.io/labs/control/extensions)                   | ❌️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | [Extra Long time-lapse](https://gopro.github.io/labs/control/longtimelapse)                 | ✔️ | ✔️ | ✔️ | ✔️ | ✔️/❌ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | [GPS Log without capture](https://gopro.github.io/labs/control/extensions)                  | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| [GPS time sync](https://gopro.github.io/labs/control/gpssync)                               | ❓ | ✔️ | ✔️ | ❌ | ✔️/❌ | ✔️/❌ | ✔️ | ❌ | ❌ | ❌ |
+| [GPS time sync](https://gopro.github.io/labs/control/gpssync)                               | ⅓ | ✔️ | ✔️ | ❌ | ✔️/❌ | ✔️/❌ | ✔️ | ❌ | ❌ | ❌ |
 | [Guidelines Display](https://gopro.github.io/labs/control/extensions) on rear LCD           | ✔️ | ✔️ | ✔️ | ✔️ | ✔️/❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| [HDMI display settings](https://gopro.github.io/labs/control/extensions)                    | ❓ | ❌️ | ✔️ | ✔️ | ✔️/❌ | ✔️ | ✔️ | ❌ | ❌ | ❌ |
+| [HDMI display settings](https://gopro.github.io/labs/control/extensions)                    | ❌️ | ❌️ | ✔️ | ✔️ | ✔️/❌ | ✔️ | ✔️ | ❌ | ❌ | ❌ |
 | [Hindsight Timeout Extension](https://gopro.github.io/labs/control/extensions)              | ✔️ | ❌️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ |
 | [Histogram](https://gopro.github.io/labs/control/extensions) (on display)                   | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ |
 | [Histogram Position/Size](https://gopro.github.io/labs/control/extensions) (either screen)  | ✔️ | ✔️ | ✔️ | ✔️ | ✔️/❌  | ❌ | ❌ | ❌ | ❌ | ❌ |
-| [I-Frame only HEVC Encoding](https://gopro.github.io/labs/control/extensions)               | ❓ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| [I-Frame only HEVC Encoding](https://gopro.github.io/labs/control/extensions)               | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | [Large Chapter](https://gopro.github.io/labs/control/chapters) Support (12GB)               | ✔️ | ✔️ | >12GB | >12GB | >12GB | ✔️ | ✔️ | ✔️ | ❌ | ✔️ |
 | [Live Stream Initiation](https://gopro.github.io/labs/control/rtmp)                         | ❓ | ❌️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ |
-| [Low Light mode](https://gopro.github.io/labs/control/extensions)                           | 📍 | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| [LRV Disable](https://gopro.github.io/labs/control/extensions)                              | ❓ | ❌️ | ❌ | ❌ | ✔️ | some | ❌ | ❌ | ❌ | ❌ |
-| [LTC Time support](https://gopro.github.io/labs/control/ltc) (via MediaMod/Pro Mic Adapter) | ❓ | ❌️ | ✔️ | ✔️ | ✔️ | ✔️/❌  | ✔️ | ❌ | ❌ | ❌ |
-| [Max Shutter Angle](https://gopro.github.io/labs/control/maxshut) exposure control          | ❓ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| [Low Light mode](https://gopro.github.io/labs/control/extensions)                           | ✅ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| [LRV Disable](https://gopro.github.io/labs/control/extensions)                              | ❌️ | ❌️ | ❌ | ❌ | ✔️ | some | ❌ | ❌ | ❌ | ❌ |
+| [LTC Time support](https://gopro.github.io/labs/control/ltc) (via MediaMod/Pro Mic Adapter) | ❌️ | ❌️ | ✔️ | ✔️ | ✔️ | ✔️/❌  | ✔️ | ❌ | ❌ | ❌ |
+| [Max Shutter Angle](https://gopro.github.io/labs/control/maxshut) exposure control          | 📍 | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | [Metadata Injections](https://gopro.github.io/labs/control/extensions)                      | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | [Noise Reduction](https://gopro.github.io/labs/control/extensions) control                  | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | [Overlay - Burn-ins](https://gopro.github.io/labs/control/overlays) e.g. Time/Date          | ❌️ | ❌️ | some | some | some | some | ✔️ | ✔️ | ❌ | ❌ |
@@ -87,20 +88,20 @@ There is a lot in Labs, this is the best page to start [Labs Camera Control](htt
 | [QR decoding while recording](https://gopro.github.io/labs/control/extensions)              | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | [SD card speed test](https://gopro.github.io/labs/control/extensions)                       | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ |
 | [Spirit Level Display](https://gopro.github.io/labs/control/extensions) on rear LCD         | ✔️ | ✔️ | ✔️ | ✔️ | ✔️/❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| [Stop Motion](https://gopro.github.io/labs/control/extensions)                              | ❓ | ❌️ | ✔️ | ✔ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| [Stop Motion](https://gopro.github.io/labs/control/extensions)                              | ❌️ | ❌️ | ✔️ | ✔ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | [Sunrise/Sunset starts](https://gopro.github.io/labs/control/solartimelapse)                | ✔️ | ✔️ | ✔️ | Manual | ✔️/Man | ✔️/❌ | ✔️ | ✔️ | ✔️ | ✔️ |
 | [Time delayed Starts](https://gopro.github.io/labs/control/custom)                          | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | [Time/date/timecode QR Code](https://gopro.github.io/labs/control/precisiontime)            | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | [Tone Mapping Controls](https://gopro.github.io/labs/control/extensions)                    | ❌️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ |
 | [Trigger - Accelerometer](https://gopro.github.io/labs/control/imutrigger)                  | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
-| [Trigger - GPS speed](https://gopro.github.io/labs/control/speedtrigger)                    | ❓ | ✔️ | ✔️ | ❌ | ✔️ | ✔️/❌  | ✔️ | ✔️ | ✔️ | ✔️ |
+| [Trigger - GPS speed](https://gopro.github.io/labs/control/speedtrigger)                    | ✔️ | ✔️ | ✔️ | ❌ | ✔️ | ✔️/❌  | ✔️ | ✔️ | ✔️ | ✔️ |
 | [Trigger - Gyroscope](https://gopro.github.io/labs/control/imutrigger)                      | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | [Trigger - IMU Motion](https://gopro.github.io/labs/control/imutrigger)                     | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | [Trigger - Motion detection](https://gopro.github.io/labs/control/motion)                   | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | [Trigger - Sound Pressure Level](https://gopro.github.io/labs/control/spltrigger)           | ❌️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ |
 | [Trigger - USB Power](https://gopro.github.io/labs/control/usb)                             | ✔️ | ✔️ | ✔️ | ✔️ | ✔️/❌ | ✔️/❌ | ✔️ | ✔️ | ❌ | ✔️ |
-| [Upload scripting](https://gopro.github.io/labs/control/dailytl)                            | ❓ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ |
-| [USB power trust override](https://gopro.github.io/labs/control/extensions)                 | ❌️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️/❌ | ❌ | ❌ | ❌ | ❌ |
+| [Upload scripting](https://gopro.github.io/labs/control/dailytl)                            | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ |
+| [USB power trust override](https://gopro.github.io/labs/control/extensions)                 | ⅓ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️/❌ | ❌ | ❌ | ❌ | ❌ |
 | [Visual Scripting Blockly](https://gopro.github.io/labs/build)                              | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️/❌ | ❌ | ❌ | ❌ | ✔️ |
 | [Wake on Power](https://gopro.github.io/labs/control/extensions)                            | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ✔️ | ❌ | ✔️ |
 | [Wider Color Gamut](https://gopro.github.io/labs/control/extensions)                        | ❌️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ |
@@ -109,8 +110,8 @@ There is a lot in Labs, this is the best page to start [Labs Camera Control](htt
 | [Zero to sixty timing](https://gopro.github.io/labs/control/extensions)                     | ❌️ | ✔️ | ✔️ | ❌ | ❌️ | ❌ | ❌ | ❌ | ❌ | ❌ |
 
 Key:
-- 📍 standard feature on this camera
-- ❓ untested or to be implemented
+- ✅ now standard
+- ❓ untested
 - ✔️ supported 
 - ❌️ unsupported
 
