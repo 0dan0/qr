@@ -49,7 +49,7 @@ There is a lot in Labs, this is the best page to start [Labs Camera Control](htt
 |---------------------------------------------------------------------------------------------|--------|--------|--------|----------|-----------|----|----|----|-----|
 | [24.0Hz capture vs 23.976](https://gopro.github.io/labs/control/extensions)                 | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ |
 | [All Integer frame rates 30.0 vs 29.97](https://gopro.github.io/labs/control/extensions)    | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| [NLE proxies](https://gopro.github.io/labs/control/proxies)                                 | ✔️ | 2D️ | ✔️ | ✔️ | ✔️ | Some/❌ | ❌ | ❌ | ❌ | ❌ |
+| [NLE proxies](https://gopro.github.io/labs/control/proxies)                                 | ✔️ | 2D️ | ✔️ | ✔️ | ✔️ | ⅓/❌ | ❌ | ❌ | ❌ | ❌ |
 | [Altered File Naming](https://gopro.github.io/labs/control/basename)                        | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | [Archive Mode](https://gopro.github.io/labs/control/archive) (locked settings)              | ❌️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | [Audio Channels Gain/Solo/Mute](https://gopro.github.io/labs/control/extensions)            | ❌️ | ❌️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ |
@@ -73,24 +73,24 @@ There is a lot in Labs, this is the best page to start [Labs Camera Control](htt
 | [Histogram](https://gopro.github.io/labs/control/extensions) (on display)                   | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ |
 | [Histogram Position/Size](https://gopro.github.io/labs/control/extensions) (either screen)  | ✔️ | ✔️ | ✔️ | ✔️ | ✔️/❌  | ❌ | ❌ | ❌ | ❌ | ❌ |
 | [I-Frame only HEVC Encoding](https://gopro.github.io/labs/control/extensions)               | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| [Large Chapter](https://gopro.github.io/labs/control/chapters) Support (12GB)               | ✔️ | ✔️ | >12GB | >12GB | >12GB | ✔️ | ✔️ | ✔️ | ❌ | ✔️ |
+| [Large Chapter](https://gopro.github.io/labs/control/chapters) Support (12GB)               | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ✔️ |
 | [Live Stream Initiation](https://gopro.github.io/labs/control/rtmp)                         | ❓ | ❌️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ |
 | [Low Light mode](https://gopro.github.io/labs/control/extensions)                           | ✅ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| [LRV Disable](https://gopro.github.io/labs/control/extensions)                              | ❌️ | ❌️ | ❌ | ❌ | ✔️ | some | ❌ | ❌ | ❌ | ❌ |
+| [LRV Disable](https://gopro.github.io/labs/control/extensions)                              | ❌️ | ❌️ | ❌ | ❌ | ✔️ | ⅓ | ❌ | ❌ | ❌ | ❌ |
 | [LTC Time support](https://gopro.github.io/labs/control/ltc) (via MediaMod/Pro Mic Adapter) | ❌️ | ❌️ | ✔️ | ✔️ | ✔️ | ✔️/❌  | ✔️ | ❌ | ❌ | ❌ |
 | [Max Shutter Angle](https://gopro.github.io/labs/control/maxshut) exposure control          | 📍 | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | [Metadata Injections](https://gopro.github.io/labs/control/extensions)                      | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | [Noise Reduction](https://gopro.github.io/labs/control/extensions) control                  | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| [Overlay - Burn-ins](https://gopro.github.io/labs/control/overlays) e.g. Time/Date          | ❌️ | ❌️ | some | some | some | some | ✔️ | ✔️ | ❌ | ❌ |
-| [Overlay - Color Bar](https://gopro.github.io/labs/control/extensions)                      | ❌️ | ❌️ | some | some | some | some | ✔️ | ✔️ | ❌ | ✔️ |
-| [Overlays - Logo Burn-In](https://gopro.github.io/labs/control/logo)                        | ❌️ | ❌️ | some | some | some | some | ✔️ | ❌ | ❌ | ✔️ |
-| [Overlays - Luma Sweep](https://gopro.github.io/labs/control/extensions)                    | ❌️ | ❌️ | some | some | some | some | ✔️ | ✔️ | ❌ | ❌ |
+| [Overlay - Burn-ins](https://gopro.github.io/labs/control/overlays) e.g. Time/Date          | ❌️ | ❌️ | ⅓ | ⅓ | ⅓ | ⅓ | ✔️ | ✔️ | ❌ | ❌ |
+| [Overlay - Color Bar](https://gopro.github.io/labs/control/extensions)                      | ❌️ | ❌️ | ⅓ | ⅓ | ⅓ | ⅓ | ✔️ | ✔️ | ❌ | ✔️ |
+| [Overlays - Logo Burn-In](https://gopro.github.io/labs/control/logo)                        | ❌️ | ❌️ | ⅓ | ⅓ | ⅓ | ⅓ | ✔️ | ❌ | ❌ | ✔️ |
+| [Overlays - Luma Sweep](https://gopro.github.io/labs/control/extensions)                    | ❌️ | ❌️ | ⅓ | ⅓ | ⅓ | ⅓ | ✔️ | ✔️ | ❌ | ❌ |
 | [Owner Information](https://gopro.github.io/labs/control/owner)                             | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | [QR decoding while recording](https://gopro.github.io/labs/control/extensions)              | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | [SD card speed test](https://gopro.github.io/labs/control/extensions)                       | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ |
 | [Spirit Level Display](https://gopro.github.io/labs/control/extensions) on rear LCD         | ✔️ | ✔️ | ✔️ | ✔️ | ✔️/❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | [Stop Motion](https://gopro.github.io/labs/control/extensions)                              | ❌️ | ❌️ | ✔️ | ✔ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| [Sunrise/Sunset starts](https://gopro.github.io/labs/control/solartimelapse)                | ✔️ | ✔️ | ✔️ | Manual | ✔️/Man | ✔️/❌ | ✔️ | ✔️ | ✔️ | ✔️ |
+| [Sunrise/Sunset starts](https://gopro.github.io/labs/control/solartimelapse)                | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️/❌ | ✔️ | ✔️ | ✔️ | ✔️ |
 | [Time delayed Starts](https://gopro.github.io/labs/control/custom)                          | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | [Time/date/timecode QR Code](https://gopro.github.io/labs/control/precisiontime)            | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | [Tone Mapping Controls](https://gopro.github.io/labs/control/extensions)                    | ❌️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ❌ | ❌ | ❌ | ❌ |
@@ -112,9 +112,10 @@ There is a lot in Labs, this is the best page to start [Labs Camera Control](htt
 
 Key:
 - ✅ now standard
-- ❓ untested
 - ✔️ supported 
 - ❌️ unsupported
+- ❓ untested
+- ⅓ partly implemented 
 
 ## Software 
 
